@@ -87,6 +87,12 @@ class Identificacion(models.Model):
         default=RegionesChile.RM,
         help_text="Región de residencia"
     )
+
+#Faltaba agregar esta pregunta
+    trabaja_actualmente = models.BooleanField(
+        null=True, blank=True,
+        help_text="¿Trabaja actualmente?"
+    )
     creado_en = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -189,7 +195,8 @@ class MRS(models.Model):
     pregunta_9 = models.IntegerField(
         choices=IntensidadMolestia.choices,
         default=IntensidadMolestia.NINGUNA,
-        help_text="¿Con cuánta intensidad sientes: Sequedad vaginal (sensación de genitales secos, malestar o ardor en los genitales, malestar o dolor con las relaciones sexuales)?"
+        help_text="¿Con cuánta intensidad sientes: Problemas sexuales (menos ganas de tener relaciones sexuales, menos frecuencia de relaciones sexuales, menor satisfacción sexual)?"
+        #Esta pregunta duplicaba a la pregunta 11 así que la actualicé basandome en el excel que se nos compartió
     )
 
     # 10. Transtornos urogenitales
@@ -205,7 +212,116 @@ class MRS(models.Model):
         default=IntensidadMolestia.NINGUNA,
         help_text="¿Con cuánta intensidad sientes: Sequedad vaginal (sensación de genitales secos, malestar o ardor en los genitales, malestar o dolor con las relaciones sexuales)?"
     )
+#Acá se agrega la sección complementaria "Cuestionario complementario MRS"
+    # --- Cuestionario Complementario MRS ---
+    
+    class FrecuenciaMenstruacion(models.TextChoices):
+        UNA_VEZ_MES = 'UNA_VEZ', 'Una vez cada mes'
+        VARIAS_VECES = 'VARIAS', 'Varias veces al mes'
+        NO_TODOS_MESES = 'NO_TODOS', 'No me llega todos los meses'
+        SANGRA_TODO_MES = 'TODO_MES', 'Sangro durante todo el mes'
+        NO_SANGRA = 'NO_SANGRA', 'No sangro'
 
+    class TipoSangrado(models.TextChoices):
+        IGUAL_SIEMPRE = 'IGUAL', 'Igual que siempre'
+        POCO = 'POCO', 'Poco comparado con lo habitual'
+        DIFERENTE = 'DIFERENTE', 'Diferente a lo habitual'
+        ABUNDANTE = 'ABUNDANTE', 'Abundante comparado con lo habitual'
+        CON_COAGULOS = 'COAGULOS', 'Con más coágulos comparado con lo habitual'
+
+    class RespuestaSiNo(models.TextChoices):
+        SI = 'SI', 'Si'
+        NO = 'NO', 'No'
+        NO_SABE = 'NS', 'No Sabe'
+
+    menstruacion_llega = models.CharField(
+        max_length=10,
+        choices=FrecuenciaMenstruacion.choices,
+        null=True, blank=True,
+        help_text="Durante el último año mi menstruación llega"
+    )
+    tipo_sangrado = models.CharField(
+        max_length=10,
+        choices=TipoSangrado.choices,
+        null=True, blank=True,
+        help_text="El sangrado de mi menstruación es"
+    )
+    usa_metodo_anticonceptivo = models.CharField(
+        max_length=2,
+        choices=RespuestaSiNo.choices,
+        null=True, blank=True,
+        help_text="¿Usa método anticonceptivo? (orales, inyectables o DIU)"
+    )
+    usa_terapia_hormonal = models.CharField(
+        max_length=2,
+        choices=RespuestaSiNo.choices,
+        null=True, blank=True,
+        help_text="¿Usa hormonas (terapia hormonal)?"
+    )
+    operada_no_mas_hijos = models.CharField(
+        max_length=2,
+        choices=RespuestaSiNo.choices,
+        null=True, blank=True,
+        help_text="¿Está operada para no tener más hijos?"
+    )
+    tiene_utero = models.CharField(
+        max_length=2,
+        choices=RespuestaSiNo.choices,
+        null=True, blank=True,
+        help_text="¿Tiene útero?"
+    )
+    tiene_ovario = models.CharField(
+        max_length=2,
+        choices=RespuestaSiNo.choices,
+        null=True, blank=True,
+        help_text="¿Tiene al menos un ovario?"
+    )
+    tiene_pareja = models.CharField(
+        max_length=2,
+        choices=RespuestaSiNo.choices,
+        null=True, blank=True,
+        help_text="¿Actualmente tiene pareja?"
+    )
+    respuesta_pareja_menopausia = models.TextField(
+        null=True, blank=True,
+        help_text="¿Cómo consideras que tu pareja ha respondido a los cambios asociados a tu menopausia?"
+    )
+    tiene_actividad_sexual = models.CharField(
+        max_length=2,
+        choices=RespuestaSiNo.choices,
+        null=True, blank=True,
+        help_text="¿Tiene actividad sexual?"
+    )
+    usa_antidepresivos = models.CharField(
+        max_length=2,
+        choices=RespuestaSiNo.choices,
+        null=True, blank=True,
+        help_text="¿Usa antidepresivos o remedios para dormir?"
+    )
+    usa_remedios_diabetes = models.CharField(
+        max_length=2,
+        choices=RespuestaSiNo.choices,
+        null=True, blank=True,
+        help_text="¿Usa remedios para la diabetes?"
+    )
+    usa_remedios_presion = models.CharField(
+        max_length=2,
+        choices=RespuestaSiNo.choices,
+        null=True, blank=True,
+        help_text="¿Usa remedios para la presión arterial?"
+    )
+    control_otros_programas = models.CharField(
+        max_length=2,
+        choices=RespuestaSiNo.choices,
+        null=True, blank=True,
+        help_text="¿Está en control en otros programas de su consultorio?"
+    )
+    fecha_ultima_menstruacion = models.CharField(
+        #Esta como un charfield en vez de un datefield porque el excel dicen que puede ser solo el año si no lo recuerdan
+        max_length=10,
+        null=True, blank=True,
+        help_text="Fecha de la última menstruación (regla) - puede ser solo el año"
+    )
 
     class Meta:
         ordering = ['-fecha_evaluacion']
@@ -234,7 +350,7 @@ class SegmentoEMPA(models.Model):
 
     # --- RELACIÓN Y FECHA ---
     participante = models.ForeignKey(
-        Participante, 
+        Identificacion, # acá estaba como participante, pero los datos que se almacenaban coincidían con las características de identificación
         on_delete=models.CASCADE, 
         related_name='evaluaciones_empa'
     )
@@ -341,3 +457,122 @@ class SegmentoEMPA(models.Model):
 
     def __str__(self):
         return f"EMPA de {self.participante} - {self.fecha_registro} ({self.get_origen_registro_display()})"
+    
+    #--> Acá pondré lo del conocimiento del sistema
+
+class ConocimientoSistema(models.Model):
+    """
+    Evaluación del conocimiento y acceso de la participante al sistema
+    público de salud en relación al climaterio/menopausia.
+    """
+
+    class RespuestaSiNoInsegura(models.TextChoices):
+        SI = 'SI', 'Si'
+        NO = 'NO', 'No'
+        NO_SEGURA = 'NS', 'No estoy segura'
+
+    class CalidadAtencion(models.TextChoices):
+        MUY_MALA = 'MUY_MALA', 'Muy mala'
+        MALA = 'MALA', 'Mala'
+        REGULAR = 'REGULAR', 'Regular'
+        BUENA = 'BUENA', 'Buena'
+        MUY_BUENA = 'MUY_BUENA', 'Muy Buena'
+
+    class NivelInformacion(models.TextChoices):
+        NADA = 'NADA', 'Nada informada'
+        POCO = 'POCO', 'Poco informada'
+        MODERADA = 'MODERADA', 'Moderadamente informada'
+        MUY = 'MUY', 'Muy informada'
+
+    # --- RELACIÓN Y FECHA ---
+    participante = models.ForeignKey(
+        Identificacion,
+        on_delete=models.CASCADE,
+        related_name='evaluaciones_conocimiento_sistema'
+    )
+    fecha_evaluacion = models.DateField(
+        auto_now_add=True,
+        help_text="Fecha en que se responde el cuestionario"
+    )
+
+    # --- PREGUNTAS ---
+    conoce_sistema_publico_climaterio = models.CharField(
+        max_length=10,
+        choices=RespuestaSiNoInsegura.choices,
+        null=True, blank=True,
+        help_text="¿Conoce si el sistema público de salud en Chile ofrece atención para mujeres en etapa de climaterio o menopausia?"
+    )
+    ha_escuchado_programa_climaterio = models.CharField(
+        max_length=10,
+        choices=RespuestaSiNoInsegura.choices,
+        null=True, blank=True,
+        help_text="¿Ha escuchado hablar del Programa de Climaterio o atención relacionada con menopausia en centros de salud públicos?"
+    )
+    sabe_donde_acudir = models.CharField(
+        max_length=10,
+        choices=RespuestaSiNoInsegura.choices,
+        null=True, blank=True,
+        help_text="¿Sabe dónde acudir para recibir orientación o atención relacionada con síntomas del climaterio o menopausia?"
+    )
+    ha_consultado_por_sintomas = models.CharField(
+        max_length=10,
+        choices=RespuestaSiNoInsegura.choices,
+        null=True, blank=True,
+        help_text="¿Ha consultado alguna vez en un centro de salud por síntomas relacionados con climaterio o menopausia?"
+    )
+    evaluacion_atencion_recibida = models.CharField(
+        max_length=10,
+        choices=CalidadAtencion.choices,
+        null=True, blank=True,
+        help_text="Si respondió 'Sí', ¿cómo evaluaría la atención recibida?"
+    )
+    considera_informacion_suficiente = models.CharField(
+        max_length=10,
+        choices=RespuestaSiNoInsegura.choices,
+        null=True, blank=True,
+        help_text="¿Considera que el sistema de salud entrega suficiente información sobre climaterio o menopausia?"
+    )
+    nivel_informacion_servicios = models.CharField(
+        max_length=10,
+        choices=NivelInformacion.choices,
+        null=True, blank=True,
+        help_text="¿Qué tan informada se considera respecto a los servicios disponibles para mujeres en climaterio o menopausia?"
+    )
+    recursos_conocidos = models.TextField(
+        null=True, blank=True,
+        help_text="¿Conoce alguno de los siguientes recursos o prestaciones? (Atención médica en APS/CESFAM, Controles ginecológicos, Terapia hormonal, Atención psicológica, Consejería en salud mental, Orientación nutricional, Programas de actividad física, No conozco prestaciones relacionadas). Guardar como lista separada por comas."
+    )
+    ha_tenido_dificultades_acceso = models.CharField(
+        max_length=10,
+        choices=RespuestaSiNoInsegura.choices,
+        null=True, blank=True,
+        help_text="¿Ha sentido dificultades para acceder a atención relacionada con esta etapa?"
+    )
+    principales_dificultades = models.TextField(
+        null=True, blank=True,
+        help_text="¿Cuáles han sido las principales dificultades? (Falta de información, Dificultad para obtener horas, Costos, Falta de especialistas, No saber dónde consultar, Minimización de síntomas, Horarios incompatibles, Otra). Guardar como lista separada por comas."
+    )
+    sintomas_tomados_en_serio = models.CharField(
+        max_length=10,
+        choices=RespuestaSiNoInsegura.choices,
+        null=True, blank=True,
+        help_text="¿Considera que los síntomas asociados al climaterio o menopausia son tomados en serio por los profesionales de salud?"
+    )
+    desea_mas_informacion_apoyo = models.CharField(
+        max_length=10,
+        choices=RespuestaSiNoInsegura.choices,
+        null=True, blank=True,
+        help_text="¿Le gustaría recibir más información o apoyo relacionado con esta etapa?"
+    )
+    tipo_informacion_apoyo_deseado = models.TextField(
+        null=True, blank=True,
+        help_text="¿Qué tipo de información o apoyo considera más necesario? (Información general, Salud mental, Nutrición, Actividad física, Manejo de síntomas, Atención ginecológica, Terapia hormonal, Apoyo laboral, Otro). Guardar como lista separada por comas."
+    )
+
+    class Meta:
+        ordering = ['-fecha_evaluacion']
+        verbose_name = "Conocimiento del Sistema"
+        verbose_name_plural = "Conocimiento del Sistema"
+
+    def __str__(self):
+        return f"Conocimiento Sistema de {self.participante} - {self.fecha_evaluacion}"
