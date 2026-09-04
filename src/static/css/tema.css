@@ -1,0 +1,250 @@
+/* ==========================================================================
+   TEMA VISUAL — Plataforma de Investigación de Menopausia
+   --------------------------------------------------------------------------
+   Toda la paleta y las variables de estilo viven en :root.
+   Para cambiar el morado por otro tono corporativo, edita SOLO las variables
+   de "PALETA PRINCIPAL". Ver static/PALETA.md.
+   ========================================================================== */
+
+:root {
+    /* === PALETA PRINCIPAL (morados / violetas) === */
+    --color-primario: #6d28d9;          /* violeta 700 — botones, encabezado */
+    --color-primario-oscuro: #5b21b6;   /* violeta 800 — hover / activo */
+    --color-primario-claro: #a78bfa;    /* violeta 400 — bordes destacados */
+    --color-primario-suave: #f5f3ff;    /* violeta 50  — fondos de aviso */
+    --color-acento: #db2777;            /* magenta — acciones secundarias */
+
+    /* === NEUTROS === */
+    --color-fondo: #faf9fc;
+    --color-superficie: #ffffff;
+    --color-borde: #e5e0ee;
+    --color-texto: #1f2430;
+    --color-texto-suave: #6b7280;
+
+    /* === ESTADOS === */
+    --color-error: #b91c1c;
+    --color-error-fondo: #fef2f2;
+    --color-ok: #15803d;
+
+    /* === ESCALA DE CALOR MRS (nivel 0 → 4) — la usa la Fase 7D === */
+    --calor-0: #16a34a;  /* verde   — sin molestia */
+    --calor-1: #84cc16;  /* lima */
+    --calor-2: #eab308;  /* amarillo */
+    --calor-3: #f97316;  /* naranja */
+    --calor-4: #dc2626;  /* rojo    — molestia muy intensa */
+
+    /* === FORMA / TIPOGRAFÍA === */
+    --radio: 10px;
+    --sombra: 0 1px 3px rgba(76, 29, 149, .12);
+    --fuente: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    --ancho-contenido: 640px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: var(--fuente);
+    color: var(--color-texto);
+    background: var(--color-fondo);
+    line-height: 1.5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .75rem 1.25rem;
+    background: var(--color-primario);
+    color: #fff;
+}
+header a { color: #fff; text-decoration: none; }
+
+main {
+    max-width: var(--ancho-contenido);
+    margin: 2rem auto;
+    padding: 0 1.25rem;
+}
+
+.tarjeta {
+    background: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 1.5rem;
+}
+
+h1 { font-size: 1.4rem; margin-top: 0; color: var(--color-primario-oscuro); }
+
+form p { margin: .75rem 0; }
+label { display: block; font-weight: 600; margin-bottom: .25rem; }
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: .55rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fff;
+}
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--color-primario-claro);
+    outline-offset: 1px;
+    border-color: var(--color-primario);
+}
+
+.ayuda { color: var(--color-texto-suave); font-size: .85rem; }
+.errores { color: var(--color-error); font-size: .9rem; margin: .25rem 0; }
+
+button, .boton {
+    background: var(--color-primario);
+    color: #fff;
+    border: 0;
+    padding: .6rem 1.1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+button:hover, .boton:hover { background: var(--color-primario-oscuro); }
+
+.enlaces { margin-top: 1rem; font-size: .95rem; }
+.enlaces a { color: var(--color-primario); }
+
+.salir { background: transparent; border: 1px solid #fff; }
+.salir:hover { background: rgba(255, 255, 255, .15); }
+
+.toggle-clave {
+    display: inline-block;
+    margin-top: .35rem;
+    background: transparent;
+    color: var(--color-primario);
+    border: 1px solid var(--color-borde);
+    padding: .3rem .7rem;
+    font-size: .85rem;
+}
+.toggle-clave:hover { background: var(--color-primario-suave); }
+
+.info {
+    background: var(--color-primario-suave);
+    border: 1px solid var(--color-primario-claro);
+    border-radius: 8px;
+    padding: .75rem 1rem;
+    font-size: .9rem;
+    margin-bottom: 1rem;
+}
+.info ul { margin: .4rem 0 0; padding-left: 1.2rem; }
+.info li { margin: .15rem 0; }
+
+/* === Encuesta (Fase 7C) === */
+.progreso {
+    position: relative;
+    background: var(--color-borde);
+    border-radius: 999px;
+    height: 1.5rem;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+}
+.progreso-barra {
+    background: var(--color-primario);
+    height: 100%;
+    transition: width .3s ease;
+}
+.progreso-texto {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    color: var(--color-texto);
+}
+.seccion .paso { color: var(--color-texto-suave); font-size: .85rem; margin: 0 0 .25rem; }
+
+.pregunta { margin: 1.25rem 0; }
+.pregunta > label { display: block; font-weight: 600; margin-bottom: .4rem; }
+.pregunta .req { color: var(--color-acento); }
+.opcion {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 400;
+    margin: .25rem 0;
+    cursor: pointer;
+}
+.opcion input { width: auto; }
+
+.nav { display: flex; justify-content: space-between; gap: .75rem; margin-top: 1.5rem; }
+.nav button:only-child { margin-left: auto; }
+
+/* === Escala de calor MRS (Fase 7D) === */
+.escala-calor {
+    display: flex;
+    gap: 4px;
+    margin-top: .5rem;
+}
+.escala-calor .calor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .2rem;
+    padding: .5rem .2rem;
+    border: 3px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: .72rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .4);
+}
+.escala-calor .calor input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.escala-calor .calor-emoji { font-size: 1.5rem; text-shadow: none; }
+.escala-calor .calor.sel {
+    border-color: var(--color-primario-oscuro);
+    transform: translateY(-3px);
+}
+.escala-calor .calor:focus-within {
+    outline: 2px solid var(--color-primario);
+    outline-offset: 2px;
+}
+.calor-0 { background: var(--calor-0); }
+.calor-1 { background: var(--calor-1); }
+.calor-2 { background: var(--calor-2); }
+.calor-3 { background: var(--calor-3); }
+.calor-4 { background: var(--calor-4); }
+
+.calor-desc {
+    margin: .5rem 0 0;
+    font-size: .9rem;
+    color: var(--color-texto-suave);
+    min-height: 1.3em;
+}
+
+@media (max-width: 480px) {
+    .escala-calor .calor-texto { display: none; }
+    .escala-calor .calor-emoji { font-size: 1.7rem; }
+}
+
+/* === Aviso de estado de sincronización (Fase 7E) === */
+.estado-sync {
+    border-radius: 8px;
+    padding: .6rem .9rem;
+    font-size: .88rem;
+    margin-bottom: 1rem;
+}
+.estado-sync.offline { background: #fef9c3; border: 1px solid #fde047; }
+.estado-sync.ok { background: #dcfce7; border: 1px solid #86efac; }
+.estado-sync.error { background: var(--color-error-fondo); border: 1px solid #fecaca; }

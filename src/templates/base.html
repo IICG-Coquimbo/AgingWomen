@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block titulo %}Plataforma de Investigación de Menopausia{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/tema.css' %}">
+    <link rel="manifest" href="{% static 'manifest.webmanifest' %}">
+    <meta name="theme-color" content="#6d28d9">
+    <link rel="icon" href="{% static 'icons/icono.svg' %}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <a href="{% url 'home' %}"><strong>Investigación Menopausia</strong></a>
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="salir">Salir</button>
+        </form>
+        {% endif %}
+    </header>
+    <main>
+        {% block contenido %}{% endblock %}
+    </main>
+
+    <script>
+        (function () {
+            // --- Máscara de RUT: formatea a 12.345.678-9 mientras se escribe ---
+            function formatearRut(valor) {
+                var limpio = valor.replace(/[^0-9kK]/g, '').toUpperCase();
+                if (limpio.length <= 1) { return limpio; }
+                var cuerpo = limpio.slice(0, -1);
+                var dv = limpio.slice(-1);
+                cuerpo = cuerpo.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                return cuerpo + '-' + dv;
+            }
+            document.querySelectorAll('input[data-rut]').forEach(function (input) {
+                input.addEventListener('input', function () {
+                    input.value = formatearRut(input.value);
+                });
+                if (input.value) { input.value = formatearRut(input.value); }
+            });
+
+            // --- Botón ver / ocultar contraseña ---
+            document.querySelectorAll('input[type="password"]').forEach(function (input) {
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'toggle-clave';
+                btn.textContent = 'Ver';
+                btn.addEventListener('click', function () {
+                    var oculta = input.type === 'password';
+                    input.type = oculta ? 'text' : 'password';
+                    btn.textContent = oculta ? 'Ocultar' : 'Ver';
+                });
+                input.insertAdjacentElement('afterend', btn);
+            });
+
+            // --- Registro del Service Worker (soporte offline) ---
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function () {
+                    navigator.serviceWorker.register('/sw.js').catch(function (e) {
+                        console.warn('Service Worker no registrado:', e);
+                    });
+                });
+            }
+        })();
+    </script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

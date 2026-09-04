@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}Encuesta{% endblock %}
+
+{% block extra_head %}
+    <meta name="csrf-token" content="{{ csrf_token }}">
+{% endblock %}
+
+{% block contenido %}
+    <p id="estado-sync" class="estado-sync" hidden></p>
+    <div id="encuesta"><p class="ayuda">Cargando encuesta…</p></div>
+{% endblock %}
+
+{% block extra_scripts %}
+    <script src="{% static 'js/encuesta.js' %}"></script>
+{% endblock %}

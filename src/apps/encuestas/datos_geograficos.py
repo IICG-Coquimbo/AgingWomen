@@ -1,0 +1,111 @@
+"""
+Comunas de Chile por región (división político-administrativa vigente, 346 comunas).
+
+Las claves son los códigos de región usados en `Identificacion.RegionesChile`.
+El código '99' ("Reside fuera de Chile / No aplica") no tiene comunas: el cliente
+muestra un campo de texto libre en ese caso.
+"""
+
+COMUNAS_POR_REGION = {
+    # 15 - Arica y Parinacota
+    '15': ['Arica', 'Camarones', 'General Lagos', 'Putre'],
+
+    # 01 - Tarapacá
+    '01': ['Alto Hospicio', 'Camiña', 'Colchane', 'Huara', 'Iquique', 'Pica',
+           'Pozo Almonte'],
+
+    # 02 - Antofagasta
+    '02': ['Antofagasta', 'Calama', 'María Elena', 'Mejillones', 'Ollagüe',
+           'San Pedro de Atacama', 'Sierra Gorda', 'Taltal', 'Tocopilla'],
+
+    # 03 - Atacama
+    '03': ['Alto del Carmen', 'Caldera', 'Chañaral', 'Copiapó', 'Diego de Almagro',
+           'Freirina', 'Huasco', 'Tierra Amarilla', 'Vallenar'],
+
+    # 04 - Coquimbo
+    '04': ['Andacollo', 'Canela', 'Combarbalá', 'Coquimbo', 'Illapel', 'La Higuera',
+           'La Serena', 'Los Vilos', 'Monte Patria', 'Ovalle', 'Paihuano', 'Punitaqui',
+           'Río Hurtado', 'Salamanca', 'Vicuña'],
+
+    # 05 - Valparaíso
+    '05': ['Algarrobo', 'Cabildo', 'Calera', 'Calle Larga', 'Cartagena', 'Casablanca',
+           'Catemu', 'Concón', 'El Quisco', 'El Tabo', 'Hijuelas', 'Isla de Pascua',
+           'Juan Fernández', 'La Cruz', 'La Ligua', 'Limache', 'Llaillay', 'Los Andes',
+           'Nogales', 'Olmué', 'Panquehue', 'Papudo', 'Petorca', 'Puchuncaví',
+           'Putaendo', 'Quillota', 'Quilpué', 'Quintero', 'Rinconada', 'San Antonio',
+           'San Esteban', 'San Felipe', 'Santa María', 'Santo Domingo', 'Valparaíso',
+           'Villa Alemana', 'Viña del Mar', 'Zapallar'],
+
+    # 13 - Metropolitana de Santiago
+    '13': ['Alhué', 'Buin', 'Calera de Tango', 'Cerrillos', 'Cerro Navia', 'Colina',
+           'Conchalí', 'Curacaví', 'El Bosque', 'El Monte', 'Estación Central',
+           'Huechuraba', 'Independencia', 'Isla de Maipo', 'La Cisterna', 'La Florida',
+           'La Granja', 'La Pintana', 'La Reina', 'Lampa', 'Las Condes', 'Lo Barnechea',
+           'Lo Espejo', 'Lo Prado', 'Macul', 'Maipú', 'María Pinto', 'Melipilla',
+           'Ñuñoa', 'Padre Hurtado', 'Paine', 'Pedro Aguirre Cerda', 'Peñaflor',
+           'Peñalolén', 'Pirque', 'Providencia', 'Pudahuel', 'Puente Alto', 'Quilicura',
+           'Quinta Normal', 'Recoleta', 'Renca', 'San Bernardo', 'San Joaquín',
+           'San José de Maipo', 'San Miguel', 'San Pedro', 'San Ramón', 'Santiago',
+           'Talagante', 'Tiltil', 'Vitacura'],
+
+    # 06 - Del Libertador General Bernardo O'Higgins
+    '06': ['Chépica', 'Chimbarongo', 'Codegua', 'Coinco', 'Coltauco', 'Doñihue',
+           'Graneros', 'La Estrella', 'Las Cabras', 'Litueche', 'Lolol', 'Machalí',
+           'Malloa', 'Marchigüe', 'Mostazal', 'Nancagua', 'Navidad', 'Olivar',
+           'Palmilla', 'Paredones', 'Peralillo', 'Peumo', 'Pichidegua', 'Pichilemu',
+           'Placilla', 'Pumanque', 'Quinta de Tilcoco', 'Rancagua', 'Rengo', 'Requínoa',
+           'San Fernando', 'San Vicente', 'Santa Cruz'],
+
+    # 07 - Maule
+    '07': ['Cauquenes', 'Chanco', 'Colbún', 'Constitución', 'Curepto', 'Curicó',
+           'Empedrado', 'Hualañé', 'Licantén', 'Linares', 'Longaví', 'Maule', 'Molina',
+           'Parral', 'Pelarco', 'Pelluhue', 'Pencahue', 'Rauco', 'Retiro', 'Río Claro',
+           'Romeral', 'Sagrada Familia', 'San Clemente', 'San Javier', 'San Rafael',
+           'Talca', 'Teno', 'Vichuquén', 'Villa Alegre', 'Yerbas Buenas'],
+
+    # 16 - Ñuble
+    '16': ['Bulnes', 'Chillán', 'Chillán Viejo', 'Cobquecura', 'Coelemu', 'Coihueco',
+           'El Carmen', 'Ninhue', 'Ñiquén', 'Pemuco', 'Pinto', 'Portezuelo', 'Quillón',
+           'Quirihue', 'Ránquil', 'San Carlos', 'San Fabián', 'San Ignacio',
+           'San Nicolás', 'Treguaco', 'Yungay'],
+
+    # 08 - Biobío
+    '08': ['Alto Biobío', 'Antuco', 'Arauco', 'Cabrero', 'Cañete', 'Chiguayante',
+           'Concepción', 'Contulmo', 'Coronel', 'Curanilahue', 'Florida', 'Hualpén',
+           'Hualqui', 'Laja', 'Lebu', 'Los Álamos', 'Los Ángeles', 'Lota', 'Mulchén',
+           'Nacimiento', 'Negrete', 'Penco', 'Quilaco', 'Quilleco', 'San Pedro de la Paz',
+           'San Rosendo', 'Santa Bárbara', 'Santa Juana', 'Talcahuano', 'Tirúa', 'Tomé',
+           'Tucapel', 'Yumbel'],
+
+    # 09 - La Araucanía
+    '09': ['Angol', 'Carahue', 'Cholchol', 'Collipulli', 'Cunco', 'Curacautín',
+           'Curarrehue', 'Ercilla', 'Freire', 'Galvarino', 'Gorbea', 'Lautaro',
+           'Loncoche', 'Lonquimay', 'Los Sauces', 'Lumaco', 'Melipeuco', 'Nueva Imperial',
+           'Padre Las Casas', 'Perquenco', 'Pitrufquén', 'Pucón', 'Purén', 'Renaico',
+           'Saavedra', 'Temuco', 'Teodoro Schmidt', 'Toltén', 'Traiguén', 'Victoria',
+           'Vilcún', 'Villarrica'],
+
+    # 14 - Los Ríos
+    '14': ['Corral', 'Futrono', 'Lago Ranco', 'Lanco', 'La Unión', 'Los Lagos',
+           'Máfil', 'Mariquina', 'Paillaco', 'Panguipulli', 'Río Bueno', 'Valdivia'],
+
+    # 10 - Los Lagos
+    '10': ['Ancud', 'Calbuco', 'Castro', 'Chaitén', 'Chonchi', 'Cochamó',
+           'Curaco de Vélez', 'Dalcahue', 'Fresia', 'Frutillar', 'Futaleufú',
+           'Hualaihué', 'Llanquihue', 'Los Muermos', 'Maullín', 'Osorno', 'Palena',
+           'Puerto Montt', 'Puerto Octay', 'Puerto Varas', 'Purranque', 'Puqueldón',
+           'Puyehue', 'Queilén', 'Quellón', 'Quemchi', 'Quinchao', 'Río Negro',
+           'San Juan de la Costa', 'San Pablo'],
+
+    # 11 - Aysén del General Carlos Ibáñez del Campo
+    '11': ['Aysén', 'Chile Chico', 'Cisnes', 'Cochrane', 'Coihaique', 'Guaitecas',
+           'Lago Verde', "O'Higgins", 'Río Ibáñez', 'Tortel'],
+
+    # 12 - Magallanes y de la Antártica Chilena
+    '12': ['Antártica', 'Cabo de Hornos', 'Laguna Blanca', 'Natales', 'Porvenir',
+           'Primavera', 'Punta Arenas', 'Río Verde', 'San Gregorio', 'Timaukel',
+           'Torres del Paine'],
+
+    # 99 - Reside fuera de Chile / No aplica
+    '99': [],
+}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block titulo %}Revisa tu correo{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Revisa tu correo</h1>
+    <p>Te enviamos tu contraseña temporal al correo indicado.</p>
+    <p class="ayuda">
+        En modo desarrollo el correo se imprime en la consola del servidor
+        (<code>docker compose logs web</code>).
+    </p>
+    <div class="enlaces">
+        <a href="{% url 'login' %}">Ir a ingresar</a>
+    </div>
+</div>
+{% endblock %}

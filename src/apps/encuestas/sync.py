@@ -1,0 +1,157 @@
+"""
+Motor de sincronización offline-first (Sección 5.1 del spec).
+
+`sincronizar_payload(usuario, payload)` recibe lo que el dispositivo acumuló sin
+conexión y lo guarda de forma idempotente (por `uuid_local`), aplicando las
+reglas de campos por rol (Fase 5B). No conoce HTTP: eso es la Fase 6B.
+
+Convención: el dispositivo envía SIEMPRE el estado completo de cada sección que
+tiene guardado localmente. `parcial=True` solo significa "esta sección aún no
+está terminada", no "envío únicamente los campos que cambiaron".
+"""
+from django.utils import timezone
+
+from apps.usuarios.rut import hash_rut
+
+from .forms import (
+    ActividadFisicaForm,
+    ConocimientoSistemaForm,
+    EvaluacionTrabajoForm,
+    HabitosAlimenticiosForm,
+    IdentificacionForm,
+    MRSForm,
+    SegmentoEMPAForm,
+    TareasCuidadoForm,
+)
+from .models import (
+    ActividadFisica,
+    ConocimientoSistema,
+    EvaluacionTrabajo,
+    HabitosAlimenticios,
+    Identificacion,
+    MRS,
+    SegmentoEMPA,
+    TareasCuidado,
+)
+
+# tipo de sección -> (modelo, formulario)
+SECCIONES = {
+    'mrs': (MRS, MRSForm),
+    'empa': (SegmentoEMPA, SegmentoEMPAForm),
+    'conocimiento_sistema': (ConocimientoSistema, ConocimientoSistemaForm),
+    'trabajo': (EvaluacionTrabajo, EvaluacionTrabajoForm),
+    'tareas_cuidado': (TareasCuidado, TareasCuidadoForm),
+    'actividad_fisica': (ActividadFisica, ActividadFisicaForm),
+    'habitos_alimenticios': (HabitosAlimenticios, HabitosAlimenticiosForm),
+}
+
+
+class ErrorSincronizacion(Exception):
+    """Error de nivel payload (formato, permisos), no de validación de un campo."""
+
+
+def _resolver_identificacion(usuario, bloque):
+    bloque = bloque or {}
+    datos = dict(bloque.get('datos') or {})
+    uuid_local = bloque.get('uuid_local')
+    rut = datos.pop('rut', None) or bloque.get('rut')
+
+    if usuario.es_profesional:
+        if not rut:
+            raise ErrorSincronizacion("El profesional debe indicar el 'rut' de la paciente.")
+        existente = Identificacion.objects.filter(rut_hash=hash_rut(rut)).first()
+    else:
+        if rut:
+            raise ErrorSincronizacion(
+                "Una usuaria común no puede sincronizar datos por RUT de otra persona."
+            )
+        existente = Identificacion.objects.filter(usuario=usuario).first()
+
+    if not datos:
+        if existente:
+            return existente, {'seccion': 'identificacion', 'estado': 'sin_cambios', 'id': existente.id}
+        raise ErrorSincronizacion("Falta el bloque 'identificacion' con los datos demográficos.")
+
+    form = IdentificacionForm(data=datos, instance=existente, rol=usuario.rol)
+    if not form.is_valid():
+        return None, {'seccion': 'identificacion', 'estado': 'error', 'errores': form.errors}
+
+    ident = form.save(commit=False)
+    if usuario.es_profesional:
+        ident.rut_hash = hash_rut(rut)
+    else:
+        ident.usuario = usuario
+        ident.rut_hash = usuario.rut_hash
+    if uuid_local:
+        ident.uuid_local = uuid_local
+    ident.sincronizado_en = timezone.now()
+    ident.save()
+    return ident, {
+        'seccion': 'identificacion',
+        'estado': 'actualizado' if existente else 'creado',
+        'id': ident.id,
+    }
+
+
+def _guardar_seccion(bloque, identificacion, usuario):
+    tipo = bloque['tipo']
+    modelo, form_cls = SECCIONES[tipo]
+    uuid_local = bloque.get('uuid_local')
+    datos = bloque.get('datos') or {}
+    parcial = bool(bloque.get('parcial', True))
+
+    if not uuid_local:
+        return {'seccion': tipo, 'estado': 'error', 'errores': {'uuid_local': ['Requerido.']}}
+
+    instancia = modelo.objects.filter(uuid_local=uuid_local).first()
+    if instancia and instancia.participante_id != identificacion.id:
+        return {'seccion': tipo, 'estado': 'error',
+                'errores': {'uuid_local': ['Ya pertenece a otro registro.']}}
+
+    form = form_cls(data=datos, instance=instancia, rol=usuario.rol, parcial=parcial)
+    if not form.is_valid():
+        return {'seccion': tipo, 'estado': 'error', 'errores': form.errors}
+
+    obj = form.save(commit=False)
+    obj.participante = identificacion
+    obj.uuid_local = uuid_local
+    if hasattr(obj, 'origen_registro'):
+        obj.origen_registro = (
+            SegmentoEMPA.OrigenDato.PERSONAL_MEDICO if usuario.es_profesional
+            else SegmentoEMPA.OrigenDato.AUTORREPORTADO
+        )
+    obj.sincronizado_en = timezone.now()
+    obj.save()
+    return {'seccion': tipo, 'estado': 'actualizado' if instancia else 'creado', 'id': obj.id}
+
+
+def sincronizar_payload(usuario, payload):
+    """
+    Procesa un payload de sincronización. Devuelve
+    ``{'ok': bool, 'resultados': [ {seccion, estado, ...}, ... ]}``.
+
+    Cada sección se guarda de forma independiente: un error de validación en una
+    no impide guardar las demás (semántica offline: guarda lo válido, informa lo
+    que no). Lanza `ErrorSincronizacion` solo ante problemas de formato o permisos.
+    """
+    if not isinstance(payload, dict):
+        raise ErrorSincronizacion("El cuerpo debe ser un objeto JSON.")
+
+    resultados = []
+    ident, res_ident = _resolver_identificacion(usuario, payload.get('identificacion'))
+    resultados.append(res_ident)
+    if ident is None:
+        return {'ok': False, 'resultados': resultados}
+
+    for bloque in payload.get('secciones') or []:
+        if not isinstance(bloque, dict) or bloque.get('tipo') not in SECCIONES:
+            resultados.append({
+                'seccion': (bloque or {}).get('tipo') if isinstance(bloque, dict) else None,
+                'estado': 'error',
+                'errores': {'tipo': ['Sección desconocida.']},
+            })
+            continue
+        resultados.append(_guardar_seccion(bloque, ident, usuario))
+
+    ok = all(r['estado'] != 'error' for r in resultados)
+    return {'ok': ok, 'resultados': resultados}

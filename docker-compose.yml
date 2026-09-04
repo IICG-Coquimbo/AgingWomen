@@ -25,6 +25,7 @@ services:
       - DB_PASSWORD=mi_contrasena_secreta
       - DB_HOST=db
       - DB_PORT=5432
+      - RUT_HASH_PEPPER=dev-pepper-local
     depends_on:
       - db
 

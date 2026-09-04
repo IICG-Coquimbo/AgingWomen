@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block titulo %}Inicio{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Bienvenida</h1>
+    <p>Has iniciado sesión como <strong>{{ user.get_rol_display }}</strong>.</p>
+    <p><a class="boton" href="{% url 'encuesta' %}">Responder la encuesta</a></p>
+    <div class="enlaces">
+        <a href="{% url 'password_change' %}">Cambiar mi contraseña</a>
+    </div>
+</div>
+{% endblock %}
