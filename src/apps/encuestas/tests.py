@@ -514,6 +514,46 @@ class IdentificacionFormComunaTest(TestCase):
         self.assertIn('comuna', form.errors)
 
 
+class IdentificacionFormEdadTest(TestCase):
+    base = {
+        'genero': 'F', 'nivel_educacion': 'M_COM', 'origen_procedencia': 'CL',
+        'pueblo_originario_afro': 'NINGUNO', 'region_residencia': '13', 'comuna': 'Santiago',
+        'trabaja_actualmente': '',
+    }
+
+    def _form(self, anios):
+        hoy = date.today()
+        return IdentificacionForm(data=dict(
+            self.base, fecha_nacimiento=f'{hoy.year - anios}-01-01'))
+
+    def test_rechaza_menor_de_40(self):
+        form = self._form(30)
+        self.assertFalse(form.is_valid())
+        self.assertIn('fecha_nacimiento', form.errors)
+
+    def test_acepta_40_o_mas(self):
+        self.assertTrue(self._form(45).is_valid(), self._form(45).errors)
+
+
+class SincronizacionEdadTest(TestCase):
+    def test_sync_rechaza_identificacion_menor_de_40(self):
+        usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
+        hoy = date.today()
+        payload = {
+            'identificacion': {'uuid_local': str(uuid4()), 'datos': {
+                'fecha_nacimiento': f'{hoy.year - 25}-06-01', 'genero': 'F',
+                'nivel_educacion': 'M_COM', 'origen_procedencia': 'CL',
+                'pueblo_originario_afro': 'NINGUNO', 'comuna': 'Santiago',
+                'region_residencia': '13',
+            }},
+            'secciones': [],
+        }
+        res = sincronizar_payload(usuaria, payload)
+        self.assertFalse(res['ok'])
+        self.assertEqual(res['resultados'][0]['estado'], 'error')
+        self.assertIn('fecha_nacimiento', res['resultados'][0]['errores'])
+
+
 class PaginaEncuestaTest(TestCase):
     def setUp(self):
         self.usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')

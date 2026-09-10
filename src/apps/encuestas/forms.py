@@ -1,3 +1,5 @@
+from datetime import date
+
 from django import forms
 
 from apps.usuarios.models import Usuario
@@ -64,6 +66,8 @@ class IdentificacionForm(EncuestaModelForm):
             'pueblo_originario_afro', 'region_residencia', 'comuna', 'trabaja_actualmente',
         )
 
+    EDAD_MINIMA = 40
+
     def clean(self):
         cleaned = super().clean()
         region = cleaned.get('region_residencia')
@@ -72,6 +76,20 @@ class IdentificacionForm(EncuestaModelForm):
             validas = COMUNAS_POR_REGION.get(region, [])
             if validas and comuna not in validas:
                 self.add_error('comuna', 'La comuna no corresponde a la región seleccionada.')
+
+        # Filtro de edad: el estudio es para personas de 40 años o más.
+        nacimiento = cleaned.get('fecha_nacimiento')
+        if nacimiento:
+            hoy = date.today()
+            edad = hoy.year - nacimiento.year - (
+                (hoy.month, hoy.day) < (nacimiento.month, nacimiento.day)
+            )
+            if edad < self.EDAD_MINIMA:
+                self.add_error(
+                    'fecha_nacimiento',
+                    f'La persona debe tener {self.EDAD_MINIMA} años o más para participar '
+                    f'en el estudio.',
+                )
         return cleaned
 
 

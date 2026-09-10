@@ -26,6 +26,7 @@
     var respuestas = {};   // { seccion: { campo: valor } }
     var uuids = {};        // { seccion: uuid }
     var indice = 0;        // índice dentro de las secciones aplicables
+    var bienvenidaOk = false;  // ya pasó la pantalla de definiciones + filtro de edad
 
     // ---------- IndexedDB ----------
     function abrirDB() {
@@ -60,11 +61,12 @@
 
     // ---------- Carga inicial ----------
     function iniciar() {
-        Promise.all([idbGet('esquema'), idbGet('respuestas'), idbGet('uuids')])
+        Promise.all([idbGet('esquema'), idbGet('respuestas'), idbGet('uuids'), idbGet('bienvenida')])
             .then(function (vals) {
                 esquema = vals[0];
                 respuestas = vals[1] || {};
                 uuids = vals[2] || {};
+                bienvenidaOk = !!vals[3];
                 return traerEsquema();
             })
             .then(function () {
@@ -174,8 +176,69 @@
         });
     }
 
+    // ---------- Pantalla de bienvenida: definiciones + filtro de edad ----------
+    function edadDesde(iso) {
+        if (!iso) { return null; }
+        var d = new Date(iso + 'T00:00:00');
+        if (isNaN(d.getTime())) { return null; }
+        var hoy = new Date();
+        var e = hoy.getFullYear() - d.getFullYear();
+        if (hoy.getMonth() < d.getMonth() ||
+            (hoy.getMonth() === d.getMonth() && hoy.getDate() < d.getDate())) { e--; }
+        return e;
+    }
+
+    function renderBienvenida() {
+        var defs = esquema.definiciones || [];
+        var edadMin = esquema.edad_minima || 40;
+        var fn = (respuestas.identificacion || {}).fecha_nacimiento || '';
+
+        var html = '<div class="tarjeta bienvenida">';
+        html += '<h1>Antes de empezar</h1>';
+        if (defs.length) {
+            html += '<div class="definiciones">';
+            defs.forEach(function (d) {
+                html += '<div class="definicion"><h2>' + esc(d.termino) + '</h2><p>' +
+                    esc(d.texto) + '</p></div>';
+            });
+            html += '</div>';
+        }
+        html += '<div class="gate"><p>Esta encuesta está dirigida a personas de <strong>' +
+            edadMin + ' años o más</strong>. Ingresa tu fecha de nacimiento para continuar:</p>';
+        html += '<label for="g_fn">Fecha de nacimiento</label>';
+        html += '<input id="g_fn" type="date" value="' + esc(fn) + '">';
+        html += '<p id="g_error" class="errores" hidden></p>';
+        html += '<button type="button" id="g_ok">Comenzar</button></div></div>';
+        cont.innerHTML = html;
+
+        var input = document.getElementById('g_fn');
+        var err = document.getElementById('g_error');
+        input.addEventListener('input', function () { err.hidden = true; });
+        document.getElementById('g_ok').addEventListener('click', function () {
+            var edad = edadDesde(input.value);
+            if (edad === null) {
+                err.textContent = 'Ingresa tu fecha de nacimiento.'; err.hidden = false; return;
+            }
+            if (edad < edadMin) {
+                err.textContent = 'Esta encuesta está dirigida a personas de ' + edadMin +
+                    ' años o más, por lo que no puedes continuar. Gracias por tu interés.';
+                err.hidden = false;
+                return;
+            }
+            if (!respuestas.identificacion) { respuestas.identificacion = {}; }
+            respuestas.identificacion.fecha_nacimiento = input.value;
+            idbSet('respuestas', respuestas);
+            bienvenidaOk = true;
+            idbSet('bienvenida', true);
+            indice = 0;
+            render();
+        });
+    }
+
     // ---------- Render ----------
     function render() {
+        if (!bienvenidaOk) { renderBienvenida(); return; }
+
         var secs = seccionesAplicables();
         indice = Math.max(0, Math.min(indice, secs.length - 1));
         var seccion = secs[indice];
@@ -184,10 +247,17 @@
         html += '<div class="tarjeta seccion">';
         html += '<p class="paso">Sección ' + (indice + 1) + ' de ' + secs.length + '</p>';
         html += '<h1>' + esc(seccion.titulo) + '</h1>';
+        if (seccion.descripcion) {
+            html += '<p class="seccion-intro">' + esc(seccion.descripcion) + '</p>';
+        }
+        if (esquema.mensaje_omitir) {
+            html += '<p class="seccion-omitir">' + esc(esquema.mensaje_omitir) + '</p>';
+        }
         preguntasVisibles(seccion).forEach(function (p) { html += renderPregunta(seccion, p); });
 
         html += '<div class="nav">';
         if (indice > 0) { html += '<button type="button" data-nav="prev">Anterior</button>'; }
+        html += '<button type="button" class="boton-guardar" data-nav="guardar">Guardar cambios</button>';
         if (indice < secs.length - 1) {
             html += '<button type="button" data-nav="next">Siguiente</button>';
         } else {
@@ -339,6 +409,7 @@
                 var a = b.getAttribute('data-nav');
                 if (a === 'prev') { indice--; render(); }
                 else if (a === 'next') { indice++; render(); }
+                else if (a === 'guardar') { guardarCambios(); }
                 else { finalizar(); }
             });
         });
@@ -455,8 +526,16 @@
         el.className = 'estado-sync ' + (clase || '');
         el.textContent = texto;
         if (clase === 'ok') {
-            setTimeout(function () { if (navigator.onLine) { el.hidden = true; } }, 4000);
+            setTimeout(function () { el.hidden = true; mostrarConexion(); }, 4000);
         }
+    }
+
+    function guardarCambios() {
+        idbSet('respuestas', respuestas);
+        avisoSync(navigator.onLine
+            ? 'Cambios guardados. Sincronizando…'
+            : 'Cambios guardados en este dispositivo.', 'ok');
+        intentarSync(false);  // si hay conexión, sincroniza y muestra su propio aviso
     }
 
     function alRecuperarConexion() {

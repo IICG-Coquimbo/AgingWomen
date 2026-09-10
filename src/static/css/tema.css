@@ -189,8 +189,51 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
 }
 .opcion input { width: auto; }
 
-.nav { display: flex; justify-content: space-between; gap: .75rem; margin-top: 1.5rem; }
-.nav button:only-child { margin-left: auto; }
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .6rem;
+    margin-top: 1.5rem;
+}
+.nav [data-nav="prev"] { margin-right: auto; }
+.boton-guardar {
+    background: transparent;
+    color: var(--color-primario);
+    border: 1px solid var(--color-primario-claro);
+}
+.boton-guardar:hover { background: var(--color-primario-suave); }
+
+/* === Texto introductorio y aviso de cada sección === */
+.seccion-intro {
+    margin: .25rem 0 .75rem;
+    color: var(--color-texto);
+}
+.seccion-omitir {
+    margin: 0 0 1rem;
+    padding: .5rem .75rem;
+    background: var(--color-primario-suave);
+    border-radius: 6px;
+    font-size: .85rem;
+    color: var(--color-texto-suave);
+}
+
+/* === Pantalla de bienvenida (definiciones + filtro de edad) === */
+.bienvenida h1 { margin-bottom: .75rem; }
+.definiciones { display: grid; gap: .75rem; margin-bottom: 1.5rem; }
+.definicion {
+    background: var(--color-primario-suave);
+    border: 1px solid var(--color-primario-claro);
+    border-radius: 8px;
+    padding: .85rem 1rem;
+}
+.definicion h2 { margin: 0 0 .3rem; font-size: 1rem; color: var(--color-primario-oscuro); }
+.definicion p { margin: 0; font-size: .92rem; }
+.gate { border-top: 1px solid var(--color-borde); padding-top: 1rem; }
+.gate label { margin-top: .5rem; }
+.gate input { max-width: 16rem; }
+.gate button { margin-top: .9rem; }
 
 /* === Escala de calor MRS (Fase 7D) === */
 .escala-calor {
