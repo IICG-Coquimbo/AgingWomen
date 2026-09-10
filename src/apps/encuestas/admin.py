@@ -4,7 +4,7 @@ from .models import (
     ActividadFisica,
     ConocimientoSistema,
     EvaluacionTrabajo,
-    HabitosAlimenticios,
+    HabitosDeVida,
     Identificacion,
     MRS,
     SegmentoEMPA,
@@ -108,8 +108,8 @@ class ActividadFisicaAdmin(admin.ModelAdmin):
     readonly_fields = ('fecha_evaluacion',) + _SYNC
 
 
-@admin.register(HabitosAlimenticios)
-class HabitosAlimenticiosAdmin(admin.ModelAdmin):
+@admin.register(HabitosDeVida)
+class HabitosDeVidaAdmin(admin.ModelAdmin):
     list_display = ('id', 'participante', 'fecha_evaluacion', 'quien_prepara_comidas')
     list_select_related = ('participante',)
     raw_id_fields = ('participante',)

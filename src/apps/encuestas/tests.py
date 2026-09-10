@@ -12,7 +12,7 @@ from .models import (
     ActividadFisica,
     ConocimientoSistema,
     EvaluacionTrabajo,
-    HabitosAlimenticios,
+    HabitosDeVida,
     Identificacion,
     MRS,
     SegmentoEMPA,
@@ -318,8 +318,27 @@ class EsquemaTest(TestCase):
         tipos = [s['tipo'] for s in esquema['secciones']]
         self.assertEqual(tipos, [
             'identificacion', 'trabajo', 'tareas_cuidado', 'mrs', 'mrs_complementario',
-            'empa', 'actividad_fisica', 'habitos_alimenticios', 'conocimiento_sistema',
+            'empa', 'habitos_de_vida', 'actividad_fisica', 'conocimiento_sistema',
         ])
+
+    def test_habitos_de_vida_usa_escalas_de_cinco_niveles(self):
+        hv = self._seccion(self._esquema(self.usuaria), 'habitos_de_vida')
+        nombres = {p['nombre'] for p in hv['preguntas']}
+        # Consumo de sustancias movido desde el EMPA.
+        self.assertLessEqual({'tabaco_frecuencia', 'marihuana_frecuencia',
+                              'alcohol_frecuencia'}, nombres)
+        # Todas las cantidades/frecuencias son ahora preguntas de opción (5 niveles).
+        for campo in ('vasos_agua_dia', 'pescado_semana', 'golosinas_semana',
+                      'tabaco_frecuencia'):
+            p = self._pregunta(hv, campo)
+            self.assertEqual(p['tipo_campo'], 'opciones', campo)
+            self.assertEqual(len(p['opciones']), 5, campo)
+        # Nota informativa del tabaco y campo libre condicional de "quién prepara".
+        self.assertIn('terapia hormonal', self._pregunta(hv, 'tabaco_frecuencia')['nota'])
+        self.assertEqual(
+            self._pregunta(hv, 'quien_prepara_comidas_otro')['mostrar_si'],
+            {'campo': 'quien_prepara_comidas', 'valor': 'OTRO'},
+        )
 
     def test_mrs_y_complementario_son_pantallas_separadas_del_mismo_registro(self):
         esquema = self._esquema(self.usuaria)
@@ -540,7 +559,7 @@ class SincronizacionCompletaTest(TestCase):
                     ('mrs', {'pregunta_1': 2, 'pregunta_2': 1}),
                     ('empa', {'peso_kg': '65', 'talla_actual_cm': 158}),
                     ('actividad_fisica', {'dias_ejercicio_semana': 3}),
-                    ('habitos_alimenticios', {'vasos_agua_dia': 6}),
+                    ('habitos_de_vida', {'vasos_agua_dia': 4, 'tabaco_frecuencia': 1}),
                     ('conocimiento_sistema', {'conoce_sistema_publico_climaterio': 'NO'}),
                 ]
             ],
@@ -553,8 +572,8 @@ class SincronizacionCompletaTest(TestCase):
         self.assertEqual(ident.evaluaciones_mrs.count(), 1)
         self.assertEqual(ident.evaluaciones_empa.count(), 1)
         self.assertEqual(ident.evaluaciones_actividad_fisica.count(), 1)
-        self.assertEqual(ident.evaluaciones_habitos_alimenticios.count(), 1)
+        self.assertEqual(ident.evaluaciones_habitos_de_vida.count(), 1)
         self.assertEqual(ident.evaluaciones_conocimiento_sistema.count(), 1)
         self.assertEqual(ActividadFisica.objects.get().dias_ejercicio_semana, 3)
-        self.assertEqual(HabitosAlimenticios.objects.get().vasos_agua_dia, 6)
+        self.assertEqual(HabitosDeVida.objects.get().vasos_agua_dia, 4)
         self.assertEqual(ConocimientoSistema.objects.get().conoce_sistema_publico_climaterio, 'NO')

@@ -31,6 +31,9 @@ PREGUNTAS_CONDICIONALES = {
     'TareasCuidado': {
         'mas_de_una_persona_a_cargo': {'campo': 'cuida_otras_personas', 'valor': 'SI'},
     },
+    'HabitosDeVida': {
+        'quien_prepara_comidas_otro': {'campo': 'quien_prepara_comidas', 'valor': 'OTRO'},
+    },
     'ActividadFisica': {
         'frecuencia_aerobico': {'campo': 'realiza_aerobico', 'valor': 'SI'},
         'frecuencia_bajo_impacto': {'campo': 'realiza_bajo_impacto', 'valor': 'SI'},

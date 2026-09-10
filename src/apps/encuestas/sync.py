@@ -17,7 +17,7 @@ from .forms import (
     ActividadFisicaForm,
     ConocimientoSistemaForm,
     EvaluacionTrabajoForm,
-    HabitosAlimenticiosForm,
+    HabitosDeVidaForm,
     IdentificacionForm,
     MRSForm,
     SegmentoEMPAForm,
@@ -27,7 +27,7 @@ from .models import (
     ActividadFisica,
     ConocimientoSistema,
     EvaluacionTrabajo,
-    HabitosAlimenticios,
+    HabitosDeVida,
     Identificacion,
     MRS,
     SegmentoEMPA,
@@ -41,8 +41,8 @@ SECCIONES = {
     'conocimiento_sistema': (ConocimientoSistema, ConocimientoSistemaForm),
     'trabajo': (EvaluacionTrabajo, EvaluacionTrabajoForm),
     'tareas_cuidado': (TareasCuidado, TareasCuidadoForm),
+    'habitos_de_vida': (HabitosDeVida, HabitosDeVidaForm),
     'actividad_fisica': (ActividadFisica, ActividadFisicaForm),
-    'habitos_alimenticios': (HabitosAlimenticios, HabitosAlimenticiosForm),
 }
 
 

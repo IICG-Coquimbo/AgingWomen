@@ -14,7 +14,7 @@ from .forms import (
     ActividadFisicaForm,
     ConocimientoSistemaForm,
     EvaluacionTrabajoForm,
-    HabitosAlimenticiosForm,
+    HabitosDeVidaForm,
     IdentificacionForm,
     MRSForm,
     SegmentoEMPAForm,
@@ -33,13 +33,24 @@ ORDEN_SECCIONES = [
     ('mrs', 'Escala de Evaluación de la Menopausia (MRS)', MRSForm, 'likert'),
     ('mrs_complementario', 'Cuestionario complementario', MRSForm, 'complementario'),
     ('empa', 'Examen de Medicina Preventiva del Adulto (EMPA)', SegmentoEMPAForm, None),
+    ('habitos_de_vida', 'Hábitos de vida', HabitosDeVidaForm, None),
     ('actividad_fisica', 'Actividad física', ActividadFisicaForm, None),
-    ('habitos_alimenticios', 'Hábitos alimenticios', HabitosAlimenticiosForm, None),
     ('conocimiento_sistema', 'Conocimiento del sistema de salud', ConocimientoSistemaForm, None),
 ]
 
 MRS_PREGUNTAS = {f'pregunta_{i}' for i in range(1, 12)}
 GRUPO_MRS = 'mrs'
+
+# Nota informativa que acompaña a una pregunta (se muestra bajo el enunciado).
+# {NombreModelo: {campo: 'texto de la nota'}}
+NOTAS_PREGUNTA = {
+    'HabitosDeVida': {
+        'tabaco_frecuencia': (
+            "El consumo de tabaco influye significativamente en la efectividad y "
+            "contraindicaciones de los tratamientos de terapia hormonal."
+        ),
+    },
+}
 
 
 def _tipo_campo(campo):
@@ -71,6 +82,7 @@ def construir_esquema(rol):
         form = form_cls(rol=rol)
         modelo = form._meta.model.__name__
         condicionales = PREGUNTAS_CONDICIONALES.get(modelo, {})
+        notas = NOTAS_PREGUNTA.get(modelo, {})
 
         campos = list(form.fields.items())
         if parte == 'likert':
@@ -98,6 +110,7 @@ def construir_esquema(rol):
                 'escala': 'mrs' if (modelo == 'MRS' and nombre in MRS_PREGUNTAS) else None,
                 'mostrar_si': condicionales.get(nombre),
                 'depende_de': 'region_residencia' if nombre == 'comuna' else None,
+                'nota': notas.get(nombre),
             })
 
         seccion = {

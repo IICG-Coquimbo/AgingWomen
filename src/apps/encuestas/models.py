@@ -1065,32 +1065,33 @@ class ActividadFisica(SegmentoSincronizable):
 
 
 # ===========================================================================
-# 8. HÁBITOS ALIMENTICIOS (sección nueva)
+# 8. HÁBITOS DE VIDA (antes "Hábitos alimenticios")
 # ===========================================================================
 
-class HabitosAlimenticios(SegmentoSincronizable):
+class HabitosDeVida(SegmentoSincronizable):
     """
-    Hábitos de alimentación (Sección 8 del Excel). Las preguntas de cantidad /
-    frecuencia específica se guardan como valores numéricos (excepción lógica
-    a la escala unificada de 5 niveles, Sección 3.4 del spec).
+    Hábitos de alimentación y consumo de sustancias (tabaco, marihuana,
+    alcohol). Todas las cantidades y frecuencias usan escalas de 5 niveles
+    (regla de la profesora — requisitos finales, sección 6). El consumo de
+    sustancias se trasladó aquí desde el EMPA.
     """
 
     class QuienPreparaComidas(models.TextChoices):
-        YO_MISMA = 'YO_MISMA', 'Yo misma'
-        PAREJA = 'PAREJA', 'Pareja'
-        OTRO_FAMILIAR = 'OTRO_FAMILIAR', 'Otro familiar'
-        EMPLEADA = 'EMPLEADA', 'Empleada doméstica'
-        COMPRO_PREPARADO = 'COMPRO', 'Compro preparado'
+        YO_MAYORIA = 'YO_MAYORIA', 'Yo preparo la mayoría'
+        COMPARTIDO = 'COMPARTIDO', 'Yo preparo algunas y otras personas otras'
+        OTRA_PERSONA_HOGAR = 'OTRA_HOGAR', 'Otra persona de mi hogar prepara la mayoría'
+        COMPRO_PREPARADA = 'COMPRO', 'Generalmente compro comida preparada'
+        DELIVERY = 'DELIVERY', 'Generalmente pido delivery'
         OTRO = 'OTRO', 'Otro'
 
     participante = models.ForeignKey(
         Identificacion,
         on_delete=models.CASCADE,
-        related_name='evaluaciones_habitos_alimenticios'
+        related_name='evaluaciones_habitos_de_vida'
     )
     fecha_evaluacion = models.DateField(
         auto_now_add=True,
-        help_text="Fecha en que se responde la sección Hábitos Alimenticios"
+        help_text="Fecha en que se responde la sección Hábitos de vida"
     )
 
     quien_prepara_comidas = models.CharField(
@@ -1099,65 +1100,97 @@ class HabitosAlimenticios(SegmentoSincronizable):
         null=True, blank=True,
         help_text="¿Quién prepara habitualmente sus comidas principales?"
     )
+    quien_prepara_comidas_otro = models.CharField(
+        max_length=100,
+        null=True, blank=True,
+        help_text='Si seleccionó "Otro", ¿quién prepara sus comidas?'
+    )
     frecuencia_comida_fuera = models.IntegerField(
-        choices=EscalaFrecuencia.choices,
+        choices=EscalaFrecuenciaSemanal.choices,
         null=True, blank=True,
         help_text="¿Con qué frecuencia consume comidas compradas/preparadas fuera del hogar?"
     )
     falta_tiempo_influye = models.IntegerField(
-        choices=EscalaNadaMucho.choices,
+        choices=EscalaFrecuenciaSubjetiva.choices,
         null=True, blank=True,
         help_text="¿La falta de tiempo influye en su elección de alimentos?"
     )
     vasos_agua_dia = models.PositiveSmallIntegerField(
+        choices=EscalaPorciones.choices,
         null=True, blank=True,
         help_text="¿Cuántos vasos de agua toma al día?"
     )
     platos_verduras_dia = models.PositiveSmallIntegerField(
+        choices=EscalaPorciones.choices,
         null=True, blank=True,
         help_text="¿Cuántos platos de verduras o ensaladas come al día?"
     )
     frutas_dia = models.PositiveSmallIntegerField(
+        choices=EscalaPorciones.choices,
         null=True, blank=True,
         help_text="¿Cuántas frutas come cada día?"
     )
     panes_dia = models.PositiveSmallIntegerField(
+        choices=EscalaPorciones.choices,
         null=True, blank=True,
         help_text="¿Cuántos panes (marraqueta, hallulla) come al día?"
     )
     lacteos_dia = models.PositiveSmallIntegerField(
+        choices=EscalaPorciones.choices,
         null=True, blank=True,
-        help_text="¿Cuántos productos lácteos (leche descremada, quesillo, yogurt) come cada día?"
-    )
-    pescado_semana = models.PositiveSmallIntegerField(
-        null=True, blank=True,
-        help_text="¿Cuántas veces a la semana come pescado?"
+        help_text="¿Cuántos productos lácteos come al día?"
     )
     jugos_gaseosas_dia = models.PositiveSmallIntegerField(
+        choices=EscalaPorciones.choices,
         null=True, blank=True,
         help_text="¿Cuántos vasos al día toma de jugos y/o bebidas gaseosas?"
     )
     bebidas_energeticas_dia = models.PositiveSmallIntegerField(
+        choices=EscalaPorciones.choices,
         null=True, blank=True,
         help_text="¿Cuántos vasos al día toma de bebidas energéticas?"
     )
-    legumbres_semana = models.PositiveSmallIntegerField(
+    pescado_semana = models.PositiveSmallIntegerField(
+        choices=EscalaFrecuenciaSemanal.choices,
         null=True, blank=True,
-        help_text="¿Cuántas veces a la semana come legumbres (lentejas, arvejas, porotos, garbanzos)?"
+        help_text="¿Cuántas veces a la semana come pescado?"
+    )
+    legumbres_semana = models.PositiveSmallIntegerField(
+        choices=EscalaFrecuenciaSemanal.choices,
+        null=True, blank=True,
+        help_text="¿Cuántas veces a la semana come legumbres?"
     )
     carnes_semana = models.PositiveSmallIntegerField(
+        choices=EscalaFrecuenciaSemanal.choices,
         null=True, blank=True,
         help_text="¿Cuántas veces a la semana come carnes (pollo, carne, cerdo)?"
     )
     golosinas_semana = models.PositiveSmallIntegerField(
+        choices=EscalaFrecuenciaSemanal.choices,
         null=True, blank=True,
-        help_text="¿Cuántas veces a la semana come pasteles, dulces, chocolates, golosinas, helados, snacks salados?"
+        help_text=("¿Cuántas veces a la semana come pasteles, dulces, chocolates, "
+                   "golosinas, helados o snacks salados?")
+    )
+    tabaco_frecuencia = models.PositiveSmallIntegerField(
+        choices=EscalaFrecuenciaSemanal.choices,
+        null=True, blank=True,
+        help_text="¿Fuma tabaco o cigarrillo?"
+    )
+    marihuana_frecuencia = models.PositiveSmallIntegerField(
+        choices=EscalaFrecuenciaSemanal.choices,
+        null=True, blank=True,
+        help_text="¿Fuma marihuana?"
+    )
+    alcohol_frecuencia = models.PositiveSmallIntegerField(
+        choices=EscalaFrecuenciaSemanal.choices,
+        null=True, blank=True,
+        help_text="¿Consume bebidas alcohólicas?"
     )
 
     class Meta:
         ordering = ['-fecha_evaluacion']
-        verbose_name = "Sección Hábitos Alimenticios"
-        verbose_name_plural = "Secciones Hábitos Alimenticios"
+        verbose_name = "Sección Hábitos de Vida"
+        verbose_name_plural = "Secciones Hábitos de Vida"
 
     def __str__(self):
-        return f"Hábitos Alimenticios de {self.participante} - {self.fecha_evaluacion}"
+        return f"Hábitos de Vida de {self.participante} - {self.fecha_evaluacion}"

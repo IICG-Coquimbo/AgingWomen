@@ -170,6 +170,15 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
 .pregunta { margin: 1.25rem 0; }
 .pregunta > label { display: block; font-weight: 600; margin-bottom: .4rem; }
 .pregunta .req { color: var(--color-acento); }
+.pregunta-nota {
+    margin: -.15rem 0 .5rem;
+    padding: .5rem .7rem;
+    background: var(--color-primario-suave);
+    border-left: 3px solid var(--color-primario-claro);
+    border-radius: 6px;
+    font-size: .85rem;
+    color: var(--color-texto-suave);
+}
 .opcion {
     display: flex;
     align-items: center;

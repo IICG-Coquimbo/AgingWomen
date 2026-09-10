@@ -8,7 +8,7 @@ from .models import (
     ActividadFisica,
     ConocimientoSistema,
     EvaluacionTrabajo,
-    HabitosAlimenticios,
+    HabitosDeVida,
     Identificacion,
     MRS,
     SegmentoEMPA,
@@ -99,9 +99,9 @@ class ActividadFisicaForm(EncuestaModelForm):
         exclude = ('participante', 'fecha_evaluacion')
 
 
-class HabitosAlimenticiosForm(EncuestaModelForm):
+class HabitosDeVidaForm(EncuestaModelForm):
     class Meta:
-        model = HabitosAlimenticios
+        model = HabitosDeVida
         exclude = ('participante', 'fecha_evaluacion')
 
 

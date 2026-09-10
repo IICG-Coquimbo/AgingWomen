@@ -186,6 +186,7 @@
         var out = '<div class="pregunta' + (p.escala === 'mrs' ? ' pregunta-mrs' : '') +
             '" data-campo="' + p.nombre + '">';
         out += '<label for="' + id + '">' + esc(p.texto) + req + '</label>';
+        if (p.nota) { out += '<p class="pregunta-nota">' + esc(p.nota) + '</p>'; }
 
         if (p.escala === 'mrs') {
             out += renderEscalaCalor(id, p, v);
