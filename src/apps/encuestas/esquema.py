@@ -22,19 +22,24 @@ from .forms import (
 )
 from .models import MRS
 
-# Orden en que se presenta la encuesta (mismo orden del Excel).
+# Orden en que se presenta la encuesta.
+# 4º elemento = "parte": None usa todos los campos del formulario; 'likert' y
+# 'complementario' parten el MRS en dos pantallas (mismo modelo, mismo registro:
+# ambas llevan grupo 'mrs' y el cliente las sincroniza juntas).
 ORDEN_SECCIONES = [
-    ('identificacion', 'Identificación', IdentificacionForm),
-    ('trabajo', 'Trabajo', EvaluacionTrabajoForm),
-    ('tareas_cuidado', 'Tareas de cuidado', TareasCuidadoForm),
-    ('mrs', 'Escala MRS y cuestionario complementario', MRSForm),
-    ('empa', 'Examen de Medicina Preventiva del Adulto (EMPA)', SegmentoEMPAForm),
-    ('actividad_fisica', 'Actividad física', ActividadFisicaForm),
-    ('habitos_alimenticios', 'Hábitos alimenticios', HabitosAlimenticiosForm),
-    ('conocimiento_sistema', 'Conocimiento del sistema de salud', ConocimientoSistemaForm),
+    ('identificacion', 'Identificación', IdentificacionForm, None),
+    ('trabajo', 'Trabajo', EvaluacionTrabajoForm, None),
+    ('tareas_cuidado', 'Tareas de cuidado', TareasCuidadoForm, None),
+    ('mrs', 'Escala de Evaluación de la Menopausia (MRS)', MRSForm, 'likert'),
+    ('mrs_complementario', 'Cuestionario complementario', MRSForm, 'complementario'),
+    ('empa', 'Examen de Medicina Preventiva del Adulto (EMPA)', SegmentoEMPAForm, None),
+    ('actividad_fisica', 'Actividad física', ActividadFisicaForm, None),
+    ('habitos_alimenticios', 'Hábitos alimenticios', HabitosAlimenticiosForm, None),
+    ('conocimiento_sistema', 'Conocimiento del sistema de salud', ConocimientoSistemaForm, None),
 ]
 
 MRS_PREGUNTAS = {f'pregunta_{i}' for i in range(1, 12)}
+GRUPO_MRS = 'mrs'
 
 
 def _tipo_campo(campo):
@@ -62,13 +67,19 @@ def _opciones(campo):
 
 def construir_esquema(rol):
     secciones = []
-    for tipo, titulo, form_cls in ORDEN_SECCIONES:
+    for tipo, titulo, form_cls, parte in ORDEN_SECCIONES:
         form = form_cls(rol=rol)
         modelo = form._meta.model.__name__
         condicionales = PREGUNTAS_CONDICIONALES.get(modelo, {})
 
+        campos = list(form.fields.items())
+        if parte == 'likert':
+            campos = [(n, c) for n, c in campos if n in MRS_PREGUNTAS]
+        elif parte == 'complementario':
+            campos = [(n, c) for n, c in campos if n not in MRS_PREGUNTAS]
+
         preguntas = []
-        for nombre, campo in form.fields.items():
+        for nombre, campo in campos:
             tc = _tipo_campo(campo)
             if tc == 'opciones':
                 opciones = _opciones(campo)
@@ -89,12 +100,16 @@ def construir_esquema(rol):
                 'depende_de': 'region_residencia' if nombre == 'comuna' else None,
             })
 
-        secciones.append({
+        seccion = {
             'tipo': tipo,
             'titulo': titulo,
             'mostrar_si': SECCIONES_CONDICIONALES.get(tipo),
             'preguntas': preguntas,
-        })
+        }
+        if parte in ('likert', 'complementario'):
+            # Las dos pantallas del MRS se guardan en un único registro.
+            seccion['grupo'] = GRUPO_MRS
+        secciones.append(seccion)
 
     return {
         'secciones': secciones,

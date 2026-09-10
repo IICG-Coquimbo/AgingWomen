@@ -1,5 +1,7 @@
-from django.db import models
+import re
 from datetime import date
+
+from django.db import models
 
 
 # ===========================================================================
@@ -7,6 +9,8 @@ from datetime import date
 # ---------------------------------------------------------------------------
 # Todas las secciones de autoevaluación de la plataforma se unifican a un
 # formato de 5 alternativas. La escala clínica MRS mantiene su rango 0-4.
+# Excepciones puntuales de 4 alternativas (evacuación intestinal, distensión
+# abdominal) cuando la pregunta no admite un punto medio natural.
 # ===========================================================================
 
 class EscalaNadaMucho(models.IntegerChoices):
@@ -33,12 +37,63 @@ class EscalaAcuerdo(models.IntegerChoices):
     MUY_DE_ACUERDO = 5, 'Muy de acuerdo'
 
 
-class EscalaConsumoSemanal(models.IntegerChoices):
+class EscalaFrecuenciaSemanal(models.IntegerChoices):
+    """Frecuencia de consumo/hábito en una semana habitual (5 niveles)."""
     NUNCA = 1, 'Nunca'
     UNA_DOS = 2, '1-2 veces por semana'
     TRES_CUATRO = 3, '3-4 veces por semana'
     CINCO_SEIS = 4, '5-6 veces por semana'
     DIARIAMENTE = 5, 'Diariamente'
+
+
+class EscalaPorciones(models.IntegerChoices):
+    """Cantidad diaria consumida, expresada en tramos (vasos / porciones / platos)."""
+    NO_CONSUMO = 1, 'No consumo'
+    UNA_DOS = 2, '1-2 porciones'
+    TRES_CUATRO = 3, '3-4 porciones'
+    CINCO_SEIS = 4, '5-6 porciones'
+    SIETE_O_MAS = 5, '7 o más porciones'
+
+
+class EscalaFrecuenciaSubjetiva(models.IntegerChoices):
+    """Frecuencia percibida de una situación (5 niveles, sin anclaje temporal exacto)."""
+    NUNCA_CASI_NUNCA = 1, 'Nunca o casi nunca'
+    RARA_VEZ = 2, 'Rara vez'
+    A_VECES = 3, 'A veces'
+    FRECUENTEMENTE = 4, 'Frecuentemente'
+    SIEMPRE = 5, 'Siempre'
+
+
+class EscalaEstresLaboral(models.IntegerChoices):
+    """Nivel de estrés que genera el entorno laboral (1 = nada, 5 = extremo)."""
+    NADA = 1, 'Nada de estrés'
+    LEVE = 2, 'Estrés leve'
+    MODERADO = 3, 'Estrés moderado'
+    ALTO = 4, 'Estrés alto'
+    EXTREMO = 5, 'Estrés extremo'
+
+
+class FrecuenciaEvacuacionIntestinal(models.IntegerChoices):
+    """Frecuencia de evacuación intestinal (Cuestionario Complementario MRS)."""
+    MAS_DE_UNA_AL_DIA = 1, 'Más de una vez al día'
+    UNA_AL_DIA = 2, '1 vez al día'
+    CADA_DOS_DIAS = 3, 'Cada 2 días'
+    TRES_O_MAS_DIAS = 4, '3 o más días entre evacuaciones'
+
+
+class FrecuenciaDistensionAbdominal(models.IntegerChoices):
+    """Frecuencia de distensión abdominal (Cuestionario Complementario MRS)."""
+    NUNCA_CASI_NUNCA = 1, 'Nunca o casi nunca'
+    A_VECES = 2, 'A veces'
+    FRECUENTEMENTE = 3, 'Frecuentemente'
+    SIEMPRE = 4, 'Siempre'
+
+
+class CantidadPersonasCuidado(models.IntegerChoices):
+    """Cantidad de personas bajo cuidado directo (sección Tareas de Cuidado)."""
+    UNA = 1, '1 persona'
+    DOS = 2, '2 personas'
+    TRES_O_MAS = 3, '3 o más personas'
 
 
 class RespuestaSiNo(models.TextChoices):
@@ -50,6 +105,48 @@ class RespuestaSiNoNoSabe(models.TextChoices):
     SI = 'SI', 'Sí'
     NO = 'NO', 'No'
     NO_SABE = 'NS', 'No sabe'
+
+
+def meses_desde_texto_fecha(texto):
+    """
+    Meses entre una fecha escrita como texto libre y hoy.
+
+    Acepta ``AAAA``, ``AAAA-MM``, ``AAAA/MM``, ``MM/AAAA``, ``AAAA-MM-DD`` y
+    ``DD/MM/AAAA``. Cuando solo hay año se asume julio (mitad de año).
+    Devuelve ``None`` si el texto no se puede interpretar. La lógica de
+    "ausencia menstrual" (Cuestionario Complementario MRS) se apoya en esto,
+    y el cliente replica el mismo cálculo para ocultar preguntas offline.
+    """
+    txt = (texto or '').strip()
+    if not txt:
+        return None
+
+    anio = mes = None
+    m = re.fullmatch(r'(\d{4})', txt)
+    if m:
+        anio, mes = int(m.group(1)), 7
+    if anio is None:
+        m = re.fullmatch(r'(\d{4})[-/](\d{1,2})', txt)
+        if m:
+            anio, mes = int(m.group(1)), int(m.group(2))
+    if anio is None:
+        m = re.fullmatch(r'(\d{1,2})[-/](\d{4})', txt)
+        if m:
+            mes, anio = int(m.group(1)), int(m.group(2))
+    if anio is None:
+        m = re.fullmatch(r'(\d{4})[-/](\d{1,2})[-/](\d{1,2})', txt)
+        if m:
+            anio, mes = int(m.group(1)), int(m.group(2))
+    if anio is None:
+        m = re.fullmatch(r'(\d{1,2})[-/](\d{1,2})[-/](\d{4})', txt)
+        if m:
+            mes, anio = int(m.group(2)), int(m.group(3))
+
+    if anio is None or mes is None or not (1 <= mes <= 12):
+        return None
+
+    hoy = date.today()
+    return (hoy.year - anio) * 12 + (hoy.month - mes)
 
 
 # ===========================================================================
@@ -318,8 +415,17 @@ class MRS(SegmentoSincronizable):
         DIU = 'DIU', 'DIU'
         IMPLANTE = 'IMPLANTE', 'Implante'
         PRESERVATIVO = 'PRESERVATIVO', 'Preservativo'
+        NO_SE = 'NO_SE', 'No sé'
         OTRO = 'OTRO', 'Otro'
 
+    # --- Cuestionario Complementario MRS ---
+    # La fecha de la última menstruación va primero: de ella depende la lógica
+    # de "ausencia menstrual" (≥12 meses ⇒ se ocultan regularidad y sangrado).
+    fecha_ultima_menstruacion = models.CharField(
+        max_length=10,
+        null=True, blank=True,
+        help_text="Fecha de la última menstruación (regla) - puede ser solo el año"
+    )
     menstruacion_llega = models.CharField(
         max_length=10,
         choices=FrecuenciaMenstruacion.choices,
@@ -344,11 +450,16 @@ class MRS(SegmentoSincronizable):
         null=True, blank=True,
         help_text="Si la respuesta es sí, ¿qué tipo utiliza?"
     )
+    tipo_metodo_anticonceptivo_otro = models.CharField(
+        max_length=100,
+        null=True, blank=True,
+        help_text='Si seleccionó "Otro", ¿cuál método anticonceptivo?'
+    )
     usa_terapia_hormonal = models.CharField(
         max_length=2,
         choices=RespuestaSiNo.choices,
         null=True, blank=True,
-        help_text="¿Usa hormonas (terapia hormonal)?"
+        help_text="¿Usa tratamiento de terapia hormonal?"
     )
     operada_no_mas_hijos = models.CharField(
         max_length=2,
@@ -389,35 +500,29 @@ class MRS(SegmentoSincronizable):
         max_length=2,
         choices=RespuestaSiNo.choices,
         null=True, blank=True,
-        help_text="¿Usa antidepresivos o remedios para dormir?"
+        help_text="¿Usa antidepresivos o medicamentos para dormir?"
     )
-    usa_remedios_diabetes = models.CharField(
+    usa_medicamentos_diabetes = models.CharField(
         max_length=2,
         choices=RespuestaSiNo.choices,
         null=True, blank=True,
-        help_text="¿Usa remedios para la diabetes?"
+        help_text="¿Usa medicamentos para la diabetes?"
     )
-    usa_remedios_presion = models.CharField(
+    usa_medicamentos_presion = models.CharField(
         max_length=2,
         choices=RespuestaSiNo.choices,
         null=True, blank=True,
-        help_text="¿Usa remedios para la presión arterial?"
+        help_text="¿Usa medicamentos para la presión arterial?"
     )
-    control_otros_programas = models.CharField(
-        max_length=2,
-        choices=RespuestaSiNo.choices,
+    evacuacion_intestinal = models.IntegerField(
+        choices=FrecuenciaEvacuacionIntestinal.choices,
         null=True, blank=True,
-        help_text="¿Está en control en otros programas de su consultorio?"
+        help_text="¿Con qué frecuencia tiene evacuación intestinal?"
     )
-    control_otros_programas_cual = models.CharField(
-        max_length=255,
+    distension_abdominal = models.IntegerField(
+        choices=FrecuenciaDistensionAbdominal.choices,
         null=True, blank=True,
-        help_text="De ser sí, indicar cuál"
-    )
-    fecha_ultima_menstruacion = models.CharField(
-        max_length=10,
-        null=True, blank=True,
-        help_text="Fecha de la última menstruación (regla) - puede ser solo el año"
+        help_text="¿Con qué frecuencia siente distensión o hinchazón abdominal?"
     )
 
     class Meta:
@@ -440,6 +545,24 @@ class MRS(SegmentoSincronizable):
             + self.pregunta_5 + self.pregunta_6 + self.pregunta_7 + self.pregunta_8
             + self.pregunta_9 + self.pregunta_10 + self.pregunta_11
         )
+
+    @property
+    def meses_desde_ultima_menstruacion(self):
+        """
+        Meses transcurridos desde `fecha_ultima_menstruacion` hasta hoy.
+
+        El campo es texto libre y "puede ser solo el año": se aceptan
+        ``AAAA``, ``AAAA-MM``, ``MM/AAAA`` y fecha completa (``AAAA-MM-DD`` /
+        ``DD/MM/AAAA``). Si solo hay año, se asume mitad de año (julio).
+        Devuelve ``None`` cuando no se puede interpretar.
+        """
+        return meses_desde_texto_fecha(self.fecha_ultima_menstruacion)
+
+    @property
+    def menstruacion_ausente(self):
+        """True si han pasado 12 meses o más desde la última menstruación."""
+        meses = self.meses_desde_ultima_menstruacion
+        return meses is not None and meses >= 12
 
 
 # ===========================================================================
@@ -584,12 +707,12 @@ class SegmentoEMPA(SegmentoSincronizable):
 
     # --- 3. HÁBITOS / TAMIZAJE (autorreportables) ---
     consumo_alcohol = models.IntegerField(
-        choices=EscalaConsumoSemanal.choices,
+        choices=EscalaFrecuenciaSemanal.choices,
         null=True, blank=True,
         help_text="¿Consume bebidas alcohólicas?"
     )
     consumo_tabaco = models.IntegerField(
-        choices=EscalaConsumoSemanal.choices,
+        choices=EscalaFrecuenciaSemanal.choices,
         null=True, blank=True,
         help_text="¿Fuma tabaco o cigarrillo?"
     )
@@ -688,6 +811,18 @@ class ConocimientoSistema(SegmentoSincronizable):
         choices=RespuestaSiNoNoSabe.choices,
         null=True, blank=True,
         help_text="¿Ha consultado alguna vez en un centro de salud por síntomas relacionados con climaterio o menopausia?"
+    )
+    # Pregunta reubicada desde el Cuestionario Complementario MRS (regla de la profesora).
+    en_control_programa_consultorio = models.CharField(
+        max_length=2,
+        choices=RespuestaSiNo.choices,
+        null=True, blank=True,
+        help_text="¿Está en control en algún programa de su consultorio?"
+    )
+    en_control_programa_cual = models.CharField(
+        max_length=255,
+        null=True, blank=True,
+        help_text="Si es sí, ¿en cuál programa?"
     )
     evaluacion_atencion_recibida = models.IntegerField(
         choices=CalidadAtencion.choices,

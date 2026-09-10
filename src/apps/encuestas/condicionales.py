@@ -7,11 +7,26 @@ archivo para ajustar la lógica condicional; el esquema (esquema.py) las expone.
 """
 
 # Preguntas que dependen de otra respuesta DE LA MISMA sección.
-# {NombreModelo: {campo_dependiente: {'campo': campo_disparador, 'valor': valor_que_la_muestra}}}
+# {NombreModelo: {campo_dependiente: {'campo': campo_disparador, 'valor': ..., ['operador': ...]}}}
+#
+# `operador` (opcional, por defecto 'igual'):
+#   - 'igual'            : el campo disparador es exactamente `valor`.
+#   - 'meses_desde_lt'   : han pasado MENOS de `valor` meses desde la fecha
+#                          escrita en el campo disparador (texto libre). El
+#                          motor que lo evalúa se implementa en la Fase 7; hasta
+#                          entonces la pregunta se muestra igual (no se oculta).
 PREGUNTAS_CONDICIONALES = {
     'MRS': {
         'tipo_metodo_anticonceptivo': {'campo': 'usa_metodo_anticonceptivo', 'valor': 'SI'},
-        'control_otros_programas_cual': {'campo': 'control_otros_programas', 'valor': 'SI'},
+        'tipo_metodo_anticonceptivo_otro': {'campo': 'tipo_metodo_anticonceptivo', 'valor': 'OTRO'},
+        # Ausencia menstrual: si hace 12 meses o más de la última menstruación,
+        # se ocultan regularidad y sangrado.
+        'menstruacion_llega': {
+            'campo': 'fecha_ultima_menstruacion', 'operador': 'meses_desde_lt', 'valor': 12,
+        },
+        'tipo_sangrado': {
+            'campo': 'fecha_ultima_menstruacion', 'operador': 'meses_desde_lt', 'valor': 12,
+        },
     },
     'TareasCuidado': {
         'mas_de_una_persona_a_cargo': {'campo': 'cuida_otras_personas', 'valor': 'SI'},
@@ -23,6 +38,7 @@ PREGUNTAS_CONDICIONALES = {
     },
     'ConocimientoSistema': {
         'evaluacion_atencion_recibida': {'campo': 'ha_consultado_por_sintomas', 'valor': 'SI'},
+        'en_control_programa_cual': {'campo': 'en_control_programa_consultorio', 'valor': 'SI'},
         'principales_dificultades': {'campo': 'ha_tenido_dificultades_acceso', 'valor': 'SI'},
         'tipo_informacion_apoyo_deseado': {'campo': 'desea_mas_informacion_apoyo', 'valor': 'SI'},
     },

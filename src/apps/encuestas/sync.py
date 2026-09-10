@@ -50,6 +50,31 @@ class ErrorSincronizacion(Exception):
     """Error de nivel payload (formato, permisos), no de validación de un campo."""
 
 
+def _fusionar_bloques_mrs(secciones):
+    """
+    El MRS se responde en dos pantallas ('mrs' = 11 ítems Likert,
+    'mrs_complementario' = cuestionario complementario) pero es un solo
+    registro. El cliente normalmente ya envía un único bloque 'mrs' con todo;
+    esta función combina los bloques por si llegan separados (p. ej. desde una
+    caché offline antigua): un solo bloque 'mrs', datos unidos, `parcial` = True
+    si cualquiera de las partes venía incompleta.
+    """
+    combinado = None
+    resto = []
+    for bloque in secciones:
+        tipo = bloque.get('tipo') if isinstance(bloque, dict) else None
+        if tipo not in ('mrs', 'mrs_complementario'):
+            resto.append(bloque)
+            continue
+        if combinado is None:
+            combinado = {'tipo': 'mrs', 'uuid_local': None, 'datos': {}, 'parcial': False}
+            resto.append(combinado)
+        combinado['uuid_local'] = combinado['uuid_local'] or bloque.get('uuid_local')
+        combinado['datos'].update(bloque.get('datos') or {})
+        combinado['parcial'] = combinado['parcial'] or bool(bloque.get('parcial', True))
+    return resto
+
+
 def _resolver_identificacion(usuario, bloque):
     bloque = bloque or {}
     datos = dict(bloque.get('datos') or {})
@@ -143,7 +168,7 @@ def sincronizar_payload(usuario, payload):
     if ident is None:
         return {'ok': False, 'resultados': resultados}
 
-    for bloque in payload.get('secciones') or []:
+    for bloque in _fusionar_bloques_mrs(payload.get('secciones') or []):
         if not isinstance(bloque, dict) or bloque.get('tipo') not in SECCIONES:
             resultados.append({
                 'seccion': (bloque or {}).get('tipo') if isinstance(bloque, dict) else None,

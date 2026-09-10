@@ -45,11 +45,17 @@ class IdentificacionAdmin(admin.ModelAdmin):
 
 @admin.register(MRS)
 class MRSAdmin(admin.ModelAdmin):
-    list_display = ('id', 'participante', 'fecha_evaluacion', 'puntaje_total')
+    list_display = ('id', 'participante', 'fecha_evaluacion', 'puntaje_total',
+                    'menstruacion_ausente')
     list_filter = ('fecha_evaluacion',)
     list_select_related = ('participante',)
     raw_id_fields = ('participante',)
-    readonly_fields = ('fecha_evaluacion', 'puntaje_total') + _SYNC
+    readonly_fields = ('fecha_evaluacion', 'puntaje_total',
+                       'meses_desde_ultima_menstruacion', 'menstruacion_ausente') + _SYNC
+
+    @admin.display(boolean=True, description='Ausencia menstrual (≥12 meses)')
+    def menstruacion_ausente(self, obj):
+        return obj.menstruacion_ausente
 
 
 @admin.register(SegmentoEMPA)
@@ -65,8 +71,9 @@ class SegmentoEMPAAdmin(admin.ModelAdmin):
 
 @admin.register(ConocimientoSistema)
 class ConocimientoSistemaAdmin(admin.ModelAdmin):
-    list_display = ('id', 'participante', 'fecha_evaluacion')
-    list_filter = ('fecha_evaluacion',)
+    list_display = ('id', 'participante', 'fecha_evaluacion',
+                    'en_control_programa_consultorio')
+    list_filter = ('fecha_evaluacion', 'en_control_programa_consultorio')
     list_select_related = ('participante',)
     raw_id_fields = ('participante',)
     readonly_fields = ('fecha_evaluacion',) + _SYNC

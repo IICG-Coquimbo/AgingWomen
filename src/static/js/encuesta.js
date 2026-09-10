@@ -88,10 +88,15 @@
             .catch(function () { /* sin conexión: se usa el esquema de IndexedDB si existe */ });
     }
 
+    // Clave con la que se sincroniza una sección. Las secciones que comparten
+    // `grupo` (las dos pantallas del MRS) van a un mismo registro.
+    function claveSync(s) { return s.grupo || s.tipo; }
+
     function asegurarUuids() {
         var cambio = false;
         esquema.secciones.forEach(function (s) {
-            if (!uuids[s.tipo]) { uuids[s.tipo] = crearUuid(); cambio = true; }
+            var k = claveSync(s);
+            if (!uuids[k]) { uuids[k] = crearUuid(); cambio = true; }
         });
         if (cambio) { idbSet('uuids', uuids); }
     }
@@ -106,6 +111,11 @@
     // ---------- Motor condicional (local, sin servidor) ----------
     function condicionCumplida(regla, datos) {
         if (!regla) { return true; }
+        if (regla.operador && regla.operador !== 'igual') {
+            // Operadores avanzados (p. ej. 'meses_desde_lt') se implementan en la
+            // Fase 7. Hasta entonces la pregunta se muestra (nunca se oculta por error).
+            return true;
+        }
         var actual = datos ? datos[regla.campo] : undefined;
         return String(actual) === String(regla.valor);
     }
@@ -376,16 +386,20 @@
 
     function construirPayload() {
         var payload = { secciones: [] };
+        var bloques = {};   // clave de sync -> bloque (para fusionar grupos, p. ej. MRS)
         seccionesAplicables().forEach(function (s) {
             var datos = respuestas[s.tipo] || {};
             if (s.tipo === 'identificacion') {
-                payload.identificacion = { uuid_local: uuids[s.tipo], datos: datos };
-            } else {
-                payload.secciones.push({
-                    tipo: s.tipo, uuid_local: uuids[s.tipo], datos: datos,
-                    parcial: !seccionCompleta(s)
-                });
+                payload.identificacion = { uuid_local: uuids['identificacion'], datos: datos };
+                return;
             }
+            var k = claveSync(s);
+            if (!bloques[k]) {
+                bloques[k] = { tipo: k, uuid_local: uuids[k], datos: {}, parcial: false };
+                payload.secciones.push(bloques[k]);
+            }
+            Object.keys(datos).forEach(function (campo) { bloques[k].datos[campo] = datos[campo]; });
+            if (!seccionCompleta(s)) { bloques[k].parcial = true; }
         });
         return payload;
     }

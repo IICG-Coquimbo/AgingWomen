@@ -17,6 +17,7 @@ from .models import (
     MRS,
     SegmentoEMPA,
     TareasCuidado,
+    meses_desde_texto_fecha,
 )
 from .sync import ErrorSincronizacion, sincronizar_payload
 
@@ -133,6 +134,26 @@ class SincronizacionTest(TestCase):
         self.assertEqual(TareasCuidado.objects.count(), 1)
         self.assertEqual(res['resultados'][1]['estado'], 'actualizado')
         self.assertEqual(TareasCuidado.objects.get().mas_de_una_persona_a_cargo, 'SI')
+
+    def test_mrs_en_dos_bloques_se_guarda_en_un_registro(self):
+        u = str(uuid4())
+        payload = {
+            'identificacion': self._payload_ident(),
+            'secciones': [
+                {'tipo': 'mrs', 'uuid_local': u, 'parcial': True,
+                 'datos': {'pregunta_1': 3, 'pregunta_2': 2}},
+                {'tipo': 'mrs_complementario', 'uuid_local': u, 'parcial': True,
+                 'datos': {'fecha_ultima_menstruacion': '2020', 'tiene_pareja': 'SI'}},
+            ],
+        }
+        res = sincronizar_payload(self.usuaria, payload)
+        self.assertTrue(res['ok'], res)
+        self.assertEqual(MRS.objects.count(), 1)
+        mrs = MRS.objects.get()
+        self.assertEqual(mrs.pregunta_1, 3)
+        self.assertEqual(mrs.pregunta_5, 0)  # no enviada: conserva el default
+        self.assertEqual(mrs.tiene_pareja, 'SI')
+        self.assertEqual(mrs.fecha_ultima_menstruacion, '2020')
 
     def test_usuaria_no_puede_colar_campo_solo_profesional(self):
         payload = {
@@ -280,13 +301,28 @@ class EsquemaTest(TestCase):
     def test_requiere_login(self):
         self.assertEqual(self.client.get('/api/esquema/').status_code, 302)
 
-    def test_ocho_secciones_en_orden(self):
+    def test_secciones_en_orden(self):
         esquema = self._esquema(self.usuaria)
         tipos = [s['tipo'] for s in esquema['secciones']]
         self.assertEqual(tipos, [
-            'identificacion', 'trabajo', 'tareas_cuidado', 'mrs', 'empa',
-            'actividad_fisica', 'habitos_alimenticios', 'conocimiento_sistema',
+            'identificacion', 'trabajo', 'tareas_cuidado', 'mrs', 'mrs_complementario',
+            'empa', 'actividad_fisica', 'habitos_alimenticios', 'conocimiento_sistema',
         ])
+
+    def test_mrs_y_complementario_son_pantallas_separadas_del_mismo_registro(self):
+        esquema = self._esquema(self.usuaria)
+        mrs = self._seccion(esquema, 'mrs')
+        comp = self._seccion(esquema, 'mrs_complementario')
+        # Las 11 Likert van solo en 'mrs'.
+        nombres_mrs = {p['nombre'] for p in mrs['preguntas']}
+        self.assertEqual(nombres_mrs, {f'pregunta_{i}' for i in range(1, 12)})
+        # El complementario no repite ninguna Likert y empieza por la fecha.
+        nombres_comp = [p['nombre'] for p in comp['preguntas']]
+        self.assertNotIn('pregunta_1', nombres_comp)
+        self.assertEqual(nombres_comp[0], 'fecha_ultima_menstruacion')
+        # Ambas pantallas se sincronizan contra el mismo registro.
+        self.assertEqual(mrs['grupo'], 'mrs')
+        self.assertEqual(comp['grupo'], 'mrs')
 
     def test_usuaria_no_recibe_campos_solo_profesional(self):
         empa = self._seccion(self._esquema(self.usuaria), 'empa')
@@ -309,9 +345,40 @@ class EsquemaTest(TestCase):
                          {'seccion': 'identificacion', 'campo': 'trabaja_actualmente', 'valor': True})
 
     def test_pregunta_condicional_en_mrs(self):
-        mrs = self._seccion(self._esquema(self.usuaria), 'mrs')
-        cond = self._pregunta(mrs, 'tipo_metodo_anticonceptivo')['mostrar_si']
+        comp = self._seccion(self._esquema(self.usuaria), 'mrs_complementario')
+        cond = self._pregunta(comp, 'tipo_metodo_anticonceptivo')['mostrar_si']
         self.assertEqual(cond, {'campo': 'usa_metodo_anticonceptivo', 'valor': 'SI'})
+
+    def test_metodo_anticonceptivo_otro_y_ausencia_menstrual(self):
+        comp = self._seccion(self._esquema(self.usuaria), 'mrs_complementario')
+        # "No sé" y "Otro" están disponibles en el método anticonceptivo.
+        valores = {o['valor'] for o in self._pregunta(comp, 'tipo_metodo_anticonceptivo')['opciones']}
+        self.assertIn('NO_SE', valores)
+        self.assertIn('OTRO', valores)
+        # El campo libre aparece solo si se eligió "Otro".
+        self.assertEqual(
+            self._pregunta(comp, 'tipo_metodo_anticonceptivo_otro')['mostrar_si'],
+            {'campo': 'tipo_metodo_anticonceptivo', 'valor': 'OTRO'},
+        )
+        # Regularidad y sangrado dependen de los meses desde la última menstruación.
+        for campo in ('menstruacion_llega', 'tipo_sangrado'):
+            self.assertEqual(
+                self._pregunta(comp, campo)['mostrar_si'],
+                {'campo': 'fecha_ultima_menstruacion', 'operador': 'meses_desde_lt', 'valor': 12},
+            )
+
+    def test_programa_consultorio_esta_en_conocimiento_del_sistema(self):
+        esquema = self._esquema(self.usuaria)
+        comp = self._seccion(esquema, 'mrs_complementario')
+        self.assertNotIn('control_otros_programas',
+                         {p['nombre'] for p in comp['preguntas']})
+        cs = self._seccion(esquema, 'conocimiento_sistema')
+        nombres = {p['nombre'] for p in cs['preguntas']}
+        self.assertIn('en_control_programa_consultorio', nombres)
+        self.assertEqual(
+            self._pregunta(cs, 'en_control_programa_cual')['mostrar_si'],
+            {'campo': 'en_control_programa_consultorio', 'valor': 'SI'},
+        )
 
     def test_incluye_descripciones_de_niveles_mrs(self):
         esquema = self._esquema(self.usuaria)
@@ -415,6 +482,33 @@ class PropiedadesModeloTest(TestCase):
         sin = TareasCuidado.objects.create(
             participante=self._ident(trabaja_actualmente=False), cuida_otras_personas='SI')
         self.assertFalse(sin.doble_carga)
+
+    def test_menstruacion_ausente_segun_fecha(self):
+        hoy = date.today()
+        reciente = MRS.objects.create(
+            participante=self._ident(),
+            fecha_ultima_menstruacion=f'{hoy.month:02d}/{hoy.year}')
+        self.assertFalse(reciente.menstruacion_ausente)
+        antigua = MRS.objects.create(
+            participante=self._ident(),
+            fecha_ultima_menstruacion=str(hoy.year - 3))
+        self.assertTrue(antigua.menstruacion_ausente)
+        sin_fecha = MRS.objects.create(participante=self._ident())
+        self.assertIsNone(sin_fecha.meses_desde_ultima_menstruacion)
+        self.assertFalse(sin_fecha.menstruacion_ausente)
+
+
+class MesesDesdeTextoFechaTest(TestCase):
+    def test_formatos_aceptados(self):
+        hoy = date.today()
+        self.assertEqual(meses_desde_texto_fecha(f'{hoy.year}-{hoy.month:02d}'), 0)
+        self.assertEqual(meses_desde_texto_fecha(str(hoy.year - 1)),
+                         12 + (hoy.month - 7))  # solo año -> se asume julio
+        self.assertEqual(meses_desde_texto_fecha(f'15/{hoy.month:02d}/{hoy.year}'), 0)
+
+    def test_texto_invalido_o_vacio(self):
+        for txt in ('', None, 'el año pasado', '2020-13', '99/99/9999'):
+            self.assertIsNone(meses_desde_texto_fecha(txt))
 
 
 class SincronizacionCompletaTest(TestCase):
