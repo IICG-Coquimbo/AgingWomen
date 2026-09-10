@@ -582,6 +582,15 @@ class PaginaEncuestaTest(TestCase):
         self.client.logout()
         self.assertEqual(self.client.get('/sw.js').status_code, 200)
 
+    def test_service_worker_no_precachea_pagina_con_sesion(self):
+        # /encuesta/ NO va en la lista de precarga: si el SW se instala sin
+        # sesión, cachearía la redirección al login y rompería la navegación
+        # (Salir / cargar la encuesta) con net::ERR_FAILED.
+        contenido = b''.join(self.client.get('/sw.js').streaming_content).decode()
+        estaticos = contenido.split('ESTATICOS = [')[1].split(']')[0]
+        self.assertNotIn('/encuesta/', estaticos)
+        self.assertIn('!resp.redirected', contenido)  # no se cachean respuestas redirigidas
+
 
 class PropiedadesModeloTest(TestCase):
     def _ident(self, **kw):

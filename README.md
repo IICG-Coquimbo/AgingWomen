@@ -4,6 +4,10 @@ Aplicación web/móvil (Django + Docker) para una investigación sobre menopausi
 climaterio en Chile. Encuesta multisección con soporte offline, control de acceso
 por RUT (hasheado) y roles.
 
+Al abrir la encuesta se muestran las definiciones de perimenopausia y menopausia
+y un **filtro de edad**: solo pueden participar personas de **40 años o más**
+(se valida también en el servidor).
+
 ## Puesta en marcha
 
 Requiere Docker y Docker Compose.
@@ -40,7 +44,7 @@ docker compose run --rm web python manage.py test
 | App | Rol |
 |---|---|
 | `apps.usuarios` | modelo `Usuario` (login por `rut_hash`), roles, registro/login, recuperación de contraseña |
-| `apps.encuestas` | modelos de las 8 secciones, formularios por rol, esquema JSON (`/api/esquema/`), sincronización (`/api/sincronizar/`), app cliente offline |
+| `apps.encuestas` | modelos de las secciones (Identificación, Trabajo, Tareas de cuidado, MRS, EMPA, Hábitos de vida, Actividad física, Conocimiento del sistema), formularios por rol, esquema JSON (`/api/esquema/`), sincronización (`/api/sincronizar/`), app cliente offline. La encuesta se presenta en 9 pantallas (el MRS y su cuestionario complementario van separados). |
 
 ### Endpoints principales
 

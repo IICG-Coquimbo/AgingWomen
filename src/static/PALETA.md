@@ -30,4 +30,13 @@ No hace falta tocar ningún archivo `.html` ni reiniciar el servidor: basta reca
 ## Escala de calor MRS
 
 Las variables `--calor-0` … `--calor-4` definen el degradado verde→rojo de la
-escala MRS (Fase 7D). Cambiarlas altera solo esa escala, no el resto del tema.
+escala MRS (con caritas). Cambiarlas altera solo esa escala, no el resto del tema.
+
+## Escalas horizontales (resto de las preguntas con escala)
+
+Todas las demás escalas (Trabajo, Hábitos de vida, etc.) se dibujan horizontales
+con un degradado **calculado**, no con variables CSS. El color de cada tramo lo
+genera la función `colorEscala(paso, inversa)` en `src/static/js/encuesta.js`
+(`hsl()` de 120° verde a 0° rojo). Para cambiar ese degradado se edita esa
+función. La forma y el tamaño de los tramos sí están en `tema.css` (`.escala-h`,
+`.escala-h-op`).
