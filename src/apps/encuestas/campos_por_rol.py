@@ -18,6 +18,16 @@ SOLO_PROFESIONAL = {
         'colesterol_hdl_mg_dl',
         'trigliceridos_mg_dl',
         'riesgo_cv_atp3',
+        # Tamizaje ginecológico y VDRL: datos clínicos que la usuaria común
+        # normalmente no maneja; se priorizan cuando responde personal de salud.
+        'fecha_ultimo_pap',
+        'resultado_pap',
+        'fecha_mamografia',
+        'resultado_birads',
+        'fecha_ecotomografia_mamaria',
+        'vdrl_rpr',
+        # Talla máxima histórica: exclusiva de personal médico (osteoporosis).
+        'talla_maxima_cm',
     ],
 }
 
@@ -26,14 +36,9 @@ SOLO_PROFESIONAL = {
 OPCIONALES_USUARIA = {
     'SegmentoEMPA': [
         'fecha_ultimo_empa',
-        'fecha_ultimo_pap',
-        'resultado_pap',
-        'fecha_mamografia',
-        'resultado_birads',
-        'fecha_ecotomografia_mamaria',
-        'circunferencia_cintura_cm',
+        'peso_kg',
         'talla_actual_cm',
-        'vdrl_rpr',
+        'circunferencia_cintura_cm',
     ],
 }
 

@@ -23,21 +23,33 @@ from .sync import ErrorSincronizacion, sincronizar_payload
 
 
 class SegmentoEMPAFormRolTest(TestCase):
+    # Ocultos para la usuaria común (Sección 4/5 de los requisitos finales).
+    OCULTOS_USUARIA = (
+        'presion_sistolica', 'riesgo_cv_atp3', 'glicemia_mg_dl',
+        'fecha_ultimo_pap', 'resultado_pap', 'fecha_mamografia', 'resultado_birads',
+        'fecha_ecotomografia_mamaria', 'vdrl_rpr', 'talla_maxima_cm',
+    )
+
     def test_usuaria_no_ve_campos_solo_profesional(self):
         form = SegmentoEMPAForm(rol=Usuario.Rol.USUARIA_COMUN)
-        self.assertNotIn('presion_sistolica', form.fields)
-        self.assertNotIn('riesgo_cv_atp3', form.fields)
-        self.assertNotIn('glicemia_mg_dl', form.fields)
+        for campo in self.OCULTOS_USUARIA:
+            self.assertNotIn(campo, form.fields, campo)
+
+    def test_consumo_sustancias_ya_no_esta_en_empa(self):
+        campos = SegmentoEMPAForm(rol=Usuario.Rol.PROFESIONAL_SALUD).fields
+        self.assertNotIn('consumo_alcohol', campos)
+        self.assertNotIn('consumo_tabaco', campos)
 
     def test_profesional_ve_todos_los_campos_clinicos(self):
         form = SegmentoEMPAForm(rol=Usuario.Rol.PROFESIONAL_SALUD)
-        self.assertIn('presion_sistolica', form.fields)
-        self.assertIn('riesgo_cv_atp3', form.fields)
+        for campo in self.OCULTOS_USUARIA:
+            self.assertIn(campo, form.fields, campo)
 
-    def test_usuaria_campos_clinicos_no_obligatorios(self):
+    def test_usuaria_campos_visibles_no_obligatorios(self):
         form = SegmentoEMPAForm(rol=Usuario.Rol.USUARIA_COMUN)
-        for campo in ('circunferencia_cintura_cm', 'talla_actual_cm', 'vdrl_rpr',
-                      'fecha_ultimo_pap', 'fecha_mamografia'):
+        for campo in ('circunferencia_cintura_cm', 'talla_actual_cm', 'peso_kg',
+                      'fecha_ultimo_empa'):
+            self.assertIn(campo, form.fields, campo)
             self.assertFalse(form.fields[campo].required, campo)
 
     def test_profesional_campos_requeridos(self):

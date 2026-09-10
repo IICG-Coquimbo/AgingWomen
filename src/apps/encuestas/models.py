@@ -705,17 +705,8 @@ class SegmentoEMPA(SegmentoSincronizable):
         help_text="Ecotomografía mamaria (si mamografía BI-RADS 0, 3 o 4)"
     )
 
-    # --- 3. HÁBITOS / TAMIZAJE (autorreportables) ---
-    consumo_alcohol = models.IntegerField(
-        choices=EscalaFrecuenciaSemanal.choices,
-        null=True, blank=True,
-        help_text="¿Consume bebidas alcohólicas?"
-    )
-    consumo_tabaco = models.IntegerField(
-        choices=EscalaFrecuenciaSemanal.choices,
-        null=True, blank=True,
-        help_text="¿Fuma tabaco o cigarrillo?"
-    )
+    # Consumo de sustancias (alcohol, tabaco, marihuana) vive en la sección
+    # "Hábitos de vida", no en el EMPA (regla de la profesora — Fase 4).
 
     # --- PROPIEDADES CALCULADAS PARA MACHINE LEARNING ---
     @property
