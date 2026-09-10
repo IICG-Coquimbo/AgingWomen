@@ -247,6 +247,55 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
     .escala-calor .calor-emoji { font-size: 1.7rem; }
 }
 
+/* === Escala horizontal con gradiente (toda escala salvo el MRS) === */
+.escala-h {
+    display: flex;
+    gap: 4px;
+    margin-top: .5rem;
+}
+.escala-h-op {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 3.4rem;
+    padding: .45rem .3rem;
+    border: 3px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: .74rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .35);
+    transition: transform .12s ease;
+}
+.escala-h-op input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.escala-h-op.sel {
+    border-color: var(--color-primario-oscuro);
+    transform: translateY(-3px);
+}
+.escala-h-op:focus-within {
+    outline: 2px solid var(--color-primario);
+    outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+    .escala-h { flex-direction: column; gap: 3px; }
+    .escala-h-op {
+        min-height: 0;
+        padding: .65rem .7rem;
+        font-size: .9rem;
+        justify-content: flex-start;
+        text-align: left;
+    }
+}
+
 /* === Aviso de estado de sincronización (Fase 7E) === */
 .estado-sync {
     border-radius: 8px;

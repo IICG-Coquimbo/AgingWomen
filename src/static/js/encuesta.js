@@ -1,12 +1,14 @@
 /* ==========================================================================
-   App cliente de la encuesta (Fase 7C)
+   App cliente de la encuesta
    --------------------------------------------------------------------------
    - Descarga el esquema (/api/esquema/) y lo guarda en IndexedDB para uso offline.
    - Renderiza una sección a la vez desde el esquema.
-   - Guarda cada respuesta en IndexedDB al instante.
-   - Motor de preguntas/secciones condicionales, 100% local (Sección 5.2).
-   La sincronización robusta offline se completa en la Fase 7E; aquí se envía
-   si hay conexión y se marca "pendiente" si no.
+   - Guarda cada respuesta en IndexedDB al instante y sincroniza cuando hay
+     conexión (offline-first).
+   - Motor de preguntas/secciones condicionales, 100% local: igualdad,
+     'meses_desde_lt' (ausencia menstrual) y 'contiene' (selección múltiple).
+   - Escalas: MRS con escala de calor + caritas; el resto, escala horizontal
+     con gradiente de color sin caritas.
    ========================================================================== */
 (function () {
     'use strict';
@@ -109,15 +111,42 @@
     }
 
     // ---------- Motor condicional (local, sin servidor) ----------
+
+    // Meses entre una fecha escrita como texto libre y hoy. Réplica de
+    // `meses_desde_texto_fecha` del servidor: acepta AAAA, AAAA-MM, MM/AAAA y
+    // fecha completa; si solo hay año asume julio. null si no se puede leer.
+    function mesesDesdeTexto(texto) {
+        var txt = String(texto == null ? '' : texto).trim();
+        if (!txt) { return null; }
+        var anio = null, mes = null, m;
+        if ((m = /^(\d{4})$/.exec(txt))) { anio = +m[1]; mes = 7; }
+        else if ((m = /^(\d{4})[-/](\d{1,2})$/.exec(txt))) { anio = +m[1]; mes = +m[2]; }
+        else if ((m = /^(\d{1,2})[-/](\d{4})$/.exec(txt))) { mes = +m[1]; anio = +m[2]; }
+        else if ((m = /^(\d{4})[-/](\d{1,2})[-/](\d{1,2})$/.exec(txt))) { anio = +m[1]; mes = +m[2]; }
+        else if ((m = /^(\d{1,2})[-/](\d{1,2})[-/](\d{4})$/.exec(txt))) { mes = +m[2]; anio = +m[3]; }
+        if (anio === null || mes === null || mes < 1 || mes > 12) { return null; }
+        var hoy = new Date();
+        return (hoy.getFullYear() - anio) * 12 + (hoy.getMonth() + 1 - mes);
+    }
+
+    function listaContiene(valor, item) {
+        return String(valor == null ? '' : valor).split(',')
+            .map(function (s) { return s.trim(); })
+            .indexOf(String(item)) !== -1;
+    }
+
     function condicionCumplida(regla, datos) {
         if (!regla) { return true; }
-        if (regla.operador && regla.operador !== 'igual') {
-            // Operadores avanzados (p. ej. 'meses_desde_lt') se implementan en la
-            // Fase 7. Hasta entonces la pregunta se muestra (nunca se oculta por error).
-            return true;
-        }
         var actual = datos ? datos[regla.campo] : undefined;
-        return String(actual) === String(regla.valor);
+        switch (regla.operador || 'igual') {
+            case 'meses_desde_lt':
+                var meses = mesesDesdeTexto(actual);
+                return meses === null || meses < regla.valor;  // fecha ilegible: se muestra
+            case 'contiene':
+                return listaContiene(actual, regla.valor);
+            default:
+                return String(actual) === String(regla.valor);
+        }
     }
     function seccionesAplicables() {
         return esquema.secciones.filter(function (s) {
@@ -192,6 +221,8 @@
             out += renderEscalaCalor(id, p, v);
         } else if (p.depende_de) {
             out += renderDependiente(seccion, p, id, v);
+        } else if (p.escala_horizontal) {
+            out += renderEscalaHorizontal(id, p, v);
         } else if (p.tipo_campo === 'multiseleccion') {
             var marcados = String(v || '').split(',').map(function (s) { return s.trim(); })
                 .filter(Boolean);
@@ -254,6 +285,33 @@
         return out;
     }
 
+    // Escala horizontal con gradiente de color (regla de la profesora: toda
+    // escala, no solo el MRS). Sin caritas: las caritas son exclusivas del MRS.
+    // `polaridad === 'inversa'` invierte el gradiente (extremo alto = verde).
+    function colorEscala(paso, inversa) {
+        var t = inversa ? 1 - paso : paso;      // 0 = verde, 1 = rojo
+        var hue = Math.round(120 * (1 - t));    // 120° verde -> 0° rojo
+        return 'hsl(' + hue + ', 62%, 44%)';
+    }
+
+    function renderEscalaHorizontal(id, p, v) {
+        var ops = p.opciones || [];
+        var n = ops.length;
+        var inversa = p.polaridad === 'inversa';
+        var out = '<div class="escala-h">';
+        ops.forEach(function (op, i) {
+            var val = String(op.valor);
+            var sel = String(v) === val;
+            var color = colorEscala(n > 1 ? i / (n - 1) : 0, inversa);
+            out += '<label class="escala-h-op' + (sel ? ' sel' : '') +
+                '" style="background:' + color + '">' +
+                '<input type="radio" name="' + id + '" value="' + esc(val) + '"' +
+                (sel ? ' checked' : '') + '>' +
+                '<span class="escala-h-txt">' + esc(op.texto) + '</span></label>';
+        });
+        return out + '</div>';
+    }
+
     // Campo cuyas opciones dependen del valor de otro campo (ej. comuna ← región).
     function renderDependiente(seccion, p, id, v) {
         var datos = respuestas[seccion.tipo] || {};
@@ -286,13 +344,13 @@
         });
         cont.querySelectorAll('.pregunta').forEach(function (div) {
             var campo = div.getAttribute('data-campo');
-            var manejar = function (e) { capturar(seccion, campo, e.target); };
+            var manejar = function (e) { capturar(seccion, campo, e.target, e.type); };
             div.addEventListener('input', manejar);
             div.addEventListener('change', manejar);
         });
     }
 
-    function capturar(seccion, campo, el) {
+    function capturar(seccion, campo, el, tipoEvento) {
         if (!respuestas[seccion.tipo]) { respuestas[seccion.tipo] = {}; }
         var valor = el.value;
         if (el.type === 'radio') {
@@ -325,8 +383,17 @@
 
         idbSet('respuestas', respuestas);
 
+        // En campos de texto libre no se re-renderiza en cada tecla (perdería el
+        // foco): se espera al evento 'change' (al salir del campo).
+        var esTextoLibre = (el.tagName === 'INPUT' &&
+            ['text', 'number', 'date'].indexOf(el.type) !== -1) || el.tagName === 'TEXTAREA';
+        if (esTextoLibre && tipoEvento === 'input') {
+            actualizarProgreso();
+            return;
+        }
+
         if (afectaCondicionales(seccion, campo) || afectaDependencias(seccion, campo) ||
-            esEscalaCalor(seccion, campo)) {
+            esEscalaCalor(seccion, campo) || esEscalaHorizontal(seccion, campo)) {
             render();
         } else {
             actualizarProgreso();
@@ -336,6 +403,12 @@
     function esEscalaCalor(seccion, campo) {
         return seccion.preguntas.some(function (p) {
             return p.nombre === campo && p.escala === 'mrs';
+        });
+    }
+
+    function esEscalaHorizontal(seccion, campo) {
+        return seccion.preguntas.some(function (p) {
+            return p.nombre === campo && p.escala_horizontal;
         });
     }
 
