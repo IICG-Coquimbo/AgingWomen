@@ -925,6 +925,11 @@ class EvaluacionTrabajo(SegmentoSincronizable):
         null=True, blank=True,
         help_text="¿Considera que su lugar de trabajo es comprensivo o flexible frente a estos síntomas?"
     )
+    estres_entorno_laboral = models.IntegerField(
+        choices=EscalaEstresLaboral.choices,
+        null=True, blank=True,
+        help_text="¿Su entorno laboral le genera niveles de estrés que intensifiquen sus síntomas?"
+    )
 
     class Meta:
         ordering = ['-fecha_evaluacion']
@@ -961,13 +966,28 @@ class TareasCuidado(SegmentoSincronizable):
         max_length=2,
         choices=RespuestaSiNo.choices,
         null=True, blank=True,
-        help_text="¿Cuida actualmente de otras personas (hijos/as, padres, abuelos/as u otros familiares dependientes)?"
+        help_text=("¿Tiene a su cargo el cuidado directo de otras personas "
+                   "(hijos, adultos mayores, familiares dependientes)?")
     )
-    mas_de_una_persona_a_cargo = models.CharField(
-        max_length=2,
-        choices=RespuestaSiNo.choices,
+    cantidad_personas_cuida = models.PositiveSmallIntegerField(
+        choices=CantidadPersonasCuidado.choices,
         null=True, blank=True,
-        help_text="¿Tiene a más de una persona a su cargo?"
+        help_text='Si respondió "Sí", ¿a cuántas personas cuida de forma directa?'
+    )
+    a_quien_cuida = models.TextField(
+        null=True, blank=True,
+        help_text="¿A quién cuida? (marque todas las opciones que apliquen)"
+    )
+    a_quien_cuida_otro = models.CharField(
+        max_length=200,
+        null=True, blank=True,
+        help_text='Si marcó "Otro", especifique a quién cuida'
+    )
+    sobrecarga_fisica_emocional = models.IntegerField(
+        choices=EscalaFrecuenciaSubjetiva.choices,
+        null=True, blank=True,
+        help_text=("¿Siente que la combinación entre su trabajo y las tareas de "
+                   "cuidado le genera una sobrecarga física o emocional?")
     )
 
     class Meta:

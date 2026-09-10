@@ -138,14 +138,29 @@ class SincronizacionTest(TestCase):
             'identificacion': self._payload_ident(),
             'secciones': [{'tipo': 'tareas_cuidado', 'uuid_local': u, 'parcial': True,
                            'datos': {'cuida_otras_personas': 'SI',
-                                     'mas_de_una_persona_a_cargo': 'NO'}}],
+                                     'cantidad_personas_cuida': 1}}],
         }
         sincronizar_payload(self.usuaria, payload)
-        payload['secciones'][0]['datos']['mas_de_una_persona_a_cargo'] = 'SI'
+        payload['secciones'][0]['datos']['cantidad_personas_cuida'] = 3
         res = sincronizar_payload(self.usuaria, payload)
         self.assertEqual(TareasCuidado.objects.count(), 1)
         self.assertEqual(res['resultados'][1]['estado'], 'actualizado')
-        self.assertEqual(TareasCuidado.objects.get().mas_de_una_persona_a_cargo, 'SI')
+        self.assertEqual(TareasCuidado.objects.get().cantidad_personas_cuida, 3)
+
+    def test_tareas_cuidado_guarda_seleccion_multiple(self):
+        payload = {
+            'identificacion': self._payload_ident(),
+            'secciones': [{'tipo': 'tareas_cuidado', 'uuid_local': str(uuid4()), 'parcial': True,
+                           'datos': {'cuida_otras_personas': 'SI', 'cantidad_personas_cuida': 2,
+                                     'a_quien_cuida': 'Padres o suegros, Otro',
+                                     'a_quien_cuida_otro': 'Un vecino'}}],
+        }
+        res = sincronizar_payload(self.usuaria, payload)
+        self.assertTrue(res['ok'], res)
+        tc = TareasCuidado.objects.get()
+        self.assertEqual(tc.cantidad_personas_cuida, 2)
+        self.assertIn('Otro', tc.a_quien_cuida)
+        self.assertEqual(tc.a_quien_cuida_otro, 'Un vecino')
 
     def test_mrs_en_dos_bloques_se_guarda_en_un_registro(self):
         u = str(uuid4())
@@ -374,6 +389,26 @@ class EsquemaTest(TestCase):
         trabajo = self._seccion(self._esquema(self.usuaria), 'trabajo')
         self.assertEqual(trabajo['mostrar_si'],
                          {'seccion': 'identificacion', 'campo': 'trabaja_actualmente', 'valor': True})
+
+    def test_trabajo_incluye_pregunta_de_estres(self):
+        trabajo = self._seccion(self._esquema(self.usuaria), 'trabajo')
+        p = self._pregunta(trabajo, 'estres_entorno_laboral')
+        self.assertEqual(len(p['opciones']), 5)
+        self.assertIn('estrés', p['texto'].lower())
+
+    def test_tareas_cuidado_redisenada(self):
+        tc = self._seccion(self._esquema(self.usuaria), 'tareas_cuidado')
+        nombres = {p['nombre'] for p in tc['preguntas']}
+        self.assertNotIn('mas_de_una_persona_a_cargo', nombres)
+        self.assertLessEqual(
+            {'cantidad_personas_cuida', 'a_quien_cuida', 'a_quien_cuida_otro',
+             'sobrecarga_fisica_emocional'}, nombres)
+        for campo in ('cantidad_personas_cuida', 'a_quien_cuida'):
+            self.assertEqual(self._pregunta(tc, campo)['mostrar_si'],
+                             {'campo': 'cuida_otras_personas', 'valor': 'SI'})
+        aq = self._pregunta(tc, 'a_quien_cuida')
+        self.assertEqual(aq['tipo_campo'], 'multiseleccion')
+        self.assertEqual(len(aq['opciones']), 7)
 
     def test_pregunta_condicional_en_mrs(self):
         comp = self._seccion(self._esquema(self.usuaria), 'mrs_complementario')

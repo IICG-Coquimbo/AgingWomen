@@ -81,7 +81,7 @@ class ConocimientoSistemaAdmin(admin.ModelAdmin):
 
 @admin.register(EvaluacionTrabajo)
 class EvaluacionTrabajoAdmin(admin.ModelAdmin):
-    list_display = ('id', 'participante', 'fecha_evaluacion')
+    list_display = ('id', 'participante', 'fecha_evaluacion', 'estres_entorno_laboral')
     list_select_related = ('participante',)
     raw_id_fields = ('participante',)
     readonly_fields = ('fecha_evaluacion',) + _SYNC
@@ -90,7 +90,7 @@ class EvaluacionTrabajoAdmin(admin.ModelAdmin):
 @admin.register(TareasCuidado)
 class TareasCuidadoAdmin(admin.ModelAdmin):
     list_display = ('id', 'participante', 'cuida_otras_personas',
-                    'mas_de_una_persona_a_cargo', 'doble_carga')
+                    'cantidad_personas_cuida', 'doble_carga')
     list_select_related = ('participante',)
     raw_id_fields = ('participante',)
     readonly_fields = ('fecha_evaluacion', 'doble_carga') + _SYNC

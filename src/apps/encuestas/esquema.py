@@ -52,6 +52,22 @@ NOTAS_PREGUNTA = {
     },
 }
 
+# Campos de selección múltiple: el modelo los guarda como texto (lista separada
+# por comas). El cliente los renderiza como casillas. {NombreModelo: {campo: [opciones]}}
+OPCIONES_MULTISELECCION = {
+    'TareasCuidado': {
+        'a_quien_cuida': [
+            'Hijos/as menores de edad',
+            'Hijos/as adultos que dependen de usted',
+            'Padres o suegros',
+            'Abuelos u otros adultos mayores',
+            'Cónyuge/pareja con dependencia',
+            'Otro familiar o persona dependiente',
+            'Otro',
+        ],
+    },
+}
+
 
 def _tipo_campo(campo):
     if isinstance(campo, forms.DateField):
@@ -83,6 +99,7 @@ def construir_esquema(rol):
         modelo = form._meta.model.__name__
         condicionales = PREGUNTAS_CONDICIONALES.get(modelo, {})
         notas = NOTAS_PREGUNTA.get(modelo, {})
+        multiseleccion = OPCIONES_MULTISELECCION.get(modelo, {})
 
         campos = list(form.fields.items())
         if parte == 'likert':
@@ -92,13 +109,17 @@ def construir_esquema(rol):
 
         preguntas = []
         for nombre, campo in campos:
-            tc = _tipo_campo(campo)
-            if tc == 'opciones':
-                opciones = _opciones(campo)
-            elif tc == 'booleano':
-                opciones = [{'valor': True, 'texto': 'Sí'}, {'valor': False, 'texto': 'No'}]
+            if nombre in multiseleccion:
+                tc = 'multiseleccion'
+                opciones = [{'valor': o, 'texto': o} for o in multiseleccion[nombre]]
             else:
-                opciones = None
+                tc = _tipo_campo(campo)
+                if tc == 'opciones':
+                    opciones = _opciones(campo)
+                elif tc == 'booleano':
+                    opciones = [{'valor': True, 'texto': 'Sí'}, {'valor': False, 'texto': 'No'}]
+                else:
+                    opciones = None
 
             preguntas.append({
                 'nombre': nombre,

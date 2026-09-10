@@ -12,9 +12,10 @@ archivo para ajustar la lógica condicional; el esquema (esquema.py) las expone.
 # `operador` (opcional, por defecto 'igual'):
 #   - 'igual'            : el campo disparador es exactamente `valor`.
 #   - 'meses_desde_lt'   : han pasado MENOS de `valor` meses desde la fecha
-#                          escrita en el campo disparador (texto libre). El
-#                          motor que lo evalúa se implementa en la Fase 7; hasta
-#                          entonces la pregunta se muestra igual (no se oculta).
+#                          escrita en el campo disparador (texto libre).
+#   - 'contiene'         : el campo disparador (lista separada por comas) incluye `valor`.
+# Los operadores distintos de 'igual' se evalúan en el cliente desde la Fase 7;
+# hasta entonces la pregunta se muestra igual (no se oculta por error).
 PREGUNTAS_CONDICIONALES = {
     'MRS': {
         'tipo_metodo_anticonceptivo': {'campo': 'usa_metodo_anticonceptivo', 'valor': 'SI'},
@@ -29,7 +30,11 @@ PREGUNTAS_CONDICIONALES = {
         },
     },
     'TareasCuidado': {
-        'mas_de_una_persona_a_cargo': {'campo': 'cuida_otras_personas', 'valor': 'SI'},
+        'cantidad_personas_cuida': {'campo': 'cuida_otras_personas', 'valor': 'SI'},
+        'a_quien_cuida': {'campo': 'cuida_otras_personas', 'valor': 'SI'},
+        # 'contiene': el disparador es una lista separada por comas y contiene `valor`.
+        # El motor lo evalúa en la Fase 7 (hasta entonces la pregunta se muestra).
+        'a_quien_cuida_otro': {'campo': 'a_quien_cuida', 'operador': 'contiene', 'valor': 'Otro'},
     },
     'HabitosDeVida': {
         'quien_prepara_comidas_otro': {'campo': 'quien_prepara_comidas', 'valor': 'OTRO'},

@@ -192,6 +192,15 @@
             out += renderEscalaCalor(id, p, v);
         } else if (p.depende_de) {
             out += renderDependiente(seccion, p, id, v);
+        } else if (p.tipo_campo === 'multiseleccion') {
+            var marcados = String(v || '').split(',').map(function (s) { return s.trim(); })
+                .filter(Boolean);
+            (p.opciones || []).forEach(function (op) {
+                var val = String(op.valor);
+                var checked = marcados.indexOf(val) !== -1 ? ' checked' : '';
+                out += '<label class="opcion"><input type="checkbox" name="' + id + '" value="' +
+                    esc(val) + '"' + checked + '> ' + esc(op.texto) + '</label>';
+            });
         } else if (p.tipo_campo === 'opciones' || p.tipo_campo === 'booleano') {
             var ops = p.opciones || [];
             if (p.escala !== 'mrs' && ops.length > 7) {
@@ -289,6 +298,16 @@
         if (el.type === 'radio') {
             if (valor === 'true') { valor = true; }
             else if (valor === 'false') { valor = false; }
+        } else if (el.type === 'checkbox') {
+            // Selección múltiple: se guarda como lista separada por comas.
+            var marcados = [];
+            var grupo = el.closest('.pregunta');
+            if (grupo) {
+                grupo.querySelectorAll('input[type="checkbox"]').forEach(function (chk) {
+                    if (chk.checked) { marcados.push(chk.value); }
+                });
+            }
+            valor = marcados.join(', ');
         }
         respuestas[seccion.tipo][campo] = valor;
         idbSet('sucio', true);  // hay datos locales sin enviar al servidor
