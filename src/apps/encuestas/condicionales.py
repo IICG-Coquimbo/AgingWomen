@@ -16,6 +16,7 @@ archivo para ajustar la lógica condicional; el esquema (esquema.py) las expone.
 #   - 'contiene'         : el campo disparador (lista separada por comas) incluye `valor`.
 # Los operadores distintos de 'igual' se evalúan en el cliente desde la Fase 7;
 # hasta entonces la pregunta se muestra igual (no se oculta por error).
+OPERADORES = ('igual', 'meses_desde_lt', 'contiene')
 PREGUNTAS_CONDICIONALES = {
     'MRS': {
         'tipo_metodo_anticonceptivo': {'campo': 'usa_metodo_anticonceptivo', 'valor': 'SI'},

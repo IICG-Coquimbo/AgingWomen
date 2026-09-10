@@ -41,6 +41,87 @@ ORDEN_SECCIONES = [
 MRS_PREGUNTAS = {f'pregunta_{i}' for i in range(1, 12)}
 GRUPO_MRS = 'mrs'
 
+# Edad mínima para responder la encuesta (filtro al inicio — Fase 8).
+EDAD_MINIMA = 40
+
+# Definiciones que se muestran antes de empezar la encuesta.
+DEFINICIONES = [
+    {
+        'termino': 'Perimenopausia',
+        'texto': (
+            'Etapa de transición previa a la menopausia. Las hormonas empiezan a '
+            'fluctuar, la menstruación se vuelve irregular y pueden aparecer '
+            'síntomas como bochornos o cambios de ánimo. Suele durar varios años.'
+        ),
+    },
+    {
+        'termino': 'Menopausia',
+        'texto': (
+            'Momento en que la menstruación se detiene de forma definitiva. Se '
+            'confirma cuando han pasado 12 meses seguidos sin regla.'
+        ),
+    },
+]
+
+# Aviso que se muestra en cada sección: se puede omitir lo que no se sepa.
+MENSAJE_OMITIR = (
+    'Si no sabes una respuesta, puedes dejarla en blanco y continuar. Tu progreso '
+    'se guarda automáticamente en este dispositivo.'
+)
+
+# Texto breve que introduce cada sección.
+TEXTOS_SECCION = {
+    'identificacion': (
+        'Primero, algunos datos generales sobre ti. Nos ayudan a analizar los '
+        'resultados del estudio.'
+    ),
+    'trabajo': (
+        'Estas preguntas exploran cómo tu trabajo remunerado se relaciona con los '
+        'síntomas del climaterio.'
+    ),
+    'tareas_cuidado': (
+        'Aquí preguntamos por las tareas de cuidado no remuneradas (hijos, personas '
+        'mayores u otras personas dependientes) y la carga que implican junto con el '
+        'trabajo.'
+    ),
+    'mrs': (
+        'La escala MRS mide la intensidad de 11 síntomas frecuentes durante el '
+        'climaterio. Responde según cuánto te molesta cada uno actualmente.'
+    ),
+    'mrs_complementario': (
+        'Preguntas complementarias sobre tu ciclo menstrual, métodos anticonceptivos, '
+        'tratamientos y antecedentes de salud.'
+    ),
+    'empa': (
+        'Datos del Examen de Medicina Preventiva del Adulto (EMPA). Esta sección puede '
+        'quedar incompleta si no manejas esos datos clínicos: la completa '
+        'principalmente el personal de salud.'
+    ),
+    'habitos_de_vida': (
+        'Preguntas sobre tu alimentación habitual y el consumo de tabaco, marihuana y '
+        'alcohol.'
+    ),
+    'actividad_fisica': (
+        'Estas preguntas describen tu actividad física habitual y el tiempo que pasas '
+        'sentada o en reposo.'
+    ),
+    'conocimiento_sistema': (
+        'Por último, queremos saber qué conoces sobre la atención de climaterio y '
+        'menopausia en el sistema público de salud y cuál ha sido tu experiencia.'
+    ),
+}
+
+# Escalas cuyo extremo "alto" es positivo: el gradiente va al revés (rojo abajo,
+# verde arriba). El resto usa 'directa' (más alto = más rojo, como el MRS).
+ESCALAS_INVERSAS = {
+    'lugar_trabajo_comprensivo',
+    'evaluacion_atencion_recibida',
+    'nivel_informacion_servicios',
+    'considera_informacion_suficiente',
+    'sintomas_tomados_en_serio',
+    'dias_ejercicio_semana',
+}
+
 # Nota informativa que acompaña a una pregunta (se muestra bajo el enunciado).
 # {NombreModelo: {campo: 'texto de la nota'}}
 NOTAS_PREGUNTA = {
@@ -92,6 +173,22 @@ def _opciones(campo):
     return ops
 
 
+def _es_escala_horizontal(tipo_campo, opciones):
+    """
+    True si la pregunta es una escala ordinal (valores enteros consecutivos):
+    se dibuja horizontal con gradiente de color, como el MRS pero sin caritas
+    (regla de la profesora — toda escala, no solo el MRS). Las preguntas
+    categóricas (género, Sí/No, método anticonceptivo…) devuelven False.
+    """
+    if tipo_campo != 'opciones' or not opciones or len(opciones) < 2:
+        return False
+    valores = [o['valor'] for o in opciones]
+    if not all(isinstance(v, int) and not isinstance(v, bool) for v in valores):
+        return False
+    ordenados = sorted(valores)
+    return ordenados == list(range(ordenados[0], ordenados[0] + len(ordenados)))
+
+
 def construir_esquema(rol):
     secciones = []
     for tipo, titulo, form_cls, parte in ORDEN_SECCIONES:
@@ -121,6 +218,9 @@ def construir_esquema(rol):
                 else:
                     opciones = None
 
+            escala = 'mrs' if (modelo == 'MRS' and nombre in MRS_PREGUNTAS) else None
+            horizontal = escala != 'mrs' and _es_escala_horizontal(tc, opciones)
+
             preguntas.append({
                 'nombre': nombre,
                 'texto': str(campo.help_text) or str(campo.label or nombre),
@@ -128,7 +228,12 @@ def construir_esquema(rol):
                 'tipo_campo': tc,
                 'obligatoria': bool(campo.required),
                 'opciones': opciones,
-                'escala': 'mrs' if (modelo == 'MRS' and nombre in MRS_PREGUNTAS) else None,
+                'escala': escala,
+                'escala_horizontal': horizontal,
+                'polaridad': (
+                    ('inversa' if nombre in ESCALAS_INVERSAS else 'directa')
+                    if horizontal else None
+                ),
                 'mostrar_si': condicionales.get(nombre),
                 'depende_de': 'region_residencia' if nombre == 'comuna' else None,
                 'nota': notas.get(nombre),
@@ -137,6 +242,7 @@ def construir_esquema(rol):
         seccion = {
             'tipo': tipo,
             'titulo': titulo,
+            'descripcion': TEXTOS_SECCION.get(tipo),
             'mostrar_si': SECCIONES_CONDICIONALES.get(tipo),
             'preguntas': preguntas,
         }
@@ -149,4 +255,7 @@ def construir_esquema(rol):
         'secciones': secciones,
         'mrs_niveles': {str(k): v for k, v in MRS.DESCRIPCION_NIVELES.items()},
         'comunas_por_region': COMUNAS_POR_REGION,
+        'edad_minima': EDAD_MINIMA,
+        'definiciones': DEFINICIONES,
+        'mensaje_omitir': MENSAJE_OMITIR,
     }

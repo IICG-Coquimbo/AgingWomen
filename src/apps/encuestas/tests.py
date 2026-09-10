@@ -390,6 +390,33 @@ class EsquemaTest(TestCase):
         self.assertEqual(trabajo['mostrar_si'],
                          {'seccion': 'identificacion', 'campo': 'trabaja_actualmente', 'valor': True})
 
+    def test_contrato_de_esquema(self):
+        esquema = self._esquema(self.usuaria)
+        self.assertEqual(esquema['edad_minima'], 40)
+        self.assertEqual({d['termino'] for d in esquema['definiciones']},
+                         {'Perimenopausia', 'Menopausia'})
+        self.assertIn('blanco', esquema['mensaje_omitir'])
+        for s in esquema['secciones']:
+            self.assertTrue(s['descripcion'], s['tipo'])
+
+    def test_escalas_horizontales_y_polaridad(self):
+        esquema = self._esquema(self.usuaria)
+        trabajo = self._seccion(esquema, 'trabajo')
+        rendimiento = self._pregunta(trabajo, 'rendimiento_afectado')
+        self.assertTrue(rendimiento['escala_horizontal'])
+        self.assertIsNone(rendimiento['escala'])
+        self.assertEqual(rendimiento['polaridad'], 'directa')
+        self.assertEqual(self._pregunta(trabajo, 'lugar_trabajo_comprensivo')['polaridad'],
+                         'inversa')
+        # El MRS conserva las caritas: no es escala horizontal.
+        p1 = self._pregunta(self._seccion(esquema, 'mrs'), 'pregunta_1')
+        self.assertEqual(p1['escala'], 'mrs')
+        self.assertFalse(p1['escala_horizontal'])
+        # Pregunta categórica: ni horizontal ni polaridad.
+        genero = self._pregunta(self._seccion(esquema, 'identificacion'), 'genero')
+        self.assertFalse(genero['escala_horizontal'])
+        self.assertIsNone(genero['polaridad'])
+
     def test_trabajo_incluye_pregunta_de_estres(self):
         trabajo = self._seccion(self._esquema(self.usuaria), 'trabajo')
         p = self._pregunta(trabajo, 'estres_entorno_laboral')
