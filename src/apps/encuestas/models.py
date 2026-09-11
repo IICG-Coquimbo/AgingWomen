@@ -837,7 +837,12 @@ class ConocimientoSistema(SegmentoSincronizable):
         max_length=2,
         choices=RespuestaSiNoNoSabe.choices,
         null=True, blank=True,
-        help_text="¿Conoce alguno de los recursos o prestaciones disponibles para climaterio/menopausia?"
+        help_text=(
+            "¿Conoce alguno de los siguientes recursos o prestaciones? "
+            "(Atención médica en APS/CESFAM, Controles ginecológicos, Terapia hormonal, "
+            "Atención psicológica, Consejería en salud mental, Orientación nutricional, "
+            "Programas de actividad física, No conozco prestaciones relacionadas)."
+        )
     )
     ha_tenido_dificultades_acceso = models.CharField(
         max_length=2,
