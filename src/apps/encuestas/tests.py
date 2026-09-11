@@ -417,6 +417,70 @@ class EsquemaTest(TestCase):
         self.assertFalse(genero['escala_horizontal'])
         self.assertIsNone(genero['polaridad'])
 
+    def test_bloques_si_no_son_escala_horizontal(self):
+        # Ajustes finales adicionales, regla 1: todo Sí/No (y el booleano
+        # trabaja_actualmente) se dibuja horizontal con color, sin importar el
+        # campo — no hace falta listarlos uno por uno.
+        esquema = self._esquema(self.usuaria)
+        comp = self._seccion(esquema, 'mrs_complementario')
+        p = self._pregunta(comp, 'usa_metodo_anticonceptivo')
+        self.assertTrue(p['escala_horizontal'])
+        self.assertEqual(len(p['opciones']), 2)
+
+        ident = self._seccion(esquema, 'identificacion')
+        trabaja = self._pregunta(ident, 'trabaja_actualmente')
+        self.assertEqual(trabaja['tipo_campo'], 'booleano')
+        self.assertTrue(trabaja['escala_horizontal'])
+
+    def test_bloques_si_no_no_sabe_son_escala_horizontal(self):
+        cs = self._seccion(self._esquema(self.usuaria), 'conocimiento_sistema')
+        p = self._pregunta(cs, 'conoce_sistema_publico_climaterio')
+        self.assertTrue(p['escala_horizontal'])
+        self.assertEqual({o['valor'] for o in p['opciones']}, {'SI', 'NO', 'NS'})
+
+    def test_tipo_sangrado_es_escala_horizontal_forzada(self):
+        # Es una escala de severidad con valores de texto: el detector
+        # automático no la reconoce, así que se marca a mano.
+        comp = self._seccion(self._esquema(self.usuaria), 'mrs_complementario')
+        p = self._pregunta(comp, 'tipo_sangrado')
+        self.assertTrue(p['escala_horizontal'])
+        self.assertEqual(len(p['opciones']), 5)
+
+    def test_menstruacion_llega_sin_ausencia(self):
+        comp = self._seccion(self._esquema(self.usuaria), 'mrs_complementario')
+        p = self._pregunta(comp, 'menstruacion_llega')
+        valores = {o['valor'] for o in p['opciones']}
+        self.assertEqual(valores, {'REGULAR', 'IRREGULAR', 'NO_SEGURA'})
+        textos = {o['texto'] for o in p['opciones']}
+        self.assertIn('No estoy segura / No sé', textos)
+        # No es un bloque Sí/No ni una escala de severidad: sigue categórica.
+        self.assertFalse(p['escala_horizontal'])
+
+    def test_quien_prepara_comidas_sin_delivery_y_en_chips(self):
+        hv = self._seccion(self._esquema(self.usuaria), 'habitos_de_vida')
+        p = self._pregunta(hv, 'quien_prepara_comidas')
+        valores = {o['valor'] for o in p['opciones']}
+        self.assertNotIn('DELIVERY', valores)
+        self.assertEqual(len(valores), 5)
+        self.assertTrue(p['chips'])
+        self.assertFalse(p['escala_horizontal'])
+        self.assertIsNone(p['polaridad'])
+
+    def test_conocimiento_recursos_es_pregunta_general(self):
+        cs = self._seccion(self._esquema(self.usuaria), 'conocimiento_sistema')
+        nombres = {p['nombre'] for p in cs['preguntas']}
+        self.assertNotIn('recursos_conocidos', nombres)
+        p = self._pregunta(cs, 'conoce_recursos_disponibles')
+        self.assertEqual({o['valor'] for o in p['opciones']}, {'SI', 'NO', 'NS'})
+        self.assertTrue(p['escala_horizontal'])
+
+    def test_ninguna_pregunta_muestra_nota_de_implementacion(self):
+        esquema = self._esquema(self.usuaria)
+        for seccion in esquema['secciones']:
+            for p in seccion['preguntas']:
+                self.assertNotIn('separada por comas', p['texto'],
+                                 f"{seccion['tipo']}.{p['nombre']}")
+
     def test_trabajo_incluye_pregunta_de_estres(self):
         trabajo = self._seccion(self._esquema(self.usuaria), 'trabajo')
         p = self._pregunta(trabajo, 'estres_entorno_laboral')
@@ -568,7 +632,10 @@ class PaginaEncuestaTest(TestCase):
         resp = self.client.get('/encuesta/')
         self.assertEqual(resp.status_code, 200)
         self.assertContains(resp, 'js/encuesta.js')
-        self.assertContains(resp, 'name="csrf-token"')
+        # El botón "Salir" (base.html) es lo que garantiza que se emita la
+        # cookie csrftoken; el cliente ya no depende de un <meta> con el token
+        # (podía quedar obsoleto si la página se sirve desde caché offline).
+        self.assertContains(resp, 'name="csrfmiddlewaretoken"')
 
     def test_service_worker_se_sirve_desde_la_raiz(self):
         resp = self.client.get('/sw.js')

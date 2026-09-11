@@ -19,8 +19,15 @@
     var URL_SYNC = '/api/sincronizar/';
 
     var cont = document.getElementById('encuesta');
-    var metaCsrf = document.querySelector('meta[name="csrf-token"]');
-    var csrf = metaCsrf ? metaCsrf.content : '';
+
+    // El CSRF se lee de la cookie en cada envío (no al cargar el script): si
+    // esta página quedó cacheada offline, el token embebido en el HTML puede
+    // haber quedado obsoleto (rotó al iniciar sesión), pero la cookie
+    // `csrftoken` siempre trae el valor vigente.
+    function csrfToken() {
+        var m = document.cookie.match(/(?:^|;\s*)csrftoken=([^;]+)/);
+        return m ? decodeURIComponent(m[1]) : '';
+    }
 
     var esquema = null;
     var respuestas = {};   // { seccion: { campo: valor } }
@@ -291,6 +298,8 @@
             out += renderEscalaCalor(id, p, v);
         } else if (p.depende_de) {
             out += renderDependiente(seccion, p, id, v);
+        } else if (p.chips) {
+            out += renderChips(id, p, v);
         } else if (p.escala_horizontal) {
             out += renderEscalaHorizontal(id, p, v);
         } else if (p.tipo_campo === 'multiseleccion') {
@@ -378,6 +387,22 @@
                 '<input type="radio" name="' + id + '" value="' + esc(val) + '"' +
                 (sel ? ' checked' : '') + '>' +
                 '<span class="escala-h-txt">' + esc(op.texto) + '</span></label>';
+        });
+        return out + '</div>';
+    }
+
+    // Selección única categórica, horizontal, en "chips" cuadrados SIN color
+    // (regla de la profesora: no es una escala ordenada, ej. "¿Quién prepara
+    // sus comidas?"). Se resalta con el morado del tema, no con el gradiente.
+    function renderChips(id, p, v) {
+        var out = '<div class="chips">';
+        (p.opciones || []).forEach(function (op) {
+            var val = String(op.valor);
+            var sel = String(v) === val;
+            out += '<label class="chip' + (sel ? ' sel' : '') + '">' +
+                '<input type="radio" name="' + id + '" value="' + esc(val) + '"' +
+                (sel ? ' checked' : '') + '>' +
+                '<span>' + esc(op.texto) + '</span></label>';
         });
         return out + '</div>';
     }
@@ -597,7 +622,7 @@
 
         return fetch(URL_SYNC, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrf },
+            headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken() },
             body: JSON.stringify(construirPayload())
         })
             .then(function (r) {

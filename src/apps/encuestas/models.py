@@ -400,7 +400,10 @@ class MRS(SegmentoSincronizable):
     class FrecuenciaMenstruacion(models.TextChoices):
         REGULAR = 'REGULAR', 'Regular (cada 21-35 días)'
         IRREGULAR = 'IRREGULAR', 'Irregular (<21 o >35 días)'
-        AUSENCIA = 'AUSENCIA', 'Ausencia (≥12 meses)'
+        NO_SEGURA = 'NO_SEGURA', 'No estoy segura / No sé'
+        # "Ausencia" no es una opción de esta pregunta: el sistema la calcula
+        # solo a partir de `fecha_ultima_menstruacion` (≥12 meses = ausencia,
+        # ver `MRS.menstruacion_ausente`), no de lo que responda aquí.
 
     class TipoSangrado(models.TextChoices):
         MUY_LEVE = 'MUY_LEVE', 'Muy leve'
@@ -830,15 +833,11 @@ class ConocimientoSistema(SegmentoSincronizable):
         null=True, blank=True,
         help_text="¿Qué tan informada se considera respecto a los servicios disponibles para mujeres en climaterio o menopausia?"
     )
-    recursos_conocidos = models.TextField(
+    conoce_recursos_disponibles = models.CharField(
+        max_length=2,
+        choices=RespuestaSiNoNoSabe.choices,
         null=True, blank=True,
-        help_text=(
-            "¿Conoce alguno de los siguientes recursos o prestaciones? "
-            "(Atención médica en APS/CESFAM, Controles ginecológicos, Terapia hormonal, "
-            "Atención psicológica, Consejería en salud mental, Orientación nutricional, "
-            "Programas de actividad física, No conozco prestaciones relacionadas). "
-            "Guardar como lista separada por comas."
-        )
+        help_text="¿Conoce alguno de los recursos o prestaciones disponibles para climaterio/menopausia?"
     )
     ha_tenido_dificultades_acceso = models.CharField(
         max_length=2,
@@ -852,7 +851,7 @@ class ConocimientoSistema(SegmentoSincronizable):
             "¿Cuáles han sido las principales dificultades? Selección múltiple: "
             "Falta de información / Dificultad para obtener horas / Costos / "
             "Falta de especialistas / No saber dónde consultar / Minimización de síntomas / "
-            "Horarios incompatibles / Otra. Guardar como lista separada por comas."
+            "Horarios incompatibles / Otra."
         )
     )
     sintomas_tomados_en_serio = models.IntegerField(
@@ -871,8 +870,7 @@ class ConocimientoSistema(SegmentoSincronizable):
         help_text=(
             "¿Qué tipo de información o apoyo considera más necesario? Selección múltiple: "
             "Información general / Salud mental / Nutrición / Actividad física / Manejo de síntomas / "
-            "Atención ginecológica / Terapia hormonal / Apoyo laboral / Otro. "
-            "Guardar como lista separada por comas."
+            "Atención ginecológica / Terapia hormonal / Apoyo laboral / Otro."
         )
     )
 
@@ -1101,7 +1099,6 @@ class HabitosDeVida(SegmentoSincronizable):
         COMPARTIDO = 'COMPARTIDO', 'Yo preparo algunas y otras personas otras'
         OTRA_PERSONA_HOGAR = 'OTRA_HOGAR', 'Otra persona de mi hogar prepara la mayoría'
         COMPRO_PREPARADA = 'COMPRO', 'Generalmente compro comida preparada'
-        DELIVERY = 'DELIVERY', 'Generalmente pido delivery'
         OTRO = 'OTRO', 'Otro'
 
     participante = models.ForeignKey(

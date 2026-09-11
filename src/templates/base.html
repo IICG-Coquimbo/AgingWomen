@@ -15,7 +15,7 @@
     <header>
         <a href="{% url 'home' %}"><strong>Investigación Menopausia</strong></a>
         {% if user.is_authenticated %}
-        <form method="post" action="{% url 'logout' %}">
+        <form method="post" action="{% url 'logout' %}" data-csrf-form>
             {% csrf_token %}
             <button type="submit" class="salir">Salir</button>
         </form>
@@ -55,6 +55,22 @@
                     btn.textContent = oculta ? 'Ocultar' : 'Ver';
                 });
                 input.insertAdjacentElement('afterend', btn);
+            });
+
+            // --- CSRF siempre vigente en formularios que pueden quedar en
+            //     caché (ej. "Salir" en /encuesta/, guardado offline). El token
+            //     del HTML puede haber quedado obsoleto (rotó al iniciar
+            //     sesión); la cookie `csrftoken` siempre tiene el valor actual.
+            function csrfDeCookie() {
+                var m = document.cookie.match(/(?:^|;\s*)csrftoken=([^;]+)/);
+                return m ? decodeURIComponent(m[1]) : '';
+            }
+            document.querySelectorAll('form[data-csrf-form]').forEach(function (form) {
+                form.addEventListener('submit', function () {
+                    var campo = form.querySelector('input[name="csrfmiddlewaretoken"]');
+                    var actual = csrfDeCookie();
+                    if (campo && actual) { campo.value = actual; }
+                });
             });
 
             // --- Registro del Service Worker (soporte offline) ---

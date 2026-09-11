@@ -173,20 +173,54 @@ def _opciones(campo):
     return ops
 
 
-def _es_escala_horizontal(tipo_campo, opciones):
-    """
-    True si la pregunta es una escala ordinal (valores enteros consecutivos):
-    se dibuja horizontal con gradiente de color, como el MRS pero sin caritas
-    (regla de la profesora — toda escala, no solo el MRS). Las preguntas
-    categóricas (género, Sí/No, método anticonceptivo…) devuelven False.
-    """
-    if tipo_campo != 'opciones' or not opciones or len(opciones) < 2:
-        return False
+VALORES_SI_NO = frozenset({'SI', 'NO'})
+VALORES_SI_NO_NOSABE = frozenset({'SI', 'NO', 'NS'})
+
+
+def _es_escala_ordinal_entera(opciones):
     valores = [o['valor'] for o in opciones]
     if not all(isinstance(v, int) and not isinstance(v, bool) for v in valores):
         return False
     ordenados = sorted(valores)
     return ordenados == list(range(ordenados[0], ordenados[0] + len(ordenados)))
+
+
+def _es_bloque_si_no(opciones):
+    return frozenset(o['valor'] for o in opciones) in (VALORES_SI_NO, VALORES_SI_NO_NOSABE)
+
+
+def _es_escala_horizontal(tipo_campo, opciones):
+    """
+    True si la pregunta debe dibujarse horizontal con gradiente de color, como
+    el MRS pero sin caritas:
+    - escalas ordinales (valores enteros consecutivos: 1-5, 0-4, 1-3…)
+    - bloques Sí/No y Sí/No/No sé, incluidos los `BooleanField` (ajustes
+      finales adicionales, regla 1: aplica a TODO bloque de ese tipo).
+    Las preguntas categóricas (género, método anticonceptivo, quién prepara
+    las comidas…) devuelven False.
+    """
+    if not opciones or len(opciones) < 2:
+        return False
+    if tipo_campo == 'booleano':
+        return True
+    if tipo_campo != 'opciones':
+        return False
+    return _es_bloque_si_no(opciones) or _es_escala_ordinal_entera(opciones)
+
+
+# Preguntas que son una escala de severidad pero con valores de texto (no
+# enteros consecutivos), así que el detector automático no las reconoce:
+# se marcan a mano. {NombreModelo: {campo, ...}}
+CAMPOS_ESCALA_FORZADA = {
+    'MRS': {'tipo_sangrado'},
+}
+
+# Preguntas categóricas (selección única) que se muestran horizontales, en
+# "chips" cuadrados, SIN gradiente de color: no son una escala ordenada
+# (ajustes finales adicionales, regla 4). {NombreModelo: {campo, ...}}
+CAMPOS_CHIPS = {
+    'HabitosDeVida': {'quien_prepara_comidas'},
+}
 
 
 def construir_esquema(rol):
@@ -197,6 +231,8 @@ def construir_esquema(rol):
         condicionales = PREGUNTAS_CONDICIONALES.get(modelo, {})
         notas = NOTAS_PREGUNTA.get(modelo, {})
         multiseleccion = OPCIONES_MULTISELECCION.get(modelo, {})
+        forzadas = CAMPOS_ESCALA_FORZADA.get(modelo, set())
+        chips = CAMPOS_CHIPS.get(modelo, set())
 
         campos = list(form.fields.items())
         if parte == 'likert':
@@ -219,7 +255,10 @@ def construir_esquema(rol):
                     opciones = None
 
             escala = 'mrs' if (modelo == 'MRS' and nombre in MRS_PREGUNTAS) else None
-            horizontal = escala != 'mrs' and _es_escala_horizontal(tc, opciones)
+            es_chip = nombre in chips
+            horizontal = escala != 'mrs' and not es_chip and (
+                _es_escala_horizontal(tc, opciones) or nombre in forzadas
+            )
 
             preguntas.append({
                 'nombre': nombre,
@@ -234,6 +273,7 @@ def construir_esquema(rol):
                     ('inversa' if nombre in ESCALAS_INVERSAS else 'directa')
                     if horizontal else None
                 ),
+                'chips': es_chip,
                 'mostrar_si': condicionales.get(nombre),
                 'depende_de': 'region_residencia' if nombre == 'comuna' else None,
                 'nota': notas.get(nombre),

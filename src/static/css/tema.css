@@ -339,6 +339,41 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
     }
 }
 
+/* === Chips (selección categórica horizontal, sin color) === */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-top: .5rem;
+}
+.chip {
+    position: relative;
+    padding: .55rem .9rem;
+    border: 2px solid var(--color-borde);
+    border-radius: 8px;
+    background: var(--color-superficie);
+    color: var(--color-texto);
+    font-size: .88rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.chip input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.chip.sel {
+    border-color: var(--color-primario);
+    background: var(--color-primario-suave);
+    color: var(--color-primario-oscuro);
+    font-weight: 600;
+}
+.chip:focus-within {
+    outline: 2px solid var(--color-primario);
+    outline-offset: 2px;
+}
+
 /* === Aviso de estado de sincronización (Fase 7E) === */
 .estado-sync {
     border-radius: 8px;
