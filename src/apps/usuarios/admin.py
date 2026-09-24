@@ -5,18 +5,18 @@ from .models import Usuario
 
 @admin.register(Usuario)
 class UsuarioAdmin(admin.ModelAdmin):
-    list_display = ('rut_hash_corto', 'email', 'rol', 'is_active', 'is_staff', 'date_joined')
+    list_display = ('rut_hash_corto', 'email', 'rol', 'is_active', 'is_staff', 'date_joined', 'consentimiento_aceptado_en')
     list_filter = ('rol', 'is_active', 'is_staff', 'is_superuser')
     search_fields = ('email', 'rut_hash')
     ordering = ('-date_joined',)
-    readonly_fields = ('rut_hash', 'password', 'last_login', 'date_joined')
+    readonly_fields = ('rut_hash', 'password', 'last_login', 'date_joined', 'consentimiento_aceptado_en')
 
     fieldsets = (
         (None, {'fields': ('rut_hash', 'email', 'password')}),
         ('Rol y permisos', {
             'fields': ('rol', 'is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
         }),
-        ('Fechas', {'fields': ('last_login', 'date_joined')}),
+        ('Fechas', {'fields': ('last_login', 'date_joined', 'consentimiento_aceptado_en')}),
     )
 
     @admin.display(description='RUT (hash)')

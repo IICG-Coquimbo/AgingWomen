@@ -627,7 +627,16 @@ class PaginaEncuestaTest(TestCase):
         self.assertEqual(resp.status_code, 302)
         self.assertIn('/cuenta/ingresar/', resp.url)
 
+    def test_redirige_a_consentimiento_si_no_se_ha_aceptado(self):
+        self.client.force_login(self.usuaria)
+        resp = self.client.get('/encuesta/')
+        self.assertEqual(resp.status_code, 302)
+        self.assertIn('/cuenta/consentimiento/', resp.url)
+
     def test_pagina_carga_con_el_script(self):
+        from django.utils import timezone
+        self.usuaria.consentimiento_aceptado_en = timezone.now()
+        self.usuaria.save(update_fields=['consentimiento_aceptado_en'])
         self.client.force_login(self.usuaria)
         resp = self.client.get('/encuesta/')
         self.assertEqual(resp.status_code, 200)

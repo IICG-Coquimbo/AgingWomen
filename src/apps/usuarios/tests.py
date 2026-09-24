@@ -86,3 +86,38 @@ class AccesoRestringidoTest(TestCase):
         resp = self.client.get(reverse('home'))
         self.assertEqual(resp.status_code, 302)
         self.assertIn(reverse('login'), resp.url)
+
+
+class ConsentimientoInformadoTest(TestCase):
+    def setUp(self):
+        self.usuario = Usuario.objects.create_user(
+            rut='11.111.111-1', email='a@example.com', password='clave-de-prueba-123',
+        )
+        self.client.login(username='11111111-1', password='clave-de-prueba-123')
+
+    def test_encuesta_redirige_a_consentimiento_si_no_se_ha_aceptado(self):
+        resp = self.client.get(reverse('encuesta'))
+        self.assertEqual(resp.status_code, 302)
+        self.assertIn(reverse('consentimiento'), resp.url)
+
+    def test_aceptar_consentimiento_marca_fecha_y_permite_seguir(self):
+        resp = self.client.post(
+            reverse('consentimiento') + '?next=' + reverse('encuesta'),
+            {'acepto': 'on', 'next': reverse('encuesta')},
+        )
+        self.assertRedirects(resp, reverse('encuesta'))
+        self.usuario.refresh_from_db()
+        self.assertIsNotNone(self.usuario.consentimiento_aceptado_en)
+
+    def test_rechazar_checkbox_no_avanza(self):
+        resp = self.client.post(reverse('consentimiento'), {})
+        self.assertEqual(resp.status_code, 200)
+        self.usuario.refresh_from_db()
+        self.assertIsNone(self.usuario.consentimiento_aceptado_en)
+
+    def test_consentimiento_ya_aceptado_redirige_directo(self):
+        from django.utils import timezone
+        self.usuario.consentimiento_aceptado_en = timezone.now()
+        self.usuario.save(update_fields=['consentimiento_aceptado_en'])
+        resp = self.client.get(reverse('consentimiento'))
+        self.assertRedirects(resp, reverse('home'))

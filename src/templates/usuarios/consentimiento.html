@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block titulo %}Consentimiento informado{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Consentimiento informado</h1>
+    <p class="ayuda">
+        ⚠️ Texto provisional. Debe reemplazarse por el consentimiento informado
+        aprobado por el comité de ética del estudio antes de usar el sistema
+        con participantes reales.
+    </p>
+
+    <p>
+        Esta plataforma forma parte de un estudio de investigación sobre la
+        experiencia de las mujeres durante la etapa de climaterio y
+        menopausia. Antes de responder la encuesta, necesitamos que leas y
+        aceptes lo siguiente:
+    </p>
+    <ul>
+        <li>Tu participación es <strong>voluntaria</strong>. Puedes dejar de
+            responder en cualquier momento sin ninguna consecuencia.</li>
+        <li>No se almacena tu nombre ni tus apellidos. Tu RUT se guarda
+            únicamente en una forma cifrada que no puede revertirse para
+            recuperar el número original.</li>
+        <li>Las respuestas se usan solo con fines de investigación y de
+            apoyo a tu atención de salud, y se tratan de forma confidencial.</li>
+        <li>Puedes volver a responder la encuesta más adelante; cada
+            aplicación queda guardada como un registro independiente, sin
+            borrar las respuestas anteriores.</li>
+        <li>Si tienes dudas sobre el estudio, puedes contactar al equipo de
+            investigación a través de tu centro de salud.</li>
+    </ul>
+
+    {% if error %}
+        <div class="errores">{{ error }}</div>
+    {% endif %}
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}">
+        <p>
+            <label>
+                <input type="checkbox" name="acepto">
+                He leído la información anterior y acepto participar.
+            </label>
+        </p>
+        <button type="submit" class="boton">Aceptar y continuar</button>
+    </form>
+
+    <div class="enlaces">
+        <a href="{% url 'home' %}">Volver al inicio sin aceptar</a>
+    </div>
+</div>
+{% endblock %}

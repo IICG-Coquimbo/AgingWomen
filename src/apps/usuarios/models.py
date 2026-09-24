@@ -37,6 +37,12 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField('activo', default=True)
     is_staff = models.BooleanField('acceso al panel de administración', default=False)
     date_joined = models.DateTimeField('fecha de registro', auto_now_add=True)
+    consentimiento_aceptado_en = models.DateTimeField(
+        'consentimiento informado aceptado el',
+        null=True,
+        blank=True,
+        help_text='Se completa automáticamente al aceptar la pantalla de consentimiento. Bloquea el acceso a la encuesta mientras esté vacío.',
+    )
 
     objects = UsuarioManager()
 

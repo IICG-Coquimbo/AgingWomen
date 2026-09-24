@@ -21,6 +21,9 @@ urlpatterns = [
     ),
     path('salir/', auth_views.LogoutView.as_view(), name='logout'),
 
+    # --- Consentimiento informado (previo al ingreso a la encuesta) ---
+    path('consentimiento/', views.consentimiento, name='consentimiento'),
+
     # --- Recuperación de contraseña (por correo) ---
     path(
         'clave/recuperar/',

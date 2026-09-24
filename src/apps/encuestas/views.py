@@ -3,8 +3,11 @@ from django.contrib.auth.decorators import login_required
 from django.http import FileResponse
 from django.shortcuts import render
 
+from apps.usuarios.decorators import requiere_consentimiento
+
 
 @login_required
+@requiere_consentimiento
 def encuesta(request):
     """Shell de la app cliente de la encuesta. El contenido lo arma encuesta.js."""
     return render(request, 'encuesta.html')
