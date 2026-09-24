@@ -132,9 +132,22 @@ PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.ScryptPasswordHasher',
 ]
 
-# En desarrollo, la contraseña autogenerada se imprime en la consola.
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'no-responder@agingwomen.local'
+# Envío de correo (contraseña autogenerada al registrarse). Si no se define
+# EMAIL_HOST_USER por variable de entorno, se usa el backend de consola (modo
+# desarrollo: la contraseña sale impresa en los logs, no se envía nada).
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
+
+if EMAIL_HOST_USER:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
+    EMAIL_PORT = int(os.environ.get('EMAIL_PORT', '587'))
+    EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', '1') == '1'
+    EMAIL_USE_SSL = os.environ.get('EMAIL_USE_SSL', '0') == '1'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'no-responder@agingwomen.local')
 
 # Rutas de acceso (regla 1.1: no hay modo invitado).
 LOGIN_URL = 'login'
