@@ -34,6 +34,7 @@
     var uuids = {};        // { seccion: uuid }
     var indice = 0;        // índice dentro de las secciones aplicables
     var bienvenidaOk = false;  // ya pasó la pantalla de definiciones + filtro de edad
+    var envioFinalPendiente = false;  // se pulsó "Finalizar" pero aún no se confirma con el servidor
 
     // ---------- IndexedDB ----------
     function abrirDB() {
@@ -68,12 +69,16 @@
 
     // ---------- Carga inicial ----------
     function iniciar() {
-        Promise.all([idbGet('esquema'), idbGet('respuestas'), idbGet('uuids'), idbGet('bienvenida')])
+        Promise.all([
+            idbGet('esquema'), idbGet('respuestas'), idbGet('uuids'), idbGet('bienvenida'),
+            idbGet('envio_final'),
+        ])
             .then(function (vals) {
                 esquema = vals[0];
                 respuestas = vals[1] || {};
                 uuids = vals[2] || {};
                 bienvenidaOk = !!vals[3];
+                envioFinalPendiente = !!vals[4];
                 return traerEsquema();
             })
             .then(function () {
@@ -83,7 +88,7 @@
                 mostrarConexion();
                 window.addEventListener('online', alRecuperarConexion);
                 window.addEventListener('offline', mostrarConexion);
-                intentarSync(false);  // envía lo pendiente si hay conexión
+                intentarSync(envioFinalPendiente);  // envía lo pendiente si hay conexión
             })
             .catch(function (err) {
                 console.error(err);
@@ -587,7 +592,7 @@
 
     function alRecuperarConexion() {
         mostrarConexion();
-        intentarSync(false);
+        intentarSync(envioFinalPendiente);
     }
 
     function finalizar() {
@@ -599,12 +604,14 @@
                 incompletas.map(function (s) { return s.titulo; }).join(', '));
             return;
         }
+        envioFinalPendiente = true;
         idbSet('envio_final', true);
         intentarSync(true);
     }
 
-    function construirPayload() {
+    function construirPayload(esFinal) {
         var payload = { secciones: [] };
+        if (esFinal) { payload.finalizar = true; }
         var bloques = {};   // clave de sync -> bloque (para fusionar grupos, p. ej. MRS)
         seccionesAplicables().forEach(function (s) {
             var datos = respuestas[s.tipo] || {};
@@ -621,6 +628,25 @@
             if (!seccionCompleta(s)) { bloques[k].parcial = true; }
         });
         return payload;
+    }
+
+    // Tras un "Finalizar" exitoso, la ronda queda sellada en el servidor
+    // (Fase 13). Acá se limpia el estado local para que la próxima vez que se
+    // abra la encuesta empiece una ronda nueva en blanco: se conservan los
+    // datos de "Identificación" (perfil, no se repite por ronda) y se
+    // regeneran los uuid_local de las demás secciones, así el servidor los
+    // guarda como filas nuevas en vez de reescribir las de la ronda cerrada.
+    function iniciarRondaNueva() {
+        var identificacionGuardada = respuestas.identificacion;
+        respuestas = identificacionGuardada ? { identificacion: identificacionGuardada } : {};
+        idbSet('respuestas', respuestas);
+
+        Object.keys(uuids).forEach(function (k) {
+            if (k !== 'identificacion') { delete uuids[k]; }
+        });
+        asegurarUuids();
+
+        indice = 0;
     }
 
     // Sube al servidor lo que haya guardado localmente. `esFinal` = la usuaria
@@ -645,7 +671,7 @@
         return fetch(URL_SYNC, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken() },
-            body: JSON.stringify(construirPayload())
+            body: JSON.stringify(construirPayload(esFinal))
         })
             .then(function (r) {
                 return r.json().then(function (j) { return { ok: r.ok, cuerpo: j }; });
@@ -655,8 +681,11 @@
                     idbSet('sucio', false);
                     idbSet('pendiente_envio', false);
                     if (esFinal) {
+                        envioFinalPendiente = false;
                         idbSet('envio_final', false);
-                        mensajeFinal('¡Encuesta enviada! Gracias por participar.');
+                        iniciarRondaNueva();
+                        mensajeFinal('¡Encuesta enviada! Gracias por participar. Puedes volver a ' +
+                            'responderla más adelante para registrar cómo han cambiado tus síntomas.');
                     } else {
                         avisoSync('Respuestas sincronizadas.', 'ok');
                     }
