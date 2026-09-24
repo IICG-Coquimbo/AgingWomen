@@ -88,6 +88,52 @@ class AccesoRestringidoTest(TestCase):
         self.assertIn(reverse('login'), resp.url)
 
 
+class AdminGestionCuentasTest(TestCase):
+    def setUp(self):
+        self.superusuario = Usuario.objects.create_superuser(
+            rut_hash='11.111.111-1', email='admin@example.com', password='clave-admin-123',
+        )
+        self.client.login(username='11111111-1', password='clave-admin-123')
+
+    def test_crear_profesional_por_admin_crea_cuenta_y_envia_correo(self):
+        url = reverse('admin:usuarios_usuario_crear_profesional')
+        resp = self.client.post(url, {'rut': '7.654.321-6', 'email': 'nuevo.profesional@example.com'})
+        self.assertRedirects(resp, reverse('admin:usuarios_usuario_changelist'))
+
+        usuario = Usuario.objects.get(email='nuevo.profesional@example.com')
+        self.assertEqual(usuario.rol, Usuario.Rol.PROFESIONAL_SALUD)
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertIn('nuevo.profesional@example.com', mail.outbox[0].to)
+
+    def test_no_superusuario_no_puede_crear_profesional(self):
+        staff = Usuario.objects.create_user(
+            rut='9.876.543-3', email='staff@example.com', password='clave-staff-123',
+            rol=Usuario.Rol.PROFESIONAL_SALUD, is_staff=True,
+        )
+        self.client.logout()
+        self.client.login(username='98765433', password='clave-staff-123')
+        url = reverse('admin:usuarios_usuario_crear_profesional')
+        resp = self.client.post(url, {'rut': '7.654.321-6', 'email': 'otro@example.com'})
+        self.assertRedirects(resp, reverse('admin:index'))
+        self.assertFalse(Usuario.objects.filter(email='otro@example.com').exists())
+
+    def test_promover_y_revocar_por_accion_de_admin(self):
+        usuaria = Usuario.objects.create_user(rut='7.654.321-6', email='u@example.com')
+        url = reverse('admin:usuarios_usuario_changelist')
+
+        self.client.post(url, {
+            'action': 'promover_a_profesional', '_selected_action': [usuaria.pk],
+        })
+        usuaria.refresh_from_db()
+        self.assertEqual(usuaria.rol, Usuario.Rol.PROFESIONAL_SALUD)
+
+        self.client.post(url, {
+            'action': 'revocar_a_usuaria_comun', '_selected_action': [usuaria.pk],
+        })
+        usuaria.refresh_from_db()
+        self.assertEqual(usuaria.rol, Usuario.Rol.USUARIA_COMUN)
+
+
 class ConsentimientoInformadoTest(TestCase):
     def setUp(self):
         self.usuario = Usuario.objects.create_user(
