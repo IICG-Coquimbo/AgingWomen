@@ -284,6 +284,19 @@ class Identificacion(SegmentoSincronizable):
         null=True, blank=True,
         help_text="¿Trabaja actualmente?"
     )
+
+    class ExcepcionEdad(models.TextChoices):
+        NINGUNA = 'NINGUNA', 'No aplica'
+        MENOPAUSIA_QUIRURGICA = 'QUIRURGICA', 'Menopausia quirúrgica (histerectomía y/o extracción de ovarios)'
+        AUSENCIA_MENSTRUACION = 'AUSENCIA', 'Ausencia prolongada de menstruación (12 meses o más) sin causa quirúrgica'
+
+    excepcion_edad = models.CharField(
+        max_length=10,
+        choices=ExcepcionEdad.choices,
+        default=ExcepcionEdad.NINGUNA,
+        blank=True,
+        help_text="Motivo declarado para participar con menos de 40 años, si aplica",
+    )
     creado_en = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

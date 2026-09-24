@@ -19,6 +19,7 @@ from .models import (
     TareasCuidado,
     meses_desde_texto_fecha,
 )
+from .esquema import construir_esquema
 from .sync import ErrorSincronizacion, sincronizar_payload
 
 
@@ -598,24 +599,62 @@ class IdentificacionFormEdadTest(TestCase):
     def test_acepta_40_o_mas(self):
         self.assertTrue(self._form(45).is_valid(), self._form(45).errors)
 
+    def test_acepta_menor_de_40_con_excepcion(self):
+        hoy = date.today()
+        form = IdentificacionForm(data=dict(
+            self.base, fecha_nacimiento=f'{hoy.year - 30}-01-01', excepcion_edad='QUIRURGICA'))
+        self.assertTrue(form.is_valid(), form.errors)
+
 
 class SincronizacionEdadTest(TestCase):
-    def test_sync_rechaza_identificacion_menor_de_40(self):
-        usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
+    def _payload_menor_de_edad(self, **extra_datos):
         hoy = date.today()
-        payload = {
-            'identificacion': {'uuid_local': str(uuid4()), 'datos': {
-                'fecha_nacimiento': f'{hoy.year - 25}-06-01', 'genero': 'F',
-                'nivel_educacion': 'M_COM', 'origen_procedencia': 'CL',
-                'pueblo_originario_afro': 'NINGUNO', 'comuna': 'Santiago',
-                'region_residencia': '13',
-            }},
+        datos = {
+            'fecha_nacimiento': f'{hoy.year - 25}-06-01', 'genero': 'F',
+            'nivel_educacion': 'M_COM', 'origen_procedencia': 'CL',
+            'pueblo_originario_afro': 'NINGUNO', 'comuna': 'Santiago',
+            'region_residencia': '13',
+        }
+        datos.update(extra_datos)
+        return {
+            'identificacion': {'uuid_local': str(uuid4()), 'datos': datos},
             'secciones': [],
         }
-        res = sincronizar_payload(usuaria, payload)
+
+    def test_sync_rechaza_identificacion_menor_de_40(self):
+        usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
+        res = sincronizar_payload(usuaria, self._payload_menor_de_edad())
         self.assertFalse(res['ok'])
         self.assertEqual(res['resultados'][0]['estado'], 'error')
         self.assertIn('fecha_nacimiento', res['resultados'][0]['errores'])
+
+    def test_sync_acepta_menor_de_40_con_excepcion_menopausia_quirurgica(self):
+        usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
+        payload = self._payload_menor_de_edad(excepcion_edad='QUIRURGICA')
+        res = sincronizar_payload(usuaria, payload)
+        self.assertTrue(res['ok'])
+        self.assertEqual(res['resultados'][0]['estado'], 'creado')
+        ident = Identificacion.objects.get(usuario=usuaria)
+        self.assertEqual(ident.excepcion_edad, 'QUIRURGICA')
+
+    def test_sync_acepta_menor_de_40_con_excepcion_ausencia_menstruacion(self):
+        usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
+        payload = self._payload_menor_de_edad(excepcion_edad='AUSENCIA')
+        res = sincronizar_payload(usuaria, payload)
+        self.assertTrue(res['ok'])
+
+
+class EsquemaExcepcionEdadTest(TestCase):
+    def test_excepcion_edad_no_aparece_como_pregunta_de_la_seccion(self):
+        esquema = construir_esquema(Usuario.Rol.USUARIA_COMUN)
+        seccion_ident = next(s for s in esquema['secciones'] if s['tipo'] == 'identificacion')
+        nombres = {p['nombre'] for p in seccion_ident['preguntas']}
+        self.assertNotIn('excepcion_edad', nombres)
+
+    def test_excepciones_edad_se_exponen_en_el_esquema(self):
+        esquema = construir_esquema(Usuario.Rol.USUARIA_COMUN)
+        valores = {op['valor'] for op in esquema['excepciones_edad']}
+        self.assertEqual(valores, {'QUIRURGICA', 'AUSENCIA'})
 
 
 class PaginaEncuestaTest(TestCase):

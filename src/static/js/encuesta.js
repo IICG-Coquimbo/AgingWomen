@@ -198,6 +198,7 @@
     function renderBienvenida() {
         var defs = esquema.definiciones || [];
         var edadMin = esquema.edad_minima || 40;
+        var excepciones = esquema.excepciones_edad || [];
         var fn = (respuestas.identificacion || {}).fecha_nacimiento || '';
 
         var html = '<div class="tarjeta bienvenida">';
@@ -214,23 +215,44 @@
             edadMin + ' años o más</strong>. Ingresa tu fecha de nacimiento para continuar:</p>';
         html += '<label for="g_fn">Fecha de nacimiento</label>';
         html += '<input id="g_fn" type="date" value="' + esc(fn) + '">';
+        html += '<div id="g_excepcion" hidden>' +
+            '<p>Esta encuesta está dirigida a personas de ' + edadMin + ' años o más. Si ' +
+            'ninguna de estas situaciones aplica en tu caso, no puedes continuar. Si alguna ' +
+            'sí aplica, selecciónala para seguir:</p>';
+        excepciones.forEach(function (op, i) {
+            html += '<label class="opcion-excepcion"><input type="radio" name="g_exc" value="' +
+                esc(op.valor) + '"> ' + esc(op.texto) + '</label>';
+        });
+        html += '<label class="opcion-excepcion"><input type="radio" name="g_exc" value="" checked> ' +
+            'Ninguna de las anteriores</label></div>';
         html += '<p id="g_error" class="errores" hidden></p>';
         html += '<button type="button" id="g_ok">Comenzar</button></div></div>';
         cont.innerHTML = html;
 
         var input = document.getElementById('g_fn');
+        var bloqueExcepcion = document.getElementById('g_excepcion');
         var err = document.getElementById('g_error');
-        input.addEventListener('input', function () { err.hidden = true; });
+        input.addEventListener('input', function () {
+            err.hidden = true;
+            bloqueExcepcion.hidden = true;
+        });
         document.getElementById('g_ok').addEventListener('click', function () {
             var edad = edadDesde(input.value);
             if (edad === null) {
                 err.textContent = 'Ingresa tu fecha de nacimiento.'; err.hidden = false; return;
             }
             if (edad < edadMin) {
-                err.textContent = 'Esta encuesta está dirigida a personas de ' + edadMin +
-                    ' años o más, por lo que no puedes continuar. Gracias por tu interés.';
-                err.hidden = false;
-                return;
+                var excepcionMarcada = cont.querySelector('input[name="g_exc"]:checked');
+                var valorExcepcion = excepcionMarcada ? excepcionMarcada.value : '';
+                if (!valorExcepcion) {
+                    bloqueExcepcion.hidden = false;
+                    err.textContent = 'Esta encuesta está dirigida a personas de ' + edadMin +
+                        ' años o más. Selecciona una excepción si corresponde, o no podrás continuar.';
+                    err.hidden = false;
+                    return;
+                }
+                if (!respuestas.identificacion) { respuestas.identificacion = {}; }
+                respuestas.identificacion.excepcion_edad = valorExcepcion;
             }
             if (!respuestas.identificacion) { respuestas.identificacion = {}; }
             respuestas.identificacion.fecha_nacimiento = input.value;

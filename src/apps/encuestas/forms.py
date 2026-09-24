@@ -64,12 +64,16 @@ class IdentificacionForm(EncuestaModelForm):
         fields = (
             'fecha_nacimiento', 'genero', 'nivel_educacion', 'origen_procedencia',
             'pueblo_originario_afro', 'region_residencia', 'comuna', 'trabaja_actualmente',
+            'excepcion_edad',
         )
 
     EDAD_MINIMA = 40
 
     def clean(self):
         cleaned = super().clean()
+        if 'excepcion_edad' in cleaned and not cleaned['excepcion_edad']:
+            cleaned['excepcion_edad'] = Identificacion.ExcepcionEdad.NINGUNA
+
         region = cleaned.get('region_residencia')
         comuna = cleaned.get('comuna')
         if region and comuna and region != '99':
@@ -84,11 +88,13 @@ class IdentificacionForm(EncuestaModelForm):
             edad = hoy.year - nacimiento.year - (
                 (hoy.month, hoy.day) < (nacimiento.month, nacimiento.day)
             )
-            if edad < self.EDAD_MINIMA:
+            excepcion = cleaned.get('excepcion_edad') or Identificacion.ExcepcionEdad.NINGUNA
+            if edad < self.EDAD_MINIMA and excepcion == Identificacion.ExcepcionEdad.NINGUNA:
                 self.add_error(
                     'fecha_nacimiento',
                     f'La persona debe tener {self.EDAD_MINIMA} años o más para participar '
-                    f'en el estudio.',
+                    f'en el estudio, salvo que declare menopausia quirúrgica o ausencia '
+                    f'prolongada de menstruación.',
                 )
         return cleaned
 

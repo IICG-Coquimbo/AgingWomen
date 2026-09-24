@@ -20,7 +20,7 @@ from .forms import (
     SegmentoEMPAForm,
     TareasCuidadoForm,
 )
-from .models import MRS
+from .models import MRS, Identificacion
 
 # Orden en que se presenta la encuesta.
 # 4º elemento = "parte": None usa todos los campos del formulario; 'likert' y
@@ -222,6 +222,14 @@ CAMPOS_CHIPS = {
     'HabitosDeVida': {'quien_prepara_comidas'},
 }
 
+# Campos que existen en el ModelForm (se validan/guardan normalmente) pero NO
+# se muestran como pregunta genérica de sección: la captura otra pantalla
+# (Fase 11: excepcion_edad se declara en la pantalla de bienvenida, junto al
+# filtro de edad, no en la sección "Identificación").
+CAMPOS_OCULTOS_ESQUEMA = {
+    'Identificacion': {'excepcion_edad'},
+}
+
 
 def construir_esquema(rol):
     secciones = []
@@ -234,7 +242,8 @@ def construir_esquema(rol):
         forzadas = CAMPOS_ESCALA_FORZADA.get(modelo, set())
         chips = CAMPOS_CHIPS.get(modelo, set())
 
-        campos = list(form.fields.items())
+        ocultos = CAMPOS_OCULTOS_ESQUEMA.get(modelo, set())
+        campos = [(n, c) for n, c in form.fields.items() if n not in ocultos]
         if parte == 'likert':
             campos = [(n, c) for n, c in campos if n in MRS_PREGUNTAS]
         elif parte == 'complementario':
@@ -298,4 +307,9 @@ def construir_esquema(rol):
         'edad_minima': EDAD_MINIMA,
         'definiciones': DEFINICIONES,
         'mensaje_omitir': MENSAJE_OMITIR,
+        'excepciones_edad': [
+            {'valor': valor, 'texto': texto}
+            for valor, texto in Identificacion.ExcepcionEdad.choices
+            if valor != Identificacion.ExcepcionEdad.NINGUNA
+        ],
     }

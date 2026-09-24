@@ -234,6 +234,14 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
 .gate label { margin-top: .5rem; }
 .gate input { max-width: 16rem; }
 .gate button { margin-top: .9rem; }
+.opcion-excepcion {
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+    font-weight: normal;
+    margin-top: .5rem !important;
+}
+.opcion-excepcion input { max-width: none; margin-top: .2rem; }
 
 /* === Escala de calor MRS (Fase 7D) === */
 .escala-calor {
