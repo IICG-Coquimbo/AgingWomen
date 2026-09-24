@@ -168,6 +168,23 @@ class SegmentoSincronizable(models.Model):
         abstract = True
 
 
+class SegmentoDeRonda(SegmentoSincronizable):
+    """
+    Mixin de los segmentos de la encuesta (todo excepto Identificación, que es
+    el perfil único de la participante). Permite reaplicar la encuesta sin
+    sobrescribir el historial (Fase 13): cada sección guardada queda marcada
+    con la ronda vigente de `Identificacion.ronda_actual` al momento de
+    guardar, y esa ronda avanza recién cuando el payload llega con
+    `finalizar: true` y se guarda sin errores (ver sync.py). Así, reaplicar la
+    encuesta más adelante crea filas nuevas en vez de reemplazar las
+    anteriores, construyendo la línea de tiempo de evolución sintomática.
+    """
+    ronda = models.PositiveIntegerField(default=1, editable=False)
+
+    class Meta:
+        abstract = True
+
+
 # ===========================================================================
 # 1. IDENTIFICACIÓN
 # ===========================================================================
@@ -299,6 +316,17 @@ class Identificacion(SegmentoSincronizable):
     )
     creado_en = models.DateTimeField(auto_now_add=True)
 
+    ronda_actual = models.PositiveIntegerField(
+        default=1,
+        editable=False,
+        help_text=(
+            "Número de la ronda de evaluación en curso. Avanza cuando se "
+            "finaliza una ronda con éxito (Fase 13); las secciones ya "
+            "guardadas quedan marcadas con la ronda a la que pertenecen y no "
+            "se sobrescriben al reaplicar la encuesta."
+        ),
+    )
+
     def __str__(self):
         return f"Participante {self.id} - Origen: {self.get_origen_procedencia_display()}"
 
@@ -316,7 +344,7 @@ class Identificacion(SegmentoSincronizable):
 # 4. ESCALA MRS (Menopause Rating Scale) + 5. CUESTIONARIO COMPLEMENTARIO MRS
 # ===========================================================================
 
-class MRS(SegmentoSincronizable):
+class MRS(SegmentoDeRonda):
     """
     Escala de Evaluación de la Menopausia (Menopause Rating Scale - MRS).
     Se guarda como un segmento temporal para evaluar cambios según los hábitos.
@@ -585,7 +613,7 @@ class MRS(SegmentoSincronizable):
 # 6. EMPA (Examen de Medicina Preventiva del Adulto)
 # ===========================================================================
 
-class SegmentoEMPA(SegmentoSincronizable):
+class SegmentoEMPA(SegmentoDeRonda):
     """
     Segmento para el Examen de Medicina Preventiva del Adulto (EMPA).
     Muchos campos son opcionales (null=True, blank=True) porque pueden
@@ -763,7 +791,7 @@ class SegmentoEMPA(SegmentoSincronizable):
 # 9. CONOCIMIENTO DEL SISTEMA
 # ===========================================================================
 
-class ConocimientoSistema(SegmentoSincronizable):
+class ConocimientoSistema(SegmentoDeRonda):
     """
     Evaluación del conocimiento y acceso de la participante al sistema
     público de salud en relación al climaterio/menopausia.
@@ -905,7 +933,7 @@ class ConocimientoSistema(SegmentoSincronizable):
 # 2. TRABAJO (sección nueva)
 # ===========================================================================
 
-class EvaluacionTrabajo(SegmentoSincronizable):
+class EvaluacionTrabajo(SegmentoDeRonda):
     """
     Impacto del empleo actual en la salud y síntomas asociados a la menopausia
     (Sección 3.3 del spec: máximo 3-4 preguntas sobre sobrecarga laboral).
@@ -960,7 +988,7 @@ class EvaluacionTrabajo(SegmentoSincronizable):
 # 3. TAREAS DE CUIDADO (sección nueva - "Crítico")
 # ===========================================================================
 
-class TareasCuidado(SegmentoSincronizable):
+class TareasCuidado(SegmentoDeRonda):
     """
     Sobrecarga por tareas de cuidado no remuneradas. El sistema pondera este
     factor de forma prioritaria: la doble carga (trabajo remunerado + cuidado)
@@ -1028,7 +1056,7 @@ class TareasCuidado(SegmentoSincronizable):
 # 7. ACTIVIDAD FÍSICA (sección nueva)
 # ===========================================================================
 
-class ActividadFisica(SegmentoSincronizable):
+class ActividadFisica(SegmentoDeRonda):
     """Hábitos de actividad física y sedentarismo (Sección 7 del Excel)."""
 
     class DiasEjercicioSemana(models.IntegerChoices):
@@ -1104,7 +1132,7 @@ class ActividadFisica(SegmentoSincronizable):
 # 8. HÁBITOS DE VIDA (antes "Hábitos alimenticios")
 # ===========================================================================
 
-class HabitosDeVida(SegmentoSincronizable):
+class HabitosDeVida(SegmentoDeRonda):
     """
     Hábitos de alimentación y consumo de sustancias (tabaco, marihuana,
     alcohol). Todas las cantidades y frecuencias usan escalas de 5 niveles

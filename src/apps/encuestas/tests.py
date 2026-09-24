@@ -242,6 +242,92 @@ class SincronizacionTest(TestCase):
         self.assertEqual(TareasCuidado.objects.count(), 0)
 
 
+class HistoricoRondaTest(TestCase):
+    """Fase 13: reaplicar la encuesta no sobrescribe rondas ya finalizadas."""
+
+    def setUp(self):
+        self.usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
+        self.ident_datos = {
+            'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
+            'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
+            'comuna': 'Santiago', 'region_residencia': '13',
+        }
+
+    def _payload_ident(self, **extra):
+        return {'uuid_local': str(uuid4()), 'datos': dict(self.ident_datos, **extra)}
+
+    def _payload_mrs(self, uuid_local=None, **extra_datos):
+        datos = {'pregunta_1': 2}
+        datos.update(extra_datos)
+        return {'tipo': 'mrs', 'uuid_local': uuid_local or str(uuid4()), 'parcial': True,
+                'datos': datos}
+
+    def test_guardar_cambios_sin_finalizar_no_avanza_ronda(self):
+        uuid_mrs = str(uuid4())
+        payload = {'identificacion': self._payload_ident(),
+                   'secciones': [self._payload_mrs(uuid_mrs, pregunta_1=1)]}
+        res = sincronizar_payload(self.usuaria, payload)
+        self.assertEqual(res['ronda_actual'], 1)
+
+        # Un segundo "Guardar cambios" con el mismo uuid_local sigue
+        # actualizando la misma fila (comportamiento ya existente).
+        payload2 = {'identificacion': self._payload_ident(),
+                    'secciones': [self._payload_mrs(uuid_mrs, pregunta_1=3)]}
+        res2 = sincronizar_payload(self.usuaria, payload2)
+        self.assertEqual(res2['ronda_actual'], 1)
+        self.assertEqual(MRS.objects.count(), 1)
+        self.assertEqual(MRS.objects.get().pregunta_1, 3)
+        self.assertEqual(MRS.objects.get().ronda, 1)
+
+    def test_finalizar_avanza_ronda_actual(self):
+        payload = {'identificacion': self._payload_ident(),
+                   'secciones': [self._payload_mrs()], 'finalizar': True}
+        res = sincronizar_payload(self.usuaria, payload)
+        self.assertTrue(res['ok'], res)
+        self.assertEqual(res['ronda_actual'], 2)
+        self.assertEqual(Identificacion.objects.get().ronda_actual, 2)
+        self.assertEqual(MRS.objects.get().ronda, 1)
+
+    def test_reaplicar_encuesta_crea_fila_nueva_sin_borrar_la_anterior(self):
+        # Ronda 1: se responde y se finaliza.
+        sincronizar_payload(self.usuaria, {
+            'identificacion': self._payload_ident(),
+            'secciones': [self._payload_mrs(pregunta_1=1)],
+            'finalizar': True,
+        })
+
+        # Ronda 2 (Fase 14: el cliente parte con un uuid_local nuevo).
+        res = sincronizar_payload(self.usuaria, {
+            'identificacion': self._payload_ident(),
+            'secciones': [self._payload_mrs(pregunta_1=4)],
+        })
+        self.assertTrue(res['ok'], res)
+
+        self.assertEqual(MRS.objects.count(), 2)
+        rondas = sorted(MRS.objects.values_list('ronda', flat=True))
+        self.assertEqual(rondas, [1, 2])
+        mrs_ronda_1 = MRS.objects.get(ronda=1)
+        mrs_ronda_2 = MRS.objects.get(ronda=2)
+        self.assertEqual(mrs_ronda_1.pregunta_1, 1)
+        self.assertEqual(mrs_ronda_2.pregunta_1, 4)
+
+    def test_reutilizar_uuid_de_ronda_cerrada_da_error(self):
+        uuid_mrs = str(uuid4())
+        sincronizar_payload(self.usuaria, {
+            'identificacion': self._payload_ident(),
+            'secciones': [self._payload_mrs(uuid_mrs, pregunta_1=1)],
+            'finalizar': True,
+        })
+
+        res = sincronizar_payload(self.usuaria, {
+            'identificacion': self._payload_ident(),
+            'secciones': [self._payload_mrs(uuid_mrs, pregunta_1=9)],
+        })
+        self.assertFalse(res['ok'])
+        self.assertEqual(res['resultados'][1]['estado'], 'error')
+        self.assertEqual(MRS.objects.get(uuid_local=uuid_mrs).pregunta_1, 1)
+
+
 class SincronizarEndpointTest(TestCase):
     URL = '/api/sincronizar/'
 
@@ -305,6 +391,17 @@ class SincronizarEndpointTest(TestCase):
         datos = self.client.get('/api/estado/').json()
         self.assertTrue(datos['identificacion'])
         self.assertEqual(datos['secciones']['mrs'], 1)
+
+    def test_estado_tras_finalizar_muestra_ronda_nueva_en_cero(self):
+        self._post({
+            'identificacion': self.ident,
+            'secciones': [{'tipo': 'mrs', 'uuid_local': str(uuid4()), 'parcial': True,
+                           'datos': {'pregunta_1': 2}}],
+            'finalizar': True,
+        })
+        datos = self.client.get('/api/estado/').json()
+        self.assertEqual(datos['ronda_actual'], 2)
+        self.assertEqual(datos['secciones']['mrs'], 0)
 
 
 class EsquemaTest(TestCase):

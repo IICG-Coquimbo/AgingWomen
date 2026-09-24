@@ -132,6 +132,11 @@ def _guardar_seccion(bloque, identificacion, usuario):
     if instancia and instancia.participante_id != identificacion.id:
         return {'seccion': tipo, 'estado': 'error',
                 'errores': {'uuid_local': ['Ya pertenece a otro registro.']}}
+    if instancia and instancia.ronda != identificacion.ronda_actual:
+        # La ronda a la que pertenecía ese uuid_local ya se cerró (se finalizó
+        # una ronda posterior): no se sobrescribe historial (Fase 13).
+        return {'seccion': tipo, 'estado': 'error',
+                'errores': {'uuid_local': ['Pertenece a una ronda ya finalizada.']}}
 
     form = form_cls(data=datos, instance=instancia, rol=usuario.rol, parcial=parcial)
     if not form.is_valid():
@@ -140,6 +145,7 @@ def _guardar_seccion(bloque, identificacion, usuario):
     obj = form.save(commit=False)
     obj.participante = identificacion
     obj.uuid_local = uuid_local
+    obj.ronda = identificacion.ronda_actual
     if hasattr(obj, 'origen_registro'):
         obj.origen_registro = (
             SegmentoEMPA.OrigenDato.PERSONAL_MEDICO if usuario.es_profesional
@@ -153,11 +159,16 @@ def _guardar_seccion(bloque, identificacion, usuario):
 def sincronizar_payload(usuario, payload):
     """
     Procesa un payload de sincronización. Devuelve
-    ``{'ok': bool, 'resultados': [ {seccion, estado, ...}, ... ]}``.
+    ``{'ok': bool, 'resultados': [...], 'ronda_actual': int}``.
 
     Cada sección se guarda de forma independiente: un error de validación en una
     no impide guardar las demás (semántica offline: guarda lo válido, informa lo
     que no). Lanza `ErrorSincronizacion` solo ante problemas de formato o permisos.
+
+    Si el payload trae ``finalizar: true`` y todo se guardó sin errores, la
+    ronda en curso se sella y ``ronda_actual`` avanza (Fase 13): la próxima
+    vez que la participante responda la encuesta, sus respuestas se guardan
+    en filas nuevas, sin tocar las de esta ronda.
     """
     if not isinstance(payload, dict):
         raise ErrorSincronizacion("El cuerpo debe ser un objeto JSON.")
@@ -179,4 +190,9 @@ def sincronizar_payload(usuario, payload):
         resultados.append(_guardar_seccion(bloque, ident, usuario))
 
     ok = all(r['estado'] != 'error' for r in resultados)
-    return {'ok': ok, 'resultados': resultados}
+
+    if ok and payload.get('finalizar'):
+        ident.ronda_actual += 1
+        ident.save(update_fields=['ronda_actual'])
+
+    return {'ok': ok, 'resultados': resultados, 'ronda_actual': ident.ronda_actual}

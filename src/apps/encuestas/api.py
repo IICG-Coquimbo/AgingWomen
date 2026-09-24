@@ -53,10 +53,14 @@ def estado_sincronizacion(request):
 
     ident = Identificacion.objects.filter(usuario=request.user).first()
     if ident is None:
-        return JsonResponse({'identificacion': False, 'secciones': {}})
+        return JsonResponse({'identificacion': False, 'secciones': {}, 'ronda_actual': 1})
 
     conteos = {
-        tipo: modelo.objects.filter(participante=ident).count()
+        tipo: modelo.objects.filter(participante=ident, ronda=ident.ronda_actual).count()
         for tipo, (modelo, _form) in SECCIONES.items()
     }
-    return JsonResponse({'identificacion': True, 'secciones': conteos})
+    return JsonResponse({
+        'identificacion': True,
+        'secciones': conteos,
+        'ronda_actual': ident.ronda_actual,
+    })
