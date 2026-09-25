@@ -900,3 +900,83 @@ class SincronizacionCompletaTest(TestCase):
         self.assertEqual(ActividadFisica.objects.get().dias_ejercicio_semana, 3)
         self.assertEqual(HabitosDeVida.objects.get().vasos_agua_dia, 4)
         self.assertEqual(ConocimientoSistema.objects.get().conoce_sistema_publico_climaterio, 'NO')
+
+
+class PanelProfesionalTest(TestCase):
+    def setUp(self):
+        self.usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
+        self.prof = Usuario.objects.create_user(
+            rut='22.222.222-2', email='p@e.cl', rol=Usuario.Rol.PROFESIONAL_SALUD,
+        )
+        payload = {
+            'identificacion': {
+                'uuid_local': str(uuid4()), 'rut': '9.876.543-3',
+                'datos': {
+                    'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
+                    'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
+                    'comuna': 'Santiago', 'region_residencia': '13',
+                },
+            },
+            'secciones': [{'tipo': 'mrs', 'uuid_local': str(uuid4()), 'parcial': True,
+                           'datos': {'pregunta_1': 2}}],
+            'finalizar': True,
+        }
+        res = sincronizar_payload(self.prof, payload)
+        assert res['ok'], res  # si esto falla, revisa el payload de arriba, no el resto del test
+        self.paciente = Identificacion.objects.get(rut_hash=hash_rut('9.876.543-3'))
+
+    def test_requiere_login(self):
+        resp = self.client.get('/profesional/buscar/')
+        self.assertEqual(resp.status_code, 302)
+
+    def test_usuaria_comun_no_puede_ver_el_buscador(self):
+        self.client.force_login(self.usuaria)
+        resp = self.client.get('/profesional/buscar/')
+        self.assertEqual(resp.status_code, 403)
+
+    def test_usuaria_comun_no_puede_ver_la_ficha(self):
+        self.client.force_login(self.usuaria)
+        resp = self.client.get(f'/profesional/paciente/{self.paciente.id}/')
+        self.assertEqual(resp.status_code, 403)
+
+    def test_profesional_encuentra_paciente_existente(self):
+        self.client.force_login(self.prof)
+        resp = self.client.get('/profesional/buscar/', {'rut': '9.876.543-3'})
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.context['resultado'], self.paciente)
+
+    def test_profesional_no_encuentra_rut_inexistente(self):
+        self.client.force_login(self.prof)
+        resp = self.client.get('/profesional/buscar/', {'rut': '11.111.111-1'})
+        self.assertIsNone(resp.context['resultado'])
+        self.assertIn('No hay ninguna paciente', resp.context['error'])
+
+    def test_profesional_rut_invalido(self):
+        self.client.force_login(self.prof)
+        resp = self.client.get('/profesional/buscar/', {'rut': '11.111.111-2'})
+        self.assertIn('no es válido', resp.context['error'])
+
+    def test_ficha_muestra_historial_por_ronda(self):
+        # Segunda ronda: nuevo uuid_local, como haría el cliente tras Fase 14.
+        res = sincronizar_payload(self.prof, {
+            'identificacion': {'uuid_local': str(uuid4()), 'rut': '9.876.543-3', 'datos': {
+                'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
+                'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
+                'comuna': 'Santiago', 'region_residencia': '13',
+            }},
+            'secciones': [{'tipo': 'mrs', 'uuid_local': str(uuid4()), 'parcial': True,
+                           'datos': {'pregunta_1': 4}}],
+        })
+        assert res['ok'], res
+
+        self.client.force_login(self.prof)
+        resp = self.client.get(f'/profesional/paciente/{self.paciente.id}/')
+        self.assertEqual(resp.status_code, 200)
+
+        rondas = resp.context['rondas']
+        self.assertEqual([r['numero'] for r in rondas], [2, 1])  # más reciente primero
+        self.assertTrue(rondas[1]['es_actual'] is False)
+        self.assertTrue(rondas[0]['es_actual'])
+
+        mrs_ronda_1 = next(s for s in rondas[1]['secciones'] if s['titulo'].startswith('Escala'))
+        self.assertEqual(mrs_ronda_1['registro'].pregunta_1, 2)

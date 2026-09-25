@@ -76,6 +76,15 @@ main {
 
 h1 { font-size: 1.4rem; margin-top: 0; color: var(--color-primario-oscuro); }
 
+.tabla-historial { width: 100%; border-collapse: collapse; }
+.tabla-historial th, .tabla-historial td {
+    text-align: left;
+    padding: .5rem .6rem;
+    border-bottom: 1px solid var(--color-borde);
+    font-size: .92rem;
+}
+.tabla-historial th { color: var(--color-primario-oscuro); }
+
 form p { margin: .75rem 0; }
 label { display: block; font-weight: 600; margin-bottom: .25rem; }
 

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block titulo %}Ficha de paciente{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Ficha de paciente</h1>
+    <p class="ayuda">RUT (hash): {{ paciente.rut_hash|slice:":12" }}…</p>
+    <ul>
+        <li>Edad: {{ paciente.edad }} años</li>
+        <li>Región: {{ paciente.get_region_residencia_display }}</li>
+        <li>Comuna: {{ paciente.comuna }}</li>
+        <li>Ronda en curso: {{ paciente.ronda_actual }}</li>
+    </ul>
+    <div class="enlaces">
+        <a href="{% url 'buscar_paciente' %}">← Volver a la búsqueda</a>
+    </div>
+</div>
+
+{% for ronda in rondas %}
+<div class="tarjeta">
+    <h2>Ronda {{ ronda.numero }}{% if ronda.es_actual %} (en curso, sin finalizar){% endif %}</h2>
+    <table class="tabla-historial">
+        <thead>
+            <tr><th>Sección</th><th>Estado</th><th>Fecha</th><th>Resumen</th></tr>
+        </thead>
+        <tbody>
+            {% for s in ronda.secciones %}
+            <tr>
+                <td>{{ s.titulo }}</td>
+                <td>{% if s.registro %}Con datos{% else %}Sin datos{% endif %}</td>
+                <td>{{ s.fecha|default:"—" }}</td>
+                <td>
+                    {% if s.registro.puntaje_total is not None %}
+                        Puntaje MRS: {{ s.registro.puntaje_total }}
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% empty %}
+<div class="tarjeta"><p>Esta paciente todavía no tiene ninguna ronda registrada.</p></div>
+{% endfor %}
+{% endblock %}
