@@ -5,11 +5,8 @@ from .models import Usuario
 from .rut import hash_rut, validar_rut
 
 
-class RegistroUsuariaForm(forms.Form):
-    """
-    Registro de usuaria común (regla 1.2): solo se pide RUT y correo.
-    No se solicitan nombres ni apellidos.
-    """
+class RegistroForm(forms.Form):
+    """Registro público: todas las cuentas nuevas son usuarias comunes."""
 
     rut = forms.CharField(
         label='RUT',
@@ -26,7 +23,23 @@ class RegistroUsuariaForm(forms.Form):
     email = forms.EmailField(
         label='Correo electrónico',
         widget=forms.EmailInput(attrs={'placeholder': 'tucorreo@ejemplo.cl'}),
-        help_text='Solo se usa para enviarte y recuperar tu contraseña.',
+        help_text='Aquí recibirás tus credenciales de acceso.',
+    )
+
+    password = forms.CharField(
+        label='Contraseña',
+        strip=False,
+        widget=forms.PasswordInput,
+    )
+    password_confirm = forms.CharField(
+        label='Confirmar contraseña',
+        strip=False,
+        widget=forms.PasswordInput,
+    )
+
+    codigo_verificacion = forms.CharField(
+        label='Código de verificación', max_length=6, required=False,
+        widget=forms.TextInput(attrs={'inputmode': 'numeric', 'autocomplete': 'one-time-code'}),
     )
 
     def clean_rut(self):
@@ -43,16 +56,24 @@ class RegistroUsuariaForm(forms.Form):
             raise forms.ValidationError('Ya existe una cuenta con este correo.')
         return email
 
+    def clean(self):
+        cleaned = super().clean()
+        if cleaned.get('password') != cleaned.get('password_confirm'):
+            self.add_error('password_confirm', 'Las contraseñas no coinciden.')
+        return cleaned
+
+
+# Compatibilidad con imports históricos.
+RegistroUsuariaForm = RegistroForm
+
 
 class LoginRutForm(AuthenticationForm):
-    """Login con RUT + contraseña. El backend hashea el RUT y busca la cuenta."""
+    """Ingreso sin selector de rol: acepta RUT o correo electrónico."""
 
     username = forms.CharField(
-        label='RUT',
+        label='RUT o correo electrónico',
         widget=forms.TextInput(attrs={
-            'placeholder': '12.345.678-9',
+            'placeholder': '12.345.678-9 o correo@ejemplo.cl',
             'autofocus': True,
-            'data-rut': 'true',
-            'maxlength': '12',
         }),
     )

@@ -114,3 +114,15 @@ class HabitosDeVidaAdmin(admin.ModelAdmin):
     list_select_related = ('participante',)
     raw_id_fields = ('participante',)
     readonly_fields = ('fecha_evaluacion',) + _SYNC
+
+
+# El administrador técnico no puede leer ni editar datos clínicos. El personal
+# médico usa el panel médico protegido para esa operación.
+for _modelo in (
+    Identificacion, MRS, SegmentoEMPA, ConocimientoSistema,
+    EvaluacionTrabajo, TareasCuidado, ActividadFisica, HabitosDeVida,
+):
+    try:
+        admin.site.unregister(_modelo)
+    except admin.sites.NotRegistered:
+        pass

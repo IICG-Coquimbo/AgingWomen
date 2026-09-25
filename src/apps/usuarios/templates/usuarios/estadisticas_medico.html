@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block titulo %}Estadísticas agrupadas{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Estadísticas agrupadas</h1>
+    <p>Resumen anonimizado de las respuestas registradas.</p>
+    <ul>
+        <li>Participantes: {{ total_participantes }}</li>
+        <li>Promedio de edad: {{ edad_promedio|default:"Sin datos" }}</li>
+        <li>Registros con presión alta: {{ presion_alta }}</li>
+        <li>Evaluaciones MRS: {{ total_mrs }}</li>
+    </ul>
+    <p><a href="{% url 'panel_medico' %}">Volver al panel</a></p>
+</div>
+{% endblock %}

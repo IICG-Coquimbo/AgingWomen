@@ -26,6 +26,14 @@ services:
       - DB_HOST=db
       - DB_PORT=5432
       - RUT_HASH_PEPPER=dev-pepper-local
+      - EMAIL_BACKEND=${EMAIL_BACKEND:-django.core.mail.backends.console.EmailBackend}
+      - EMAIL_HOST=${EMAIL_HOST:-}
+      - EMAIL_PORT=${EMAIL_PORT:-587}
+      - EMAIL_HOST_USER=${EMAIL_HOST_USER:-}
+      - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD:-}
+      - EMAIL_USE_TLS=${EMAIL_USE_TLS:-true}
+      - EMAIL_USE_SSL=${EMAIL_USE_SSL:-false}
+      - DEFAULT_FROM_EMAIL=${DEFAULT_FROM_EMAIL:-no-responder@agingwomen.local}
     depends_on:
       - db
 

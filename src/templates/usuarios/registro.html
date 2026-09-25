@@ -6,8 +6,7 @@
 <div class="tarjeta">
     <h1>Crear cuenta</h1>
     <p class="ayuda">
-        Solo necesitamos tu RUT y tu correo. No pedimos nombre ni apellidos.
-        Recibirás tu contraseña por correo.
+        Completa tus datos de acceso y verifica tu correo. Todas las cuentas públicas son de usuaria participante.
     </p>
 
     {% if form.non_field_errors %}
@@ -16,14 +15,16 @@
 
     <form method="post" novalidate>
         {% csrf_token %}
-        {% for campo in form %}
-            <p>
-                {{ campo.label_tag }}
-                {{ campo }}
-                {% if campo.help_text %}<span class="ayuda">{{ campo.help_text }}</span>{% endif %}
-                {% for error in campo.errors %}<span class="errores">{{ error }}</span>{% endfor %}
-            </p>
-        {% endfor %}
+        <p>{{ form.rut.label_tag }} {{ form.rut }} <span class="ayuda">{{ form.rut.help_text }}</span></p>
+        <p>{{ form.email.label_tag }} {{ form.email }} <span class="ayuda">{{ form.email.help_text }}</span></p>
+        <button type="button" id="enviar-codigo">Enviar código</button>
+        <p>{{ form.codigo_verificacion.label_tag }} {{ form.codigo_verificacion }}</p>
+        <button type="button" id="validar-codigo">Validar código</button>
+        <p>{{ form.password.label_tag }} {{ form.password }}</p>
+        <p>{{ form.password_confirm.label_tag }} {{ form.password_confirm }}</p>
+        <p id="registro-mensaje" class="ayuda" role="status"></p>
+        {% for error in form.non_field_errors %}<span class="errores">{{ error }}</span>{% endfor %}
+        {% for campo in form %}{% for error in campo.errors %}<span class="errores">{{ campo.label }}: {{ error }}</span>{% endfor %}{% endfor %}
         <button type="submit">Crear cuenta</button>
     </form>
 
@@ -31,4 +32,33 @@
         ¿Ya tienes cuenta? <a href="{% url 'login' %}">Ingresar</a>
     </div>
 </div>
+<script>
+(function () {
+    var form = document.querySelector('form');
+    var csrf = form.querySelector('[name=csrfmiddlewaretoken]').value;
+    var mensaje = document.getElementById('registro-mensaje');
+    function enviar(url, datos) {
+        datos.append('csrfmiddlewaretoken', csrf);
+        return fetch(url, {method: 'POST', body: datos, headers: {'X-Requested-With': 'XMLHttpRequest'}})
+            .then(function (respuesta) { return respuesta.json().then(function (json) {
+                if (!respuesta.ok) { throw new Error(json.error || 'No se pudo procesar la solicitud.'); }
+                return json;
+            }); });
+    }
+    document.getElementById('enviar-codigo').addEventListener('click', function () {
+        var datos = new FormData();
+        datos.append('rut', form.rut.value);
+        datos.append('email', form.email.value);
+        enviar('{% url "registro_enviar_codigo" %}', datos)
+            .then(function (json) { mensaje.textContent = json.message; })
+            .catch(function (error) { mensaje.textContent = error.message; });
+    });
+    document.getElementById('validar-codigo').addEventListener('click', function () {
+        var datos = new FormData(); datos.append('codigo', form.codigo_verificacion.value);
+        enviar('{% url "registro_validar_codigo" %}', datos)
+            .then(function (json) { mensaje.textContent = json.message; })
+            .catch(function (error) { mensaje.textContent = error.message; });
+    });
+})();
+</script>
 {% endblock %}

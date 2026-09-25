@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block titulo %}Panel de Personal de Salud{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Panel de Personal de Salud</h1>
+    <p>Busca una participante por su RUT para consultar su ficha e historial.</p>
+    <form method="get" action="{% url 'buscar_paciente' %}">
+        <label for="rut">RUT de la participante</label>
+        <input id="rut" name="rut" type="text" placeholder="12345678-9" required>
+        <button type="submit">Buscar ficha</button>
+    </form>
+    <p><a class="boton" href="{% url 'estadisticas_medico' %}">Ver estadísticas agrupadas</a></p>
+</div>
+{% endblock %}

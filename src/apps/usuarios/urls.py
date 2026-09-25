@@ -7,7 +7,12 @@ from .forms import LoginRutForm
 urlpatterns = [
     # --- Registro (usuaria común) ---
     path('registro/', views.registro, name='registro'),
+    path('registro/enviar-codigo/', views.enviar_codigo, name='registro_enviar_codigo'),
+    path('registro/validar-codigo/', views.validar_codigo, name='registro_validar_codigo'),
     path('registro/enviado/', views.RegistroEnviadoView.as_view(), name='registro_enviado'),
+    path('panel-medico/', views.panel_medico, name='panel_medico'),
+    path('panel-medico/buscar/', views.buscar_paciente, name='buscar_paciente'),
+    path('panel-medico/estadisticas/', views.estadisticas_medico, name='estadisticas_medico'),
 
     # --- Ingreso / salida ---
     path(

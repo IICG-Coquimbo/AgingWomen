@@ -1,5 +1,25 @@
 # AgingWomen — Plataforma de Investigación de Menopausia
 
+## Correo de registro
+
+En desarrollo, Django usa `console.EmailBackend` y muestra el OTP y las
+credenciales en los logs de `web`. Para enviar a buzones reales, configura
+estas variables antes de ejecutar Docker Compose:
+
+```text
+EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
+EMAIL_HOST=smtp.tu-proveedor.cl
+EMAIL_PORT=587
+EMAIL_HOST_USER=tu-cuenta@dominio.cl
+EMAIL_HOST_PASSWORD=tu-clave-o-app-password
+EMAIL_USE_TLS=true
+EMAIL_USE_SSL=false
+DEFAULT_FROM_EMAIL=tu-cuenta@dominio.cl
+```
+
+No guardes la contraseña SMTP en el repositorio. En Gmail, usa una contraseña
+de aplicación con verificación en dos pasos, no la contraseña normal.
+
 Aplicación web/móvil (Django + Docker) para una investigación sobre menopausia y
 climaterio en Chile. Encuesta multisección con soporte offline, control de acceso
 por RUT (hasheado) y roles.

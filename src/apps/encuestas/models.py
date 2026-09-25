@@ -158,6 +158,7 @@ def meses_desde_texto_fecha(texto):
 # ===========================================================================
 
 class SegmentoSincronizable(models.Model):
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
     uuid_local = models.UUIDField(
         null=True, blank=True, unique=True, editable=False,
         help_text="ID generado en el dispositivo para sincronización idempotente"
@@ -252,6 +253,26 @@ class Identificacion(SegmentoSincronizable):
         help_text="Cuenta asociada, si la participante se registró por sí misma"
     )
     fecha_nacimiento = models.DateField(help_text="Fecha de nacimiento")
+    edad_calculada = models.PositiveSmallIntegerField(
+        null=True, blank=True, editable=False,
+        help_text="Edad calculada al pasar la validación inicial"
+    )
+    menopausia_quirurgica_inducida = models.BooleanField(
+        null=True, blank=True,
+        help_text="Menopausia quirúrgica o inducida por tratamiento médico"
+    )
+    fecha_ultimo_periodo_menstrual = models.DateField(
+        null=True, blank=True,
+        help_text="Fecha del último periodo menstrual informada en la validación inicial"
+    )
+    fupm_no_aplica_por_cirugia = models.BooleanField(
+        default=False,
+        help_text="La FUPM no aplica por cirugía o menopausia quirúrgica"
+    )
+    validacion_inicial_en = models.DateTimeField(
+        null=True, blank=True,
+        help_text="Fecha y hora de la validación inicial"
+    )
 
     # Demografía con opciones estandarizadas para ML
     genero = models.CharField(
@@ -284,6 +305,14 @@ class Identificacion(SegmentoSincronizable):
         null=True, blank=True,
         help_text="¿Trabaja actualmente?"
     )
+    consentimiento_aceptado = models.BooleanField(
+        default=False,
+        help_text="La participante aceptó participar voluntariamente en el estudio"
+    )
+    consentimiento_aceptado_en = models.DateTimeField(
+        null=True, blank=True,
+        help_text="Fecha y hora en que se registró la aceptación del consentimiento"
+    )
     creado_en = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -297,6 +326,45 @@ class Identificacion(SegmentoSincronizable):
         if not cumplio_anos:
             edad_calculada -= 1
         return edad_calculada
+
+
+class EvaluacionSatisfaccion(models.Model):
+    """Evaluación breve obligatoria al finalizar el cuestionario."""
+
+    participante = models.OneToOneField(
+        Identificacion,
+        on_delete=models.CASCADE,
+        related_name='evaluacion_satisfaccion',
+    )
+    facilidad_uso = models.PositiveSmallIntegerField()
+    fatiga_mental = models.PositiveSmallIntegerField()
+    comodidad_diseno = models.PositiveSmallIntegerField()
+    recomendaria = models.CharField(max_length=20)
+    incomodidad = models.CharField(max_length=2)
+    comentario_incomodidad = models.TextField(blank=True)
+    respondida_en = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'evaluación de satisfacción'
+        verbose_name_plural = 'evaluaciones de satisfacción'
+
+
+class EnvioEncuesta(models.Model):
+    """Snapshot inmutable de cada envío final para conservar evolución."""
+
+    participante = models.ForeignKey(
+        Identificacion, on_delete=models.CASCADE, related_name='envios_historicos',
+    )
+    envio_uuid = models.UUIDField(unique=True)
+    payload = models.JSONField()
+    creado_por = models.ForeignKey(
+        'usuarios.Usuario', on_delete=models.SET_NULL,
+        null=True, blank=True, related_name='envios_encuesta',
+    )
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-fecha_creacion']
 
 
 # ===========================================================================

@@ -11,14 +11,16 @@ class RutBackend(ModelBackend):
     """
 
     def authenticate(self, request, rut=None, password=None, **kwargs):
-        if rut is None:
-            rut = kwargs.get('username')
-        if rut is None or password is None:
+        identificador = rut or kwargs.get('username')
+        if not identificador or password is None:
             return None
 
         Usuario = get_user_model()
         try:
-            usuario = Usuario.objects.get(rut_hash=hash_rut(rut))
+            if '@' in identificador:
+                usuario = Usuario.objects.get(email__iexact=identificador.strip())
+            else:
+                usuario = Usuario.objects.get(rut_hash=hash_rut(identificador))
         except Usuario.DoesNotExist:
             # Ejecuta el hasher de todos modos para no filtrar por tiempo de
             # respuesta si un RUT existe o no.

@@ -13,8 +13,9 @@
 </head>
 <body>
     <header>
-        <a href="{% url 'home' %}"><strong>Investigación Menopausia</strong></a>
+        <a href="{% url 'home' %}"><strong>Observatorio Integral de la Mujer en peri y menopausia</strong></a>
         {% if user.is_authenticated %}
+        <button type="button" class="retirarse" id="retirarse-estudio" data-retiro-url="{% url 'retirarse' %}">Retirarse del Estudio</button>
         <form method="post" action="{% url 'logout' %}" data-csrf-form>
             {% csrf_token %}
             <button type="submit" class="salir">Salir</button>
@@ -72,6 +73,26 @@
                     if (campo && actual) { campo.value = actual; }
                 });
             });
+
+            var retiro = document.getElementById('retirarse-estudio');
+            if (retiro) {
+                retiro.addEventListener('click', function () {
+                    if (!window.confirm('¿Deseas retirarte del estudio? Se eliminarán las respuestas no finalizadas.')) {
+                        return;
+                    }
+                    var csrf = csrfDeCookie();
+                    fetch(retiro.getAttribute('data-retiro-url'), {
+                        method: 'POST',
+                        headers: { 'X-CSRFToken': csrf }
+                    }).catch(function () {}).then(function () {
+                        if (!window.indexedDB) { window.location.href = '/'; return; }
+                        var req = indexedDB.deleteDatabase('encuesta_agingwomen');
+                        req.onsuccess = req.onerror = req.onblocked = function () {
+                            window.location.href = '/';
+                        };
+                    });
+                });
+            }
 
             // --- Registro del Service Worker (soporte offline) ---
             if ('serviceWorker' in navigator) {

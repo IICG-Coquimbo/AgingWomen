@@ -12,6 +12,7 @@ from .models import (
     ActividadFisica,
     ConocimientoSistema,
     EvaluacionTrabajo,
+    EvaluacionSatisfaccion,
     HabitosDeVida,
     Identificacion,
     MRS,
@@ -97,6 +98,37 @@ class MRSFormTest(TestCase):
         self.assertIn('cambio_relacion_pareja_menopausia', campos)
 
 
+class ValidacionInicialFormTest(TestCase):
+    def _datos(self, edad, quirurgica=False, no_aplica=False):
+        hoy = date.today()
+        return {
+            'fecha_nacimiento': date(hoy.year - edad, hoy.month, hoy.day),
+            'menopausia_quirurgica_inducida': quirurgica,
+            'fecha_ultimo_periodo_menstrual': None if no_aplica else date(2025, 1, 15),
+            'fupm_no_aplica_por_cirugia': no_aplica,
+            'genero': 'F',
+            'nivel_educacion': 'M_COM',
+            'origen_procedencia': 'CL',
+            'pueblo_originario_afro': 'NINGUNO',
+            'region_residencia': '13',
+            'comuna': 'Santiago',
+        }
+
+    def test_acepta_40_y_60(self):
+        for edad in (40, 60):
+            form = IdentificacionForm(data=self._datos(edad))
+            self.assertTrue(form.is_valid(), form.errors)
+
+    def test_rechaza_fuera_de_rango_sin_cirugia(self):
+        form = IdentificacionForm(data=self._datos(61))
+        self.assertFalse(form.is_valid())
+        self.assertIn('fecha_nacimiento', form.errors)
+
+    def test_acepta_cualquier_edad_con_cirugia(self):
+        form = IdentificacionForm(data=self._datos(25, quirurgica=True, no_aplica=True))
+        self.assertTrue(form.is_valid(), form.errors)
+
+
 class SincronizacionTest(TestCase):
     def setUp(self):
         self.usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
@@ -118,7 +150,10 @@ class SincronizacionTest(TestCase):
 
     def test_crea_identificacion_y_seccion(self):
         payload = {
-            'identificacion': self._payload_ident(),
+            'identificacion': dict(
+                self._payload_ident(),
+                consentimiento={'aceptado': True, 'aceptado_en': '2026-09-13T12:00:00Z'},
+            ),
             'secciones': [{
                 'tipo': 'trabajo', 'uuid_local': str(uuid4()), 'parcial': False,
                 'datos': {'rendimiento_afectado': 3, 'bienestar_trabajo_afectado': 2,
@@ -130,6 +165,8 @@ class SincronizacionTest(TestCase):
         ident = Identificacion.objects.get()
         self.assertEqual(ident.usuario, self.usuaria)
         self.assertEqual(ident.rut_hash, self.usuaria.rut_hash)
+        self.assertTrue(ident.consentimiento_aceptado)
+        self.assertIsNotNone(ident.consentimiento_aceptado_en)
         self.assertEqual(EvaluacionTrabajo.objects.count(), 1)
 
     def test_reenvio_no_duplica(self):
@@ -161,6 +198,34 @@ class SincronizacionTest(TestCase):
         self.assertEqual(tc.cantidad_personas_cuida, 2)
         self.assertIn('Otro', tc.a_quien_cuida)
         self.assertEqual(tc.a_quien_cuida_otro, 'Un vecino')
+
+    def test_guarda_evaluacion_satisfaccion(self):
+        payload = {
+            'identificacion': self._payload_ident(),
+            'evaluacion_satisfaccion': {
+                'facilidad_uso': '5', 'fatiga_mental': '2',
+                'comodidad_diseno': '4', 'recomendaria': 'SI',
+                'incomodidad': 'NO', 'comentario_incomodidad': '',
+            },
+        }
+        res = sincronizar_payload(self.usuaria, payload)
+        self.assertTrue(res['ok'], res)
+        evaluacion = EvaluacionSatisfaccion.objects.get()
+        self.assertEqual(evaluacion.participante.usuario, self.usuaria)
+        self.assertEqual(evaluacion.facilidad_uso, 5)
+
+    def test_evaluacion_exige_comentario_si_hay_incomodidad(self):
+        payload = {
+            'identificacion': self._payload_ident(),
+            'evaluacion_satisfaccion': {
+                'facilidad_uso': '5', 'fatiga_mental': '2',
+                'comodidad_diseno': '4', 'recomendaria': 'SI',
+                'incomodidad': 'SI', 'comentario_incomodidad': '',
+            },
+        }
+        res = sincronizar_payload(self.usuaria, payload)
+        self.assertFalse(res['ok'])
+        self.assertFalse(EvaluacionSatisfaccion.objects.exists())
 
     def test_mrs_en_dos_bloques_se_guarda_en_un_registro(self):
         u = str(uuid4())
@@ -304,6 +369,18 @@ class SincronizarEndpointTest(TestCase):
         datos = self.client.get('/api/estado/').json()
         self.assertTrue(datos['identificacion'])
         self.assertEqual(datos['secciones']['mrs'], 1)
+
+    def test_retirarse_elimina_identificacion_y_secciones(self):
+        self._post({
+            'identificacion': self.ident,
+            'secciones': [{'tipo': 'mrs', 'uuid_local': str(uuid4()), 'parcial': True,
+                           'datos': {'pregunta_1': 2}}],
+        })
+        resp = self.client.post('/api/retirarse/', data='{}', content_type='application/json')
+        self.assertEqual(resp.status_code, 200)
+        self.assertTrue(resp.json()['ok'])
+        self.assertEqual(Identificacion.objects.count(), 0)
+        self.assertEqual(MRS.objects.count(), 0)
 
 
 class EsquemaTest(TestCase):

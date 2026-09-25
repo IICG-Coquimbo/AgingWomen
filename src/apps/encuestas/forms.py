@@ -62,11 +62,14 @@ class IdentificacionForm(EncuestaModelForm):
         model = Identificacion
         # Orden explícito: la región va antes de la comuna (la comuna depende de ella).
         fields = (
-            'fecha_nacimiento', 'genero', 'nivel_educacion', 'origen_procedencia',
+            'fecha_nacimiento', 'menopausia_quirurgica_inducida',
+            'fecha_ultimo_periodo_menstrual', 'fupm_no_aplica_por_cirugia',
+            'genero', 'nivel_educacion', 'origen_procedencia',
             'pueblo_originario_afro', 'region_residencia', 'comuna', 'trabaja_actualmente',
         )
 
     EDAD_MINIMA = 40
+    EDAD_MAXIMA = 60
 
     def clean(self):
         cleaned = super().clean()
@@ -77,18 +80,26 @@ class IdentificacionForm(EncuestaModelForm):
             if validas and comuna not in validas:
                 self.add_error('comuna', 'La comuna no corresponde a la región seleccionada.')
 
-        # Filtro de edad: el estudio es para personas de 40 años o más.
+        # La menopausia quirúrgica o inducida permite participar fuera del rango.
         nacimiento = cleaned.get('fecha_nacimiento')
         if nacimiento:
             hoy = date.today()
             edad = hoy.year - nacimiento.year - (
                 (hoy.month, hoy.day) < (nacimiento.month, nacimiento.day)
             )
-            if edad < self.EDAD_MINIMA:
+            quirurgica = cleaned.get('menopausia_quirurgica_inducida') is True
+            no_aplica = cleaned.get('fupm_no_aplica_por_cirugia') is True
+            if no_aplica and not quirurgica:
+                self.add_error(
+                    'fupm_no_aplica_por_cirugia',
+                    'Indica menopausia quirúrgica o inducida para marcar que la FUPM no aplica.',
+                )
+            if not (self.EDAD_MINIMA <= edad <= self.EDAD_MAXIMA or quirurgica or no_aplica):
                 self.add_error(
                     'fecha_nacimiento',
-                    f'La persona debe tener {self.EDAD_MINIMA} años o más para participar '
-                    f'en el estudio.',
+                    'No cumples con el perfil objetivo del estudio: la edad debe estar entre '
+                    f'{self.EDAD_MINIMA} y {self.EDAD_MAXIMA} años, salvo menopausia '
+                    'quirúrgica o inducida.',
                 )
         return cleaned
 

@@ -16,16 +16,17 @@ from django.views.decorators.http import require_GET, require_POST
 from .esquema import construir_esquema
 from .models import Identificacion
 from .sync import SECCIONES, ErrorSincronizacion, sincronizar_payload
+from apps.usuarios.permissions import paciente_o_medico, solo_paciente
 
 
-@login_required
+@paciente_o_medico
 @require_GET
 def esquema(request):
     """Estructura completa de la encuesta para que el cliente la renderice offline."""
     return JsonResponse(construir_esquema(request.user.rol))
 
 
-@login_required
+@paciente_o_medico
 @require_POST
 def sincronizar(request):
     try:
@@ -42,7 +43,25 @@ def sincronizar(request):
     return JsonResponse(resultado, status=200)
 
 
-@login_required
+@paciente_o_medico
+@require_POST
+def retirar(request):
+    """Anula la participación y elimina los datos no finalizados del estudio."""
+    ident = Identificacion.objects.filter(usuario=request.user).first()
+    if ident is None and request.user.es_profesional:
+        try:
+            payload = json.loads(request.body or b'{}')
+        except json.JSONDecodeError:
+            payload = {}
+        uuid_local = payload.get('uuid_local') if isinstance(payload, dict) else None
+        if uuid_local:
+            ident = Identificacion.objects.filter(uuid_local=uuid_local).first()
+    if ident is not None:
+        ident.delete()
+    return JsonResponse({'ok': True})
+
+
+@solo_paciente
 @require_GET
 def estado_sincronizacion(request):
     """Resumen de lo que la usuaria ya tiene guardado, para que el cliente sepa qué falta."""

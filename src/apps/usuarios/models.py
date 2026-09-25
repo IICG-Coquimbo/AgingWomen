@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
+from django.utils import timezone
 
 from .managers import UsuarioManager
 
@@ -58,3 +59,59 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     @property
     def es_usuaria_comun(self):
         return self.rol == self.Rol.USUARIA_COMUN
+
+    @property
+    def es_admin_tecnico(self):
+        return self.is_staff or self.is_superuser
+
+
+class PerfilUsuaria(models.Model):
+    """Perfil independiente de una participante del estudio."""
+
+    usuario = models.OneToOneField(
+        Usuario, on_delete=models.CASCADE, related_name='perfil_usuaria',
+    )
+    fecha_nacimiento = models.DateField(null=True, blank=True)
+    fecha_ultimo_periodo_menstrual = models.DateField(null=True, blank=True)
+    menopausia_quirurgica_inducida = models.BooleanField(null=True, blank=True)
+    fupm_no_aplica_por_cirugia = models.BooleanField(default=False)
+    edad_calculada = models.PositiveSmallIntegerField(null=True, blank=True)
+    validacion_inicial_en = models.DateTimeField(null=True, blank=True)
+    consentimiento_aceptado = models.BooleanField(default=False)
+    consentimiento_aceptado_en = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'perfil de usuaria'
+        verbose_name_plural = 'perfiles de usuarias'
+
+
+class PerfilMedico(models.Model):
+    """Perfil independiente del personal médico."""
+
+    usuario = models.OneToOneField(
+        Usuario, on_delete=models.CASCADE, related_name='perfil_medico',
+    )
+    especialidad = models.CharField(max_length=120)
+    registro_medico = models.CharField(max_length=80, unique=True)
+    institucion = models.CharField(max_length=160)
+    aprobado = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = 'perfil médico'
+        verbose_name_plural = 'perfiles médicos'
+
+
+class RegistroOTP(models.Model):
+    """Código temporal para verificar el correo antes de crear una cuenta."""
+
+    email = models.EmailField()
+    rut_hash = models.CharField(max_length=64)
+    tipo_cuenta = models.CharField(max_length=12, choices=Usuario.Rol.choices)
+    codigo_hash = models.CharField(max_length=128)
+    expira_en = models.DateTimeField()
+    intentos = models.PositiveSmallIntegerField(default=0)
+    validado_en = models.DateTimeField(null=True, blank=True)
+    creado_en = models.DateTimeField(auto_now_add=True)
+
+    def esta_vigente(self):
+        return self.validado_en is None and timezone.now() < self.expira_en

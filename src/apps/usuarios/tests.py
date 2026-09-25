@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, get_user_model
 from django.core import mail
 from django.test import TestCase
 from django.urls import reverse
+import re
 
 from .rut import hash_rut, normalizar_rut, validar_rut
 
@@ -25,24 +26,45 @@ class RutUtilsTest(TestCase):
 
 
 class RegistroTest(TestCase):
+    def verificar_correo(self, rut, _tipo_cuenta, email):
+        respuesta = self.client.post(reverse('registro_enviar_codigo'), {
+            'rut': rut, 'email': email,
+        })
+        self.assertEqual(respuesta.status_code, 200)
+        codigo = re.search(r'\b(\d{6})\b', mail.outbox[-1].body).group(1)
+        respuesta = self.client.post(reverse('registro_validar_codigo'), {'codigo': codigo})
+        self.assertEqual(respuesta.status_code, 200)
+
     def test_registro_crea_usuaria_y_envia_password(self):
+        self.verificar_correo('11.111.111-1', Usuario.Rol.USUARIA_COMUN, 'nueva@example.com')
         resp = self.client.post(
             reverse('registro'),
-            {'rut': '11.111.111-1', 'email': 'nueva@example.com'},
+            {
+                'rut': '11.111.111-1',
+                'tipo_cuenta': Usuario.Rol.USUARIA_COMUN,
+                'email': 'nueva@example.com',
+                'password': 'Clave-segura-123',
+                'password_confirm': 'Clave-segura-123',
+            },
         )
         self.assertRedirects(resp, reverse('registro_enviado'))
 
         usuario = Usuario.objects.get(email='nueva@example.com')
         self.assertEqual(usuario.rol, Usuario.Rol.USUARIA_COMUN)
         self.assertEqual(usuario.rut_hash, hash_rut('11111111-1'))
-        self.assertTrue(usuario.has_usable_password())
-        self.assertEqual(len(mail.outbox), 1)
-        self.assertIn('nueva@example.com', mail.outbox[0].to)
+        self.assertTrue(usuario.check_password('Clave-segura-123'))
+        self.assertTrue(hasattr(usuario, 'perfil_usuaria'))
+        self.assertEqual(len(mail.outbox), 2)
+        self.assertIn('nueva@example.com', mail.outbox[-1].to)
+        self.assertIn('Usuaria (Participante del estudio)', mail.outbox[-1].body)
+        self.assertIn('Clave-segura-123', mail.outbox[-1].body)
 
     def test_registro_rechaza_rut_invalido(self):
         resp = self.client.post(
             reverse('registro'),
-            {'rut': '11.111.111-2', 'email': 'x@example.com'},
+            {'rut': '11.111.111-2', 'tipo_cuenta': Usuario.Rol.USUARIA_COMUN,
+             'email': 'x@example.com', 'password': 'Clave-segura-123',
+             'password_confirm': 'Clave-segura-123'},
         )
         self.assertEqual(resp.status_code, 200)
         self.assertFalse(Usuario.objects.filter(email='x@example.com').exists())
@@ -51,10 +73,29 @@ class RegistroTest(TestCase):
         Usuario.objects.create_user(rut='11.111.111-1', email='a@example.com')
         resp = self.client.post(
             reverse('registro'),
-            {'rut': '11111111-1', 'email': 'b@example.com'},
+            {'rut': '11111111-1', 'tipo_cuenta': Usuario.Rol.USUARIA_COMUN,
+             'email': 'b@example.com', 'password': 'Clave-segura-123',
+             'password_confirm': 'Clave-segura-123'},
         )
         self.assertEqual(resp.status_code, 200)
         self.assertFalse(Usuario.objects.filter(email='b@example.com').exists())
+
+    def test_registro_ignora_tipo_medico_y_crea_usuaria(self):
+        self.verificar_correo('22.222.222-2', Usuario.Rol.PROFESIONAL_SALUD, 'medico@example.com')
+        resp = self.client.post(reverse('registro'), {
+            'rut': '22.222.222-2',
+            'tipo_cuenta': Usuario.Rol.PROFESIONAL_SALUD,
+            'email': 'medico@example.com',
+            'password': 'Clave-medica-123',
+            'password_confirm': 'Clave-medica-123',
+        })
+        self.assertRedirects(resp, reverse('registro_enviado'))
+        usuario = Usuario.objects.get(email='medico@example.com')
+        self.assertEqual(usuario.rol, Usuario.Rol.USUARIA_COMUN)
+        self.assertTrue(hasattr(usuario, 'perfil_usuaria'))
+        self.assertFalse(hasattr(usuario, 'perfil_medico'))
+        self.assertIn('Usuaria (Participante del estudio)', mail.outbox[-1].body)
+        self.assertIn('Clave-medica-123', mail.outbox[-1].body)
 
 
 class LoginPorRutTest(TestCase):

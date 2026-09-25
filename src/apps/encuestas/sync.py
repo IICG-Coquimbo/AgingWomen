@@ -10,6 +10,8 @@ tiene guardado localmente. `parcial=True` solo significa "esta sección aún no
 está terminada", no "envío únicamente los campos que cambiaron".
 """
 from django.utils import timezone
+from django.utils.dateparse import parse_datetime
+from uuid import UUID
 
 from apps.usuarios.rut import hash_rut
 
@@ -29,6 +31,8 @@ from .models import (
     EvaluacionTrabajo,
     HabitosDeVida,
     Identificacion,
+    EvaluacionSatisfaccion,
+    EnvioEncuesta,
     MRS,
     SegmentoEMPA,
     TareasCuidado,
@@ -78,8 +82,10 @@ def _fusionar_bloques_mrs(secciones):
 def _resolver_identificacion(usuario, bloque):
     bloque = bloque or {}
     datos = dict(bloque.get('datos') or {})
+    validacion_inicial_en = parse_datetime(datos.get('validacion_inicial_en', '') or '')
     uuid_local = bloque.get('uuid_local')
     rut = datos.pop('rut', None) or bloque.get('rut')
+    consentimiento = datos.pop('consentimiento', None) or bloque.get('consentimiento')
 
     if usuario.es_profesional:
         if not rut:
@@ -102,6 +108,16 @@ def _resolver_identificacion(usuario, bloque):
         return None, {'seccion': 'identificacion', 'estado': 'error', 'errores': form.errors}
 
     ident = form.save(commit=False)
+    nacimiento = ident.fecha_nacimiento
+    hoy = timezone.localdate()
+    ident.edad_calculada = hoy.year - nacimiento.year - (
+        (hoy.month, hoy.day) < (nacimiento.month, nacimiento.day)
+    )
+    if validacion_inicial_en and timezone.is_naive(validacion_inicial_en):
+        validacion_inicial_en = timezone.make_aware(validacion_inicial_en)
+    ident.validacion_inicial_en = (
+        ident.validacion_inicial_en or validacion_inicial_en or timezone.now()
+    )
     if usuario.es_profesional:
         ident.rut_hash = hash_rut(rut)
     else:
@@ -109,6 +125,9 @@ def _resolver_identificacion(usuario, bloque):
         ident.rut_hash = usuario.rut_hash
     if uuid_local:
         ident.uuid_local = uuid_local
+    if consentimiento and consentimiento.get('aceptado'):
+        ident.consentimiento_aceptado = True
+        ident.consentimiento_aceptado_en = ident.consentimiento_aceptado_en or timezone.now()
     ident.sincronizado_en = timezone.now()
     ident.save()
     return ident, {
@@ -168,6 +187,72 @@ def sincronizar_payload(usuario, payload):
     if ident is None:
         return {'ok': False, 'resultados': resultados}
 
+    evaluacion = payload.get('evaluacion_satisfaccion')
+    if evaluacion:
+        campos = (
+            'facilidad_uso', 'fatiga_mental', 'comodidad_diseno',
+            'recomendaria', 'incomodidad',
+        )
+        faltantes = [campo for campo in campos if evaluacion.get(campo) in (None, '')]
+        if faltantes:
+            resultados.append({
+                'seccion': 'satisfaccion',
+                'estado': 'error',
+                'errores': {'campos': ['Faltan respuestas obligatorias.']},
+            })
+        elif evaluacion.get('incomodidad') == 'SI' and not str(
+                evaluacion.get('comentario_incomodidad') or '').strip():
+            resultados.append({
+                'seccion': 'satisfaccion',
+                'estado': 'error',
+                'errores': {'comentario_incomodidad': ['Describe la incomodidad o confusión.']},
+            })
+        else:
+            evaluacion_obj, creado = EvaluacionSatisfaccion.objects.update_or_create(
+                participante=ident,
+                defaults={
+                    'facilidad_uso': evaluacion['facilidad_uso'],
+                    'fatiga_mental': evaluacion['fatiga_mental'],
+                    'comodidad_diseno': evaluacion['comodidad_diseno'],
+                    'recomendaria': evaluacion['recomendaria'],
+                    'incomodidad': evaluacion['incomodidad'],
+                    'comentario_incomodidad': evaluacion.get('comentario_incomodidad', ''),
+                },
+            )
+            resultados.append({
+                'seccion': 'satisfaccion',
+                'estado': 'creado' if creado else 'actualizado',
+                'id': evaluacion_obj.id,
+            })
+
+    if payload.get('envio_final') and payload.get('envio_uuid'):
+        try:
+            envio_uuid = UUID(str(payload['envio_uuid']))
+        except (TypeError, ValueError):
+            resultados.append({
+                'seccion': 'envio_final', 'estado': 'error',
+                'errores': {'envio_uuid': ['UUID inválido.']},
+            })
+        else:
+            envio, creado = EnvioEncuesta.objects.get_or_create(
+                envio_uuid=envio_uuid,
+                defaults={
+                    'participante': ident,
+                    'payload': payload,
+                    'creado_por': usuario,
+                },
+            )
+            if not creado and envio.participante_id != ident.id:
+                resultados.append({
+                    'seccion': 'envio_final', 'estado': 'error',
+                    'errores': {'envio_uuid': ['El envío pertenece a otra participante.']},
+                })
+            else:
+                resultados.append({
+                    'seccion': 'envio_final',
+                    'estado': 'creado' if creado else 'existente',
+                    'id': envio.id,
+                })
     for bloque in _fusionar_bloques_mrs(payload.get('secciones') or []):
         if not isinstance(bloque, dict) or bloque.get('tipo') not in SECCIONES:
             resultados.append({

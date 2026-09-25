@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block titulo %}Ficha de participante{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Ficha de participante</h1>
+    <p>RUT verificado: {{ participante.rut_hash|slice:":12" }}…</p>
+    <p>Edad registrada: {{ participante.edad }}</p>
+    <p>Consentimiento: {% if participante.consentimiento_aceptado %}Aceptado{% else %}Pendiente{% endif %}</p>
+    <h2>Historial de cuestionarios</h2>
+    <p>Secciones registradas: {{ historial_total }}</p>
+    <p><a href="{% url 'panel_medico' %}">Volver al panel</a></p>
+</div>
+{% endblock %}

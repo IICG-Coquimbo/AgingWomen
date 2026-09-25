@@ -17,6 +17,7 @@
     var DB_VERSION = 1;
     var URL_ESQUEMA = '/api/esquema/';
     var URL_SYNC = '/api/sincronizar/';
+    var URL_RETIRO = '/api/retirarse/';
 
     var cont = document.getElementById('encuesta');
 
@@ -34,6 +35,7 @@
     var uuids = {};        // { seccion: uuid }
     var indice = 0;        // índice dentro de las secciones aplicables
     var bienvenidaOk = false;  // ya pasó la pantalla de definiciones + filtro de edad
+    var consentimiento = null;
 
     // ---------- IndexedDB ----------
     function abrirDB() {
@@ -50,7 +52,11 @@
         return abrirDB().then(function (db) {
             return new Promise(function (resolve, reject) {
                 var r = db.transaction('estado', 'readonly').objectStore('estado').get(clave);
-                r.onsuccess = function () { resolve(r.result ? r.result.valor : null); };
+                r.onsuccess = function () {
+                    var valor = r.result ? r.result.valor : null;
+                    db.close();
+                    resolve(valor);
+                };
                 r.onerror = function () { reject(r.error); };
             });
         });
@@ -60,7 +66,7 @@
             return new Promise(function (resolve, reject) {
                 var tx = db.transaction('estado', 'readwrite');
                 tx.objectStore('estado').put({ clave: clave, valor: valor });
-                tx.oncomplete = function () { resolve(); };
+                tx.oncomplete = function () { db.close(); resolve(); };
                 tx.onerror = function () { reject(tx.error); };
             });
         });
@@ -68,12 +74,16 @@
 
     // ---------- Carga inicial ----------
     function iniciar() {
-        Promise.all([idbGet('esquema'), idbGet('respuestas'), idbGet('uuids'), idbGet('bienvenida')])
+        Promise.all([
+            idbGet('esquema'), idbGet('respuestas'), idbGet('uuids'),
+            idbGet('bienvenida'), idbGet('consentimiento')
+        ])
             .then(function (vals) {
                 esquema = vals[0];
                 respuestas = vals[1] || {};
                 uuids = vals[2] || {};
                 bienvenidaOk = !!vals[3];
+                consentimiento = vals[4];
                 return traerEsquema();
             })
             .then(function () {
@@ -183,7 +193,103 @@
         });
     }
 
-    // ---------- Pantalla de bienvenida: definiciones + filtro de edad ----------
+    // ---------- Consentimiento, definiciones y filtro de edad ----------
+    function renderConsentimiento() {
+        var html = '<div class="tarjeta consentimiento">';
+        html += '<h1>Consentimiento Informado</h1>';
+        html += '<p class="consentimiento-intro"><strong>Observatorio Integral de la Mujer en peri y menopausia:</strong> Caracterización de síntomas y factores de riesgo.</p>';
+        html += '<div class="consentimiento-bloques">';
+        html += '<div class="consentimiento-bloque"><h2>Propósito</h2><p>Conocer los síntomas de la peri y menopausia y los factores que pueden relacionarse con la salud integral de las mujeres.</p></div>';
+        html += '<div class="consentimiento-bloque"><h2>¿En qué consiste?</h2><p>Es un estudio observacional. Responder el cuestionario toma aproximadamente 20 a 25 minutos y no incluye una intervención experimental.</p></div>';
+        html += '<div class="consentimiento-bloque"><h2>Riesgos y beneficios</h2><p>Los riesgos son mínimos y pueden incluir incomodidad al responder alguna pregunta. No hay un beneficio directo garantizado; la información podrá contribuir a mejorar la atención y el conocimiento sobre esta etapa.</p></div>';
+        html += '<div class="consentimiento-bloque"><h2>Participación y confidencialidad</h2><p>Participar es voluntario. Puedes no responder o retirarte en cualquier momento, sin consecuencias. Tus respuestas serán tratadas de forma confidencial y anónima en los resultados del estudio.</p></div>';
+        html += '</div>';
+        html += '<div class="contactos"><p><strong>Investigadoras:</strong> Scarleth Martínez, Valeska Zambra y Carolina Naranjo.</p>';
+        html += '<p><strong>Investigadora Responsable:</strong> Dra. Vannessa Duarte Correa, UCN Sede Coquimbo.</p>';
+        html += '<p><strong>Aprobación ética:</strong> Comité Ético Científico (CEC UCN).</p>';
+        html += '<p><strong>Contacto CEC:</strong> <a href="mailto:cec.coquimbo@ucn.cl">cec.coquimbo@ucn.cl</a></p></div>';
+        html += '<div class="consentimiento-opciones">';
+        html += '<label><input type="checkbox" id="consentimiento-leido"> He leído y comprendido la información del estudio.</label>';
+        html += '<label><input type="radio" name="consentimiento" value="acepto"> Acepto participar voluntariamente en esta investigación.</label>';
+        html += '<label><input type="radio" name="consentimiento" value="no-acepto"> No acepto participar en esta investigación.</label>';
+        html += '<label><input type="radio" name="consentimiento" value="desisto"> Desisto de participar en esta investigación.</label>';
+        html += '<p id="consentimiento-error" class="errores" hidden></p>';
+        html += '<button type="button" id="consentimiento-continuar" disabled>Continuar a validación de edad</button>';
+        html += '</div></div>';
+        cont.innerHTML = html;
+
+        var continuar = document.getElementById('consentimiento-continuar');
+        var error = document.getElementById('consentimiento-error');
+        var leido = document.getElementById('consentimiento-leido');
+        function actualizarContinuar() {
+            var opcion = cont.querySelector('input[name="consentimiento"]:checked');
+            continuar.disabled = !leido.checked || !opcion || opcion.value !== 'acepto';
+        }
+        leido.addEventListener('change', actualizarContinuar);
+        cont.querySelectorAll('input[name="consentimiento"]').forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                error.hidden = true;
+                actualizarContinuar();
+                if (radio.value === 'no-acepto') {
+                    registrarDecisionConsentimiento('no-acepto');
+                } else if (radio.value === 'desisto') {
+                    registrarDecisionConsentimiento('desisto');
+                }
+            });
+        });
+        continuar.addEventListener('click', function () {
+            var ahora = new Date().toISOString();
+            consentimiento = {
+                aceptado: true,
+                decision: 'acepto',
+                leido_en: ahora,
+                aceptado_en: ahora
+            };
+            idbSet('consentimiento', consentimiento);
+            render();
+        });
+    }
+
+    function registrarDecisionConsentimiento(decision) {
+        var ahora = new Date().toISOString();
+        consentimiento = {
+            aceptado: false,
+            decision: decision,
+            leido_en: ahora,
+            decidido_en: ahora
+        };
+        idbSet('consentimiento', consentimiento).then(function () {
+            cont.innerHTML = '<div class="tarjeta consentimiento-bloqueado"><h1>Participación no iniciada</h1>' +
+                '<p>Agradecemos tu tiempo e interés. No avanzarás a la validación ni a la encuesta.</p>' +
+                '<p>Esta pantalla permanecerá disponible para que puedas cerrar la sesión cuando lo desees.</p></div>';
+        });
+    }
+
+    function limpiarEstadoLocal() {
+        return new Promise(function (resolve) {
+            var req = indexedDB.deleteDatabase(DB_NOMBRE);
+            req.onsuccess = req.onerror = req.onblocked = function () { resolve(); };
+        });
+    }
+
+    function retirarseDelEstudio(confirmar) {
+        if (confirmar && !window.confirm('¿Deseas retirarte del estudio? Se eliminarán las respuestas no finalizadas.')) {
+            return;
+        }
+        var body = JSON.stringify({ uuid_local: uuids.identificacion || null });
+        var envio = navigator.onLine ? fetch(URL_RETIRO, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken() },
+            body: body
+        }).catch(function () {}) : Promise.resolve();
+        envio.then(function () {
+            return limpiarEstadoLocal();
+        }).then(function () {
+            window.location.href = '/';
+        });
+    }
+
+    // Pantalla de definiciones + validación inicial de inclusión.
     function edadDesde(iso) {
         if (!iso) { return null; }
         var d = new Date(iso + 'T00:00:00');
@@ -198,7 +304,12 @@
     function renderBienvenida() {
         var defs = esquema.definiciones || [];
         var edadMin = esquema.edad_minima || 40;
-        var fn = (respuestas.identificacion || {}).fecha_nacimiento || '';
+        var edadMax = esquema.edad_maxima || 60;
+        var ident = respuestas.identificacion || {};
+        var fn = ident.fecha_nacimiento || '';
+        var fupm = ident.fecha_ultimo_periodo_menstrual || '';
+        var quirurgica = String(ident.menopausia_quirurgica_inducida) === 'true';
+        var fupmNoAplica = String(ident.fupm_no_aplica_por_cirugia) === 'true';
 
         var html = '<div class="tarjeta bienvenida">';
         html += '<h1>Antes de empezar</h1>';
@@ -210,30 +321,66 @@
             });
             html += '</div>';
         }
-        html += '<div class="gate"><p>Esta encuesta está dirigida a personas de <strong>' +
-            edadMin + ' años o más</strong>. Ingresa tu fecha de nacimiento para continuar:</p>';
+        html += '<div class="gate"><p>Para verificar si cumples el perfil del estudio, completa estos datos:</p>';
         html += '<label for="g_fn">Fecha de nacimiento</label>';
         html += '<input id="g_fn" type="date" value="' + esc(fn) + '">';
+        html += '<fieldset><legend>Inducción o cirugía</legend><p>¿Te has sometido a una histerectomía, extirpación de ovarios, o menopausia quirúrgica/inducida por tratamiento médico?</p>';
+        html += '<label class="opcion"><input type="radio" name="g_quirurgica" value="true"' +
+            (quirurgica ? ' checked' : '') + '> Sí</label>';
+        html += '<label class="opcion"><input type="radio" name="g_quirurgica" value="false"' +
+            (!quirurgica ? ' checked' : '') + '> No</label></fieldset>';
+        html += '<label for="g_fupm">Fecha del último periodo menstrual</label>';
+        html += '<input id="g_fupm" type="date" value="' + esc(fupm) + '"' +
+            (fupmNoAplica ? ' disabled' : '') + '>';
+        html += '<label class="opcion"><input id="g_fupm_na" type="checkbox"' +
+            (fupmNoAplica ? ' checked' : '') + '> No aplica por cirugía/menopausia quirúrgica</label>';
         html += '<p id="g_error" class="errores" hidden></p>';
-        html += '<button type="button" id="g_ok">Comenzar</button></div></div>';
+        html += '<button type="button" id="g_ok">Comenzar encuesta</button></div></div>';
         cont.innerHTML = html;
 
         var input = document.getElementById('g_fn');
+        var fupmInput = document.getElementById('g_fupm');
+        var fupmNoAplicaInput = document.getElementById('g_fupm_na');
         var err = document.getElementById('g_error');
-        input.addEventListener('input', function () { err.hidden = true; });
+        function limpiarError() { err.hidden = true; }
+        input.addEventListener('input', limpiarError);
+        fupmInput.addEventListener('input', limpiarError);
+        cont.querySelectorAll('input[name="g_quirurgica"]').forEach(function (radio) {
+            radio.addEventListener('change', limpiarError);
+        });
+        fupmNoAplicaInput.addEventListener('change', function () {
+            fupmInput.disabled = fupmNoAplicaInput.checked;
+            if (fupmNoAplicaInput.checked) { fupmInput.value = ''; }
+            limpiarError();
+        });
         document.getElementById('g_ok').addEventListener('click', function () {
             var edad = edadDesde(input.value);
+            var cirugia = document.querySelector('input[name="g_quirurgica"]:checked').value === 'true';
+            var noAplica = fupmNoAplicaInput.checked;
             if (edad === null) {
                 err.textContent = 'Ingresa tu fecha de nacimiento.'; err.hidden = false; return;
             }
-            if (edad < edadMin) {
-                err.textContent = 'Esta encuesta está dirigida a personas de ' + edadMin +
-                    ' años o más, por lo que no puedes continuar. Gracias por tu interés.';
+            if (noAplica && !cirugia) {
+                err.textContent = 'Marca Sí en menopausia quirúrgica o inducida para indicar que la FUPM no aplica.';
+                err.hidden = false; return;
+            }
+            if (!noAplica && !fupmInput.value) {
+                err.textContent = 'Ingresa la fecha del último periodo menstrual o marca que no aplica por cirugía.';
+                err.hidden = false; return;
+            }
+            if (!((edad >= edadMin && edad <= edadMax) || cirugia || noAplica)) {
+                err.textContent = 'No cumples con el perfil objetivo del estudio. La edad debe estar entre ' +
+                    edadMin + ' y ' + edadMax + ' años, salvo menopausia quirúrgica o inducida.';
                 err.hidden = false;
                 return;
             }
             if (!respuestas.identificacion) { respuestas.identificacion = {}; }
             respuestas.identificacion.fecha_nacimiento = input.value;
+            respuestas.identificacion.edad_calculada = edad;
+            respuestas.identificacion.menopausia_quirurgica_inducida = cirugia;
+            respuestas.identificacion.fecha_ultimo_periodo_menstrual = noAplica ? '' : fupmInput.value;
+            respuestas.identificacion.fupm_no_aplica_por_cirugia = noAplica;
+            respuestas.identificacion.validacion_inicial_en = new Date().toISOString();
             idbSet('respuestas', respuestas);
             bienvenidaOk = true;
             idbSet('bienvenida', true);
@@ -244,6 +391,7 @@
 
     // ---------- Render ----------
     function render() {
+        if (!consentimiento || !consentimiento.aceptado) { renderConsentimiento(); return; }
         if (!bienvenidaOk) { renderBienvenida(); return; }
 
         var secs = seccionesAplicables();
@@ -577,17 +725,93 @@
                 incompletas.map(function (s) { return s.titulo; }).join(', '));
             return;
         }
-        idbSet('envio_final', true);
-        intentarSync(true);
+        respuestas.envio_uuid = respuestas.envio_uuid || crearUuid();
+        renderEvaluacionSatisfaccion();
     }
 
-    function construirPayload() {
-        var payload = { secciones: [] };
+    function renderEvaluacionSatisfaccion() {
+        var evaluacion = respuestas.evaluacion_satisfaccion || {};
+        var html = '<div class="modal-cierre"><div class="tarjeta evaluacion-cierre">';
+        html += '<h1>Antes de finalizar</h1><p>Responde estas cinco preguntas breves para completar tu participación.</p>';
+        html += preguntaCierre('facilidad_uso', '¿Cómo evalúas la facilidad para responder el cuestionario?', [
+            ['1', '😡 Muy difícil'], ['2', '😕 Difícil'], ['3', '😐 Normal'], ['4', '🙂 Fácil'], ['5', '😍 Muy fácil']
+        ], evaluacion.facilidad_uso);
+        html += preguntaCierre('fatiga_mental', '¿Sentiste fatiga o cansancio mental al responder la encuesta?', [
+            ['1', '🟢 Ninguno'], ['2', '🟡 Poco'], ['3', '🟠 Moderado'], ['4', '🔴 Mucho']
+        ], evaluacion.fatiga_mental);
+        html += preguntaCierre('comodidad_diseno', '¿Qué tan cómodo te pareció el diseño y la navegación de la plataforma?', [
+            ['1', '1 estrella'], ['2', '2 estrellas'], ['3', '3 estrellas'], ['4', '4 estrellas'], ['5', '5 estrellas']
+        ], evaluacion.comodidad_diseno);
+        html += preguntaCierre('recomendaria', '¿Recomendarías este Observatorio a otras mujeres en etapa de peri o menopausia?', [
+            ['SI', 'Definitivamente sí'], ['TAL_VEZ', 'Tal vez'], ['NO', 'No']
+        ], evaluacion.recomendaria);
+        html += preguntaCierre('incomodidad', '¿Hubo alguna pregunta que te generara incomodidad o confusión?', [
+            ['NO', 'No, ninguna'], ['SI', 'Sí']
+        ], evaluacion.incomodidad);
+        html += '<label id="comentario-cierre-label">Si respondiste Sí, especifica cuál o por qué (opcional)</label>';
+        html += '<textarea id="comentario-cierre" rows="3">' + esc(evaluacion.comentario_incomodidad || '') + '</textarea>';
+        html += '<p id="cierre-error" class="errores" hidden></p><button type="button" id="enviar-evaluacion">Enviar evaluación y finalizar</button>';
+        html += '</div></div>';
+        cont.innerHTML = html;
+        document.getElementById('enviar-evaluacion').addEventListener('click', guardarEvaluacionSatisfaccion);
+        cont.querySelectorAll('input[name="cierre_incomodidad"]').forEach(function (input) {
+            input.addEventListener('change', function () {
+                document.getElementById('comentario-cierre').disabled = input.value !== 'SI';
+            });
+        });
+    }
+
+    function preguntaCierre(nombre, texto, opciones, valor) {
+        var html = '<fieldset class="pregunta-cierre"><legend>' + esc(texto) + '</legend>';
+        opciones.forEach(function (opcion) {
+            html += '<label><input type="radio" name="cierre_' + nombre + '" value="' + esc(opcion[0]) + '"' +
+                (String(valor) === opcion[0] ? ' checked' : '') + '> ' + esc(opcion[1]) + '</label>';
+        });
+        return html + '</fieldset>';
+    }
+
+    function guardarEvaluacionSatisfaccion() {
+        var evaluacion = {};
+        ['facilidad_uso', 'fatiga_mental', 'comodidad_diseno', 'recomendaria', 'incomodidad'].forEach(function (nombre) {
+            var opcion = cont.querySelector('input[name="cierre_' + nombre + '"]:checked');
+            evaluacion[nombre] = opcion ? opcion.value : '';
+        });
+        evaluacion.comentario_incomodidad = document.getElementById('comentario-cierre').value;
+        var error = document.getElementById('cierre-error');
+        if (Object.keys(evaluacion).some(function (nombre) {
+            return nombre !== 'comentario_incomodidad' && !evaluacion[nombre];
+        })) {
+            error.textContent = 'Responde todas las preguntas para finalizar.';
+            error.hidden = false;
+            return;
+        }
+        if (evaluacion.incomodidad === 'SI' && !evaluacion.comentario_incomodidad.trim()) {
+            error.textContent = 'Describe brevemente la pregunta que te generó incomodidad o confusión.';
+            error.hidden = false;
+            return;
+        }
+        respuestas.evaluacion_satisfaccion = evaluacion;
+        idbSet('respuestas', respuestas).then(function () {
+            idbSet('envio_final', true);
+            intentarSync(true);
+        });
+    }
+
+    function construirPayload(esFinal) {
+        var payload = {
+            secciones: [],
+            envio_final: !!esFinal,
+            envio_uuid: respuestas.envio_uuid || null
+        };
+        payload.evaluacion_satisfaccion = respuestas.evaluacion_satisfaccion || null;
         var bloques = {};   // clave de sync -> bloque (para fusionar grupos, p. ej. MRS)
         seccionesAplicables().forEach(function (s) {
             var datos = respuestas[s.tipo] || {};
             if (s.tipo === 'identificacion') {
-                payload.identificacion = { uuid_local: uuids['identificacion'], datos: datos };
+                payload.identificacion = {
+                    uuid_local: uuids['identificacion'], datos: datos,
+                    consentimiento: consentimiento
+                };
                 return;
             }
             var k = claveSync(s);
@@ -616,14 +840,14 @@
             }
             return Promise.resolve();
         }
-        if (!ident || !seccionCompleta(ident)) {
+        if (!ident || !seccionCompleta(ident) || !consentimiento || !consentimiento.aceptado) {
             return Promise.resolve();  // aún no hay lo mínimo para sincronizar
         }
 
         return fetch(URL_SYNC, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken() },
-            body: JSON.stringify(construirPayload())
+            body: JSON.stringify(construirPayload(esFinal))
         })
             .then(function (r) {
                 return r.json().then(function (j) { return { ok: r.ok, cuerpo: j }; });

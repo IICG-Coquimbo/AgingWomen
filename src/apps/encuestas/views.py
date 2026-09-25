@@ -2,9 +2,10 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.http import FileResponse
 from django.shortcuts import render
+from apps.usuarios.permissions import solo_paciente
 
 
-@login_required
+@solo_paciente
 def encuesta(request):
     """Shell de la app cliente de la encuesta. El contenido lo arma encuesta.js."""
     return render(request, 'encuesta.html')
