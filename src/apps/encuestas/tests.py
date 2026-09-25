@@ -980,3 +980,54 @@ class PanelProfesionalTest(TestCase):
 
         mrs_ronda_1 = next(s for s in rondas[1]['secciones'] if s['titulo'].startswith('Escala'))
         self.assertEqual(mrs_ronda_1['registro'].pregunta_1, 2)
+
+
+class MiTableroTest(TestCase):
+    def setUp(self):
+        self.usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
+        self.prof = Usuario.objects.create_user(
+            rut='22.222.222-2', email='p@e.cl', rol=Usuario.Rol.PROFESIONAL_SALUD,
+        )
+
+    def test_requiere_login(self):
+        resp = self.client.get('/mi-tablero/')
+        self.assertEqual(resp.status_code, 302)
+
+    def test_sin_datos_todavia(self):
+        self.client.force_login(self.usuaria)
+        resp = self.client.get('/mi-tablero/')
+        self.assertEqual(resp.status_code, 200)
+        self.assertIsNone(resp.context['paciente'])
+        self.assertEqual(resp.context['rondas'], [])
+
+    def test_profesional_no_usa_este_tablero(self):
+        self.client.force_login(self.prof)
+        resp = self.client.get('/mi-tablero/')
+        self.assertRedirects(resp, '/profesional/buscar/')
+
+    def test_muestra_su_propio_historial(self):
+        res = sincronizar_payload(self.usuaria, {
+            'identificacion': {'uuid_local': str(uuid4()), 'datos': {
+                'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
+                'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
+                'comuna': 'Santiago', 'region_residencia': '13',
+            }},
+            'secciones': [{'tipo': 'mrs', 'uuid_local': str(uuid4()), 'parcial': True,
+                           'datos': {'pregunta_1': 3}}],
+            'finalizar': True,
+        })
+        assert res['ok'], res
+
+        self.client.force_login(self.usuaria)
+        resp = self.client.get('/mi-tablero/')
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.context['paciente'].usuario, self.usuaria)
+
+        rondas = resp.context['rondas']
+        # Ronda 1 quedó finalizada (con datos); la 2 se abrió automáticamente
+        # y todavía está en curso, sin datos.
+        self.assertEqual([r['numero'] for r in rondas], [2, 1])
+        self.assertTrue(rondas[0]['es_actual'])
+        self.assertFalse(rondas[1]['es_actual'])
+        mrs_ronda_1 = next(s for s in rondas[1]['secciones'] if s['titulo'].startswith('Escala'))
+        self.assertEqual(mrs_ronda_1['registro'].pregunta_1, 3)

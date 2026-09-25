@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block titulo %}Mi tablero{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Mi tablero</h1>
+
+    {% if not paciente %}
+        <p class="ayuda">
+            Todavía no has respondido la encuesta, así que aún no hay datos
+            que mostrar aquí.
+        </p>
+        <p><a class="boton" href="{% url 'encuesta' %}">Responder la encuesta</a></p>
+    {% else %}
+        <ul>
+            <li>Edad: {{ paciente.edad }} años</li>
+            <li>Región: {{ paciente.get_region_residencia_display }}</li>
+            <li>Comuna: {{ paciente.comuna }}</li>
+        </ul>
+        <p><a class="boton" href="{% url 'encuesta' %}">Responder / actualizar la encuesta</a></p>
+    {% endif %}
+</div>
+
+{% for ronda in rondas %}
+<div class="tarjeta">
+    <h2>Ronda {{ ronda.numero }}{% if ronda.es_actual %} (en curso, sin finalizar){% endif %}</h2>
+    <table class="tabla-historial">
+        <thead>
+            <tr><th>Sección</th><th>Estado</th><th>Fecha</th><th>Resumen</th></tr>
+        </thead>
+        <tbody>
+            {% for s in ronda.secciones %}
+            <tr>
+                <td>{{ s.titulo }}</td>
+                <td>{% if s.registro %}Con datos{% else %}Sin datos{% endif %}</td>
+                <td>{{ s.fecha|default:"—" }}</td>
+                <td>
+                    {% if s.registro.puntaje_total is not None %}
+                        Puntaje MRS: {{ s.registro.puntaje_total }}
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endfor %}
+{% endblock %}

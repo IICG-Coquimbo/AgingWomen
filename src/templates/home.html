@@ -9,6 +9,8 @@
     <p><a class="boton" href="{% url 'encuesta' %}">Responder la encuesta</a></p>
     {% if user.es_profesional %}
         <p><a class="boton" href="{% url 'buscar_paciente' %}">Buscar paciente</a></p>
+    {% else %}
+        <p><a class="boton" href="{% url 'mi_tablero' %}">Mi tablero</a></p>
     {% endif %}
     <div class="enlaces">
         <a href="{% url 'password_change' %}">Cambiar mi contraseña</a>

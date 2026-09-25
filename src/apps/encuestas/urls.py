@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import api, profesional, views
+from . import api, profesional, tablero, views
 
 urlpatterns = [
     path('encuesta/', views.encuesta, name='encuesta'),
@@ -9,4 +9,5 @@ urlpatterns = [
     path('api/estado/', api.estado_sincronizacion, name='estado_sincronizacion'),
     path('profesional/buscar/', profesional.buscar_paciente, name='buscar_paciente'),
     path('profesional/paciente/<int:identificacion_id>/', profesional.ficha_paciente, name='ficha_paciente'),
+    path('mi-tablero/', tablero.mi_tablero, name='mi_tablero'),
 ]

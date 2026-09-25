@@ -14,9 +14,8 @@ from django.shortcuts import get_object_or_404, render
 from apps.usuarios.decorators import requiere_profesional
 from apps.usuarios.rut import hash_rut, validar_rut
 
-from .esquema import ORDEN_SECCIONES
+from .historial import construir_historial
 from .models import Identificacion
-from .sync import SECCIONES
 
 
 @login_required
@@ -42,27 +41,7 @@ def buscar_paciente(request):
 @requiere_profesional
 def ficha_paciente(request, identificacion_id):
     paciente = get_object_or_404(Identificacion, pk=identificacion_id)
-
-    rondas = []
-    for numero in range(1, paciente.ronda_actual + 1):
-        secciones = []
-        for tipo, titulo, _form_cls, _parte in ORDEN_SECCIONES:
-            if tipo not in SECCIONES:
-                continue  # 'identificacion' y 'mrs_complementario' no son secciones propias
-            modelo, _form = SECCIONES[tipo]
-            registro = modelo.objects.filter(participante=paciente, ronda=numero).first()
-            fecha = None
-            if registro is not None:
-                fecha = getattr(registro, 'fecha_evaluacion', None) or getattr(registro, 'fecha_registro', None)
-            secciones.append({'titulo': titulo, 'registro': registro, 'fecha': fecha})
-        rondas.append({
-            'numero': numero,
-            'secciones': secciones,
-            'es_actual': numero == paciente.ronda_actual,
-        })
-    rondas.reverse()  # ronda más reciente primero
-
     return render(request, 'encuestas/ficha_paciente.html', {
         'paciente': paciente,
-        'rondas': rondas,
+        'rondas': construir_historial(paciente),
     })
