@@ -5,7 +5,7 @@
 
 {% block contenido %}
     <p id="estado-sync" class="estado-sync" hidden></p>
-    <div id="encuesta"><p class="ayuda">Cargando encuesta…</p></div>
+    <div id="encuesta" data-usuario="{{ request.user.rut_hash }}"><p class="ayuda">Cargando encuesta…</p></div>
 {% endblock %}
 
 {% block extra_scripts %}

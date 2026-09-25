@@ -68,10 +68,30 @@
     }
 
     // ---------- Carga inicial ----------
+    // IndexedDB es por navegador, no por cuenta: si en este dispositivo antes
+    // respondió otra persona (u otro paciente, en el caso de un profesional)
+    // sin cerrar sesión primero, hay que descartar ese estado — si no, se
+    // arrastran uuid_local ajenos y el servidor rechaza el guardado (o peor,
+    // se mezclan respuestas de otra persona).
+    var usuarioActual = cont.dataset.usuario || '';
+
+    function limpiarEstadoLocal() {
+        respuestas = {};
+        uuids = {};
+        bienvenidaOk = false;
+        envioFinalPendiente = false;
+        return Promise.all([
+            idbSet('respuestas', respuestas),
+            idbSet('uuids', uuids),
+            idbSet('bienvenida', false),
+            idbSet('envio_final', false),
+        ]);
+    }
+
     function iniciar() {
         Promise.all([
             idbGet('esquema'), idbGet('respuestas'), idbGet('uuids'), idbGet('bienvenida'),
-            idbGet('envio_final'),
+            idbGet('envio_final'), idbGet('usuario'),
         ])
             .then(function (vals) {
                 esquema = vals[0];
@@ -79,6 +99,15 @@
                 uuids = vals[2] || {};
                 bienvenidaOk = !!vals[3];
                 envioFinalPendiente = !!vals[4];
+                var usuarioGuardado = vals[5];
+
+                var cambioDeUsuario = usuarioGuardado && usuarioGuardado !== usuarioActual;
+                var promesa = cambioDeUsuario ? limpiarEstadoLocal() : Promise.resolve();
+                return promesa.then(function () {
+                    return idbSet('usuario', usuarioActual);
+                });
+            })
+            .then(function () {
                 return traerEsquema();
             })
             .then(function () {
