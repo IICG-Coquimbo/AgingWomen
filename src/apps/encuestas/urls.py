@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import api, profesional, tablero, views
+from . import api, profesional, retiro, tablero, views
 
 urlpatterns = [
     path('encuesta/', views.encuesta, name='encuesta'),
@@ -12,4 +12,5 @@ urlpatterns = [
     path('profesional/estadisticas/', profesional.estadisticas, name='estadisticas'),
     path('mi-tablero/', tablero.mi_tablero, name='mi_tablero'),
     path('mi-evaluacion/', tablero.mi_evaluacion, name='mi_evaluacion'),
+    path('retirarse/', retiro.retirarse, name='retirarse'),
 ]

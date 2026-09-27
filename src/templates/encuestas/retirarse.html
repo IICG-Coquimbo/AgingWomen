@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block titulo %}Retirarse del estudio{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Retirarse del estudio</h1>
+    <p>
+        Participar es voluntario y puedes retirarte cuando quieras, sin
+        ninguna consecuencia. Si te retiras:
+    </p>
+    <ul>
+        <li>Se eliminarán <strong>todas tus respuestas</strong>, de todas las
+            veces que respondiste la encuesta, y tu evaluación de la plataforma.</li>
+        <li>Esta acción <strong>no se puede deshacer</strong>.</li>
+        <li>Tu cuenta se mantiene: si más adelante quieres volver a
+            participar, podrás aceptar el consentimiento y responder de nuevo.</li>
+    </ul>
+
+    {% if error %}
+        <div class="errores">{{ error }}</div>
+    {% endif %}
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <p>
+            <label>
+                <input type="checkbox" name="entiendo">
+                Entiendo que se eliminarán todas mis respuestas.
+            </label>
+        </p>
+        <button type="submit" class="boton-peligro">Retirarme del estudio</button>
+    </form>
+
+    <div class="enlaces">
+        <a href="{% url 'mi_tablero' %}">No, volver a mi tablero</a>
+    </div>
+</div>
+{% endblock %}

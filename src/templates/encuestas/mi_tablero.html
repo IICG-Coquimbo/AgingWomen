@@ -55,4 +55,10 @@
     </table>
 </div>
 {% endfor %}
+
+{% if paciente %}
+<p class="enlaces retiro">
+    <a href="{% url 'retirarse' %}">Retirarse del estudio</a>
+</p>
+{% endif %}
 {% endblock %}

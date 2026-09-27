@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block titulo %}Te has retirado del estudio{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Te has retirado del estudio</h1>
+    <p>
+        Eliminamos todas tus respuestas. Gracias por el tiempo que dedicaste
+        a participar.
+    </p>
+    <p class="ayuda" id="estado-limpieza">Borrando también los datos guardados en este dispositivo…</p>
+    <form method="post" action="{% url 'logout' %}" data-csrf-form>
+        {% csrf_token %}
+        <button type="submit">Cerrar sesión</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// Las respuestas también quedan en el IndexedDB del navegador (modo offline):
+// se borran para que no vuelvan a sincronizarse ni queden en el dispositivo.
+(function () {
+    var estado = document.getElementById('estado-limpieza');
+    function listo() { estado.textContent = 'Este dispositivo tampoco guarda ya tus respuestas.'; }
+    if (!window.indexedDB) { listo(); return; }
+    var req = indexedDB.deleteDatabase('encuesta_agingwomen');
+    req.onsuccess = req.onerror = req.onblocked = listo;
+})();
+</script>
+{% endblock %}

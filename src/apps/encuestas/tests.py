@@ -3,6 +3,7 @@ from datetime import date
 from uuid import uuid4
 
 from django.test import TestCase
+from django.utils import timezone
 
 from apps.usuarios.models import Usuario
 from apps.usuarios.rut import hash_rut
@@ -1226,3 +1227,86 @@ class EstadisticasProfesionalTest(TestCase):
     def test_enlace_desde_el_buscador(self):
         self.client.force_login(self.prof)
         self.assertContains(self.client.get('/profesional/buscar/'), '/profesional/estadisticas/')
+
+
+class RetiroDelEstudioTest(TestCase):
+    """Retirarse del estudio borra todos los datos de la participante (Fase 23)."""
+
+    def setUp(self):
+        self.usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
+        self.usuaria.consentimiento_aceptado_en = timezone.now()
+        self.usuaria.save(update_fields=['consentimiento_aceptado_en'])
+        self.client.force_login(self.usuaria)
+
+    def _ronda(self, usuario, finalizar):
+        res = sincronizar_payload(usuario, {
+            'identificacion': {'uuid_local': str(uuid4()), 'datos': {
+                'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
+                'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
+                'comuna': 'Santiago', 'region_residencia': '13',
+            }},
+            'secciones': [{'tipo': 'mrs', 'uuid_local': str(uuid4()), 'parcial': True,
+                           'datos': {'pregunta_1': 3}}],
+            'finalizar': finalizar,
+        })
+        assert res['ok'], res
+        return Identificacion.objects.get(usuario=usuario)
+
+    def test_get_muestra_confirmacion(self):
+        resp = self.client.get('/retirarse/')
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, 'no se puede deshacer')
+
+    def test_sin_marcar_la_casilla_no_borra(self):
+        self._ronda(self.usuaria, finalizar=True)
+        resp = self.client.post('/retirarse/', {})
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn('Marca la casilla', resp.context['error'])
+        self.assertTrue(Identificacion.objects.filter(usuario=self.usuaria).exists())
+
+    def test_retiro_borra_todo_y_reinicia_el_consentimiento(self):
+        participante = self._ronda(self.usuaria, finalizar=True)
+        self._ronda(self.usuaria, finalizar=False)  # ronda 2 en curso
+        EvaluacionSatisfaccion.objects.create(
+            participante=participante, facilidad_uso=4, fatiga_mental=1,
+            comodidad_diseno=5, recomendaria='SI', incomodidad='NO',
+        )
+        self.assertEqual(MRS.objects.filter(participante=participante).count(), 2)
+
+        resp = self.client.post('/retirarse/', {'entiendo': 'on'})
+        self.assertEqual(resp.status_code, 200)
+        self.assertTemplateUsed(resp, 'encuestas/retirado.html')
+
+        self.assertFalse(Identificacion.objects.filter(pk=participante.pk).exists())
+        self.assertFalse(MRS.objects.filter(participante_id=participante.pk).exists())
+        self.assertFalse(EvaluacionSatisfaccion.objects.exists())
+        # La cuenta se conserva, pero debe volver a aceptar el consentimiento.
+        self.usuaria.refresh_from_db()
+        self.assertIsNone(self.usuaria.consentimiento_aceptado_en)
+        self.assertIn('/cuenta/consentimiento/', self.client.get('/encuesta/').url)
+
+    def test_no_afecta_a_otras_participantes(self):
+        self._ronda(self.usuaria, finalizar=True)
+        otra = Usuario.objects.create_user(rut='22.222.222-2', email='o@e.cl')
+        otra_participante = self._ronda(otra, finalizar=True)
+        self.client.post('/retirarse/', {'entiendo': 'on'})
+        self.assertTrue(Identificacion.objects.filter(pk=otra_participante.pk).exists())
+        self.assertEqual(MRS.objects.filter(participante=otra_participante).count(), 1)
+
+    def test_sin_datos_puede_retirarse_sin_error(self):
+        resp = self.client.post('/retirarse/', {'entiendo': 'on'})
+        self.assertEqual(resp.status_code, 200)
+        self.assertTemplateUsed(resp, 'encuestas/retirado.html')
+
+    def test_enlace_en_el_tablero_solo_con_datos(self):
+        self.assertNotContains(self.client.get('/mi-tablero/'), '/retirarse/')
+        self._ronda(self.usuaria, finalizar=True)
+        self.assertContains(self.client.get('/mi-tablero/'), '/retirarse/')
+
+    def test_profesional_es_redirigido(self):
+        prof = Usuario.objects.create_user(
+            rut='33.333.333-3', email='p@e.cl', rol=Usuario.Rol.PROFESIONAL_SALUD,
+        )
+        self.client.force_login(prof)
+        self.assertRedirects(self.client.post('/retirarse/', {'entiendo': 'on'}),
+                             '/profesional/buscar/')

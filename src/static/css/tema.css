@@ -406,6 +406,12 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
 .indicador-nombre { font-size: .88rem; }
 .indicador-nombre small { display: block; color: var(--color-texto-suave); }
 
+/* === Retiro del estudio (Fase 23) === */
+.boton-peligro { background: var(--color-error); }
+.boton-peligro:hover { background: #991b1b; }
+.retiro { text-align: center; font-size: .85rem; }
+.retiro a { color: var(--color-texto-suave); }
+
 /* === Mensajes de Django (messages framework) === */
 .mensaje {
     margin: 0 0 1rem;
