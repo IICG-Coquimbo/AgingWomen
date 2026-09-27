@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block titulo %}Estadísticas agrupadas{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Estadísticas agrupadas</h1>
+    <p class="ayuda">
+        Resumen anónimo de todas las participantes registradas. No muestra RUT
+        ni ningún dato que permita identificar a una persona.
+    </p>
+
+    <div class="indicadores">
+        <div class="indicador">
+            <span class="indicador-valor">{{ total_participantes }}</span>
+            <span class="indicador-nombre">Participantes</span>
+        </div>
+        <div class="indicador">
+            <span class="indicador-valor">{% if edad_promedio is not None %}{{ edad_promedio }}{% else %}Sin datos{% endif %}</span>
+            <span class="indicador-nombre">Edad promedio (años)</span>
+        </div>
+        <div class="indicador">
+            <span class="indicador-valor">{{ presion_alta }}</span>
+            <span class="indicador-nombre">Con presión alta
+                <small>(última medición ≥{{ sistolica_alta }}/{{ diastolica_alta }} mmHg)</small></span>
+        </div>
+        <div class="indicador">
+            <span class="indicador-valor">{{ total_mrs }}</span>
+            <span class="indicador-nombre">Evaluaciones MRS (todas las rondas)</span>
+        </div>
+    </div>
+
+    <div class="enlaces">
+        <a href="{% url 'buscar_paciente' %}">← Volver a buscar paciente</a>
+    </div>
+</div>
+{% endblock %}

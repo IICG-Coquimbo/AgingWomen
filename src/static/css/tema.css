@@ -386,6 +386,26 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
 .pregunta-evaluacion legend { padding: 0 .25rem; font-weight: 600; }
 .evaluacion textarea { width: 100%; box-sizing: border-box; }
 
+/* === Estadísticas agrupadas (Fase 17) === */
+.indicadores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: .75rem;
+    margin: 1rem 0;
+}
+.indicador {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    padding: .9rem;
+    border-radius: 8px;
+    background: var(--color-primario-suave);
+    border-left: 3px solid var(--color-primario-claro);
+}
+.indicador-valor { font-size: 1.6rem; font-weight: 700; color: var(--color-primario-oscuro); }
+.indicador-nombre { font-size: .88rem; }
+.indicador-nombre small { display: block; color: var(--color-texto-suave); }
+
 /* === Mensajes de Django (messages framework) === */
 .mensaje {
     margin: 0 0 1rem;

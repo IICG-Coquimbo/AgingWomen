@@ -1151,3 +1151,78 @@ class EvaluacionSatisfaccionTest(TestCase):
         )
         self.client.force_login(prof)
         self.assertRedirects(self.client.get('/mi-evaluacion/'), '/profesional/buscar/')
+
+
+class EstadisticasProfesionalTest(TestCase):
+    """Estadísticas agrupadas básicas del panel profesional (Fase 17)."""
+
+    def setUp(self):
+        self.prof = Usuario.objects.create_user(
+            rut='22.222.222-2', email='p@e.cl', rol=Usuario.Rol.PROFESIONAL_SALUD,
+        )
+
+    def _paciente(self, rut, fecha_nacimiento, presion=None, mrs=False, finalizar=False):
+        secciones = []
+        if presion:
+            secciones.append({'tipo': 'empa', 'uuid_local': str(uuid4()), 'parcial': True,
+                              'datos': {'presion_sistolica': presion[0],
+                                        'presion_diastolica': presion[1]}})
+        if mrs:
+            secciones.append({'tipo': 'mrs', 'uuid_local': str(uuid4()), 'parcial': True,
+                              'datos': {'pregunta_1': 2}})
+        res = sincronizar_payload(self.prof, {
+            'identificacion': {'uuid_local': str(uuid4()), 'rut': rut, 'datos': {
+                'fecha_nacimiento': fecha_nacimiento, 'genero': 'F', 'nivel_educacion': 'M_COM',
+                'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
+                'comuna': 'Santiago', 'region_residencia': '13',
+            }},
+            'secciones': secciones,
+            'finalizar': finalizar,
+        })
+        assert res['ok'], res
+
+    def _ver(self):
+        self.client.force_login(self.prof)
+        resp = self.client.get('/profesional/estadisticas/')
+        self.assertEqual(resp.status_code, 200)
+        return resp
+
+    def test_usuaria_comun_no_puede_ver_estadisticas(self):
+        usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
+        self.client.force_login(usuaria)
+        self.assertEqual(self.client.get('/profesional/estadisticas/').status_code, 403)
+
+    def test_sin_datos(self):
+        resp = self._ver()
+        self.assertEqual(resp.context['total_participantes'], 0)
+        self.assertIsNone(resp.context['edad_promedio'])
+        self.assertEqual(resp.context['presion_alta'], 0)
+        self.assertContains(resp, 'Sin datos')
+
+    def test_conteos(self):
+        hoy = date.today()
+        self._paciente('9.876.543-3', f'{hoy.year - 50}-01-01', presion=(150, 85), mrs=True)
+        self._paciente('12.345.678-5', f'{hoy.year - 44}-01-01', presion=(120, 95))
+        self._paciente('7.654.321-6', f'{hoy.year - 56}-01-01', presion=(118, 76), mrs=True)
+        resp = self._ver()
+        self.assertEqual(resp.context['total_participantes'], 3)
+        self.assertEqual(resp.context['edad_promedio'], 50.0)
+        # 150/85 (sistólica) y 120/95 (diastólica) cuentan; 118/76 no.
+        self.assertEqual(resp.context['presion_alta'], 2)
+        self.assertEqual(resp.context['total_mrs'], 2)
+
+    def test_presion_alta_cuenta_personas_segun_su_ultima_medicion(self):
+        hoy = date.today()
+        # Ronda 1 alta, ronda 2 normal: hoy no cuenta.
+        self._paciente('9.876.543-3', f'{hoy.year - 50}-01-01', presion=(160, 100), finalizar=True)
+        self._paciente('9.876.543-3', f'{hoy.year - 50}-01-01', presion=(120, 80))
+        # Dos rondas altas: cuenta una sola vez.
+        self._paciente('12.345.678-5', f'{hoy.year - 45}-01-01', presion=(150, 90), finalizar=True)
+        self._paciente('12.345.678-5', f'{hoy.year - 45}-01-01', presion=(145, 92))
+        resp = self._ver()
+        self.assertEqual(resp.context['total_participantes'], 2)
+        self.assertEqual(resp.context['presion_alta'], 1)
+
+    def test_enlace_desde_el_buscador(self):
+        self.client.force_login(self.prof)
+        self.assertContains(self.client.get('/profesional/buscar/'), '/profesional/estadisticas/')

@@ -9,6 +9,7 @@ urlpatterns = [
     path('api/estado/', api.estado_sincronizacion, name='estado_sincronizacion'),
     path('profesional/buscar/', profesional.buscar_paciente, name='buscar_paciente'),
     path('profesional/paciente/<int:identificacion_id>/', profesional.ficha_paciente, name='ficha_paciente'),
+    path('profesional/estadisticas/', profesional.estadisticas, name='estadisticas'),
     path('mi-tablero/', tablero.mi_tablero, name='mi_tablero'),
     path('mi-evaluacion/', tablero.mi_evaluacion, name='mi_evaluacion'),
 ]
