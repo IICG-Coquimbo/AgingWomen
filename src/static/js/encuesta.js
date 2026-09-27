@@ -268,31 +268,48 @@
         var input = document.getElementById('g_fn');
         var bloqueExcepcion = document.getElementById('g_excepcion');
         var err = document.getElementById('g_error');
+        // Muestra el mensaje y lo lleva a la vista: si el texto no cambia entre
+        // dos clics, sin esto parece que el botón "no hace nada".
+        function mostrarError(texto) {
+            err.textContent = texto;
+            err.hidden = false;
+            if (err.scrollIntoView) { err.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+        }
         input.addEventListener('input', function () {
             err.hidden = true;
             bloqueExcepcion.hidden = true;
         });
+        cont.querySelectorAll('input[name="g_exc"]').forEach(function (radio) {
+            radio.addEventListener('change', function () { err.hidden = true; });
+        });
         document.getElementById('g_ok').addEventListener('click', function () {
             var edad = edadDesde(input.value);
             if (edad === null) {
-                err.textContent = 'Ingresa tu fecha de nacimiento.'; err.hidden = false; return;
+                mostrarError('Ingresa tu fecha de nacimiento.'); return;
             }
             if (!respuestas.identificacion) { respuestas.identificacion = {}; }
             if (edad > edadMax) {
                 bloqueExcepcion.hidden = true;
-                err.textContent = 'Esta encuesta está dirigida a personas de ' + rango +
-                    '. Gracias por tu interés en participar.';
-                err.hidden = false;
+                mostrarError('No puedes continuar: esta encuesta está dirigida a personas de ' +
+                    rango + '. Gracias por tu interés en participar.');
                 return;
             }
             if (edad < edadMin) {
                 var excepcionMarcada = cont.querySelector('input[name="g_exc"]:checked');
                 var valorExcepcion = excepcionMarcada ? excepcionMarcada.value : '';
                 if (!valorExcepcion) {
-                    bloqueExcepcion.hidden = false;
-                    err.textContent = 'Esta encuesta está dirigida a personas de ' + rango +
-                        '. Selecciona una excepción si corresponde, o no podrás continuar.';
-                    err.hidden = false;
+                    if (bloqueExcepcion.hidden) {
+                        // Primer intento: ofrecer las excepciones.
+                        bloqueExcepcion.hidden = false;
+                        mostrarError('Esta encuesta está dirigida a personas de ' + rango +
+                            '. Si alguna de las situaciones de arriba aplica en tu caso, ' +
+                            'selecciónala y presiona Comenzar.');
+                    } else {
+                        // Ya vio las excepciones y eligió "Ninguna": rechazo definitivo.
+                        mostrarError('No puedes continuar: esta encuesta está dirigida a ' +
+                            'personas de ' + rango + ', salvo menopausia quirúrgica o ausencia ' +
+                            'prolongada de menstruación. Gracias por tu interés en participar.');
+                    }
                     return;
                 }
                 respuestas.identificacion.excepcion_edad = valorExcepcion;
