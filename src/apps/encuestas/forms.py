@@ -68,6 +68,7 @@ class IdentificacionForm(EncuestaModelForm):
         )
 
     EDAD_MINIMA = 40
+    EDAD_MAXIMA = 60
 
     def clean(self):
         cleaned = super().clean()
@@ -81,7 +82,9 @@ class IdentificacionForm(EncuestaModelForm):
             if validas and comuna not in validas:
                 self.add_error('comuna', 'La comuna no corresponde a la región seleccionada.')
 
-        # Filtro de edad: el estudio es para personas de 40 años o más.
+        # Filtro de edad: el estudio es para personas de 40 a 60 años. Las
+        # excepciones (menopausia quirúrgica / ausencia prolongada) solo
+        # permiten entrar con menos de 40; sobre 60 no hay excepción.
         nacimiento = cleaned.get('fecha_nacimiento')
         if nacimiento:
             hoy = date.today()
@@ -89,12 +92,18 @@ class IdentificacionForm(EncuestaModelForm):
                 (hoy.month, hoy.day) < (nacimiento.month, nacimiento.day)
             )
             excepcion = cleaned.get('excepcion_edad') or Identificacion.ExcepcionEdad.NINGUNA
-            if edad < self.EDAD_MINIMA and excepcion == Identificacion.ExcepcionEdad.NINGUNA:
+            if edad > self.EDAD_MAXIMA:
                 self.add_error(
                     'fecha_nacimiento',
-                    f'La persona debe tener {self.EDAD_MINIMA} años o más para participar '
-                    f'en el estudio, salvo que declare menopausia quirúrgica o ausencia '
-                    f'prolongada de menstruación.',
+                    f'El estudio está dirigido a personas de {self.EDAD_MINIMA} a '
+                    f'{self.EDAD_MAXIMA} años.',
+                )
+            elif edad < self.EDAD_MINIMA and excepcion == Identificacion.ExcepcionEdad.NINGUNA:
+                self.add_error(
+                    'fecha_nacimiento',
+                    f'El estudio está dirigido a personas de {self.EDAD_MINIMA} a '
+                    f'{self.EDAD_MAXIMA} años, salvo que declare menopausia quirúrgica o '
+                    f'ausencia prolongada de menstruación.',
                 )
         return cleaned
 

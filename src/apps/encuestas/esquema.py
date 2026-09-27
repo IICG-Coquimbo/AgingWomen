@@ -41,8 +41,10 @@ ORDEN_SECCIONES = [
 MRS_PREGUNTAS = {f'pregunta_{i}' for i in range(1, 12)}
 GRUPO_MRS = 'mrs'
 
-# Edad mínima para responder la encuesta (filtro al inicio — Fase 8).
+# Rango de edad para responder la encuesta (filtro al inicio — Fases 8 y 19).
+# Bajo el mínimo se puede entrar declarando una excepción; sobre el máximo no.
 EDAD_MINIMA = 40
+EDAD_MAXIMA = 60
 
 # Definiciones que se muestran antes de empezar la encuesta.
 DEFINICIONES = [
@@ -305,6 +307,7 @@ def construir_esquema(rol):
         'mrs_niveles': {str(k): v for k, v in MRS.DESCRIPCION_NIVELES.items()},
         'comunas_por_region': COMUNAS_POR_REGION,
         'edad_minima': EDAD_MINIMA,
+        'edad_maxima': EDAD_MAXIMA,
         'definiciones': DEFINICIONES,
         'mensaje_omitir': MENSAJE_OMITIR,
         'excepciones_edad': [

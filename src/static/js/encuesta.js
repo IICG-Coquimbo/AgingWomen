@@ -232,6 +232,8 @@
     function renderBienvenida() {
         var defs = esquema.definiciones || [];
         var edadMin = esquema.edad_minima || 40;
+        var edadMax = esquema.edad_maxima || 60;
+        var rango = edadMin + ' a ' + edadMax + ' años';
         var excepciones = esquema.excepciones_edad || [];
         var fn = (respuestas.identificacion || {}).fecha_nacimiento || '';
 
@@ -246,11 +248,11 @@
             html += '</div>';
         }
         html += '<div class="gate"><p>Esta encuesta está dirigida a personas de <strong>' +
-            edadMin + ' años o más</strong>. Ingresa tu fecha de nacimiento para continuar:</p>';
+            rango + '</strong>. Ingresa tu fecha de nacimiento para continuar:</p>';
         html += '<label for="g_fn">Fecha de nacimiento</label>';
         html += '<input id="g_fn" type="date" value="' + esc(fn) + '">';
         html += '<div id="g_excepcion" hidden>' +
-            '<p>Esta encuesta está dirigida a personas de ' + edadMin + ' años o más. Si ' +
+            '<p>Esta encuesta está dirigida a personas de ' + rango + '. Si ' +
             'ninguna de estas situaciones aplica en tu caso, no puedes continuar. Si alguna ' +
             'sí aplica, selecciónala para seguir:</p>';
         excepciones.forEach(function (op, i) {
@@ -275,20 +277,30 @@
             if (edad === null) {
                 err.textContent = 'Ingresa tu fecha de nacimiento.'; err.hidden = false; return;
             }
+            if (!respuestas.identificacion) { respuestas.identificacion = {}; }
+            if (edad > edadMax) {
+                bloqueExcepcion.hidden = true;
+                err.textContent = 'Esta encuesta está dirigida a personas de ' + rango +
+                    '. Gracias por tu interés en participar.';
+                err.hidden = false;
+                return;
+            }
             if (edad < edadMin) {
                 var excepcionMarcada = cont.querySelector('input[name="g_exc"]:checked');
                 var valorExcepcion = excepcionMarcada ? excepcionMarcada.value : '';
                 if (!valorExcepcion) {
                     bloqueExcepcion.hidden = false;
-                    err.textContent = 'Esta encuesta está dirigida a personas de ' + edadMin +
-                        ' años o más. Selecciona una excepción si corresponde, o no podrás continuar.';
+                    err.textContent = 'Esta encuesta está dirigida a personas de ' + rango +
+                        '. Selecciona una excepción si corresponde, o no podrás continuar.';
                     err.hidden = false;
                     return;
                 }
-                if (!respuestas.identificacion) { respuestas.identificacion = {}; }
                 respuestas.identificacion.excepcion_edad = valorExcepcion;
+            } else {
+                // Dentro del rango la excepción no aplica (evita arrastrar una
+                // marcada antes con otra fecha).
+                respuestas.identificacion.excepcion_edad = '';
             }
-            if (!respuestas.identificacion) { respuestas.identificacion = {}; }
             respuestas.identificacion.fecha_nacimiento = input.value;
             idbSet('respuestas', respuestas);
             bienvenidaOk = true;

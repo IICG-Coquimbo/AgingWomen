@@ -491,6 +491,7 @@ class EsquemaTest(TestCase):
     def test_contrato_de_esquema(self):
         esquema = self._esquema(self.usuaria)
         self.assertEqual(esquema['edad_minima'], 40)
+        self.assertEqual(esquema['edad_maxima'], 60)
         self.assertEqual({d['termino'] for d in esquema['definiciones']},
                          {'Perimenopausia', 'Menopausia'})
         self.assertIn('blanco', esquema['mensaje_omitir'])
@@ -696,6 +697,23 @@ class IdentificacionFormEdadTest(TestCase):
     def test_acepta_40_o_mas(self):
         self.assertTrue(self._form(45).is_valid(), self._form(45).errors)
 
+    def test_limites_del_rango_40_a_60(self):
+        for anios in (40, 60):
+            form = self._form(anios)
+            self.assertTrue(form.is_valid(), (anios, form.errors))
+        for anios in (39, 61):
+            form = self._form(anios)
+            self.assertFalse(form.is_valid(), anios)
+            self.assertIn('fecha_nacimiento', form.errors)
+
+    def test_rechaza_mayor_de_60_aunque_declare_excepcion(self):
+        hoy = date.today()
+        for excepcion in ('QUIRURGICA', 'AUSENCIA'):
+            form = IdentificacionForm(data=dict(
+                self.base, fecha_nacimiento=f'{hoy.year - 65}-01-01', excepcion_edad=excepcion))
+            self.assertFalse(form.is_valid(), excepcion)
+            self.assertIn('fecha_nacimiento', form.errors)
+
     def test_acepta_menor_de_40_con_excepcion(self):
         hoy = date.today()
         form = IdentificacionForm(data=dict(
@@ -739,6 +757,16 @@ class SincronizacionEdadTest(TestCase):
         payload = self._payload_menor_de_edad(excepcion_edad='AUSENCIA')
         res = sincronizar_payload(usuaria, payload)
         self.assertTrue(res['ok'])
+
+    def test_sync_rechaza_mayor_de_60(self):
+        usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
+        hoy = date.today()
+        payload = self._payload_menor_de_edad(
+            fecha_nacimiento=f'{hoy.year - 70}-06-01', excepcion_edad='AUSENCIA')
+        res = sincronizar_payload(usuaria, payload)
+        self.assertFalse(res['ok'])
+        self.assertIn('fecha_nacimiento', res['resultados'][0]['errores'])
+        self.assertFalse(Identificacion.objects.filter(usuario=usuaria).exists())
 
 
 class EsquemaExcepcionEdadTest(TestCase):
