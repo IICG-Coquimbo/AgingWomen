@@ -149,17 +149,42 @@ class ConsentimientoInformadoTest(TestCase):
     def test_aceptar_consentimiento_marca_fecha_y_permite_seguir(self):
         resp = self.client.post(
             reverse('consentimiento') + '?next=' + reverse('encuesta'),
-            {'acepto': 'on', 'next': reverse('encuesta')},
+            {'leido': 'on', 'decision': 'acepto', 'next': reverse('encuesta')},
         )
         self.assertRedirects(resp, reverse('encuesta'))
         self.usuario.refresh_from_db()
         self.assertIsNotNone(self.usuario.consentimiento_aceptado_en)
 
-    def test_rechazar_checkbox_no_avanza(self):
-        resp = self.client.post(reverse('consentimiento'), {})
-        self.assertEqual(resp.status_code, 200)
+    def _sin_consentimiento(self):
         self.usuario.refresh_from_db()
-        self.assertIsNone(self.usuario.consentimiento_aceptado_en)
+        return self.usuario.consentimiento_aceptado_en is None
+
+    def test_sin_opcion_no_avanza(self):
+        resp = self.client.post(reverse('consentimiento'), {'leido': 'on'})
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, 'Selecciona una opción')
+        self.assertTrue(self._sin_consentimiento())
+
+    def test_aceptar_sin_marcar_leido_no_avanza(self):
+        resp = self.client.post(reverse('consentimiento'), {'decision': 'acepto'})
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, 'leíste y comprendiste')
+        self.assertTrue(self._sin_consentimiento())
+
+    def test_no_acepto_o_desisto_muestra_rechazo_sin_guardar(self):
+        for decision in ('no_acepto', 'desisto'):
+            resp = self.client.post(reverse('consentimiento'), {'leido': 'on', 'decision': decision})
+            self.assertEqual(resp.status_code, 200)
+            self.assertTemplateUsed(resp, 'usuarios/consentimiento_rechazado.html')
+            self.assertTrue(self._sin_consentimiento())
+        # Sigue sin poder entrar a la encuesta.
+        resp = self.client.get(reverse('encuesta'))
+        self.assertIn(reverse('consentimiento'), resp.url)
+
+    def test_texto_aprobado_sin_advertencia_provisional(self):
+        resp = self.client.get(reverse('consentimiento'))
+        self.assertContains(resp, 'CEC UCN')
+        self.assertNotContains(resp, 'provisional')
 
     def test_consentimiento_ya_aceptado_redirige_directo(self):
         from django.utils import timezone

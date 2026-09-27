@@ -57,6 +57,9 @@ def _destino_seguro(request, next_url):
     return 'home'
 
 
+DECISIONES_RECHAZO = ('no_acepto', 'desisto')
+
+
 @login_required
 def consentimiento(request):
     next_url = request.POST.get('next') or request.GET.get('next', '')
@@ -65,14 +68,27 @@ def consentimiento(request):
         return redirect(_destino_seguro(request, next_url))
 
     error = None
+    decision = request.POST.get('decision', '')
+    leido = request.POST.get('leido') == 'on'
     if request.method == 'POST':
-        if request.POST.get('acepto') == 'on':
-            request.user.consentimiento_aceptado_en = timezone.now()
-            request.user.save(update_fields=['consentimiento_aceptado_en'])
-            return redirect(_destino_seguro(request, next_url))
-        error = 'Debes marcar la casilla de aceptación para continuar.'
+        if decision in DECISIONES_RECHAZO:
+            # No se guarda nada: si vuelve más tarde, ve el consentimiento de
+            # nuevo y puede aceptar.
+            return render(request, 'usuarios/consentimiento_rechazado.html', {
+                'desiste': decision == 'desisto',
+            })
+        if decision == 'acepto':
+            if leido:
+                request.user.consentimiento_aceptado_en = timezone.now()
+                request.user.save(update_fields=['consentimiento_aceptado_en'])
+                return redirect(_destino_seguro(request, next_url))
+            error = 'Debes indicar que leíste y comprendiste la información del estudio.'
+        else:
+            error = 'Selecciona una opción para continuar.'
 
-    return render(request, 'usuarios/consentimiento.html', {'error': error, 'next': next_url})
+    return render(request, 'usuarios/consentimiento.html', {
+        'error': error, 'next': next_url, 'decision': decision, 'leido': leido,
+    })
 
 
 @login_required

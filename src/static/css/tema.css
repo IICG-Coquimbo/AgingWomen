@@ -243,6 +243,26 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
 .gate label { margin-top: .5rem; }
 .gate input { max-width: 16rem; }
 .gate button { margin-top: .9rem; }
+
+/* === Consentimiento informado (Fase 20) === */
+.consentimiento h1 { margin-bottom: .35rem; }
+.consentimiento-intro { color: var(--color-texto-suave); margin-top: 0; }
+.consentimiento-bloques { display: grid; gap: .7rem; margin: 1rem 0; }
+.consentimiento-bloque {
+    border-left: 3px solid var(--color-primario-claro);
+    padding: .55rem .75rem;
+    background: var(--color-primario-suave);
+}
+.consentimiento-bloque h2 { font-size: 1rem; margin: 0 0 .2rem; }
+.consentimiento-bloque p { margin: 0; font-size: .92rem; }
+.contactos { border-top: 1px solid var(--color-borde); padding-top: .8rem; }
+.contactos p { margin: .25rem 0; font-size: .9rem; }
+.consentimiento-opciones { margin-top: 1.25rem; }
+.consentimiento-opciones label { display: flex; gap: .55rem; align-items: flex-start; font-weight: 400; margin: .55rem 0; }
+.consentimiento-opciones input { width: auto; margin-top: .3rem; }
+.consentimiento-opciones button:disabled { opacity: .5; cursor: not-allowed; }
+.consentimiento-bloqueado { text-align: center; }
+.consentimiento-bloqueado h1 { color: var(--color-error); }
 .opcion-excepcion {
     display: flex;
     align-items: flex-start;
