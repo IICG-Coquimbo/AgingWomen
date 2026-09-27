@@ -17,6 +17,7 @@
     var DB_VERSION = 1;
     var URL_ESQUEMA = '/api/esquema/';
     var URL_SYNC = '/api/sincronizar/';
+    var URL_EVALUACION = '/mi-evaluacion/';
 
     var cont = document.getElementById('encuesta');
 
@@ -743,7 +744,8 @@
                         idbSet('envio_final', false);
                         iniciarRondaNueva();
                         mensajeFinal('¡Encuesta enviada! Gracias por participar. Puedes volver a ' +
-                            'responderla más adelante para registrar cómo han cambiado tus síntomas.');
+                            'responderla más adelante para registrar cómo han cambiado tus síntomas.',
+                            false, true);
                     } else {
                         avisoSync('Respuestas sincronizadas.', 'ok');
                     }
@@ -768,9 +770,15 @@
             });
     }
 
-    function mensajeFinal(texto, error) {
-        cont.innerHTML = '<div class="tarjeta"><p class="' + (error ? 'errores' : '') + '">' +
-            esc(texto) + '</p><p class="enlaces"><a href="/">Volver al inicio</a></p></div>';
+    function mensajeFinal(texto, error, ofrecerEvaluacion) {
+        var html = '<div class="tarjeta"><p class="' + (error ? 'errores' : '') + '">' +
+            esc(texto) + '</p>';
+        if (ofrecerEvaluacion) {
+            // Fase 22: evaluación voluntaria de la plataforma, al final del sistema.
+            html += '<p>¿Nos ayudas con 5 preguntas breves sobre la plataforma?</p>' +
+                '<p><a class="boton" href="' + URL_EVALUACION + '">Evaluar la plataforma</a></p>';
+        }
+        cont.innerHTML = html + '<p class="enlaces"><a href="/">Volver al inicio</a></p></div>';
     }
 
     // ---------- utilidades ----------

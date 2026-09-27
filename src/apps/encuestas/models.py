@@ -1257,3 +1257,82 @@ class HabitosDeVida(SegmentoDeRonda):
 
     def __str__(self):
         return f"Hábitos de Vida de {self.participante} - {self.fecha_evaluacion}"
+
+
+# ===========================================================================
+# EVALUACIÓN DE SATISFACCIÓN CON LA PLATAFORMA (Fase 22)
+# ===========================================================================
+
+class EvaluacionSatisfaccion(models.Model):
+    """
+    Evaluación breve de la plataforma, voluntaria, a la que la participante
+    entra con un botón tras finalizar al menos una ronda. Es una sola por
+    participante (evalúa la herramienta, no cada ronda); si la vuelve a
+    enviar, se actualiza.
+    """
+
+    class Facilidad(models.IntegerChoices):
+        MUY_DIFICIL = 1, '😡 Muy difícil'
+        DIFICIL = 2, '😕 Difícil'
+        NORMAL = 3, '😐 Normal'
+        FACIL = 4, '🙂 Fácil'
+        MUY_FACIL = 5, '😍 Muy fácil'
+
+    class Fatiga(models.IntegerChoices):
+        NINGUNA = 1, 'Ninguno'
+        POCA = 2, 'Poco'
+        MODERADA = 3, 'Moderado'
+        MUCHA = 4, 'Mucho'
+
+    class Estrellas(models.IntegerChoices):
+        UNA = 1, '★'
+        DOS = 2, '★★'
+        TRES = 3, '★★★'
+        CUATRO = 4, '★★★★'
+        CINCO = 5, '★★★★★'
+
+    class Recomendaria(models.TextChoices):
+        SI = 'SI', 'Definitivamente sí'
+        TAL_VEZ = 'TAL_VEZ', 'Tal vez'
+        NO = 'NO', 'No'
+
+    participante = models.OneToOneField(
+        Identificacion,
+        on_delete=models.CASCADE,
+        related_name='evaluacion_satisfaccion',
+    )
+    facilidad_uso = models.PositiveSmallIntegerField(
+        choices=Facilidad.choices,
+        help_text='¿Cómo evalúas la facilidad para responder el cuestionario?',
+    )
+    fatiga_mental = models.PositiveSmallIntegerField(
+        choices=Fatiga.choices,
+        help_text='¿Sentiste fatiga o cansancio mental al responder la encuesta?',
+    )
+    comodidad_diseno = models.PositiveSmallIntegerField(
+        choices=Estrellas.choices,
+        help_text='¿Qué tan cómodo te pareció el diseño y la navegación de la plataforma?',
+    )
+    recomendaria = models.CharField(
+        max_length=7,
+        choices=Recomendaria.choices,
+        help_text='¿Recomendarías este Observatorio a otras mujeres en etapa de peri o menopausia?',
+    )
+    incomodidad = models.CharField(
+        max_length=2,
+        choices=RespuestaSiNo.choices,
+        help_text='¿Hubo alguna pregunta que te generara incomodidad o confusión?',
+    )
+    comentario_incomodidad = models.TextField(
+        blank=True,
+        help_text='Cuál pregunta o por qué (obligatorio si respondió Sí)',
+    )
+    respondida_en = models.DateTimeField(auto_now_add=True)
+    actualizada_en = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'evaluación de satisfacción'
+        verbose_name_plural = 'evaluaciones de satisfacción'
+
+    def __str__(self):
+        return f'Evaluación de satisfacción de {self.participante}'

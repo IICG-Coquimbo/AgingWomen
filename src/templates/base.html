@@ -22,6 +22,9 @@
         {% endif %}
     </header>
     <main>
+        {% for mensaje in messages %}
+            <div class="mensaje mensaje-{{ mensaje.tags }}" role="status">{{ mensaje }}</div>
+        {% endfor %}
         {% block contenido %}{% endblock %}
     </main>
 

@@ -3,6 +3,7 @@ from django.contrib import admin
 from .models import (
     ActividadFisica,
     ConocimientoSistema,
+    EvaluacionSatisfaccion,
     EvaluacionTrabajo,
     HabitosDeVida,
     Identificacion,
@@ -119,3 +120,12 @@ class HabitosDeVidaAdmin(admin.ModelAdmin):
     list_select_related = ('participante',)
     raw_id_fields = ('participante',)
     readonly_fields = ('fecha_evaluacion',) + _SYNC_RONDA
+
+
+@admin.register(EvaluacionSatisfaccion)
+class EvaluacionSatisfaccionAdmin(admin.ModelAdmin):
+    list_display = ('participante', 'facilidad_uso', 'fatiga_mental', 'comodidad_diseno',
+                    'recomendaria', 'incomodidad', 'actualizada_en')
+    list_filter = ('recomendaria', 'incomodidad')
+    raw_id_fields = ('participante',)
+    readonly_fields = ('respondida_en', 'actualizada_en')

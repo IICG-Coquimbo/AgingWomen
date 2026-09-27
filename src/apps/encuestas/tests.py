@@ -11,6 +11,7 @@ from .forms import IdentificacionForm, MRSForm, SegmentoEMPAForm
 from .models import (
     ActividadFisica,
     ConocimientoSistema,
+    EvaluacionSatisfaccion,
     EvaluacionTrabajo,
     HabitosDeVida,
     Identificacion,
@@ -1059,3 +1060,94 @@ class MiTableroTest(TestCase):
         self.assertFalse(rondas[1]['es_actual'])
         mrs_ronda_1 = next(s for s in rondas[1]['secciones'] if s['titulo'].startswith('Escala'))
         self.assertEqual(mrs_ronda_1['registro'].pregunta_1, 3)
+
+
+class EvaluacionSatisfaccionTest(TestCase):
+    """Evaluación de la plataforma, voluntaria, al final del sistema (Fase 22)."""
+
+    RESPUESTAS = {
+        'facilidad_uso': 4, 'fatiga_mental': 2, 'comodidad_diseno': 5,
+        'recomendaria': 'SI', 'incomodidad': 'NO', 'comentario_incomodidad': '',
+    }
+
+    def setUp(self):
+        self.usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
+        self.client.force_login(self.usuaria)
+
+    def _participante(self, finalizar):
+        res = sincronizar_payload(self.usuaria, {
+            'identificacion': {'uuid_local': str(uuid4()), 'datos': {
+                'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
+                'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
+                'comuna': 'Santiago', 'region_residencia': '13',
+            }},
+            'secciones': [],
+            'finalizar': finalizar,
+        })
+        assert res['ok'], res
+        return Identificacion.objects.get(usuario=self.usuaria)
+
+    def test_sin_ronda_finalizada_redirige_al_tablero(self):
+        self._participante(finalizar=False)
+        resp = self.client.get('/mi-evaluacion/')
+        self.assertRedirects(resp, '/mi-tablero/')
+        resp = self.client.get('/mi-tablero/')
+        self.assertFalse(resp.context['puede_evaluar'])
+        self.assertNotContains(resp, 'Evaluar la plataforma')
+
+    def test_sin_participante_redirige_al_tablero(self):
+        self.assertRedirects(self.client.get('/mi-evaluacion/'), '/mi-tablero/')
+
+    def test_guardar_evaluacion(self):
+        participante = self._participante(finalizar=True)
+        resp = self.client.get('/mi-evaluacion/')
+        self.assertEqual(resp.status_code, 200)
+        self.assertFalse(resp.context['editando'])
+
+        resp = self.client.post('/mi-evaluacion/', self.RESPUESTAS)
+        self.assertRedirects(resp, '/mi-tablero/')
+        evaluacion = EvaluacionSatisfaccion.objects.get(participante=participante)
+        self.assertEqual(evaluacion.facilidad_uso, 4)
+        self.assertEqual(evaluacion.recomendaria, 'SI')
+
+    def test_incomodidad_si_exige_comentario(self):
+        self._participante(finalizar=True)
+        datos = dict(self.RESPUESTAS, incomodidad='SI', comentario_incomodidad='   ')
+        resp = self.client.post('/mi-evaluacion/', datos)
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn('comentario_incomodidad', resp.context['form'].errors)
+        self.assertFalse(EvaluacionSatisfaccion.objects.exists())
+
+        datos['comentario_incomodidad'] = 'La pregunta de ingresos.'
+        self.assertRedirects(self.client.post('/mi-evaluacion/', datos), '/mi-tablero/')
+
+    def test_faltan_respuestas(self):
+        self._participante(finalizar=True)
+        resp = self.client.post('/mi-evaluacion/', {'facilidad_uso': 3})
+        self.assertEqual(resp.status_code, 200)
+        self.assertFalse(EvaluacionSatisfaccion.objects.exists())
+
+    def test_volver_a_enviar_actualiza_la_misma_evaluacion(self):
+        self._participante(finalizar=True)
+        self.client.post('/mi-evaluacion/', self.RESPUESTAS)
+        resp = self.client.get('/mi-evaluacion/')
+        self.assertTrue(resp.context['editando'])
+        self.client.post('/mi-evaluacion/', dict(self.RESPUESTAS, facilidad_uso=1))
+        self.assertEqual(EvaluacionSatisfaccion.objects.count(), 1)
+        self.assertEqual(EvaluacionSatisfaccion.objects.get().facilidad_uso, 1)
+
+    def test_boton_en_el_tablero(self):
+        self._participante(finalizar=True)
+        resp = self.client.get('/mi-tablero/')
+        self.assertTrue(resp.context['puede_evaluar'])
+        self.assertContains(resp, 'Evaluar la plataforma')
+        self.client.post('/mi-evaluacion/', self.RESPUESTAS)
+        resp = self.client.get('/mi-tablero/')
+        self.assertContains(resp, 'Evaluación enviada')
+
+    def test_profesional_no_evalua(self):
+        prof = Usuario.objects.create_user(
+            rut='22.222.222-2', email='p@e.cl', rol=Usuario.Rol.PROFESIONAL_SALUD,
+        )
+        self.client.force_login(prof)
+        self.assertRedirects(self.client.get('/mi-evaluacion/'), '/profesional/buscar/')

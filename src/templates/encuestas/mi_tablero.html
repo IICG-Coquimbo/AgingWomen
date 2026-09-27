@@ -19,6 +19,15 @@
             <li>Comuna: {{ paciente.comuna }}</li>
         </ul>
         <p><a class="boton" href="{% url 'encuesta' %}">Responder / actualizar la encuesta</a></p>
+        {% if puede_evaluar %}
+            <p>
+                {% if evaluacion %}
+                    <a class="boton-guardar" href="{% url 'mi_evaluacion' %}">Evaluación enviada ✓ (editar)</a>
+                {% else %}
+                    <a class="boton-guardar" href="{% url 'mi_evaluacion' %}">Evaluar la plataforma</a>
+                {% endif %}
+            </p>
+        {% endif %}
     {% endif %}
 </div>
 

@@ -9,6 +9,7 @@ from .datos_geograficos import COMUNAS_POR_REGION
 from .models import (
     ActividadFisica,
     ConocimientoSistema,
+    EvaluacionSatisfaccion,
     EvaluacionTrabajo,
     HabitosDeVida,
     Identificacion,
@@ -148,3 +149,43 @@ class ConocimientoSistemaForm(EncuestaModelForm):
     class Meta:
         model = ConocimientoSistema
         exclude = ('participante', 'fecha_evaluacion')
+
+
+class EvaluacionSatisfaccionForm(forms.ModelForm):
+    """Evaluación de la plataforma (Fase 22). Formulario Django normal, no del esquema."""
+
+    class Meta:
+        model = EvaluacionSatisfaccion
+        fields = (
+            'facilidad_uso', 'fatiga_mental', 'comodidad_diseno',
+            'recomendaria', 'incomodidad', 'comentario_incomodidad',
+        )
+        labels = {
+            campo: EvaluacionSatisfaccion._meta.get_field(campo).help_text
+            for campo in fields[:-1]
+        }
+        labels['comentario_incomodidad'] = 'Si respondiste Sí, cuéntanos cuál pregunta o por qué'
+        widgets = {
+            campo: forms.RadioSelect for campo in fields[:-1]
+        }
+        widgets['comentario_incomodidad'] = forms.Textarea(attrs={'rows': 3})
+        help_texts = {campo: '' for campo in fields}
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Sin la opción vacía "---------" en los radios.
+        for campo in self.Meta.fields[:-1]:
+            self.fields[campo].choices = [
+                c for c in self.fields[campo].choices if c[0] != ''
+            ]
+
+    def clean(self):
+        cleaned = super().clean()
+        comentario = (cleaned.get('comentario_incomodidad') or '').strip()
+        if cleaned.get('incomodidad') == 'SI' and not comentario:
+            self.add_error(
+                'comentario_incomodidad',
+                'Cuéntanos brevemente qué pregunta te generó incomodidad o confusión.',
+            )
+        cleaned['comentario_incomodidad'] = comentario
+        return cleaned

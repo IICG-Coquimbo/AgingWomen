@@ -10,4 +10,5 @@ urlpatterns = [
     path('profesional/buscar/', profesional.buscar_paciente, name='buscar_paciente'),
     path('profesional/paciente/<int:identificacion_id>/', profesional.ficha_paciente, name='ficha_paciente'),
     path('mi-tablero/', tablero.mi_tablero, name='mi_tablero'),
+    path('mi-evaluacion/', tablero.mi_evaluacion, name='mi_evaluacion'),
 ]
