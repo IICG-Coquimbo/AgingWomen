@@ -6,10 +6,13 @@
 <div class="tarjeta">
     <h1>Crear cuenta</h1>
     <p class="ayuda">
-        Solo necesitamos tu RUT y tu correo. No pedimos nombre ni apellidos.
-        Recibirás tu contraseña por correo.
+        Solo necesitamos tu RUT, tu correo y una contraseña. No pedimos nombre
+        ni apellidos. Te enviaremos un código a tu correo para verificarlo.
     </p>
 
+    {% if aviso %}
+        <div class="errores">{{ aviso }}</div>
+    {% endif %}
     {% if form.non_field_errors %}
         <div class="errores">{{ form.non_field_errors }}</div>
     {% endif %}
@@ -20,11 +23,11 @@
             <p>
                 {{ campo.label_tag }}
                 {{ campo }}
-                {% if campo.help_text %}<span class="ayuda">{{ campo.help_text }}</span>{% endif %}
+                {% if campo.help_text %}<span class="ayuda">{{ campo.help_text|safe }}</span>{% endif %}
                 {% for error in campo.errors %}<span class="errores">{{ error }}</span>{% endfor %}
             </p>
         {% endfor %}
-        <button type="submit">Crear cuenta</button>
+        <button type="submit">Enviar código</button>
     </form>
 
     <div class="enlaces">

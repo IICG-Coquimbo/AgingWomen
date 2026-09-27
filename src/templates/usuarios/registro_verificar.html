@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block titulo %}Verifica tu correo{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Verifica tu correo</h1>
+    <p>
+        Enviamos un código de 6 números a <strong>{{ email }}</strong>.
+        Ingrésalo para terminar de crear tu cuenta.
+    </p>
+    <p class="ayuda">
+        En modo desarrollo el correo se imprime en la consola del servidor
+        (<code>docker compose logs web</code>).
+    </p>
+
+    {% if error %}
+        <div class="errores">{{ error }}</div>
+    {% endif %}
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <p>
+            {{ form.codigo.label_tag }}
+            {{ form.codigo }}
+            {% for e in form.codigo.errors %}<span class="errores">{{ e }}</span>{% endfor %}
+        </p>
+        <button type="submit">Verificar y crear cuenta</button>
+    </form>
+
+    <form method="post" action="{% url 'registro_reenviar' %}" class="enlaces">
+        {% csrf_token %}
+        {% if puede_reenviar %}
+            ¿No te llegó? <button type="submit" class="boton-guardar">Reenviar código</button>
+        {% else %}
+            <span class="ayuda">Si no te llega, podrás pedir otro código en un minuto (recarga la página).</span>
+        {% endif %}
+    </form>
+
+    <div class="enlaces">
+        <a href="{% url 'registro' %}">Corregir mis datos</a>
+    </div>
+</div>
+{% endblock %}

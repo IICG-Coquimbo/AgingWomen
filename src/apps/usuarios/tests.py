@@ -1,8 +1,14 @@
+import re
+from datetime import timedelta
+
 from django.contrib.auth import authenticate, get_user_model
+from django.contrib.auth.hashers import check_password
 from django.core import mail
 from django.test import TestCase
 from django.urls import reverse
+from django.utils import timezone
 
+from .models import RegistroOTP
 from .rut import hash_rut, normalizar_rut, validar_rut
 
 Usuario = get_user_model()
@@ -25,36 +31,128 @@ class RutUtilsTest(TestCase):
 
 
 class RegistroTest(TestCase):
-    def test_registro_crea_usuaria_y_envia_password(self):
-        resp = self.client.post(
-            reverse('registro'),
-            {'rut': '11.111.111-1', 'email': 'nueva@example.com'},
-        )
-        self.assertRedirects(resp, reverse('registro_enviado'))
+    """Registro con verificación de correo por código (Fase 21)."""
+
+    CLAVE = 'Violeta-Coquimbo-2026'
+
+    def _datos(self, **extra):
+        datos = {
+            'rut': '11.111.111-1', 'email': 'nueva@example.com',
+            'password1': self.CLAVE, 'password2': self.CLAVE,
+        }
+        datos.update(extra)
+        return datos
+
+    def _paso1(self, **extra):
+        return self.client.post(reverse('registro'), self._datos(**extra))
+
+    def _codigo_enviado(self, indice=-1):
+        return re.search(r'\b(\d{6})\b', mail.outbox[indice].body).group(1)
+
+    def _verificar(self, codigo):
+        return self.client.post(reverse('registro_verificar'), {'codigo': codigo})
+
+    def test_registro_completo_crea_cuenta_con_la_clave_elegida_e_inicia_sesion(self):
+        resp = self._paso1()
+        self.assertRedirects(resp, reverse('registro_verificar'))
+        # Todavía no hay cuenta: primero hay que verificar el correo.
+        self.assertFalse(Usuario.objects.exists())
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertIn('nueva@example.com', mail.outbox[0].to)
+
+        resp = self._verificar(self._codigo_enviado())
+        self.assertRedirects(resp, reverse('encuesta'), fetch_redirect_response=False)
 
         usuario = Usuario.objects.get(email='nueva@example.com')
         self.assertEqual(usuario.rol, Usuario.Rol.USUARIA_COMUN)
         self.assertEqual(usuario.rut_hash, hash_rut('11111111-1'))
-        self.assertTrue(usuario.has_usable_password())
-        self.assertEqual(len(mail.outbox), 1)
-        self.assertIn('nueva@example.com', mail.outbox[0].to)
+        self.assertTrue(usuario.check_password(self.CLAVE))
+        self.assertEqual(int(self.client.session['_auth_user_id']), usuario.pk)
+        self.assertFalse(RegistroOTP.objects.exists())
+        # Correo de bienvenida, sin la contraseña.
+        self.assertEqual(len(mail.outbox), 2)
+        self.assertNotIn(self.CLAVE, mail.outbox[1].body)
+
+    def test_ni_el_codigo_ni_la_clave_se_guardan_en_claro(self):
+        self._paso1()
+        otp = RegistroOTP.objects.get()
+        codigo = self._codigo_enviado()
+        self.assertNotIn(codigo, otp.codigo_hash)
+        self.assertNotEqual(otp.password_hash, self.CLAVE)
+        self.assertTrue(check_password(self.CLAVE, otp.password_hash))
 
     def test_registro_rechaza_rut_invalido(self):
-        resp = self.client.post(
-            reverse('registro'),
-            {'rut': '11.111.111-2', 'email': 'x@example.com'},
-        )
+        resp = self._paso1(rut='11.111.111-2')
         self.assertEqual(resp.status_code, 200)
-        self.assertFalse(Usuario.objects.filter(email='x@example.com').exists())
+        self.assertFalse(RegistroOTP.objects.exists())
+        self.assertEqual(len(mail.outbox), 0)
 
     def test_registro_rechaza_rut_duplicado(self):
         Usuario.objects.create_user(rut='11.111.111-1', email='a@example.com')
-        resp = self.client.post(
-            reverse('registro'),
-            {'rut': '11111111-1', 'email': 'b@example.com'},
-        )
+        resp = self._paso1(rut='11111111-1', email='b@example.com')
         self.assertEqual(resp.status_code, 200)
-        self.assertFalse(Usuario.objects.filter(email='b@example.com').exists())
+        self.assertFalse(RegistroOTP.objects.exists())
+
+    def test_registro_rechaza_claves_distintas(self):
+        resp = self._paso1(password2='Otra-Clave-Distinta-9')
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, 'no coinciden')
+        self.assertFalse(RegistroOTP.objects.exists())
+
+    def test_registro_rechaza_clave_debil(self):
+        for debil in ('12345678', 'abc'):
+            resp = self._paso1(password1=debil, password2=debil)
+            self.assertEqual(resp.status_code, 200)
+            self.assertTrue(resp.context['form'].errors.get('password1'), debil)
+        self.assertFalse(RegistroOTP.objects.exists())
+
+    def test_codigo_incorrecto_no_crea_cuenta_y_cuenta_intentos(self):
+        self._paso1()
+        codigo = self._codigo_enviado()
+        malo = '000000' if codigo != '000000' else '111111'
+        resp = self._verificar(malo)
+        self.assertContains(resp, 'no es correcto')
+        self.assertEqual(RegistroOTP.objects.get().intentos, 1)
+        self.assertFalse(Usuario.objects.exists())
+
+    def test_tras_5_intentos_fallidos_el_codigo_se_invalida(self):
+        self._paso1()
+        codigo = self._codigo_enviado()
+        malo = '000000' if codigo != '000000' else '111111'
+        for _ in range(RegistroOTP.MAX_INTENTOS):
+            self._verificar(malo)
+        resp = self._verificar(codigo)
+        self.assertContains(resp, 'Solicita un código nuevo')
+        self.assertFalse(Usuario.objects.exists())
+
+    def test_codigo_vencido_no_sirve(self):
+        self._paso1()
+        codigo = self._codigo_enviado()
+        RegistroOTP.objects.update(
+            enviado_en=timezone.now() - RegistroOTP.VIGENCIA - timedelta(seconds=1))
+        resp = self._verificar(codigo)
+        self.assertContains(resp, 'venció')
+        self.assertFalse(Usuario.objects.exists())
+
+    def test_reenviar_respeta_la_espera_y_el_codigo_nuevo_reemplaza_al_anterior(self):
+        self._paso1()
+        viejo = self._codigo_enviado()
+        # Antes de un minuto no se reenvía.
+        self.client.post(reverse('registro_reenviar'))
+        self.assertEqual(len(mail.outbox), 1)
+
+        RegistroOTP.objects.update(enviado_en=timezone.now() - timedelta(minutes=2))
+        self.client.post(reverse('registro_reenviar'))
+        self.assertEqual(len(mail.outbox), 2)
+        nuevo = self._codigo_enviado()
+        if nuevo != viejo:
+            self.assertContains(self._verificar(viejo), 'no es correcto')
+        self.assertRedirects(self._verificar(nuevo), reverse('encuesta'),
+                             fetch_redirect_response=False)
+
+    def test_verificar_sin_registro_pendiente_vuelve_al_paso_1(self):
+        resp = self.client.get(reverse('registro_verificar'))
+        self.assertRedirects(resp, reverse('registro'))
 
 
 class LoginPorRutTest(TestCase):

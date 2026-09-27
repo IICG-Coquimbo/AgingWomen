@@ -1,5 +1,10 @@
+import secrets
+from datetime import timedelta
+
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
+from django.utils import timezone
+from django.utils.crypto import constant_time_compare, salted_hmac
 
 from .managers import UsuarioManager
 
@@ -64,3 +69,54 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     @property
     def es_usuaria_comun(self):
         return self.rol == self.Rol.USUARIA_COMUN
+
+
+class RegistroOTP(models.Model):
+    """
+    Registro pendiente de verificación de correo (Fase 21). La cuenta recién
+    se crea cuando la persona ingresa el código de 6 dígitos que se le envió.
+    El código y la contraseña elegida se guardan solo hasheados.
+    """
+
+    VIGENCIA = timedelta(minutes=10)
+    MAX_INTENTOS = 5
+    ESPERA_REENVIO = timedelta(minutes=1)
+
+    rut_hash = models.CharField(max_length=64)
+    email = models.EmailField()
+    password_hash = models.CharField(max_length=128)
+    codigo_hash = models.CharField(max_length=64)
+    intentos = models.PositiveSmallIntegerField(default=0)
+    enviado_en = models.DateTimeField()
+    creado_en = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'registro pendiente de verificación'
+        verbose_name_plural = 'registros pendientes de verificación'
+
+    @staticmethod
+    def _hash_codigo(codigo):
+        return salted_hmac('usuarios.RegistroOTP', codigo).hexdigest()
+
+    def nuevo_codigo(self):
+        """Genera un código nuevo (reinicia vigencia e intentos) y lo devuelve en claro."""
+        codigo = f'{secrets.randbelow(10 ** 6):06d}'
+        self.codigo_hash = self._hash_codigo(codigo)
+        self.intentos = 0
+        self.enviado_en = timezone.now()
+        return codigo
+
+    @property
+    def vencido(self):
+        return timezone.now() > self.enviado_en + self.VIGENCIA
+
+    @property
+    def agotado(self):
+        return self.intentos >= self.MAX_INTENTOS
+
+    @property
+    def puede_reenviar(self):
+        return timezone.now() >= self.enviado_en + self.ESPERA_REENVIO
+
+    def codigo_correcto(self, codigo):
+        return constant_time_compare(self._hash_codigo((codigo or '').strip()), self.codigo_hash)
