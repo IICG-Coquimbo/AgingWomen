@@ -18,9 +18,10 @@ SESION_REGISTRO = 'registro_otp_id'
 def enviar_password_email(usuario, password):
     """Envía la contraseña autogenerada. En desarrollo sale por la consola."""
     send_mail(
-        subject='Tu acceso a la plataforma de investigación de menopausia',
+        subject='Tu cuenta de profesional - Observatorio Integral de la Mujer',
         message=(
-            'Se ha creado tu cuenta en la plataforma.\n\n'
+            'Se ha creado tu cuenta en el Observatorio Integral de la Mujer '
+            'en peri y menopausia.\n\n'
             'Ingresa con tu RUT y esta contraseña temporal:\n\n'
             f'    {password}\n\n'
             'Por seguridad, te recomendamos cambiarla después de ingresar.'

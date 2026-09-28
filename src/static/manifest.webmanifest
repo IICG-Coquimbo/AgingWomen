@@ -1,7 +1,7 @@
 {
-  "name": "Investigación de Menopausia",
-  "short_name": "Menopausia",
-  "description": "Plataforma de investigación sobre menopausia y climaterio",
+  "name": "Observatorio Integral de la Mujer en peri y menopausia",
+  "short_name": "Observatorio Mujer",
+  "description": "Observatorio Integral de la Mujer en peri y menopausia",
   "start_url": "/encuesta/",
   "scope": "/",
   "display": "standalone",

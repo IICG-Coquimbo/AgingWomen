@@ -15,6 +15,7 @@ local_settings.py
 # Entorno / secretos
 .env
 .env.*
+!.env.example
 .venv/
 venv/
 ENV/

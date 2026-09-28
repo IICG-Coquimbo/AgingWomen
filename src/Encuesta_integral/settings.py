@@ -132,9 +132,10 @@ PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.ScryptPasswordHasher',
 ]
 
-# Envío de correo (contraseña autogenerada al registrarse). Si no se define
-# EMAIL_HOST_USER por variable de entorno, se usa el backend de consola (modo
-# desarrollo: la contraseña sale impresa en los logs, no se envía nada).
+# Envío de correo (código OTP, bienvenida, recuperación de contraseña, cuentas
+# de profesionales). Las credenciales vienen del archivo .env (ver
+# .env.example) vía docker-compose. Si EMAIL_HOST_USER está vacío se usa el
+# backend de consola (modo desarrollo: el correo sale en los logs).
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
 
@@ -147,7 +148,8 @@ if EMAIL_HOST_USER:
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'no-responder@agingwomen.local')
+DEFAULT_FROM_EMAIL = (os.environ.get('DEFAULT_FROM_EMAIL')
+                      or EMAIL_HOST_USER or 'no-responder@agingwomen.local')
 
 # Rutas de acceso (regla 1.1: no hay modo invitado).
 LOGIN_URL = 'login'

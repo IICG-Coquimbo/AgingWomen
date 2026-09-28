@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block titulo %}Plataforma de Investigación de Menopausia{% endblock %}</title>
+    <title>{% block titulo %}Observatorio Integral de la Mujer en peri y menopausia{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/tema.css' %}">
     <link rel="manifest" href="{% static 'manifest.webmanifest' %}">
     <meta name="theme-color" content="#6d28d9">
@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <a href="{% url 'home' %}"><strong>Investigación Menopausia</strong></a>
+        <a href="{% url 'home' %}"><strong>Observatorio Mujer</strong></a>
         {% if user.is_authenticated %}
         <form method="post" action="{% url 'logout' %}" data-csrf-form>
             {% csrf_token %}

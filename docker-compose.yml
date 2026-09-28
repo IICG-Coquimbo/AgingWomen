@@ -26,14 +26,12 @@ services:
       - DB_HOST=db
       - DB_PORT=5432
       - RUT_HASH_PEPPER=dev-pepper-local
-      # Envío real de correo: completa estas 2 variables para activarlo
-      # (si EMAIL_HOST_USER queda vacío, las contraseñas solo se imprimen
-      # en los logs de "docker compose logs web", modo desarrollo).
-      # Gmail: usa una "contraseña de aplicación", no tu contraseña normal
-      # -> https://myaccount.google.com/apppasswords (requiere verificación en 2 pasos)
-      - EMAIL_HOST_USER=
-      - EMAIL_HOST_PASSWORD=
-      - DEFAULT_FROM_EMAIL=no-responder@agingwomen.local
+      # Envío real de correo: los valores se leen del archivo ".env" (no se
+      # sube a GitHub). Copia ".env.example" como ".env" y complétalo. Si
+      # quedan vacíos, los correos solo se imprimen en "docker compose logs web".
+      - EMAIL_HOST_USER=${EMAIL_HOST_USER:-}
+      - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD:-}
+      - DEFAULT_FROM_EMAIL=${DEFAULT_FROM_EMAIL:-}
     depends_on:
       - db
 
