@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block titulo %}Participación no iniciada{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta consentimiento-bloqueado">
+    <h1>Participación no iniciada</h1>
+    <p>
+        {% if desiste %}Registramos que desistes de participar.{% else %}Registramos que no aceptas participar.{% endif %}
+        Agradecemos tu tiempo e interés. No se te pedirá responder la encuesta.
+    </p>
+    <p class="ayuda">
+        Si cambias de opinión, puedes volver a leer el consentimiento más adelante.
+    </p>
+    <form method="post" action="{% url 'logout' %}" data-csrf-form>
+        {% csrf_token %}
+        <button type="submit">Cerrar sesión</button>
+    </form>
+    <div class="enlaces">
+        <a href="{% url 'consentimiento' %}">Volver a leer el consentimiento</a>
+    </div>
+</div>
+{% endblock %}

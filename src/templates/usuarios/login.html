@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block titulo %}Ingresar{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Ingresar</h1>
+
+    {% if form.non_field_errors %}
+        <div class="errores">{{ form.non_field_errors }}</div>
+    {% endif %}
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {% for campo in form %}
+            <p>
+                {{ campo.label_tag }}
+                {{ campo }}
+                {% for error in campo.errors %}<span class="errores">{{ error }}</span>{% endfor %}
+            </p>
+        {% endfor %}
+        <button type="submit">Ingresar</button>
+    </form>
+
+    <div class="enlaces">
+        <a href="{% url 'password_reset' %}">Olvidé mi contraseña</a><br>
+        ¿No tienes cuenta? <a href="{% url 'registro' %}">Crear cuenta</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block titulo %}Consentimiento informado{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta consentimiento">
+    <h1>Consentimiento informado</h1>
+    <p class="consentimiento-intro">
+        <strong>Observatorio Integral de la Mujer en peri y menopausia:</strong>
+        caracterización de síntomas y factores de riesgo.
+    </p>
+
+    <div class="consentimiento-bloques">
+        <div class="consentimiento-bloque">
+            <h2>Propósito</h2>
+            <p>Conocer los síntomas de la peri y menopausia y los factores que
+                pueden relacionarse con la salud integral de las mujeres.</p>
+        </div>
+        <div class="consentimiento-bloque">
+            <h2>¿En qué consiste?</h2>
+            <p>Es un estudio observacional. Responder el cuestionario toma
+                aproximadamente 20 a 25 minutos y no incluye una intervención
+                experimental.</p>
+        </div>
+        <div class="consentimiento-bloque">
+            <h2>Riesgos y beneficios</h2>
+            <p>Los riesgos son mínimos y pueden incluir incomodidad al responder
+                alguna pregunta. No hay un beneficio directo garantizado; la
+                información podrá contribuir a mejorar la atención y el
+                conocimiento sobre esta etapa.</p>
+        </div>
+        <div class="consentimiento-bloque">
+            <h2>Participación y confidencialidad</h2>
+            <p>Participar es voluntario. Puedes no responder o retirarte en
+                cualquier momento, sin consecuencias. Tus respuestas serán
+                tratadas de forma confidencial y anónima en los resultados del
+                estudio.</p>
+        </div>
+    </div>
+
+    <div class="contactos">
+        <p><strong>Investigadoras:</strong> Scarleth Martínez, Valeska Zambra y Carolina Naranjo.</p>
+        <p><strong>Investigadora responsable:</strong> Dra. Vannessa Duarte Correa, UCN Sede Coquimbo.</p>
+        <p><strong>Aprobación ética:</strong> Comité Ético Científico (CEC UCN).</p>
+        <p><strong>Contacto CEC:</strong> cec.coquimbo@ucn.cl</p>
+    </div>
+
+    <form method="post" novalidate class="consentimiento-opciones" id="form-consentimiento">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}">
+        <label>
+            <input type="checkbox" name="leido" id="consentimiento-leido"{% if leido %} checked{% endif %}>
+            He leído y comprendido la información del estudio.
+        </label>
+        <label>
+            <input type="radio" name="decision" value="acepto"{% if decision == 'acepto' %} checked{% endif %}>
+            Acepto participar voluntariamente en esta investigación.
+        </label>
+        <label>
+            <input type="radio" name="decision" value="no_acepto"{% if decision == 'no_acepto' %} checked{% endif %}>
+            No acepto participar en esta investigación.
+        </label>
+        <label>
+            <input type="radio" name="decision" value="desisto"{% if decision == 'desisto' %} checked{% endif %}>
+            Desisto de participar en esta investigación.
+        </label>
+
+        {% if error %}
+            <div class="errores">{{ error }}</div>
+        {% endif %}
+
+        <button type="submit" id="consentimiento-continuar">Continuar</button>
+    </form>
+
+    <div class="enlaces">
+        <a href="{% url 'home' %}">Volver al inicio sin responder</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// "Continuar" se habilita con "He leído" + "Acepto", o al elegir
+// "No acepto" / "Desisto". El servidor valida lo mismo.
+(function () {
+    var form = document.getElementById('form-consentimiento');
+    var leido = document.getElementById('consentimiento-leido');
+    var boton = document.getElementById('consentimiento-continuar');
+    function actualizar() {
+        var opcion = form.querySelector('input[name="decision"]:checked');
+        boton.disabled = !opcion || (opcion.value === 'acepto' && !leido.checked);
+    }
+    form.addEventListener('change', actualizar);
+    actualizar();
+})();
+</script>
+{% endblock %}

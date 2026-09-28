@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block titulo %}Evaluar la plataforma{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta evaluacion">
+    <h1>Evaluar la plataforma</h1>
+    <p class="ayuda">
+        {% if editando %}
+            Ya enviaste tu evaluación. Puedes cambiar tus respuestas y volver a guardarla.
+        {% else %}
+            Son 5 preguntas breves sobre tu experiencia usando la plataforma.
+            Nos ayudan a mejorarla.
+        {% endif %}
+    </p>
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {% for campo in form %}
+            {% if campo.name == 'comentario_incomodidad' %}
+                <p id="bloque-comentario">
+                    {{ campo.label_tag }}
+                    {{ campo }}
+                    {% for error in campo.errors %}<span class="errores">{{ error }}</span>{% endfor %}
+                </p>
+            {% else %}
+                <fieldset class="pregunta-evaluacion">
+                    <legend>{{ campo.label }}</legend>
+                    <div class="chips">
+                        {% for opcion in campo %}
+                            <label class="chip">{{ opcion.tag }} {{ opcion.choice_label }}</label>
+                        {% endfor %}
+                    </div>
+                    {% for error in campo.errors %}<span class="errores">{{ error }}</span>{% endfor %}
+                </fieldset>
+            {% endif %}
+        {% endfor %}
+        <button type="submit">{% if editando %}Guardar cambios{% else %}Enviar evaluación{% endif %}</button>
+    </form>
+
+    <div class="enlaces">
+        <a href="{% url 'mi_tablero' %}">Volver a mi tablero</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// El comentario solo se muestra si respondió "Sí" a la incomodidad
+// (el servidor exige el comentario en ese caso).
+(function () {
+    var bloque = document.getElementById('bloque-comentario');
+    var radios = document.querySelectorAll('input[name="incomodidad"]');
+    function actualizar() {
+        var marcado = document.querySelector('input[name="incomodidad"]:checked');
+        bloque.hidden = !marcado || marcado.value !== 'SI';
+    }
+    radios.forEach(function (r) { r.addEventListener('change', actualizar); });
+    actualizar();
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block titulo %}Observatorio Integral de la Mujer en peri y menopausia{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/tema.css' %}">
+    <link rel="manifest" href="{% static 'manifest.webmanifest' %}">
+    <meta name="theme-color" content="#6d28d9">
+    <link rel="icon" href="{% static 'icons/icono.svg' %}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <a href="{% url 'home' %}"><strong>Observatorio Mujer</strong></a>
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'logout' %}" data-csrf-form>
+            {% csrf_token %}
+            <button type="submit" class="salir">Salir</button>
+        </form>
+        {% endif %}
+    </header>
+    <main>
+        {% for mensaje in messages %}
+            <div class="mensaje mensaje-{{ mensaje.tags }}" role="status">{{ mensaje }}</div>
+        {% endfor %}
+        {% block contenido %}{% endblock %}
+    </main>
+
+    <script>
+        (function () {
+            // --- Máscara de RUT: formatea a 12.345.678-9 mientras se escribe ---
+            function formatearRut(valor) {
+                var limpio = valor.replace(/[^0-9kK]/g, '').toUpperCase();
+                if (limpio.length <= 1) { return limpio; }
+                var cuerpo = limpio.slice(0, -1);
+                var dv = limpio.slice(-1);
+                cuerpo = cuerpo.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                return cuerpo + '-' + dv;
+            }
+            document.querySelectorAll('input[data-rut]').forEach(function (input) {
+                input.addEventListener('input', function () {
+                    input.value = formatearRut(input.value);
+                });
+                if (input.value) { input.value = formatearRut(input.value); }
+            });
+
+            // --- Botón ver / ocultar contraseña ---
+            document.querySelectorAll('input[type="password"]').forEach(function (input) {
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'toggle-clave';
+                btn.textContent = 'Ver';
+                btn.addEventListener('click', function () {
+                    var oculta = input.type === 'password';
+                    input.type = oculta ? 'text' : 'password';
+                    btn.textContent = oculta ? 'Ocultar' : 'Ver';
+                });
+                input.insertAdjacentElement('afterend', btn);
+            });
+
+            // --- CSRF siempre vigente en formularios que pueden quedar en
+            //     caché (ej. "Salir" en /encuesta/, guardado offline). El token
+            //     del HTML puede haber quedado obsoleto (rotó al iniciar
+            //     sesión); la cookie `csrftoken` siempre tiene el valor actual.
+            function csrfDeCookie() {
+                var m = document.cookie.match(/(?:^|;\s*)csrftoken=([^;]+)/);
+                return m ? decodeURIComponent(m[1]) : '';
+            }
+            document.querySelectorAll('form[data-csrf-form]').forEach(function (form) {
+                form.addEventListener('submit', function () {
+                    var campo = form.querySelector('input[name="csrfmiddlewaretoken"]');
+                    var actual = csrfDeCookie();
+                    if (campo && actual) { campo.value = actual; }
+                });
+            });
+
+            // --- Registro del Service Worker (soporte offline) ---
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function () {
+                    navigator.serviceWorker.register('/sw.js').catch(function (e) {
+                        console.warn('Service Worker no registrado:', e);
+                    });
+                });
+            }
+        })();
+    </script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

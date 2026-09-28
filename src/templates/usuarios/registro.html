@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block titulo %}Crear cuenta{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Crear cuenta</h1>
+    <p class="ayuda">
+        Solo necesitamos tu RUT, tu correo y una contraseña. No pedimos nombre
+        ni apellidos. Te enviaremos un código a tu correo para verificarlo.
+    </p>
+
+    {% if aviso %}
+        <div class="errores">{{ aviso }}</div>
+    {% endif %}
+    {% if form.non_field_errors %}
+        <div class="errores">{{ form.non_field_errors }}</div>
+    {% endif %}
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {% for campo in form %}
+            <p>
+                {{ campo.label_tag }}
+                {{ campo }}
+                {% if campo.help_text %}<span class="ayuda">{{ campo.help_text|safe }}</span>{% endif %}
+                {% for error in campo.errors %}<span class="errores">{{ error }}</span>{% endfor %}
+            </p>
+        {% endfor %}
+        <button type="submit">Enviar código</button>
+    </form>
+
+    <div class="enlaces">
+        ¿Ya tienes cuenta? <a href="{% url 'login' %}">Ingresar</a>
+    </div>
+</div>
+{% endblock %}

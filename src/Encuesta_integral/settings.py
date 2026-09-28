@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Aplicaciones propies creadas
-    'apps.encuestas'
+    # Aplicaciones propias creadas
+    'apps.usuarios',
+    'apps.encuestas',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'Encuesta_integral.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -108,12 +109,60 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Control de acceso y roles (Secciones 1 y 2 del spec)
+# https://docs.djangoproject.com/en/5.2/topics/auth/customizing/
+
+AUTH_USER_MODEL = 'usuarios.Usuario'
+
+AUTHENTICATION_BACKENDS = [
+    'apps.usuarios.backends.RutBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+# Pepper para el hash unidireccional del RUT (regla 1.2).
+# En producción debe entregarse por variable de entorno y mantenerse en secreto.
+RUT_HASH_PEPPER = os.environ.get('RUT_HASH_PEPPER', 'dev-pepper-cambiar-en-produccion')
+
+# Hashing de contraseñas: bcrypt primero (regla 5.2).
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.ScryptPasswordHasher',
+]
+
+# Envío de correo (código OTP, bienvenida, recuperación de contraseña, cuentas
+# de profesionales). Las credenciales vienen del archivo .env (ver
+# .env.example) vía docker-compose. Si EMAIL_HOST_USER está vacío se usa el
+# backend de consola (modo desarrollo: el correo sale en los logs).
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
+
+if EMAIL_HOST_USER:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
+    EMAIL_PORT = int(os.environ.get('EMAIL_PORT', '587'))
+    EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', '1') == '1'
+    EMAIL_USE_SSL = os.environ.get('EMAIL_USE_SSL', '0') == '1'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+DEFAULT_FROM_EMAIL = (os.environ.get('DEFAULT_FROM_EMAIL')
+                      or EMAIL_HOST_USER or 'no-responder@agingwomen.local')
+
+# Rutas de acceso (regla 1.1: no hay modo invitado).
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login'
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-cl'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Santiago'
 
 USE_I18N = True
 
@@ -124,6 +173,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

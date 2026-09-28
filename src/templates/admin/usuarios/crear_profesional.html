@@ -1,0 +1,33 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<div id="content-main">
+    <p>
+        Crea una cuenta de personal de salud (rol "Profesional / Personal del
+        servicio de salud"). Solo se piden RUT y correo, igual que en el
+        registro público de usuarias; la diferencia es el rol asignado.
+        Se enviará un correo con una contraseña temporal.
+    </p>
+
+    {% if form.non_field_errors %}
+        <p class="errornote">{{ form.non_field_errors }}</p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <fieldset class="module aligned">
+            {% for campo in form %}
+            <div class="form-row">
+                {{ campo.errors }}
+                {{ campo.label_tag }}
+                {{ campo }}
+                {% if campo.help_text %}<div class="help">{{ campo.help_text }}</div>{% endif %}
+            </div>
+            {% endfor %}
+        </fieldset>
+        <div class="submit-row">
+            <input type="submit" value="Crear cuenta" class="default">
+        </div>
+    </form>
+</div>
+{% endblock %}

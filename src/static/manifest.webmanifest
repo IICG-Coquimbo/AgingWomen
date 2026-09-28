@@ -1,0 +1,19 @@
+{
+  "name": "Observatorio Integral de la Mujer en peri y menopausia",
+  "short_name": "Observatorio Mujer",
+  "description": "Observatorio Integral de la Mujer en peri y menopausia",
+  "start_url": "/encuesta/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#faf9fc",
+  "theme_color": "#6d28d9",
+  "lang": "es-CL",
+  "icons": [
+    {
+      "src": "/static/icons/icono.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
