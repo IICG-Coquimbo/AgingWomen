@@ -149,6 +149,19 @@ OPCIONES_MULTISELECCION = {
             'Otro',
         ],
     },
+    'ConocimientoSistema': {
+        'tipo_informacion_apoyo_deseado': [
+            'Información general',
+            'Salud mental',
+            'Nutrición',
+            'Actividad física',
+            'Manejo de síntomas',
+            'Atención ginecológica',
+            'Terapia hormonal',
+            'Apoyo laboral',
+            'Otro',
+        ],
+    },
 }
 
 

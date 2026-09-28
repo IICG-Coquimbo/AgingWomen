@@ -50,6 +50,8 @@ PREGUNTAS_CONDICIONALES = {
         'en_control_programa_cual': {'campo': 'en_control_programa_consultorio', 'valor': 'SI'},
         'principales_dificultades': {'campo': 'ha_tenido_dificultades_acceso', 'valor': 'SI'},
         'tipo_informacion_apoyo_deseado': {'campo': 'desea_mas_informacion_apoyo', 'valor': 'SI'},
+        'tipo_informacion_apoyo_otro': {'campo': 'tipo_informacion_apoyo_deseado',
+                                        'operador': 'contiene', 'valor': 'Otro'},
     },
 }
 

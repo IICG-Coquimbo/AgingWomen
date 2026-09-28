@@ -913,11 +913,12 @@ class ConocimientoSistema(SegmentoDeRonda):
     )
     tipo_informacion_apoyo_deseado = models.TextField(
         null=True, blank=True,
-        help_text=(
-            "¿Qué tipo de información o apoyo considera más necesario? Selección múltiple: "
-            "Información general / Salud mental / Nutrición / Actividad física / Manejo de síntomas / "
-            "Atención ginecológica / Terapia hormonal / Apoyo laboral / Otro."
-        )
+        help_text="¿Qué tipo de información o apoyo considera más necesario? (marque todas las opciones que apliquen)"
+    )
+    tipo_informacion_apoyo_otro = models.CharField(
+        max_length=200,
+        null=True, blank=True,
+        help_text='Si marcó "Otro", especifique qué tipo de información o apoyo'
     )
 
     class Meta:

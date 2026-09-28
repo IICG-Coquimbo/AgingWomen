@@ -165,6 +165,20 @@ class SincronizacionTest(TestCase):
         self.assertIn('Otro', tc.a_quien_cuida)
         self.assertEqual(tc.a_quien_cuida_otro, 'Un vecino')
 
+    def test_conocimiento_guarda_tipo_apoyo_multiple(self):
+        payload = {
+            'identificacion': self._payload_ident(),
+            'secciones': [{'tipo': 'conocimiento_sistema', 'uuid_local': str(uuid4()), 'parcial': True,
+                           'datos': {'desea_mas_informacion_apoyo': 'SI',
+                                     'tipo_informacion_apoyo_deseado': 'Salud mental, Nutrición, Otro',
+                                     'tipo_informacion_apoyo_otro': 'Grupos de apoyo'}}],
+        }
+        res = sincronizar_payload(self.usuaria, payload)
+        self.assertTrue(res['ok'], res)
+        cs = ConocimientoSistema.objects.get()
+        self.assertEqual(cs.tipo_informacion_apoyo_deseado, 'Salud mental, Nutrición, Otro')
+        self.assertEqual(cs.tipo_informacion_apoyo_otro, 'Grupos de apoyo')
+
     def test_mrs_en_dos_bloques_se_guarda_en_un_registro(self):
         u = str(uuid4())
         payload = {
@@ -601,6 +615,22 @@ class EsquemaTest(TestCase):
         aq = self._pregunta(tc, 'a_quien_cuida')
         self.assertEqual(aq['tipo_campo'], 'multiseleccion')
         self.assertEqual(len(aq['opciones']), 7)
+
+    def test_tipo_informacion_apoyo_es_seleccion_multiple(self):
+        cs = self._seccion(self._esquema(self.usuaria), 'conocimiento_sistema')
+        p = self._pregunta(cs, 'tipo_informacion_apoyo_deseado')
+        self.assertEqual(p['tipo_campo'], 'multiseleccion')
+        self.assertEqual([o['valor'] for o in p['opciones']], [
+            'Información general', 'Salud mental', 'Nutrición', 'Actividad física',
+            'Manejo de síntomas', 'Atención ginecológica', 'Terapia hormonal',
+            'Apoyo laboral', 'Otro'])
+        self.assertTrue(p['texto'].startswith(
+            '¿Qué tipo de información o apoyo considera más necesario?'))
+        self.assertNotIn('Selección múltiple', p['texto'])
+        self.assertEqual(p['mostrar_si'], {'campo': 'desea_mas_informacion_apoyo', 'valor': 'SI'})
+        otro = self._pregunta(cs, 'tipo_informacion_apoyo_otro')
+        self.assertEqual(otro['mostrar_si'], {'campo': 'tipo_informacion_apoyo_deseado',
+                                              'operador': 'contiene', 'valor': 'Otro'})
 
     def test_pregunta_condicional_en_mrs(self):
         comp = self._seccion(self._esquema(self.usuaria), 'mrs_complementario')
