@@ -201,11 +201,44 @@
             );
         });
     }
+    // Ocultar en cadena: una pregunta se muestra si se cumple su regla Y, cuando
+    // su disparador es otra pregunta de la misma sección, esa pregunta también
+    // se muestra (ej. previsión ≠ Fonasa oculta "¿Ha consultado…?" y con ella
+    // la evaluación de la atención, aunque antes se hubiera respondido "Sí").
     function preguntasVisibles(seccion) {
         var datos = respuestas[seccion.tipo] || {};
-        return seccion.preguntas.filter(function (p) {
-            return condicionCumplida(p.mostrar_si, datos);
+        var porNombre = {};
+        seccion.preguntas.forEach(function (p) { porNombre[p.nombre] = p; });
+        var memo = {};
+
+        function visible(p) {
+            if (memo[p.nombre] !== undefined) { return memo[p.nombre]; }
+            memo[p.nombre] = true;  // corta ciclos accidentales en las reglas
+            var ok = condicionCumplida(p.mostrar_si, datos);
+            var madre = p.mostrar_si && porNombre[p.mostrar_si.campo];
+            if (ok && madre) { ok = visible(madre); }
+            memo[p.nombre] = ok;
+            return ok;
+        }
+        return seccion.preguntas.filter(visible);
+    }
+
+    // Respuestas marcadas de antemano (ej. género Femenino): se guardan como
+    // respuesta real solo si la pregunta todavía no tiene valor.
+    function aplicarValoresIniciales(seccion) {
+        var datos = respuestas[seccion.tipo] || {};
+        var cambio = false;
+        seccion.preguntas.forEach(function (p) {
+            if (p.inicial === null || p.inicial === undefined) { return; }
+            if (datos[p.nombre] === undefined || datos[p.nombre] === null || datos[p.nombre] === '') {
+                datos[p.nombre] = p.inicial;
+                cambio = true;
+            }
         });
+        if (cambio) {
+            respuestas[seccion.tipo] = datos;
+            idbSet('respuestas', respuestas);
+        }
     }
 
     // ---------- Completitud ----------
@@ -335,6 +368,7 @@
         var secs = seccionesAplicables();
         indice = Math.max(0, Math.min(indice, secs.length - 1));
         var seccion = secs[indice];
+        aplicarValoresIniciales(seccion);
 
         var html = barraProgreso(secs);
         html += '<div class="tarjeta seccion">';
@@ -342,6 +376,9 @@
         html += '<h1>' + esc(seccion.titulo) + '</h1>';
         if (seccion.descripcion) {
             html += '<p class="seccion-intro">' + esc(seccion.descripcion) + '</p>';
+        }
+        if (seccion.aviso) {
+            html += '<p class="seccion-aviso">' + esc(seccion.aviso) + '</p>';
         }
         if (esquema.mensaje_omitir) {
             html += '<p class="seccion-omitir">' + esc(esquema.mensaje_omitir) + '</p>';
@@ -683,7 +720,12 @@
                 bloques[k] = { tipo: k, uuid_local: uuids[k], datos: {}, parcial: false };
                 payload.secciones.push(bloques[k]);
             }
-            Object.keys(datos).forEach(function (campo) { bloques[k].datos[campo] = datos[campo]; });
+            // Solo las preguntas visibles: las ocultas no se envían y el
+            // servidor las deja vacías (ej. si cambió la previsión a Isapre,
+            // se borran las respuestas que solo aplican con Fonasa).
+            preguntasVisibles(s).forEach(function (p) {
+                if (datos[p.nombre] !== undefined) { bloques[k].datos[p.nombre] = datos[p.nombre]; }
+            });
             if (!seccionCompleta(s)) { bloques[k].parcial = true; }
         });
         return payload;

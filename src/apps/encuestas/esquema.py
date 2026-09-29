@@ -113,6 +113,18 @@ TEXTOS_SECCION = {
     ),
 }
 
+# Aviso destacado (burbuja) que se muestra al inicio de una sección, además de
+# su texto introductorio.
+AVISOS_SECCION = {
+    'habitos_de_vida': 'Para responder, considera cómo han sido tus hábitos durante el último mes.',
+}
+
+# Respuesta que viene marcada de antemano (la usuaria puede cambiarla).
+# {NombreModelo: {campo: valor}}
+VALORES_INICIALES = {
+    'Identificacion': {'genero': Identificacion.GeneroOptions.FEMENINO.value},
+}
+
 # Escalas cuyo extremo "alto" es positivo: el gradiente va al revés (rojo abajo,
 # verde arriba). El resto usa 'directa' (más alto = más rojo, como el MRS).
 ESCALAS_INVERSAS = {
@@ -133,6 +145,14 @@ NOTAS_PREGUNTA = {
             "contraindicaciones de los tratamientos de terapia hormonal."
         ),
     },
+    'MRS': {
+        # Los formatos coinciden con los que entiende models.meses_desde_texto_fecha.
+        'fecha_ultima_menstruacion': (
+            "Si recuerdas la fecha completa, escríbela como día/mes/año "
+            "(por ejemplo 15/03/2024). Si no, puedes escribir solo el mes y el año "
+            "(03/2024) o solo el año (2024)."
+        ),
+    },
 }
 
 # Campos de selección múltiple: el modelo los guarda como texto (lista separada
@@ -150,6 +170,16 @@ OPCIONES_MULTISELECCION = {
         ],
     },
     'ConocimientoSistema': {
+        'principales_dificultades': [
+            'Falta de información',
+            'Dificultad para obtener horas',
+            'Costos',
+            'Falta de especialistas',
+            'No saber dónde consultar',
+            'Minimización de síntomas',
+            'Horarios incompatibles',
+            'Otra',
+        ],
         'tipo_informacion_apoyo_deseado': [
             'Información general',
             'Salud mental',
@@ -256,6 +286,7 @@ def construir_esquema(rol):
         multiseleccion = OPCIONES_MULTISELECCION.get(modelo, {})
         forzadas = CAMPOS_ESCALA_FORZADA.get(modelo, set())
         chips = CAMPOS_CHIPS.get(modelo, set())
+        iniciales = VALORES_INICIALES.get(modelo, {})
 
         ocultos = CAMPOS_OCULTOS_ESQUEMA.get(modelo, set())
         campos = [(n, c) for n, c in form.fields.items() if n not in ocultos]
@@ -301,12 +332,14 @@ def construir_esquema(rol):
                 'mostrar_si': condicionales.get(nombre),
                 'depende_de': 'region_residencia' if nombre == 'comuna' else None,
                 'nota': notas.get(nombre),
+                'inicial': iniciales.get(nombre),
             })
 
         seccion = {
             'tipo': tipo,
             'titulo': titulo,
             'descripcion': TEXTOS_SECCION.get(tipo),
+            'aviso': AVISOS_SECCION.get(tipo),
             'mostrar_si': SECCIONES_CONDICIONALES.get(tipo),
             'preguntas': preguntas,
         }

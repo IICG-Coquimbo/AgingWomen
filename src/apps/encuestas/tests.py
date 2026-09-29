@@ -668,6 +668,62 @@ class EsquemaTest(TestCase):
             {'campo': 'en_control_programa_consultorio', 'valor': 'SI'},
         )
 
+    # --- Fase 26 ---
+    def test_prevision_va_primero_y_condiciona_la_seccion(self):
+        cs = self._seccion(self._esquema(self.usuaria), 'conocimiento_sistema')
+        nombres = [p['nombre'] for p in cs['preguntas']]
+        self.assertEqual(nombres[0], 'prevision')
+        self.assertEqual(
+            {o['valor'] for o in cs['preguntas'][0]['opciones']},
+            {'FONASA', 'ISAPRE', 'FFAA', 'NINGUNA', 'NS'})
+        solo_fonasa = {'campo': 'prevision', 'valor': 'FONASA'}
+        for campo in ('ha_consultado_por_sintomas', 'conoce_recursos_disponibles',
+                      'ha_tenido_dificultades_acceso', 'en_control_programa_consultorio'):
+            self.assertEqual(self._pregunta(cs, campo)['mostrar_si'], solo_fonasa, campo)
+        # Las dos preguntas que ve cualquier previsión no tienen condición.
+        for campo in ('sintomas_tomados_en_serio', 'desea_mas_informacion_apoyo'):
+            self.assertIsNone(self._pregunta(cs, campo)['mostrar_si'], campo)
+
+    def test_evaluacion_atencion_va_justo_bajo_su_pregunta(self):
+        cs = self._seccion(self._esquema(self.usuaria), 'conocimiento_sistema')
+        nombres = [p['nombre'] for p in cs['preguntas']]
+        i = nombres.index('ha_consultado_por_sintomas')
+        self.assertEqual(nombres[i + 1], 'evaluacion_atencion_recibida')
+
+    def test_principales_dificultades_es_seleccion_multiple_con_otra(self):
+        cs = self._seccion(self._esquema(self.usuaria), 'conocimiento_sistema')
+        p = self._pregunta(cs, 'principales_dificultades')
+        self.assertEqual(p['tipo_campo'], 'multiseleccion')
+        self.assertEqual([o['valor'] for o in p['opciones']], [
+            'Falta de información', 'Dificultad para obtener horas', 'Costos',
+            'Falta de especialistas', 'No saber dónde consultar',
+            'Minimización de síntomas', 'Horarios incompatibles', 'Otra'])
+        self.assertTrue(p['texto'].startswith('¿Cuáles han sido las principales dificultades?'))
+        self.assertNotIn('Selección múltiple', p['texto'])
+        otra = self._pregunta(cs, 'principales_dificultades_otra')
+        self.assertEqual(otra['mostrar_si'], {'campo': 'principales_dificultades',
+                                              'operador': 'contiene', 'valor': 'Otra'})
+
+    def test_tareas_cuidado_no_oculta_toda_la_seccion(self):
+        tc = self._seccion(self._esquema(self.usuaria), 'tareas_cuidado')
+        self.assertEqual(self._pregunta(tc, 'sobrecarga_fisica_emocional')['mostrar_si'],
+                         {'campo': 'cuida_otras_personas', 'valor': 'SI'})
+
+    def test_menopausia_oculta_metodo_anticonceptivo(self):
+        comp = self._seccion(self._esquema(self.usuaria), 'mrs_complementario')
+        self.assertEqual(
+            self._pregunta(comp, 'usa_metodo_anticonceptivo')['mostrar_si'],
+            {'campo': 'fecha_ultima_menstruacion', 'operador': 'meses_desde_lt', 'valor': 12},
+        )
+        self.assertIn('15/03/2024', self._pregunta(comp, 'fecha_ultima_menstruacion')['nota'])
+
+    def test_aviso_ultimo_mes_en_habitos_y_genero_femenino_por_defecto(self):
+        esquema = self._esquema(self.usuaria)
+        self.assertIn('último mes', self._seccion(esquema, 'habitos_de_vida')['aviso'])
+        ident = self._seccion(esquema, 'identificacion')
+        self.assertEqual(self._pregunta(ident, 'genero')['inicial'], 'F')
+        self.assertIsNone(self._pregunta(ident, 'nivel_educacion')['inicial'])
+
     def test_incluye_descripciones_de_niveles_mrs(self):
         esquema = self._esquema(self.usuaria)
         self.assertEqual(len(esquema['mrs_niveles']), 5)

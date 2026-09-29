@@ -14,28 +14,36 @@ archivo para ajustar la lógica condicional; el esquema (esquema.py) las expone.
 #   - 'meses_desde_lt'   : han pasado MENOS de `valor` meses desde la fecha
 #                          escrita en el campo disparador (texto libre).
 #   - 'contiene'         : el campo disparador (lista separada por comas) incluye `valor`.
-# Los operadores distintos de 'igual' se evalúan en el cliente desde la Fase 7;
-# hasta entonces la pregunta se muestra igual (no se oculta por error).
+#
+# Ocultar en cadena (Fase 26): si el campo disparador es otra pregunta de la
+# misma sección y esa pregunta está oculta, la dependiente también se oculta.
+# Así basta con condicionar la "pregunta madre" (ej. todo lo que depende de
+# ha_consultado_por_sintomas se oculta cuando la previsión no es Fonasa).
+# Las respuestas de preguntas ocultas no se envían al servidor.
 OPERADORES = ('igual', 'meses_desde_lt', 'contiene')
+
+# Ausencia menstrual: si hace 12 meses o más de la última menstruación
+# (menopausia), se ocultan las preguntas que solo aplican con menstruación.
+_CON_MENSTRUACION = {
+    'campo': 'fecha_ultima_menstruacion', 'operador': 'meses_desde_lt', 'valor': 12,
+}
+_CON_FONASA = {'campo': 'prevision', 'valor': 'FONASA'}
+
 PREGUNTAS_CONDICIONALES = {
     'MRS': {
+        'menstruacion_llega': _CON_MENSTRUACION,
+        'tipo_sangrado': _CON_MENSTRUACION,
+        'usa_metodo_anticonceptivo': _CON_MENSTRUACION,
         'tipo_metodo_anticonceptivo': {'campo': 'usa_metodo_anticonceptivo', 'valor': 'SI'},
         'tipo_metodo_anticonceptivo_otro': {'campo': 'tipo_metodo_anticonceptivo', 'valor': 'OTRO'},
-        # Ausencia menstrual: si hace 12 meses o más de la última menstruación,
-        # se ocultan regularidad y sangrado.
-        'menstruacion_llega': {
-            'campo': 'fecha_ultima_menstruacion', 'operador': 'meses_desde_lt', 'valor': 12,
-        },
-        'tipo_sangrado': {
-            'campo': 'fecha_ultima_menstruacion', 'operador': 'meses_desde_lt', 'valor': 12,
-        },
     },
     'TareasCuidado': {
+        # Si no cuida a nadie, la sección termina en la primera pregunta.
         'cantidad_personas_cuida': {'campo': 'cuida_otras_personas', 'valor': 'SI'},
         'a_quien_cuida': {'campo': 'cuida_otras_personas', 'valor': 'SI'},
         # 'contiene': el disparador es una lista separada por comas y contiene `valor`.
-        # El motor lo evalúa en la Fase 7 (hasta entonces la pregunta se muestra).
         'a_quien_cuida_otro': {'campo': 'a_quien_cuida', 'operador': 'contiene', 'valor': 'Otro'},
+        'sobrecarga_fisica_emocional': {'campo': 'cuida_otras_personas', 'valor': 'SI'},
     },
     'HabitosDeVida': {
         'quien_prepara_comidas_otro': {'campo': 'quien_prepara_comidas', 'valor': 'OTRO'},
@@ -46,9 +54,22 @@ PREGUNTAS_CONDICIONALES = {
         'frecuencia_fuerza': {'campo': 'realiza_fuerza', 'valor': 'SI'},
     },
     'ConocimientoSistema': {
+        # Con previsión distinta de Fonasa solo quedan visibles
+        # sintomas_tomados_en_serio y desea_mas_informacion_apoyo (+ su detalle).
+        'conoce_sistema_publico_climaterio': _CON_FONASA,
+        'ha_escuchado_programa_climaterio': _CON_FONASA,
+        'sabe_donde_acudir': _CON_FONASA,
+        'ha_consultado_por_sintomas': _CON_FONASA,
         'evaluacion_atencion_recibida': {'campo': 'ha_consultado_por_sintomas', 'valor': 'SI'},
+        'en_control_programa_consultorio': _CON_FONASA,
         'en_control_programa_cual': {'campo': 'en_control_programa_consultorio', 'valor': 'SI'},
+        'considera_informacion_suficiente': _CON_FONASA,
+        'nivel_informacion_servicios': _CON_FONASA,
+        'conoce_recursos_disponibles': _CON_FONASA,
+        'ha_tenido_dificultades_acceso': _CON_FONASA,
         'principales_dificultades': {'campo': 'ha_tenido_dificultades_acceso', 'valor': 'SI'},
+        'principales_dificultades_otra': {'campo': 'principales_dificultades',
+                                          'operador': 'contiene', 'valor': 'Otra'},
         'tipo_informacion_apoyo_deseado': {'campo': 'desea_mas_informacion_apoyo', 'valor': 'SI'},
         'tipo_informacion_apoyo_otro': {'campo': 'tipo_informacion_apoyo_deseado',
                                         'operador': 'contiene', 'valor': 'Otro'},

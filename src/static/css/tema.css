@@ -227,6 +227,26 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
     font-size: .85rem;
     color: var(--color-texto-suave);
 }
+/* Burbuja de aviso de una sección (ej. "considera el último mes"). */
+.seccion-aviso {
+    position: relative;
+    margin: 0 0 1.25rem;
+    padding: .65rem .9rem;
+    background: var(--color-primario);
+    color: #fff;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: .95rem;
+}
+.seccion-aviso::after {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    bottom: -8px;
+    border-width: 8px 8px 0;
+    border-style: solid;
+    border-color: var(--color-primario) transparent transparent;
+}
 
 /* === Pantalla de bienvenida (definiciones + filtro de edad) === */
 .bienvenida h1 { margin-bottom: .75rem; }

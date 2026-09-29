@@ -811,6 +811,13 @@ class ConocimientoSistema(SegmentoDeRonda):
         BASTANTE = 4, 'Bastante informada'
         MUY = 5, 'Muy informada'
 
+    class Prevision(models.TextChoices):
+        FONASA = 'FONASA', 'Fonasa'
+        ISAPRE = 'ISAPRE', 'Isapre'
+        FFAA = 'FFAA', 'FF.AA. y de Orden (Capredena, Dipreca)'
+        NINGUNA = 'NINGUNA', 'Ninguna (particular)'
+        NO_SE = 'NS', 'No sé'
+
     # --- RELACIÓN Y FECHA ---
     participante = models.ForeignKey(
         Identificacion,
@@ -823,6 +830,14 @@ class ConocimientoSistema(SegmentoDeRonda):
     )
 
     # --- PREGUNTAS ---
+    # Va primero: con Fonasa se muestra toda la sección; con otra previsión,
+    # solo las preguntas que no dependen del sistema público (condicionales.py).
+    prevision = models.CharField(
+        max_length=7,
+        choices=Prevision.choices,
+        null=True, blank=True,
+        help_text="¿Qué previsión de salud tiene?"
+    )
     conoce_sistema_publico_climaterio = models.CharField(
         max_length=2,
         choices=RespuestaSiNoNoSabe.choices,
@@ -847,6 +862,13 @@ class ConocimientoSistema(SegmentoDeRonda):
         null=True, blank=True,
         help_text="¿Ha consultado alguna vez en un centro de salud por síntomas relacionados con climaterio o menopausia?"
     )
+    # Justo bajo la pregunta de la que depende: el orden de los campos es el
+    # orden en que se muestran las preguntas.
+    evaluacion_atencion_recibida = models.IntegerField(
+        choices=CalidadAtencion.choices,
+        null=True, blank=True,
+        help_text="Si respondió 'Sí', ¿cómo evaluaría la atención recibida?"
+    )
     # Pregunta reubicada desde el Cuestionario Complementario MRS (regla de la profesora).
     en_control_programa_consultorio = models.CharField(
         max_length=2,
@@ -858,11 +880,6 @@ class ConocimientoSistema(SegmentoDeRonda):
         max_length=255,
         null=True, blank=True,
         help_text="Si es sí, ¿en cuál programa?"
-    )
-    evaluacion_atencion_recibida = models.IntegerField(
-        choices=CalidadAtencion.choices,
-        null=True, blank=True,
-        help_text="Si respondió 'Sí', ¿cómo evaluaría la atención recibida?"
     )
     considera_informacion_suficiente = models.IntegerField(
         choices=EscalaNadaMucho.choices,
@@ -891,14 +908,16 @@ class ConocimientoSistema(SegmentoDeRonda):
         null=True, blank=True,
         help_text="¿Ha sentido dificultades para acceder a atención relacionada con esta etapa?"
     )
+    # Selección múltiple (lista separada por comas); las opciones están en
+    # esquema.OPCIONES_MULTISELECCION.
     principales_dificultades = models.TextField(
         null=True, blank=True,
-        help_text=(
-            "¿Cuáles han sido las principales dificultades? Selección múltiple: "
-            "Falta de información / Dificultad para obtener horas / Costos / "
-            "Falta de especialistas / No saber dónde consultar / Minimización de síntomas / "
-            "Horarios incompatibles / Otra."
-        )
+        help_text="¿Cuáles han sido las principales dificultades? (marque todas las opciones que apliquen)"
+    )
+    principales_dificultades_otra = models.CharField(
+        max_length=200,
+        null=True, blank=True,
+        help_text='Si marcó "Otra", ¿cuál?'
     )
     sintomas_tomados_en_serio = models.IntegerField(
         choices=EscalaNadaMucho.choices,
