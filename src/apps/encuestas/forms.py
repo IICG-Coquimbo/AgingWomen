@@ -68,8 +68,10 @@ class IdentificacionForm(EncuestaModelForm):
             'excepcion_edad',
         )
 
+    # Única definición del rango de edad (el esquema del cliente la toma de aquí).
+    # Máximo ampliado de 60 a 65 a pedido de la profesora (2026-10-01).
     EDAD_MINIMA = 40
-    EDAD_MAXIMA = 60
+    EDAD_MAXIMA = 65
 
     def clean(self):
         cleaned = super().clean()
@@ -83,7 +85,7 @@ class IdentificacionForm(EncuestaModelForm):
             if validas and comuna not in validas:
                 self.add_error('comuna', 'La comuna no corresponde a la región seleccionada.')
 
-        # Filtro de edad: el estudio es para personas de 40 a 60 años. Las
+        # Filtro de edad: el estudio es para personas de 40 a 65 años. Las
         # excepciones (menopausia quirúrgica / ausencia prolongada) solo
         # permiten entrar con menos de 40; sobre 60 no hay excepción.
         nacimiento = cleaned.get('fecha_nacimiento')

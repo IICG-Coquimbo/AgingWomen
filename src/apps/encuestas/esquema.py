@@ -43,8 +43,9 @@ GRUPO_MRS = 'mrs'
 
 # Rango de edad para responder la encuesta (filtro al inicio — Fases 8 y 19).
 # Bajo el mínimo se puede entrar declarando una excepción; sobre el máximo no.
-EDAD_MINIMA = 40
-EDAD_MAXIMA = 60
+# Se define una sola vez en IdentificacionForm (validación del servidor).
+EDAD_MINIMA = IdentificacionForm.EDAD_MINIMA
+EDAD_MAXIMA = IdentificacionForm.EDAD_MAXIMA
 
 # Definiciones que se muestran antes de empezar la encuesta.
 DEFINICIONES = [

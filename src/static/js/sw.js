@@ -7,7 +7,7 @@
    - Esquema (/api/esquema/): red primero, caché de respaldo.
    - Nunca intercepta POST (login, salir y /api/sincronizar/ van siempre por red).
 */
-var CACHE = 'aging-women-v6';  // subir la versión cuando cambian encuesta.js o tema.css
+var CACHE = 'aging-women-v8';  // subir la versión cuando cambian encuesta.js o tema.css
 var SHELL = '/encuesta/';
 var ESTATICOS = [
     '/static/css/tema.css',

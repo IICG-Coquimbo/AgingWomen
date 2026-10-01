@@ -632,3 +632,17 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
 .admin-acciones { justify-content: flex-start; }
 .admin-acciones form { margin: 0; }
 .boton.boton-peligro { text-decoration: none; }
+
+/* === Barra "Volver" bajo el encabezado === */
+.volver { margin: -1rem 0 1rem; }
+.volver a {
+    display: inline-block;
+    padding: .35rem .8rem;
+    border: 1px solid var(--color-primario-claro);
+    border-radius: 999px;
+    background: var(--color-superficie);
+    color: var(--color-primario);
+    font-size: .9rem;
+    text-decoration: none;
+}
+.volver a:hover { background: var(--color-primario-suave); }

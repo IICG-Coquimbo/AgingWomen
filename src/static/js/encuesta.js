@@ -304,7 +304,7 @@
     function renderBienvenida() {
         var defs = esquema.definiciones || [];
         var edadMin = esquema.edad_minima || 40;
-        var edadMax = esquema.edad_maxima || 60;
+        var edadMax = esquema.edad_maxima || 65;
         var rango = edadMin + ' a ' + edadMax + ' años';
         var excepciones = esquema.excepciones_edad || [];
         var fn = (respuestas.identificacion || {}).fecha_nacimiento || '';

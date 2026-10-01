@@ -425,3 +425,25 @@ class AdministracionSistemaTest(TestCase):
         resp = self.client.get(reverse('home'))
         self.assertContains(resp, f'href="{reverse("admin_panel")}"')
         self.assertNotContains(resp, f'href="{reverse("admin:index")}"')
+
+
+class NavegacionVolverTest(TestCase):
+    """Toda página interna tiene un "Volver"; el menú de inicio no lo necesita."""
+
+    def setUp(self):
+        self.admin = Usuario.objects.create_superuser(
+            rut_hash='11.111.111-1', email='admin@example.com', password='clave-admin-123',
+        )
+        self.client.login(username='11111111-1', password='clave-admin-123')
+
+    def test_inicio_sin_volver(self):
+        self.assertNotContains(self.client.get(reverse('home')), 'class="volver"')
+
+    def test_pagina_de_primer_nivel_vuelve_al_menu(self):
+        resp = self.client.get(reverse('admin_panel'))
+        self.assertContains(resp, '← Volver al menú')
+
+    def test_pagina_de_segundo_nivel_vuelve_a_la_anterior(self):
+        resp = self.client.get(reverse('admin_cuenta', args=[self.admin.pk]))
+        self.assertContains(resp, '← Volver a administración')
+        self.assertNotContains(resp, '← Volver al menú')

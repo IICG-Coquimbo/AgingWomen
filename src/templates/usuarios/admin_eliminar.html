@@ -2,6 +2,8 @@
 
 {% block titulo %}Eliminar cuenta{% endblock %}
 
+{% block volver %}<a href="{% url 'admin_cuenta' cuenta.pk %}">← Volver a la cuenta</a>{% endblock %}
+
 {% block contenido %}
 <div class="tarjeta">
     <h1>Eliminar cuenta</h1>

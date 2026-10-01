@@ -22,6 +22,12 @@
         {% endif %}
     </header>
     <main>
+        {% if user.is_authenticated and request.path != '/' %}
+            {# Volver: por defecto al menú; las pantallas de segundo nivel lo redefinen. #}
+            <nav class="volver" aria-label="Volver">
+                {% block volver %}<a href="{% url 'home' %}">← Volver al menú</a>{% endblock %}
+            </nav>
+        {% endif %}
         {% for mensaje in messages %}
             <div class="mensaje mensaje-{{ mensaje.tags }}" role="status">{{ mensaje }}</div>
         {% endfor %}

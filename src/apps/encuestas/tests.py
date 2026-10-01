@@ -507,7 +507,7 @@ class EsquemaTest(TestCase):
     def test_contrato_de_esquema(self):
         esquema = self._esquema(self.usuaria)
         self.assertEqual(esquema['edad_minima'], 40)
-        self.assertEqual(esquema['edad_maxima'], 60)
+        self.assertEqual(esquema['edad_maxima'], 65)
         self.assertEqual({d['termino'] for d in esquema['definiciones']},
                          {'Perimenopausia', 'Menopausia'})
         self.assertIn('blanco', esquema['mensaje_omitir'])
@@ -785,20 +785,20 @@ class IdentificacionFormEdadTest(TestCase):
     def test_acepta_40_o_mas(self):
         self.assertTrue(self._form(45).is_valid(), self._form(45).errors)
 
-    def test_limites_del_rango_40_a_60(self):
-        for anios in (40, 60):
+    def test_limites_del_rango_40_a_65(self):
+        for anios in (40, 65):
             form = self._form(anios)
             self.assertTrue(form.is_valid(), (anios, form.errors))
-        for anios in (39, 61):
+        for anios in (39, 66):
             form = self._form(anios)
             self.assertFalse(form.is_valid(), anios)
             self.assertIn('fecha_nacimiento', form.errors)
 
-    def test_rechaza_mayor_de_60_aunque_declare_excepcion(self):
+    def test_rechaza_mayor_de_65_aunque_declare_excepcion(self):
         hoy = date.today()
         for excepcion in ('QUIRURGICA', 'AUSENCIA'):
             form = IdentificacionForm(data=dict(
-                self.base, fecha_nacimiento=f'{hoy.year - 65}-01-01', excepcion_edad=excepcion))
+                self.base, fecha_nacimiento=f'{hoy.year - 70}-01-01', excepcion_edad=excepcion))
             self.assertFalse(form.is_valid(), excepcion)
             self.assertIn('fecha_nacimiento', form.errors)
 
