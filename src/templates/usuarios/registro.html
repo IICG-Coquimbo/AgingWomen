@@ -17,6 +17,7 @@
         <div class="errores">{{ form.non_field_errors }}</div>
     {% endif %}
 
+    {% include "registration/_reglas_clave.html" %}
     <form method="post" novalidate>
         {% csrf_token %}
         {% for campo in form %}

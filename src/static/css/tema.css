@@ -156,6 +156,87 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
 .info ul { margin: .4rem 0 0; padding-left: 1.2rem; }
 .info li { margin: .15rem 0; }
 
+/* === Reglas de la contraseña en vivo (Fase 28) === */
+.reglas-clave {
+    background: var(--color-primario-suave);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: .6rem .9rem;
+    font-size: .8rem;
+    color: var(--color-texto-suave);
+    margin-bottom: 1rem;
+}
+.reglas-clave ul { list-style: none; margin: .3rem 0 0; padding: 0; }
+.reglas-clave li { margin: .15rem 0; padding-left: 1.3rem; position: relative; }
+.reglas-clave li::before { content: "•"; position: absolute; left: .3rem; }
+.reglas-clave li.ok { color: var(--color-ok); font-weight: 600; }
+.reglas-clave li.ok::before { content: "✓"; left: 0; }
+.reglas-clave li.regla-servidor { font-style: italic; }
+
+/* === Login (Fase 28) === */
+.acceso { max-width: 420px; margin: 0 auto; }
+.acceso-cabecera { text-align: center; margin-bottom: 1rem; }
+.acceso-icono { display: block; margin: 0 auto .75rem; border-radius: 14px; }
+.acceso-cabecera h1 { font-size: 1.2rem; margin-bottom: .25rem; }
+.acceso-error {
+    background: var(--color-error-fondo);
+    border: 1px solid var(--color-error);
+    border-radius: 8px;
+    padding: .6rem .9rem;
+    color: var(--color-error);
+    font-size: .9rem;
+}
+.acceso-error p { margin: .2rem 0; }
+.acceso-error a { color: var(--color-primario); font-weight: 600; }
+.acceso-olvido { text-align: center; font-size: .9rem; margin: .75rem 0 0; }
+.acceso-olvido a { color: var(--color-primario); }
+.boton-ancho { display: block; width: 100%; text-align: center; text-decoration: none; }
+.boton-secundario {
+    background: transparent;
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+}
+.boton-secundario:hover { background: var(--color-primario-suave); }
+.separador {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin: 1.5rem 0 1rem;
+    color: var(--color-texto-suave);
+    font-size: .9rem;
+}
+.separador::before, .separador::after {
+    content: "";
+    flex: 1;
+    border-top: 1px solid var(--color-borde);
+}
+
+/* === Menú de inicio (Fase 28) === */
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: .75rem;
+    margin-top: 1rem;
+}
+.menu-item {
+    display: block;
+    padding: 1rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    background: var(--color-superficie);
+    color: var(--color-texto);
+    text-decoration: none;
+    transition: border-color .2s ease, background .2s ease;
+}
+.menu-item:hover { border-color: var(--color-primario-claro); background: var(--color-primario-suave); }
+.menu-item strong { display: block; color: var(--color-primario-oscuro); margin-bottom: .2rem; }
+.menu-item span { font-size: .85rem; color: var(--color-texto-suave); }
+.menu-principal { background: var(--color-primario); border-color: var(--color-primario); }
+.menu-principal strong, .menu-principal span { color: #fff; }
+.menu-principal:hover { background: var(--color-primario-oscuro); }
+.menu-pie { text-align: center; font-size: .85rem; }
+.menu-pie a { color: var(--color-texto-suave); }
+
 /* === Encuesta (Fase 7C) === */
 .progreso-bloque { margin-bottom: 1.25rem; }
 .progreso {

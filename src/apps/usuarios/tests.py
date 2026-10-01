@@ -179,6 +179,59 @@ class LoginPorRutTest(TestCase):
         self.assertRedirects(resp, reverse('home'))
 
 
+class LoginYMenuTest(TestCase):
+    """Fase 28: mensaje de login sin enumeración de RUT y menú de inicio por rol."""
+
+    def setUp(self):
+        self.usuaria = Usuario.objects.create_user(
+            rut='11.111.111-1', email='a@example.com', password='clave-de-prueba-123',
+        )
+
+    def _login_fallido(self, rut):
+        return self.client.post(reverse('login'), {'username': rut, 'password': 'clave-mala-999'})
+
+    def test_login_fallido_muestra_enlace_a_registro(self):
+        resp = self._login_fallido('11.111.111-1')
+        self.assertContains(resp, 'RUT o contraseña incorrectos.')
+        self.assertContains(resp, reverse('registro'))
+
+    def test_mismo_mensaje_exista_o_no_el_rut(self):
+        existente = self._login_fallido('11.111.111-1')
+        inexistente = self._login_fallido('22.222.222-2')
+        self.assertEqual(
+            existente.context['form'].non_field_errors(),
+            inexistente.context['form'].non_field_errors(),
+        )
+        # Se revisa solo el mensaje de error (el script de base.html contiene
+        # "Service Worker no registrado", que no tiene que ver con el RUT).
+        for resp in (existente, inexistente):
+            texto = ' '.join(resp.context['form'].non_field_errors()).lower()
+            self.assertNotIn('registrad', texto)
+            self.assertNotIn('no existe', texto)
+
+    def test_menu_usuaria_comun(self):
+        self.client.login(username='11111111-1', password='clave-de-prueba-123')
+        resp = self.client.get(reverse('home'))
+        self.assertContains(resp, 'Bienvenida')
+        self.assertNotContains(resp, 'Usuaria común')
+        for nombre in ('encuesta', 'mi_tablero', 'mi_evaluacion', 'password_change', 'retirarse'):
+            self.assertContains(resp, f'href="{reverse(nombre)}"')
+        self.assertNotContains(resp, reverse('buscar_paciente'))
+        self.assertNotContains(resp, reverse('admin:index'))
+
+    def test_menu_profesional(self):
+        Usuario.objects.create_user(
+            rut='9.876.543-3', email='p@example.com', password='clave-prof-123',
+            rol=Usuario.Rol.PROFESIONAL_SALUD,
+        )
+        self.client.login(username='98765433', password='clave-prof-123')
+        resp = self.client.get(reverse('home'))
+        for nombre in ('buscar_paciente', 'estadisticas', 'encuesta', 'password_change'):
+            self.assertContains(resp, f'href="{reverse(nombre)}"')
+        self.assertNotContains(resp, reverse('mi_tablero'))
+        self.assertNotContains(resp, reverse('retirarse'))
+
+
 class AccesoRestringidoTest(TestCase):
     def test_home_redirige_a_login_si_anonimo(self):
         resp = self.client.get(reverse('home'))
