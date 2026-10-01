@@ -6,9 +6,8 @@
 <div class="tarjeta">
     <h1>Buscar paciente por RUT</h1>
     <p class="ayuda">
-        Para ingresar o actualizar datos clínicos de una paciente, hazlo desde
-        <a href="{% url 'encuesta' %}">la encuesta</a> indicando su RUT ahí.
-        Esta pantalla es solo para consultar el historial ya guardado.
+        Busca a la paciente por su RUT para ver su historial o completar su
+        encuesta. Si todavía no está registrada, puedes registrarla tú.
     </p>
     <p><a href="{% url 'estadisticas' %}">Ver estadísticas agrupadas →</a></p>
 
@@ -21,6 +20,13 @@
 
     {% if error %}
         <p class="errores">{{ error }}</p>
+    {% endif %}
+    {% if puede_registrar %}
+        <form method="post" action="{% url 'nueva_paciente' %}">
+            {% csrf_token %}
+            <input type="hidden" name="rut" value="{{ rut }}">
+            <button type="submit">Registrar nueva paciente con este RUT</button>
+        </form>
     {% endif %}
 
     {% if resultado %}

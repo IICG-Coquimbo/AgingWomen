@@ -3,9 +3,28 @@
 
 {% block titulo %}Encuesta{% endblock %}
 
+{% block volver %}{% if paciente %}<a href="{% url 'ficha_paciente' paciente.pk %}">← Volver a la ficha</a>{% elif modo_profesional %}<a href="{% url 'buscar_paciente' %}">← Volver a la búsqueda</a>{% else %}<a href="{% url 'home' %}">← Volver al menú</a>{% endif %}{% endblock %}
+
 {% block contenido %}
+    {% if modo_profesional %}
+        {# Fase 29: el personal de salud completa la encuesta de una paciente. #}
+        <p class="aviso-profesional">
+            {% if paciente %}
+                Estás completando la encuesta de la paciente de la ficha N.º {{ paciente.pk }}
+                ({{ paciente.edad }} años, ronda {{ paciente.ronda_actual }}).
+            {% else %}
+                Estás registrando a una paciente nueva.
+            {% endif %}
+        </p>
+    {% endif %}
     <p id="estado-sync" class="estado-sync" hidden></p>
-    <div id="encuesta" data-usuario="{{ request.user.rut_hash }}"><p class="ayuda">Cargando encuesta…</p></div>
+    <div id="encuesta"
+         data-usuario="{% if modo_profesional %}{{ contexto }}{% else %}{{ request.user.rut_hash }}{% endif %}"
+         {% if modo_profesional %}
+         data-modo="profesional"
+         {% if paciente %}data-paciente="{{ paciente.pk }}" data-url-ficha="{% url 'ficha_paciente' paciente.pk %}"{% endif %}
+         {% if rut_nueva %}data-rut="{{ rut_nueva }}"{% endif %}
+         {% endif %}><p class="ayuda">Cargando encuesta…</p></div>
 {% endblock %}
 
 {% block extra_scripts %}

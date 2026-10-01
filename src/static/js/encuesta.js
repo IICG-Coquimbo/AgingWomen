@@ -18,8 +18,17 @@
     var URL_ESQUEMA = '/api/esquema/';
     var URL_SYNC = '/api/sincronizar/';
     var URL_EVALUACION = '/mi-evaluacion/';
+    var URL_RONDA = '/api/ronda-actual/';
 
     var cont = document.getElementById('encuesta');
+
+    // Fase 29: el personal de salud completa la encuesta de una paciente
+    // existente (data-paciente) o registra una nueva (data-rut).
+    var MODO_PROF = cont.dataset.modo === 'profesional';
+    var pacienteId = cont.dataset.paciente ? parseInt(cont.dataset.paciente, 10) : null;
+    var rutNueva = cont.dataset.rut || '';
+    var urlFicha = cont.dataset.urlFicha || '';
+    var identBloqueada = false;  // la paciente se registró ella: su Identificación es solo lectura
 
     // El CSRF se lee de la cookie en cada envío (no al cargar el script): si
     // esta página quedó cacheada offline, el token embebido en el HTML puede
@@ -40,6 +49,8 @@
     // (visita posterior), antes de mostrar el formulario se pregunta si desea
     // modificar algún dato. Se pregunta una sola vez por carga de página.
     var preguntarIdentificacion = false;
+    var sucio = false;   // hay respuestas locales sin confirmar por el servidor
+    var ronda = null;    // ronda a la que pertenecen las respuestas locales
 
     // Nombres cortos para los botones de navegación (los títulos completos de
     // algunas secciones son demasiado largos para un botón).
@@ -73,7 +84,12 @@
             req.onerror = function () { reject(req.error); };
         });
     }
+    // En modo profesional cada paciente tiene su propio estado local (no se
+    // mezclan si el profesional atiende a varias, aunque esté sin conexión).
+    function claveIdb(clave) { return MODO_PROF ? usuarioActual + '|' + clave : clave; }
+
     function idbGet(clave) {
+        clave = claveIdb(clave);
         return abrirDB().then(function (db) {
             return new Promise(function (resolve, reject) {
                 var r = db.transaction('estado', 'readonly').objectStore('estado').get(clave);
@@ -83,6 +99,7 @@
         });
     }
     function idbSet(clave, valor) {
+        clave = claveIdb(clave);
         return abrirDB().then(function (db) {
             return new Promise(function (resolve, reject) {
                 var tx = db.transaction('estado', 'readwrite');
@@ -117,7 +134,8 @@
     function iniciar() {
         Promise.all([
             idbGet('esquema'), idbGet('respuestas'), idbGet('uuids'), idbGet('bienvenida'),
-            idbGet('envio_final'), idbGet('usuario'),
+            idbGet('envio_final'), idbGet('usuario'), idbGet('sucio'), idbGet('pendiente_envio'),
+            idbGet('ronda'),
         ])
             .then(function (vals) {
                 esquema = vals[0];
@@ -126,6 +144,8 @@
                 bienvenidaOk = !!vals[3];
                 envioFinalPendiente = !!vals[4];
                 var usuarioGuardado = vals[5];
+                sucio = !!vals[6] || !!vals[7];
+                ronda = vals[8] || null;
 
                 var cambioDeUsuario = usuarioGuardado && usuarioGuardado !== usuarioActual;
                 var promesa = cambioDeUsuario ? limpiarEstadoLocal() : Promise.resolve();
@@ -139,11 +159,17 @@
             .then(function () {
                 if (!esquema) { throw new Error('sin-esquema'); }
                 asegurarUuids();
+                return traerRondaActual();
+            })
+            .then(function () {
+                if (MODO_PROF && pacienteId && !respuestas.identificacion) {
+                    throw new Error('sin-datos-paciente');
+                }
                 var ident = esquema.secciones.filter(function (s) {
                     return s.tipo === 'identificacion';
                 })[0];
-                preguntarIdentificacion = !!(bienvenidaOk && ident && respuestas.identificacion &&
-                    seccionCompleta(ident));
+                preguntarIdentificacion = !MODO_PROF && !!(bienvenidaOk && ident &&
+                    respuestas.identificacion && seccionCompleta(ident));
                 // Botones "ir a sección" (delegado: el bloque se reemplaza al actualizar el progreso).
                 cont.addEventListener('click', function (e) {
                     var b = e.target.closest('[data-ir]');
@@ -156,13 +182,74 @@
                 mostrarConexion();
                 window.addEventListener('online', alRecuperarConexion);
                 window.addEventListener('offline', mostrarConexion);
-                intentarSync(envioFinalPendiente);  // envía lo pendiente si hay conexión
+                // Solo se envía al cargar si quedó algo pendiente: si no, se
+                // sobrescribirían cambios hechos desde otro dispositivo.
+                if (sucio || envioFinalPendiente) { intentarSync(envioFinalPendiente); }
             })
             .catch(function (err) {
                 console.error(err);
-                cont.innerHTML = '<div class="tarjeta"><p class="errores">No se pudo cargar la ' +
-                    'encuesta. Necesitas conexión a internet al menos la primera vez.</p></div>';
+                cont.innerHTML = '<div class="tarjeta"><p class="errores">' +
+                    (err && err.message === 'sin-datos-paciente'
+                        ? 'No se pudieron cargar las respuestas de la paciente. Necesitas conexión ' +
+                          'a internet para abrir su encuesta la primera vez.'
+                        : 'No se pudo cargar la encuesta. Necesitas conexión a internet al menos ' +
+                          'la primera vez.') + '</p></div>';
             });
+    }
+
+    // ---------- Fase 29: precarga de la ronda en curso desde el servidor ----------
+    // Así la encuesta se abre con lo ya guardado (por la usuaria o por el
+    // personal de salud, desde cualquier dispositivo) y escribe en las mismas filas.
+    function traerRondaActual() {
+        if (!navigator.onLine || (MODO_PROF && !pacienteId)) { return Promise.resolve(); }
+        var url = URL_RONDA + (MODO_PROF ? '?paciente=' + pacienteId : '');
+        return fetch(url, { credentials: 'same-origin' })
+            .then(function (r) { return r.ok ? r.json() : null; })
+            .then(function (srv) { if (srv) { return reconciliar(srv); } })
+            .catch(function () { /* sin conexión: se sigue con lo local */ });
+    }
+
+    function reconciliar(srv) {
+        if (!srv.identificacion) { return; }  // la usuaria aún no tiene ficha
+        identBloqueada = MODO_PROF && !!srv.identificacion.bloqueada;
+
+        // Se cerró una ronda desde otro dispositivo (p. ej. la finalizó el
+        // profesional): lo local pertenece a la ronda anterior.
+        var cambioDeRonda = ronda !== null && srv.ronda_actual > ronda;
+        if (cambioDeRonda) {
+            iniciarRondaNueva();
+            sucio = false;
+            idbSet('sucio', false);
+            idbSet('pendiente_envio', false);
+        }
+        var reemplazar = !sucio;  // sin cambios pendientes, manda el servidor
+
+        if (reemplazar || identBloqueada) {
+            respuestas.identificacion = Object.assign({}, srv.identificacion.datos);
+        }
+        if (srv.identificacion.uuid_local) { uuids.identificacion = srv.identificacion.uuid_local; }
+        bienvenidaOk = true;  // la ficha ya existe: la edad ya se validó
+
+        esquema.secciones.forEach(function (s) {
+            if (s.tipo === 'identificacion') { return; }
+            var bloque = srv.secciones[claveSync(s)];
+            if (reemplazar) {
+                var datos = {};
+                if (bloque) {
+                    s.preguntas.forEach(function (p) {
+                        if (bloque.datos[p.nombre] !== undefined) { datos[p.nombre] = bloque.datos[p.nombre]; }
+                    });
+                }
+                respuestas[s.tipo] = datos;
+            }
+            if (bloque) { uuids[claveSync(s)] = bloque.uuid_local; }
+        });
+        asegurarUuids();
+        ronda = srv.ronda_actual;
+        return Promise.all([
+            idbSet('respuestas', respuestas), idbSet('uuids', uuids),
+            idbSet('bienvenida', true), idbSet('ronda', ronda),
+        ]);
     }
 
     function traerEsquema() {
@@ -320,7 +407,8 @@
             html += '</div>';
         }
         html += '<div class="gate"><p>Esta encuesta está dirigida a personas de <strong>' +
-            rango + '</strong>. Ingresa tu fecha de nacimiento para continuar:</p>';
+            rango + '</strong>. ' + (MODO_PROF ? 'Ingresa la fecha de nacimiento de la paciente'
+                : 'Ingresa tu fecha de nacimiento') + ' para continuar:</p>';
         html += '<label for="g_fn">Fecha de nacimiento</label>';
         html += '<input id="g_fn" type="date" value="' + esc(fn) + '">';
         html += '<div id="g_excepcion" hidden>' +
@@ -433,7 +521,11 @@
             conectarEventos(seccion);
             return;
         }
-        preguntasVisibles(seccion).forEach(function (p) { html += renderPregunta(seccion, p); });
+        if (seccion.tipo === 'identificacion' && identBloqueada) {
+            html += renderIdentificacionBloqueada(seccion);
+        } else {
+            preguntasVisibles(seccion).forEach(function (p) { html += renderPregunta(seccion, p); });
+        }
 
         html += '<div class="nav">';
         if (indice > 0) {
@@ -465,6 +557,23 @@
             '<span class="progreso-texto">' + completas + ' de ' + secs.length +
             ' secciones completas</span></div>' +
             '<p class="progreso-mensaje">' + esc(tramo.msg) + '</p></div>';
+    }
+
+    // Fase 29: la paciente se registró ella misma -> el profesional solo ve sus datos.
+    function renderIdentificacionBloqueada(seccion) {
+        var datos = respuestas[seccion.tipo] || {};
+        var html = '<p class="seccion-aviso-bloqueo">La paciente se registró ella misma: ' +
+            'solo ella puede modificar estos datos.</p><dl class="resumen-datos">';
+        preguntasVisibles(seccion).forEach(function (p) {
+            var v = datos[p.nombre];
+            if (v === undefined || v === null || v === '') { return; }
+            var texto = String(v);
+            (p.opciones || []).forEach(function (op) {
+                if (String(op.valor) === String(v)) { texto = op.texto; }
+            });
+            html += '<dt>' + esc(p.texto) + '</dt><dd>' + esc(texto) + '</dd>';
+        });
+        return html + '</dl>';
     }
 
     // Fase 27: botones para saltar a cualquier sección, al final de cada una.
@@ -671,6 +780,7 @@
             valor = marcados.join(', ');
         }
         respuestas[seccion.tipo][campo] = valor;
+        sucio = true;
         idbSet('sucio', true);  // hay datos locales sin enviar al servidor
 
         // Si de este campo depende otro (ej. comuna ← región), limpia el
@@ -799,7 +909,14 @@
         seccionesAplicables().forEach(function (s) {
             var datos = respuestas[s.tipo] || {};
             if (s.tipo === 'identificacion') {
-                payload.identificacion = { uuid_local: uuids['identificacion'], datos: datos };
+                payload.identificacion = {
+                    uuid_local: uuids['identificacion'],
+                    datos: identBloqueada ? {} : datos,
+                };
+                if (MODO_PROF) {
+                    if (pacienteId) { payload.identificacion.paciente_id = pacienteId; }
+                    else { payload.identificacion.rut = rutNueva; }
+                }
                 return;
             }
             var k = claveSync(s);
@@ -865,16 +982,26 @@
                 return r.json().then(function (j) { return { ok: r.ok, cuerpo: j }; });
             })
             .then(function (res) {
+                adoptarRespuesta(res.cuerpo);
                 if (res.ok && res.cuerpo.ok) {
+                    sucio = false;
                     idbSet('sucio', false);
                     idbSet('pendiente_envio', false);
                     if (esFinal) {
                         envioFinalPendiente = false;
                         idbSet('envio_final', false);
                         iniciarRondaNueva();
-                        mensajeFinal('¡Encuesta enviada! Gracias por participar. Puedes volver a ' +
-                            'responderla más adelante para registrar cómo han cambiado tus síntomas.',
-                            false, true);
+                        ronda = res.cuerpo.ronda_actual;
+                        idbSet('ronda', ronda);
+                        if (MODO_PROF) {
+                            mensajeFinal('¡Encuesta de la paciente enviada! La ronda quedó cerrada ' +
+                                'y su ficha ya muestra estas respuestas.', false, false,
+                                urlFicha || ('/profesional/paciente/' + pacienteId + '/'));
+                        } else {
+                            mensajeFinal('¡Encuesta enviada! Gracias por participar. Puedes volver a ' +
+                                'responderla más adelante para registrar cómo han cambiado tus síntomas.',
+                                false, true);
+                        }
                     } else {
                         avisoSync('Respuestas sincronizadas.', 'ok');
                     }
@@ -899,7 +1026,25 @@
             });
     }
 
-    function mensajeFinal(texto, error, ofrecerEvaluacion) {
+    // Fase 29: el servidor puede devolver otro uuid_local para una sección (si
+    // ya existía en la ronda, guardada desde otro dispositivo) y, al registrar
+    // una paciente nueva, el número de su ficha.
+    function adoptarRespuesta(cuerpo) {
+        if (!cuerpo) { return; }
+        var cambio = false;
+        (cuerpo.resultados || []).forEach(function (r) {
+            if (r.uuid_local && r.seccion && r.seccion !== 'identificacion' &&
+                uuids[r.seccion] !== r.uuid_local) {
+                uuids[r.seccion] = r.uuid_local;
+                cambio = true;
+            }
+        });
+        if (cambio) { idbSet('uuids', uuids); }
+        if (ronda === null && cuerpo.ronda_actual) { ronda = cuerpo.ronda_actual; idbSet('ronda', ronda); }
+        if (MODO_PROF && !pacienteId && cuerpo.paciente_id) { pacienteId = cuerpo.paciente_id; }
+    }
+
+    function mensajeFinal(texto, error, ofrecerEvaluacion, urlVolver) {
         var html = '<div class="tarjeta"><p class="' + (error ? 'errores' : '') + '">' +
             esc(texto) + '</p>';
         if (ofrecerEvaluacion) {
@@ -907,7 +1052,8 @@
             html += '<p>¿Nos ayudas con 5 preguntas breves sobre la plataforma?</p>' +
                 '<p><a class="boton" href="' + URL_EVALUACION + '">Evaluar la plataforma</a></p>';
         }
-        cont.innerHTML = html + '<p class="enlaces"><a href="/">Volver al inicio</a></p></div>';
+        cont.innerHTML = html + '<p class="enlaces"><a href="' + esc(urlVolver || '/') + '">' +
+            (urlVolver ? 'Volver a la ficha de la paciente' : 'Volver al inicio') + '</a></p></div>';
     }
 
     // ---------- utilidades ----------

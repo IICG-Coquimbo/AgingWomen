@@ -646,3 +646,22 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
     text-decoration: none;
 }
 .volver a:hover { background: var(--color-primario-suave); }
+
+/* === Encuesta completada por personal de salud (Fase 29) === */
+.aviso-profesional {
+    margin: 0 0 1rem;
+    padding: .6rem .9rem;
+    background: var(--color-primario-suave);
+    border-left: 4px solid var(--color-acento);
+    border-radius: 6px;
+    font-weight: 600;
+}
+.seccion-aviso-bloqueo {
+    padding: .5rem .75rem;
+    background: var(--color-error-fondo);
+    border-radius: 6px;
+    font-size: .9rem;
+}
+.resumen-datos { display: grid; grid-template-columns: minmax(0, 1fr); gap: .1rem; margin: 1rem 0; }
+.resumen-datos dt { font-weight: 600; margin-top: .5rem; }
+.resumen-datos dd { margin: 0; color: var(--color-texto-suave); }

@@ -137,6 +137,12 @@ def verificar_registro(request):
                     password=otp.password_hash,
                 )
                 usuario.save()
+                # Fase 29: si el personal de salud ya la había registrado como
+                # paciente con este RUT, esa ficha pasa a ser suya.
+                from apps.encuestas.models import Identificacion
+                Identificacion.objects.filter(
+                    rut_hash=usuario.rut_hash, usuario__isnull=True,
+                ).update(usuario=usuario)
                 otp.delete()
             del request.session[SESION_REGISTRO]
             enviar_bienvenida_email(usuario)

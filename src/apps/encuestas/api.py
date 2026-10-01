@@ -3,6 +3,8 @@ Endpoints HTTP de sincronización offline-first (Sección 5.1 del spec).
 
 - POST /api/sincronizar/  -> recibe el payload acumulado en el dispositivo.
 - GET  /api/estado/       -> qué secciones ya tiene registradas la usuaria.
+- GET  /api/ronda-actual/ -> respuestas de la ronda en curso (propias, o de una
+                             paciente con ?paciente=<id> si es personal de salud).
 
 Requieren sesión iniciada (regla 1.1). El CSRF sigue activo: el cliente debe
 enviar el header `X-CSRFToken` con el valor de la cookie `csrftoken`.
@@ -15,7 +17,9 @@ from django.views.decorators.http import require_GET, require_POST
 
 from .esquema import construir_esquema
 from .models import Identificacion
-from .sync import SECCIONES, ErrorSincronizacion, sincronizar_payload
+from .sync import (
+    SECCIONES, ErrorSincronizacion, estado_ronda, identificacion_de_usuaria, sincronizar_payload,
+)
 
 
 @login_required
@@ -23,6 +27,27 @@ from .sync import SECCIONES, ErrorSincronizacion, sincronizar_payload
 def esquema(request):
     """Estructura completa de la encuesta para que el cliente la renderice offline."""
     return JsonResponse(construir_esquema(request.user.rol))
+
+
+@login_required
+@require_GET
+def ronda_actual(request):
+    """Fase 29: lo ya guardado en la ronda en curso, para precargar la encuesta."""
+    paciente_id = request.GET.get('paciente')
+    if paciente_id:
+        if not request.user.es_profesional:
+            return JsonResponse({'error': 'Solo el personal de salud puede ver otra paciente.'}, status=403)
+        ident = Identificacion.objects.filter(pk=paciente_id).first()
+        if ident is None:
+            return JsonResponse({'error': 'La paciente no existe.'}, status=404)
+    else:
+        if request.user.es_profesional:
+            return JsonResponse({'error': "Indica la paciente con '?paciente=<id>'."}, status=400)
+        ident = identificacion_de_usuaria(request.user)
+        if ident is None:
+            return JsonResponse({'paciente_id': None, 'ronda_actual': 1,
+                                 'identificacion': None, 'secciones': {}})
+    return JsonResponse(estado_ronda(ident))
 
 
 @login_required

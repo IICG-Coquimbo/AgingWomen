@@ -9,8 +9,13 @@ Convención: el dispositivo envía SIEMPRE el estado completo de cada sección q
 tiene guardado localmente. `parcial=True` solo significa "esta sección aún no
 está terminada", no "envío únicamente los campos que cambiaron".
 """
+from datetime import date
+from decimal import Decimal
+
+from django.forms.models import model_to_dict
 from django.utils import timezone
 
+from apps.usuarios.models import Usuario
 from apps.usuarios.rut import hash_rut
 
 from .forms import (
@@ -75,22 +80,44 @@ def _fusionar_bloques_mrs(secciones):
     return resto
 
 
+def identificacion_de_usuaria(usuario):
+    """
+    Ficha de la usuaria: la asociada a su cuenta o, si el personal de salud la
+    registró antes de que ella creara la cuenta (Fase 29), la de su RUT aún
+    sin dueña.
+    """
+    return (Identificacion.objects.filter(usuario=usuario).first()
+            or Identificacion.objects.filter(rut_hash=usuario.rut_hash, usuario__isnull=True).first())
+
+
 def _resolver_identificacion(usuario, bloque):
     bloque = bloque or {}
     datos = dict(bloque.get('datos') or {})
     uuid_local = bloque.get('uuid_local')
     rut = datos.pop('rut', None) or bloque.get('rut')
+    paciente_id = bloque.get('paciente_id')
 
     if usuario.es_profesional:
-        if not rut:
-            raise ErrorSincronizacion("El profesional debe indicar el 'rut' de la paciente.")
-        existente = Identificacion.objects.filter(rut_hash=hash_rut(rut)).first()
-    else:
-        if rut:
+        # Fase 29: una paciente ya existente se indica por su ficha (el RUT en
+        # claro no se guarda); el RUT solo se usa para registrar una nueva.
+        if paciente_id:
+            existente = Identificacion.objects.filter(pk=paciente_id).first()
+            if existente is None:
+                raise ErrorSincronizacion('La paciente indicada no existe.')
+        elif rut:
+            existente = Identificacion.objects.filter(rut_hash=hash_rut(rut)).first()
+        else:
+            raise ErrorSincronizacion("El profesional debe indicar la paciente ('paciente_id' o 'rut').")
+        if existente and existente.usuario_id and datos:
             raise ErrorSincronizacion(
-                "Una usuaria común no puede sincronizar datos por RUT de otra persona."
+                'La identificación de una paciente con cuenta propia solo la puede modificar ella.'
             )
-        existente = Identificacion.objects.filter(usuario=usuario).first()
+    else:
+        if rut or paciente_id:
+            raise ErrorSincronizacion(
+                "Una usuaria común no puede sincronizar datos de otra persona."
+            )
+        existente = identificacion_de_usuaria(usuario)
 
     if not datos:
         if existente:
@@ -103,7 +130,8 @@ def _resolver_identificacion(usuario, bloque):
 
     ident = form.save(commit=False)
     if usuario.es_profesional:
-        ident.rut_hash = hash_rut(rut)
+        if rut:
+            ident.rut_hash = hash_rut(rut)
     else:
         ident.usuario = usuario
         ident.rut_hash = usuario.rut_hash
@@ -129,6 +157,16 @@ def _guardar_seccion(bloque, identificacion, usuario):
         return {'seccion': tipo, 'estado': 'error', 'errores': {'uuid_local': ['Requerido.']}}
 
     instancia = modelo.objects.filter(uuid_local=uuid_local).first()
+    if instancia is None:
+        # Fase 29: la usuaria y el personal de salud pueden completar la misma
+        # ronda desde dispositivos distintos (cada uno con su propio uuid_local).
+        # Si la sección ya existe en la ronda en curso, se actualiza esa fila en
+        # vez de duplicarla, y se devuelve su uuid_local para que el cliente lo adopte.
+        instancia = modelo.objects.filter(
+            participante=identificacion, ronda=identificacion.ronda_actual,
+        ).first()
+        if instancia is not None:
+            uuid_local = str(instancia.uuid_local)
     if instancia and instancia.participante_id != identificacion.id:
         return {'seccion': tipo, 'estado': 'error',
                 'errores': {'uuid_local': ['Ya pertenece a otro registro.']}}
@@ -153,7 +191,8 @@ def _guardar_seccion(bloque, identificacion, usuario):
         )
     obj.sincronizado_en = timezone.now()
     obj.save()
-    return {'seccion': tipo, 'estado': 'actualizado' if instancia else 'creado', 'id': obj.id}
+    return {'seccion': tipo, 'estado': 'actualizado' if instancia else 'creado', 'id': obj.id,
+            'uuid_local': str(obj.uuid_local)}
 
 
 def sincronizar_payload(usuario, payload):
@@ -195,4 +234,44 @@ def sincronizar_payload(usuario, payload):
         ident.ronda_actual += 1
         ident.save(update_fields=['ronda_actual'])
 
-    return {'ok': ok, 'resultados': resultados, 'ronda_actual': ident.ronda_actual}
+    return {'ok': ok, 'resultados': resultados, 'ronda_actual': ident.ronda_actual,
+            'paciente_id': ident.id}
+
+
+def _serializar(valor):
+    if isinstance(valor, date):
+        return valor.isoformat()
+    if isinstance(valor, Decimal):
+        return str(valor)
+    if isinstance(valor, (list, tuple)):
+        return ', '.join(str(v) for v in valor)
+    return valor
+
+
+def _datos_de(obj, form_cls):
+    # Todos los campos que puede ver el personal de salud (el máximo de campos).
+    campos = list(form_cls(rol=Usuario.Rol.PROFESIONAL_SALUD).fields)
+    return {k: _serializar(v) for k, v in model_to_dict(obj, fields=campos).items() if v is not None}
+
+
+def estado_ronda(ident):
+    """
+    Respuestas guardadas de la ronda en curso (Fase 29), en el formato que usa
+    el cliente: así la encuesta se abre con lo ya respondido (por la usuaria o
+    por el personal de salud) y sigue escribiendo en las mismas filas.
+    """
+    secciones = {}
+    for tipo, (modelo, form_cls) in SECCIONES.items():
+        obj = modelo.objects.filter(participante=ident, ronda=ident.ronda_actual).first()
+        if obj is not None:
+            secciones[tipo] = {'uuid_local': str(obj.uuid_local), 'datos': _datos_de(obj, form_cls)}
+    return {
+        'paciente_id': ident.id,
+        'ronda_actual': ident.ronda_actual,
+        'identificacion': {
+            'uuid_local': str(ident.uuid_local) if ident.uuid_local else None,
+            'datos': _datos_de(ident, IdentificacionForm),
+            'bloqueada': ident.usuario_id is not None,
+        },
+        'secciones': secciones,
+    }

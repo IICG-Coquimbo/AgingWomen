@@ -150,6 +150,19 @@ class RegistroTest(TestCase):
         self.assertRedirects(self._verificar(nuevo), reverse('encuesta'),
                              fetch_redirect_response=False)
 
+    def test_registro_asocia_la_ficha_creada_por_personal_de_salud(self):
+        # Fase 29: el profesional la registró antes como paciente con su RUT.
+        from apps.encuestas.models import Identificacion
+        ficha = Identificacion.objects.create(
+            rut_hash=hash_rut('11.111.111-1'), fecha_nacimiento='1975-05-20',
+            genero=Identificacion.GeneroOptions.FEMENINO,
+            nivel_educacion=Identificacion.NivelEducativo.MEDIA_COM, comuna='Santiago',
+        )
+        self._paso1()
+        self._verificar(self._codigo_enviado())
+        ficha.refresh_from_db()
+        self.assertEqual(ficha.usuario, Usuario.objects.get(email='nueva@example.com'))
+
     def test_verificar_sin_registro_pendiente_vuelve_al_paso_1(self):
         resp = self.client.get(reverse('registro_verificar'))
         self.assertRedirects(resp, reverse('registro'))
@@ -226,7 +239,7 @@ class LoginYMenuTest(TestCase):
         )
         self.client.login(username='98765433', password='clave-prof-123')
         resp = self.client.get(reverse('home'))
-        for nombre in ('buscar_paciente', 'estadisticas', 'encuesta', 'password_change'):
+        for nombre in ('buscar_paciente', 'estadisticas', 'password_change'):
             self.assertContains(resp, f'href="{reverse(nombre)}"')
         self.assertNotContains(resp, reverse('mi_tablero'))
         self.assertNotContains(resp, reverse('retirarse'))

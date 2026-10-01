@@ -13,20 +13,20 @@
 
     <nav class="menu" aria-label="Menú principal">
         {% if user.es_profesional %}
-            <a class="menu-item" href="{% url 'buscar_paciente' %}">
+            <a class="menu-item menu-principal" href="{% url 'buscar_paciente' %}">
                 <strong>Buscar paciente</strong>
-                <span>Revisa la ficha y el historial de una paciente por su RUT.</span>
+                <span>Ve su ficha, completa su encuesta o registra una paciente nueva.</span>
             </a>
             <a class="menu-item" href="{% url 'estadisticas' %}">
                 <strong>Estadísticas</strong>
                 <span>Resultados agrupados de todas las participantes.</span>
             </a>
         {% endif %}
-        <a class="menu-item menu-principal" href="{% url 'encuesta' %}">
-            <strong>Responder la encuesta</strong>
-            <span>Tus respuestas se guardan a medida que avanzas.</span>
-        </a>
         {% if not user.es_profesional %}
+            <a class="menu-item menu-principal" href="{% url 'encuesta' %}">
+                <strong>Responder la encuesta</strong>
+                <span>Tus respuestas se guardan a medida que avanzas.</span>
+            </a>
             <a class="menu-item" href="{% url 'mi_tablero' %}">
                 <strong>Mi tablero</strong>
                 <span>Tus datos y el historial de tus respuestas.</span>

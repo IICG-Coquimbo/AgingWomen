@@ -1396,3 +1396,122 @@ class RetiroDelEstudioTest(TestCase):
         self.client.force_login(prof)
         self.assertRedirects(self.client.post('/retirarse/', {'entiendo': 'on'}),
                              '/profesional/buscar/')
+
+
+class EncuestaPorProfesionalTest(TestCase):
+    """Fase 29: el personal de salud completa la encuesta de una paciente."""
+
+    def setUp(self):
+        self.usuaria = Usuario.objects.create_user(
+            rut='11.111.111-1', email='u@e.cl', password='clave-usuaria-123')
+        self.prof = Usuario.objects.create_user(
+            rut='22.222.222-2', email='p@e.cl', password='clave-prof-123',
+            rol=Usuario.Rol.PROFESIONAL_SALUD,
+        )
+        self.ident_datos = {
+            'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
+            'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
+            'comuna': 'Santiago', 'region_residencia': '13',
+        }
+        self.trabajo = {'rendimiento_afectado': 3, 'bienestar_trabajo_afectado': 2,
+                        'frecuencia_ausencias': 1, 'lugar_trabajo_comprensivo': 4}
+        # La usuaria ya respondió Identificación y Trabajo desde su dispositivo.
+        self.uuid_usuaria = str(uuid4())
+        res = sincronizar_payload(self.usuaria, {
+            'identificacion': {'uuid_local': str(uuid4()), 'datos': self.ident_datos},
+            'secciones': [{'tipo': 'trabajo', 'uuid_local': self.uuid_usuaria,
+                           'parcial': False, 'datos': self.trabajo}],
+        })
+        self.assertTrue(res['ok'], res)
+        self.paciente = Identificacion.objects.get()
+
+    def _payload_prof(self, datos_trabajo, **extra):
+        payload = {
+            'identificacion': {'paciente_id': self.paciente.pk, 'datos': {}},
+            'secciones': [{'tipo': 'trabajo', 'uuid_local': str(uuid4()),
+                           'parcial': False, 'datos': datos_trabajo}],
+        }
+        payload.update(extra)
+        return payload
+
+    def test_profesional_corrige_en_la_misma_fila_sin_duplicar(self):
+        res = sincronizar_payload(self.prof, self._payload_prof(dict(self.trabajo, rendimiento_afectado=5)))
+        self.assertTrue(res['ok'], res)
+        self.assertEqual(EvaluacionTrabajo.objects.count(), 1)
+        self.assertEqual(EvaluacionTrabajo.objects.get().rendimiento_afectado, 5)
+        # Devuelve el uuid_local de la fila existente para que el cliente lo adopte.
+        self.assertEqual(res['resultados'][1]['uuid_local'], self.uuid_usuaria)
+
+    def test_profesional_no_modifica_identificacion_de_paciente_con_cuenta(self):
+        payload = self._payload_prof(self.trabajo)
+        payload['identificacion']['datos'] = dict(self.ident_datos, comuna='Providencia')
+        with self.assertRaises(ErrorSincronizacion):
+            sincronizar_payload(self.prof, payload)
+        self.paciente.refresh_from_db()
+        self.assertEqual(self.paciente.comuna, 'Santiago')
+
+    def test_profesional_puede_finalizar_la_ronda(self):
+        res = sincronizar_payload(self.prof, self._payload_prof(self.trabajo, finalizar=True))
+        self.assertTrue(res['ok'], res)
+        self.paciente.refresh_from_db()
+        self.assertEqual(self.paciente.ronda_actual, 2)
+
+    def test_profesional_registra_paciente_nueva_y_luego_ella_la_continua(self):
+        res = sincronizar_payload(self.prof, {
+            'identificacion': {'rut': '7.654.321-6', 'datos': self.ident_datos},
+            'secciones': [],
+        })
+        self.assertTrue(res['ok'], res)
+        nueva = Identificacion.objects.get(pk=res['paciente_id'])
+        self.assertIsNone(nueva.usuario)
+        # Mientras ella no tenga cuenta, el profesional puede corregir su identificación.
+        res = sincronizar_payload(self.prof, {
+            'identificacion': {'paciente_id': nueva.pk, 'datos': dict(self.ident_datos, comuna='Providencia')},
+        })
+        self.assertTrue(res['ok'], res)
+
+        # Ella crea su cuenta con ese RUT y guarda: usa la misma ficha.
+        ella = Usuario.objects.create_user(rut='7.654.321-6', email='ella@e.cl')
+        res = sincronizar_payload(ella, {
+            'identificacion': {'uuid_local': str(uuid4()), 'datos': self.ident_datos},
+        })
+        self.assertTrue(res['ok'], res)
+        nueva.refresh_from_db()
+        self.assertEqual(nueva.usuario, ella)
+        self.assertEqual(Identificacion.objects.count(), 2)
+
+    def test_api_ronda_actual(self):
+        self.client.login(username='11.111.111-1', password='clave-usuaria-123')
+        datos = self.client.get('/api/ronda-actual/').json()
+        self.assertEqual(datos['secciones']['trabajo']['uuid_local'], self.uuid_usuaria)
+        self.assertEqual(datos['secciones']['trabajo']['datos']['rendimiento_afectado'], 3)
+        self.assertEqual(datos['identificacion']['datos']['comuna'], 'Santiago')
+        # Una usuaria no puede pedir los datos de otra paciente.
+        resp = self.client.get(f'/api/ronda-actual/?paciente={self.paciente.pk}')
+        self.assertEqual(resp.status_code, 403)
+
+        self.client.logout()
+        self.client.login(username='22.222.222-2', password='clave-prof-123')
+        datos = self.client.get(f'/api/ronda-actual/?paciente={self.paciente.pk}').json()
+        self.assertTrue(datos['identificacion']['bloqueada'])
+        self.assertEqual(self.client.get('/api/ronda-actual/').status_code, 400)
+
+    def test_vistas_del_profesional(self):
+        url = f'/profesional/paciente/{self.paciente.pk}/encuesta/'
+        self.client.login(username='11.111.111-1', password='clave-usuaria-123')
+        self.assertEqual(self.client.get(url).status_code, 403)
+        self.client.logout()
+
+        self.client.login(username='22.222.222-2', password='clave-prof-123')
+        resp = self.client.get(url)
+        self.assertContains(resp, 'data-modo="profesional"')
+        self.assertContains(resp, f'data-paciente="{self.paciente.pk}"')
+        # La encuesta "propia" no aplica al profesional.
+        self.assertRedirects(self.client.get('/encuesta/'), '/profesional/buscar/')
+        # Paciente nueva: el RUT llega por POST y pasa a la encuesta.
+        resp = self.client.post('/profesional/paciente/nueva/', {'rut': '7.654.321-6'})
+        self.assertContains(resp, 'data-modo="profesional"')
+        self.assertContains(resp, 'data-rut="')
+        # Si el RUT ya tiene ficha, va directo a completar esa encuesta.
+        resp = self.client.post('/profesional/paciente/nueva/', {'rut': '11.111.111-1'})
+        self.assertRedirects(resp, url)
