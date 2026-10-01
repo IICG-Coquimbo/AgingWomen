@@ -36,6 +36,31 @@
     var indice = 0;        // índice dentro de las secciones aplicables
     var bienvenidaOk = false;  // ya pasó la pantalla de definiciones + filtro de edad
     var envioFinalPendiente = false;  // se pulsó "Finalizar" pero aún no se confirma con el servidor
+    // Fase 27: si al abrir la encuesta la Identificación ya estaba completa
+    // (visita posterior), antes de mostrar el formulario se pregunta si desea
+    // modificar algún dato. Se pregunta una sola vez por carga de página.
+    var preguntarIdentificacion = false;
+
+    // Nombres cortos para los botones de navegación (los títulos completos de
+    // algunas secciones son demasiado largos para un botón).
+    var TITULOS_CORTOS = {
+        mrs: 'Escala MRS',
+        mrs_complementario: 'Cuestionario complementario',
+        empa: 'EMPA',
+        conocimiento_sistema: 'Conocimiento del sistema',
+    };
+    function tituloCorto(seccion) { return TITULOS_CORTOS[seccion.tipo] || seccion.titulo; }
+
+    // Fase 27: tramos de la barra de progreso (rojo < 34 %, amarillo hasta 66 %, verde desde 67 %).
+    function tramoProgreso(pct) {
+        if (pct === 0) {
+            return { clase: 'bajo', msg: '¡Comencemos! Tus respuestas se guardan a medida que avanzas.' };
+        }
+        if (pct < 34) { return { clase: 'bajo', msg: 'Buen comienzo. Cada sección que completas suma mucho.' }; }
+        if (pct < 67) { return { clase: 'medio', msg: 'Vas a mitad de camino. ¡Sigue así!' }; }
+        if (pct < 100) { return { clase: 'alto', msg: '¡Ya casi terminas! Te quedan pocas secciones.' }; }
+        return { clase: 'alto', msg: '¡Completaste todas las secciones! Ya puedes presionar Finalizar.' };
+    }
 
     // ---------- IndexedDB ----------
     function abrirDB() {
@@ -114,6 +139,19 @@
             .then(function () {
                 if (!esquema) { throw new Error('sin-esquema'); }
                 asegurarUuids();
+                var ident = esquema.secciones.filter(function (s) {
+                    return s.tipo === 'identificacion';
+                })[0];
+                preguntarIdentificacion = !!(bienvenidaOk && ident && respuestas.identificacion &&
+                    seccionCompleta(ident));
+                // Botones "ir a sección" (delegado: el bloque se reemplaza al actualizar el progreso).
+                cont.addEventListener('click', function (e) {
+                    var b = e.target.closest('[data-ir]');
+                    if (!b || b.disabled) { return; }
+                    indice = parseInt(b.getAttribute('data-ir'), 10);
+                    render();
+                    window.scrollTo(0, 0);
+                });
                 render();
                 mostrarConexion();
                 window.addEventListener('online', alRecuperarConexion);
@@ -383,17 +421,34 @@
         if (esquema.mensaje_omitir) {
             html += '<p class="seccion-omitir">' + esc(esquema.mensaje_omitir) + '</p>';
         }
+        if (seccion.tipo === 'identificacion' && preguntarIdentificacion) {
+            html += '<div class="confirmar-datos">' +
+                '<p>Ya tenemos tus datos de identificación. ¿Desea modificar algún dato?</p>' +
+                '<div class="nav">' +
+                '<button type="button" class="boton-guardar" data-nav="ident-si">Sí, modificar</button>' +
+                '<button type="button" data-nav="ident-no">No, continuar</button>' +
+                '</div></div>';
+            html += navegacionSecciones(secs) + '</div>';
+            cont.innerHTML = html;
+            conectarEventos(seccion);
+            return;
+        }
         preguntasVisibles(seccion).forEach(function (p) { html += renderPregunta(seccion, p); });
 
         html += '<div class="nav">';
-        if (indice > 0) { html += '<button type="button" data-nav="prev">Anterior</button>'; }
+        if (indice > 0) {
+            html += '<button type="button" data-nav="prev">← ' + esc(tituloCorto(secs[indice - 1])) +
+                '</button>';
+        }
         html += '<button type="button" class="boton-guardar" data-nav="guardar">Guardar cambios</button>';
         if (indice < secs.length - 1) {
-            html += '<button type="button" data-nav="next">Siguiente</button>';
+            html += '<button type="button" data-nav="next">' + esc(tituloCorto(secs[indice + 1])) +
+                ' →</button>';
         } else {
             html += '<button type="button" data-nav="finalizar">Finalizar</button>';
         }
-        html += '</div></div>';
+        html += '</div>';
+        html += navegacionSecciones(secs) + '</div>';
 
         cont.innerHTML = html;
         conectarEventos(seccion);
@@ -402,9 +457,36 @@
     function barraProgreso(secs) {
         var completas = secs.filter(seccionCompleta).length;
         var pct = secs.length ? Math.round(completas / secs.length * 100) : 0;
-        return '<div class="progreso"><div class="progreso-barra" style="width:' + pct + '%"></div>' +
+        var tramo = tramoProgreso(pct);
+        return '<div class="progreso-bloque">' +
+            '<div class="progreso" role="progressbar" aria-valuemin="0" aria-valuemax="100" ' +
+            'aria-valuenow="' + pct + '">' +
+            '<div class="progreso-barra progreso-' + tramo.clase + '" style="width:' + pct + '%"></div>' +
             '<span class="progreso-texto">' + completas + ' de ' + secs.length +
-            ' secciones completas</span></div>';
+            ' secciones completas</span></div>' +
+            '<p class="progreso-mensaje">' + esc(tramo.msg) + '</p></div>';
+    }
+
+    // Fase 27: botones para saltar a cualquier sección, al final de cada una.
+    function navegacionSecciones(secs) {
+        var ultima = indice === secs.length - 1;
+        var html = '<nav class="secciones-nav" aria-label="Secciones de la encuesta">' +
+            '<p class="secciones-nav-titulo">' +
+            (ultima ? 'Revisa tus secciones antes de finalizar:' : 'Ir a otra sección:') + '</p>' +
+            '<div class="secciones-botones">';
+        secs.forEach(function (s, i) {
+            var completa = seccionCompleta(s);
+            var clase = 'ir-seccion ' + (completa ? 'completa' : 'pendiente');
+            if (i === indice) {
+                html += '<button type="button" class="' + clase + ' actual" disabled aria-current="step">' +
+                    esc(tituloCorto(s)) + '</button>';
+            } else {
+                html += '<button type="button" class="' + clase + '" data-ir="' + i + '">' +
+                    (completa ? '✓ ' : '') + esc(tituloCorto(s)) +
+                    (completa ? '' : ' <small>pendiente</small>') + '</button>';
+            }
+        });
+        return html + '</div></nav>';
     }
 
     function renderPregunta(seccion, p) {
@@ -558,7 +640,9 @@
                 if (a === 'prev') { indice--; render(); }
                 else if (a === 'next') { indice++; render(); }
                 else if (a === 'guardar') { guardarCambios(); }
-                else { finalizar(); }
+                else if (a === 'ident-si') { preguntarIdentificacion = false; render(); }
+                else if (a === 'ident-no') { preguntarIdentificacion = false; indice++; render(); }
+                else if (a === 'finalizar') { finalizar(); }
             });
         });
         cont.querySelectorAll('.pregunta').forEach(function (div) {
@@ -647,8 +731,11 @@
     }
 
     function actualizarProgreso() {
-        var barra = cont.querySelector('.progreso');
-        if (barra) { barra.outerHTML = barraProgreso(seccionesAplicables()); }
+        var secs = seccionesAplicables();
+        var barra = cont.querySelector('.progreso-bloque');
+        if (barra) { barra.outerHTML = barraProgreso(secs); }
+        var nav = cont.querySelector('.secciones-nav');
+        if (nav) { nav.outerHTML = navegacionSecciones(secs); }
     }
 
     // ---------- Conexión / sincronización automática (Sección 5.1) ----------

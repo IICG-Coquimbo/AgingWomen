@@ -26,6 +26,11 @@
     --color-error-fondo: #fef2f2;
     --color-ok: #15803d;
 
+    /* === BARRA DE PROGRESO (Fase 27) — tonos claros para que el texto encima se lea === */
+    --progreso-bajo: #f87171;   /* rojo */
+    --progreso-medio: #facc15;  /* amarillo */
+    --progreso-alto: #4ade80;   /* verde */
+
     /* === ESCALA DE CALOR MRS (nivel 0 → 4) — la usa la Fase 7D === */
     --calor-0: #16a34a;  /* verde   — sin molestia */
     --calor-1: #84cc16;  /* lima */
@@ -152,18 +157,28 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
 .info li { margin: .15rem 0; }
 
 /* === Encuesta (Fase 7C) === */
+.progreso-bloque { margin-bottom: 1.25rem; }
 .progreso {
     position: relative;
     background: var(--color-borde);
     border-radius: 999px;
     height: 1.5rem;
-    margin-bottom: 1.25rem;
     overflow: hidden;
 }
 .progreso-barra {
     background: var(--color-primario);
     height: 100%;
-    transition: width .3s ease;
+    transition: width .3s ease, background-color .3s ease;
+}
+.progreso-bajo { background: var(--progreso-bajo); }
+.progreso-medio { background: var(--progreso-medio); }
+.progreso-alto { background: var(--progreso-alto); }
+.progreso-mensaje {
+    margin: .4rem 0 0;
+    text-align: center;
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--color-texto-suave);
 }
 .progreso-texto {
     position: absolute;
@@ -213,6 +228,41 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
     border: 1px solid var(--color-primario-claro);
 }
 .boton-guardar:hover { background: var(--color-primario-suave); }
+
+/* === Ir a otra sección (Fase 27) === */
+.confirmar-datos {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: var(--color-primario-suave);
+    border: 1px solid var(--color-primario-claro);
+    border-radius: 8px;
+}
+.confirmar-datos p { margin: 0; font-weight: 600; }
+.confirmar-datos .nav { margin-top: 1rem; }
+.secciones-nav {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-borde);
+}
+.secciones-nav-titulo { margin: 0 0 .5rem; font-size: .9rem; color: var(--color-texto-suave); }
+.secciones-botones { display: flex; flex-wrap: wrap; gap: .4rem; }
+.ir-seccion {
+    padding: .35rem .7rem;
+    font-size: .85rem;
+    background: transparent;
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+    border-radius: 999px;
+}
+.ir-seccion:hover { background: var(--color-primario-suave); }
+.ir-seccion.completa { border-color: var(--color-ok); color: var(--color-ok); }
+.ir-seccion.pendiente small { color: var(--color-texto-suave); }
+.ir-seccion.actual {
+    background: var(--color-primario);
+    border-color: var(--color-primario);
+    color: #fff;
+    cursor: default;
+}
 
 /* === Texto introductorio y aviso de cada sección === */
 .seccion-intro {
