@@ -343,3 +343,85 @@ class ConsentimientoInformadoTest(TestCase):
         self.usuario.save(update_fields=['consentimiento_aceptado_en'])
         resp = self.client.get(reverse('consentimiento'))
         self.assertRedirects(resp, reverse('home'))
+
+
+class AdministracionSistemaTest(TestCase):
+    """Fase 30: administración de cuentas dentro del sistema (solo superusuario)."""
+
+    def setUp(self):
+        self.admin = Usuario.objects.create_superuser(
+            rut_hash='11.111.111-1', email='admin@example.com', password='clave-admin-123',
+        )
+        self.usuaria = Usuario.objects.create_user(
+            rut='7.654.321-6', email='u@example.com', password='clave-usuaria-123',
+        )
+        self.client.login(username='11111111-1', password='clave-admin-123')
+
+    def test_solo_superusuario_entra(self):
+        self.client.logout()
+        self.client.login(username='76543216', password='clave-usuaria-123')
+        self.assertEqual(self.client.get(reverse('admin_panel')).status_code, 403)
+        resp = self.client.post(reverse('admin_cambiar_rol', args=[self.usuaria.pk]), {'rol': 'PROFESIONAL'})
+        self.assertEqual(resp.status_code, 403)
+
+    def test_buscar_por_rut_lleva_a_la_cuenta(self):
+        resp = self.client.get(reverse('admin_panel'), {'rut': '7.654.321-6'})
+        self.assertRedirects(resp, reverse('admin_cuenta', args=[self.usuaria.pk]))
+
+    def test_buscar_rut_inexistente(self):
+        resp = self.client.get(reverse('admin_panel'), {'rut': '22.222.222-2'})
+        self.assertContains(resp, 'No hay ninguna cuenta con ese RUT.')
+
+    def test_promover_y_revocar(self):
+        url = reverse('admin_cambiar_rol', args=[self.usuaria.pk])
+        self.client.post(url, {'rol': 'PROFESIONAL'})
+        self.usuaria.refresh_from_db()
+        self.assertEqual(self.usuaria.rol, Usuario.Rol.PROFESIONAL_SALUD)
+        self.client.post(url, {'rol': 'USUARIA'})
+        self.usuaria.refresh_from_db()
+        self.assertEqual(self.usuaria.rol, Usuario.Rol.USUARIA_COMUN)
+
+    def test_eliminar_borra_cuenta_y_respuestas(self):
+        from apps.encuestas.models import Identificacion
+        Identificacion.objects.create(
+            usuario=self.usuaria, rut_hash=self.usuaria.rut_hash,
+            fecha_nacimiento='1975-05-20',
+            genero=Identificacion.GeneroOptions.FEMENINO,
+            nivel_educacion=Identificacion.NivelEducativo.MEDIA_COM,
+            comuna='Santiago',
+        )
+        url = reverse('admin_eliminar', args=[self.usuaria.pk])
+        # Sin marcar la casilla no se elimina.
+        self.client.post(url, {})
+        self.assertTrue(Usuario.objects.filter(pk=self.usuaria.pk).exists())
+
+        resp = self.client.post(url, {'entiendo': 'on'})
+        self.assertRedirects(resp, reverse('admin_panel'))
+        self.assertFalse(Usuario.objects.filter(pk=self.usuaria.pk).exists())
+        self.assertFalse(Identificacion.objects.exists())
+
+    def test_no_se_modifica_la_propia_cuenta_ni_otro_superusuario(self):
+        otro = Usuario.objects.create_superuser(
+            rut_hash='9.876.543-3', email='otro@example.com', password='clave-otro-123',
+        )
+        for cuenta in (self.admin, otro):
+            # El superusuario se crea con rol profesional: intentar revocarlo no debe tener efecto.
+            self.client.post(reverse('admin_cambiar_rol', args=[cuenta.pk]), {'rol': 'USUARIA'})
+            self.client.post(reverse('admin_eliminar', args=[cuenta.pk]), {'entiendo': 'on'})
+            cuenta.refresh_from_db()  # falla si se hubiera eliminado
+            self.assertEqual(cuenta.rol, Usuario.Rol.PROFESIONAL_SALUD)
+
+    def test_crear_profesional(self):
+        resp = self.client.post(
+            reverse('admin_crear_profesional'),
+            {'rut': '12.345.678-5', 'email': 'nuevo@example.com'},
+        )
+        nueva = Usuario.objects.get(email='nuevo@example.com')
+        self.assertRedirects(resp, reverse('admin_cuenta', args=[nueva.pk]))
+        self.assertEqual(nueva.rol, Usuario.Rol.PROFESIONAL_SALUD)
+        self.assertEqual(len(mail.outbox), 1)
+
+    def test_menu_superusuario_apunta_a_administracion_propia(self):
+        resp = self.client.get(reverse('home'))
+        self.assertContains(resp, f'href="{reverse("admin_panel")}"')
+        self.assertNotContains(resp, f'href="{reverse("admin:index")}"')

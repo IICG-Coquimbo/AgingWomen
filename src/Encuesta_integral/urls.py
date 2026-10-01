@@ -15,6 +15,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('sw.js', service_worker, name='service_worker'),
     path('cuenta/', include('apps.usuarios.urls')),
+    path('administracion/', include('apps.usuarios.urls_administracion')),
     path('', include('apps.encuestas.urls')),
     path('', home, name='home'),
 ]

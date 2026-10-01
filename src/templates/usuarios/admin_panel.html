@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block titulo %}Administración{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Administración de cuentas</h1>
+    <p><a class="boton" href="{% url 'admin_crear_profesional' %}">Crear cuenta de personal de salud</a></p>
+
+    <form method="get">
+        <label for="rut">Buscar cuenta por RUT</label>
+        <input id="rut" name="rut" type="text" value="{{ rut }}"
+               placeholder="12.345.678-9" data-rut="true" maxlength="12" autofocus>
+        <button type="submit" class="boton">Buscar</button>
+    </form>
+    {% if error %}<p class="errores">{{ error }}</p>{% endif %}
+</div>
+
+<div class="tarjeta admin-lista">
+    <h2>Cuentas registradas</h2>
+    <form method="get" class="filtro-rol">
+        <label for="rol">Rol</label>
+        <select id="rol" name="rol" onchange="this.form.submit()">
+            <option value="">Todos</option>
+            {% for valor, nombre in roles %}
+                <option value="{{ valor }}"{% if valor == rol %} selected{% endif %}>{{ nombre }}</option>
+            {% endfor %}
+        </select>
+        <noscript><button type="submit">Filtrar</button></noscript>
+    </form>
+
+    <div class="tabla-scroll">
+    <table class="tabla-historial">
+        <thead>
+            <tr><th>Correo</th><th>Rol</th><th>Registro</th><th>Último ingreso</th></tr>
+        </thead>
+        <tbody>
+        {% for c in pagina %}
+            <tr>
+                <td><a href="{% url 'admin_cuenta' c.pk %}">{{ c.email }}</a>{% if c.is_superuser %} <small>(superusuario)</small>{% endif %}</td>
+                <td>{{ c.get_rol_display }}</td>
+                <td>{{ c.date_joined|date:"d-m-Y" }}</td>
+                <td>{{ c.last_login|date:"d-m-Y"|default:"—" }}</td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="4">No hay cuentas.</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    {% if pagina.has_other_pages %}
+        <p class="paginacion">
+            {% if pagina.has_previous %}<a href="?pagina={{ pagina.previous_page_number }}{% if rol %}&rol={{ rol }}{% endif %}">← Anterior</a>{% endif %}
+            Página {{ pagina.number }} de {{ pagina.paginator.num_pages }}
+            {% if pagina.has_next %}<a href="?pagina={{ pagina.next_page_number }}{% if rol %}&rol={{ rol }}{% endif %}">Siguiente →</a>{% endif %}
+        </p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block titulo %}Eliminar cuenta{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Eliminar cuenta</h1>
+    <p>Vas a eliminar la cuenta <strong>{{ cuenta.email }}</strong> ({{ cuenta.get_rol_display }}).</p>
+    <ul>
+        <li>La persona ya no podrá ingresar con su RUT.</li>
+        {% if tiene_datos %}
+            <li>Se eliminarán <strong>todas sus respuestas</strong> de encuesta, de todas las rondas, y su evaluación de la plataforma.</li>
+        {% endif %}
+        <li>Esta acción <strong>no se puede deshacer</strong>.</li>
+    </ul>
+
+    {% if error %}<div class="errores">{{ error }}</div>{% endif %}
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <p>
+            <label>
+                <input type="checkbox" name="entiendo">
+                Entiendo que esto no se puede deshacer.
+            </label>
+        </p>
+        <button type="submit" class="boton-peligro">Eliminar cuenta</button>
+    </form>
+
+    <div class="enlaces"><a href="{% url 'admin_cuenta' cuenta.pk %}">No, volver a la cuenta</a></div>
+</div>
+{% endblock %}
