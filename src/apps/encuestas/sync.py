@@ -28,6 +28,7 @@ from .forms import (
     SegmentoEMPAForm,
     TareasCuidadoForm,
 )
+from .plazo import disponible_desde, encuesta_bloqueada, mensaje_espera
 from .models import (
     ActividadFisica,
     ConocimientoSistema,
@@ -212,6 +213,13 @@ def sincronizar_payload(usuario, payload):
     if not isinstance(payload, dict):
         raise ErrorSincronizacion("El cuerpo debe ser un objeto JSON.")
 
+    if not usuario.es_profesional:
+        # Fase 31: dentro del plazo entre rondas la usuaria no puede guardar
+        # (el personal de salud no tiene esta restricción).
+        propia = identificacion_de_usuaria(usuario)
+        if encuesta_bloqueada(propia):
+            raise ErrorSincronizacion(mensaje_espera(propia))
+
     resultados = []
     ident, res_ident = _resolver_identificacion(usuario, payload.get('identificacion'))
     resultados.append(res_ident)
@@ -232,10 +240,13 @@ def sincronizar_payload(usuario, payload):
 
     if ok and payload.get('finalizar'):
         ident.ronda_actual += 1
-        ident.save(update_fields=['ronda_actual'])
+        ident.ultima_finalizacion_en = timezone.now()
+        ident.save(update_fields=['ronda_actual', 'ultima_finalizacion_en'])
 
+    fecha = disponible_desde(ident)
     return {'ok': ok, 'resultados': resultados, 'ronda_actual': ident.ronda_actual,
-            'paciente_id': ident.id}
+            'paciente_id': ident.id,
+            'disponible_desde': fecha.isoformat() if fecha else None}
 
 
 def _serializar(valor):
@@ -265,9 +276,12 @@ def estado_ronda(ident):
         obj = modelo.objects.filter(participante=ident, ronda=ident.ronda_actual).first()
         if obj is not None:
             secciones[tipo] = {'uuid_local': str(obj.uuid_local), 'datos': _datos_de(obj, form_cls)}
+    fecha = disponible_desde(ident)
     return {
         'paciente_id': ident.id,
         'ronda_actual': ident.ronda_actual,
+        'disponible_desde': fecha.isoformat() if fecha else None,
+        'bloqueada': encuesta_bloqueada(ident),
         'identificacion': {
             'uuid_local': str(ident.uuid_local) if ident.uuid_local else None,
             'datos': _datos_de(ident, IdentificacionForm),

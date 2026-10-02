@@ -11,6 +11,7 @@ from django.shortcuts import redirect, render
 from .forms import EvaluacionSatisfaccionForm
 from .historial import construir_historial
 from .models import EvaluacionSatisfaccion, Identificacion
+from .plazo import encuesta_bloqueada, mensaje_espera
 
 
 def _puede_evaluar(paciente):
@@ -32,6 +33,7 @@ def mi_tablero(request):
         'puede_evaluar': _puede_evaluar(paciente),
         'evaluacion': EvaluacionSatisfaccion.objects.filter(participante=paciente).first()
         if paciente else None,
+        'espera_encuesta': mensaje_espera(paciente) if encuesta_bloqueada(paciente) else None,
     })
 
 

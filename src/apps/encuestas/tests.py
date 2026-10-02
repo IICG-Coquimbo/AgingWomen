@@ -1,5 +1,5 @@
 import json
-from datetime import date
+from datetime import date, timedelta
 from uuid import uuid4
 
 from django.test import TestCase
@@ -23,6 +23,11 @@ from .models import (
 )
 from .esquema import construir_esquema
 from .sync import ErrorSincronizacion, sincronizar_payload
+
+
+def _pasar_plazo():
+    """Simula que ya pasaron los 15 días desde la última finalización (Fase 31)."""
+    Identificacion.objects.update(ultima_finalizacion_en=timezone.now() - timedelta(days=16))
 
 
 class SegmentoEMPAFormRolTest(TestCase):
@@ -311,6 +316,7 @@ class HistoricoRondaTest(TestCase):
             'secciones': [self._payload_mrs(pregunta_1=1)],
             'finalizar': True,
         })
+        _pasar_plazo()
 
         # Ronda 2 (Fase 14: el cliente parte con un uuid_local nuevo).
         res = sincronizar_payload(self.usuaria, {
@@ -334,6 +340,7 @@ class HistoricoRondaTest(TestCase):
             'secciones': [self._payload_mrs(uuid_mrs, pregunta_1=1)],
             'finalizar': True,
         })
+        _pasar_plazo()
 
         res = sincronizar_payload(self.usuaria, {
             'identificacion': self._payload_ident(),
@@ -1352,6 +1359,7 @@ class RetiroDelEstudioTest(TestCase):
 
     def test_retiro_borra_todo_y_reinicia_el_consentimiento(self):
         participante = self._ronda(self.usuaria, finalizar=True)
+        _pasar_plazo()
         self._ronda(self.usuaria, finalizar=False)  # ronda 2 en curso
         EvaluacionSatisfaccion.objects.create(
             participante=participante, facilidad_uso=4, fatiga_mental=1,
@@ -1515,3 +1523,103 @@ class EncuestaPorProfesionalTest(TestCase):
         # Si el RUT ya tiene ficha, va directo a completar esa encuesta.
         resp = self.client.post('/profesional/paciente/nueva/', {'rut': '11.111.111-1'})
         self.assertRedirects(resp, url)
+
+
+class PlazoEntreRondasTest(TestCase):
+    """Fase 31: la usuaria responde una ronda nueva recién 15 días después de finalizar."""
+
+    def setUp(self):
+        self.usuaria = Usuario.objects.create_user(
+            rut='11.111.111-1', email='u@e.cl', password='clave-usuaria-123')
+        self.usuaria.consentimiento_aceptado_en = timezone.now()
+        self.usuaria.save(update_fields=['consentimiento_aceptado_en'])
+        self.prof = Usuario.objects.create_user(
+            rut='22.222.222-2', email='p@e.cl', rol=Usuario.Rol.PROFESIONAL_SALUD)
+        self.ident_datos = {
+            'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
+            'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
+            'comuna': 'Santiago', 'region_residencia': '13',
+        }
+
+    def _guardar(self, usuario, finalizar=False, **ident_extra):
+        return sincronizar_payload(usuario, {
+            'identificacion': dict({'uuid_local': str(uuid4()), 'datos': self.ident_datos}, **ident_extra),
+            'secciones': [{'tipo': 'mrs', 'uuid_local': str(uuid4()), 'parcial': True,
+                           'datos': {'pregunta_1': 2}}],
+            'finalizar': finalizar,
+        })
+
+    def test_sin_restriccion_antes_del_primer_finalizar(self):
+        self.assertTrue(self._guardar(self.usuaria)['ok'])
+        self.assertTrue(self._guardar(self.usuaria)['ok'])
+        self.client.force_login(self.usuaria)
+        self.assertEqual(self.client.get('/encuesta/').status_code, 200)
+
+    def test_finalizar_registra_fecha_y_bloquea_15_dias(self):
+        res = self._guardar(self.usuaria, finalizar=True)
+        disponible = (timezone.localdate() + timedelta(days=15)).isoformat()
+        self.assertEqual(res['disponible_desde'], disponible)
+        self.assertIsNotNone(Identificacion.objects.get().ultima_finalizacion_en)
+
+        with self.assertRaises(ErrorSincronizacion):
+            self._guardar(self.usuaria)
+
+        self.client.force_login(self.usuaria)
+        resp = self.client.get('/encuesta/')
+        self.assertRedirects(resp, '/')
+        inicio = self.client.get('/')
+        self.assertContains(inicio, 'menu-deshabilitado')
+        self.assertContains(inicio, 'Podrás volver a responder')
+        self.assertNotContains(inicio, 'href="/encuesta/"')
+        self.assertTrue(self.client.get('/api/ronda-actual/').json()['bloqueada'])
+        self.assertContains(self.client.get('/mi-tablero/'), 'Podrás volver a responder')
+
+    def test_desde_el_dia_15_puede_responder(self):
+        self._guardar(self.usuaria, finalizar=True)
+        Identificacion.objects.update(ultima_finalizacion_en=timezone.now() - timedelta(days=15))
+        self.assertTrue(self._guardar(self.usuaria)['ok'])
+        self.client.force_login(self.usuaria)
+        self.assertEqual(self.client.get('/encuesta/').status_code, 200)
+        self.assertNotContains(self.client.get('/'), 'menu-deshabilitado')
+
+    def test_profesional_sin_restriccion_y_su_finalizar_cuenta_para_ella(self):
+        self._guardar(self.usuaria)
+        paciente = Identificacion.objects.get()
+        payload_prof = {'identificacion': {'paciente_id': paciente.pk, 'datos': {}},
+                        'secciones': [], 'finalizar': True}
+        self.assertTrue(sincronizar_payload(self.prof, payload_prof)['ok'])
+        # El profesional puede seguir (incluso finalizar otra vez) sin esperar.
+        self.assertTrue(sincronizar_payload(self.prof, payload_prof)['ok'])
+        self.client.force_login(self.prof)
+        datos = self.client.get(f'/api/ronda-actual/?paciente={paciente.pk}').json()
+        self.assertFalse(datos['bloqueada'])
+        # Para la usuaria, el plazo corre desde que finalizó el profesional.
+        with self.assertRaises(ErrorSincronizacion):
+            self._guardar(self.usuaria)
+
+
+class MigracionUltimaFinalizacionTest(TestCase):
+    """Fase 31: la migración rellena la fecha de las rondas cerradas antes del cambio."""
+
+    def test_rellena_desde_el_ultimo_guardado_de_la_ronda_cerrada(self):
+        import importlib
+        from django.apps import apps as registro
+        migracion = importlib.import_module('apps.encuestas.migrations.0019_ultima_finalizacion')
+
+        usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
+        sincronizar_payload(usuaria, {
+            'identificacion': {'uuid_local': str(uuid4()), 'datos': {
+                'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
+                'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
+                'comuna': 'Santiago', 'region_residencia': '13',
+            }},
+            'secciones': [{'tipo': 'mrs', 'uuid_local': str(uuid4()), 'parcial': True,
+                           'datos': {'pregunta_1': 2}}],
+            'finalizar': True,
+        })
+        hace_20_dias = timezone.now() - timedelta(days=20)
+        MRS.objects.update(sincronizado_en=hace_20_dias)
+        Identificacion.objects.update(ultima_finalizacion_en=None)
+
+        migracion.rellenar_ultima_finalizacion(registro, None)
+        self.assertEqual(Identificacion.objects.get().ultima_finalizacion_en, hace_20_dias)

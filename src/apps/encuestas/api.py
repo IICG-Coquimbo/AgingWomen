@@ -45,9 +45,12 @@ def ronda_actual(request):
             return JsonResponse({'error': "Indica la paciente con '?paciente=<id>'."}, status=400)
         ident = identificacion_de_usuaria(request.user)
         if ident is None:
-            return JsonResponse({'paciente_id': None, 'ronda_actual': 1,
-                                 'identificacion': None, 'secciones': {}})
-    return JsonResponse(estado_ronda(ident))
+            return JsonResponse({'paciente_id': None, 'ronda_actual': 1, 'disponible_desde': None,
+                                 'bloqueada': False, 'identificacion': None, 'secciones': {}})
+    estado = estado_ronda(ident)
+    if request.user.es_profesional:
+        estado['bloqueada'] = False  # Fase 31: sin plazo para el personal de salud
+    return JsonResponse(estado)
 
 
 @login_required

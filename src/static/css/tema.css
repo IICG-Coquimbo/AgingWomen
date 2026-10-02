@@ -665,3 +665,32 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
 .resumen-datos { display: grid; grid-template-columns: minmax(0, 1fr); gap: .1rem; margin: 1rem 0; }
 .resumen-datos dt { font-weight: 600; margin-top: .5rem; }
 .resumen-datos dd { margin: 0; color: var(--color-texto-suave); }
+
+/* === Plazo entre rondas (Fase 31) === */
+.menu-deshabilitado {
+    background: var(--color-borde);
+    border-color: var(--color-borde);
+    cursor: not-allowed;
+}
+.menu-deshabilitado:hover { background: var(--color-borde); border-color: var(--color-borde); }
+.menu-deshabilitado strong { color: var(--color-texto-suave); }
+.burbuja-espera {
+    position: relative;
+    display: block;
+    margin-top: .6rem;
+    padding: .5rem .75rem;
+    background: var(--color-primario);
+    color: #fff !important;
+    border-radius: 12px;
+    font-size: .85rem;
+    font-weight: 600;
+}
+.burbuja-espera::before {
+    content: "";
+    position: absolute;
+    left: 1.25rem;
+    top: -7px;
+    border-width: 0 7px 7px;
+    border-style: solid;
+    border-color: transparent transparent var(--color-primario);
+}

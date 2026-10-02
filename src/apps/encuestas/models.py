@@ -326,6 +326,10 @@ class Identificacion(SegmentoSincronizable):
             "se sobrescriben al reaplicar la encuesta."
         ),
     )
+    ultima_finalizacion_en = models.DateTimeField(
+        null=True, blank=True, editable=False,
+        help_text="Cuándo se finalizó la última ronda (Fase 31: plazo de 15 días entre rondas).",
+    )
 
     def __str__(self):
         return f"Participante {self.id} - Origen: {self.get_origen_procedencia_display()}"

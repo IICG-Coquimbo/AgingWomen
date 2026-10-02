@@ -51,6 +51,20 @@
     var preguntarIdentificacion = false;
     var sucio = false;   // hay respuestas locales sin confirmar por el servidor
     var ronda = null;    // ronda a la que pertenecen las respuestas locales
+    // Fase 31: fecha (AAAA-MM-DD) desde la que la usuaria puede responder otra
+    // ronda. Se guarda localmente para respetar el plazo también sin conexión.
+    var disponibleDesde = null;
+
+    function hoyISO() {
+        var d = new Date();
+        return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' +
+            String(d.getDate()).padStart(2, '0');
+    }
+    function fechaLegible(iso) { return iso.split('-').reverse().join('-'); }
+    function enEspera() { return !MODO_PROF && !!disponibleDesde && hoyISO() < disponibleDesde; }
+    function textoEspera() {
+        return 'Podrás volver a responder la encuesta a partir del ' + fechaLegible(disponibleDesde) + '.';
+    }
 
     // Nombres cortos para los botones de navegación (los títulos completos de
     // algunas secciones son demasiado largos para un botón).
@@ -135,7 +149,7 @@
         Promise.all([
             idbGet('esquema'), idbGet('respuestas'), idbGet('uuids'), idbGet('bienvenida'),
             idbGet('envio_final'), idbGet('usuario'), idbGet('sucio'), idbGet('pendiente_envio'),
-            idbGet('ronda'),
+            idbGet('ronda'), idbGet('disponible_desde'),
         ])
             .then(function (vals) {
                 esquema = vals[0];
@@ -146,6 +160,7 @@
                 var usuarioGuardado = vals[5];
                 sucio = !!vals[6] || !!vals[7];
                 ronda = vals[8] || null;
+                disponibleDesde = vals[9] || null;
 
                 var cambioDeUsuario = usuarioGuardado && usuarioGuardado !== usuarioActual;
                 var promesa = cambioDeUsuario ? limpiarEstadoLocal() : Promise.resolve();
@@ -164,6 +179,12 @@
             .then(function () {
                 if (MODO_PROF && pacienteId && !respuestas.identificacion) {
                     throw new Error('sin-datos-paciente');
+                }
+                if (enEspera()) {
+                    // Fase 31: dentro del plazo entre rondas no se muestra la encuesta.
+                    cont.innerHTML = '<div class="tarjeta"><p class="burbuja-espera">' +
+                        esc(textoEspera()) + '</p><p class="enlaces"><a href="/">Volver al menú</a></p></div>';
+                    return;
                 }
                 var ident = esquema.secciones.filter(function (s) {
                     return s.tipo === 'identificacion';
@@ -210,6 +231,10 @@
     }
 
     function reconciliar(srv) {
+        if (!MODO_PROF) {
+            disponibleDesde = srv.disponible_desde || null;
+            idbSet('disponible_desde', disponibleDesde);
+        }
         if (!srv.identificacion) { return; }  // la usuaria aún no tiene ficha
         identBloqueada = MODO_PROF && !!srv.identificacion.bloqueada;
 
@@ -219,8 +244,10 @@
         if (cambioDeRonda) {
             iniciarRondaNueva();
             sucio = false;
+            envioFinalPendiente = false;  // esa ronda ya quedó cerrada en el servidor
             idbSet('sucio', false);
             idbSet('pendiente_envio', false);
+            idbSet('envio_final', false);
         }
         var reemplazar = !sucio;  // sin cambios pendientes, manda el servidor
 
@@ -998,8 +1025,11 @@
                                 'y su ficha ya muestra estas respuestas.', false, false,
                                 urlFicha || ('/profesional/paciente/' + pacienteId + '/'));
                         } else {
+                            disponibleDesde = res.cuerpo.disponible_desde || null;
+                            idbSet('disponible_desde', disponibleDesde);
                             mensajeFinal('¡Encuesta enviada! Gracias por participar. Puedes volver a ' +
-                                'responderla más adelante para registrar cómo han cambiado tus síntomas.',
+                                'responderla más adelante para registrar cómo han cambiado tus síntomas.' +
+                                (disponibleDesde ? ' ' + textoEspera() : ''),
                                 false, true);
                         }
                     } else {

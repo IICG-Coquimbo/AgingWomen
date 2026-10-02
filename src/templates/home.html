@@ -23,10 +23,17 @@
             </a>
         {% endif %}
         {% if not user.es_profesional %}
-            <a class="menu-item menu-principal" href="{% url 'encuesta' %}">
-                <strong>Responder la encuesta</strong>
-                <span>Tus respuestas se guardan a medida que avanzas.</span>
-            </a>
+            {% if espera_encuesta %}
+                <div class="menu-item menu-deshabilitado" aria-disabled="true">
+                    <strong>Responder la encuesta</strong>
+                    <span class="burbuja-espera" role="note">{{ espera_encuesta }}</span>
+                </div>
+            {% else %}
+                <a class="menu-item menu-principal" href="{% url 'encuesta' %}">
+                    <strong>Responder la encuesta</strong>
+                    <span>Tus respuestas se guardan a medida que avanzas.</span>
+                </a>
+            {% endif %}
             <a class="menu-item" href="{% url 'mi_tablero' %}">
                 <strong>Mi tablero</strong>
                 <span>Tus datos y el historial de tus respuestas.</span>
