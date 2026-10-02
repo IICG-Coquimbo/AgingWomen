@@ -1,3 +1,4 @@
+import io
 import re
 from datetime import timedelta
 
@@ -460,3 +461,38 @@ class NavegacionVolverTest(TestCase):
         resp = self.client.get(reverse('admin_cuenta', args=[self.admin.pk]))
         self.assertContains(resp, '← Volver a administración')
         self.assertNotContains(resp, '← Volver al menú')
+
+
+class CrearSuperusuarioTest(TestCase):
+    """createsuperuser valida el RUT y detecta cuentas ya existentes por su hash."""
+
+    def _crear(self, rut, email='admin@example.com'):
+        from unittest import mock
+        from django.core.management import call_command
+        with mock.patch.dict('os.environ', {'DJANGO_SUPERUSER_PASSWORD': 'clave-admin-123'}):
+            call_command('createsuperuser', interactive=False, rut_hash=rut, email=email,
+                         stdout=io.StringIO(), stderr=io.StringIO())
+
+    def test_rut_valido_crea_superusuario_con_rol_profesional(self):
+        self._crear('12.345.678-5')
+        admin = Usuario.objects.get(rut_hash=hash_rut('12.345.678-5'))
+        self.assertTrue(admin.is_superuser)
+        self.assertTrue(admin.es_profesional)
+
+    def test_rut_con_digito_verificador_incorrecto_se_rechaza(self):
+        from django.core.management.base import CommandError
+        with self.assertRaisesMessage(CommandError, 'RUT inválido'):
+            self._crear('12.345.678-9')
+        self.assertFalse(Usuario.objects.exists())
+
+    def test_rut_ya_registrado_se_rechaza(self):
+        from django.core.management.base import CommandError
+        Usuario.objects.create_user(rut='12.345.678-5', email='usuaria@example.com')
+        with self.assertRaisesMessage(CommandError, 'ya existe una cuenta con ese RUT'):
+            self._crear('12345678-5')
+
+    def test_manager_rechaza_rut_invalido(self):
+        with self.assertRaises(ValueError):
+            Usuario.objects.create_superuser(
+                rut_hash='12.345.678-9', email='admin@example.com', password='clave-admin-123',
+            )
