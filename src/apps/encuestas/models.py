@@ -372,6 +372,15 @@ class MRS(SegmentoDeRonda):
         4: 'Es muy molesto y afecta considerablemente tu vida cotidiana.',
     }
 
+    # Severidad según el puntaje total (cortes habituales del MRS; pendiente de
+    # confirmación de la profesora). Cada tupla: (puntaje máximo, categoría).
+    SEVERIDAD_TOTAL = (
+        (4, 'Sin síntomas o muy leves'),
+        (8, 'Leve'),
+        (15, 'Moderada'),
+        (44, 'Severa'),
+    )
+
     # --- RELACIÓN Y FECHA ---
     participante = models.ForeignKey(
         Identificacion,

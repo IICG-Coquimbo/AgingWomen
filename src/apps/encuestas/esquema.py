@@ -352,6 +352,7 @@ def construir_esquema(rol):
     return {
         'secciones': secciones,
         'mrs_niveles': {str(k): v for k, v in MRS.DESCRIPCION_NIVELES.items()},
+        'mrs_severidad': [{'hasta': h, 'texto': t} for h, t in MRS.SEVERIDAD_TOTAL],
         'comunas_por_region': COMUNAS_POR_REGION,
         'edad_minima': EDAD_MINIMA,
         'edad_maxima': EDAD_MAXIMA,

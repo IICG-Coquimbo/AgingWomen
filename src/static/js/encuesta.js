@@ -548,6 +548,9 @@
             conectarEventos(seccion);
             return;
         }
+        if (seccion.tipo === 'mrs') {
+            html += burbujaPuntajeMrs(seccion);
+        }
         if (seccion.tipo === 'identificacion' && identBloqueada) {
             html += renderIdentificacionBloqueada(seccion);
         } else {
@@ -838,6 +841,34 @@
         } else {
             actualizarProgreso();
         }
+    }
+
+    // Burbuja con el puntaje total del MRS (suma de los 11 ítems, 0 a 44). Se
+    // redibuja con cada respuesta porque las preguntas MRS ya llaman a render().
+    // La severidad solo se muestra con los 11 ítems respondidos.
+    function burbujaPuntajeMrs(seccion) {
+        var datos = respuestas[seccion.tipo] || {};
+        var items = seccion.preguntas.filter(function (p) { return p.escala === 'mrs'; });
+        var total = 0, respondidas = 0;
+        items.forEach(function (p) {
+            var v = datos[p.nombre];
+            if (v !== undefined && v !== null && v !== '') {
+                total += Number(v);
+                respondidas++;
+            }
+        });
+        var detalle;
+        if (respondidas < items.length) {
+            detalle = respondidas + ' de ' + items.length + ' respondidas';
+        } else {
+            var nivel = (esquema.mrs_severidad || []).filter(function (s) {
+                return total <= s.hasta;
+            })[0];
+            detalle = nivel ? 'Severidad: ' + nivel.texto : '';
+        }
+        return '<div class="burbuja-mrs" role="status" aria-live="polite">' +
+            '<strong>Puntaje MRS: ' + total + ' / ' + (items.length * 4) + '</strong>' +
+            (detalle ? '<span>' + esc(detalle) + '</span>' : '') + '</div>';
     }
 
     function esEscalaCalor(seccion, campo) {

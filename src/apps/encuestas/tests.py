@@ -736,6 +736,11 @@ class EsquemaTest(TestCase):
         self.assertEqual(len(esquema['mrs_niveles']), 5)
         self.assertEqual(esquema['mrs_niveles']['0'], 'No tienes ese síntoma.')
 
+    def test_incluye_cortes_de_severidad_mrs(self):
+        severidad = self._esquema(self.usuaria)['mrs_severidad']
+        self.assertEqual([s['hasta'] for s in severidad], [4, 8, 15, 44])
+        self.assertEqual(severidad[-1]['texto'], 'Severa')
+
     def test_texto_de_pregunta_usa_el_help_text(self):
         mrs = self._seccion(self._esquema(self.usuaria), 'mrs')
         self.assertIn('Bochornos', self._pregunta(mrs, 'pregunta_1')['texto'])
