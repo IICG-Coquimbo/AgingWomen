@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block titulo %}Cuenta{% endblock %}
+
+{% block volver %}<a href="{% url 'admin_panel' %}">← Volver a administración</a>{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Cuenta</h1>
+    <table class="tabla-historial">
+        <tr><th>Correo</th><td>{{ cuenta.email }}</td></tr>
+        <tr><th>Rol</th><td>{{ cuenta.get_rol_display }}{% if cuenta.is_superuser %} (superusuario){% endif %}</td></tr>
+        <tr><th>Registro</th><td>{{ cuenta.date_joined|date:"d-m-Y H:i" }}</td></tr>
+        <tr><th>Último ingreso</th><td>{{ cuenta.last_login|date:"d-m-Y H:i"|default:"Nunca" }}</td></tr>
+        <tr><th>Consentimiento</th><td>{% if cuenta.consentimiento_aceptado_en %}Aceptado el {{ cuenta.consentimiento_aceptado_en|date:"d-m-Y" }}{% else %}No aceptado{% endif %}</td></tr>
+        <tr><th>Respuestas de encuesta</th><td>{% if identificacion %}Sí — {{ rondas_finalizadas }} ronda(s) finalizada(s){% else %}No{% endif %}</td></tr>
+    </table>
+
+    {% if protegida %}
+        <p class="ayuda">Esta es tu propia cuenta o la de otro superusuario: no se puede cambiar su rol ni eliminarla desde aquí.</p>
+    {% else %}
+        <div class="nav admin-acciones">
+            <form method="post" action="{% url 'admin_cambiar_rol' cuenta.pk %}">
+                {% csrf_token %}
+                {% if cuenta.es_profesional %}
+                    <input type="hidden" name="rol" value="USUARIA">
+                    <button type="submit" class="boton-guardar">Revocar a usuaria común</button>
+                {% else %}
+                    <input type="hidden" name="rol" value="PROFESIONAL">
+                    <button type="submit">Promover a personal de salud</button>
+                {% endif %}
+            </form>
+            <a class="boton boton-peligro" href="{% url 'admin_eliminar' cuenta.pk %}">Eliminar cuenta</a>
+        </div>
+    {% endif %}
+
+    <div class="enlaces"><a href="{% url 'admin_panel' %}">← Volver a administración</a></div>
+</div>
+{% endblock %}

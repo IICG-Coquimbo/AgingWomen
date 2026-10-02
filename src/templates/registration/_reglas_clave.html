@@ -1,10 +1,13 @@
-{# Texto informativo reutilizable sobre los requisitos de la contraseña. #}
-<div class="info">
+{# Requisitos de la contraseña (Fase 28): cada regla se marca en verde mientras se escribe #}
+{# (script en base.html). Es solo una ayuda: la validación real la hace el servidor. #}
+{# Parámetro opcional: correo (para revisar que la clave no se parezca a él). #}
+<div class="reglas-clave" data-reglas-clave{% if correo %} data-correo="{{ correo }}"{% endif %}>
     <strong>Tu contraseña debe:</strong>
     <ul>
-        <li>tener al menos 8 caracteres;</li>
-        <li>no ser solo números;</li>
-        <li>no ser una contraseña demasiado común (como "12345678" o "contraseña");</li>
-        <li>no parecerse a tu correo electrónico (por ejemplo, no uses la parte antes de la "@").</li>
+        <li data-regla="largo">tener al menos 8 caracteres</li>
+        <li data-regla="no-numerica">no ser solo números</li>
+        <li data-regla="correo">no parecerse a tu correo electrónico (no uses la parte antes de la "@")</li>
+        <li data-regla="coinciden">coincidir en los dos campos</li>
+        <li class="regla-servidor">no ser demasiado común (como "12345678" o "contraseña") — se revisa al enviar</li>
     </ul>
 </div>

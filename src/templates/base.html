@@ -22,6 +22,12 @@
         {% endif %}
     </header>
     <main>
+        {% if user.is_authenticated and request.path != '/' %}
+            {# Volver: por defecto al menú; las pantallas de segundo nivel lo redefinen. #}
+            <nav class="volver" aria-label="Volver">
+                {% block volver %}<a href="{% url 'home' %}">← Volver al menú</a>{% endblock %}
+            </nav>
+        {% endif %}
         {% for mensaje in messages %}
             <div class="mensaje mensaje-{{ mensaje.tags }}" role="status">{{ mensaje }}</div>
         {% endfor %}
@@ -58,6 +64,43 @@
                     btn.textContent = oculta ? 'Ocultar' : 'Ver';
                 });
                 input.insertAdjacentElement('afterend', btn);
+            });
+
+            // --- Reglas de la contraseña en vivo (Fase 28): solo ayuda visual,
+            //     la validación real la hace el servidor al enviar.
+            document.querySelectorAll('[data-reglas-clave]').forEach(function (caja) {
+                var form = caja.parentNode.querySelector('form') || document;
+                var clave = form.querySelector('input[name="password1"], input[name="new_password1"]');
+                var repetir = form.querySelector('input[name="password2"], input[name="new_password2"]');
+                var campoCorreo = form.querySelector('input[name="email"]');
+                if (!clave) { return; }
+
+                function marcar(regla, estado) {
+                    var li = caja.querySelector('[data-regla="' + regla + '"]');
+                    if (!li) { return; }
+                    if (estado === null) { li.hidden = true; return; }
+                    li.hidden = false;
+                    li.classList.toggle('ok', estado);
+                }
+                function revisar() {
+                    var v = clave.value;
+                    var correo = (campoCorreo ? campoCorreo.value : caja.dataset.correo || '').toLowerCase();
+                    var local = correo.split('@')[0];
+                    marcar('largo', v.length >= 8);
+                    marcar('no-numerica', v.length > 0 && !/^\d+$/.test(v));
+                    if (!campoCorreo && !caja.dataset.correo) {
+                        marcar('correo', null);
+                    } else {
+                        var parecida = local.length >= 3 && (v.toLowerCase().indexOf(local) !== -1 ||
+                            (v.length >= 3 && local.indexOf(v.toLowerCase()) !== -1));
+                        marcar('correo', v.length > 0 && !parecida);
+                    }
+                    marcar('coinciden', !!(repetir && v && v === repetir.value));
+                }
+                [clave, repetir, campoCorreo].forEach(function (el) {
+                    if (el) { el.addEventListener('input', revisar); }
+                });
+                revisar();
             });
 
             // --- CSRF siempre vigente en formularios que pueden quedar en

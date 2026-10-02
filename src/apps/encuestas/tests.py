@@ -1,5 +1,5 @@
 import json
-from datetime import date
+from datetime import date, timedelta
 from uuid import uuid4
 
 from django.test import TestCase
@@ -23,6 +23,11 @@ from .models import (
 )
 from .esquema import construir_esquema
 from .sync import ErrorSincronizacion, sincronizar_payload
+
+
+def _pasar_plazo():
+    """Simula que ya pasaron los 15 días desde la última finalización (Fase 31)."""
+    Identificacion.objects.update(ultima_finalizacion_en=timezone.now() - timedelta(days=16))
 
 
 class SegmentoEMPAFormRolTest(TestCase):
@@ -311,6 +316,7 @@ class HistoricoRondaTest(TestCase):
             'secciones': [self._payload_mrs(pregunta_1=1)],
             'finalizar': True,
         })
+        _pasar_plazo()
 
         # Ronda 2 (Fase 14: el cliente parte con un uuid_local nuevo).
         res = sincronizar_payload(self.usuaria, {
@@ -334,6 +340,7 @@ class HistoricoRondaTest(TestCase):
             'secciones': [self._payload_mrs(uuid_mrs, pregunta_1=1)],
             'finalizar': True,
         })
+        _pasar_plazo()
 
         res = sincronizar_payload(self.usuaria, {
             'identificacion': self._payload_ident(),
@@ -507,7 +514,7 @@ class EsquemaTest(TestCase):
     def test_contrato_de_esquema(self):
         esquema = self._esquema(self.usuaria)
         self.assertEqual(esquema['edad_minima'], 40)
-        self.assertEqual(esquema['edad_maxima'], 60)
+        self.assertEqual(esquema['edad_maxima'], 65)
         self.assertEqual({d['termino'] for d in esquema['definiciones']},
                          {'Perimenopausia', 'Menopausia'})
         self.assertIn('blanco', esquema['mensaje_omitir'])
@@ -668,10 +675,71 @@ class EsquemaTest(TestCase):
             {'campo': 'en_control_programa_consultorio', 'valor': 'SI'},
         )
 
+    # --- Fase 26 ---
+    def test_prevision_va_primero_y_condiciona_la_seccion(self):
+        cs = self._seccion(self._esquema(self.usuaria), 'conocimiento_sistema')
+        nombres = [p['nombre'] for p in cs['preguntas']]
+        self.assertEqual(nombres[0], 'prevision')
+        self.assertEqual(
+            {o['valor'] for o in cs['preguntas'][0]['opciones']},
+            {'FONASA', 'ISAPRE', 'FFAA', 'NINGUNA', 'NS'})
+        solo_fonasa = {'campo': 'prevision', 'valor': 'FONASA'}
+        for campo in ('ha_consultado_por_sintomas', 'conoce_recursos_disponibles',
+                      'ha_tenido_dificultades_acceso', 'en_control_programa_consultorio'):
+            self.assertEqual(self._pregunta(cs, campo)['mostrar_si'], solo_fonasa, campo)
+        # Las dos preguntas que ve cualquier previsión no tienen condición.
+        for campo in ('sintomas_tomados_en_serio', 'desea_mas_informacion_apoyo'):
+            self.assertIsNone(self._pregunta(cs, campo)['mostrar_si'], campo)
+
+    def test_evaluacion_atencion_va_justo_bajo_su_pregunta(self):
+        cs = self._seccion(self._esquema(self.usuaria), 'conocimiento_sistema')
+        nombres = [p['nombre'] for p in cs['preguntas']]
+        i = nombres.index('ha_consultado_por_sintomas')
+        self.assertEqual(nombres[i + 1], 'evaluacion_atencion_recibida')
+
+    def test_principales_dificultades_es_seleccion_multiple_con_otra(self):
+        cs = self._seccion(self._esquema(self.usuaria), 'conocimiento_sistema')
+        p = self._pregunta(cs, 'principales_dificultades')
+        self.assertEqual(p['tipo_campo'], 'multiseleccion')
+        self.assertEqual([o['valor'] for o in p['opciones']], [
+            'Falta de información', 'Dificultad para obtener horas', 'Costos',
+            'Falta de especialistas', 'No saber dónde consultar',
+            'Minimización de síntomas', 'Horarios incompatibles', 'Otra'])
+        self.assertTrue(p['texto'].startswith('¿Cuáles han sido las principales dificultades?'))
+        self.assertNotIn('Selección múltiple', p['texto'])
+        otra = self._pregunta(cs, 'principales_dificultades_otra')
+        self.assertEqual(otra['mostrar_si'], {'campo': 'principales_dificultades',
+                                              'operador': 'contiene', 'valor': 'Otra'})
+
+    def test_tareas_cuidado_no_oculta_toda_la_seccion(self):
+        tc = self._seccion(self._esquema(self.usuaria), 'tareas_cuidado')
+        self.assertEqual(self._pregunta(tc, 'sobrecarga_fisica_emocional')['mostrar_si'],
+                         {'campo': 'cuida_otras_personas', 'valor': 'SI'})
+
+    def test_menopausia_oculta_metodo_anticonceptivo(self):
+        comp = self._seccion(self._esquema(self.usuaria), 'mrs_complementario')
+        self.assertEqual(
+            self._pregunta(comp, 'usa_metodo_anticonceptivo')['mostrar_si'],
+            {'campo': 'fecha_ultima_menstruacion', 'operador': 'meses_desde_lt', 'valor': 12},
+        )
+        self.assertIn('15/03/2024', self._pregunta(comp, 'fecha_ultima_menstruacion')['nota'])
+
+    def test_aviso_ultimo_mes_en_habitos_y_genero_femenino_por_defecto(self):
+        esquema = self._esquema(self.usuaria)
+        self.assertIn('último mes', self._seccion(esquema, 'habitos_de_vida')['aviso'])
+        ident = self._seccion(esquema, 'identificacion')
+        self.assertEqual(self._pregunta(ident, 'genero')['inicial'], 'F')
+        self.assertIsNone(self._pregunta(ident, 'nivel_educacion')['inicial'])
+
     def test_incluye_descripciones_de_niveles_mrs(self):
         esquema = self._esquema(self.usuaria)
         self.assertEqual(len(esquema['mrs_niveles']), 5)
         self.assertEqual(esquema['mrs_niveles']['0'], 'No tienes ese síntoma.')
+
+    def test_incluye_cortes_de_severidad_mrs(self):
+        severidad = self._esquema(self.usuaria)['mrs_severidad']
+        self.assertEqual([s['hasta'] for s in severidad], [4, 8, 15, 44])
+        self.assertEqual(severidad[-1]['texto'], 'Severa')
 
     def test_texto_de_pregunta_usa_el_help_text(self):
         mrs = self._seccion(self._esquema(self.usuaria), 'mrs')
@@ -729,20 +797,20 @@ class IdentificacionFormEdadTest(TestCase):
     def test_acepta_40_o_mas(self):
         self.assertTrue(self._form(45).is_valid(), self._form(45).errors)
 
-    def test_limites_del_rango_40_a_60(self):
-        for anios in (40, 60):
+    def test_limites_del_rango_40_a_65(self):
+        for anios in (40, 65):
             form = self._form(anios)
             self.assertTrue(form.is_valid(), (anios, form.errors))
-        for anios in (39, 61):
+        for anios in (39, 66):
             form = self._form(anios)
             self.assertFalse(form.is_valid(), anios)
             self.assertIn('fecha_nacimiento', form.errors)
 
-    def test_rechaza_mayor_de_60_aunque_declare_excepcion(self):
+    def test_rechaza_mayor_de_65_aunque_declare_excepcion(self):
         hoy = date.today()
         for excepcion in ('QUIRURGICA', 'AUSENCIA'):
             form = IdentificacionForm(data=dict(
-                self.base, fecha_nacimiento=f'{hoy.year - 65}-01-01', excepcion_edad=excepcion))
+                self.base, fecha_nacimiento=f'{hoy.year - 70}-01-01', excepcion_edad=excepcion))
             self.assertFalse(form.is_valid(), excepcion)
             self.assertIn('fecha_nacimiento', form.errors)
 
@@ -1296,6 +1364,7 @@ class RetiroDelEstudioTest(TestCase):
 
     def test_retiro_borra_todo_y_reinicia_el_consentimiento(self):
         participante = self._ronda(self.usuaria, finalizar=True)
+        _pasar_plazo()
         self._ronda(self.usuaria, finalizar=False)  # ronda 2 en curso
         EvaluacionSatisfaccion.objects.create(
             participante=participante, facilidad_uso=4, fatiga_mental=1,
@@ -1340,3 +1409,222 @@ class RetiroDelEstudioTest(TestCase):
         self.client.force_login(prof)
         self.assertRedirects(self.client.post('/retirarse/', {'entiendo': 'on'}),
                              '/profesional/buscar/')
+
+
+class EncuestaPorProfesionalTest(TestCase):
+    """Fase 29: el personal de salud completa la encuesta de una paciente."""
+
+    def setUp(self):
+        self.usuaria = Usuario.objects.create_user(
+            rut='11.111.111-1', email='u@e.cl', password='clave-usuaria-123')
+        self.prof = Usuario.objects.create_user(
+            rut='22.222.222-2', email='p@e.cl', password='clave-prof-123',
+            rol=Usuario.Rol.PROFESIONAL_SALUD,
+        )
+        self.ident_datos = {
+            'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
+            'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
+            'comuna': 'Santiago', 'region_residencia': '13',
+        }
+        self.trabajo = {'rendimiento_afectado': 3, 'bienestar_trabajo_afectado': 2,
+                        'frecuencia_ausencias': 1, 'lugar_trabajo_comprensivo': 4}
+        # La usuaria ya respondió Identificación y Trabajo desde su dispositivo.
+        self.uuid_usuaria = str(uuid4())
+        res = sincronizar_payload(self.usuaria, {
+            'identificacion': {'uuid_local': str(uuid4()), 'datos': self.ident_datos},
+            'secciones': [{'tipo': 'trabajo', 'uuid_local': self.uuid_usuaria,
+                           'parcial': False, 'datos': self.trabajo}],
+        })
+        self.assertTrue(res['ok'], res)
+        self.paciente = Identificacion.objects.get()
+
+    def _payload_prof(self, datos_trabajo, **extra):
+        payload = {
+            'identificacion': {'paciente_id': self.paciente.pk, 'datos': {}},
+            'secciones': [{'tipo': 'trabajo', 'uuid_local': str(uuid4()),
+                           'parcial': False, 'datos': datos_trabajo}],
+        }
+        payload.update(extra)
+        return payload
+
+    def test_profesional_corrige_en_la_misma_fila_sin_duplicar(self):
+        res = sincronizar_payload(self.prof, self._payload_prof(dict(self.trabajo, rendimiento_afectado=5)))
+        self.assertTrue(res['ok'], res)
+        self.assertEqual(EvaluacionTrabajo.objects.count(), 1)
+        self.assertEqual(EvaluacionTrabajo.objects.get().rendimiento_afectado, 5)
+        # Devuelve el uuid_local de la fila existente para que el cliente lo adopte.
+        self.assertEqual(res['resultados'][1]['uuid_local'], self.uuid_usuaria)
+
+    def test_profesional_no_modifica_identificacion_de_paciente_con_cuenta(self):
+        payload = self._payload_prof(self.trabajo)
+        payload['identificacion']['datos'] = dict(self.ident_datos, comuna='Providencia')
+        with self.assertRaises(ErrorSincronizacion):
+            sincronizar_payload(self.prof, payload)
+        self.paciente.refresh_from_db()
+        self.assertEqual(self.paciente.comuna, 'Santiago')
+
+    def test_profesional_puede_finalizar_la_ronda(self):
+        res = sincronizar_payload(self.prof, self._payload_prof(self.trabajo, finalizar=True))
+        self.assertTrue(res['ok'], res)
+        self.paciente.refresh_from_db()
+        self.assertEqual(self.paciente.ronda_actual, 2)
+
+    def test_profesional_registra_paciente_nueva_y_luego_ella_la_continua(self):
+        res = sincronizar_payload(self.prof, {
+            'identificacion': {'rut': '7.654.321-6', 'datos': self.ident_datos},
+            'secciones': [],
+        })
+        self.assertTrue(res['ok'], res)
+        nueva = Identificacion.objects.get(pk=res['paciente_id'])
+        self.assertIsNone(nueva.usuario)
+        # Mientras ella no tenga cuenta, el profesional puede corregir su identificación.
+        res = sincronizar_payload(self.prof, {
+            'identificacion': {'paciente_id': nueva.pk, 'datos': dict(self.ident_datos, comuna='Providencia')},
+        })
+        self.assertTrue(res['ok'], res)
+
+        # Ella crea su cuenta con ese RUT y guarda: usa la misma ficha.
+        ella = Usuario.objects.create_user(rut='7.654.321-6', email='ella@e.cl')
+        res = sincronizar_payload(ella, {
+            'identificacion': {'uuid_local': str(uuid4()), 'datos': self.ident_datos},
+        })
+        self.assertTrue(res['ok'], res)
+        nueva.refresh_from_db()
+        self.assertEqual(nueva.usuario, ella)
+        self.assertEqual(Identificacion.objects.count(), 2)
+
+    def test_api_ronda_actual(self):
+        self.client.login(username='11.111.111-1', password='clave-usuaria-123')
+        datos = self.client.get('/api/ronda-actual/').json()
+        self.assertEqual(datos['secciones']['trabajo']['uuid_local'], self.uuid_usuaria)
+        self.assertEqual(datos['secciones']['trabajo']['datos']['rendimiento_afectado'], 3)
+        self.assertEqual(datos['identificacion']['datos']['comuna'], 'Santiago')
+        # Una usuaria no puede pedir los datos de otra paciente.
+        resp = self.client.get(f'/api/ronda-actual/?paciente={self.paciente.pk}')
+        self.assertEqual(resp.status_code, 403)
+
+        self.client.logout()
+        self.client.login(username='22.222.222-2', password='clave-prof-123')
+        datos = self.client.get(f'/api/ronda-actual/?paciente={self.paciente.pk}').json()
+        self.assertTrue(datos['identificacion']['bloqueada'])
+        self.assertEqual(self.client.get('/api/ronda-actual/').status_code, 400)
+
+    def test_vistas_del_profesional(self):
+        url = f'/profesional/paciente/{self.paciente.pk}/encuesta/'
+        self.client.login(username='11.111.111-1', password='clave-usuaria-123')
+        self.assertEqual(self.client.get(url).status_code, 403)
+        self.client.logout()
+
+        self.client.login(username='22.222.222-2', password='clave-prof-123')
+        resp = self.client.get(url)
+        self.assertContains(resp, 'data-modo="profesional"')
+        self.assertContains(resp, f'data-paciente="{self.paciente.pk}"')
+        # La encuesta "propia" no aplica al profesional.
+        self.assertRedirects(self.client.get('/encuesta/'), '/profesional/buscar/')
+        # Paciente nueva: el RUT llega por POST y pasa a la encuesta.
+        resp = self.client.post('/profesional/paciente/nueva/', {'rut': '7.654.321-6'})
+        self.assertContains(resp, 'data-modo="profesional"')
+        self.assertContains(resp, 'data-rut="')
+        # Si el RUT ya tiene ficha, va directo a completar esa encuesta.
+        resp = self.client.post('/profesional/paciente/nueva/', {'rut': '11.111.111-1'})
+        self.assertRedirects(resp, url)
+
+
+class PlazoEntreRondasTest(TestCase):
+    """Fase 31: la usuaria responde una ronda nueva recién 15 días después de finalizar."""
+
+    def setUp(self):
+        self.usuaria = Usuario.objects.create_user(
+            rut='11.111.111-1', email='u@e.cl', password='clave-usuaria-123')
+        self.usuaria.consentimiento_aceptado_en = timezone.now()
+        self.usuaria.save(update_fields=['consentimiento_aceptado_en'])
+        self.prof = Usuario.objects.create_user(
+            rut='22.222.222-2', email='p@e.cl', rol=Usuario.Rol.PROFESIONAL_SALUD)
+        self.ident_datos = {
+            'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
+            'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
+            'comuna': 'Santiago', 'region_residencia': '13',
+        }
+
+    def _guardar(self, usuario, finalizar=False, **ident_extra):
+        return sincronizar_payload(usuario, {
+            'identificacion': dict({'uuid_local': str(uuid4()), 'datos': self.ident_datos}, **ident_extra),
+            'secciones': [{'tipo': 'mrs', 'uuid_local': str(uuid4()), 'parcial': True,
+                           'datos': {'pregunta_1': 2}}],
+            'finalizar': finalizar,
+        })
+
+    def test_sin_restriccion_antes_del_primer_finalizar(self):
+        self.assertTrue(self._guardar(self.usuaria)['ok'])
+        self.assertTrue(self._guardar(self.usuaria)['ok'])
+        self.client.force_login(self.usuaria)
+        self.assertEqual(self.client.get('/encuesta/').status_code, 200)
+
+    def test_finalizar_registra_fecha_y_bloquea_15_dias(self):
+        res = self._guardar(self.usuaria, finalizar=True)
+        disponible = (timezone.localdate() + timedelta(days=15)).isoformat()
+        self.assertEqual(res['disponible_desde'], disponible)
+        self.assertIsNotNone(Identificacion.objects.get().ultima_finalizacion_en)
+
+        with self.assertRaises(ErrorSincronizacion):
+            self._guardar(self.usuaria)
+
+        self.client.force_login(self.usuaria)
+        resp = self.client.get('/encuesta/')
+        self.assertRedirects(resp, '/')
+        inicio = self.client.get('/')
+        self.assertContains(inicio, 'menu-deshabilitado')
+        self.assertContains(inicio, 'Podrás volver a responder')
+        self.assertNotContains(inicio, 'href="/encuesta/"')
+        self.assertTrue(self.client.get('/api/ronda-actual/').json()['bloqueada'])
+        self.assertContains(self.client.get('/mi-tablero/'), 'Podrás volver a responder')
+
+    def test_desde_el_dia_15_puede_responder(self):
+        self._guardar(self.usuaria, finalizar=True)
+        Identificacion.objects.update(ultima_finalizacion_en=timezone.now() - timedelta(days=15))
+        self.assertTrue(self._guardar(self.usuaria)['ok'])
+        self.client.force_login(self.usuaria)
+        self.assertEqual(self.client.get('/encuesta/').status_code, 200)
+        self.assertNotContains(self.client.get('/'), 'menu-deshabilitado')
+
+    def test_profesional_sin_restriccion_y_su_finalizar_cuenta_para_ella(self):
+        self._guardar(self.usuaria)
+        paciente = Identificacion.objects.get()
+        payload_prof = {'identificacion': {'paciente_id': paciente.pk, 'datos': {}},
+                        'secciones': [], 'finalizar': True}
+        self.assertTrue(sincronizar_payload(self.prof, payload_prof)['ok'])
+        # El profesional puede seguir (incluso finalizar otra vez) sin esperar.
+        self.assertTrue(sincronizar_payload(self.prof, payload_prof)['ok'])
+        self.client.force_login(self.prof)
+        datos = self.client.get(f'/api/ronda-actual/?paciente={paciente.pk}').json()
+        self.assertFalse(datos['bloqueada'])
+        # Para la usuaria, el plazo corre desde que finalizó el profesional.
+        with self.assertRaises(ErrorSincronizacion):
+            self._guardar(self.usuaria)
+
+
+class MigracionUltimaFinalizacionTest(TestCase):
+    """Fase 31: la migración rellena la fecha de las rondas cerradas antes del cambio."""
+
+    def test_rellena_desde_el_ultimo_guardado_de_la_ronda_cerrada(self):
+        import importlib
+        from django.apps import apps as registro
+        migracion = importlib.import_module('apps.encuestas.migrations.0019_ultima_finalizacion')
+
+        usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
+        sincronizar_payload(usuaria, {
+            'identificacion': {'uuid_local': str(uuid4()), 'datos': {
+                'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
+                'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
+                'comuna': 'Santiago', 'region_residencia': '13',
+            }},
+            'secciones': [{'tipo': 'mrs', 'uuid_local': str(uuid4()), 'parcial': True,
+                           'datos': {'pregunta_1': 2}}],
+            'finalizar': True,
+        })
+        hace_20_dias = timezone.now() - timedelta(days=20)
+        MRS.objects.update(sincronizado_en=hace_20_dias)
+        Identificacion.objects.update(ultima_finalizacion_en=None)
+
+        migracion.rellenar_ultima_finalizacion(registro, None)
+        self.assertEqual(Identificacion.objects.get().ultima_finalizacion_en, hace_20_dias)

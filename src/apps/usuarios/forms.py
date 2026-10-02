@@ -57,7 +57,6 @@ class RegistroConClaveForm(RegistroUsuariaForm):
         label='Contraseña',
         strip=False,
         widget=forms.PasswordInput(attrs={'autocomplete': 'new-password'}),
-        help_text=password_validation.password_validators_help_text_html(),
     )
     password2 = forms.CharField(
         label='Confirmar contraseña',
@@ -109,6 +108,13 @@ class VerificarCodigoForm(forms.Form):
 
 class LoginRutForm(AuthenticationForm):
     """Login con RUT + contraseña. El backend hashea el RUT y busca la cuenta."""
+
+    # Fase 28: un único mensaje, exista o no el RUT, para no revelar quién
+    # está registrada (la plantilla agrega el enlace a "Crear cuenta").
+    error_messages = {
+        'invalid_login': 'RUT o contraseña incorrectos.',
+        'inactive': 'RUT o contraseña incorrectos.',
+    }
 
     username = forms.CharField(
         label='RUT',

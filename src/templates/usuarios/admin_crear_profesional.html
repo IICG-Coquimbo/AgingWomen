@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block titulo %}Crear cuenta de personal de salud{% endblock %}
+
+{% block volver %}<a href="{% url 'admin_panel' %}">← Volver a administración</a>{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Crear cuenta de personal de salud</h1>
+    <p class="ayuda">
+        Solo se piden RUT y correo. Se enviará al correo una contraseña
+        temporal, que la persona puede cambiar después de ingresar.
+    </p>
+
+    {% if form.non_field_errors %}
+        <div class="errores">{{ form.non_field_errors }}</div>
+    {% endif %}
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {% for campo in form %}
+            <p>
+                {{ campo.label_tag }}
+                {{ campo }}
+                {% for error in campo.errors %}<span class="errores">{{ error }}</span>{% endfor %}
+            </p>
+        {% endfor %}
+        <button type="submit">Crear cuenta</button>
+    </form>
+
+    <div class="enlaces"><a href="{% url 'admin_panel' %}">← Volver a administración</a></div>
+</div>
+{% endblock %}

@@ -18,8 +18,17 @@
     var URL_ESQUEMA = '/api/esquema/';
     var URL_SYNC = '/api/sincronizar/';
     var URL_EVALUACION = '/mi-evaluacion/';
+    var URL_RONDA = '/api/ronda-actual/';
 
     var cont = document.getElementById('encuesta');
+
+    // Fase 29: el personal de salud completa la encuesta de una paciente
+    // existente (data-paciente) o registra una nueva (data-rut).
+    var MODO_PROF = cont.dataset.modo === 'profesional';
+    var pacienteId = cont.dataset.paciente ? parseInt(cont.dataset.paciente, 10) : null;
+    var rutNueva = cont.dataset.rut || '';
+    var urlFicha = cont.dataset.urlFicha || '';
+    var identBloqueada = false;  // la paciente se registró ella: su Identificación es solo lectura
 
     // El CSRF se lee de la cookie en cada envío (no al cargar el script): si
     // esta página quedó cacheada offline, el token embebido en el HTML puede
@@ -36,6 +45,47 @@
     var indice = 0;        // índice dentro de las secciones aplicables
     var bienvenidaOk = false;  // ya pasó la pantalla de definiciones + filtro de edad
     var envioFinalPendiente = false;  // se pulsó "Finalizar" pero aún no se confirma con el servidor
+    // Fase 27: si al abrir la encuesta la Identificación ya estaba completa
+    // (visita posterior), antes de mostrar el formulario se pregunta si desea
+    // modificar algún dato. Se pregunta una sola vez por carga de página.
+    var preguntarIdentificacion = false;
+    var sucio = false;   // hay respuestas locales sin confirmar por el servidor
+    var ronda = null;    // ronda a la que pertenecen las respuestas locales
+    // Fase 31: fecha (AAAA-MM-DD) desde la que la usuaria puede responder otra
+    // ronda. Se guarda localmente para respetar el plazo también sin conexión.
+    var disponibleDesde = null;
+
+    function hoyISO() {
+        var d = new Date();
+        return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' +
+            String(d.getDate()).padStart(2, '0');
+    }
+    function fechaLegible(iso) { return iso.split('-').reverse().join('-'); }
+    function enEspera() { return !MODO_PROF && !!disponibleDesde && hoyISO() < disponibleDesde; }
+    function textoEspera() {
+        return 'Podrás volver a responder la encuesta a partir del ' + fechaLegible(disponibleDesde) + '.';
+    }
+
+    // Nombres cortos para los botones de navegación (los títulos completos de
+    // algunas secciones son demasiado largos para un botón).
+    var TITULOS_CORTOS = {
+        mrs: 'Escala MRS',
+        mrs_complementario: 'Cuestionario complementario',
+        empa: 'EMPA',
+        conocimiento_sistema: 'Conocimiento del sistema',
+    };
+    function tituloCorto(seccion) { return TITULOS_CORTOS[seccion.tipo] || seccion.titulo; }
+
+    // Fase 27: tramos de la barra de progreso (rojo < 34 %, amarillo hasta 66 %, verde desde 67 %).
+    function tramoProgreso(pct) {
+        if (pct === 0) {
+            return { clase: 'bajo', msg: '¡Comencemos! Tus respuestas se guardan a medida que avanzas.' };
+        }
+        if (pct < 34) { return { clase: 'bajo', msg: 'Buen comienzo. Cada sección que completas suma mucho.' }; }
+        if (pct < 67) { return { clase: 'medio', msg: 'Vas a mitad de camino. ¡Sigue así!' }; }
+        if (pct < 100) { return { clase: 'alto', msg: '¡Ya casi terminas! Te quedan pocas secciones.' }; }
+        return { clase: 'alto', msg: '¡Completaste todas las secciones! Ya puedes presionar Finalizar.' };
+    }
 
     // ---------- IndexedDB ----------
     function abrirDB() {
@@ -48,7 +98,12 @@
             req.onerror = function () { reject(req.error); };
         });
     }
+    // En modo profesional cada paciente tiene su propio estado local (no se
+    // mezclan si el profesional atiende a varias, aunque esté sin conexión).
+    function claveIdb(clave) { return MODO_PROF ? usuarioActual + '|' + clave : clave; }
+
     function idbGet(clave) {
+        clave = claveIdb(clave);
         return abrirDB().then(function (db) {
             return new Promise(function (resolve, reject) {
                 var r = db.transaction('estado', 'readonly').objectStore('estado').get(clave);
@@ -58,6 +113,7 @@
         });
     }
     function idbSet(clave, valor) {
+        clave = claveIdb(clave);
         return abrirDB().then(function (db) {
             return new Promise(function (resolve, reject) {
                 var tx = db.transaction('estado', 'readwrite');
@@ -92,7 +148,8 @@
     function iniciar() {
         Promise.all([
             idbGet('esquema'), idbGet('respuestas'), idbGet('uuids'), idbGet('bienvenida'),
-            idbGet('envio_final'), idbGet('usuario'),
+            idbGet('envio_final'), idbGet('usuario'), idbGet('sucio'), idbGet('pendiente_envio'),
+            idbGet('ronda'), idbGet('disponible_desde'),
         ])
             .then(function (vals) {
                 esquema = vals[0];
@@ -101,6 +158,9 @@
                 bienvenidaOk = !!vals[3];
                 envioFinalPendiente = !!vals[4];
                 var usuarioGuardado = vals[5];
+                sucio = !!vals[6] || !!vals[7];
+                ronda = vals[8] || null;
+                disponibleDesde = vals[9] || null;
 
                 var cambioDeUsuario = usuarioGuardado && usuarioGuardado !== usuarioActual;
                 var promesa = cambioDeUsuario ? limpiarEstadoLocal() : Promise.resolve();
@@ -114,17 +174,109 @@
             .then(function () {
                 if (!esquema) { throw new Error('sin-esquema'); }
                 asegurarUuids();
+                return traerRondaActual();
+            })
+            .then(function () {
+                if (MODO_PROF && pacienteId && !respuestas.identificacion) {
+                    throw new Error('sin-datos-paciente');
+                }
+                if (enEspera()) {
+                    // Fase 31: dentro del plazo entre rondas no se muestra la encuesta.
+                    cont.innerHTML = '<div class="tarjeta"><p class="burbuja-espera">' +
+                        esc(textoEspera()) + '</p><p class="enlaces"><a href="/">Volver al menú</a></p></div>';
+                    return;
+                }
+                var ident = esquema.secciones.filter(function (s) {
+                    return s.tipo === 'identificacion';
+                })[0];
+                preguntarIdentificacion = !MODO_PROF && !!(bienvenidaOk && ident &&
+                    respuestas.identificacion && seccionCompleta(ident));
+                // Botones "ir a sección" (delegado: el bloque se reemplaza al actualizar el progreso).
+                cont.addEventListener('click', function (e) {
+                    var b = e.target.closest('[data-ir]');
+                    if (!b || b.disabled) { return; }
+                    indice = parseInt(b.getAttribute('data-ir'), 10);
+                    render();
+                    window.scrollTo(0, 0);
+                });
                 render();
                 mostrarConexion();
                 window.addEventListener('online', alRecuperarConexion);
                 window.addEventListener('offline', mostrarConexion);
-                intentarSync(envioFinalPendiente);  // envía lo pendiente si hay conexión
+                // Solo se envía al cargar si quedó algo pendiente: si no, se
+                // sobrescribirían cambios hechos desde otro dispositivo.
+                if (sucio || envioFinalPendiente) { intentarSync(envioFinalPendiente); }
             })
             .catch(function (err) {
                 console.error(err);
-                cont.innerHTML = '<div class="tarjeta"><p class="errores">No se pudo cargar la ' +
-                    'encuesta. Necesitas conexión a internet al menos la primera vez.</p></div>';
+                cont.innerHTML = '<div class="tarjeta"><p class="errores">' +
+                    (err && err.message === 'sin-datos-paciente'
+                        ? 'No se pudieron cargar las respuestas de la paciente. Necesitas conexión ' +
+                          'a internet para abrir su encuesta la primera vez.'
+                        : 'No se pudo cargar la encuesta. Necesitas conexión a internet al menos ' +
+                          'la primera vez.') + '</p></div>';
             });
+    }
+
+    // ---------- Fase 29: precarga de la ronda en curso desde el servidor ----------
+    // Así la encuesta se abre con lo ya guardado (por la usuaria o por el
+    // personal de salud, desde cualquier dispositivo) y escribe en las mismas filas.
+    function traerRondaActual() {
+        if (!navigator.onLine || (MODO_PROF && !pacienteId)) { return Promise.resolve(); }
+        var url = URL_RONDA + (MODO_PROF ? '?paciente=' + pacienteId : '');
+        return fetch(url, { credentials: 'same-origin' })
+            .then(function (r) { return r.ok ? r.json() : null; })
+            .then(function (srv) { if (srv) { return reconciliar(srv); } })
+            .catch(function () { /* sin conexión: se sigue con lo local */ });
+    }
+
+    function reconciliar(srv) {
+        if (!MODO_PROF) {
+            disponibleDesde = srv.disponible_desde || null;
+            idbSet('disponible_desde', disponibleDesde);
+        }
+        if (!srv.identificacion) { return; }  // la usuaria aún no tiene ficha
+        identBloqueada = MODO_PROF && !!srv.identificacion.bloqueada;
+
+        // Se cerró una ronda desde otro dispositivo (p. ej. la finalizó el
+        // profesional): lo local pertenece a la ronda anterior.
+        var cambioDeRonda = ronda !== null && srv.ronda_actual > ronda;
+        if (cambioDeRonda) {
+            iniciarRondaNueva();
+            sucio = false;
+            envioFinalPendiente = false;  // esa ronda ya quedó cerrada en el servidor
+            idbSet('sucio', false);
+            idbSet('pendiente_envio', false);
+            idbSet('envio_final', false);
+        }
+        var reemplazar = !sucio;  // sin cambios pendientes, manda el servidor
+
+        if (reemplazar || identBloqueada) {
+            respuestas.identificacion = Object.assign({}, srv.identificacion.datos);
+        }
+        if (srv.identificacion.uuid_local) { uuids.identificacion = srv.identificacion.uuid_local; }
+        bienvenidaOk = true;  // la ficha ya existe: la edad ya se validó
+
+        esquema.secciones.forEach(function (s) {
+            if (s.tipo === 'identificacion') { return; }
+            var bloque = srv.secciones[claveSync(s)];
+            if (reemplazar) {
+                var datos = {};
+                if (bloque) {
+                    s.preguntas.forEach(function (p) {
+                        if (bloque.datos[p.nombre] !== undefined) { datos[p.nombre] = bloque.datos[p.nombre]; }
+                    });
+                }
+                respuestas[s.tipo] = datos;
+            }
+            if (bloque) { uuids[claveSync(s)] = bloque.uuid_local; }
+        });
+        asegurarUuids();
+        ronda = srv.ronda_actual;
+        return Promise.all([
+            idbSet('respuestas', respuestas), idbSet('uuids', uuids),
+            idbSet('bienvenida', true), idbSet('ronda', ronda),
+        ]);
     }
 
     function traerEsquema() {
@@ -201,11 +353,44 @@
             );
         });
     }
+    // Ocultar en cadena: una pregunta se muestra si se cumple su regla Y, cuando
+    // su disparador es otra pregunta de la misma sección, esa pregunta también
+    // se muestra (ej. previsión ≠ Fonasa oculta "¿Ha consultado…?" y con ella
+    // la evaluación de la atención, aunque antes se hubiera respondido "Sí").
     function preguntasVisibles(seccion) {
         var datos = respuestas[seccion.tipo] || {};
-        return seccion.preguntas.filter(function (p) {
-            return condicionCumplida(p.mostrar_si, datos);
+        var porNombre = {};
+        seccion.preguntas.forEach(function (p) { porNombre[p.nombre] = p; });
+        var memo = {};
+
+        function visible(p) {
+            if (memo[p.nombre] !== undefined) { return memo[p.nombre]; }
+            memo[p.nombre] = true;  // corta ciclos accidentales en las reglas
+            var ok = condicionCumplida(p.mostrar_si, datos);
+            var madre = p.mostrar_si && porNombre[p.mostrar_si.campo];
+            if (ok && madre) { ok = visible(madre); }
+            memo[p.nombre] = ok;
+            return ok;
+        }
+        return seccion.preguntas.filter(visible);
+    }
+
+    // Respuestas marcadas de antemano (ej. género Femenino): se guardan como
+    // respuesta real solo si la pregunta todavía no tiene valor.
+    function aplicarValoresIniciales(seccion) {
+        var datos = respuestas[seccion.tipo] || {};
+        var cambio = false;
+        seccion.preguntas.forEach(function (p) {
+            if (p.inicial === null || p.inicial === undefined) { return; }
+            if (datos[p.nombre] === undefined || datos[p.nombre] === null || datos[p.nombre] === '') {
+                datos[p.nombre] = p.inicial;
+                cambio = true;
+            }
         });
+        if (cambio) {
+            respuestas[seccion.tipo] = datos;
+            idbSet('respuestas', respuestas);
+        }
     }
 
     // ---------- Completitud ----------
@@ -233,7 +418,7 @@
     function renderBienvenida() {
         var defs = esquema.definiciones || [];
         var edadMin = esquema.edad_minima || 40;
-        var edadMax = esquema.edad_maxima || 60;
+        var edadMax = esquema.edad_maxima || 65;
         var rango = edadMin + ' a ' + edadMax + ' años';
         var excepciones = esquema.excepciones_edad || [];
         var fn = (respuestas.identificacion || {}).fecha_nacimiento || '';
@@ -249,7 +434,8 @@
             html += '</div>';
         }
         html += '<div class="gate"><p>Esta encuesta está dirigida a personas de <strong>' +
-            rango + '</strong>. Ingresa tu fecha de nacimiento para continuar:</p>';
+            rango + '</strong>. ' + (MODO_PROF ? 'Ingresa la fecha de nacimiento de la paciente'
+                : 'Ingresa tu fecha de nacimiento') + ' para continuar:</p>';
         html += '<label for="g_fn">Fecha de nacimiento</label>';
         html += '<input id="g_fn" type="date" value="' + esc(fn) + '">';
         html += '<div id="g_excepcion" hidden>' +
@@ -335,6 +521,7 @@
         var secs = seccionesAplicables();
         indice = Math.max(0, Math.min(indice, secs.length - 1));
         var seccion = secs[indice];
+        aplicarValoresIniciales(seccion);
 
         var html = barraProgreso(secs);
         html += '<div class="tarjeta seccion">';
@@ -343,20 +530,47 @@
         if (seccion.descripcion) {
             html += '<p class="seccion-intro">' + esc(seccion.descripcion) + '</p>';
         }
+        if (seccion.aviso) {
+            html += '<p class="seccion-aviso">' + esc(seccion.aviso) + '</p>';
+        }
         if (esquema.mensaje_omitir) {
             html += '<p class="seccion-omitir">' + esc(esquema.mensaje_omitir) + '</p>';
         }
-        preguntasVisibles(seccion).forEach(function (p) { html += renderPregunta(seccion, p); });
+        if (seccion.tipo === 'identificacion' && preguntarIdentificacion) {
+            html += '<div class="confirmar-datos">' +
+                '<p>Ya tenemos tus datos de identificación. ¿Desea modificar algún dato?</p>' +
+                '<div class="nav">' +
+                '<button type="button" class="boton-guardar" data-nav="ident-si">Sí, modificar</button>' +
+                '<button type="button" data-nav="ident-no">No, continuar</button>' +
+                '</div></div>';
+            html += navegacionSecciones(secs) + '</div>';
+            cont.innerHTML = html;
+            conectarEventos(seccion);
+            return;
+        }
+        if (seccion.tipo === 'mrs') {
+            html += burbujaPuntajeMrs(seccion);
+        }
+        if (seccion.tipo === 'identificacion' && identBloqueada) {
+            html += renderIdentificacionBloqueada(seccion);
+        } else {
+            preguntasVisibles(seccion).forEach(function (p) { html += renderPregunta(seccion, p); });
+        }
 
         html += '<div class="nav">';
-        if (indice > 0) { html += '<button type="button" data-nav="prev">Anterior</button>'; }
+        if (indice > 0) {
+            html += '<button type="button" data-nav="prev">← ' + esc(tituloCorto(secs[indice - 1])) +
+                '</button>';
+        }
         html += '<button type="button" class="boton-guardar" data-nav="guardar">Guardar cambios</button>';
         if (indice < secs.length - 1) {
-            html += '<button type="button" data-nav="next">Siguiente</button>';
+            html += '<button type="button" data-nav="next">' + esc(tituloCorto(secs[indice + 1])) +
+                ' →</button>';
         } else {
             html += '<button type="button" data-nav="finalizar">Finalizar</button>';
         }
-        html += '</div></div>';
+        html += '</div>';
+        html += navegacionSecciones(secs) + '</div>';
 
         cont.innerHTML = html;
         conectarEventos(seccion);
@@ -365,9 +579,53 @@
     function barraProgreso(secs) {
         var completas = secs.filter(seccionCompleta).length;
         var pct = secs.length ? Math.round(completas / secs.length * 100) : 0;
-        return '<div class="progreso"><div class="progreso-barra" style="width:' + pct + '%"></div>' +
+        var tramo = tramoProgreso(pct);
+        return '<div class="progreso-bloque">' +
+            '<div class="progreso" role="progressbar" aria-valuemin="0" aria-valuemax="100" ' +
+            'aria-valuenow="' + pct + '">' +
+            '<div class="progreso-barra progreso-' + tramo.clase + '" style="width:' + pct + '%"></div>' +
             '<span class="progreso-texto">' + completas + ' de ' + secs.length +
-            ' secciones completas</span></div>';
+            ' secciones completas</span></div>' +
+            '<p class="progreso-mensaje">' + esc(tramo.msg) + '</p></div>';
+    }
+
+    // Fase 29: la paciente se registró ella misma -> el profesional solo ve sus datos.
+    function renderIdentificacionBloqueada(seccion) {
+        var datos = respuestas[seccion.tipo] || {};
+        var html = '<p class="seccion-aviso-bloqueo">La paciente se registró ella misma: ' +
+            'solo ella puede modificar estos datos.</p><dl class="resumen-datos">';
+        preguntasVisibles(seccion).forEach(function (p) {
+            var v = datos[p.nombre];
+            if (v === undefined || v === null || v === '') { return; }
+            var texto = String(v);
+            (p.opciones || []).forEach(function (op) {
+                if (String(op.valor) === String(v)) { texto = op.texto; }
+            });
+            html += '<dt>' + esc(p.texto) + '</dt><dd>' + esc(texto) + '</dd>';
+        });
+        return html + '</dl>';
+    }
+
+    // Fase 27: botones para saltar a cualquier sección, al final de cada una.
+    function navegacionSecciones(secs) {
+        var ultima = indice === secs.length - 1;
+        var html = '<nav class="secciones-nav" aria-label="Secciones de la encuesta">' +
+            '<p class="secciones-nav-titulo">' +
+            (ultima ? 'Revisa tus secciones antes de finalizar:' : 'Ir a otra sección:') + '</p>' +
+            '<div class="secciones-botones">';
+        secs.forEach(function (s, i) {
+            var completa = seccionCompleta(s);
+            var clase = 'ir-seccion ' + (completa ? 'completa' : 'pendiente');
+            if (i === indice) {
+                html += '<button type="button" class="' + clase + ' actual" disabled aria-current="step">' +
+                    esc(tituloCorto(s)) + '</button>';
+            } else {
+                html += '<button type="button" class="' + clase + '" data-ir="' + i + '">' +
+                    (completa ? '✓ ' : '') + esc(tituloCorto(s)) +
+                    (completa ? '' : ' <small>pendiente</small>') + '</button>';
+            }
+        });
+        return html + '</div></nav>';
     }
 
     function renderPregunta(seccion, p) {
@@ -521,7 +779,9 @@
                 if (a === 'prev') { indice--; render(); }
                 else if (a === 'next') { indice++; render(); }
                 else if (a === 'guardar') { guardarCambios(); }
-                else { finalizar(); }
+                else if (a === 'ident-si') { preguntarIdentificacion = false; render(); }
+                else if (a === 'ident-no') { preguntarIdentificacion = false; indice++; render(); }
+                else if (a === 'finalizar') { finalizar(); }
             });
         });
         cont.querySelectorAll('.pregunta').forEach(function (div) {
@@ -550,6 +810,7 @@
             valor = marcados.join(', ');
         }
         respuestas[seccion.tipo][campo] = valor;
+        sucio = true;
         idbSet('sucio', true);  // hay datos locales sin enviar al servidor
 
         // Si de este campo depende otro (ej. comuna ← región), limpia el
@@ -582,6 +843,34 @@
         }
     }
 
+    // Burbuja con el puntaje total del MRS (suma de los 11 ítems, 0 a 44). Se
+    // redibuja con cada respuesta porque las preguntas MRS ya llaman a render().
+    // La severidad solo se muestra con los 11 ítems respondidos.
+    function burbujaPuntajeMrs(seccion) {
+        var datos = respuestas[seccion.tipo] || {};
+        var items = seccion.preguntas.filter(function (p) { return p.escala === 'mrs'; });
+        var total = 0, respondidas = 0;
+        items.forEach(function (p) {
+            var v = datos[p.nombre];
+            if (v !== undefined && v !== null && v !== '') {
+                total += Number(v);
+                respondidas++;
+            }
+        });
+        var detalle;
+        if (respondidas < items.length) {
+            detalle = respondidas + ' de ' + items.length + ' respondidas';
+        } else {
+            var nivel = (esquema.mrs_severidad || []).filter(function (s) {
+                return total <= s.hasta;
+            })[0];
+            detalle = nivel ? 'Severidad: ' + nivel.texto : '';
+        }
+        return '<div class="burbuja-mrs" role="status" aria-live="polite">' +
+            '<strong>Puntaje MRS: ' + total + ' / ' + (items.length * 4) + '</strong>' +
+            (detalle ? '<span>' + esc(detalle) + '</span>' : '') + '</div>';
+    }
+
     function esEscalaCalor(seccion, campo) {
         return seccion.preguntas.some(function (p) {
             return p.nombre === campo && p.escala === 'mrs';
@@ -610,8 +899,11 @@
     }
 
     function actualizarProgreso() {
-        var barra = cont.querySelector('.progreso');
-        if (barra) { barra.outerHTML = barraProgreso(seccionesAplicables()); }
+        var secs = seccionesAplicables();
+        var barra = cont.querySelector('.progreso-bloque');
+        if (barra) { barra.outerHTML = barraProgreso(secs); }
+        var nav = cont.querySelector('.secciones-nav');
+        if (nav) { nav.outerHTML = navegacionSecciones(secs); }
     }
 
     // ---------- Conexión / sincronización automática (Sección 5.1) ----------
@@ -675,7 +967,14 @@
         seccionesAplicables().forEach(function (s) {
             var datos = respuestas[s.tipo] || {};
             if (s.tipo === 'identificacion') {
-                payload.identificacion = { uuid_local: uuids['identificacion'], datos: datos };
+                payload.identificacion = {
+                    uuid_local: uuids['identificacion'],
+                    datos: identBloqueada ? {} : datos,
+                };
+                if (MODO_PROF) {
+                    if (pacienteId) { payload.identificacion.paciente_id = pacienteId; }
+                    else { payload.identificacion.rut = rutNueva; }
+                }
                 return;
             }
             var k = claveSync(s);
@@ -683,7 +982,12 @@
                 bloques[k] = { tipo: k, uuid_local: uuids[k], datos: {}, parcial: false };
                 payload.secciones.push(bloques[k]);
             }
-            Object.keys(datos).forEach(function (campo) { bloques[k].datos[campo] = datos[campo]; });
+            // Solo las preguntas visibles: las ocultas no se envían y el
+            // servidor las deja vacías (ej. si cambió la previsión a Isapre,
+            // se borran las respuestas que solo aplican con Fonasa).
+            preguntasVisibles(s).forEach(function (p) {
+                if (datos[p.nombre] !== undefined) { bloques[k].datos[p.nombre] = datos[p.nombre]; }
+            });
             if (!seccionCompleta(s)) { bloques[k].parcial = true; }
         });
         return payload;
@@ -736,16 +1040,29 @@
                 return r.json().then(function (j) { return { ok: r.ok, cuerpo: j }; });
             })
             .then(function (res) {
+                adoptarRespuesta(res.cuerpo);
                 if (res.ok && res.cuerpo.ok) {
+                    sucio = false;
                     idbSet('sucio', false);
                     idbSet('pendiente_envio', false);
                     if (esFinal) {
                         envioFinalPendiente = false;
                         idbSet('envio_final', false);
                         iniciarRondaNueva();
-                        mensajeFinal('¡Encuesta enviada! Gracias por participar. Puedes volver a ' +
-                            'responderla más adelante para registrar cómo han cambiado tus síntomas.',
-                            false, true);
+                        ronda = res.cuerpo.ronda_actual;
+                        idbSet('ronda', ronda);
+                        if (MODO_PROF) {
+                            mensajeFinal('¡Encuesta de la paciente enviada! La ronda quedó cerrada ' +
+                                'y su ficha ya muestra estas respuestas.', false, false,
+                                urlFicha || ('/profesional/paciente/' + pacienteId + '/'));
+                        } else {
+                            disponibleDesde = res.cuerpo.disponible_desde || null;
+                            idbSet('disponible_desde', disponibleDesde);
+                            mensajeFinal('¡Encuesta enviada! Gracias por participar. Puedes volver a ' +
+                                'responderla más adelante para registrar cómo han cambiado tus síntomas.' +
+                                (disponibleDesde ? ' ' + textoEspera() : ''),
+                                false, true);
+                        }
                     } else {
                         avisoSync('Respuestas sincronizadas.', 'ok');
                     }
@@ -770,7 +1087,25 @@
             });
     }
 
-    function mensajeFinal(texto, error, ofrecerEvaluacion) {
+    // Fase 29: el servidor puede devolver otro uuid_local para una sección (si
+    // ya existía en la ronda, guardada desde otro dispositivo) y, al registrar
+    // una paciente nueva, el número de su ficha.
+    function adoptarRespuesta(cuerpo) {
+        if (!cuerpo) { return; }
+        var cambio = false;
+        (cuerpo.resultados || []).forEach(function (r) {
+            if (r.uuid_local && r.seccion && r.seccion !== 'identificacion' &&
+                uuids[r.seccion] !== r.uuid_local) {
+                uuids[r.seccion] = r.uuid_local;
+                cambio = true;
+            }
+        });
+        if (cambio) { idbSet('uuids', uuids); }
+        if (ronda === null && cuerpo.ronda_actual) { ronda = cuerpo.ronda_actual; idbSet('ronda', ronda); }
+        if (MODO_PROF && !pacienteId && cuerpo.paciente_id) { pacienteId = cuerpo.paciente_id; }
+    }
+
+    function mensajeFinal(texto, error, ofrecerEvaluacion, urlVolver) {
         var html = '<div class="tarjeta"><p class="' + (error ? 'errores' : '') + '">' +
             esc(texto) + '</p>';
         if (ofrecerEvaluacion) {
@@ -778,7 +1113,8 @@
             html += '<p>¿Nos ayudas con 5 preguntas breves sobre la plataforma?</p>' +
                 '<p><a class="boton" href="' + URL_EVALUACION + '">Evaluar la plataforma</a></p>';
         }
-        cont.innerHTML = html + '<p class="enlaces"><a href="/">Volver al inicio</a></p></div>';
+        cont.innerHTML = html + '<p class="enlaces"><a href="' + esc(urlVolver || '/') + '">' +
+            (urlVolver ? 'Volver a la ficha de la paciente' : 'Volver al inicio') + '</a></p></div>';
     }
 
     // ---------- utilidades ----------

@@ -1,3 +1,4 @@
+import io
 import re
 from datetime import timedelta
 
@@ -150,6 +151,19 @@ class RegistroTest(TestCase):
         self.assertRedirects(self._verificar(nuevo), reverse('encuesta'),
                              fetch_redirect_response=False)
 
+    def test_registro_asocia_la_ficha_creada_por_personal_de_salud(self):
+        # Fase 29: el profesional la registró antes como paciente con su RUT.
+        from apps.encuestas.models import Identificacion
+        ficha = Identificacion.objects.create(
+            rut_hash=hash_rut('11.111.111-1'), fecha_nacimiento='1975-05-20',
+            genero=Identificacion.GeneroOptions.FEMENINO,
+            nivel_educacion=Identificacion.NivelEducativo.MEDIA_COM, comuna='Santiago',
+        )
+        self._paso1()
+        self._verificar(self._codigo_enviado())
+        ficha.refresh_from_db()
+        self.assertEqual(ficha.usuario, Usuario.objects.get(email='nueva@example.com'))
+
     def test_verificar_sin_registro_pendiente_vuelve_al_paso_1(self):
         resp = self.client.get(reverse('registro_verificar'))
         self.assertRedirects(resp, reverse('registro'))
@@ -177,6 +191,59 @@ class LoginPorRutTest(TestCase):
             {'username': '11.111.111-1', 'password': 'clave-de-prueba-123'},
         )
         self.assertRedirects(resp, reverse('home'))
+
+
+class LoginYMenuTest(TestCase):
+    """Fase 28: mensaje de login sin enumeración de RUT y menú de inicio por rol."""
+
+    def setUp(self):
+        self.usuaria = Usuario.objects.create_user(
+            rut='11.111.111-1', email='a@example.com', password='clave-de-prueba-123',
+        )
+
+    def _login_fallido(self, rut):
+        return self.client.post(reverse('login'), {'username': rut, 'password': 'clave-mala-999'})
+
+    def test_login_fallido_muestra_enlace_a_registro(self):
+        resp = self._login_fallido('11.111.111-1')
+        self.assertContains(resp, 'RUT o contraseña incorrectos.')
+        self.assertContains(resp, reverse('registro'))
+
+    def test_mismo_mensaje_exista_o_no_el_rut(self):
+        existente = self._login_fallido('11.111.111-1')
+        inexistente = self._login_fallido('22.222.222-2')
+        self.assertEqual(
+            existente.context['form'].non_field_errors(),
+            inexistente.context['form'].non_field_errors(),
+        )
+        # Se revisa solo el mensaje de error (el script de base.html contiene
+        # "Service Worker no registrado", que no tiene que ver con el RUT).
+        for resp in (existente, inexistente):
+            texto = ' '.join(resp.context['form'].non_field_errors()).lower()
+            self.assertNotIn('registrad', texto)
+            self.assertNotIn('no existe', texto)
+
+    def test_menu_usuaria_comun(self):
+        self.client.login(username='11111111-1', password='clave-de-prueba-123')
+        resp = self.client.get(reverse('home'))
+        self.assertContains(resp, 'Bienvenida')
+        self.assertNotContains(resp, 'Usuaria común')
+        for nombre in ('encuesta', 'mi_tablero', 'mi_evaluacion', 'password_change', 'retirarse'):
+            self.assertContains(resp, f'href="{reverse(nombre)}"')
+        self.assertNotContains(resp, reverse('buscar_paciente'))
+        self.assertNotContains(resp, reverse('admin:index'))
+
+    def test_menu_profesional(self):
+        Usuario.objects.create_user(
+            rut='9.876.543-3', email='p@example.com', password='clave-prof-123',
+            rol=Usuario.Rol.PROFESIONAL_SALUD,
+        )
+        self.client.login(username='98765433', password='clave-prof-123')
+        resp = self.client.get(reverse('home'))
+        for nombre in ('buscar_paciente', 'estadisticas', 'password_change'):
+            self.assertContains(resp, f'href="{reverse(nombre)}"')
+        self.assertNotContains(resp, reverse('mi_tablero'))
+        self.assertNotContains(resp, reverse('retirarse'))
 
 
 class AccesoRestringidoTest(TestCase):
@@ -290,3 +357,142 @@ class ConsentimientoInformadoTest(TestCase):
         self.usuario.save(update_fields=['consentimiento_aceptado_en'])
         resp = self.client.get(reverse('consentimiento'))
         self.assertRedirects(resp, reverse('home'))
+
+
+class AdministracionSistemaTest(TestCase):
+    """Fase 30: administración de cuentas dentro del sistema (solo superusuario)."""
+
+    def setUp(self):
+        self.admin = Usuario.objects.create_superuser(
+            rut_hash='11.111.111-1', email='admin@example.com', password='clave-admin-123',
+        )
+        self.usuaria = Usuario.objects.create_user(
+            rut='7.654.321-6', email='u@example.com', password='clave-usuaria-123',
+        )
+        self.client.login(username='11111111-1', password='clave-admin-123')
+
+    def test_solo_superusuario_entra(self):
+        self.client.logout()
+        self.client.login(username='76543216', password='clave-usuaria-123')
+        self.assertEqual(self.client.get(reverse('admin_panel')).status_code, 403)
+        resp = self.client.post(reverse('admin_cambiar_rol', args=[self.usuaria.pk]), {'rol': 'PROFESIONAL'})
+        self.assertEqual(resp.status_code, 403)
+
+    def test_buscar_por_rut_lleva_a_la_cuenta(self):
+        resp = self.client.get(reverse('admin_panel'), {'rut': '7.654.321-6'})
+        self.assertRedirects(resp, reverse('admin_cuenta', args=[self.usuaria.pk]))
+
+    def test_buscar_rut_inexistente(self):
+        resp = self.client.get(reverse('admin_panel'), {'rut': '22.222.222-2'})
+        self.assertContains(resp, 'No hay ninguna cuenta con ese RUT.')
+
+    def test_promover_y_revocar(self):
+        url = reverse('admin_cambiar_rol', args=[self.usuaria.pk])
+        self.client.post(url, {'rol': 'PROFESIONAL'})
+        self.usuaria.refresh_from_db()
+        self.assertEqual(self.usuaria.rol, Usuario.Rol.PROFESIONAL_SALUD)
+        self.client.post(url, {'rol': 'USUARIA'})
+        self.usuaria.refresh_from_db()
+        self.assertEqual(self.usuaria.rol, Usuario.Rol.USUARIA_COMUN)
+
+    def test_eliminar_borra_cuenta_y_respuestas(self):
+        from apps.encuestas.models import Identificacion
+        Identificacion.objects.create(
+            usuario=self.usuaria, rut_hash=self.usuaria.rut_hash,
+            fecha_nacimiento='1975-05-20',
+            genero=Identificacion.GeneroOptions.FEMENINO,
+            nivel_educacion=Identificacion.NivelEducativo.MEDIA_COM,
+            comuna='Santiago',
+        )
+        url = reverse('admin_eliminar', args=[self.usuaria.pk])
+        # Sin marcar la casilla no se elimina.
+        self.client.post(url, {})
+        self.assertTrue(Usuario.objects.filter(pk=self.usuaria.pk).exists())
+
+        resp = self.client.post(url, {'entiendo': 'on'})
+        self.assertRedirects(resp, reverse('admin_panel'))
+        self.assertFalse(Usuario.objects.filter(pk=self.usuaria.pk).exists())
+        self.assertFalse(Identificacion.objects.exists())
+
+    def test_no_se_modifica_la_propia_cuenta_ni_otro_superusuario(self):
+        otro = Usuario.objects.create_superuser(
+            rut_hash='9.876.543-3', email='otro@example.com', password='clave-otro-123',
+        )
+        for cuenta in (self.admin, otro):
+            # El superusuario se crea con rol profesional: intentar revocarlo no debe tener efecto.
+            self.client.post(reverse('admin_cambiar_rol', args=[cuenta.pk]), {'rol': 'USUARIA'})
+            self.client.post(reverse('admin_eliminar', args=[cuenta.pk]), {'entiendo': 'on'})
+            cuenta.refresh_from_db()  # falla si se hubiera eliminado
+            self.assertEqual(cuenta.rol, Usuario.Rol.PROFESIONAL_SALUD)
+
+    def test_crear_profesional(self):
+        resp = self.client.post(
+            reverse('admin_crear_profesional'),
+            {'rut': '12.345.678-5', 'email': 'nuevo@example.com'},
+        )
+        nueva = Usuario.objects.get(email='nuevo@example.com')
+        self.assertRedirects(resp, reverse('admin_cuenta', args=[nueva.pk]))
+        self.assertEqual(nueva.rol, Usuario.Rol.PROFESIONAL_SALUD)
+        self.assertEqual(len(mail.outbox), 1)
+
+    def test_menu_superusuario_apunta_a_administracion_propia(self):
+        resp = self.client.get(reverse('home'))
+        self.assertContains(resp, f'href="{reverse("admin_panel")}"')
+        self.assertNotContains(resp, f'href="{reverse("admin:index")}"')
+
+
+class NavegacionVolverTest(TestCase):
+    """Toda página interna tiene un "Volver"; el menú de inicio no lo necesita."""
+
+    def setUp(self):
+        self.admin = Usuario.objects.create_superuser(
+            rut_hash='11.111.111-1', email='admin@example.com', password='clave-admin-123',
+        )
+        self.client.login(username='11111111-1', password='clave-admin-123')
+
+    def test_inicio_sin_volver(self):
+        self.assertNotContains(self.client.get(reverse('home')), 'class="volver"')
+
+    def test_pagina_de_primer_nivel_vuelve_al_menu(self):
+        resp = self.client.get(reverse('admin_panel'))
+        self.assertContains(resp, '← Volver al menú')
+
+    def test_pagina_de_segundo_nivel_vuelve_a_la_anterior(self):
+        resp = self.client.get(reverse('admin_cuenta', args=[self.admin.pk]))
+        self.assertContains(resp, '← Volver a administración')
+        self.assertNotContains(resp, '← Volver al menú')
+
+
+class CrearSuperusuarioTest(TestCase):
+    """createsuperuser valida el RUT y detecta cuentas ya existentes por su hash."""
+
+    def _crear(self, rut, email='admin@example.com'):
+        from unittest import mock
+        from django.core.management import call_command
+        with mock.patch.dict('os.environ', {'DJANGO_SUPERUSER_PASSWORD': 'clave-admin-123'}):
+            call_command('createsuperuser', interactive=False, rut_hash=rut, email=email,
+                         stdout=io.StringIO(), stderr=io.StringIO())
+
+    def test_rut_valido_crea_superusuario_con_rol_profesional(self):
+        self._crear('12.345.678-5')
+        admin = Usuario.objects.get(rut_hash=hash_rut('12.345.678-5'))
+        self.assertTrue(admin.is_superuser)
+        self.assertTrue(admin.es_profesional)
+
+    def test_rut_con_digito_verificador_incorrecto_se_rechaza(self):
+        from django.core.management.base import CommandError
+        with self.assertRaisesMessage(CommandError, 'RUT inválido'):
+            self._crear('12.345.678-9')
+        self.assertFalse(Usuario.objects.exists())
+
+    def test_rut_ya_registrado_se_rechaza(self):
+        from django.core.management.base import CommandError
+        Usuario.objects.create_user(rut='12.345.678-5', email='usuaria@example.com')
+        with self.assertRaisesMessage(CommandError, 'ya existe una cuenta con ese RUT'):
+            self._crear('12345678-5')
+
+    def test_manager_rechaza_rut_invalido(self):
+        with self.assertRaises(ValueError):
+            Usuario.objects.create_superuser(
+                rut_hash='12.345.678-9', email='admin@example.com', password='clave-admin-123',
+            )

@@ -34,6 +34,9 @@ ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(","
 # Application definition
 
 INSTALLED_APPS = [
+    # apps.usuarios va antes de django.contrib.auth para que su comando
+    # createsuperuser (que valida el RUT) reemplace al de Django.
+    'apps.usuarios',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Aplicaciones propias creadas
-    'apps.usuarios',
     'apps.encuestas',
 ]
 

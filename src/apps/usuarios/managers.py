@@ -1,7 +1,7 @@
 from django.contrib.auth.base_user import BaseUserManager
 from django.utils.crypto import get_random_string
 
-from .rut import hash_rut
+from .rut import hash_rut, validar_rut
 
 # Alfabeto sin caracteres ambiguos (0/O, 1/l/I) para contraseñas autogeneradas.
 _ALFABETO_PASSWORD = 'abcdefghjkmnpqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ23456789'
@@ -71,6 +71,8 @@ class UsuarioManager(BaseUserManager):
             raise ValueError('El superusuario debe tener is_superuser=True')
         if not password:
             raise ValueError('El superusuario requiere una contraseña explícita')
+        if not validar_rut(rut_hash or ''):
+            raise ValueError('RUT inválido: revisa el dígito verificador.')
 
         rol = extra.pop('rol')
         return self._crear(rut_hash, email, password, rol, **extra)

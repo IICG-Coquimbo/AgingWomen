@@ -2,6 +2,8 @@
 
 {% block titulo %}Ficha de paciente{% endblock %}
 
+{% block volver %}<a href="{% url 'buscar_paciente' %}">← Volver a la búsqueda</a>{% endblock %}
+
 {% block contenido %}
 <div class="tarjeta">
     <h1>Ficha de paciente</h1>
@@ -11,10 +13,9 @@
         <li>Región: {{ paciente.get_region_residencia_display }}</li>
         <li>Comuna: {{ paciente.comuna }}</li>
         <li>Ronda en curso: {{ paciente.ronda_actual }}</li>
+        <li>{% if paciente.usuario_id %}Se registró ella misma (su identificación solo la puede modificar ella).{% else %}Registrada por personal de salud (aún no crea su cuenta).{% endif %}</li>
     </ul>
-    <div class="enlaces">
-        <a href="{% url 'buscar_paciente' %}">← Volver a la búsqueda</a>
-    </div>
+    <p><a class="boton" href="{% url 'encuesta_paciente' paciente.pk %}">Completar encuesta de esta paciente</a></p>
 </div>
 
 {% for ronda in rondas %}

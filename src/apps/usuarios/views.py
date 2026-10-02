@@ -137,6 +137,12 @@ def verificar_registro(request):
                     password=otp.password_hash,
                 )
                 usuario.save()
+                # Fase 29: si el personal de salud ya la había registrado como
+                # paciente con este RUT, esa ficha pasa a ser suya.
+                from apps.encuestas.models import Identificacion
+                Identificacion.objects.filter(
+                    rut_hash=usuario.rut_hash, usuario__isnull=True,
+                ).update(usuario=usuario)
                 otp.delete()
             del request.session[SESION_REGISTRO]
             enviar_bienvenida_email(usuario)
@@ -205,4 +211,12 @@ def consentimiento(request):
 
 @login_required
 def home(request):
-    return render(request, 'home.html')
+    contexto = {}
+    if not request.user.es_profesional:
+        # Fase 31: la tarjeta de la encuesta se deshabilita durante el plazo entre rondas.
+        from apps.encuestas.plazo import encuesta_bloqueada, mensaje_espera
+        from apps.encuestas.sync import identificacion_de_usuaria
+        propia = identificacion_de_usuaria(request.user)
+        if encuesta_bloqueada(propia):
+            contexto['espera_encuesta'] = mensaje_espera(propia)
+    return render(request, 'home.html', contexto)

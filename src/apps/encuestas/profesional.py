@@ -9,10 +9,11 @@ caracterización" sigue pendiente del algoritmo del equipo de investigación;
 las estadísticas se ampliarán cuando haya datos reales.
 """
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.http import require_POST
 
 from apps.usuarios.decorators import requiere_profesional
-from apps.usuarios.rut import hash_rut, validar_rut
+from apps.usuarios.rut import hash_rut, normalizar_rut, validar_rut
 
 from .historial import construir_historial
 from .models import MRS, Identificacion, SegmentoEMPA
@@ -38,6 +39,46 @@ def buscar_paciente(request):
 
     return render(request, 'encuestas/buscar_paciente.html', {
         'rut': rut, 'resultado': resultado, 'error': error,
+        # Fase 29: RUT válido sin ficha -> se ofrece registrar a la paciente.
+        'puede_registrar': bool(rut) and resultado is None and validar_rut(rut),
+    })
+
+
+@login_required
+@requiere_profesional
+def encuesta_paciente(request, identificacion_id):
+    """
+    Fase 29: el personal de salud completa (o corrige) la encuesta de una
+    paciente, precargada con lo que ella ya respondió en la ronda en curso.
+    Si la paciente creó su propia cuenta, su Identificación queda bloqueada.
+    """
+    paciente = get_object_or_404(Identificacion, pk=identificacion_id)
+    return render(request, 'encuesta.html', {
+        'modo_profesional': True,
+        'paciente': paciente,
+        'contexto': f'prof:{request.user.rut_hash}:pac:{paciente.pk}',
+    })
+
+
+@login_required
+@requiere_profesional
+@require_POST
+def nueva_paciente(request):
+    """
+    Fase 29: registrar una paciente que aún no tiene ficha. El RUT llega por
+    POST (no queda en la URL ni en los registros del servidor) y se pasa a la
+    encuesta, que lo envía al guardar por primera vez.
+    """
+    rut = request.POST.get('rut', '').strip()
+    if not validar_rut(rut):
+        return redirect('buscar_paciente')
+    existente = Identificacion.objects.filter(rut_hash=hash_rut(rut)).first()
+    if existente:
+        return redirect('encuesta_paciente', identificacion_id=existente.pk)
+    return render(request, 'encuesta.html', {
+        'modo_profesional': True,
+        'rut_nueva': normalizar_rut(rut),
+        'contexto': f'prof:{request.user.rut_hash}:nueva:{hash_rut(rut)}',
     })
 
 
