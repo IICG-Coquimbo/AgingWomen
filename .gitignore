@@ -31,3 +31,10 @@ ENV/
 *~
 .DS_Store
 Thumbs.db
+
+# Datos y fuentes de la simulación: PDF y docx públicos, se descargan aparte
+# (ver analisis/supuestos_simulacion.md §11). Solo se versiona el Excel de referencia.
+/datos/*
+!/datos/referencia/
+/datos/referencia/*
+!/datos/referencia/data_set_menopause.xlsx
