@@ -86,7 +86,7 @@ Proporcional a la población femenina por comuna **[C] Censo 2024** (total 449.0
 |---|---|---|---|---|---|
 | Coquimbo | 31,5 | Vicuña | 3,5 | Andacollo | 1,3 |
 | La Serena | 30,5 | Salamanca | 3,3 | Canela | 1,1 |
-| Ovalle | 14,1 | Los Vilos | 2,7 | Paiguano | 0,5 |
+| Ovalle | 14,1 | Los Vilos | 2,7 | Paihuano | 0,5 |
 | Illapel | 3,8 | Combarbalá | 1,6 | La Higuera | 0,5 |
 | Monte Patria | 3,7 | Punitaqui | 1,4 | Río Hurtado | 0,5 |
 
@@ -143,12 +143,14 @@ multicéntrico latinoamericano REDLINC; 50 en un estudio chileno pequeño).
 ### Etapa resultante
 | Etapa | Regla | Esperado (40-60 años) |
 |---|---|---|
-| Premenopausia | Edad < edad de menopausia − 4 | ~30 % |
+| Premenopausia | Edad < edad de menopausia − 4 | ~19 % |
 | Perimenopausia | Dentro de los 4 años previos a la menopausia | ~20 % |
-| Posmenopausia natural | Edad ≥ edad de menopausia | ~43 % |
-| Quirúrgica | Histerectomía y/o ooforectomía, **7 %** de 40-60 **[S]** + las 10 excepciones <40 | ~7 % + 5 % |
+| Posmenopausia natural | Edad ≥ edad de menopausia | ~49 % |
+| Quirúrgica | Histerectomía y/o ooforectomía, **7 %** de 40-60 **[S]** + las excepciones <40 | ~12 % |
 
-Referencia de validación: 48,8 % posmenopáusicas con edad media de 49 años **[L] REDLINC**.
+Referencia: 48,8 % posmenopáusicas en REDLINC **[L]**, cuya muestra era algo más joven (edad media 49,1).
+Con nuestra distribución de edades (media ~50) y menopausia a los 49, lo esperable es ~61 % entre
+natural y quirúrgica (comprobado en el Paso 2 con 5.000 casos simulados).
 
 ### Preguntas derivadas
 | Pregunta | Regla |
@@ -353,14 +355,15 @@ Los campos "Otro, especifique" se llenan con textos cortos de una lista fija (po
 
 ## 10. Validación (para el Paso 3)
 
-Con los datos generados se comprobará que se reproducen estas cifras (tolerancia ±5 puntos porcentuales
-o ±10 % de la media):
+Con los datos generados se comprobará que se reproducen estas cifras. Con N = 200 cada porcentaje varía
+por azar unos ±7 puntos (2 errores estándar), así que la tolerancia es ±7 puntos porcentuales o ±10 % de
+la media; con una muestra grande (por ejemplo `--n 5000`) los valores deben quedar a ±2 puntos:
 
 | Indicador | Objetivo |
 |---|---|
 | Edad media | ~49-50 años |
 | Coquimbo + La Serena | ~62 % |
-| Posmenopausia (natural + quirúrgica) | ~50 % |
+| Posmenopausia (natural + quirúrgica) | ~61 % |
 | MRS total / somático / psicológico / urogenital | 16,2 / 5,8 / 7,7 / 2,7 |
 | Hipertensión / diabetes / obesidad (≥30) | ~30 % / ~13 % / ~41 % |
 | Fuma | ~27 % |
