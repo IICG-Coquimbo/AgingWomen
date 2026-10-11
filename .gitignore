@@ -38,3 +38,4 @@ Thumbs.db
 !/datos/referencia/
 /datos/referencia/*
 !/datos/referencia/data_set_menopause.xlsx
+!/datos/dataset_menopausia_sucio.csv
