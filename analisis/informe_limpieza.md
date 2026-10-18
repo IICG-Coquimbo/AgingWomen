@@ -1,6 +1,6 @@
 # Informe de limpieza del dataset (Fase 32)
 
-Generado por `analisis/limpiar_dataset.py` el 2026-10-11. Volver a ejecutar el script regenera este informe y los archivos de salida.
+Generado por `analisis/limpiar_dataset.py` el 2026-10-18. Volver a ejecutar el script regenera este informe y los archivos de salida.
 
 - Entrada: `datos/dataset_menopausia_sucio.csv` — 511 filas.
 - Salida: `datos/limpio/dataset_menopausia_limpio.csv` — **495 filas**.
@@ -158,7 +158,7 @@ Una fila por (paso, variable, motivo). "Ejemplos" muestra valores originales.
 | 9 imputación | `cambio_relacion_pareja_menopausia` | imputado con mediana (2) | 8 |  |
 | 9 imputación | `cantidad_personas_cuida` | imputado con mediana (2) | 2 |  |
 | 9 imputación | `carnes_semana` | imputado con mediana (3) | 6 |  |
-| 9 imputación | `circunferencia_cintura_cm` | imputado con mediana (92.5) | 75 |  |
+| 9 imputación | `circunferencia_cintura_cm` | imputado por recta cintura = 22.2 + 2.39·IMC; sin IMC, mediana 92.5 | 75 |  |
 | 9 imputación | `colesterol_hdl_mg_dl` | imputado con mediana (54) | 39 |  |
 | 9 imputación | `colesterol_total_mg_dl` | imputado con mediana (200) | 39 |  |
 | 9 imputación | `considera_informacion_suficiente` | imputado con mediana (2) | 2 |  |
@@ -183,10 +183,10 @@ Una fila por (paso, variable, motivo). "Ejemplos" muestra valores originales.
 | 9 imputación | `nivel_educacion` | imputado con moda (M_COM) | 3 |  |
 | 9 imputación | `panes_dia` | imputado con mediana (3) | 6 |  |
 | 9 imputación | `pescado_semana` | imputado con mediana (2) | 6 |  |
-| 9 imputación | `peso_kg` | imputado con mediana (71) | 8 |  |
+| 9 imputación | `peso_kg` | imputado por IMC desde la cintura (IMC = -3.2 + 0.353·cintura) × talla²; sin cintura, mediana 71 | 8 |  |
 | 9 imputación | `platos_verduras_dia` | imputado con mediana (2) | 10 |  |
-| 9 imputación | `presion_diastolica` | imputado con mediana (75) | 13 |  |
-| 9 imputación | `presion_sistolica` | imputado con mediana (120) | 15 |  |
+| 9 imputación | `presion_diastolica` | imputado por sistólica − presión de pulso mediana (45); sin la otra, mediana 75 | 13 |  |
+| 9 imputación | `presion_sistolica` | imputado por diastólica + presión de pulso mediana (45); sin la otra, mediana 120 | 15 |  |
 | 9 imputación | `pueblo_originario_afro` | imputado con moda (NINGUNO) | 4 |  |
 | 9 imputación | `quien_prepara_comidas` | imputado con moda (YO_MAYORIA) | 6 |  |
 | 9 imputación | `realiza_aerobico` | imputado con moda (NO) | 2 |  |
@@ -229,14 +229,14 @@ Moda para categóricas, mediana para ordinales y continuas. El MRS nunca se impu
 | `resultado_pap` | subgrupo profesional | 259 | 108 | 41.7 | > 30 %: no se modela |
 | `riesgo_cv_atp3` | subgrupo profesional | 259 | 48 | 18.5 | imputada (moda = BAJO) + marca riesgo_cv_atp3_imputado |
 | `glicemia_mg_dl` | subgrupo profesional | 259 | 40 | 15.4 | imputada (mediana = 95) + marca glicemia_mg_dl_imputado |
-| `circunferencia_cintura_cm` | general | 495 | 75 | 15.2 | imputada (mediana = 92.5) + marca circunferencia_cintura_cm_imputado |
+| `circunferencia_cintura_cm` | general | 495 | 75 | 15.2 | imputada (recta cintura = 22.2 + 2.39·IMC; sin IMC, mediana 92.5) + marca circunferencia_cintura_cm_imputado |
 | `colesterol_total_mg_dl` | subgrupo profesional | 259 | 39 | 15.1 | imputada (mediana = 200) + marca colesterol_total_mg_dl_imputado |
 | `trigliceridos_mg_dl` | subgrupo profesional | 259 | 39 | 15.1 | imputada (mediana = 146) + marca trigliceridos_mg_dl_imputado |
 | `colesterol_hdl_mg_dl` | subgrupo profesional | 259 | 39 | 15.1 | imputada (mediana = 54) + marca colesterol_hdl_mg_dl_imputado |
 | `menstruacion_llega` | general | 170 | 11 | 6.5 | imputada (moda = REGULAR) + marca menstruacion_llega_imputado |
 | `tipo_sangrado` | general | 170 | 11 | 6.5 | imputada (moda = MODERADO) + marca tipo_sangrado_imputado |
-| `presion_sistolica` | subgrupo profesional | 259 | 15 | 5.8 | imputada (mediana = 120) + marca presion_sistolica_imputado |
-| `presion_diastolica` | subgrupo profesional | 259 | 13 | 5.0 | imputada (mediana = 75) + marca presion_diastolica_imputado |
+| `presion_sistolica` | subgrupo profesional | 259 | 15 | 5.8 | imputada (diastólica + presión de pulso mediana (45); sin la otra, mediana 120) + marca presion_sistolica_imputado |
+| `presion_diastolica` | subgrupo profesional | 259 | 13 | 5.0 | imputada (sistólica − presión de pulso mediana (45); sin la otra, mediana 75) + marca presion_diastolica_imputado |
 | `estres_entorno_laboral` | general | 306 | 10 | 3.3 | imputada (mediana = 3) |
 | `tipo_metodo_anticonceptivo` | general | 66 | 2 | 3.0 | imputada (moda = ORAL) |
 | `marihuana_frecuencia` | general | 495 | 14 | 2.8 | imputada (mediana = 1) |
@@ -247,7 +247,7 @@ Moda para categóricas, mediana para ordinales y continuas. El MRS nunca se impu
 | `platos_verduras_dia` | general | 495 | 10 | 2.0 | imputada (mediana = 2) |
 | `vasos_agua_dia` | general | 495 | 10 | 2.0 | imputada (mediana = 3) |
 | `tiene_actividad_sexual` | general | 495 | 9 | 1.8 | imputada (moda = SI) |
-| `peso_kg` | general | 495 | 8 | 1.6 | imputada (mediana = 71) |
+| `peso_kg` | general | 495 | 8 | 1.6 | imputada (IMC desde la cintura (IMC = -3.2 + 0.353·cintura) × talla²; sin cintura, mediana 71) + marca peso_kg_imputado |
 | `falta_tiempo_influye` | general | 495 | 7 | 1.4 | imputada (mediana = 3) |
 | `frecuencia_comida_fuera` | general | 495 | 7 | 1.4 | imputada (mediana = 2) |
 | `lacteos_dia` | general | 495 | 7 | 1.4 | imputada (mediana = 2) |

@@ -1,0 +1,6 @@
+﻿control,por_que,casos,tratamiento
+Diastólica ≥ sistólica,fisiológicamente imposible,0,limpieza paso 5: ambas presiones vacías; paso 9: la que faltaba se imputa desde la otra
+Cintura incoherente con el IMC (|z robusto| > 4),"la cintura sigue al IMC (r ≈ 0,9); un residuo tan grande indica error de registro",0,limpieza paso 5: cintura vacía; paso 9: imputada desde el IMC
+IMC fuera de 15-60,fuera de lo compatible con una adulta ambulatoria,0,no quedan casos
+"Índice cintura/talla fuera de 0,30-0,90",proporción corporal imposible,0,no quedan casos
+Talla actual > talla máxima,la talla máxima es la mayor alcanzada,5,limpieza paso 10: la pérdida de talla queda sin dato (las tallas se conservan)

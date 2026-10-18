@@ -341,7 +341,50 @@ def p5_mediciones(df, bit):
     imposible = pas.notna() & pad.notna() & (pad >= pas)
     bit.anotar('5 mediciones', 'presion_*', 'diastólica ≥ sistólica → ambas vacías', int(imposible.sum()))
     df.loc[imposible, ['presion_sistolica', 'presion_diastolica']] = pd.NA
+
+    # Cintura incoherente con el IMC (Fase 34): la cintura sigue de cerca al IMC
+    # (r ≈ 0,9). Si el residuo robusto de la recta cintura ~ IMC supera
+    # ±Z_CINTURA desviaciones (MAD), la medición se considera errónea → vacía
+    # (se imputa en el paso 9 desde el IMC).
+    incoherente = cintura_incoherente(df)
+    bit.anotar('5 mediciones', 'circunferencia_cintura_cm',
+               f'incoherente con el IMC (|z robusto| > {Z_CINTURA:g}) → vacía', int(incoherente.sum()),
+               ejemplo=', '.join(f'{c} cm con IMC {i:.1f}' for c, i in
+                                 zip(df.loc[incoherente, 'circunferencia_cintura_cm'],
+                                     _imc(df)[incoherente])) or None)
+    df.loc[incoherente, 'circunferencia_cintura_cm'] = pd.NA
     return df
+
+
+Z_CINTURA = 4.0
+
+
+def _imc(df):
+    peso, talla = df['peso_kg'].map(a_numero), df['talla_actual_cm'].map(a_numero)
+    return peso / (talla / 100) ** 2
+
+
+def recta_cintura(df, imc_desde_cintura=False):
+    """
+    Recta cintura = a + b·IMC (o IMC = a + b·cintura) ajustada con las filas que
+    tienen ambos datos. Se ajusta en la dirección en que se va a predecir: invertir
+    la otra recta exagera los extremos.
+    """
+    imc, cintura = _imc(df), df['circunferencia_cintura_cm'].map(a_numero)
+    ok = imc.notna() & cintura.notna()
+    x, y = (cintura, imc) if imc_desde_cintura else (imc, cintura)
+    b, a = np.polyfit(x[ok].astype(float), y[ok].astype(float), 1)
+    return a, b
+
+
+def cintura_incoherente(df):
+    """Filas cuya cintura se aleja más de Z_CINTURA desviaciones robustas de la recta."""
+    a, b = recta_cintura(df)
+    imc, cintura = _imc(df), df['circunferencia_cintura_cm'].map(a_numero)
+    residuo = cintura - (a + b * imc)
+    r = residuo.dropna()
+    mad = 1.4826 * (r - r.median()).abs().median()
+    return (residuo.abs() / mad > Z_CINTURA).fillna(False)
 
 
 def p6_fechas(df, bit):
@@ -500,6 +543,52 @@ def _tipo_variable(c, campos):
     return None
 
 
+# Mediciones que se imputan desde una variable relacionada y no con la mediana
+# (Fase 34): la mediana sola puede crear combinaciones imposibles, p. ej.
+# sistólica imputada 120 junto a una diastólica real de 126, o un peso de 71 kg
+# a una mujer de 1,75 m con 53 cm de cintura.
+IMPUTACION_POR_RELACION = {'peso_kg', 'circunferencia_cintura_cm', 'presion_sistolica',
+                           'presion_diastolica'}
+
+
+def _imputar_por_relacion(df, c, faltante, aplica):
+    """
+    Imputa `c` en las filas `faltante` y devuelve la descripción del método.
+      - peso: IMC estimado desde la cintura (recta IMC ~ cintura) × talla²;
+        sin cintura, mediana.
+      - cintura: recta cintura ~ IMC (paso 5); sin IMC, mediana.
+      - presiones: la otra presión ± la mediana de la presión de pulso
+        (sistólica − diastólica) de los pares medidos; sin ninguna, mediana.
+    """
+    obs = df.loc[aplica & df[c].notna(), c].map(a_numero)
+    mediana = float(obs.median())
+    if c == 'peso_kg':
+        a, b = recta_cintura(df, imc_desde_cintura=True)
+        talla = df['talla_actual_cm'].map(a_numero)
+        imc = a + b * df['circunferencia_cintura_cm'].map(a_numero)
+        estimado = (imc * (talla / 100) ** 2).round(1)
+        metodo = f'IMC desde la cintura (IMC = {a:.1f} + {b:.3f}·cintura) × talla²; sin cintura, mediana {mediana:g}'
+    elif c == 'circunferencia_cintura_cm':
+        a, b = recta_cintura(df)
+        estimado = (a + b * _imc(df)).round(1)
+        metodo = f'recta cintura = {a:.1f} + {b:.2f}·IMC; sin IMC, mediana {mediana:g}'
+    else:
+        pas, pad = df['presion_sistolica'].map(a_numero), df['presion_diastolica'].map(a_numero)
+        medidos = pas.notna() & pad.notna()
+        if 'presion_sistolica_imputado' in df:          # al imputar la diastólica
+            medidos &= df['presion_sistolica_imputado'] == 0
+        pulso = float((pas - pad)[medidos].median())
+        estimado = pad + pulso if c == 'presion_sistolica' else pas - pulso
+        otra = 'diastólica +' if c == 'presion_sistolica' else 'sistólica −'
+        metodo = f'{otra} presión de pulso mediana ({pulso:g}); sin la otra, mediana {mediana:g}'
+    valores = estimado.where(estimado.notna(), mediana)
+    if c in CAMPOS_ENTEROS:
+        df.loc[faltante, c] = valores[faltante].map(lambda v: str(int(round(v))))
+    else:
+        df.loc[faltante, c] = valores[faltante].map(lambda v: f'{v:g}')
+    return metodo
+
+
 def p9_imputacion(df, bit, no_aplica, campos, solo_profesional):
     """
     Imputa solo los faltantes reales (vacíos que NO son "no aplica").
@@ -527,6 +616,11 @@ def p9_imputacion(df, bit, no_aplica, campos, solo_profesional):
             tratamiento = 'sin faltantes'
         elif pct > UMBRAL_EXCLUIR:
             tratamiento = f'> {UMBRAL_EXCLUIR:g} %: no se modela'
+        elif c in IMPUTACION_POR_RELACION:
+            metodo = _imputar_por_relacion(df, c, faltante, aplica)
+            bit.anotar('9 imputación', c, f'imputado por {metodo}', n_falta)
+            df[f'{c}_imputado'] = faltante.map(int)
+            tratamiento = f'imputada ({metodo}) + marca {c}_imputado'
         else:
             valores = df.loc[aplica & df[c].notna(), c]
             if tipo == 'categorica':

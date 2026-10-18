@@ -1,94 +1,94 @@
 ﻿modelo,tarea,variable,etiqueta,rol,perm_media,perm_de,perm_positiva_en,impureza_media,seleccionada,seleccion_final,motivo_seleccion
-general,regresion,imc,IMC,control,0.02980,0.01520,5,0.12310,True,True,Random Forest + bivariado
-general,regresion,sobrecarga_fisica_emocional,Sobrecarga por trabajo y cuidado,predictor,0.01449,0.01404,4,0.05328,True,True,Random Forest + bivariado
-general,regresion,etapa_menopausica=premenopausia,Etapa menopáusica: premenopausia,control,0.01304,0.00797,5,0.02816,True,True,Random Forest + bivariado
-general,regresion,dias_ejercicio_semana,Días de ejercicio a la semana,predictor,0.01162,0.00576,5,0.04220,True,True,Random Forest + bivariado
-general,regresion,edad,Edad,control,0.01155,0.00614,5,0.08917,True,True,Random Forest + bivariado
-general,regresion,usa_terapia_hormonal,Usa terapia hormonal,control,0.00422,0.00580,3,0.01820,False,True,bivariado
-general,regresion,alcohol_frecuencia,Alcohol,predictor,0.00299,0.00418,4,0.03094,True,True,Random Forest
-general,regresion,carnes_semana,Carnes a la semana,predictor,0.00257,0.00143,5,0.03090,True,True,Random Forest
-general,regresion,nivel_educacion,Nivel educacional,control,0.00218,0.00311,4,0.04108,True,True,Random Forest
-general,regresion,falta_tiempo_influye,Falta de tiempo influye en lo que come,predictor,0.00161,0.00199,4,0.04108,True,True,Random Forest
-general,regresion,frutas_dia,Frutas al día,predictor,0.00134,0.00458,3,0.02508,False,False,
-general,regresion,quien_prepara_comidas=COMPARTIDO,Quién prepara las comidas: COMPARTIDO,predictor,0.00132,0.00321,3,0.01359,False,False,
-general,regresion,golosinas_semana,Dulces y snacks a la semana,predictor,0.00107,0.00149,3,0.02987,False,False,
-general,regresion,quien_prepara_comidas=OTRA_HOGAR,Quién prepara las comidas: OTRA_HOGAR,predictor,0.00078,0.00046,4,0.00248,True,True,Random Forest
-general,regresion,prevision=FONASA,Previsión de salud: FONASA,control,0.00077,0.00182,3,0.01171,False,False,
-general,regresion,jugos_gaseosas_dia,Jugos y gaseosas al día,predictor,0.00062,0.00623,4,0.03268,True,True,Random Forest
-general,regresion,frecuencia_comida_fuera,Comidas fuera del hogar,predictor,0.00043,0.00477,2,0.03203,False,False,
-general,regresion,frecuencia_aerobico,Frecuencia de ejercicio aeróbico,predictor,0.00025,0.00223,3,0.02352,False,False,
-general,regresion,trabaja_actualmente,Trabaja actualmente,control,0.00020,0.00195,2,0.01270,False,False,
-general,regresion,etapa_menopausica=perimenopausia,Etapa menopáusica: perimenopausia,control,0.00002,0.00077,2,0.00605,False,True,bivariado
-general,regresion,etapa_menopausica=indeterminada,Etapa menopáusica: indeterminada,control,0.00001,0.00058,1,0.00138,False,True,bivariado
-general,regresion,vasos_agua_dia,Vasos de agua al día,predictor,-0.00002,0.00259,2,0.02440,False,False,
-general,regresion,quien_prepara_comidas=OTRO,Quién prepara las comidas: OTRO,predictor,-0.00003,0.00006,1,0.00019,False,False,
-general,regresion,prevision=FFAA,Previsión de salud: FFAA,control,-0.00004,0.00012,2,0.00029,False,False,
-general,regresion,marihuana_frecuencia,Marihuana,predictor,-0.00006,0.00036,3,0.00125,False,False,
-general,regresion,quien_prepara_comidas=COMPRO,Quién prepara las comidas: COMPRO,predictor,-0.00006,0.00189,3,0.00545,False,False,
-general,regresion,prevision=NINGUNA,Previsión de salud: NINGUNA,control,-0.00008,0.00025,1,0.00073,False,False,
-general,regresion,platos_verduras_dia,Platos de verduras al día,predictor,-0.00017,0.00162,3,0.01573,False,False,
-general,regresion,tabaco_frecuencia,Tabaco,predictor,-0.00023,0.00151,3,0.01185,False,False,
-general,regresion,frecuencia_fuerza,Frecuencia de ejercicio de fuerza,predictor,-0.00024,0.00063,2,0.00879,False,False,
-general,regresion,prevision=NS,Previsión de salud: NS,control,-0.00027,0.00048,2,0.00144,False,False,
-general,regresion,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,predictor,-0.00038,0.00332,2,0.01994,False,False,
-general,regresion,etapa_menopausica=quirurgica,Etapa menopáusica: quirurgica,control,-0.00038,0.00061,2,0.00114,False,True,bivariado
-general,regresion,bebidas_energeticas_dia,Bebidas energéticas al día,predictor,-0.00041,0.00083,2,0.00321,False,False,
-general,regresion,panes_dia,Panes al día,predictor,-0.00049,0.00152,1,0.02153,False,False,
-general,regresion,prevision=ISAPRE,Previsión de salud: ISAPRE,control,-0.00051,0.00133,2,0.00632,False,False,
-general,regresion,quien_prepara_comidas=YO_MAYORIA,Quién prepara las comidas: YO_MAYORIA,predictor,-0.00057,0.00381,3,0.01741,False,False,
-general,regresion,lacteos_dia,Lácteos al día,predictor,-0.00073,0.00175,2,0.02107,False,False,
-general,regresion,legumbres_semana,Legumbres a la semana,predictor,-0.00081,0.00094,1,0.01778,False,False,
-general,regresion,doble_carga,Doble carga (trabaja y cuida),predictor,-0.00112,0.00252,2,0.01213,False,True,bivariado
-general,regresion,etapa_menopausica=posmenopausia,Etapa menopáusica: posmenopausia,control,-0.00179,0.00398,2,0.01545,False,True,bivariado
-general,regresion,pescado_semana,Pescado a la semana,predictor,-0.00244,0.00307,0,0.01794,False,False,
-general,regresion,cuida_otras_personas,Cuida a otras personas,predictor,-0.00326,0.00678,1,0.01416,False,False,bivariado
-general,regresion,cantidad_personas_cuida,Cantidad de personas que cuida,predictor,-0.00386,0.00710,1,0.02732,False,False,bivariado
-general,regresion,horas_sedentarismo,Horas sentada al día,predictor,-0.00425,0.00482,1,0.04528,False,False,
-general,clasificacion,sobrecarga_fisica_emocional,Sobrecarga por trabajo y cuidado,predictor,0.02073,0.01789,4,0.04896,True,,
-general,clasificacion,frutas_dia,Frutas al día,predictor,0.01850,0.01204,5,0.03640,True,,
-general,clasificacion,edad,Edad,control,0.01650,0.00920,5,0.08744,True,,
-general,clasificacion,alcohol_frecuencia,Alcohol,predictor,0.01110,0.00826,5,0.03673,True,,
-general,clasificacion,dias_ejercicio_semana,Días de ejercicio a la semana,predictor,0.00909,0.01444,4,0.03796,True,,
-general,clasificacion,etapa_menopausica=premenopausia,Etapa menopáusica: premenopausia,control,0.00875,0.00686,4,0.02016,True,,
-general,clasificacion,frecuencia_aerobico,Frecuencia de ejercicio aeróbico,predictor,0.00784,0.00332,5,0.02585,True,,
-general,clasificacion,nivel_educacion,Nivel educacional,control,0.00735,0.00716,4,0.04497,True,,
-general,clasificacion,golosinas_semana,Dulces y snacks a la semana,predictor,0.00701,0.00703,4,0.03793,True,,
-general,clasificacion,imc,IMC,control,0.00670,0.00918,3,0.10209,False,,
-general,clasificacion,quien_prepara_comidas=YO_MAYORIA,Quién prepara las comidas: YO_MAYORIA,predictor,0.00572,0.00711,3,0.02146,False,,
-general,clasificacion,jugos_gaseosas_dia,Jugos y gaseosas al día,predictor,0.00540,0.00811,4,0.03298,True,,
-general,clasificacion,carnes_semana,Carnes a la semana,predictor,0.00427,0.00485,3,0.03518,False,,
-general,clasificacion,quien_prepara_comidas=COMPARTIDO,Quién prepara las comidas: COMPARTIDO,predictor,0.00427,0.00589,3,0.01208,False,,
-general,clasificacion,prevision=FONASA,Previsión de salud: FONASA,control,0.00283,0.00219,5,0.01234,True,,
-general,clasificacion,platos_verduras_dia,Platos de verduras al día,predictor,0.00280,0.00279,4,0.01945,True,,
-general,clasificacion,panes_dia,Panes al día,predictor,0.00279,0.00190,5,0.02712,True,,
-general,clasificacion,tabaco_frecuencia,Tabaco,predictor,0.00179,0.00272,4,0.01686,True,,
-general,clasificacion,frecuencia_comida_fuera,Comidas fuera del hogar,predictor,0.00147,0.00263,3,0.02844,False,,
-general,clasificacion,cantidad_personas_cuida,Cantidad de personas que cuida,predictor,0.00145,0.00661,3,0.02618,False,,
-general,clasificacion,etapa_menopausica=perimenopausia,Etapa menopáusica: perimenopausia,control,0.00116,0.00135,4,0.00850,True,,
-general,clasificacion,prevision=NS,Previsión de salud: NS,control,0.00071,0.00134,3,0.00077,False,,
-general,clasificacion,bebidas_energeticas_dia,Bebidas energéticas al día,predictor,0.00067,0.00176,3,0.00376,False,,
-general,clasificacion,etapa_menopausica=posmenopausia,Etapa menopáusica: posmenopausia,control,0.00047,0.00415,3,0.01322,False,,
-general,clasificacion,falta_tiempo_influye,Falta de tiempo influye en lo que come,predictor,0.00044,0.00559,3,0.03351,False,,
-general,clasificacion,quien_prepara_comidas=OTRA_HOGAR,Quién prepara las comidas: OTRA_HOGAR,predictor,0.00036,0.00236,3,0.00370,False,,
-general,clasificacion,prevision=ISAPRE,Previsión de salud: ISAPRE,control,0.00022,0.00106,2,0.00905,False,,
-general,clasificacion,quien_prepara_comidas=OTRO,Quién prepara las comidas: OTRO,predictor,0.00012,0.00075,3,0.00111,False,,
-general,clasificacion,prevision=NINGUNA,Previsión de salud: NINGUNA,control,0.00009,0.00080,3,0.00046,False,,
-general,clasificacion,usa_terapia_hormonal,Usa terapia hormonal,control,0.00004,0.00625,3,0.00841,False,,
-general,clasificacion,etapa_menopausica=quirurgica,Etapa menopáusica: quirurgica,control,0.00004,0.00056,3,0.00118,False,,
-general,clasificacion,prevision=FFAA,Previsión de salud: FFAA,control,-0.00000,0.00020,2,0.00040,False,,
-general,clasificacion,etapa_menopausica=indeterminada,Etapa menopáusica: indeterminada,control,-0.00008,0.00015,1,0.00017,False,,
-general,clasificacion,quien_prepara_comidas=COMPRO,Quién prepara las comidas: COMPRO,predictor,-0.00022,0.00255,2,0.00489,False,,
-general,clasificacion,marihuana_frecuencia,Marihuana,predictor,-0.00064,0.00230,3,0.00253,False,,
-general,clasificacion,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,predictor,-0.00077,0.00370,2,0.02050,False,,
-general,clasificacion,frecuencia_fuerza,Frecuencia de ejercicio de fuerza,predictor,-0.00081,0.00245,2,0.00865,False,,
-general,clasificacion,legumbres_semana,Legumbres a la semana,predictor,-0.00116,0.00380,1,0.01901,False,,
-general,clasificacion,doble_carga,Doble carga (trabaja y cuida),predictor,-0.00120,0.00194,1,0.00889,False,,
-general,clasificacion,vasos_agua_dia,Vasos de agua al día,predictor,-0.00191,0.00498,1,0.02901,False,,
-general,clasificacion,pescado_semana,Pescado a la semana,predictor,-0.00223,0.00333,1,0.01976,False,,
-general,clasificacion,lacteos_dia,Lácteos al día,predictor,-0.00243,0.00236,0,0.01737,False,,
-general,clasificacion,cuida_otras_personas,Cuida a otras personas,predictor,-0.00308,0.00711,2,0.01420,False,,
-general,clasificacion,horas_sedentarismo,Horas sentada al día,predictor,-0.00397,0.00390,1,0.04646,False,,
-general,clasificacion,trabaja_actualmente,Trabaja actualmente,control,-0.00410,0.00602,1,0.01394,False,,
+general,regresion,imc,IMC,control,0.02856,0.01482,5,0.12341,True,True,Random Forest + bivariado
+general,regresion,sobrecarga_fisica_emocional,Sobrecarga por trabajo y cuidado,predictor,0.01388,0.01381,4,0.05368,True,True,Random Forest + bivariado
+general,regresion,etapa_menopausica=premenopausia,Etapa menopáusica: premenopausia,control,0.01289,0.00715,5,0.02842,True,True,Random Forest + bivariado
+general,regresion,edad,Edad,control,0.01190,0.00632,5,0.08941,True,True,Random Forest + bivariado
+general,regresion,dias_ejercicio_semana,Días de ejercicio a la semana,predictor,0.01126,0.00667,5,0.04207,True,True,Random Forest + bivariado
+general,regresion,usa_terapia_hormonal,Usa terapia hormonal,control,0.00427,0.00582,3,0.01801,False,True,bivariado
+general,regresion,alcohol_frecuencia,Alcohol,predictor,0.00315,0.00353,4,0.03045,True,True,Random Forest
+general,regresion,carnes_semana,Carnes a la semana,predictor,0.00289,0.00146,5,0.03135,True,True,Random Forest
+general,regresion,nivel_educacion,Nivel educacional,control,0.00220,0.00292,4,0.04138,True,True,Random Forest
+general,regresion,falta_tiempo_influye,Falta de tiempo influye en lo que come,predictor,0.00148,0.00262,3,0.04105,False,False,
+general,regresion,quien_prepara_comidas=COMPARTIDO,Quién prepara las comidas: COMPARTIDO,predictor,0.00105,0.00366,3,0.01379,False,False,
+general,regresion,golosinas_semana,Dulces y snacks a la semana,predictor,0.00091,0.00090,4,0.03010,True,True,Random Forest
+general,regresion,frecuencia_comida_fuera,Comidas fuera del hogar,predictor,0.00089,0.00524,3,0.03227,False,False,
+general,regresion,frutas_dia,Frutas al día,predictor,0.00077,0.00453,3,0.02524,False,False,
+general,regresion,jugos_gaseosas_dia,Jugos y gaseosas al día,predictor,0.00077,0.00625,4,0.03274,True,True,Random Forest
+general,regresion,quien_prepara_comidas=OTRA_HOGAR,Quién prepara las comidas: OTRA_HOGAR,predictor,0.00071,0.00048,4,0.00253,True,True,Random Forest
+general,regresion,prevision=FONASA,Previsión de salud: FONASA,control,0.00058,0.00215,3,0.01143,False,False,
+general,regresion,trabaja_actualmente,Trabaja actualmente,control,0.00024,0.00172,2,0.01291,False,False,
+general,regresion,vasos_agua_dia,Vasos de agua al día,predictor,0.00021,0.00331,2,0.02395,False,False,
+general,regresion,quien_prepara_comidas=COMPRO,Quién prepara las comidas: COMPRO,predictor,0.00017,0.00187,4,0.00539,True,True,Random Forest
+general,regresion,platos_verduras_dia,Platos de verduras al día,predictor,0.00009,0.00141,3,0.01550,False,False,
+general,regresion,etapa_menopausica=indeterminada,Etapa menopáusica: indeterminada,control,0.00002,0.00056,3,0.00142,False,True,bivariado
+general,regresion,marihuana_frecuencia,Marihuana,predictor,-0.00002,0.00030,3,0.00125,False,False,
+general,regresion,prevision=FFAA,Previsión de salud: FFAA,control,-0.00002,0.00009,1,0.00028,False,False,
+general,regresion,quien_prepara_comidas=OTRO,Quién prepara las comidas: OTRO,predictor,-0.00003,0.00006,1,0.00018,False,False,
+general,regresion,frecuencia_fuerza,Frecuencia de ejercicio de fuerza,predictor,-0.00007,0.00051,3,0.00836,False,False,
+general,regresion,prevision=NINGUNA,Previsión de salud: NINGUNA,control,-0.00009,0.00025,1,0.00071,False,False,
+general,regresion,etapa_menopausica=perimenopausia,Etapa menopáusica: perimenopausia,control,-0.00011,0.00052,2,0.00606,False,True,bivariado
+general,regresion,prevision=NS,Previsión de salud: NS,control,-0.00020,0.00041,2,0.00145,False,False,
+general,regresion,tabaco_frecuencia,Tabaco,predictor,-0.00025,0.00189,2,0.01216,False,False,
+general,regresion,bebidas_energeticas_dia,Bebidas energéticas al día,predictor,-0.00032,0.00094,2,0.00340,False,False,
+general,regresion,frecuencia_aerobico,Frecuencia de ejercicio aeróbico,predictor,-0.00033,0.00268,2,0.02362,False,False,
+general,regresion,etapa_menopausica=quirurgica,Etapa menopáusica: quirurgica,control,-0.00033,0.00054,2,0.00098,False,True,bivariado
+general,regresion,panes_dia,Panes al día,predictor,-0.00058,0.00192,1,0.02132,False,False,
+general,regresion,legumbres_semana,Legumbres a la semana,predictor,-0.00059,0.00090,1,0.01768,False,False,
+general,regresion,prevision=ISAPRE,Previsión de salud: ISAPRE,control,-0.00060,0.00120,1,0.00582,False,False,
+general,regresion,quien_prepara_comidas=YO_MAYORIA,Quién prepara las comidas: YO_MAYORIA,predictor,-0.00070,0.00348,3,0.01763,False,False,
+general,regresion,lacteos_dia,Lácteos al día,predictor,-0.00084,0.00177,2,0.02065,False,False,
+general,regresion,doble_carga,Doble carga (trabaja y cuida),predictor,-0.00100,0.00255,2,0.01181,False,True,bivariado
+general,regresion,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,predictor,-0.00108,0.00300,2,0.01958,False,False,
+general,regresion,etapa_menopausica=posmenopausia,Etapa menopáusica: posmenopausia,control,-0.00173,0.00411,2,0.01563,False,True,bivariado
+general,regresion,pescado_semana,Pescado a la semana,predictor,-0.00198,0.00319,2,0.01850,False,False,
+general,regresion,cuida_otras_personas,Cuida a otras personas,predictor,-0.00337,0.00689,2,0.01360,False,False,bivariado
+general,regresion,cantidad_personas_cuida,Cantidad de personas que cuida,predictor,-0.00394,0.00689,2,0.02707,False,False,bivariado
+general,regresion,horas_sedentarismo,Horas sentada al día,predictor,-0.00443,0.00492,1,0.04575,False,False,
+general,clasificacion,sobrecarga_fisica_emocional,Sobrecarga por trabajo y cuidado,predictor,0.02176,0.01979,4,0.04915,True,,
+general,clasificacion,frutas_dia,Frutas al día,predictor,0.02077,0.01251,5,0.03570,True,,
+general,clasificacion,edad,Edad,control,0.01791,0.01274,5,0.08827,True,,
+general,clasificacion,alcohol_frecuencia,Alcohol,predictor,0.01127,0.00793,5,0.03694,True,,
+general,clasificacion,frecuencia_aerobico,Frecuencia de ejercicio aeróbico,predictor,0.01012,0.00113,5,0.02604,True,,
+general,clasificacion,dias_ejercicio_semana,Días de ejercicio a la semana,predictor,0.01000,0.01383,4,0.03759,True,,
+general,clasificacion,etapa_menopausica=premenopausia,Etapa menopáusica: premenopausia,control,0.00965,0.00509,5,0.02032,True,,
+general,clasificacion,golosinas_semana,Dulces y snacks a la semana,predictor,0.00874,0.00869,4,0.03806,True,,
+general,clasificacion,nivel_educacion,Nivel educacional,control,0.00864,0.00773,4,0.04459,True,,
+general,clasificacion,imc,IMC,control,0.00814,0.01071,3,0.10135,False,,
+general,clasificacion,quien_prepara_comidas=YO_MAYORIA,Quién prepara las comidas: YO_MAYORIA,predictor,0.00714,0.00476,4,0.02177,True,,
+general,clasificacion,carnes_semana,Carnes a la semana,predictor,0.00677,0.00342,5,0.03460,True,,
+general,clasificacion,jugos_gaseosas_dia,Jugos y gaseosas al día,predictor,0.00666,0.00756,4,0.03279,True,,
+general,clasificacion,frecuencia_comida_fuera,Comidas fuera del hogar,predictor,0.00496,0.00364,5,0.02888,True,,
+general,clasificacion,platos_verduras_dia,Platos de verduras al día,predictor,0.00465,0.00369,4,0.01966,True,,
+general,clasificacion,panes_dia,Panes al día,predictor,0.00420,0.00192,5,0.02703,True,,
+general,clasificacion,quien_prepara_comidas=COMPARTIDO,Quién prepara las comidas: COMPARTIDO,predictor,0.00393,0.00413,4,0.01227,True,,
+general,clasificacion,cantidad_personas_cuida,Cantidad de personas que cuida,predictor,0.00373,0.00718,3,0.02636,False,,
+general,clasificacion,prevision=FONASA,Previsión de salud: FONASA,control,0.00313,0.00166,5,0.01250,True,,
+general,clasificacion,tabaco_frecuencia,Tabaco,predictor,0.00296,0.00508,3,0.01643,False,,
+general,clasificacion,etapa_menopausica=perimenopausia,Etapa menopáusica: perimenopausia,control,0.00215,0.00141,4,0.00834,True,,
+general,clasificacion,usa_terapia_hormonal,Usa terapia hormonal,control,0.00210,0.00671,4,0.00829,True,,
+general,clasificacion,falta_tiempo_influye,Falta de tiempo influye en lo que come,predictor,0.00176,0.00539,3,0.03462,False,,
+general,clasificacion,etapa_menopausica=posmenopausia,Etapa menopáusica: posmenopausia,control,0.00170,0.00346,3,0.01320,False,,
+general,clasificacion,bebidas_energeticas_dia,Bebidas energéticas al día,predictor,0.00117,0.00044,5,0.00366,True,,
+general,clasificacion,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,predictor,0.00086,0.00465,2,0.02026,False,,
+general,clasificacion,quien_prepara_comidas=OTRA_HOGAR,Quién prepara las comidas: OTRA_HOGAR,predictor,0.00066,0.00154,3,0.00380,False,,
+general,clasificacion,quien_prepara_comidas=OTRO,Quién prepara las comidas: OTRO,predictor,0.00048,0.00083,3,0.00115,False,,
+general,clasificacion,prevision=NS,Previsión de salud: NS,control,0.00035,0.00076,3,0.00071,False,,
+general,clasificacion,etapa_menopausica=quirurgica,Etapa menopáusica: quirurgica,control,0.00032,0.00079,3,0.00108,False,,
+general,clasificacion,marihuana_frecuencia,Marihuana,predictor,0.00023,0.00229,4,0.00250,True,,
+general,clasificacion,doble_carga,Doble carga (trabaja y cuida),predictor,0.00014,0.00186,2,0.00891,False,,
+general,clasificacion,legumbres_semana,Legumbres a la semana,predictor,0.00001,0.00376,2,0.01857,False,,
+general,clasificacion,prevision=NINGUNA,Previsión de salud: NINGUNA,control,-0.00002,0.00042,3,0.00038,False,,
+general,clasificacion,pescado_semana,Pescado a la semana,predictor,-0.00005,0.00489,3,0.01979,False,,
+general,clasificacion,prevision=FFAA,Previsión de salud: FFAA,control,-0.00005,0.00012,1,0.00036,False,,
+general,clasificacion,etapa_menopausica=indeterminada,Etapa menopáusica: indeterminada,control,-0.00009,0.00015,1,0.00018,False,,
+general,clasificacion,prevision=ISAPRE,Previsión de salud: ISAPRE,control,-0.00019,0.00118,2,0.00905,False,,
+general,clasificacion,quien_prepara_comidas=COMPRO,Quién prepara las comidas: COMPRO,predictor,-0.00026,0.00188,3,0.00505,False,,
+general,clasificacion,frecuencia_fuerza,Frecuencia de ejercicio de fuerza,predictor,-0.00041,0.00174,2,0.00866,False,,
+general,clasificacion,vasos_agua_dia,Vasos de agua al día,predictor,-0.00055,0.00524,3,0.02966,False,,
+general,clasificacion,cuida_otras_personas,Cuida a otras personas,predictor,-0.00102,0.00756,2,0.01403,False,,
+general,clasificacion,lacteos_dia,Lácteos al día,predictor,-0.00169,0.00231,1,0.01767,False,,
+general,clasificacion,horas_sedentarismo,Horas sentada al día,predictor,-0.00245,0.00363,2,0.04605,False,,
+general,clasificacion,trabaja_actualmente,Trabaja actualmente,control,-0.00304,0.00477,1,0.01374,False,,
 trabajadoras,regresion,imc,IMC,control,0.02327,0.00906,5,0.12419,True,True,Random Forest + bivariado
 trabajadoras,regresion,estres_entorno_laboral,Estrés del entorno laboral,predictor (trabajo),0.01539,0.00903,4,0.05397,True,True,Random Forest + bivariado
 trabajadoras,regresion,etapa_menopausica=premenopausia,Etapa menopáusica: premenopausia,control,0.01278,0.00378,5,0.02308,True,True,Random Forest + bivariado

@@ -1,6 +1,6 @@
 # Análisis exploratorio de datos (Fase 33)
 
-Generado por `analisis/exploratorio.py` el 2026-10-11 a partir de
+Generado por `analisis/exploratorio.py` el 2026-10-18 a partir de
 `datos/limpio/dataset_menopausia_limpio.csv` (Fase 32). Corresponde a OB2, Actividad 1
 del documento del seminario.
 
@@ -14,10 +14,10 @@ del documento del seminario.
 | Variable | n | Media ± DE | Mediana [Q1-Q3] | Mín-Máx |
 |---|---|---|---|---|
 | Edad | 495 | 50.6 ± 5.8 | 51.0 [47.0-55.0] | 34.0-64.0 |
-| IMC | 495 | 29.2 ± 4.9 | 29.0 [25.8-32.1] | 17.5-46.4 |
+| IMC | 495 | 29.2 ± 5.0 | 29.1 [25.8-32.2] | 15.5-46.4 |
 | Talla (cm) | 495 | 156.4 ± 6.3 | 156.0 [152.0-161.0] | 140.0-175.0 |
-| Peso (kg) | 495 | 71.5 ± 13.0 | 71.0 [61.8-79.0] | 41.5-127.9 |
-| Cintura (cm) | 495 | 92.3 ± 12.1 | 92.5 [84.8-98.7] | 53.0-132.0 |
+| Peso (kg) | 495 | 71.6 ± 13.2 | 71.3 [61.6-79.5] | 41.5-127.9 |
+| Cintura (cm) | 495 | 92.1 ± 12.8 | 92.0 [83.3-100.2] | 53.0-132.0 |
 | Horas sentada al día | 495 | 7.1 ± 2.5 | 7.0 [5.0-9.0] | 1.0-15.0 |
 | MRS total | 492 | 14.4 ± 8.8 | 13.0 [7.0-21.0] | 0.0-44.0 |
 | MRS somático | 492 | 5.6 ± 3.7 | 5.0 [3.0-8.0] | 0.0-16.0 |
@@ -91,11 +91,11 @@ vida laboral y de pareja, no como causas.
 | Ausencias o atrasos por síntomas | impacto | 305 | Spearman | rho = +0.38 | < 0,001 | < 0,001 |
 | Ha consultado por síntomas | otra | 357 | Kruskal-Wallis | ε² = +0.10 | < 0,001 | < 0,001 |
 | Siente que toman en serio sus síntomas | otra | 492 | Spearman | rho = -0.20 | < 0,001 | < 0,001 |
+| Cintura (cm) | otra | 492 | Spearman | rho = +0.20 | < 0,001 | < 0,001 |
 | IMC | control | 492 | Spearman | rho = +0.19 | < 0,001 | < 0,001 |
 | Distensión abdominal | otra | 492 | Spearman | rho = +0.18 | < 0,001 | < 0,001 |
 | Sobrecarga por trabajo y cuidado | predictor | 492 | Spearman | rho = +0.18 | < 0,001 | < 0,001 |
 | Edad | control | 492 | Spearman | rho = +0.16 | < 0,001 | 0.001 |
-| Cintura (cm) | otra | 492 | Spearman | rho = +0.16 | < 0,001 | 0.002 |
 | Días de ejercicio a la semana | predictor | 492 | Spearman | rho = -0.16 | < 0,001 | 0.002 |
 | Cantidad de personas que cuida | predictor | 492 | Spearman | rho = +0.15 | < 0,001 | 0.003 |
 | Cuida a otras personas | predictor | 492 | Spearman | rho = +0.14 | 0.001 | 0.005 |
@@ -117,10 +117,10 @@ estos son extremos plausibles.
 | Variable | n | Rango esperado | Atípicos | % | Valores |
 |---|---|---|---|---|---|
 | Edad | 495 | 35.0 a 67.0 | 2 | 0.4 | 34 |
-| IMC | 495 | 16.4 a 41.6 | 9 | 1.8 | 41.6, 41.7, 41.8, 42.1, 42.5, 42.7, 44.3, 46.4 |
+| IMC | 495 | 16.2 a 41.8 | 6 | 1.2 | 15.5, 42.1, 42.5, 42.7, 44.3, 46.4 |
 | Talla (cm) | 495 | 138.5 a 174.5 | 2 | 0.4 | 175 |
-| Peso (kg) | 495 | 36.1 a 104.7 | 8 | 1.6 | 104.9, 106.5, 106.7, 109, 109.9, 110.5, 121.8, 127.9 |
-| Cintura (cm) | 495 | 64.1 a 119.4 | 18 | 3.6 | 53, 56, 57.5, 61, 63.1, 119.6, 120, 121.1 |
+| Peso (kg) | 495 | 34.9 a 106.3 | 7 | 1.4 | 106.5, 106.7, 109, 109.9, 110.5, 121.8, 127.9 |
+| Cintura (cm) | 495 | 57.9 a 125.7 | 7 | 1.4 | 53, 56, 57.5, 126, 127.6, 130.2, 132 |
 | Horas sentada al día | 495 | -1.0 a 15.0 | 0 | 0.0 |  |
 | MRS total | 492 | -14.0 a 42.0 | 2 | 0.4 | 44 |
 | MRS somático | 492 | -4.5 a 15.5 | 3 | 0.6 | 16 |
@@ -151,7 +151,7 @@ Las variables de impacto no entran.
 ### Modelo general (n = 492, 45 variables)
 
 - Regresión sobre el MRS total: R2 = 0.06 ± 0.03, MAE = 7.02 ± 0.20.
-- Clasificación severa (MRS ≥ 16) vs. no severa (42 % severas): AUC = 0.62 ± 0.06, exactitud_balanceada = 0.61 ± 0.04.
+- Clasificación severa (MRS ≥ 16) vs. no severa (42 % severas): AUC = 0.62 ± 0.07, exactitud_balanceada = 0.62 ± 0.04.
 
 ![Importancia — Modelo general](figuras/eda/importancia_general.png)
 
@@ -159,41 +159,41 @@ Las variables de impacto no entran.
 
 | Variable | Importancia (perm.) | Positiva en | Impureza | Útil para el bosque |
 |---|---|---|---|---|
-| IMC | 0.0298 ± 0.0152 | 5/5 | 0.123 | sí |
-| Sobrecarga por trabajo y cuidado | 0.0145 ± 0.0140 | 4/5 | 0.053 | sí |
-| Etapa menopáusica: premenopausia | 0.0130 ± 0.0080 | 5/5 | 0.028 | sí |
-| Días de ejercicio a la semana | 0.0116 ± 0.0058 | 5/5 | 0.042 | sí |
-| Edad | 0.0116 ± 0.0061 | 5/5 | 0.089 | sí |
-| Usa terapia hormonal | 0.0042 ± 0.0058 | 3/5 | 0.018 | no |
-| Alcohol | 0.0030 ± 0.0042 | 4/5 | 0.031 | sí |
-| Carnes a la semana | 0.0026 ± 0.0014 | 5/5 | 0.031 | sí |
-| Nivel educacional | 0.0022 ± 0.0031 | 4/5 | 0.041 | sí |
-| Falta de tiempo influye en lo que come | 0.0016 ± 0.0020 | 4/5 | 0.041 | sí |
-| Frutas al día | 0.0013 ± 0.0046 | 3/5 | 0.025 | no |
-| Quién prepara las comidas: COMPARTIDO | 0.0013 ± 0.0032 | 3/5 | 0.014 | no |
-| Dulces y snacks a la semana | 0.0011 ± 0.0015 | 3/5 | 0.030 | no |
-| Quién prepara las comidas: OTRA_HOGAR | 0.0008 ± 0.0005 | 4/5 | 0.002 | sí |
-| Previsión de salud: FONASA | 0.0008 ± 0.0018 | 3/5 | 0.012 | no |
+| IMC | 0.0286 ± 0.0148 | 5/5 | 0.123 | sí |
+| Sobrecarga por trabajo y cuidado | 0.0139 ± 0.0138 | 4/5 | 0.054 | sí |
+| Etapa menopáusica: premenopausia | 0.0129 ± 0.0071 | 5/5 | 0.028 | sí |
+| Edad | 0.0119 ± 0.0063 | 5/5 | 0.089 | sí |
+| Días de ejercicio a la semana | 0.0113 ± 0.0067 | 5/5 | 0.042 | sí |
+| Usa terapia hormonal | 0.0043 ± 0.0058 | 3/5 | 0.018 | no |
+| Alcohol | 0.0031 ± 0.0035 | 4/5 | 0.030 | sí |
+| Carnes a la semana | 0.0029 ± 0.0015 | 5/5 | 0.031 | sí |
+| Nivel educacional | 0.0022 ± 0.0029 | 4/5 | 0.041 | sí |
+| Falta de tiempo influye en lo que come | 0.0015 ± 0.0026 | 3/5 | 0.041 | no |
+| Quién prepara las comidas: COMPARTIDO | 0.0011 ± 0.0037 | 3/5 | 0.014 | no |
+| Dulces y snacks a la semana | 0.0009 ± 0.0009 | 4/5 | 0.030 | sí |
+| Comidas fuera del hogar | 0.0009 ± 0.0052 | 3/5 | 0.032 | no |
+| Frutas al día | 0.0008 ± 0.0045 | 3/5 | 0.025 | no |
+| Jugos y gaseosas al día | 0.0008 ± 0.0062 | 4/5 | 0.033 | sí |
 
 **Clasificación (severa / no severa):**
 
 | Variable | Importancia (perm.) | Positiva en | Impureza | Útil para el bosque |
 |---|---|---|---|---|
-| Sobrecarga por trabajo y cuidado | 0.0207 ± 0.0179 | 4/5 | 0.049 | sí |
-| Frutas al día | 0.0185 ± 0.0120 | 5/5 | 0.036 | sí |
-| Edad | 0.0165 ± 0.0092 | 5/5 | 0.087 | sí |
-| Alcohol | 0.0111 ± 0.0083 | 5/5 | 0.037 | sí |
-| Días de ejercicio a la semana | 0.0091 ± 0.0144 | 4/5 | 0.038 | sí |
-| Etapa menopáusica: premenopausia | 0.0087 ± 0.0069 | 4/5 | 0.020 | sí |
-| Frecuencia de ejercicio aeróbico | 0.0078 ± 0.0033 | 5/5 | 0.026 | sí |
-| Nivel educacional | 0.0073 ± 0.0072 | 4/5 | 0.045 | sí |
-| Dulces y snacks a la semana | 0.0070 ± 0.0070 | 4/5 | 0.038 | sí |
-| IMC | 0.0067 ± 0.0092 | 3/5 | 0.102 | no |
-| Quién prepara las comidas: YO_MAYORIA | 0.0057 ± 0.0071 | 3/5 | 0.021 | no |
-| Jugos y gaseosas al día | 0.0054 ± 0.0081 | 4/5 | 0.033 | sí |
-| Carnes a la semana | 0.0043 ± 0.0048 | 3/5 | 0.035 | no |
-| Quién prepara las comidas: COMPARTIDO | 0.0043 ± 0.0059 | 3/5 | 0.012 | no |
-| Previsión de salud: FONASA | 0.0028 ± 0.0022 | 5/5 | 0.012 | sí |
+| Sobrecarga por trabajo y cuidado | 0.0218 ± 0.0198 | 4/5 | 0.049 | sí |
+| Frutas al día | 0.0208 ± 0.0125 | 5/5 | 0.036 | sí |
+| Edad | 0.0179 ± 0.0127 | 5/5 | 0.088 | sí |
+| Alcohol | 0.0113 ± 0.0079 | 5/5 | 0.037 | sí |
+| Frecuencia de ejercicio aeróbico | 0.0101 ± 0.0011 | 5/5 | 0.026 | sí |
+| Días de ejercicio a la semana | 0.0100 ± 0.0138 | 4/5 | 0.038 | sí |
+| Etapa menopáusica: premenopausia | 0.0096 ± 0.0051 | 5/5 | 0.020 | sí |
+| Dulces y snacks a la semana | 0.0087 ± 0.0087 | 4/5 | 0.038 | sí |
+| Nivel educacional | 0.0086 ± 0.0077 | 4/5 | 0.045 | sí |
+| IMC | 0.0081 ± 0.0107 | 3/5 | 0.101 | no |
+| Quién prepara las comidas: YO_MAYORIA | 0.0071 ± 0.0048 | 4/5 | 0.022 | sí |
+| Carnes a la semana | 0.0068 ± 0.0034 | 5/5 | 0.035 | sí |
+| Jugos y gaseosas al día | 0.0067 ± 0.0076 | 4/5 | 0.033 | sí |
+| Comidas fuera del hogar | 0.0050 ± 0.0036 | 5/5 | 0.029 | sí |
+| Platos de verduras al día | 0.0046 ± 0.0037 | 4/5 | 0.020 | sí |
 
 Pares redundantes (|rho| ≥ 0,8) entre las seleccionadas; se descarta la menos importante:
 
@@ -203,24 +203,25 @@ Pares redundantes (|rho| ≥ 0,8) entre las seleccionadas; se descarta la menos 
 | Sobrecarga por trabajo y cuidado | Cantidad de personas que cuida | 0.93 | Cantidad de personas que cuida |
 | Cuida a otras personas | Cantidad de personas que cuida | 0.96 | Cantidad de personas que cuida |
 
-**Selección final (17 variables):**
+**Selección final (18 variables):**
 
 | Variable | Seleccionada por |
 |---|---|
 | IMC | Random Forest + bivariado |
 | Sobrecarga por trabajo y cuidado | Random Forest + bivariado |
 | Etapa menopáusica: premenopausia | Random Forest + bivariado |
-| Días de ejercicio a la semana | Random Forest + bivariado |
 | Edad | Random Forest + bivariado |
+| Días de ejercicio a la semana | Random Forest + bivariado |
 | Usa terapia hormonal | bivariado |
 | Alcohol | Random Forest |
 | Carnes a la semana | Random Forest |
 | Nivel educacional | Random Forest |
-| Falta de tiempo influye en lo que come | Random Forest |
-| Quién prepara las comidas: OTRA_HOGAR | Random Forest |
+| Dulces y snacks a la semana | Random Forest |
 | Jugos y gaseosas al día | Random Forest |
-| Etapa menopáusica: perimenopausia | bivariado |
+| Quién prepara las comidas: OTRA_HOGAR | Random Forest |
+| Quién prepara las comidas: COMPRO | Random Forest |
 | Etapa menopáusica: indeterminada | bivariado |
+| Etapa menopáusica: perimenopausia | bivariado |
 | Etapa menopáusica: quirurgica | bivariado |
 | Doble carga (trabaja y cuida) | bivariado |
 | Etapa menopáusica: posmenopausia | bivariado |
@@ -318,7 +319,7 @@ personal de salud. Se analizan aparte (FDR propio) y no entran al Random Forest 
 
 | Variable | n | Media ± DE | Mediana [Q1-Q3] |
 |---|---|---|---|
-| Presión sistólica | 259 | 120.9 ± 10.9 | 120.0 [114.0-127.0] |
+| Presión sistólica | 259 | 121.1 ± 11.3 | 120.0 [114.0-127.0] |
 | Presión diastólica | 259 | 75.4 ± 8.5 | 75.0 [70.0-80.0] |
 | Colesterol total | 259 | 201.8 ± 33.0 | 200.0 [184.0-221.0] |
 | Colesterol HDL | 259 | 53.5 ± 9.9 | 54.0 [47.0-60.0] |
@@ -333,7 +334,7 @@ personal de salud. Se analizan aparte (FDR propio) y no entran al Random Forest 
 | Triglicéridos | subgrupo profesional | 259 | Spearman | rho = +0.12 | 0.045 | 0.072 |
 | Colesterol total | subgrupo profesional | 259 | Spearman | rho = +0.13 | 0.034 | 0.072 |
 | Riesgo cardiovascular | subgrupo profesional | 259 | Kruskal-Wallis | ε² = +0.02 | 0.036 | 0.072 |
-| Presión sistólica | subgrupo profesional | 259 | Spearman | rho = +0.06 | 0.327 | 0.436 |
+| Presión sistólica | subgrupo profesional | 259 | Spearman | rho = +0.05 | 0.400 | 0.492 |
 | Colesterol HDL | subgrupo profesional | 259 | Spearman | rho = +0.05 | 0.431 | 0.492 |
 | Pérdida de talla (cm) | subgrupo profesional | 254 | Spearman | rho = +0.04 | 0.492 | 0.492 |
 

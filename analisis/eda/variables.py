@@ -100,7 +100,10 @@ CONTINUAS_PROFESIONAL = ['presion_sistolica', 'presion_diastolica', 'colesterol_
 
 ETIQUETAS = {**MRS_ITEMS, **MRS_PUNTAJES, **PREDICTORES, **PREDICTORES_TRABAJO, **CONTROL,
              **IMPACTO, **OTRAS, **SUBGRUPO_PROFESIONAL,
-             'talla_actual_cm': 'Talla (cm)', 'peso_kg': 'Peso (kg)'}
+             'talla_actual_cm': 'Talla (cm)', 'peso_kg': 'Peso (kg)',
+             'talla_maxima_cm': 'Talla máxima (cm)', 'severidad': 'Severidad MRS (0-3)',
+             'menstruacion_llega': 'Regularidad de la menstruación', 'tipo_sangrado': 'Tipo de sangrado',
+             'tipo_metodo_anticonceptivo': 'Método anticonceptivo'}
 
 # Preguntas condicionales: cuando la pregunta madre es "No", la hija vale 0
 # ("no lo hace") en vez de quedar vacía.

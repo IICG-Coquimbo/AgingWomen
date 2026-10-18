@@ -123,3 +123,20 @@ def redundantes(X, importancia, umbral=0.8):
                 pares.append({'a': a, 'b': b, 'rho': rho.at[a, b], 'descartada': menos})
                 descartadas.add(menos)
     return pd.DataFrame(pares), descartadas
+
+
+def severidad_codigo(df):
+    """Severidad del MRS como ordinal 0-3 (0 = sin síntomas o muy leves … 3 = severa)."""
+    return df['mrs_severidad'].map({s: str(i) for i, s in enumerate(V.ORDEN_SEVERIDAD)})
+
+
+def matriz_spearman(df, variables):
+    """
+    Matriz de Spearman (pares completos) entre `variables` ordinales/continuas/
+    binarias y la severidad, sobre quienes tienen MRS completo. Las preguntas
+    condicionales se codifican como en el modelo (0 si la madre es "No").
+    """
+    mrs = df[df['mrs_completo'] == '1']
+    X = V.codificar(mrs, variables)
+    X.insert(0, 'severidad', V.numerica(severidad_codigo(mrs)))
+    return X.corr(method='spearman')

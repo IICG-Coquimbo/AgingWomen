@@ -1,0 +1,59 @@
+﻿variable,seccion,tipo,ambito,filas_aplica,faltantes,pct_faltante,tratamiento,no_aplica
+resultado_birads,SegmentoEMPA,ordinal,subgrupo profesional,259,119,45.90000,> 30 %: no se modela,236
+resultado_pap,SegmentoEMPA,categorica,subgrupo profesional,259,108,41.70000,> 30 %: no se modela,236
+riesgo_cv_atp3,SegmentoEMPA,categorica,subgrupo profesional,259,48,18.50000,imputada (moda = BAJO) + marca riesgo_cv_atp3_imputado,236
+glicemia_mg_dl,SegmentoEMPA,continua,subgrupo profesional,259,40,15.40000,imputada (mediana = 95) + marca glicemia_mg_dl_imputado,236
+circunferencia_cintura_cm,SegmentoEMPA,continua,general,495,75,15.20000,"imputada (recta cintura = 22.2 + 2.39·IMC; sin IMC, mediana 92.5) + marca circunferencia_cintura_cm_imputado",0
+colesterol_total_mg_dl,SegmentoEMPA,continua,subgrupo profesional,259,39,15.10000,imputada (mediana = 200) + marca colesterol_total_mg_dl_imputado,236
+trigliceridos_mg_dl,SegmentoEMPA,continua,subgrupo profesional,259,39,15.10000,imputada (mediana = 146) + marca trigliceridos_mg_dl_imputado,236
+colesterol_hdl_mg_dl,SegmentoEMPA,continua,subgrupo profesional,259,39,15.10000,imputada (mediana = 54) + marca colesterol_hdl_mg_dl_imputado,236
+menstruacion_llega,MRS,categorica,general,170,11,6.50000,imputada (moda = REGULAR) + marca menstruacion_llega_imputado,325
+tipo_sangrado,MRS,categorica,general,170,11,6.50000,imputada (moda = MODERADO) + marca tipo_sangrado_imputado,325
+presion_sistolica,SegmentoEMPA,continua,subgrupo profesional,259,15,5.80000,"imputada (diastólica + presión de pulso mediana (45); sin la otra, mediana 120) + marca presion_sistolica_imputado",236
+presion_diastolica,SegmentoEMPA,continua,subgrupo profesional,259,13,5.00000,"imputada (sistólica − presión de pulso mediana (45); sin la otra, mediana 75) + marca presion_diastolica_imputado",236
+estres_entorno_laboral,EvaluacionTrabajo,ordinal,general,306,10,3.30000,imputada (mediana = 3),189
+tipo_metodo_anticonceptivo,MRS,categorica,general,66,2,3.00000,imputada (moda = ORAL),429
+marihuana_frecuencia,HabitosDeVida,ordinal,general,495,14,2.80000,imputada (mediana = 1),0
+cambio_relacion_pareja_menopausia,MRS,ordinal,general,324,8,2.50000,imputada (mediana = 2),171
+tabaco_frecuencia,HabitosDeVida,ordinal,general,495,12,2.40000,imputada (mediana = 1),0
+alcohol_frecuencia,HabitosDeVida,ordinal,general,495,11,2.20000,imputada (mediana = 1),0
+horas_sedentarismo,ActividadFisica,continua,general,495,11,2.20000,imputada (mediana = 7),0
+platos_verduras_dia,HabitosDeVida,ordinal,general,495,10,2.00000,imputada (mediana = 2),0
+vasos_agua_dia,HabitosDeVida,ordinal,general,495,10,2.00000,imputada (mediana = 3),0
+tiene_actividad_sexual,MRS,categorica,general,495,9,1.80000,imputada (moda = SI),0
+peso_kg,SegmentoEMPA,continua,general,495,8,1.60000,"imputada (IMC desde la cintura (IMC = -3.2 + 0.353·cintura) × talla²; sin cintura, mediana 71) + marca peso_kg_imputado",0
+falta_tiempo_influye,HabitosDeVida,ordinal,general,495,7,1.40000,imputada (mediana = 3),0
+frecuencia_comida_fuera,HabitosDeVida,ordinal,general,495,7,1.40000,imputada (mediana = 2),0
+lacteos_dia,HabitosDeVida,ordinal,general,495,7,1.40000,imputada (mediana = 2),0
+golosinas_semana,HabitosDeVida,ordinal,general,495,7,1.40000,imputada (mediana = 3),0
+rendimiento_afectado,EvaluacionTrabajo,ordinal,general,306,4,1.30000,imputada (mediana = 2),189
+frutas_dia,HabitosDeVida,ordinal,general,495,6,1.20000,imputada (mediana = 2),0
+panes_dia,HabitosDeVida,ordinal,general,495,6,1.20000,imputada (mediana = 3),0
+carnes_semana,HabitosDeVida,ordinal,general,495,6,1.20000,imputada (mediana = 3),0
+jugos_gaseosas_dia,HabitosDeVida,ordinal,general,495,6,1.20000,imputada (mediana = 2),0
+bebidas_energeticas_dia,HabitosDeVida,ordinal,general,495,6,1.20000,imputada (mediana = 1),0
+dias_ejercicio_semana,ActividadFisica,ordinal,general,495,6,1.20000,imputada (mediana = 2),0
+pescado_semana,HabitosDeVida,ordinal,general,495,6,1.20000,imputada (mediana = 2),0
+evacuacion_intestinal,MRS,ordinal,general,495,6,1.20000,imputada (mediana = 2),0
+distension_abdominal,MRS,ordinal,general,495,6,1.20000,imputada (mediana = 2),0
+talla_actual_cm,SegmentoEMPA,continua,general,495,6,1.20000,imputada (mediana = 156),0
+quien_prepara_comidas,HabitosDeVida,categorica,general,495,6,1.20000,imputada (moda = YO_MAYORIA),0
+legumbres_semana,HabitosDeVida,ordinal,general,495,6,1.20000,imputada (mediana = 2),0
+bienestar_trabajo_afectado,EvaluacionTrabajo,ordinal,general,306,3,1.00000,imputada (mediana = 3),189
+frecuencia_ausencias,EvaluacionTrabajo,ordinal,general,306,3,1.00000,imputada (mediana = 2),189
+cantidad_personas_cuida,TareasCuidado,ordinal,general,213,2,0.90000,imputada (mediana = 2),282
+pueblo_originario_afro,Identificacion,categorica,general,495,4,0.80000,imputada (moda = NINGUNO),0
+usa_terapia_hormonal,MRS,categorica,general,495,4,0.80000,imputada (moda = NO),0
+tiene_pareja,MRS,categorica,general,495,4,0.80000,imputada (moda = SI),0
+usa_antidepresivos,MRS,categorica,general,495,4,0.80000,imputada (moda = NO),0
+lugar_trabajo_comprensivo,EvaluacionTrabajo,ordinal,general,306,2,0.70000,imputada (mediana = 3),189
+nivel_educacion,Identificacion,categorica,general,495,3,0.60000,imputada (moda = M_COM),0
+considera_informacion_suficiente,ConocimientoSistema,ordinal,general,360,2,0.60000,imputada (mediana = 2),135
+realiza_bajo_impacto,ActividadFisica,categorica,general,495,2,0.40000,imputada (moda = NO),0
+realiza_fuerza,ActividadFisica,categorica,general,495,2,0.40000,imputada (moda = NO),0
+cuida_otras_personas,TareasCuidado,categorica,general,495,2,0.40000,imputada (moda = NO),0
+trabaja_actualmente,Identificacion,categorica,general,495,2,0.40000,imputada (moda = True),0
+realiza_aerobico,ActividadFisica,categorica,general,495,2,0.40000,imputada (moda = NO),0
+pregunta_1,MRS,ordinal,general,495,1,0.20000,no se imputa (variable resultado),0
+pregunta_2,MRS,ordinal,general,495,1,0.20000,no se imputa (variable resultado),0
+pregunta_11,MRS,ordinal,general,495,1,0.20000,no se imputa (variable resultado),0
