@@ -1,4 +1,4 @@
-"""Informe de limpieza en Markdown (analisis/informe_limpieza.md)."""
+"""Informe de limpieza en Markdown (informe_limpieza_usuaria.md o, para el anexo, informe_limpieza.md)."""
 from datetime import date
 
 import pandas as pd
@@ -16,16 +16,16 @@ def _pct(n, total):
     return f'{100 * n / total:.1f} %' if total else '-'
 
 
-def generar(limpio, excluidas, diccionario, bit, entrada, salida):
+def generar(limpio, excluidas, diccionario, bit, entrada, salida, archivo, titulo, evaluacion=None):
     n = len(limpio)
     out = [
-        '# Informe de limpieza del dataset (Fase 32)',
+        f'# {titulo}',
         '',
         f'Generado por `analisis/limpiar_dataset.py` el {date.today().isoformat()}. '
         'Volver a ejecutar el script regenera este informe y los archivos de salida.',
         '',
         f'- Entrada: `{entrada}` — {bit.filas_entrada} filas.',
-        f'- Salida: `{salida}/dataset_menopausia_limpio.csv` — **{n} filas**.',
+        f'- Salida: `{salida}/{archivo}` — **{n} filas**.',
         f'- Excluidas: {len(excluidas)} filas (`{salida}/excluidas.csv`, con el motivo).',
         f'- Diccionario: `{salida}/diccionario_variables.csv` (faltantes y tratamiento por variable).',
         '',
@@ -75,11 +75,29 @@ def generar(limpio, excluidas, diccionario, bit, entrada, salida):
         '',
         f'Las {len(d) - len(con_falta)} variables restantes no tienen faltantes reales.',
         '',
-        '**Ámbito "subgrupo profesional":** laboratorio, presión, tamizaje y talla máxima solo los',
-        'registra el personal de salud (`campos_por_rol.SOLO_PROFESIONAL`). Aplican a las '
-        f'{int((limpio["origen_registro"] != "AUTO").sum())} encuestas con origen MEDICO o API, y se',
-        'analizan en ese subgrupo, no en el modelado general.',
+        '**Fecha de última menstruación vacía:** las preguntas que dependen de ella (regularidad,',
+        'sangrado, anticonceptivo) no se imputan, porque no se sabe si aplicaban.',
     ]
+    sin_imc = int((limpio['imc_categoria'] == 'no informado').sum())
+    if sin_imc:
+        out += [
+            '',
+            f'**IMC:** peso y talla no se imputan cuando faltan más del {R.UMBRAL_EXCLUIR:g} %; el IMC queda',
+            f'como `imc_categoria` con el nivel "no informado" ({sin_imc} filas, {_pct(sin_imc, n)}).',
+            'Inventar el peso de tantas participantes cambiaría justamente el factor más fuerte.',
+        ]
+    profesional = int((limpio['origen_registro'] != 'AUTO').sum())
+    if profesional:
+        out += [
+            '',
+            '**Ámbito "subgrupo profesional":** laboratorio, presión, tamizaje y talla máxima solo los',
+            'registra el personal de salud (`campos_por_rol.SOLO_PROFESIONAL`). Aplican a las '
+            f'{profesional} encuestas con origen MEDICO o API, y se',
+            'analizan en ese subgrupo, no en el modelado general.',
+        ]
+    else:
+        out += ['', 'Todas las encuestas son autoaplicadas: los campos solo para personal de salud',
+                '(laboratorio, presión, tamizaje, talla máxima) son "no aplica" en todas las filas.']
 
     # --- Resultado ---
     sev = limpio['mrs_severidad'].value_counts()
@@ -91,7 +109,7 @@ def generar(limpio, excluidas, diccionario, bit, entrada, salida):
         '',
         '- `edad` y `tramo_edad` a la fecha de evaluación.',
         '- `mrs_somatico` (p1-p4), `mrs_psicologico` (p5-p8), `mrs_urogenital` (p9-p11), `mrs_total`',
-        '  y `mrs_severidad` con los cortes de `MRS.SEVERIDAD_TOTAL` (pendientes de confirmar).',
+        '  y `mrs_severidad` con los cortes de `MRS.SEVERIDAD_TOTAL` (confirmados por la profesora el 20-10).',
         '- `meses_desde_fum` y `etapa_menopausica` (STRAW+10 simplificado: ovario = NO → quirúrgica;',
         '  ≥ 12 meses → posmenopausia; < 12 meses y regular → premenopausia; si no → perimenopausia).',
         '- `imc`, `imc_categoria` (OMS), `perdida_talla_cm`, `presion_elevada` (≥ 140/90),',
@@ -112,13 +130,53 @@ def generar(limpio, excluidas, diccionario, bit, entrada, salida):
         '',
         '## 5. Decisiones que conviene validar con la profesora',
         '',
-        '- Cortes de severidad del MRS (0-4 / 5-8 / 9-15 / 16+) y la definición de etapa menopáusica.',
+        '- La definición de etapa menopáusica (los cortes del MRS los confirmó el 20-10).',
         '- `cambio_relacion_pareja_menopausia` se trata como "no aplica" sin pareja (regla propia del',
         '  análisis: la plataforma muestra la pregunta a todas).',
-        '- Las opciones de selección múltiple del dataset (p. ej. "Largas listas de espera",',
-        '  "Hijos/as") no son las mismas que ofrece hoy la plataforma (`esquema.OPCIONES_MULTISELECCION`).',
-        '  Se conservaron tal como vienen.',
         '- Correcciones de unidad: talla en metros (×100) y presión en cmHg (×10).',
+        '- IMC sin imputar, como categoría con "no informado".',
         '',
     ]
+    if evaluacion:
+        out += _seccion_evaluacion(evaluacion)
     return '\n'.join(out)
+
+
+def _seccion_evaluacion(ev):
+    """Sección 6: comparación con el conjunto verdadero (solo conjunto sintético)."""
+    tipos = ev['tipos']
+    total = tipos['Total'].sum()
+    recuperado = tipos['recuperado'].sum()
+    errores = tipos[~tipos['Tipo de error'].str.startswith('omitida')]
+    rec_err = errores['recuperado'].sum() / errores['Total'].sum()
+    out = [
+        '## 6. Evaluación contra el conjunto verdadero',
+        '',
+        'El conjunto sintético trae su versión sin errores y una bitácora de cada error agregado, así que',
+        'se puede medir qué tan bien funciona la limpieza. Cada celda ensuciada termina en uno de estos',
+        'estados: **recuperado** (la limpieza devolvió el valor verdadero), **imputado** (quedó un valor',
+        'estimado, distinto del verdadero), **vacío** (quedó sin dato) o **fila excluida**.',
+        '',
+        '### 6.1 Filas excluidas',
+        '',
+        _tabla(list(ev['filas'].columns), ev['filas'].itertuples(index=False)),
+        '',
+        '### 6.2 Celdas ensuciadas, por tipo de error',
+        '',
+        _tabla(list(tipos.columns), tipos.itertuples(index=False)),
+        '',
+        f'De {total} celdas ensuciadas, {recuperado} ({_pct(recuperado, total)}) recuperaron su valor',
+        'verdadero (en las omisiones, "recuperado" significa que la imputación o la deducción coincidió',
+        'con el valor real). Sin contar las omisiones, que no se pueden recuperar con certeza, la',
+        f'limpieza recupera el **{100 * rec_err:.0f} %** de los errores. Los centinelas se imputan',
+        'porque el valor verdadero se perdió.',
+        '',
+        '### 6.3 Celdas correctas que la limpieza cambió',
+        '',
+        f'Se revisaron {ev["celdas_revisadas"]} celdas que venían bien; la limpieza cambió por error '
+        f'**{ev["cambios_error"]}** ({_pct(ev["cambios_error"], ev["celdas_revisadas"])}).',
+        '',
+    ]
+    if len(ev['cambios']):
+        out += [_tabla(list(ev['cambios'].columns), ev['cambios'].itertuples(index=False)), '']
+    return out

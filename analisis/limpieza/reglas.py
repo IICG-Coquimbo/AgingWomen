@@ -485,6 +485,24 @@ def p8_condicionales(df, bit, condicionales, secciones_cond, solo_profesional, c
     bit.anotar('8 condicionales', 'trabaja_actualmente', 'vacío pero respondió Trabajo → True',
                int(deducir.sum()))
     df.loc[deducir, 'trabaja_actualmente'] = 'True'
+
+    # Pregunta "madre" vacía pero con una dependiente respondida (Fase 34B): la
+    # madre se perdió (centinela, omisión), pero la dependiente solo se muestra con
+    # un valor, así que se deduce. Solo reglas de la plataforma con operador 'igual'.
+    cambio = True
+    while cambio:
+        cambio = False
+        for por_modelo in condicionales.values():
+            for campo, regla in por_modelo.items():
+                if regla.get('operador', 'igual') != 'igual':
+                    continue
+                madre = regla['campo']
+                deducir = df[madre].isna() & df[campo].notna()
+                if deducir.any():
+                    bit.anotar('8 condicionales', madre,
+                               f'vacía pero respondió {campo} → {regla["valor"]}', int(deducir.sum()))
+                    df.loc[deducir, madre] = str(regla['valor'])
+                    cambio = True
     regla_trabajo = secciones_cond['trabajo']
     oculta = df[regla_trabajo['campo']].fillna('') != str(regla_trabajo['valor'])
     for c in TRABAJO:
@@ -524,7 +542,29 @@ def p8_condicionales(df, bit, condicionales, secciones_cond, solo_profesional, c
     sin_satisf = df[SATISFACCION].isna().all(axis=1)
     no_aplica.loc[sin_satisf, SATISFACCION + ['comentario_incomodidad']] = True
     no_aplica.loc[df['incomodidad'].fillna('') != 'SI', 'comentario_incomodidad'] = True
-    return df, no_aplica
+
+    # Sin fecha de última menstruación no se sabe si las preguntas que dependen de
+    # ella aplicaban (la plataforma las muestra, pero en posmenopausia no aplican).
+    # Si vienen vacías quedan sin dato: imputar inventaría un sangrado (Fase 34B).
+    no_imputar = pd.DataFrame(False, index=df.index, columns=df.columns)
+    sin_fum = df['fecha_ultima_menstruacion'].isna()
+    for campo, regla in reglas.items():
+        if regla.get('operador') == 'meses_desde_lt':
+            no_imputar.loc[sin_fum & df[campo].isna(), campo] = True
+
+    # Combinaciones incoherentes que no se pueden corregir (no se sabe cuál dato
+    # está mal): se marcan para revisarlas y se informan.
+    tipos = ['realiza_aerobico', 'realiza_bajo_impacto', 'realiza_fuerza']
+    sin_tipo = (df['dias_ejercicio_semana'].map(a_numero) >= 2) & df[tipos].eq('NO').all(axis=1)
+    pildora_th = df['tipo_metodo_anticonceptivo'].eq('ORAL') & df['usa_terapia_hormonal'].eq('SI')
+    for nombre, marca, texto in [
+            ('incoherencia_ejercicio', sin_tipo, 'hacen ejercicio al menos 1 día pero no marcan ningún tipo'),
+            ('incoherencia_pildora_th', pildora_th, 'usan píldora anticonceptiva y terapia hormonal a la vez')]:
+        df[nombre] = marca.fillna(False).map(int)
+        if marca.any():
+            bit.notas.append(f'{int(marca.sum())} filas {texto}; se conservan y se marcan en `{nombre}` '
+                             '(no se sabe cuál de los datos está mal).')
+    return df, no_aplica, no_imputar
 
 
 MULTISELECCION = ['principales_dificultades', 'tipo_informacion_apoyo_deseado', 'a_quien_cuida']
@@ -589,7 +629,7 @@ def _imputar_por_relacion(df, c, faltante, aplica):
     return metodo
 
 
-def p9_imputacion(df, bit, no_aplica, campos, solo_profesional):
+def p9_imputacion(df, bit, no_aplica, no_imputar, campos, solo_profesional):
     """
     Imputa solo los faltantes reales (vacíos que NO son "no aplica").
     El % se calcula sobre las filas donde la pregunta aplica.
@@ -600,8 +640,10 @@ def p9_imputacion(df, bit, no_aplica, campos, solo_profesional):
         if c in METADATOS or tipo is None:
             continue
         aplica = ~no_aplica[c]
-        faltante = aplica & df[c].isna()
-        n_aplica, n_falta = int(aplica.sum()), int(faltante.sum())
+        todos = aplica & df[c].isna()
+        faltante = todos & ~no_imputar[c]
+        n_aplica, n_falta = int(aplica.sum()), int(todos.sum())
+        n_sin_fum = n_falta - int(faltante.sum())
         pct = 100 * n_falta / n_aplica if n_aplica else 0.0
         ambito = ('subgrupo profesional' if c in solo_profesional else
                   'satisfacción' if c in SATISFACCION else 'general')
@@ -618,7 +660,7 @@ def p9_imputacion(df, bit, no_aplica, campos, solo_profesional):
             tratamiento = f'> {UMBRAL_EXCLUIR:g} %: no se modela'
         elif c in IMPUTACION_POR_RELACION:
             metodo = _imputar_por_relacion(df, c, faltante, aplica)
-            bit.anotar('9 imputación', c, f'imputado por {metodo}', n_falta)
+            bit.anotar('9 imputación', c, f'imputado por {metodo}', int(faltante.sum()))
             df[f'{c}_imputado'] = faltante.map(int)
             tratamiento = f'imputada ({metodo}) + marca {c}_imputado'
         else:
@@ -636,12 +678,14 @@ def p9_imputacion(df, bit, no_aplica, campos, solo_profesional):
                     valor = str(int(round(med))) if c in CAMPOS_ENTEROS else f'{med:g}'
                     metodo = 'mediana'
             df.loc[faltante, c] = valor
-            bit.anotar('9 imputación', c, f'imputado con {metodo} ({valor})', n_falta)
+            bit.anotar('9 imputación', c, f'imputado con {metodo} ({valor})', int(faltante.sum()))
             if pct >= UMBRAL_IMPUTAR:
                 df[f'{c}_imputado'] = faltante.map(int)
                 tratamiento = f'imputada ({metodo} = {valor}) + marca {c}_imputado'
             else:
                 tratamiento = f'imputada ({metodo} = {valor})'
+        if n_sin_fum and tratamiento.startswith('imputada'):
+            tratamiento += f'; {n_sin_fum} sin fecha de última menstruación quedan sin dato'
         filas.append({'variable': c, 'seccion': campos.get(c, {}).get('modelo', ''), 'tipo': tipo,
                       'ambito': ambito, 'filas_aplica': n_aplica, 'faltantes': n_falta,
                       'pct_faltante': round(pct, 1), 'tratamiento': tratamiento})
@@ -692,8 +736,11 @@ def p10_derivadas(df, bit, severidad):
     peso, talla = df['peso_kg'].map(a_numero), df['talla_actual_cm'].map(a_numero)
     imc = (peso / (talla / 100) ** 2).round(1)
     df['imc'] = imc
+    # Sin peso o talla el IMC no se imputa: queda como categoría "no informado"
+    # (decisión de la Fase 34B; en el conjunto de la usuaria falta en ~45 %).
     df['imc_categoria'] = pd.cut(imc, [0, 18.5, 25, 30, 100], right=False,
                                  labels=['bajo peso', 'normal', 'sobrepeso', 'obesidad']).astype(object)
+    df['imc_categoria'] = df['imc_categoria'].where(imc.notna(), 'no informado')
     perdida = df['talla_maxima_cm'].map(a_numero) - talla
     negativa = perdida < 0
     bit.anotar('10 derivadas', 'perdida_talla_cm', 'talla actual > talla máxima → sin dato',
@@ -721,8 +768,9 @@ def limpiar(df):
     df = p5_mediciones(df, bit)
     df = p6_fechas(df, bit)
     df, fuera = p7_elegibilidad(df, bit)
-    df, no_aplica = p8_condicionales(df, bit, condicionales, secciones_cond, solo_profesional, campos)
-    df, diccionario = p9_imputacion(df, bit, no_aplica, campos, solo_profesional)
+    df, no_aplica, no_imputar = p8_condicionales(df, bit, condicionales, secciones_cond,
+                                                 solo_profesional, campos)
+    df, diccionario = p9_imputacion(df, bit, no_aplica, no_imputar, campos, solo_profesional)
     df = p10_derivadas(df, bit, severidad)
     bit.severidad = severidad
     excluidas = pd.concat([duplicadas, fuera])

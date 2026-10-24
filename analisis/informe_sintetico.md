@@ -1,6 +1,6 @@
 # Validación del conjunto sintético (Fase 34A)
 
-Generado por `analisis/generar_sintetico.py` el 2026-10-23. Compara el conjunto **verdadero** (sin errores) con lo pedido por la profesora el 20-10. Las correlaciones son de Spearman con el puntaje MRS total.
+Generado por `analisis/generar_sintetico.py` el 2026-10-24. Compara el conjunto **verdadero** (sin errores) con lo pedido por la profesora el 20-10. Las correlaciones son de Spearman con el puntaje MRS total.
 
 ## 1. Tamaño y MRS
 
@@ -52,29 +52,29 @@ Marihuana: el 94 % nunca consume, así que su rho queda bajo aunque el efecto po
 
 | Tipo de error | Celdas o filas |
 |---|---|
-| omitida | 2230 |
-| omitida (cascada) | 398 |
-| código escrito distinto | 231 |
-| espacios sobrantes | 163 |
-| formato de fecha | 120 |
-| centinela de texto | 113 |
-| centinela numérico | 95 |
-| responde pregunta que no aplica | 35 |
-| coma decimal | 28 |
-| código en minúsculas | 27 |
-| días de ejercicio sin tipo marcado | 25 |
-| cintura 0 en vez de vacía | 24 |
-| MRS fuera de rango | 22 |
-| unidad en el texto | 19 |
-| región como nombre | 12 |
-| duplicado exacto | 9 |
-| RUT repetido (versión anterior) | 6 |
-| edad fuera del criterio 40-65 | 5 |
-| talla en metros | 5 |
-| talla sin punto decimal | 3 |
-| píldora y terapia hormonal a la vez | 1 |
-| peso con dígito de más | 1 |
+| omitida | 2259 |
+| omitida (cascada) | 343 |
+| código escrito distinto | 236 |
+| espacios sobrantes | 166 |
+| formato de fecha | 108 |
+| centinela de texto | 105 |
+| centinela numérico | 98 |
+| responde pregunta que no aplica | 32 |
+| código en minúsculas | 32 |
+| cintura 0 en vez de vacía | 30 |
+| coma decimal | 26 |
+| unidad en el texto | 25 |
+| MRS fuera de rango | 17 |
+| región como nombre | 13 |
+| días de ejercicio sin tipo marcado | 12 |
+| talla en metros | 8 |
+| duplicado exacto | 8 |
+| RUT repetido (versión anterior) | 7 |
+| edad fuera del criterio 40-65 | 3 |
+| píldora y terapia hormonal a la vez | 2 |
+| talla sin punto decimal | 2 |
+| edad imposible | 1 |
 
-IMC no calculable en el conjunto sucio (sin peso o sin talla): **45 %**.
+IMC no calculable en el conjunto sucio (sin peso o sin talla): **48 %**.
 
 **Resultado:** todos los controles se cumplen.

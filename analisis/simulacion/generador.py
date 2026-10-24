@@ -598,6 +598,10 @@ def seccion_actividad(rng, p):
         fila[f'realiza_{tipo}'] = 'SI' if si else 'NO'
         # Escala Nunca(1)…Siempre(5): coherente con los días de ejercicio.
         fila[f'frecuencia_{tipo}'] = escala(rng, 2 + 0.8 * (dias - 1), 0.7, 2, 5)
+    # Quien hace ejercicio algún día hace al menos un tipo: si no salió ninguno, el
+    # más común (bajo impacto). Sin nuevas llamadas al azar, para no cambiar el resto.
+    if dias >= 2 and all(fila[f'realiza_{t}'] == 'NO' for t in prob):
+        fila['realiza_bajo_impacto'] = 'SI'
     fila['horas_sedentarismo'] = round(normal(rng, 6, 2.5, 1, 14))
     return fila
 
