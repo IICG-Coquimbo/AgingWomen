@@ -397,3 +397,84 @@ la media; con una muestra grande (por ejemplo `--n 5000`) los valores deben qued
 1. Verificar la tabla de edad y comuna contra la publicación oficial del INE (Censo 2024).
 2. Extraer de la ENS colesterol total alto, HDL bajo y talla promedio de mujeres para reemplazar supuestos de §5.
 3. Revisión de la profesora, en especial de todo lo marcado **[S]** en §7, §8 y §9.
+
+---
+
+## 13. Versión de la Fase 34A: conjunto sintético de la usuaria común
+
+> Reunión con la profesora del 20-10-2026. **Reemplaza §1 (diseño) y la tabla de factores de §8**
+> para el conjunto `datos/sintetico/`. Lo demás (perfil, etapa, hábitos, conocimiento) sigue igual.
+> Genera: `python analisis/generar_sintetico.py`. Validación: `analisis/informe_sintetico.md`.
+
+### Diseño
+
+| Parámetro | Valor | Motivo |
+|---|---|---|
+| Participantes | **N = 550**, una encuesta cada una | Decisión de la usuaria (22-10) |
+| Rondas | Solo la **primera encuesta** | Pedido de la profesora |
+| Quién responde | Solo la **usuaria común** (`origen_registro = AUTO`) | Los campos del servicio de salud (presión, laboratorio, PAP, mamografía, VDRL, riesgo CV, talla máxima) quedan **vacíos** |
+| Edad | 40-65 años; 4 % de 36-39 con excepción (60 % quirúrgica, 40 % ausencia prolongada de menstruación) | Regla de la plataforma (`forms.EDAD_MAXIMA = 65`, Fase 11) |
+| Fechas | 2 de marzo a 30 de septiembre de 2026 | Igual que el conjunto de la profesora |
+| Región | Coquimbo (comunas según Censo 2024) | Jerarquía de fuentes §0 |
+| Conocimiento del sistema | Se genera completo, **sin vínculo con el MRS** | La profesora indicó que no aumenta ni disminuye los síntomas |
+| Satisfacción | 45 % la responde, sin vínculo con el MRS **[S]** | Es opcional en la plataforma |
+| Semilla | 2029 | Primera semilla desde 2026 cuya muestra cumple todos los controles (ver abajo) |
+
+### Factores que mueven el MRS
+
+Cada factor desplaza el nivel latente de todos los ítems de un dominio (somático, psicológico,
+urogenital), con un peso por dominio. Los valores están centrados en la situación típica y un ajuste
+final devuelve la media al objetivo chileno (16,2). Los números exactos están en
+`parametros.EFECTOS_ESTILO`.
+
+| Factor | Sentido | Forma | Dominio que más mueve |
+|---|---|---|---|
+| IMC | ↑ (el más fuerte) | gradual, por cada 5 puntos sobre 27 | somático |
+| Diabetes | ↑ | sí/no | somático |
+| Doble carga (trabaja y cuida) | ↑ | sí/no | psicológico |
+| Sobrecarga física y emocional (quien cuida) | ↑ | por punto sobre 3 | psicológico |
+| Estrés del entorno laboral (quien trabaja) | ↑ | por punto sobre 3 | psicológico |
+| Lugar de trabajo comprensivo (quien trabaja) | ↓ protector | por punto sobre 3 | psicológico |
+| Días de ejercicio | ↓ protector | 0 días → sin efecto; ≥ 1 día baja (60 %), más con más días | todos |
+| Vasos de agua | ↓ protector | por nivel sobre 3 | todos |
+| Tabaco, alcohol, marihuana | ↑ | de nunca a diario | todos |
+| Pan, golosinas, jugos, bebidas energéticas | ↑ chico | por nivel | todos |
+| Frutas, verduras, lácteos, pescado, legumbres, carnes | sin efecto | — | — |
+
+Relaciones entre predictores **[L]/[S]**: la diabetes es 1,8 veces más frecuente con IMC ≥ 30; con
+obesidad se hace menos ejercicio; quien hace ejercicio toma más agua; las fumadoras beben y consumen
+marihuana más; el lugar de trabajo es menos comprensivo donde hay más estrés; las fumadoras usan menos
+terapia hormonal (×0,5) y menos píldora (×0,3), porque los estrógenos están contraindicados en
+fumadoras mayores de 35 años.
+
+### Controles de validación (sobre el conjunto verdadero)
+
+| Control | Criterio |
+|---|---|
+| IMC vs. MRS total | rho de Spearman entre 0,25 y 0,35 |
+| Resto de factores validados | rho entre 0,10 y 0,25 con el sentido esperado (marihuana: solo positivo, porque el 94 % nunca consume) |
+| Alimentación | ninguna variable con correlación negativa significativa (p < 0,05) |
+| MRS total | cerca de 16,2 |
+
+Calibración: con 20 semillas de N = 550 las correlaciones medias quedaron en el rango (IMC 0,31;
+estrés 0,22; sobrecarga 0,19; ejercicio −0,19; diabetes 0,17; tabaco 0,16; doble carga 0,15; agua −0,15;
+alcohol 0,13; marihuana 0,10) y el MRS medio en 16,6. Con N = 550 cada muestra varía alrededor de esos
+valores (±0,08), y 9 de 20 semillas cumplen todos los controles a la vez; se usa la primera de ellas.
+
+## 14. Suciedad agregada (Fase 34A)
+
+El conjunto se entrega **sucio** para limpiarlo en el EDA (Fase 34B). `simulacion/ensuciar.py` toma el
+conjunto verdadero y agrega errores; cada cambio queda en `bitacora_suciedad.csv` con el valor verdadero,
+el valor sucio y el tipo. Las tasas están en `parametros.SUCIEDAD`. Los patrones marcados **[R]** salen de
+las 5 respuestas reales guardadas en la plataforma.
+
+| Grupo | Errores |
+|---|---|
+| Omisiones | peso en blanco 45 % y talla casi siempre con él **[R]** (IMC no calculable en ~45 %); cintura 55 %; fecha del último EMPA 50 %; 4 % del resto de las preguntas opcionales. Si se omite una pregunta "madre", sus dependientes también desaparecen, como en la plataforma |
+| Lógica | pregunta que no aplica respondida (sobrecarga sin cuidar a nadie, sangrado con ≥ 12 meses sin menstruación) **[R]**; días de ejercicio sin tipo marcado **[R]**; píldora y terapia hormonal a la vez **[R]**; cintura "0.00" **[R]** |
+| Formatos | FUM como dd/mm/aaaa **[R]**, "julio 2021" o mm/aaaa; nacimiento dd/mm/aaaa; "81.0 kg", "147 cm", coma decimal; Sí/si/S, Femenino/Mujer, verdadero/1; códigos en minúsculas; espacios sobrantes; región como nombre |
+| Imposibles | centinelas (-1, 99, 999, 9999, N/A, NA, sin dato, -); talla en metros o sin punto; peso con un dígito de más; ítem MRS 5 o 9; fecha de nacimiento imposible; edad fuera de 40-65 sin excepción |
+| Filas | duplicados exactos **[R]** (~1 %); versión anterior de la misma participante con el mismo RUT (~1 %) |
+
+Los atípicos **plausibles** (por ejemplo IMC sobre 40 por obesidad mórbida) no son suciedad: vienen del
+conjunto verdadero y la limpieza debe conservarlos.

@@ -1,10 +1,14 @@
 """
-Parámetros de la simulación (Paso 2).
+Parámetros de la simulación.
 
 Todos los números salen de analisis/supuestos_simulacion.md; la sección del
 documento va indicada en cada bloque y cada valor lleva su etiqueta de fuente:
 [C] Coquimbo, [N] Chile, [L] Latinoamérica/internacional, [S] supuesto propio.
 Si la profesora corrige un valor, se cambia SOLO aquí y se vuelve a generar.
+
+Fase 34A (reunión del 20-10): conjunto sintético de la usuaria común, solo
+ronda 1, N = 550, con los efectos sobre el MRS validados por la profesora
+(§8 y §13 del documento). La suciedad que se agrega después está al final.
 
 Los códigos (FONASA, M_COM, 1-5…) son los mismos que usan los modelos de
 Django, para que el Paso 3 cargue los CSV sin traducir nada.
@@ -12,26 +16,30 @@ Django, para que el Paso 3 cargue los CSV sin traducir nada.
 from datetime import date
 
 # --- §1 Diseño de la muestra -------------------------------------------------
-N_PARTICIPANTES = 200
-N_RONDA2 = 50
-SEMILLA = 2026
+N_PARTICIPANTES = 550
+N_RONDA2 = 0                           # solo primera encuesta (reunión 20-10)
+# Con N = 550 cada muestra varía alrededor del efecto calibrado; se usa la primera
+# semilla (desde 2026) cuya muestra cumple todos los controles de validación (§13).
+SEMILLA = 2029
 
-FECHA_INICIO_RONDA1 = date(2026, 9, 1)
+FECHA_INICIO_RONDA1 = date(2026, 3, 2)
 FECHA_FIN_RONDA1 = date(2026, 9, 30)
-FECHA_CORTE = date(2026, 10, 6)        # ninguna encuesta después de esta fecha
+FECHA_CORTE = date(2026, 9, 30)        # ninguna encuesta después de esta fecha
 DIAS_ENTRE_RONDAS = 15                 # regla de la Fase 31 (plazo.py)
 MAX_DIAS_ENTRE_RONDAS = 120
 
-PROP_PROFESIONAL = 0.30                # encuestas aplicadas por personal de salud
-PROP_BLANCOS = 0.05                    # preguntas opcionales que se dejan en blanco
-PROP_EXCEPCION_EDAD = 0.05             # menores de 40 con menopausia quirúrgica
+PROP_PROFESIONAL = 0.0                 # solo usuaria común: campos del servicio de salud vacíos
+PROP_BLANCOS = 0.04                    # preguntas opcionales que se dejan en blanco
+PROP_EXCEPCION_EDAD = 0.04             # menores de 40 con excepción de edad
 EDAD_EXCEPCION = (36, 39)
+EXCEPCION_TIPO = {'QUIRURGICA': 0.6, 'AUSENCIA': 0.4}                    # [S]
 
 # --- §3 Perfil base ----------------------------------------------------------
-# Edad: mujeres de la región por tramo [C] Censo 2024; los 60 años ≈ 1/5 del tramo 55-59 [S].
-EDAD_MAXIMA = 60
+# Edad 40-65 (forms.EDAD_MAXIMA). Mujeres de la región por tramo [C] Censo 2024;
+# 60-64 y 65 estimados con la misma caída por tramo [S].
+EDAD_MAXIMA = 65
 TRAMOS_EDAD = [((40, 44), 30220), ((45, 49), 29334), ((50, 54), 28170),
-               ((55, 59), 27740), ((60, 60), 5550)]
+               ((55, 59), 27740), ((60, 64), 24500), ((65, 65), 4600)]
 
 REGION_COQUIMBO = '04'
 # Comuna: (población femenina [C] Censo 2024, provincia). Nombres como en datos_geograficos.py.
@@ -97,6 +105,7 @@ PROP_TERAPIA_HORMONAL = {'post': 0.10, 'quirurgica': 0.10, 'peri': 0.03, 'pre': 
 # --- §5 Salud crónica y EMPA -------------------------------------------------
 HTA_POR_EDAD = (0.15, 0.45)            # 40 → 60 años [N] ENS 2016-17
 DM_POR_EDAD = (0.06, 0.20)
+FACTOR_DM_OBESIDAD = 1.8               # [L] la diabetes tipo 2 se concentra en IMC ≥ 30
 FACTOR_BAJA_EDUCACION = 1.25           # < 8 años de estudio [N] ENS
 PROP_MED_PRESION = 0.65                # [S] entre hipertensas
 PROP_MED_DIABETES = 0.75               # [S] entre diabéticas
@@ -118,11 +127,13 @@ BIRADS = {1: 0.50, 2: 0.35, 0: 0.08, 3: 0.05, 4: 0.02}
 # Días de ejercicio (códigos 1-5: 0 días … todos los días) [N] ENS sedentarismo 90-93 %.
 DIAS_EJERCICIO = {1: 0.55, 2: 0.32, 3: 0.08, 4: 0.03, 5: 0.02}
 FACTOR_ACTIVA_EDUCACION_ALTA = 1.5     # [S] más ejercicio con >12 años de estudio
+FACTOR_ACTIVA_OBESIDAD = 0.6           # [L] menos ejercicio con IMC ≥ 30
 PROP_CUMPLE_5_PORCIONES = 0.145        # [N] ENS 16 %, descontado el factor por educación
 
 # Porciones diarias (1 no consumo, 2 1-2, 3 3-4, 4 5-6, 5 7+) y semanales
 # (1 nunca, 2 1-2, 3 3-4, 4 5-6, 5 diario). [S] salvo frutas/verduras.
-VASOS_AGUA = {2: 0.30, 3: 0.40, 4: 0.20, 5: 0.10}
+VASOS_AGUA = {1: 0.05, 2: 0.30, 3: 0.37, 4: 0.18, 5: 0.10}
+DESPLAZA_AGUA_ACTIVA = 0.6             # [S] quien hace ejercicio toma más agua (sube ~medio nivel)
 PANES = {1: 0.10, 2: 0.65, 3: 0.22, 4: 0.03}
 LACTEOS = {1: 0.15, 2: 0.65, 3: 0.18, 4: 0.02}
 JUGOS = {1: 0.30, 2: 0.50, 3: 0.15, 4: 0.05}
@@ -138,7 +149,13 @@ OTRO_PREPARA = ['Mi madre', 'Una vecina', 'Empleada de casa particular', 'Mi hij
 PROP_FUMA = 0.27                       # [N] ENS
 FRECUENCIA_FUMADORA = {5: 0.60, 4: 0.10, 3: 0.10, 2: 0.20}
 ALCOHOL = {1: 0.40, 2: 0.45, 3: 0.10, 4: 0.03, 5: 0.02}                 # [S]
-MARIHUANA = {1: 0.96, 2: 0.03, 3: 0.01}                                  # [S]
+ALCOHOL_FUMADORA = {1: 0.25, 2: 0.48, 3: 0.17, 4: 0.06, 5: 0.04}        # [L] tabaco y alcohol van juntos
+MARIHUANA = {1: 0.94, 2: 0.04, 3: 0.01, 4: 0.005, 5: 0.005}             # [S] ENPG: uso bajo en 40-65
+MARIHUANA_FUMADORA = {1: 0.80, 2: 0.12, 3: 0.04, 4: 0.02, 5: 0.02}
+# Tabaco y hormonas [L]: los estrógenos combinados están contraindicados en fumadoras
+# mayores de 35 años (criterios OMS), así que fuman menos quienes usan TH o píldora.
+FACTOR_TH_FUMADORA = 0.5
+FACTOR_ORAL_FUMADORA = 0.3             # peso de ORAL entre los métodos de una fumadora
 
 # --- §7 Cuidado y trabajo ----------------------------------------------------
 PROP_CUIDA = {'40-49': 0.58, '50+': 0.42}                                # [S] promedio ~50 %
@@ -155,6 +172,8 @@ A_QUIEN_CUIDA = {
 }
 OTRO_CUIDA = ['Nietos', 'Sobrina', 'Vecina adulta mayor', 'Hermano con discapacidad']
 ESTRES_LABORAL = {1: 0.10, 2: 0.25, 3: 0.35, 4: 0.20, 5: 0.10}          # [S]
+# Lugar de trabajo comprensivo (1-5): menos comprensivo donde hay más estrés [S].
+COMPRENSIVO_MEDIA, COMPRENSIVO_DE, COMPRENSIVO_POR_ESTRES = 3.3, 1.0, -0.35
 
 # --- §8 Síntomas MRS ---------------------------------------------------------
 # Objetivo [N] Rev. Méd. Chile 2008, mujeres de 40-59 años.
@@ -181,11 +200,40 @@ EFECTO_ETAPA = {
 }
 EFECTO_ETAPA['quirurgica'] = EFECTO_ETAPA['post']
 EFECTO_TERAPIA_HORMONAL = {1: -0.60, 11: -0.45, 4: -0.20}
-EFECTO_EJERCICIO = -0.25               # todos los ítems, si hace ejercicio ≥3 días
-EFECTO_TABACO = 0.15                   # todos los ítems
-EFECTO_OBESIDAD = {3: 0.30}
-EFECTO_SOBRECARGA = 0.15               # por punto sobre 3, ítems psicológicos
-EFECTO_ESTRES = 0.15                   # por punto sobre 3, ítems psicológicos
+
+# Factores de estilo de vida validados por la profesora (reunión 20-10, §13).
+# Cada factor suma `efecto × valor` a todos los ítems de un dominio, con el peso
+# del dominio. El valor va centrado (0 = situación típica), así la media del MRS
+# casi no se mueve. Signo + = más síntomas; − = protector. Los efectos se
+# calibraron con N = 20 000 para que la correlación de Spearman de cada factor
+# con el MRS total quede en el rango pedido (IMC ~0,25-0,35; resto ~0,10-0,25).
+PESO_DOMINIO = {
+    'general': {'somatico': 1.0, 'psicologico': 1.0, 'urogenital': 0.6},
+    'fisico': {'somatico': 1.3, 'psicologico': 0.7, 'urogenital': 0.6},
+    'carga': {'somatico': 0.7, 'psicologico': 1.4, 'urogenital': 0.3},
+}
+EFECTOS_ESTILO = {
+    # factor: (efecto por unidad, tipo de peso). Unidades en generador.valores_factores.
+    'imc': (0.27, 'fisico'),            # por cada 5 puntos de IMC sobre 27 (gradual)
+    'diabetes': (0.38, 'fisico'),
+    'doble_carga': (0.40, 'carga'),     # trabaja y cuida a otras personas
+    'sobrecarga': (0.14, 'carga'),      # por punto sobre 3 (solo quien cuida)
+    'estres': (0.18, 'carga'),          # por punto sobre 3 (solo quien trabaja)
+    'comprensivo': (-0.12, 'carga'),    # por punto sobre 3 (solo quien trabaja)
+    'ejercicio': (-0.42, 'general'),    # 0 días → 0; ≥ 1 día baja, más con más días
+    'agua': (-0.12, 'general'),         # por nivel sobre 3 vasos
+    'tabaco': (0.40, 'general'),        # de nunca (0) a diario (1)
+    'alcohol': (0.65, 'general'),       # de nunca (0) a diario (1)
+    'marihuana': (0.60, 'general'),     # de nunca (0) a diario (1)
+    # Alimentos con efecto chico (+) o nulo; ninguno protector (reunión 20-10).
+    'panes': (0.05, 'fisico'),          # por nivel sobre 2
+    'golosinas': (0.05, 'general'),     # por nivel sobre 2
+    'jugos': (0.05, 'general'),         # por nivel sobre 2
+    'energeticas': (0.10, 'general'),   # por nivel sobre 1
+}
+# La población tiene más IMC y factores de riesgo que la "situación típica", así
+# que la suma de efectos sube la media; esto la devuelve al objetivo chileno.
+AJUSTE_DOMINIO = {'somatico': -0.50, 'psicologico': -0.40, 'urogenital': -0.30}
 
 PROP_TIENE_PAREJA = 0.65                                                 # [S]
 EVACUACION = {2: 0.50, 3: 0.25, 1: 0.10, 4: 0.15}                        # [S]
@@ -221,7 +269,62 @@ TIPO_APOYO = {
 }
 OTRO_APOYO = ['Grupos de apoyo entre mujeres', 'Charlas en el trabajo', 'Sexualidad']
 
+# --- Encuesta de satisfacción (opcional, al final) [S] ----------------------------
+PROP_RESPONDE_SATISFACCION = 0.45
+FACILIDAD = {1: 0.03, 2: 0.09, 3: 0.20, 4: 0.40, 5: 0.28}
+FATIGA = {1: 0.42, 2: 0.38, 3: 0.14, 4: 0.06}
+COMODIDAD = {1: 0.02, 2: 0.06, 3: 0.22, 4: 0.40, 5: 0.30}
+RECOMENDARIA = {'SI': 0.68, 'TAL_VEZ': 0.25, 'NO': 0.07}
+PROP_INCOMODIDAD = 0.12
+COMENTARIOS_INCOMODIDAD = [
+    'Me costó recordar la fecha de la última menstruación', 'La encuesta es muy larga',
+    'Las preguntas sobre vida sexual me incomodaron', 'Las preguntas de porciones eran confusas',
+    'No sabía qué responder sobre el útero y los ovarios', 'No sé mi peso exacto',
+]
+
 # --- Ronda 2 [S] ---------------------------------------------------------------
 PROP_CAMBIO_ITEM_MRS = 0.25            # ítems que cambian ±1
 PROP_CAMBIO_HABITO = 0.10
 PROP_INICIA_TERAPIA = 0.03
+
+# --- §14 Suciedad (Fase 34A) ------------------------------------------------------
+# Errores que se agregan al conjunto limpio para practicar la limpieza. Mezcla
+# los tipos del conjunto de la profesora con los patrones vistos en las 5
+# respuestas reales de la plataforma (marcados [R]). Proporción = probabilidad
+# por fila (o por celda, cuando se indica).
+SUCIEDAD = {
+    # Filas
+    'duplicado_exacto': 0.012,          # la misma fila exportada dos veces [R] (hábitos duplicados)
+    'rut_repetido': 0.010,              # una versión anterior de la misma participante
+    # Preguntas que la usuaria deja en blanco [R]
+    'sin_peso': 0.45,                   # solo 2 de 5 informaron peso y talla
+    'sin_talla_si_falta_peso': 0.85,
+    'sin_talla_con_peso': 0.05,
+    'sin_cintura': 0.55,
+    'cintura_cero': 0.10,               # "0.00" en vez de dejarla vacía [R]
+    'sin_fecha_empa': 0.50,
+    # Formatos
+    'fum_dd_mm_aaaa': 0.10,             # [R]
+    'fum_mes_texto': 0.04,              # "julio 2021"
+    'fum_mm_aaaa': 0.04,                # "04/2002"
+    'nacimiento_dd_mm_aaaa': 0.08,
+    'unidad_en_texto': 0.03,            # "81.0 kg", "147 cm" (por celda de peso/talla/cintura)
+    'coma_decimal': 0.03,               # "81,5"
+    'codigo_variante': 0.02,            # Sí/si/S, Femenino/Mujer, verdadero/1 (por celda)
+    'minusculas': 0.01,                 # fonasa, isapre (por celda)
+    'espacios': 0.01,                   # " SI " (por celda de texto)
+    'region_nombre': 0.03,              # "Coquimbo" en vez de "04"
+    # Valores imposibles o centinelas
+    'centinela_numero': 0.006,          # -1, 99, 999, 9999 (por celda numérica)
+    'centinela_texto': 0.004,           # N/A, NA, sin dato, - (por celda)
+    'talla_en_metros': 0.02,            # 1.56
+    'talla_sin_punto': 0.004,           # 1620 (156,2 cm sin el punto)
+    'peso_digito_extra': 0.006,         # 994
+    'mrs_fuera_rango': 0.004,           # 5 o 9 en un ítem 0-4 (por celda)
+    'fecha_nacimiento_imposible': 0.006,  # edad negativa o > 100
+    'edad_fuera_criterio': 0.008,       # < 40 sin excepción o > 65
+    # Lógica de la encuesta
+    'condicional_lleno': 0.06,          # responde una pregunta que no aplica [R]
+    'ejercicio_sin_tipo': 0.05,         # días de ejercicio sin tipo marcado [R]
+    'oral_con_terapia': 0.15,           # píldora y terapia hormonal a la vez [R] (entre quienes usan píldora)
+}

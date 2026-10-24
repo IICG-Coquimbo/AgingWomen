@@ -108,7 +108,7 @@ def resumen(personas, encuestas):
                                            for p in personas if 'fecha_ronda2' in p), default='-'),
          f'≥ {P.DIAS_ENTRE_RONDAS}'),
         ('% aplicadas por personal de salud', f'{pct(p["aplicada_por"] == "PROFESIONAL" for p in personas):.0f}', '30'),
-        ('% excepción de edad (<40)', f'{pct(p["excepcion"] for p in personas):.1f}', '5'),
+        ('% excepción de edad (<40)', f'{pct(bool(p["excepcion"]) for p in personas):.1f}', '5'),
         ('Edad media (40-60)', f'{mean(p["edad"] for p in adultas):.1f}', '~49-50'),
         ('% Coquimbo + La Serena', f'{pct(p["comuna"] in ("Coquimbo", "La Serena") for p in personas):.0f}', '~62'),
         ('% trabaja', f'{pct(p["trabaja"] for p in personas):.0f}', '~58'),

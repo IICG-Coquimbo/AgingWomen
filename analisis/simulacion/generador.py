@@ -69,6 +69,10 @@ CAMPOS = {
         'sintomas_tomados_en_serio', 'desea_mas_informacion_apoyo',
         'tipo_informacion_apoyo_deseado', 'tipo_informacion_apoyo_otro',
     ],
+    'satisfaccion': [
+        'facilidad_uso', 'fatiga_mental', 'comodidad_diseno', 'recomendaria', 'incomodidad',
+        'comentario_incomodidad',
+    ],
 }
 SECCIONES_POR_RONDA = [s for s in CAMPOS if s != 'identificacion']
 
@@ -189,7 +193,7 @@ def rut_valido(numero):
 def generar_perfil(rng, p, fecha):
     if rng.random() < P.PROP_EXCEPCION_EDAD:
         edad = rng.randint(*P.EDAD_EXCEPCION)
-        p['excepcion'] = True
+        p['excepcion'] = elegir(rng, P.EXCEPCION_TIPO)
     else:
         tramos = {t: peso for t, peso in P.TRAMOS_EDAD if t[0] <= P.EDAD_MAXIMA}
         lo, hi = elegir(rng, tramos)
@@ -226,7 +230,11 @@ def generar_perfil(rng, p, fecha):
 # --- 2. Etapa reproductiva (§4) ---------------------------------------------------
 def generar_etapa(rng, p, fecha):
     edad = p['edad']
-    if p['excepcion'] or rng.random() < P.PROP_QUIRURGICA:
+    if p['excepcion'] == 'AUSENCIA':
+        # Menopausia precoz sin cirugía: ya pasaron ≥ 12 meses sin menstruación.
+        p['etapa'] = 'post'
+        p['edad_menopausia'] = rng.randint(max(33, edad - 4), edad - 1)
+    elif p['excepcion'] == 'QUIRURGICA' or rng.random() < P.PROP_QUIRURGICA:
         p['etapa'] = 'quirurgica'
         p['edad_menopausia'] = rng.randint(max(30, edad - 6), edad)
     else:
@@ -262,9 +270,7 @@ def generar_salud(rng, p):
     t = (p['edad'] - 40) / 20
     baja_educ = P.FACTOR_BAJA_EDUCACION if p['anios_estudio'] < 8 else 1.0
     p['hta'] = rng.random() < entre(*P.HTA_POR_EDAD, t) * baja_educ
-    p['dm'] = rng.random() < entre(*P.DM_POR_EDAD, t) * baja_educ
     p['med_presion'] = p['hta'] and rng.random() < P.PROP_MED_PRESION
-    p['med_diabetes'] = p['dm'] and rng.random() < P.PROP_MED_DIABETES
 
     # IMC: obesidad algo más frecuente con la edad y con baja educación.
     pesos = {}
@@ -280,18 +286,39 @@ def generar_salud(rng, p):
     p['cintura'] = normal(rng, 2.3 * p['imc'] + 25, 6, 60, 150)
     p['talla_maxima'] = p['talla'] + rng.uniform(0, 1) + max(0, p['edad'] - 45) * rng.uniform(0, 0.12)
 
+    # Diabetes: más frecuente con obesidad.
+    factor_dm = P.FACTOR_DM_OBESIDAD if p['imc'] >= 30 else 1.0
+    p['dm'] = rng.random() < entre(*P.DM_POR_EDAD, t) * baja_educ * factor_dm
+    p['med_diabetes'] = p['dm'] and rng.random() < P.PROP_MED_DIABETES
+
 
 # --- 4. Estilo de vida (§6) ------------------------------------------------------
 def generar_estilo(rng, p):
     pesos = dict(P.DIAS_EJERCICIO)
-    if p['anios_estudio'] > 12:
-        for k in (3, 4, 5):
+    for k in (2, 3, 4, 5):
+        if p['anios_estudio'] > 12 and k >= 3:
             pesos[k] *= P.FACTOR_ACTIVA_EDUCACION_ALTA
+        if p['imc'] >= 30:
+            pesos[k] *= P.FACTOR_ACTIVA_OBESIDAD
     p['dias_ejercicio'] = elegir(rng, pesos)
     p['activa'] = p['dias_ejercicio'] >= 3
     p['fuma'] = rng.random() < P.PROP_FUMA
     factor = 1.3 if p['anios_estudio'] > 12 else 1.0
     p['cumple_5_porciones'] = rng.random() < P.PROP_CUMPLE_5_PORCIONES * factor
+    # Hábitos que influyen en el MRS: se fijan antes de calcular los síntomas.
+    agua = elegir(rng, P.VASOS_AGUA)
+    if p['dias_ejercicio'] >= 2 and rng.random() < P.DESPLAZA_AGUA_ACTIVA:
+        agua = min(5, agua + 1)
+    p['habitos'] = {
+        'vasos_agua_dia': agua,
+        'panes_dia': elegir(rng, P.PANES),
+        'jugos_gaseosas_dia': elegir(rng, P.JUGOS),
+        'bebidas_energeticas_dia': elegir(rng, P.ENERGETICAS),
+        'golosinas_semana': elegir(rng, P.GOLOSINAS),
+        'tabaco_frecuencia': elegir(rng, P.FRECUENCIA_FUMADORA) if p['fuma'] else 1,
+        'alcohol_frecuencia': elegir(rng, P.ALCOHOL_FUMADORA if p['fuma'] else P.ALCOHOL),
+        'marihuana_frecuencia': elegir(rng, P.MARIHUANA_FUMADORA if p['fuma'] else P.MARIHUANA),
+    }
 
 
 # --- 5. Cuidado y trabajo (§7) ---------------------------------------------------
@@ -302,6 +329,8 @@ def generar_cuidado(rng, p):
     sobrecarga = 2.6 + (0.8 if p['trabaja'] else 0) + (0.6 if (p['cantidad_cuida'] or 0) >= 2 else 0)
     p['sobrecarga'] = min(5, max(1, round(normal(rng, sobrecarga, 0.9)))) if p['cuida'] else None
     p['estres'] = elegir(rng, P.ESTRES_LABORAL) if p['trabaja'] else None
+    p['comprensivo'] = (escala(rng, P.COMPRENSIVO_MEDIA + P.COMPRENSIVO_POR_ESTRES * (p['estres'] - 3),
+                               P.COMPRENSIVO_DE) if p['trabaja'] else None)
 
 
 # --- 6. Síntomas MRS (§8) --------------------------------------------------------
@@ -311,11 +340,50 @@ def generar_latentes_mrs(rng, p):
     # Terapia hormonal: según etapa [N], más con Isapre y con muchos síntomas [S].
     prob = P.PROP_TERAPIA_HORMONAL[p['etapa']]
     prob *= (1.5 if p['prevision'] == 'ISAPRE' else 1.0) * (1.5 if p['g'] > 0.5 else 0.8)
+    prob *= P.FACTOR_TH_FUMADORA if p['fuma'] else 1.0
     p['terapia_hormonal'] = rng.random() < prob
+
+
+# Días de ejercicio (código 1-5) → valor del factor: la diferencia grande está
+# entre no hacer ejercicio y hacerlo al menos un día.
+VALOR_EJERCICIO = {1: 0.0, 2: 0.6, 3: 0.8, 4: 0.9, 5: 1.0}
+
+
+def valores_factores(p):
+    """Valor centrado de cada factor de P.EFECTOS_ESTILO (0 = situación típica)."""
+    h = p['habitos']
+    return {
+        'imc': (p['imc'] - 27) / 5,
+        'diabetes': float(p['dm']),
+        'doble_carga': float(p['trabaja'] and p['cuida']),
+        'sobrecarga': (p['sobrecarga'] - 3) if p['sobrecarga'] else 0,
+        'estres': (p['estres'] - 3) if p['estres'] else 0,
+        'comprensivo': (p['comprensivo'] - 3) if p['comprensivo'] else 0,
+        'ejercicio': VALOR_EJERCICIO[p['dias_ejercicio']],
+        'agua': h['vasos_agua_dia'] - 3,
+        'tabaco': (h['tabaco_frecuencia'] - 1) / 4,
+        'alcohol': (h['alcohol_frecuencia'] - 1) / 4,
+        'marihuana': (h['marihuana_frecuencia'] - 1) / 4,
+        'panes': h['panes_dia'] - 2,
+        'golosinas': h['golosinas_semana'] - 2,
+        'jugos': h['jugos_gaseosas_dia'] - 2,
+        'energeticas': h['bebidas_energeticas_dia'] - 1,
+    }
+
+
+def efecto_estilo(p):
+    """{dominio: desplazamiento latente} sumando todos los factores de estilo de vida."""
+    valores = valores_factores(p)
+    total = dict(P.AJUSTE_DOMINIO)
+    for factor, (efecto, tipo) in P.EFECTOS_ESTILO.items():
+        for dom, peso in P.PESO_DOMINIO[tipo].items():
+            total[dom] += efecto * valores[factor] * peso
+    return total
 
 
 def calcular_mrs(rng, p):
     """Devuelve {1..11: 0-4} a partir del modelo latente y los efectos."""
+    estilo = efecto_estilo(p)
     items = {}
     for dom, nums in P.DOMINIOS_MRS.items():
         for i in nums:
@@ -323,17 +391,7 @@ def calcular_mrs(rng, p):
             x += P.EFECTO_ETAPA[p['etapa']].get(i, 0)
             if p['terapia_hormonal']:
                 x += P.EFECTO_TERAPIA_HORMONAL.get(i, 0)
-            if p['activa']:
-                x += P.EFECTO_EJERCICIO
-            if p['fuma']:
-                x += P.EFECTO_TABACO
-            if p['imc_categoria'] in ('obesidad', 'morbida'):
-                x += P.EFECTO_OBESIDAD.get(i, 0)
-            if dom == 'psicologico':
-                if p['sobrecarga']:
-                    x += P.EFECTO_SOBRECARGA * (p['sobrecarga'] - 3)
-                if p['estres']:
-                    x += P.EFECTO_ESTRES * (p['estres'] - 3)
+            x += estilo[dom]
             x += rng.gauss(0, P.RUIDO_ITEM)
             items[i] = min(4, max(0, round(x)))
     return items
@@ -356,7 +414,7 @@ def seccion_identificacion(p):
         'region_residencia': P.REGION_COQUIMBO,
         'comuna': p['comuna'],
         'trabaja_actualmente': p['trabaja'],
-        'excepcion_edad': 'QUIRURGICA' if p['excepcion'] else 'NINGUNA',
+        'excepcion_edad': p['excepcion'] or 'NINGUNA',
     }
 
 
@@ -372,7 +430,7 @@ def seccion_trabajo(rng, p, mrs):
         'rendimiento_afectado': escala(rng, 1 + 3.5 * t),
         'bienestar_trabajo_afectado': escala(rng, 1 + 3.5 * t + 0.2 * (p['estres'] - 3)),
         'frecuencia_ausencias': escala(rng, 0.7 + 2.5 * t, 0.7),
-        'lugar_trabajo_comprensivo': escala(rng, 3, 1.0),
+        'lugar_trabajo_comprensivo': p['comprensivo'],
         'estres_entorno_laboral': p['estres'],
     }
 
@@ -401,12 +459,15 @@ def seccion_mrs(rng, p, items, mrs):
     else:
         cambio, p_sexual = 1, 0.15
     p_antidep = 0.03 + 0.015 * mrs['psicologico'] + (0.05 if items[4] >= 3 else 0)
+    metodos = dict(P.TIPO_ANTICONCEPTIVO)
+    if p['fuma']:
+        metodos['ORAL'] *= P.FACTOR_ORAL_FUMADORA
     fila.update({
         'fecha_ultima_menstruacion': p['fum_texto'],
         'menstruacion_llega': elegir(rng, P.MENSTRUACION_LLEGA[etapa_menstrual]),
         'tipo_sangrado': elegir(rng, P.TIPO_SANGRADO[etapa_menstrual]),
         'usa_metodo_anticonceptivo': 'SI' if rng.random() < P.PROP_ANTICONCEPTIVO else 'NO',
-        'tipo_metodo_anticonceptivo': elegir(rng, P.TIPO_ANTICONCEPTIVO),
+        'tipo_metodo_anticonceptivo': elegir(rng, metodos),
         'tipo_metodo_anticonceptivo_otro': rng.choice(P.OTRO_ANTICONCEPTIVO),
         'usa_terapia_hormonal': 'SI' if p['terapia_hormonal'] else 'NO',
         'operada_no_mas_hijos': p['operada'],
@@ -509,20 +570,20 @@ def seccion_habitos(rng, p):
         'quien_prepara_comidas_otro': rng.choice(P.OTRO_PREPARA),
         'frecuencia_comida_fuera': escala(rng, 1.6 + 0.6 * p['trabaja'], 0.8),
         'falta_tiempo_influye': escala(rng, 2.0 + 0.7 * trabaja_cuida, 0.9),
-        'vasos_agua_dia': elegir(rng, P.VASOS_AGUA),
+        'vasos_agua_dia': p['habitos']['vasos_agua_dia'],
         'platos_verduras_dia': verduras,
         'frutas_dia': frutas,
-        'panes_dia': elegir(rng, P.PANES),
+        'panes_dia': p['habitos']['panes_dia'],
         'lacteos_dia': elegir(rng, P.LACTEOS),
-        'jugos_gaseosas_dia': elegir(rng, P.JUGOS),
-        'bebidas_energeticas_dia': elegir(rng, P.ENERGETICAS),
+        'jugos_gaseosas_dia': p['habitos']['jugos_gaseosas_dia'],
+        'bebidas_energeticas_dia': p['habitos']['bebidas_energeticas_dia'],
         'pescado_semana': elegir(rng, P.PESCADO),
         'legumbres_semana': elegir(rng, P.LEGUMBRES),
         'carnes_semana': elegir(rng, P.CARNES),
-        'golosinas_semana': elegir(rng, P.GOLOSINAS),
-        'tabaco_frecuencia': elegir(rng, P.FRECUENCIA_FUMADORA) if p['fuma'] else 1,
-        'marihuana_frecuencia': elegir(rng, P.MARIHUANA),
-        'alcohol_frecuencia': elegir(rng, P.ALCOHOL),
+        'golosinas_semana': p['habitos']['golosinas_semana'],
+        'tabaco_frecuencia': p['habitos']['tabaco_frecuencia'],
+        'marihuana_frecuencia': p['habitos']['marihuana_frecuencia'],
+        'alcohol_frecuencia': p['habitos']['alcohol_frecuencia'],
     }
 
 
@@ -541,8 +602,10 @@ def seccion_actividad(rng, p):
     return fila
 
 
-def seccion_conocimiento(rng, p, mrs):
-    consulto = rng.random() < min(0.9, 0.12 + 0.012 * mrs['total'])
+def seccion_conocimiento(rng, p):
+    # Sin vínculo con el MRS: según la profesora esta sección no aumenta ni
+    # disminuye los síntomas (reunión 20-10), así que tampoco depende de ellos.
+    consulto = rng.random() < 0.30
     controla = (rng.random() < P.PROP_CONTROL_CRONICA if (p['med_presion'] or p['med_diabetes'])
                 else rng.random() < P.PROP_CONTROL_OTRA)
     programa = (P.PROGRAMA_CRONICA if (p['med_presion'] or p['med_diabetes'])
@@ -576,6 +639,21 @@ def seccion_conocimiento(rng, p, mrs):
         'desea_mas_informacion_apoyo': 'SI' if rng.random() < P.PROP_DESEA_APOYO else 'NO',
         'tipo_informacion_apoyo_deseado': ', '.join(multiseleccion(rng, apoyo)),
         'tipo_informacion_apoyo_otro': rng.choice(P.OTRO_APOYO),
+    }
+
+
+def seccion_satisfaccion(rng):
+    """Encuesta de satisfacción: opcional, se responde con un botón al final."""
+    if rng.random() >= P.PROP_RESPONDE_SATISFACCION:
+        return None
+    incomoda = rng.random() < P.PROP_INCOMODIDAD
+    return {
+        'facilidad_uso': elegir(rng, P.FACILIDAD),
+        'fatiga_mental': elegir(rng, P.FATIGA),
+        'comodidad_diseno': elegir(rng, P.COMODIDAD),
+        'recomendaria': elegir(rng, P.RECOMENDARIA),
+        'incomodidad': 'SI' if incomoda else 'NO',
+        'comentario_incomodidad': rng.choice(P.COMENTARIOS_INCOMODIDAD) if incomoda else None,
     }
 
 
@@ -642,11 +720,14 @@ def variar_habitos(rng, fila):
 
 
 # --- Orquestación -------------------------------------------------------------------
-def generar(rng, n=P.N_PARTICIPANTES, n_ronda2=P.N_RONDA2):
+def generar(rng, n=P.N_PARTICIPANTES, n_ronda2=P.N_RONDA2, blancos=True):
     """
     Devuelve (participantes, encuestas). `participantes` es una lista de dicts
     con la persona y sus variables ocultas; `encuestas` es una lista de dicts
     {participante, ronda, fecha, rol, secciones: {seccion: fila | None}, mrs}.
+
+    Con `blancos=False` las respuestas quedan completas: las omisiones las
+    agrega después simulacion/ensuciar.py, que además las registra.
     """
     ultimo_dia_r1 = min(P.FECHA_FIN_RONDA1, P.FECHA_CORTE)
     personas, encuestas = [], []
@@ -700,7 +781,8 @@ def generar(rng, n=P.N_PARTICIPANTES, n_ronda2=P.N_RONDA2):
                 'empa': seccion_empa(rng, p, fecha),
                 'habitos_de_vida': seccion_habitos(rng, p),
                 'actividad_fisica': seccion_actividad(rng, p),
-                'conocimiento_sistema': seccion_conocimiento(rng, p, mrs),
+                'conocimiento_sistema': seccion_conocimiento(rng, p),
+                'satisfaccion': seccion_satisfaccion(rng),
             }
             if ronda == 2:
                 previa = encuestas[-1]['secciones']
@@ -723,7 +805,8 @@ def generar(rng, n=P.N_PARTICIPANTES, n_ronda2=P.N_RONDA2):
         for nombre, fila in e['secciones'].items():
             if fila is None:
                 continue
-            aplicar_blancos(rng, fila, e['rol'])
+            if blancos:
+                aplicar_blancos(rng, fila, e['rol'])
             aplicar_visibilidad(fila, e['rol'], e['fecha'])
         ident = e['secciones'].get('identificacion')
         # Si "¿trabaja?" quedó en blanco, la sección Trabajo no se muestra.
