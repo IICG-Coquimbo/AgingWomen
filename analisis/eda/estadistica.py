@@ -50,7 +50,8 @@ def severidad_por(df, grupo, orden=None):
 
 
 def _es_ordenable(s):
-    return s.isin(V.BINARIAS).all() or V.numerica(s).notna().all() or s.name == 'nivel_educacion'
+    return (s.isin(V.BINARIAS).all() or V.numerica(s).notna().all()
+            or s.name == 'nivel_educacion' or s.name in V.ORDEN_TEXTO)
 
 
 def cruce_con_mrs(df, variables, rol, resultado='mrs_total'):
@@ -140,3 +141,54 @@ def matriz_spearman(df, variables):
     X = V.codificar(mrs, variables)
     X.insert(0, 'severidad', V.numerica(severidad_codigo(mrs)))
     return X.corr(method='spearman')
+
+
+# --- Fase 34C: conjunto de la usuaria ------------------------------------------
+
+def cramer_v(tabla):
+    chi2, p, gl, _ = stats.chi2_contingency(tabla)
+    n = tabla.to_numpy().sum()
+    return chi2, p, gl, np.sqrt(chi2 / (n * (min(tabla.shape) - 1)))
+
+
+def diferencia_grupos(df, variables, grupo='trabaja_actualmente', dominante=90):
+    """
+    ¿Responde distinto quien trabaja y quien no? Por variable:
+      - continua → Mann-Whitney (efecto: correlación biserial de rangos);
+      - categórica u ordinal → chi² de independencia (efecto: V de Cramér).
+    También marca si una categoría concentra ≥ `dominante` % (poca variación,
+    candidata a no aportar en la Fase 35).
+    """
+    filas = []
+    for v in variables:
+        sub = df[[v, grupo]].dropna()
+        s = sub[v]
+        pct_max = 100 * s.value_counts(normalize=True).max()
+        fila = {'variable': v, 'n': len(sub), 'categoria_dominante': s.value_counts().idxmax(),
+                'pct_dominante': pct_max, 'poca_variacion': pct_max >= dominante}
+        grupos = [s[sub[grupo] == g] for g in sorted(sub[grupo].unique())]
+        if len(grupos) < 2 or min(len(g) for g in grupos) < 5:
+            filas.append({**fila, 'prueba': '-', 'efecto': np.nan, 'medida': '', 'p': np.nan})
+        elif v in V.CONTINUAS_USUARIA:
+            a, b = (V.numerica(g) for g in grupos)
+            u, p = stats.mannwhitneyu(a, b)
+            filas.append({**fila, 'prueba': 'Mann-Whitney', 'efecto': 1 - 2 * u / (len(a) * len(b)),
+                          'medida': 'r', 'p': p})
+        else:
+            tabla = pd.crosstab(s, sub[grupo])
+            if len(tabla) < 2:
+                filas.append({**fila, 'prueba': '-', 'efecto': np.nan, 'medida': '', 'p': np.nan})
+                continue
+            _, p, _, cv = cramer_v(tabla)
+            filas.append({**fila, 'prueba': 'chi²', 'efecto': cv, 'medida': 'V', 'p': p})
+    t = pd.DataFrame(filas)
+    con_p = t['p'].notna()
+    t.loc[con_p, 'p_ajustado'] = stats.false_discovery_control(t.loc[con_p, 'p'], method='bh')
+    return t
+
+
+def severidad_independencia(df, grupo):
+    """chi² entre `grupo` y la severidad en 4 clases (quienes tienen MRS completo)."""
+    mrs = df[df['mrs_completo'] == '1']
+    chi2, p, gl, cv = cramer_v(pd.crosstab(mrs[grupo], mrs['mrs_severidad']))
+    return {'chi2': chi2, 'gl': gl, 'p': p, 'v': cv, 'n': int(mrs[grupo].notna().sum())}

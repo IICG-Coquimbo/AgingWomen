@@ -6,6 +6,8 @@ rampa ordinal azul para la severidad del MRS y par divergente azul/rojo para
 correlaciones (azul = menos síntomas, rojo = más síntomas). Marcas delgadas,
 grilla tenue, textos en tinta neutra y etiquetas directas en las barras.
 """
+import textwrap
+
 import matplotlib
 
 matplotlib.use('Agg')
@@ -192,10 +194,11 @@ def asociacion_severidad(t, ruta, titulo):
     colores = [GRILLA if p >= 0.05 else (AZUL if e < 0 else ROJO)
                for e, p in zip(t['efecto'], t['p_ajustado'])]
     barras = ax.barh([V.etiqueta(v) for v in t['variable']], t['efecto'], color=colores, height=0.65)
+    # Todas llevan su valor; el de las no significativas, más tenue.
     for b, e, p in zip(barras, t['efecto'], t['p_ajustado']):
-        if p < 0.05:
-            ax.text(e + (0.008 if e >= 0 else -0.008), b.get_y() + b.get_height() / 2, f'{e:+.2f}',
-                    va='center', ha='left' if e >= 0 else 'right', color=TINTA_2, fontsize=7)
+        ax.text(e + (0.008 if e >= 0 else -0.008), b.get_y() + b.get_height() / 2, f'{e:+.2f}',
+                va='center', ha='left' if e >= 0 else 'right', color=TINTA_2 if p < 0.05 else TENUE,
+                fontsize=7)
     lim = max(0.1, t['efecto'].abs().max() * 1.3)
     ax.set_xlim(-lim, lim)
     ax.axvline(0, color=EJE, linewidth=1)
@@ -233,30 +236,41 @@ def mapa_calor(matriz, ruta, titulo, anotar=True):
     _guardar(fig, ruta)
 
 
-def direccion(df, variables, ruta, columnas=3):
+def direccion(df, variables, ruta, columnas=3,
+              titulo='Dirección de la asociación: media según la severidad (IC 95 %)', notas=None):
     """
     Media de cada variable en cada clase de severidad (IC 95 %). Se lee la
     dirección: si la línea sube, a mayor severidad mayor valor de la variable.
-    `variables` = [(variable, texto del eje y)].
+    `variables` = [(variable, texto del eje y[, límites del eje y o None])];
+    `notas` = {variable: texto bajo el título}. Con límites, el eje muestra la escala
+    completa de la pregunta, para no exagerar diferencias chicas.
     """
     mrs = df[df['mrs_completo'] == '1']
+    notas = notas or {}
     filas = int(np.ceil(len(variables) / columnas))
-    fig, ejes = plt.subplots(filas, columnas, figsize=(10, 2.4 * filas + 0.5), squeeze=False)
+    alto = 2.4 + (0.25 if notas else 0)
+    fig, ejes = plt.subplots(filas, columnas, figsize=(10, alto * filas + 0.5), squeeze=False)
     cortas = ['Muy leve', 'Leve', 'Moderada', 'Severa']
-    for ax, (v, unidad) in zip(ejes.flat, variables):
+    for ax, (v, unidad, *lim) in zip(ejes.flat, variables):
+        lim = lim[0] if lim else None
         x = V.codificar(mrs, [v])[v]
         g = x.groupby(mrs['mrs_severidad']).agg(['mean', 'sem']).reindex(V.ORDEN_SEVERIDAD)
         ax.errorbar(range(4), g['mean'], yerr=1.96 * g['sem'], color=AZUL, marker='o', markersize=4,
                     linewidth=1.5, capsize=3, ecolor=TENUE)
+        if lim is not None:
+            margen = 0.05 * (lim[1] - lim[0])
+            ax.set_ylim(lim[0] - margen, lim[1] + margen)
         ax.set_xticks(range(4), cortas, fontsize=7)
-        ax.set_title(V.etiqueta(v), fontsize=9, loc='left')
+        ax.set_title(V.etiqueta(v), fontsize=9, loc='left', pad=14 if v in notas else 6)
+        if v in notas:
+            ax.text(0, 1.02, notas[v], transform=ax.transAxes, fontsize=7, color=TENUE, va='bottom')
         ax.set_ylabel(unidad, fontsize=7)
         ax.tick_params(axis='y', labelsize=7)
         ax.grid(axis='y', color=GRILLA, linewidth=0.8)
         ax.set_axisbelow(True)
     for ax in list(ejes.flat)[len(variables):]:
         ax.set_visible(False)
-    fig.suptitle('Dirección de la asociación: media según la severidad (IC 95 %)', x=0.01, ha='left',
+    fig.suptitle(titulo, x=0.01, ha='left',
                  fontweight='bold', fontsize=11)
     _guardar(fig, ruta)
 
@@ -292,4 +306,57 @@ def faltantes(tabla, ruta):
     ax.set_xlabel('% faltante sobre las filas donde la pregunta aplica (línea: 5 %, umbral de marca)')
     ax.set_title('Datos faltantes reales por variable', loc='center')
     _grilla_x(ax)
+    _guardar(fig, ruta)
+
+
+# --- Fase 34C: conjunto de la usuaria ------------------------------------------
+
+GRUPO_COLORES = ('#1c5cab', '#86b6ef')      # trabaja (oscuro) / no trabaja (claro)
+
+
+def _corto(texto, largo=24):
+    return texto if len(texto) <= largo else texto[:largo - 1] + '…'
+
+
+def _barras_pareadas(ax, t, rotulo='{:.0f}'):
+    """Barras horizontales: una por respuesta (filas de `t`) y grupo (columnas de `t`)."""
+    t = t.iloc[::-1]
+    y = np.arange(len(t))
+    k = t.shape[1]
+    alto = 0.8 / k
+    for j, (g, color) in enumerate(zip(t.columns, GRUPO_COLORES if k > 1 else (GRUPO_COLORES[0],))):
+        pos = y + (k - 1 - j - (k - 1) / 2) * alto
+        ax.barh(pos, t[g], height=alto, color=color, label=g)
+        for yy, v in zip(pos, t[g]):
+            ax.text(v + 0.8, yy, rotulo.format(v), va='center', color=TINTA_2, fontsize=7.5)
+    ax.set_yticks(y, [_corto(str(i), 40) for i in t.index], fontsize=8.5)
+    ax.set_xlim(0, min(100, t.to_numpy().max() * 1.2 + 5))
+    _grilla_x(ax)
+
+
+def frecuencia_variable(t, ruta, titulo, nota, eje='% de participantes del grupo'):
+    """
+    Frecuencias de una variable: % de cada respuesta en cada grupo (columnas de `t`).
+    `nota` va bajo el título (tamaños de grupo, prueba).
+    """
+    nota = textwrap.fill(nota, 70)
+    lineas = nota.count('\n') + 1
+    fig, ax = plt.subplots(figsize=(7, 0.42 * len(t) * max(1, t.shape[1] / 1.6) + 1.5 + 0.15 * lineas))
+    _barras_pareadas(ax, t)
+    ax.set_title(titulo, fontsize=11, pad=8 + 11 * lineas)
+    ax.text(0, 1.02, nota, transform=ax.transAxes, fontsize=7.5, color=TENUE, va='bottom')
+    ax.set_xlabel(eje, fontsize=8)
+    if t.shape[1] > 1:
+        ax.legend(loc='best', frameon=False, fontsize=8)
+    _guardar(fig, ruta)
+
+
+def perfil_sintomas(t, ruta):
+    """% con cada síntoma MRS en grado moderado o más (≥ 2), por grupo (columnas de `t`)."""
+    t = t.sort_values(t.columns[0], ascending=False)
+    fig, ax = plt.subplots(figsize=(7.5, 0.55 * len(t) + 1.4))
+    _barras_pareadas(ax, t)
+    ax.set_title('Síntomas en grado moderado o mayor')
+    ax.set_xlabel('% de participantes del grupo (respuesta ≥ 2 en el ítem MRS)', fontsize=8)
+    ax.legend(loc='best', frameon=False, fontsize=8)
     _guardar(fig, ruta)

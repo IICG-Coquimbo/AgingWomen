@@ -17,6 +17,7 @@ import pandas as pd
 
 RAIZ = Path(__file__).resolve().parents[2]
 LIMPIO = RAIZ / 'datos' / 'limpio'
+LIMPIO_USUARIA = RAIZ / 'datos' / 'limpio_usuaria'
 
 MRS_ITEMS = {
     'pregunta_1': 'Bochornos y sudoración', 'pregunta_2': 'Molestias al corazón',
@@ -98,12 +99,52 @@ CONTINUAS_PROFESIONAL = ['presion_sistolica', 'presion_diastolica', 'colesterol_
                          'colesterol_hdl_mg_dl', 'trigliceridos_mg_dl', 'glicemia_mg_dl',
                          'perdida_talla_cm']
 
+# --- Conjunto de la usuaria común (Fase 34C, plan aprobado 2026-10-24) ---
+# Sin servicios de salud (laboratorio, presión, cintura, tamizaje), sin nivel
+# educacional ni ConocimientoSistema. La diabetes pasa a control; el IMC entra
+# como categoría con "no informado" (no se imputa) y, aparte, como número solo
+# en quienes lo informaron.
+CONTROL_USUARIA = {
+    'edad': 'Edad', 'etapa_menopausica': 'Etapa menopáusica', 'imc_categoria': 'IMC (categoría)',
+    'imc': 'IMC (solo informadas)', 'usa_terapia_hormonal': 'Usa terapia hormonal',
+    'prevision': 'Previsión de salud', 'usa_medicamentos_diabetes': 'Medicamentos para la diabetes',
+    'trabaja_actualmente': 'Trabaja actualmente',
+}
+OTRAS_USUARIA = {
+    'origen_procedencia': 'Origen', 'pueblo_originario_afro': 'Pueblo originario / afro',
+    'comuna': 'Comuna', 'tiene_pareja': 'Tiene pareja', 'tiene_actividad_sexual': 'Tiene actividad sexual',
+}
+CONTINUAS_USUARIA = ['edad', 'imc', 'peso_kg', 'talla_actual_cm', 'horas_sedentarismo']
+ORDEN_IMC = ['bajo peso', 'normal', 'sobrepeso', 'obesidad', 'no informado']
+
+# Ajuste 34C (aprobado 2026-10-24): frecuencias de todas las variables y
+# asociación con la severidad de las ginecológicas y de salud general.
+GINECOLOGICAS = {
+    'menstruacion_llega': 'Regularidad de la menstruación', 'tipo_sangrado': 'Tipo de sangrado',
+    'usa_metodo_anticonceptivo': 'Usa método anticonceptivo',
+    'tipo_metodo_anticonceptivo': 'Método anticonceptivo',
+    'operada_no_mas_hijos': 'Operada para no tener más hijos', 'tiene_utero': 'Tiene útero',
+    'tiene_ovario': 'Tiene ovarios',
+}
+SALUD_USUARIA = {
+    'usa_medicamentos_presion': 'Medicamentos para la presión',
+    'evacuacion_intestinal': 'Frecuencia de evacuación intestinal',
+    'distension_abdominal': 'Distensión abdominal',
+}
+# Selección múltiple: se guarda como texto con las opciones separadas por ", ".
+MULTISELECCION = ['a_quien_cuida']
+# Ordinales guardadas como texto (orden de la pregunta).
+ORDEN_TEXTO = {'tipo_sangrado': ['MUY_LEVE', 'LEVE', 'MODERADO', 'ABUNDANTE', 'MUY_ABUND']}
+
 ETIQUETAS = {**MRS_ITEMS, **MRS_PUNTAJES, **PREDICTORES, **PREDICTORES_TRABAJO, **CONTROL,
-             **IMPACTO, **OTRAS, **SUBGRUPO_PROFESIONAL,
+             **IMPACTO, **OTRAS, **SUBGRUPO_PROFESIONAL, **CONTROL_USUARIA, **OTRAS_USUARIA,
+             **GINECOLOGICAS, **SALUD_USUARIA,
+             'imc': 'IMC', 'a_quien_cuida': 'A quién cuida', 'genero': 'Género',
+             'realiza_aerobico': 'Realiza ejercicio aeróbico',
+             'realiza_bajo_impacto': 'Realiza ejercicio de bajo impacto',
+             'realiza_fuerza': 'Realiza ejercicio de fuerza',
              'talla_actual_cm': 'Talla (cm)', 'peso_kg': 'Peso (kg)',
-             'talla_maxima_cm': 'Talla máxima (cm)', 'severidad': 'Severidad MRS (0-3)',
-             'menstruacion_llega': 'Regularidad de la menstruación', 'tipo_sangrado': 'Tipo de sangrado',
-             'tipo_metodo_anticonceptivo': 'Método anticonceptivo'}
+             'talla_maxima_cm': 'Talla máxima (cm)', 'severidad': 'Severidad MRS (0-3)'}
 
 # Preguntas condicionales: cuando la pregunta madre es "No", la hija vale 0
 # ("no lo hace") en vez de quedar vacía.
@@ -126,11 +167,11 @@ def etiqueta(variable):
     return ETIQUETAS.get(variable, variable)
 
 
-def cargar():
-    """Dataset limpio (Fase 32) y diccionario de variables."""
-    df = pd.read_csv(LIMPIO / 'dataset_menopausia_limpio.csv', dtype=str, keep_default_na=False,
+def cargar(carpeta=LIMPIO, archivo='dataset_menopausia_limpio.csv'):
+    """Dataset limpio y su diccionario de variables (por omisión, el de la profesora, Fase 32)."""
+    df = pd.read_csv(carpeta / archivo, dtype=str, keep_default_na=False,
                      encoding='utf-8-sig').replace('', np.nan)
-    diccionario = pd.read_csv(LIMPIO / 'diccionario_variables.csv', encoding='utf-8-sig')
+    diccionario = pd.read_csv(carpeta / 'diccionario_variables.csv', encoding='utf-8-sig')
     return df, diccionario
 
 
@@ -152,6 +193,8 @@ def codificar(df, variables):
             s = s.where(df[CERO_SI_NO[v]] != 'NO', '0')
         if v == 'nivel_educacion':
             columnas[v] = s.map({c: i for i, c in enumerate(ORDEN_EDUCACION)})
+        elif v in ORDEN_TEXTO:
+            columnas[v] = s.map({c: i for i, c in enumerate(ORDEN_TEXTO[v])})
         elif s.dropna().isin(BINARIAS).all():
             columnas[v] = s.map(BINARIAS)
         elif numerica(s.dropna()).notna().all():

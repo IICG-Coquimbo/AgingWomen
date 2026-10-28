@@ -1,0 +1,72 @@
+﻿variable,n,categoria_dominante,pct_dominante,poca_variacion,prueba,efecto,medida,p,p_ajustado,bloque,etiqueta
+edad,546,,6.22711,False,Mann-Whitney,-0.10998,r,0.02839,0.28574,Variables de control,Edad
+etapa_menopausica,546,posmenopausia,59.15751,False,chi²,0.13733,V,0.06723,0.40340,Variables de control,Etapa menopáusica
+imc_categoria,546,no informado,49.26740,False,chi²,0.08944,V,0.35856,0.72806,Variables de control,IMC (categoría)
+imc,277,,2.16606,False,Mann-Whitney,-0.03911,r,0.57624,0.80919,Variables de control,IMC
+peso_kg,290,,1.37931,False,Mann-Whitney,-0.02218,r,0.74569,0.93904,Variables de control,Peso (kg)
+talla_actual_cm,331,,7.55287,False,Mann-Whitney,0.08049,r,0.20812,0.57232,Variables de control,Talla (cm)
+usa_terapia_hormonal,546,No,93.77289,True,chi²,0.02421,V,0.57160,0.80919,Variables de control,Usa terapia hormonal
+prevision,546,Fonasa,81.86813,False,chi²,0.13991,V,0.03031,0.28574,Variables de control,Previsión de salud
+usa_medicamentos_diabetes,546,No,87.72894,False,chi²,0.03136,V,0.46364,0.72806,Variables de control,Medicamentos para la diabetes
+dias_ejercicio_semana,546,0 días,57.14286,False,chi²,0.05835,V,0.76162,0.93904,Actividad física,Días de ejercicio a la semana
+realiza_aerobico,546,No,80.58608,False,chi²,0.04348,V,0.30968,0.69566,Actividad física,Realiza ejercicio aeróbico
+frecuencia_aerobico,546,No lo realiza,80.58608,False,chi²,0.08653,V,0.39422,0.72806,Actividad física,Frecuencia de ejercicio aeróbico
+realiza_bajo_impacto,546,No,57.69231,False,chi²,0.01592,V,0.70986,0.93030,Actividad física,Realiza ejercicio de bajo impacto
+frecuencia_bajo_impacto,546,No lo realiza,57.69231,False,chi²,0.03882,V,0.93539,0.98657,Actividad física,Frecuencia de ejercicio de bajo impacto
+realiza_fuerza,546,No,84.79853,False,chi²,0.02957,V,0.48956,0.72806,Actividad física,Realiza ejercicio de fuerza
+frecuencia_fuerza,546,No lo realiza,84.79853,False,chi²,0.12095,V,0.09203,0.43386,Actividad física,Frecuencia de ejercicio de fuerza
+horas_sedentarismo,546,,21.97802,False,Mann-Whitney,-0.01203,r,0.80903,0.95141,Actividad física,Horas sentada al día
+quien_prepara_comidas,546,Yo preparo la mayoría,67.94872,False,chi²,0.02522,V,0.98657,0.98657,Alimentación (contexto),Quién prepara las comidas
+frecuencia_comida_fuera,546,1-2 veces por semana,46.52015,False,chi²,0.31218,V,0.00000,0.00000,Alimentación (contexto),Comidas fuera del hogar
+falta_tiempo_influye,546,A veces,42.30769,False,chi²,0.24727,V,0.00000,0.00003,Alimentación (contexto),Falta de tiempo influye en lo que come
+vasos_agua_dia,546,3-4 porciones,39.01099,False,chi²,0.10419,V,0.20463,0.57232,Alimentación (consumo),Vasos de agua al día
+platos_verduras_dia,546,1-2 porciones,80.21978,False,chi²,0.07507,V,0.37990,0.72806,Alimentación (consumo),Platos de verduras al día
+frutas_dia,546,1-2 porciones,71.79487,False,chi²,0.02853,V,0.93092,0.98657,Alimentación (consumo),Frutas al día
+panes_dia,546,1-2 porciones,67.21612,False,chi²,0.11116,V,0.08043,0.40833,Alimentación (consumo),Panes al día
+lacteos_dia,546,1-2 porciones,66.30037,False,chi²,0.06730,V,0.48015,0.72806,Alimentación (consumo),Lácteos al día
+jugos_gaseosas_dia,546,1-2 porciones,48.90110,False,chi²,0.11665,V,0.05941,0.39211,Alimentación (consumo),Jugos y gaseosas al día
+bebidas_energeticas_dia,546,No consumo,93.22344,True,chi²,0.03233,V,0.45004,0.72806,Alimentación (consumo),Bebidas energéticas al día
+pescado_semana,546,1-2 veces por semana,56.77656,False,chi²,0.00845,V,0.98069,0.98657,Alimentación (consumo),Pescado a la semana
+legumbres_semana,546,1-2 veces por semana,66.30037,False,chi²,0.02723,V,0.81674,0.95141,Alimentación (consumo),Legumbres a la semana
+carnes_semana,546,3-4 veces por semana,44.68864,False,chi²,0.10416,V,0.20495,0.57232,Alimentación (consumo),Carnes a la semana
+golosinas_semana,546,1-2 veces por semana,42.30769,False,chi²,0.07868,V,0.49640,0.72806,Alimentación (consumo),Dulces y snacks a la semana
+tabaco_frecuencia,546,Nunca,75.64103,False,chi²,0.09307,V,0.31621,0.69566,Sustancias,Tabaco
+alcohol_frecuencia,546,1-2 veces por semana,50.18315,False,chi²,0.08537,V,0.40881,0.72806,Sustancias,Alcohol
+marihuana_frecuencia,546,Nunca,90.65934,True,chi²,0.07880,V,0.49474,0.72806,Sustancias,Marihuana
+cuida_otras_personas,546,No,52.93040,False,chi²,0.00091,V,0.98296,0.98657,Cuidado de otras personas,Cuida a otras personas
+cantidad_personas_cuida,546,No cuida,52.93040,False,chi²,0.08878,V,0.23049,0.60850,Cuidado de otras personas,Cantidad de personas que cuida
+sobrecarga_fisica_emocional,546,No cuida,52.93040,False,chi²,0.21226,V,0.00017,0.00366,Cuidado de otras personas,Sobrecarga por trabajo y cuidado
+menstruacion_llega,182,Regular (cada 21-35 días),54.94505,False,chi²,0.14132,V,0.16247,0.53614,Salud ginecológica,Regularidad de la menstruación
+tipo_sangrado,182,Moderado,44.50549,False,chi²,0.14209,V,0.45184,0.72806,Salud ginecológica,Tipo de sangrado
+usa_metodo_anticonceptivo,182,No,59.89011,False,chi²,0.01456,V,0.84428,0.95141,Salud ginecológica,Usa método anticonceptivo
+tipo_metodo_anticonceptivo,73,DIU,39.72603,False,chi²,0.37265,V,0.11899,0.49081,Salud ginecológica,Método anticonceptivo
+operada_no_mas_hijos,546,No,80.03663,False,chi²,0.04077,V,0.34074,0.72545,Salud ginecológica,Operada para no tener más hijos
+tiene_utero,546,Sí,89.92674,False,chi²,0.00328,V,0.93889,0.98657,Salud ginecológica,Tiene útero
+tiene_ovario,546,Sí,96.52015,True,chi²,0.03318,V,0.43809,0.72806,Salud ginecológica,Tiene ovarios
+usa_medicamentos_presion,546,No,82.60073,False,chi²,0.00807,V,0.85050,0.95141,Medicamentos y digestión,Medicamentos para la presión
+evacuacion_intestinal,546,1 vez al día,57.32601,False,chi²,0.12448,V,0.03740,0.30853,Medicamentos y digestión,Frecuencia de evacuación intestinal
+distension_abdominal,546,A veces,43.22344,False,chi²,0.07036,V,0.43971,0.72806,Medicamentos y digestión,Distensión abdominal
+genero,546,Femenino,98.53480,True,chi²,0.03679,V,0.39003,0.72806,Otras características,Género
+origen_procedencia,546,Chileno/a,96.33700,True,chi²,0.13208,V,0.14616,0.53594,Otras características,Origen
+pueblo_originario_afro,546,Ninguno,92.30769,True,chi²,0.07260,V,0.71887,0.93030,Otras características,Pueblo originario / afro
+comuna,546,La Serena,32.23443,False,chi²,0.10765,V,0.95756,0.98657,Otras características,Comuna
+tiene_pareja,546,Sí,67.21612,False,chi²,0.01261,V,0.76830,0.93904,Otras características,Tiene pareja
+tiene_actividad_sexual,546,No,52.74725,False,chi²,0.00962,V,0.82219,0.95141,Otras características,Tiene actividad sexual
+pregunta_1,545,Ninguna,31.19266,False,chi²,0.09531,V,0.29242,0.69566,Síntomas del MRS,Bochornos y sudoración
+pregunta_2,545,Ninguna,35.22936,False,chi²,0.11746,V,0.11088,0.48786,Síntomas del MRS,Molestias al corazón
+pregunta_3,546,Moderada,31.68498,False,chi²,0.14223,V,0.02606,0.28574,Síntomas del MRS,Dolor muscular y articular
+pregunta_4,543,Moderada,29.46593,False,chi²,0.13037,V,0.05563,0.39211,Síntomas del MRS,Problemas de sueño
+pregunta_5,543,Moderada,28.72928,False,chi²,0.11030,V,0.15824,0.53614,Síntomas del MRS,Ánimo depresivo
+pregunta_6,544,Moderada,28.86029,False,chi²,0.12514,V,0.07431,0.40833,Síntomas del MRS,Irritabilidad
+pregunta_7,545,Moderada,31.37615,False,chi²,0.11305,V,0.13775,0.53480,Síntomas del MRS,Ansiedad
+pregunta_8,545,Moderada,30.27523,False,chi²,0.14378,V,0.02373,0.28574,Síntomas del MRS,Cansancio físico y mental
+pregunta_9,545,Leve,35.96330,False,chi²,0.09450,V,0.30125,0.69566,Síntomas del MRS,Problemas sexuales
+pregunta_10,546,Ninguna,50.18315,False,chi²,0.10802,V,0.17310,0.54403,Síntomas del MRS,Problemas urinarios
+pregunta_11,542,Ninguna,40.22140,False,chi²,0.06244,V,0.71495,0.93030,Síntomas del MRS,Sequedad vaginal
+cambio_relacion_pareja_menopausia,339,Nada,40.11799,False,chi²,0.12193,V,0.28327,0.69566,Consecuencias de los síntomas,Cambio en la relación de pareja
+usa_antidepresivos,546,No,85.71429,False,chi²,0.01898,V,0.65747,0.90402,Consecuencias de los síntomas,Usa antidepresivos o medicamentos para dormir
+estres_entorno_laboral,298,Estrés moderado,36.57718,False,-,,,,,Trabajo (solo quienes trabajan),Estrés del entorno laboral
+lugar_trabajo_comprensivo,298,Neutral,36.57718,False,-,,,,,Trabajo (solo quienes trabajan),Lugar de trabajo comprensivo
+rendimiento_afectado,298,Poco,37.91946,False,-,,,,,Consecuencias de los síntomas,Rendimiento laboral afectado
+bienestar_trabajo_afectado,298,Poco,35.57047,False,-,,,,,Consecuencias de los síntomas,Bienestar en el trabajo afectado
+frecuencia_ausencias,298,Rara vez,45.63758,False,-,,,,,Consecuencias de los síntomas,Ausencias o atrasos por síntomas

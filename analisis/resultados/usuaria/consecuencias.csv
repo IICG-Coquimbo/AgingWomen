@@ -1,0 +1,6 @@
+﻿variable,rol,n,prueba,efecto,medida,p,p_ajustado,etiqueta
+rendimiento_afectado,impacto,287,Spearman,0.56900,rho,0.00000,0.00000,Rendimiento laboral afectado
+bienestar_trabajo_afectado,impacto,287,Spearman,0.53438,rho,0.00000,0.00000,Bienestar en el trabajo afectado
+cambio_relacion_pareja_menopausia,impacto,328,Spearman,0.49286,rho,0.00000,0.00000,Cambio en la relación de pareja
+frecuencia_ausencias,impacto,287,Spearman,0.45828,rho,0.00000,0.00000,Ausencias o atrasos por síntomas
+usa_antidepresivos,impacto,529,Spearman,0.21952,rho,0.00000,0.00000,Usa antidepresivos o medicamentos para dormir
