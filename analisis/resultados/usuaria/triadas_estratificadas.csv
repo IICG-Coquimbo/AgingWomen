@@ -1,0 +1,28 @@
+﻿A,B,n,Sin síntomas o muy leves,Leve,Moderada,Severa,pct_severa,mediana_mrs,poco_confiable,triada
+Normal (< 25),0 días,30,10.0000,20.0000,23.3333,46.6667,46.6667,13.0000,False,imc_ejercicio
+Normal (< 25),1-2 días,19,0.0000,47.3684,31.5789,21.0526,21.0526,9.0000,False,imc_ejercicio
+Normal (< 25),3 o más días,14,7.1429,14.2857,35.7143,42.8571,42.8571,12.0000,False,imc_ejercicio
+"Sobrepeso (25-29,9)",0 días,60,8.3333,15.0000,23.3333,53.3333,53.3333,16.0000,False,imc_ejercicio
+"Sobrepeso (25-29,9)",1-2 días,27,14.8148,11.1111,18.5185,55.5556,55.5556,16.0000,False,imc_ejercicio
+"Sobrepeso (25-29,9)",3 o más días,14,35.7143,7.1429,35.7143,21.4286,21.4286,10.5000,False,imc_ejercicio
+Obesidad (≥ 30),0 días,55,3.6364,7.2727,16.3636,72.7273,72.7273,21.0000,False,imc_ejercicio
+Obesidad (≥ 30),1-2 días,32,0.0000,15.6250,18.7500,65.6250,65.6250,17.5000,False,imc_ejercicio
+Obesidad (≥ 30),3 o más días,16,37.5000,6.2500,18.7500,37.5000,37.5000,12.0000,False,imc_ejercicio
+Sin doble carga,Bajo (nada o leve),39,20.5128,15.3846,12.8205,51.2821,51.2821,16.0000,False,doble_carga_estres
+Sin doble carga,Moderado,66,6.0606,18.1818,27.2727,48.4848,48.4848,15.0000,False,doble_carga_estres
+Sin doble carga,Alto (alto o extremo),45,4.4444,6.6667,24.4444,64.4444,64.4444,17.0000,False,doble_carga_estres
+Con doble carga,Bajo (nada o leve),52,11.5385,21.1538,17.3077,50.0000,50.0000,15.5000,False,doble_carga_estres
+Con doble carga,Moderado,41,4.8780,12.1951,21.9512,60.9756,60.9756,20.0000,False,doble_carga_estres
+Con doble carga,Alto (alto o extremo),44,6.8182,6.8182,9.0909,77.2727,77.2727,22.5000,False,doble_carga_estres
+Sin medicamentos,Normal (< 25),54,7.4074,27.7778,29.6296,35.1852,35.1852,12.0000,False,diabetes_imc
+Sin medicamentos,"Sobrepeso (25-29,9)",94,14.8936,13.8298,23.4043,47.8723,47.8723,14.5000,False,diabetes_imc
+Sin medicamentos,Obesidad (≥ 30),82,8.5366,9.7561,19.5122,62.1951,62.1951,18.0000,False,diabetes_imc
+Con medicamentos,Normal (< 25),9,0.0000,22.2222,22.2222,55.5556,55.5556,16.0000,True,diabetes_imc
+Con medicamentos,"Sobrepeso (25-29,9)",7,0.0000,0.0000,28.5714,71.4286,71.4286,17.0000,True,diabetes_imc
+Con medicamentos,Obesidad (≥ 30),21,4.7619,9.5238,9.5238,76.1905,76.1905,25.0000,False,diabetes_imc
+Nunca,≤ 2 vasos,100,8.0000,14.0000,17.0000,61.0000,61.0000,18.0000,False,tabaco_agua
+Nunca,3-4 vasos,154,13.6364,12.3377,25.3247,48.7013,48.7013,15.0000,False,tabaco_agua
+Nunca,5 o más vasos,145,13.1034,17.2414,26.2069,43.4483,43.4483,13.0000,False,tabaco_agua
+Fuma,≤ 2 vasos,34,8.8235,11.7647,14.7059,64.7059,64.7059,19.5000,False,tabaco_agua
+Fuma,3-4 vasos,51,1.9608,11.7647,21.5686,64.7059,64.7059,19.0000,False,tabaco_agua
+Fuma,5 o más vasos,45,8.8889,13.3333,17.7778,60.0000,60.0000,19.0000,False,tabaco_agua

@@ -1,0 +1,5 @@
+﻿triada,titulo,variable_a,variable_b,n,lr,gl,p_interaccion,interaccion_estable,convergio,rho_a,rho_a_parcial,p_a_parcial,rho_b,rho_b_parcial,p_b_parcial,p_interaccion_ajustado
+imc_ejercicio,IMC y días de ejercicio,imc,dias_ejercicio_semana,267,9.5856,4,0.0480,True,True,0.2186,0.2146,0.0004,-0.1780,-0.1729,0.0047,0.1921
+doble_carga_estres,Doble carga y estrés laboral,doble_carga,estres_entorno_laboral,287,0.4643,2,0.7928,True,True,0.0679,0.0858,0.1478,0.1966,0.2032,0.0005,0.8342
+diabetes_imc,Diabetes e IMC,usa_medicamentos_diabetes,imc,267,0.3625,2,0.8342,True,True,0.1449,0.1350,0.0278,0.2186,0.2123,0.0005,0.8342
+tabaco_agua,Tabaco y consumo de agua,tabaco_frecuencia,vasos_agua_dia,529,1.2883,2,0.5251,True,True,0.1147,0.1125,0.0097,-0.1146,-0.1124,0.0098,0.8342

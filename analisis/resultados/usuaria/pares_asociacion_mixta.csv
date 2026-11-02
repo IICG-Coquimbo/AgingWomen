@@ -1,0 +1,742 @@
+﻿variable_1,variable_2,medida,valor,abs_valor,p,n_par,p_ajustado,etiqueta_1,etiqueta_2
+severidad,edad,rho de Spearman,0.0499,0.0499,0.2521,529,0.8652,Severidad MRS (4 clases),Edad
+severidad,etapa_menopausica,eta (rangos),0.1285,0.1285,0.1206,529,0.7129,Severidad MRS (4 clases),Etapa menopáusica
+severidad,imc,rho de Spearman,0.2186,0.2186,0.0003,267,0.0098,Severidad MRS (4 clases),IMC
+severidad,prevision,eta (rangos),0.1046,0.1046,0.2164,529,0.8504,Severidad MRS (4 clases),Previsión de salud
+severidad,usa_medicamentos_diabetes,rho de Spearman,0.1293,0.1293,0.0029,529,0.0737,Severidad MRS (4 clases),Medicamentos para la diabetes
+severidad,trabaja_actualmente,rho de Spearman,0.1019,0.1019,0.0191,529,0.3137,Severidad MRS (4 clases),Trabaja actualmente
+severidad,tiene_pareja,rho de Spearman,-0.0626,0.0626,0.1508,529,0.7923,Severidad MRS (4 clases),Tiene pareja
+severidad,tiene_actividad_sexual,rho de Spearman,0.0393,0.0393,0.3672,529,0.9262,Severidad MRS (4 clases),Tiene actividad sexual
+severidad,tipo_sangrado,rho de Spearman,-0.0209,0.0209,0.7840,175,0.9974,Severidad MRS (4 clases),Tipo de sangrado
+severidad,usa_metodo_anticonceptivo,eta (rangos),0.0370,0.0370,0.6250,175,0.9721,Severidad MRS (4 clases),Usa método anticonceptivo
+severidad,operada_no_mas_hijos,rho de Spearman,0.0326,0.0326,0.4541,529,0.9304,Severidad MRS (4 clases),Operada para no tener más hijos
+severidad,usa_medicamentos_presion,rho de Spearman,0.0679,0.0679,0.1188,529,0.7101,Severidad MRS (4 clases),Medicamentos para la presión
+severidad,evacuacion_intestinal,rho de Spearman,-0.0331,0.0331,0.4470,529,0.9304,Severidad MRS (4 clases),Frecuencia de evacuación intestinal
+severidad,distension_abdominal,rho de Spearman,-0.0497,0.0497,0.2541,529,0.8652,Severidad MRS (4 clases),Distensión abdominal
+severidad,lugar_trabajo_comprensivo,rho de Spearman,-0.2294,0.2294,0.0001,287,0.0032,Severidad MRS (4 clases),Lugar de trabajo comprensivo
+severidad,estres_entorno_laboral,rho de Spearman,0.1966,0.1966,0.0008,287,0.0222,Severidad MRS (4 clases),Estrés del entorno laboral
+severidad,cantidad_personas_cuida,rho de Spearman,0.0158,0.0158,0.7178,529,0.9918,Severidad MRS (4 clases),Cantidad de personas que cuida
+severidad,doble_carga,rho de Spearman,0.0920,0.0920,0.0344,529,0.4368,Severidad MRS (4 clases),Doble carga (trabaja y cuida)
+severidad,dias_ejercicio_semana,rho de Spearman,-0.1521,0.1521,0.0004,529,0.0132,Severidad MRS (4 clases),Días de ejercicio a la semana
+severidad,frecuencia_aerobico,rho de Spearman,-0.0476,0.0476,0.2741,529,0.8692,Severidad MRS (4 clases),Frecuencia de ejercicio aeróbico
+severidad,frecuencia_bajo_impacto,rho de Spearman,-0.1720,0.1720,0.0001,529,0.0027,Severidad MRS (4 clases),Frecuencia de ejercicio de bajo impacto
+severidad,frecuencia_fuerza,rho de Spearman,-0.0843,0.0843,0.0526,529,0.5324,Severidad MRS (4 clases),Frecuencia de ejercicio de fuerza
+severidad,horas_sedentarismo,rho de Spearman,-0.0259,0.0259,0.5529,529,0.9447,Severidad MRS (4 clases),Horas sentada al día
+severidad,quien_prepara_comidas,eta (rangos),0.1080,0.1080,0.1879,529,0.8339,Severidad MRS (4 clases),Quién prepara las comidas
+severidad,frecuencia_comida_fuera,rho de Spearman,0.0413,0.0413,0.3432,529,0.8994,Severidad MRS (4 clases),Comidas fuera del hogar
+severidad,falta_tiempo_influye,rho de Spearman,0.0885,0.0885,0.0418,529,0.4828,Severidad MRS (4 clases),Falta de tiempo influye en lo que come
+severidad,vasos_agua_dia,rho de Spearman,-0.1146,0.1146,0.0083,529,0.1760,Severidad MRS (4 clases),Vasos de agua al día
+severidad,platos_verduras_dia,rho de Spearman,-0.0203,0.0203,0.6410,529,0.9792,Severidad MRS (4 clases),Platos de verduras al día
+severidad,frutas_dia,rho de Spearman,-0.0529,0.0529,0.2244,529,0.8504,Severidad MRS (4 clases),Frutas al día
+severidad,panes_dia,rho de Spearman,0.0040,0.0040,0.9262,529,0.9974,Severidad MRS (4 clases),Panes al día
+severidad,lacteos_dia,rho de Spearman,-0.0183,0.0183,0.6750,529,0.9792,Severidad MRS (4 clases),Lácteos al día
+severidad,jugos_gaseosas_dia,rho de Spearman,-0.0118,0.0118,0.7868,529,0.9974,Severidad MRS (4 clases),Jugos y gaseosas al día
+severidad,pescado_semana,rho de Spearman,-0.0429,0.0429,0.3245,529,0.8994,Severidad MRS (4 clases),Pescado a la semana
+severidad,legumbres_semana,rho de Spearman,0.0189,0.0189,0.6645,529,0.9792,Severidad MRS (4 clases),Legumbres a la semana
+severidad,carnes_semana,rho de Spearman,-0.0034,0.0034,0.9385,529,0.9974,Severidad MRS (4 clases),Carnes a la semana
+severidad,golosinas_semana,rho de Spearman,0.0067,0.0067,0.8782,529,0.9974,Severidad MRS (4 clases),Dulces y snacks a la semana
+severidad,tabaco_frecuencia,rho de Spearman,0.1147,0.1147,0.0083,529,0.1760,Severidad MRS (4 clases),Tabaco
+severidad,alcohol_frecuencia,rho de Spearman,0.1051,0.1051,0.0156,529,0.3010,Severidad MRS (4 clases),Alcohol
+edad,etapa_menopausica,eta (rangos),0.6422,0.6422,0.0000,529,0.0000,Edad,Etapa menopáusica
+edad,imc,rho de Spearman,0.0368,0.0368,0.5491,267,0.9447,Edad,IMC
+edad,prevision,eta (rangos),0.0942,0.0942,0.3208,529,0.8994,Edad,Previsión de salud
+edad,usa_medicamentos_diabetes,rho de Spearman,0.1587,0.1587,0.0002,529,0.0079,Edad,Medicamentos para la diabetes
+edad,trabaja_actualmente,rho de Spearman,-0.0900,0.0900,0.0386,529,0.4525,Edad,Trabaja actualmente
+edad,tiene_pareja,rho de Spearman,0.0311,0.0311,0.4751,529,0.9411,Edad,Tiene pareja
+edad,tiene_actividad_sexual,rho de Spearman,-0.0357,0.0357,0.4129,529,0.9304,Edad,Tiene actividad sexual
+edad,tipo_sangrado,rho de Spearman,0.1014,0.1014,0.1817,175,0.8273,Edad,Tipo de sangrado
+edad,usa_metodo_anticonceptivo,eta (rangos),0.0612,0.0612,0.4197,175,0.9304,Edad,Usa método anticonceptivo
+edad,operada_no_mas_hijos,rho de Spearman,0.0313,0.0313,0.4719,529,0.9411,Edad,Operada para no tener más hijos
+edad,usa_medicamentos_presion,rho de Spearman,0.1774,0.1774,0.0000,529,0.0017,Edad,Medicamentos para la presión
+edad,evacuacion_intestinal,rho de Spearman,-0.0225,0.0225,0.6051,529,0.9616,Edad,Frecuencia de evacuación intestinal
+edad,distension_abdominal,rho de Spearman,0.0338,0.0338,0.4379,529,0.9304,Edad,Distensión abdominal
+edad,lugar_trabajo_comprensivo,rho de Spearman,0.0689,0.0689,0.2444,287,0.8652,Edad,Lugar de trabajo comprensivo
+edad,estres_entorno_laboral,rho de Spearman,-0.0936,0.0936,0.1135,287,0.7049,Edad,Estrés del entorno laboral
+edad,cantidad_personas_cuida,rho de Spearman,-0.1076,0.1076,0.0133,529,0.2660,Edad,Cantidad de personas que cuida
+edad,doble_carga,rho de Spearman,-0.1314,0.1314,0.0025,529,0.0650,Edad,Doble carga (trabaja y cuida)
+edad,dias_ejercicio_semana,rho de Spearman,0.0720,0.0720,0.0983,529,0.7008,Edad,Días de ejercicio a la semana
+edad,frecuencia_aerobico,rho de Spearman,-0.0278,0.0278,0.5234,529,0.9447,Edad,Frecuencia de ejercicio aeróbico
+edad,frecuencia_bajo_impacto,rho de Spearman,0.0581,0.0581,0.1825,529,0.8273,Edad,Frecuencia de ejercicio de bajo impacto
+edad,frecuencia_fuerza,rho de Spearman,0.0346,0.0346,0.4276,529,0.9304,Edad,Frecuencia de ejercicio de fuerza
+edad,horas_sedentarismo,rho de Spearman,-0.0406,0.0406,0.3510,529,0.9015,Edad,Horas sentada al día
+edad,quien_prepara_comidas,eta (rangos),0.0784,0.0784,0.5172,529,0.9447,Edad,Quién prepara las comidas
+edad,frecuencia_comida_fuera,rho de Spearman,0.0128,0.0128,0.7682,529,0.9974,Edad,Comidas fuera del hogar
+edad,falta_tiempo_influye,rho de Spearman,-0.0296,0.0296,0.4969,529,0.9411,Edad,Falta de tiempo influye en lo que come
+edad,vasos_agua_dia,rho de Spearman,0.0420,0.0420,0.3349,529,0.8994,Edad,Vasos de agua al día
+edad,platos_verduras_dia,rho de Spearman,0.0365,0.0365,0.4023,529,0.9304,Edad,Platos de verduras al día
+edad,frutas_dia,rho de Spearman,0.0070,0.0070,0.8719,529,0.9974,Edad,Frutas al día
+edad,panes_dia,rho de Spearman,0.0972,0.0972,0.0254,529,0.3650,Edad,Panes al día
+edad,lacteos_dia,rho de Spearman,-0.0063,0.0063,0.8852,529,0.9974,Edad,Lácteos al día
+edad,jugos_gaseosas_dia,rho de Spearman,-0.0041,0.0041,0.9255,529,0.9974,Edad,Jugos y gaseosas al día
+edad,pescado_semana,rho de Spearman,0.0363,0.0363,0.4046,529,0.9304,Edad,Pescado a la semana
+edad,legumbres_semana,rho de Spearman,-0.0271,0.0271,0.5339,529,0.9447,Edad,Legumbres a la semana
+edad,carnes_semana,rho de Spearman,0.0037,0.0037,0.9315,529,0.9974,Edad,Carnes a la semana
+edad,golosinas_semana,rho de Spearman,-0.0037,0.0037,0.9326,529,0.9974,Edad,Dulces y snacks a la semana
+edad,tabaco_frecuencia,rho de Spearman,-0.0170,0.0170,0.6969,529,0.9792,Edad,Tabaco
+edad,alcohol_frecuencia,rho de Spearman,0.0429,0.0429,0.3243,529,0.8994,Edad,Alcohol
+etapa_menopausica,imc,eta (rangos),0.2291,0.2291,0.0159,267,0.3010,Etapa menopáusica,IMC
+etapa_menopausica,prevision,V de Cramér corregida,0.0000,0.0000,0.6708,529,0.9792,Etapa menopáusica,Previsión de salud
+etapa_menopausica,usa_medicamentos_diabetes,eta (rangos),0.1031,0.1031,0.3455,529,0.8994,Etapa menopáusica,Medicamentos para la diabetes
+etapa_menopausica,trabaja_actualmente,eta (rangos),0.1379,0.1379,0.0741,529,0.6627,Etapa menopáusica,Trabaja actualmente
+etapa_menopausica,tiene_pareja,eta (rangos),0.1103,0.1103,0.2668,529,0.8652,Etapa menopáusica,Tiene pareja
+etapa_menopausica,tiene_actividad_sexual,eta (rangos),0.0836,0.0836,0.5950,529,0.9598,Etapa menopáusica,Tiene actividad sexual
+etapa_menopausica,tipo_sangrado,eta (rangos),0.1808,0.1808,0.0171,175,0.3137,Etapa menopáusica,Tipo de sangrado
+etapa_menopausica,usa_metodo_anticonceptivo,V de Cramér corregida,0.0000,0.0000,0.8780,175,0.9974,Etapa menopáusica,Usa método anticonceptivo
+etapa_menopausica,operada_no_mas_hijos,eta (rangos),0.0659,0.0659,0.8077,529,0.9974,Etapa menopáusica,Operada para no tener más hijos
+etapa_menopausica,usa_medicamentos_presion,eta (rangos),0.2183,0.2183,0.0001,529,0.0043,Etapa menopáusica,Medicamentos para la presión
+etapa_menopausica,evacuacion_intestinal,eta (rangos),0.0808,0.0808,0.6320,529,0.9771,Etapa menopáusica,Frecuencia de evacuación intestinal
+etapa_menopausica,distension_abdominal,eta (rangos),0.1046,0.1046,0.3285,529,0.8994,Etapa menopáusica,Distensión abdominal
+etapa_menopausica,lugar_trabajo_comprensivo,eta (rangos),0.0940,0.0940,0.7724,287,0.9974,Etapa menopáusica,Lugar de trabajo comprensivo
+etapa_menopausica,estres_entorno_laboral,eta (rangos),0.1350,0.1350,0.3908,287,0.9304,Etapa menopáusica,Estrés del entorno laboral
+etapa_menopausica,cantidad_personas_cuida,eta (rangos),0.1468,0.1468,0.0442,529,0.4879,Etapa menopáusica,Cantidad de personas que cuida
+etapa_menopausica,doble_carga,eta (rangos),0.1602,0.1602,0.0187,529,0.3137,Etapa menopáusica,Doble carga (trabaja y cuida)
+etapa_menopausica,dias_ejercicio_semana,eta (rangos),0.1191,0.1191,0.1871,529,0.8339,Etapa menopáusica,Días de ejercicio a la semana
+etapa_menopausica,frecuencia_aerobico,eta (rangos),0.1125,0.1125,0.2453,529,0.8652,Etapa menopáusica,Frecuencia de ejercicio aeróbico
+etapa_menopausica,frecuencia_bajo_impacto,eta (rangos),0.0756,0.0756,0.6970,529,0.9792,Etapa menopáusica,Frecuencia de ejercicio de bajo impacto
+etapa_menopausica,frecuencia_fuerza,eta (rangos),0.0863,0.0863,0.5598,529,0.9447,Etapa menopáusica,Frecuencia de ejercicio de fuerza
+etapa_menopausica,horas_sedentarismo,eta (rangos),0.1109,0.1109,0.2612,529,0.8652,Etapa menopáusica,Horas sentada al día
+etapa_menopausica,quien_prepara_comidas,V de Cramér corregida,0.0000,0.0000,0.9779,529,0.9995,Etapa menopáusica,Quién prepara las comidas
+etapa_menopausica,frecuencia_comida_fuera,eta (rangos),0.0577,0.0577,0.8813,529,0.9974,Etapa menopáusica,Comidas fuera del hogar
+etapa_menopausica,falta_tiempo_influye,eta (rangos),0.0998,0.0998,0.3849,529,0.9304,Etapa menopáusica,Falta de tiempo influye en lo que come
+etapa_menopausica,vasos_agua_dia,eta (rangos),0.1377,0.1377,0.0750,529,0.6627,Etapa menopáusica,Vasos de agua al día
+etapa_menopausica,platos_verduras_dia,eta (rangos),0.0978,0.0978,0.4098,529,0.9304,Etapa menopáusica,Platos de verduras al día
+etapa_menopausica,frutas_dia,eta (rangos),0.0583,0.0583,0.8765,529,0.9974,Etapa menopáusica,Frutas al día
+etapa_menopausica,panes_dia,eta (rangos),0.1311,0.1311,0.1059,529,0.7049,Etapa menopáusica,Panes al día
+etapa_menopausica,lacteos_dia,eta (rangos),0.1296,0.1296,0.1142,529,0.7049,Etapa menopáusica,Lácteos al día
+etapa_menopausica,jugos_gaseosas_dia,eta (rangos),0.1277,0.1277,0.1257,529,0.7373,Etapa menopáusica,Jugos y gaseosas al día
+etapa_menopausica,pescado_semana,eta (rangos),0.1055,0.1055,0.3186,529,0.8994,Etapa menopáusica,Pescado a la semana
+etapa_menopausica,legumbres_semana,eta (rangos),0.0777,0.0777,0.6715,529,0.9792,Etapa menopáusica,Legumbres a la semana
+etapa_menopausica,carnes_semana,eta (rangos),0.0671,0.0671,0.7949,529,0.9974,Etapa menopáusica,Carnes a la semana
+etapa_menopausica,golosinas_semana,eta (rangos),0.0723,0.0723,0.7368,529,0.9918,Etapa menopáusica,Dulces y snacks a la semana
+etapa_menopausica,tabaco_frecuencia,eta (rangos),0.1573,0.1573,0.0228,529,0.3553,Etapa menopáusica,Tabaco
+etapa_menopausica,alcohol_frecuencia,eta (rangos),0.0388,0.0388,0.9774,529,0.9995,Etapa menopáusica,Alcohol
+imc,prevision,eta (rangos),0.0454,0.0454,0.9688,267,0.9995,IMC,Previsión de salud
+imc,usa_medicamentos_diabetes,rho de Spearman,0.0615,0.0615,0.3170,267,0.8994,IMC,Medicamentos para la diabetes
+imc,trabaja_actualmente,rho de Spearman,-0.0363,0.0363,0.5544,267,0.9447,IMC,Trabaja actualmente
+imc,tiene_pareja,rho de Spearman,-0.0243,0.0243,0.6924,267,0.9792,IMC,Tiene pareja
+imc,tiene_actividad_sexual,rho de Spearman,0.0367,0.0367,0.5502,267,0.9447,IMC,Tiene actividad sexual
+imc,tipo_sangrado,rho de Spearman,-0.1878,0.1878,0.0871,84,0.6833,IMC,Tipo de sangrado
+imc,usa_metodo_anticonceptivo,eta (rangos),0.1061,0.1061,0.3339,84,0.8994,IMC,Usa método anticonceptivo
+imc,operada_no_mas_hijos,rho de Spearman,0.0669,0.0669,0.2758,267,0.8712,IMC,Operada para no tener más hijos
+imc,usa_medicamentos_presion,rho de Spearman,-0.0752,0.0752,0.2206,267,0.8504,IMC,Medicamentos para la presión
+imc,evacuacion_intestinal,rho de Spearman,0.0361,0.0361,0.5571,267,0.9447,IMC,Frecuencia de evacuación intestinal
+imc,distension_abdominal,rho de Spearman,-0.0010,0.0010,0.9875,267,0.9995,IMC,Distensión abdominal
+imc,lugar_trabajo_comprensivo,rho de Spearman,0.1661,0.1661,0.0579,131,0.5632,IMC,Lugar de trabajo comprensivo
+imc,estres_entorno_laboral,rho de Spearman,-0.1392,0.1392,0.1129,131,0.7049,IMC,Estrés del entorno laboral
+imc,cantidad_personas_cuida,rho de Spearman,-0.0870,0.0870,0.1563,267,0.8079,IMC,Cantidad de personas que cuida
+imc,doble_carga,rho de Spearman,-0.0821,0.0821,0.1812,267,0.8273,IMC,Doble carga (trabaja y cuida)
+imc,dias_ejercicio_semana,rho de Spearman,-0.0431,0.0431,0.4832,267,0.9411,IMC,Días de ejercicio a la semana
+imc,frecuencia_aerobico,rho de Spearman,-0.0838,0.0838,0.1720,267,0.8273,IMC,Frecuencia de ejercicio aeróbico
+imc,frecuencia_bajo_impacto,rho de Spearman,-0.0286,0.0286,0.6415,267,0.9792,IMC,Frecuencia de ejercicio de bajo impacto
+imc,frecuencia_fuerza,rho de Spearman,0.0401,0.0401,0.5144,267,0.9447,IMC,Frecuencia de ejercicio de fuerza
+imc,horas_sedentarismo,rho de Spearman,-0.0731,0.0731,0.2337,267,0.8652,IMC,Horas sentada al día
+imc,quien_prepara_comidas,eta (rangos),0.0795,0.0795,0.7942,267,0.9974,IMC,Quién prepara las comidas
+imc,frecuencia_comida_fuera,rho de Spearman,0.1315,0.1315,0.0317,267,0.4258,IMC,Comidas fuera del hogar
+imc,falta_tiempo_influye,rho de Spearman,-0.0703,0.0703,0.2524,267,0.8652,IMC,Falta de tiempo influye en lo que come
+imc,vasos_agua_dia,rho de Spearman,-0.0751,0.0751,0.2211,267,0.8504,IMC,Vasos de agua al día
+imc,platos_verduras_dia,rho de Spearman,-0.0506,0.0506,0.4105,267,0.9304,IMC,Platos de verduras al día
+imc,frutas_dia,rho de Spearman,-0.0845,0.0845,0.1686,267,0.8273,IMC,Frutas al día
+imc,panes_dia,rho de Spearman,0.0324,0.0324,0.5976,267,0.9601,IMC,Panes al día
+imc,lacteos_dia,rho de Spearman,-0.0361,0.0361,0.5571,267,0.9447,IMC,Lácteos al día
+imc,jugos_gaseosas_dia,rho de Spearman,-0.1534,0.1534,0.0121,267,0.2485,IMC,Jugos y gaseosas al día
+imc,pescado_semana,rho de Spearman,0.0827,0.0827,0.1781,267,0.8273,IMC,Pescado a la semana
+imc,legumbres_semana,rho de Spearman,-0.0336,0.0336,0.5843,267,0.9511,IMC,Legumbres a la semana
+imc,carnes_semana,rho de Spearman,-0.0199,0.0199,0.7462,267,0.9918,IMC,Carnes a la semana
+imc,golosinas_semana,rho de Spearman,0.0409,0.0409,0.5061,267,0.9411,IMC,Dulces y snacks a la semana
+imc,tabaco_frecuencia,rho de Spearman,-0.1077,0.1077,0.0790,267,0.6640,IMC,Tabaco
+imc,alcohol_frecuencia,rho de Spearman,0.0499,0.0499,0.4166,267,0.9304,IMC,Alcohol
+prevision,usa_medicamentos_diabetes,eta (rangos),0.0615,0.0615,0.7366,529,0.9918,Previsión de salud,Medicamentos para la diabetes
+prevision,trabaja_actualmente,eta (rangos),0.1460,0.1460,0.0239,529,0.3553,Previsión de salud,Trabaja actualmente
+prevision,tiene_pareja,eta (rangos),0.0569,0.0569,0.7886,529,0.9974,Previsión de salud,Tiene pareja
+prevision,tiene_actividad_sexual,eta (rangos),0.0766,0.0766,0.5412,529,0.9447,Previsión de salud,Tiene actividad sexual
+prevision,tipo_sangrado,eta (rangos),0.1844,0.1844,0.1159,175,0.7049,Previsión de salud,Tipo de sangrado
+prevision,usa_metodo_anticonceptivo,V de Cramér corregida,0.0219,0.0219,0.3764,175,0.9304,Previsión de salud,Usa método anticonceptivo
+prevision,operada_no_mas_hijos,eta (rangos),0.0739,0.0739,0.5776,529,0.9511,Previsión de salud,Operada para no tener más hijos
+prevision,usa_medicamentos_presion,eta (rangos),0.1673,0.1673,0.0052,529,0.1278,Previsión de salud,Medicamentos para la presión
+prevision,evacuacion_intestinal,eta (rangos),0.0454,0.0454,0.8958,529,0.9974,Previsión de salud,Frecuencia de evacuación intestinal
+prevision,distension_abdominal,eta (rangos),0.1157,0.1157,0.1322,529,0.7496,Previsión de salud,Distensión abdominal
+prevision,lugar_trabajo_comprensivo,eta (rangos),0.1645,0.1645,0.1017,287,0.7022,Previsión de salud,Lugar de trabajo comprensivo
+prevision,estres_entorno_laboral,eta (rangos),0.0934,0.0934,0.6455,287,0.9792,Previsión de salud,Estrés del entorno laboral
+prevision,cantidad_personas_cuida,eta (rangos),0.0882,0.0882,0.3916,529,0.9304,Previsión de salud,Cantidad de personas que cuida
+prevision,doble_carga,eta (rangos),0.0923,0.0923,0.3422,529,0.8994,Previsión de salud,Doble carga (trabaja y cuida)
+prevision,dias_ejercicio_semana,eta (rangos),0.0740,0.0740,0.5764,529,0.9511,Previsión de salud,Días de ejercicio a la semana
+prevision,frecuencia_aerobico,eta (rangos),0.0810,0.0810,0.4831,529,0.9411,Previsión de salud,Frecuencia de ejercicio aeróbico
+prevision,frecuencia_bajo_impacto,eta (rangos),0.0238,0.0238,0.9898,529,0.9995,Previsión de salud,Frecuencia de ejercicio de bajo impacto
+prevision,frecuencia_fuerza,eta (rangos),0.0363,0.0363,0.9518,529,0.9974,Previsión de salud,Frecuencia de ejercicio de fuerza
+prevision,horas_sedentarismo,eta (rangos),0.0786,0.0786,0.5145,529,0.9447,Previsión de salud,Horas sentada al día
+prevision,quien_prepara_comidas,V de Cramér corregida,0.0000,0.0000,0.8182,529,0.9974,Previsión de salud,Quién prepara las comidas
+prevision,frecuencia_comida_fuera,eta (rangos),0.1106,0.1106,0.1672,529,0.8273,Previsión de salud,Comidas fuera del hogar
+prevision,falta_tiempo_influye,eta (rangos),0.0620,0.0620,0.7306,529,0.9918,Previsión de salud,Falta de tiempo influye en lo que come
+prevision,vasos_agua_dia,eta (rangos),0.1059,0.1059,0.2050,529,0.8463,Previsión de salud,Vasos de agua al día
+prevision,platos_verduras_dia,eta (rangos),0.1213,0.1213,0.1005,529,0.7008,Previsión de salud,Platos de verduras al día
+prevision,frutas_dia,eta (rangos),0.0979,0.0979,0.2808,529,0.8718,Previsión de salud,Frutas al día
+prevision,panes_dia,eta (rangos),0.1449,0.1449,0.0257,529,0.3650,Previsión de salud,Panes al día
+prevision,lacteos_dia,eta (rangos),0.0226,0.0226,0.9917,529,0.9995,Previsión de salud,Lácteos al día
+prevision,jugos_gaseosas_dia,eta (rangos),0.0469,0.0469,0.8841,529,0.9974,Previsión de salud,Jugos y gaseosas al día
+prevision,pescado_semana,eta (rangos),0.0868,0.0868,0.4084,529,0.9304,Previsión de salud,Pescado a la semana
+prevision,legumbres_semana,eta (rangos),0.0644,0.0644,0.7010,529,0.9792,Previsión de salud,Legumbres a la semana
+prevision,carnes_semana,eta (rangos),0.0610,0.0610,0.7426,529,0.9918,Previsión de salud,Carnes a la semana
+prevision,golosinas_semana,eta (rangos),0.0875,0.0875,0.4005,529,0.9304,Previsión de salud,Dulces y snacks a la semana
+prevision,tabaco_frecuencia,eta (rangos),0.1040,0.1040,0.2217,529,0.8504,Previsión de salud,Tabaco
+prevision,alcohol_frecuencia,eta (rangos),0.1020,0.1020,0.2406,529,0.8652,Previsión de salud,Alcohol
+usa_medicamentos_diabetes,trabaja_actualmente,rho de Spearman,-0.0412,0.0412,0.3440,529,0.8994,Medicamentos para la diabetes,Trabaja actualmente
+usa_medicamentos_diabetes,tiene_pareja,rho de Spearman,-0.0051,0.0051,0.9074,529,0.9974,Medicamentos para la diabetes,Tiene pareja
+usa_medicamentos_diabetes,tiene_actividad_sexual,rho de Spearman,-0.0265,0.0265,0.5426,529,0.9447,Medicamentos para la diabetes,Tiene actividad sexual
+usa_medicamentos_diabetes,tipo_sangrado,rho de Spearman,0.0478,0.0478,0.5302,175,0.9447,Medicamentos para la diabetes,Tipo de sangrado
+usa_medicamentos_diabetes,usa_metodo_anticonceptivo,eta (rangos),0.1181,0.1181,0.1192,175,0.7101,Medicamentos para la diabetes,Usa método anticonceptivo
+usa_medicamentos_diabetes,operada_no_mas_hijos,rho de Spearman,0.0004,0.0004,0.9935,529,0.9995,Medicamentos para la diabetes,Operada para no tener más hijos
+usa_medicamentos_diabetes,usa_medicamentos_presion,rho de Spearman,0.0290,0.0290,0.5058,529,0.9411,Medicamentos para la diabetes,Medicamentos para la presión
+usa_medicamentos_diabetes,evacuacion_intestinal,rho de Spearman,0.0052,0.0052,0.9056,529,0.9974,Medicamentos para la diabetes,Frecuencia de evacuación intestinal
+usa_medicamentos_diabetes,distension_abdominal,rho de Spearman,0.0185,0.0185,0.6704,529,0.9792,Medicamentos para la diabetes,Distensión abdominal
+usa_medicamentos_diabetes,lugar_trabajo_comprensivo,rho de Spearman,-0.0290,0.0290,0.6252,287,0.9721,Medicamentos para la diabetes,Lugar de trabajo comprensivo
+usa_medicamentos_diabetes,estres_entorno_laboral,rho de Spearman,-0.0423,0.0423,0.4756,287,0.9411,Medicamentos para la diabetes,Estrés del entorno laboral
+usa_medicamentos_diabetes,cantidad_personas_cuida,rho de Spearman,-0.0527,0.0527,0.2261,529,0.8525,Medicamentos para la diabetes,Cantidad de personas que cuida
+usa_medicamentos_diabetes,doble_carga,rho de Spearman,-0.0299,0.0299,0.4928,529,0.9411,Medicamentos para la diabetes,Doble carga (trabaja y cuida)
+usa_medicamentos_diabetes,dias_ejercicio_semana,rho de Spearman,-0.0348,0.0348,0.4240,529,0.9304,Medicamentos para la diabetes,Días de ejercicio a la semana
+usa_medicamentos_diabetes,frecuencia_aerobico,rho de Spearman,-0.0536,0.0536,0.2188,529,0.8504,Medicamentos para la diabetes,Frecuencia de ejercicio aeróbico
+usa_medicamentos_diabetes,frecuencia_bajo_impacto,rho de Spearman,0.0253,0.0253,0.5612,529,0.9447,Medicamentos para la diabetes,Frecuencia de ejercicio de bajo impacto
+usa_medicamentos_diabetes,frecuencia_fuerza,rho de Spearman,0.0473,0.0473,0.2771,529,0.8714,Medicamentos para la diabetes,Frecuencia de ejercicio de fuerza
+usa_medicamentos_diabetes,horas_sedentarismo,rho de Spearman,-0.0685,0.0685,0.1154,529,0.7049,Medicamentos para la diabetes,Horas sentada al día
+usa_medicamentos_diabetes,quien_prepara_comidas,eta (rangos),0.0769,0.0769,0.5372,529,0.9447,Medicamentos para la diabetes,Quién prepara las comidas
+usa_medicamentos_diabetes,frecuencia_comida_fuera,rho de Spearman,-0.0411,0.0411,0.3456,529,0.8994,Medicamentos para la diabetes,Comidas fuera del hogar
+usa_medicamentos_diabetes,falta_tiempo_influye,rho de Spearman,0.0065,0.0065,0.8818,529,0.9974,Medicamentos para la diabetes,Falta de tiempo influye en lo que come
+usa_medicamentos_diabetes,vasos_agua_dia,rho de Spearman,-0.0070,0.0070,0.8731,529,0.9974,Medicamentos para la diabetes,Vasos de agua al día
+usa_medicamentos_diabetes,platos_verduras_dia,rho de Spearman,-0.0137,0.0137,0.7540,529,0.9933,Medicamentos para la diabetes,Platos de verduras al día
+usa_medicamentos_diabetes,frutas_dia,rho de Spearman,0.0730,0.0730,0.0936,529,0.6906,Medicamentos para la diabetes,Frutas al día
+usa_medicamentos_diabetes,panes_dia,rho de Spearman,0.0166,0.0166,0.7029,529,0.9792,Medicamentos para la diabetes,Panes al día
+usa_medicamentos_diabetes,lacteos_dia,rho de Spearman,-0.0296,0.0296,0.4969,529,0.9411,Medicamentos para la diabetes,Lácteos al día
+usa_medicamentos_diabetes,jugos_gaseosas_dia,rho de Spearman,0.0434,0.0434,0.3188,529,0.8994,Medicamentos para la diabetes,Jugos y gaseosas al día
+usa_medicamentos_diabetes,pescado_semana,rho de Spearman,0.0726,0.0726,0.0953,529,0.6906,Medicamentos para la diabetes,Pescado a la semana
+usa_medicamentos_diabetes,legumbres_semana,rho de Spearman,0.0002,0.0002,0.9967,529,0.9995,Medicamentos para la diabetes,Legumbres a la semana
+usa_medicamentos_diabetes,carnes_semana,rho de Spearman,-0.0411,0.0411,0.3457,529,0.8994,Medicamentos para la diabetes,Carnes a la semana
+usa_medicamentos_diabetes,golosinas_semana,rho de Spearman,0.0295,0.0295,0.4988,529,0.9411,Medicamentos para la diabetes,Dulces y snacks a la semana
+usa_medicamentos_diabetes,tabaco_frecuencia,rho de Spearman,0.0311,0.0311,0.4758,529,0.9411,Medicamentos para la diabetes,Tabaco
+usa_medicamentos_diabetes,alcohol_frecuencia,rho de Spearman,0.0167,0.0167,0.7015,529,0.9792,Medicamentos para la diabetes,Alcohol
+trabaja_actualmente,tiene_pareja,rho de Spearman,-0.0241,0.0241,0.5803,529,0.9511,Trabaja actualmente,Tiene pareja
+trabaja_actualmente,tiene_actividad_sexual,rho de Spearman,0.0030,0.0030,0.9458,529,0.9974,Trabaja actualmente,Tiene actividad sexual
+trabaja_actualmente,tipo_sangrado,rho de Spearman,0.0243,0.0243,0.7491,175,0.9918,Trabaja actualmente,Tipo de sangrado
+trabaja_actualmente,usa_metodo_anticonceptivo,eta (rangos),0.0302,0.0302,0.6902,175,0.9792,Trabaja actualmente,Usa método anticonceptivo
+trabaja_actualmente,operada_no_mas_hijos,rho de Spearman,-0.0458,0.0458,0.2928,529,0.8874,Trabaja actualmente,Operada para no tener más hijos
+trabaja_actualmente,usa_medicamentos_presion,rho de Spearman,0.0206,0.0206,0.6357,529,0.9788,Trabaja actualmente,Medicamentos para la presión
+trabaja_actualmente,evacuacion_intestinal,rho de Spearman,0.0858,0.0858,0.0486,529,0.5012,Trabaja actualmente,Frecuencia de evacuación intestinal
+trabaja_actualmente,distension_abdominal,rho de Spearman,-0.0379,0.0379,0.3839,529,0.9304,Trabaja actualmente,Distensión abdominal
+trabaja_actualmente,lugar_trabajo_comprensivo,rho de Spearman,,,,287,,Trabaja actualmente,Lugar de trabajo comprensivo
+trabaja_actualmente,estres_entorno_laboral,rho de Spearman,,,,287,,Trabaja actualmente,Estrés del entorno laboral
+trabaja_actualmente,cantidad_personas_cuida,rho de Spearman,0.0109,0.0109,0.8033,529,0.9974,Trabaja actualmente,Cantidad de personas que cuida
+trabaja_actualmente,doble_carga,rho de Spearman,0.5234,0.5234,0.0000,529,0.0000,Trabaja actualmente,Doble carga (trabaja y cuida)
+trabaja_actualmente,dias_ejercicio_semana,rho de Spearman,0.0272,0.0272,0.5321,529,0.9447,Trabaja actualmente,Días de ejercicio a la semana
+trabaja_actualmente,frecuencia_aerobico,rho de Spearman,-0.0435,0.0435,0.3178,529,0.8994,Trabaja actualmente,Frecuencia de ejercicio aeróbico
+trabaja_actualmente,frecuencia_bajo_impacto,rho de Spearman,0.0333,0.0333,0.4448,529,0.9304,Trabaja actualmente,Frecuencia de ejercicio de bajo impacto
+trabaja_actualmente,frecuencia_fuerza,rho de Spearman,0.0307,0.0307,0.4814,529,0.9411,Trabaja actualmente,Frecuencia de ejercicio de fuerza
+trabaja_actualmente,horas_sedentarismo,rho de Spearman,-0.0167,0.0167,0.7013,529,0.9792,Trabaja actualmente,Horas sentada al día
+trabaja_actualmente,quien_prepara_comidas,eta (rangos),0.0169,0.0169,0.9973,529,0.9995,Trabaja actualmente,Quién prepara las comidas
+trabaja_actualmente,frecuencia_comida_fuera,rho de Spearman,0.3189,0.3189,0.0000,529,0.0000,Trabaja actualmente,Comidas fuera del hogar
+trabaja_actualmente,falta_tiempo_influye,rho de Spearman,0.2360,0.2360,0.0000,529,0.0000,Trabaja actualmente,Falta de tiempo influye en lo que come
+trabaja_actualmente,vasos_agua_dia,rho de Spearman,0.0751,0.0751,0.0844,529,0.6833,Trabaja actualmente,Vasos de agua al día
+trabaja_actualmente,platos_verduras_dia,rho de Spearman,0.0565,0.0565,0.1943,529,0.8398,Trabaja actualmente,Platos de verduras al día
+trabaja_actualmente,frutas_dia,rho de Spearman,-0.0166,0.0166,0.7039,529,0.9792,Trabaja actualmente,Frutas al día
+trabaja_actualmente,panes_dia,rho de Spearman,0.0338,0.0338,0.4374,529,0.9304,Trabaja actualmente,Panes al día
+trabaja_actualmente,lacteos_dia,rho de Spearman,-0.0093,0.0093,0.8303,529,0.9974,Trabaja actualmente,Lácteos al día
+trabaja_actualmente,jugos_gaseosas_dia,rho de Spearman,0.0105,0.0105,0.8100,529,0.9974,Trabaja actualmente,Jugos y gaseosas al día
+trabaja_actualmente,pescado_semana,rho de Spearman,0.0141,0.0141,0.7467,529,0.9918,Trabaja actualmente,Pescado a la semana
+trabaja_actualmente,legumbres_semana,rho de Spearman,0.0355,0.0355,0.4155,529,0.9304,Trabaja actualmente,Legumbres a la semana
+trabaja_actualmente,carnes_semana,rho de Spearman,-0.0020,0.0020,0.9630,529,0.9995,Trabaja actualmente,Carnes a la semana
+trabaja_actualmente,golosinas_semana,rho de Spearman,-0.0362,0.0362,0.4063,529,0.9304,Trabaja actualmente,Dulces y snacks a la semana
+trabaja_actualmente,tabaco_frecuencia,rho de Spearman,-0.0915,0.0915,0.0354,529,0.4368,Trabaja actualmente,Tabaco
+trabaja_actualmente,alcohol_frecuencia,rho de Spearman,-0.0702,0.0702,0.1067,529,0.7049,Trabaja actualmente,Alcohol
+tiene_pareja,tiene_actividad_sexual,rho de Spearman,0.4929,0.4929,0.0000,529,0.0000,Tiene pareja,Tiene actividad sexual
+tiene_pareja,tipo_sangrado,rho de Spearman,-0.0029,0.0029,0.9698,175,0.9995,Tiene pareja,Tipo de sangrado
+tiene_pareja,usa_metodo_anticonceptivo,eta (rangos),0.0267,0.0267,0.7243,175,0.9918,Tiene pareja,Usa método anticonceptivo
+tiene_pareja,operada_no_mas_hijos,rho de Spearman,0.0001,0.0001,0.9979,529,0.9995,Tiene pareja,Operada para no tener más hijos
+tiene_pareja,usa_medicamentos_presion,rho de Spearman,-0.0312,0.0312,0.4743,529,0.9411,Tiene pareja,Medicamentos para la presión
+tiene_pareja,evacuacion_intestinal,rho de Spearman,0.0478,0.0478,0.2721,529,0.8689,Tiene pareja,Frecuencia de evacuación intestinal
+tiene_pareja,distension_abdominal,rho de Spearman,-0.0087,0.0087,0.8412,529,0.9974,Tiene pareja,Distensión abdominal
+tiene_pareja,lugar_trabajo_comprensivo,rho de Spearman,-0.0000,0.0000,0.9994,287,0.9995,Tiene pareja,Lugar de trabajo comprensivo
+tiene_pareja,estres_entorno_laboral,rho de Spearman,-0.0435,0.0435,0.4626,287,0.9367,Tiene pareja,Estrés del entorno laboral
+tiene_pareja,cantidad_personas_cuida,rho de Spearman,-0.0030,0.0030,0.9459,529,0.9974,Tiene pareja,Cantidad de personas que cuida
+tiene_pareja,doble_carga,rho de Spearman,-0.0173,0.0173,0.6909,529,0.9792,Tiene pareja,Doble carga (trabaja y cuida)
+tiene_pareja,dias_ejercicio_semana,rho de Spearman,0.0302,0.0302,0.4880,529,0.9411,Tiene pareja,Días de ejercicio a la semana
+tiene_pareja,frecuencia_aerobico,rho de Spearman,0.0330,0.0330,0.4490,529,0.9304,Tiene pareja,Frecuencia de ejercicio aeróbico
+tiene_pareja,frecuencia_bajo_impacto,rho de Spearman,0.0173,0.0173,0.6915,529,0.9792,Tiene pareja,Frecuencia de ejercicio de bajo impacto
+tiene_pareja,frecuencia_fuerza,rho de Spearman,-0.0224,0.0224,0.6077,529,0.9637,Tiene pareja,Frecuencia de ejercicio de fuerza
+tiene_pareja,horas_sedentarismo,rho de Spearman,-0.0558,0.0558,0.1999,529,0.8443,Tiene pareja,Horas sentada al día
+tiene_pareja,quien_prepara_comidas,eta (rangos),0.0587,0.0587,0.7687,529,0.9974,Tiene pareja,Quién prepara las comidas
+tiene_pareja,frecuencia_comida_fuera,rho de Spearman,0.0386,0.0386,0.3755,529,0.9304,Tiene pareja,Comidas fuera del hogar
+tiene_pareja,falta_tiempo_influye,rho de Spearman,0.0106,0.0106,0.8069,529,0.9974,Tiene pareja,Falta de tiempo influye en lo que come
+tiene_pareja,vasos_agua_dia,rho de Spearman,0.0439,0.0439,0.3140,529,0.8994,Tiene pareja,Vasos de agua al día
+tiene_pareja,platos_verduras_dia,rho de Spearman,-0.0348,0.0348,0.4244,529,0.9304,Tiene pareja,Platos de verduras al día
+tiene_pareja,frutas_dia,rho de Spearman,-0.0434,0.0434,0.3186,529,0.8994,Tiene pareja,Frutas al día
+tiene_pareja,panes_dia,rho de Spearman,-0.0103,0.0103,0.8131,529,0.9974,Tiene pareja,Panes al día
+tiene_pareja,lacteos_dia,rho de Spearman,-0.0024,0.0024,0.9553,529,0.9974,Tiene pareja,Lácteos al día
+tiene_pareja,jugos_gaseosas_dia,rho de Spearman,-0.0120,0.0120,0.7829,529,0.9974,Tiene pareja,Jugos y gaseosas al día
+tiene_pareja,pescado_semana,rho de Spearman,0.0962,0.0962,0.0269,529,0.3750,Tiene pareja,Pescado a la semana
+tiene_pareja,legumbres_semana,rho de Spearman,0.0214,0.0214,0.6231,529,0.9721,Tiene pareja,Legumbres a la semana
+tiene_pareja,carnes_semana,rho de Spearman,-0.0484,0.0484,0.2667,529,0.8652,Tiene pareja,Carnes a la semana
+tiene_pareja,golosinas_semana,rho de Spearman,-0.0212,0.0212,0.6272,529,0.9721,Tiene pareja,Dulces y snacks a la semana
+tiene_pareja,tabaco_frecuencia,rho de Spearman,-0.0306,0.0306,0.4821,529,0.9411,Tiene pareja,Tabaco
+tiene_pareja,alcohol_frecuencia,rho de Spearman,0.0026,0.0026,0.9526,529,0.9974,Tiene pareja,Alcohol
+tiene_actividad_sexual,tipo_sangrado,rho de Spearman,0.0711,0.0711,0.3495,175,0.9015,Tiene actividad sexual,Tipo de sangrado
+tiene_actividad_sexual,usa_metodo_anticonceptivo,eta (rangos),0.1321,0.1321,0.0813,175,0.6751,Tiene actividad sexual,Usa método anticonceptivo
+tiene_actividad_sexual,operada_no_mas_hijos,rho de Spearman,0.0539,0.0539,0.2162,529,0.8504,Tiene actividad sexual,Operada para no tener más hijos
+tiene_actividad_sexual,usa_medicamentos_presion,rho de Spearman,-0.0327,0.0327,0.4533,529,0.9304,Tiene actividad sexual,Medicamentos para la presión
+tiene_actividad_sexual,evacuacion_intestinal,rho de Spearman,0.0930,0.0930,0.0324,529,0.4276,Tiene actividad sexual,Frecuencia de evacuación intestinal
+tiene_actividad_sexual,distension_abdominal,rho de Spearman,0.0749,0.0749,0.0852,529,0.6833,Tiene actividad sexual,Distensión abdominal
+tiene_actividad_sexual,lugar_trabajo_comprensivo,rho de Spearman,0.0076,0.0076,0.8982,287,0.9974,Tiene actividad sexual,Lugar de trabajo comprensivo
+tiene_actividad_sexual,estres_entorno_laboral,rho de Spearman,0.0400,0.0400,0.4999,287,0.9411,Tiene actividad sexual,Estrés del entorno laboral
+tiene_actividad_sexual,cantidad_personas_cuida,rho de Spearman,0.0694,0.0694,0.1106,529,0.7049,Tiene actividad sexual,Cantidad de personas que cuida
+tiene_actividad_sexual,doble_carga,rho de Spearman,0.0613,0.0613,0.1593,529,0.8175,Tiene actividad sexual,Doble carga (trabaja y cuida)
+tiene_actividad_sexual,dias_ejercicio_semana,rho de Spearman,0.0145,0.0145,0.7397,529,0.9918,Tiene actividad sexual,Días de ejercicio a la semana
+tiene_actividad_sexual,frecuencia_aerobico,rho de Spearman,0.0490,0.0490,0.2610,529,0.8652,Tiene actividad sexual,Frecuencia de ejercicio aeróbico
+tiene_actividad_sexual,frecuencia_bajo_impacto,rho de Spearman,-0.0082,0.0082,0.8509,529,0.9974,Tiene actividad sexual,Frecuencia de ejercicio de bajo impacto
+tiene_actividad_sexual,frecuencia_fuerza,rho de Spearman,0.0576,0.0576,0.1860,529,0.8339,Tiene actividad sexual,Frecuencia de ejercicio de fuerza
+tiene_actividad_sexual,horas_sedentarismo,rho de Spearman,-0.0277,0.0277,0.5245,529,0.9447,Tiene actividad sexual,Horas sentada al día
+tiene_actividad_sexual,quien_prepara_comidas,eta (rangos),0.0797,0.0797,0.5006,529,0.9411,Tiene actividad sexual,Quién prepara las comidas
+tiene_actividad_sexual,frecuencia_comida_fuera,rho de Spearman,0.0547,0.0547,0.2092,529,0.8504,Tiene actividad sexual,Comidas fuera del hogar
+tiene_actividad_sexual,falta_tiempo_influye,rho de Spearman,0.0374,0.0374,0.3901,529,0.9304,Tiene actividad sexual,Falta de tiempo influye en lo que come
+tiene_actividad_sexual,vasos_agua_dia,rho de Spearman,0.0006,0.0006,0.9889,529,0.9995,Tiene actividad sexual,Vasos de agua al día
+tiene_actividad_sexual,platos_verduras_dia,rho de Spearman,0.0055,0.0055,0.9002,529,0.9974,Tiene actividad sexual,Platos de verduras al día
+tiene_actividad_sexual,frutas_dia,rho de Spearman,-0.0594,0.0594,0.1722,529,0.8273,Tiene actividad sexual,Frutas al día
+tiene_actividad_sexual,panes_dia,rho de Spearman,-0.0061,0.0061,0.8891,529,0.9974,Tiene actividad sexual,Panes al día
+tiene_actividad_sexual,lacteos_dia,rho de Spearman,0.0304,0.0304,0.4857,529,0.9411,Tiene actividad sexual,Lácteos al día
+tiene_actividad_sexual,jugos_gaseosas_dia,rho de Spearman,0.0493,0.0493,0.2575,529,0.8652,Tiene actividad sexual,Jugos y gaseosas al día
+tiene_actividad_sexual,pescado_semana,rho de Spearman,0.0282,0.0282,0.5182,529,0.9447,Tiene actividad sexual,Pescado a la semana
+tiene_actividad_sexual,legumbres_semana,rho de Spearman,0.0036,0.0036,0.9342,529,0.9974,Tiene actividad sexual,Legumbres a la semana
+tiene_actividad_sexual,carnes_semana,rho de Spearman,0.0139,0.0139,0.7503,529,0.9918,Tiene actividad sexual,Carnes a la semana
+tiene_actividad_sexual,golosinas_semana,rho de Spearman,-0.0338,0.0338,0.4374,529,0.9304,Tiene actividad sexual,Dulces y snacks a la semana
+tiene_actividad_sexual,tabaco_frecuencia,rho de Spearman,-0.0429,0.0429,0.3250,529,0.8994,Tiene actividad sexual,Tabaco
+tiene_actividad_sexual,alcohol_frecuencia,rho de Spearman,-0.0097,0.0097,0.8231,529,0.9974,Tiene actividad sexual,Alcohol
+tipo_sangrado,usa_metodo_anticonceptivo,eta (rangos),0.0136,0.0136,0.8577,175,0.9974,Tipo de sangrado,Usa método anticonceptivo
+tipo_sangrado,operada_no_mas_hijos,rho de Spearman,-0.0030,0.0030,0.9687,175,0.9995,Tipo de sangrado,Operada para no tener más hijos
+tipo_sangrado,usa_medicamentos_presion,rho de Spearman,0.0858,0.0858,0.2591,175,0.8652,Tipo de sangrado,Medicamentos para la presión
+tipo_sangrado,evacuacion_intestinal,rho de Spearman,-0.0293,0.0293,0.7004,175,0.9792,Tipo de sangrado,Frecuencia de evacuación intestinal
+tipo_sangrado,distension_abdominal,rho de Spearman,-0.0004,0.0004,0.9963,175,0.9995,Tipo de sangrado,Distensión abdominal
+tipo_sangrado,lugar_trabajo_comprensivo,rho de Spearman,-0.0603,0.0603,0.5451,103,0.9447,Tipo de sangrado,Lugar de trabajo comprensivo
+tipo_sangrado,estres_entorno_laboral,rho de Spearman,0.1670,0.1670,0.0918,103,0.6906,Tipo de sangrado,Estrés del entorno laboral
+tipo_sangrado,cantidad_personas_cuida,rho de Spearman,0.0656,0.0656,0.3883,175,0.9304,Tipo de sangrado,Cantidad de personas que cuida
+tipo_sangrado,doble_carga,rho de Spearman,0.0152,0.0152,0.8420,175,0.9974,Tipo de sangrado,Doble carga (trabaja y cuida)
+tipo_sangrado,dias_ejercicio_semana,rho de Spearman,-0.0101,0.0101,0.8946,175,0.9974,Tipo de sangrado,Días de ejercicio a la semana
+tipo_sangrado,frecuencia_aerobico,rho de Spearman,0.1043,0.1043,0.1694,175,0.8273,Tipo de sangrado,Frecuencia de ejercicio aeróbico
+tipo_sangrado,frecuencia_bajo_impacto,rho de Spearman,-0.0181,0.0181,0.8119,175,0.9974,Tipo de sangrado,Frecuencia de ejercicio de bajo impacto
+tipo_sangrado,frecuencia_fuerza,rho de Spearman,-0.0291,0.0291,0.7027,175,0.9792,Tipo de sangrado,Frecuencia de ejercicio de fuerza
+tipo_sangrado,horas_sedentarismo,rho de Spearman,-0.0262,0.0262,0.7306,175,0.9918,Tipo de sangrado,Horas sentada al día
+tipo_sangrado,quien_prepara_comidas,eta (rangos),0.1533,0.1533,0.3943,175,0.9304,Tipo de sangrado,Quién prepara las comidas
+tipo_sangrado,frecuencia_comida_fuera,rho de Spearman,-0.0858,0.0858,0.2589,175,0.8652,Tipo de sangrado,Comidas fuera del hogar
+tipo_sangrado,falta_tiempo_influye,rho de Spearman,0.0595,0.0595,0.4343,175,0.9304,Tipo de sangrado,Falta de tiempo influye en lo que come
+tipo_sangrado,vasos_agua_dia,rho de Spearman,-0.0750,0.0750,0.3240,175,0.8994,Tipo de sangrado,Vasos de agua al día
+tipo_sangrado,platos_verduras_dia,rho de Spearman,-0.1783,0.1783,0.0183,175,0.3137,Tipo de sangrado,Platos de verduras al día
+tipo_sangrado,frutas_dia,rho de Spearman,-0.0594,0.0594,0.4351,175,0.9304,Tipo de sangrado,Frutas al día
+tipo_sangrado,panes_dia,rho de Spearman,-0.1152,0.1152,0.1289,175,0.7496,Tipo de sangrado,Panes al día
+tipo_sangrado,lacteos_dia,rho de Spearman,0.0948,0.0948,0.2122,175,0.8504,Tipo de sangrado,Lácteos al día
+tipo_sangrado,jugos_gaseosas_dia,rho de Spearman,-0.0746,0.0746,0.3267,175,0.8994,Tipo de sangrado,Jugos y gaseosas al día
+tipo_sangrado,pescado_semana,rho de Spearman,-0.0041,0.0041,0.9567,175,0.9974,Tipo de sangrado,Pescado a la semana
+tipo_sangrado,legumbres_semana,rho de Spearman,0.0050,0.0050,0.9475,175,0.9974,Tipo de sangrado,Legumbres a la semana
+tipo_sangrado,carnes_semana,rho de Spearman,0.0986,0.0986,0.1940,175,0.8398,Tipo de sangrado,Carnes a la semana
+tipo_sangrado,golosinas_semana,rho de Spearman,0.0421,0.0421,0.5799,175,0.9511,Tipo de sangrado,Dulces y snacks a la semana
+tipo_sangrado,tabaco_frecuencia,rho de Spearman,-0.0330,0.0330,0.6650,175,0.9792,Tipo de sangrado,Tabaco
+tipo_sangrado,alcohol_frecuencia,rho de Spearman,0.0191,0.0191,0.8019,175,0.9974,Tipo de sangrado,Alcohol
+usa_metodo_anticonceptivo,operada_no_mas_hijos,eta (rangos),0.0116,0.0116,0.8783,175,0.9974,Usa método anticonceptivo,Operada para no tener más hijos
+usa_metodo_anticonceptivo,usa_medicamentos_presion,eta (rangos),0.0571,0.0571,0.4514,175,0.9304,Usa método anticonceptivo,Medicamentos para la presión
+usa_metodo_anticonceptivo,evacuacion_intestinal,eta (rangos),0.1017,0.1017,0.1796,175,0.8273,Usa método anticonceptivo,Frecuencia de evacuación intestinal
+usa_metodo_anticonceptivo,distension_abdominal,eta (rangos),0.1713,0.1713,0.0238,175,0.3553,Usa método anticonceptivo,Distensión abdominal
+usa_metodo_anticonceptivo,lugar_trabajo_comprensivo,eta (rangos),0.0101,0.0101,0.9189,103,0.9974,Usa método anticonceptivo,Lugar de trabajo comprensivo
+usa_metodo_anticonceptivo,estres_entorno_laboral,eta (rangos),0.0769,0.0769,0.4374,103,0.9304,Usa método anticonceptivo,Estrés del entorno laboral
+usa_metodo_anticonceptivo,cantidad_personas_cuida,eta (rangos),0.0561,0.0561,0.4592,175,0.9349,Usa método anticonceptivo,Cantidad de personas que cuida
+usa_metodo_anticonceptivo,doble_carga,eta (rangos),0.0019,0.0019,0.9796,175,0.9995,Usa método anticonceptivo,Doble carga (trabaja y cuida)
+usa_metodo_anticonceptivo,dias_ejercicio_semana,eta (rangos),0.0040,0.0040,0.9574,175,0.9974,Usa método anticonceptivo,Días de ejercicio a la semana
+usa_metodo_anticonceptivo,frecuencia_aerobico,eta (rangos),0.0501,0.0501,0.5087,175,0.9411,Usa método anticonceptivo,Frecuencia de ejercicio aeróbico
+usa_metodo_anticonceptivo,frecuencia_bajo_impacto,eta (rangos),0.0020,0.0020,0.9793,175,0.9995,Usa método anticonceptivo,Frecuencia de ejercicio de bajo impacto
+usa_metodo_anticonceptivo,frecuencia_fuerza,eta (rangos),0.0048,0.0048,0.9496,175,0.9974,Usa método anticonceptivo,Frecuencia de ejercicio de fuerza
+usa_metodo_anticonceptivo,horas_sedentarismo,eta (rangos),0.0125,0.0125,0.8688,175,0.9974,Usa método anticonceptivo,Horas sentada al día
+usa_metodo_anticonceptivo,quien_prepara_comidas,V de Cramér corregida,0.0000,0.0000,0.5828,175,0.9511,Usa método anticonceptivo,Quién prepara las comidas
+usa_metodo_anticonceptivo,frecuencia_comida_fuera,eta (rangos),0.0080,0.0080,0.9161,175,0.9974,Usa método anticonceptivo,Comidas fuera del hogar
+usa_metodo_anticonceptivo,falta_tiempo_influye,eta (rangos),0.0094,0.0094,0.9011,175,0.9974,Usa método anticonceptivo,Falta de tiempo influye en lo que come
+usa_metodo_anticonceptivo,vasos_agua_dia,eta (rangos),0.0046,0.0046,0.9518,175,0.9974,Usa método anticonceptivo,Vasos de agua al día
+usa_metodo_anticonceptivo,platos_verduras_dia,eta (rangos),0.1297,0.1297,0.0871,175,0.6833,Usa método anticonceptivo,Platos de verduras al día
+usa_metodo_anticonceptivo,frutas_dia,eta (rangos),0.0372,0.0372,0.6234,175,0.9721,Usa método anticonceptivo,Frutas al día
+usa_metodo_anticonceptivo,panes_dia,eta (rangos),0.0011,0.0011,0.9884,175,0.9995,Usa método anticonceptivo,Panes al día
+usa_metodo_anticonceptivo,lacteos_dia,eta (rangos),0.0159,0.0159,0.8338,175,0.9974,Usa método anticonceptivo,Lácteos al día
+usa_metodo_anticonceptivo,jugos_gaseosas_dia,eta (rangos),0.0728,0.0728,0.3366,175,0.8994,Usa método anticonceptivo,Jugos y gaseosas al día
+usa_metodo_anticonceptivo,pescado_semana,eta (rangos),0.0230,0.0230,0.7615,175,0.9974,Usa método anticonceptivo,Pescado a la semana
+usa_metodo_anticonceptivo,legumbres_semana,eta (rangos),0.0082,0.0082,0.9138,175,0.9974,Usa método anticonceptivo,Legumbres a la semana
+usa_metodo_anticonceptivo,carnes_semana,eta (rangos),0.0694,0.0694,0.3601,175,0.9145,Usa método anticonceptivo,Carnes a la semana
+usa_metodo_anticonceptivo,golosinas_semana,eta (rangos),0.0935,0.0935,0.2173,175,0.8504,Usa método anticonceptivo,Dulces y snacks a la semana
+usa_metodo_anticonceptivo,tabaco_frecuencia,eta (rangos),0.0784,0.0784,0.3013,175,0.8977,Usa método anticonceptivo,Tabaco
+usa_metodo_anticonceptivo,alcohol_frecuencia,eta (rangos),0.0193,0.0193,0.7995,175,0.9974,Usa método anticonceptivo,Alcohol
+operada_no_mas_hijos,usa_medicamentos_presion,rho de Spearman,-0.0063,0.0063,0.8847,529,0.9974,Operada para no tener más hijos,Medicamentos para la presión
+operada_no_mas_hijos,evacuacion_intestinal,rho de Spearman,-0.0478,0.0478,0.2728,529,0.8689,Operada para no tener más hijos,Frecuencia de evacuación intestinal
+operada_no_mas_hijos,distension_abdominal,rho de Spearman,-0.0275,0.0275,0.5283,529,0.9447,Operada para no tener más hijos,Distensión abdominal
+operada_no_mas_hijos,lugar_trabajo_comprensivo,rho de Spearman,-0.0557,0.0557,0.3470,287,0.8997,Operada para no tener más hijos,Lugar de trabajo comprensivo
+operada_no_mas_hijos,estres_entorno_laboral,rho de Spearman,0.1167,0.1167,0.0483,287,0.5012,Operada para no tener más hijos,Estrés del entorno laboral
+operada_no_mas_hijos,cantidad_personas_cuida,rho de Spearman,-0.0140,0.0140,0.7488,529,0.9918,Operada para no tener más hijos,Cantidad de personas que cuida
+operada_no_mas_hijos,doble_carga,rho de Spearman,-0.0414,0.0414,0.3418,529,0.8994,Operada para no tener más hijos,Doble carga (trabaja y cuida)
+operada_no_mas_hijos,dias_ejercicio_semana,rho de Spearman,-0.0401,0.0401,0.3571,529,0.9132,Operada para no tener más hijos,Días de ejercicio a la semana
+operada_no_mas_hijos,frecuencia_aerobico,rho de Spearman,0.0016,0.0016,0.9705,529,0.9995,Operada para no tener más hijos,Frecuencia de ejercicio aeróbico
+operada_no_mas_hijos,frecuencia_bajo_impacto,rho de Spearman,-0.0373,0.0373,0.3917,529,0.9304,Operada para no tener más hijos,Frecuencia de ejercicio de bajo impacto
+operada_no_mas_hijos,frecuencia_fuerza,rho de Spearman,0.0731,0.0731,0.0930,529,0.6906,Operada para no tener más hijos,Frecuencia de ejercicio de fuerza
+operada_no_mas_hijos,horas_sedentarismo,rho de Spearman,-0.0051,0.0051,0.9063,529,0.9974,Operada para no tener más hijos,Horas sentada al día
+operada_no_mas_hijos,quien_prepara_comidas,eta (rangos),0.0768,0.0768,0.5385,529,0.9447,Operada para no tener más hijos,Quién prepara las comidas
+operada_no_mas_hijos,frecuencia_comida_fuera,rho de Spearman,-0.0321,0.0321,0.4617,529,0.9367,Operada para no tener más hijos,Comidas fuera del hogar
+operada_no_mas_hijos,falta_tiempo_influye,rho de Spearman,0.0077,0.0077,0.8596,529,0.9974,Operada para no tener más hijos,Falta de tiempo influye en lo que come
+operada_no_mas_hijos,vasos_agua_dia,rho de Spearman,-0.0361,0.0361,0.4077,529,0.9304,Operada para no tener más hijos,Vasos de agua al día
+operada_no_mas_hijos,platos_verduras_dia,rho de Spearman,0.0326,0.0326,0.4545,529,0.9304,Operada para no tener más hijos,Platos de verduras al día
+operada_no_mas_hijos,frutas_dia,rho de Spearman,-0.0741,0.0741,0.0888,529,0.6833,Operada para no tener más hijos,Frutas al día
+operada_no_mas_hijos,panes_dia,rho de Spearman,0.0341,0.0341,0.4340,529,0.9304,Operada para no tener más hijos,Panes al día
+operada_no_mas_hijos,lacteos_dia,rho de Spearman,0.0583,0.0583,0.1808,529,0.8273,Operada para no tener más hijos,Lácteos al día
+operada_no_mas_hijos,jugos_gaseosas_dia,rho de Spearman,0.0878,0.0878,0.0435,529,0.4879,Operada para no tener más hijos,Jugos y gaseosas al día
+operada_no_mas_hijos,pescado_semana,rho de Spearman,0.0393,0.0393,0.3669,529,0.9262,Operada para no tener más hijos,Pescado a la semana
+operada_no_mas_hijos,legumbres_semana,rho de Spearman,-0.0180,0.0180,0.6793,529,0.9792,Operada para no tener más hijos,Legumbres a la semana
+operada_no_mas_hijos,carnes_semana,rho de Spearman,0.0915,0.0915,0.0355,529,0.4368,Operada para no tener más hijos,Carnes a la semana
+operada_no_mas_hijos,golosinas_semana,rho de Spearman,-0.0344,0.0344,0.4298,529,0.9304,Operada para no tener más hijos,Dulces y snacks a la semana
+operada_no_mas_hijos,tabaco_frecuencia,rho de Spearman,-0.0031,0.0031,0.9433,529,0.9974,Operada para no tener más hijos,Tabaco
+operada_no_mas_hijos,alcohol_frecuencia,rho de Spearman,0.0119,0.0119,0.7843,529,0.9974,Operada para no tener más hijos,Alcohol
+usa_medicamentos_presion,evacuacion_intestinal,rho de Spearman,0.0488,0.0488,0.2628,529,0.8652,Medicamentos para la presión,Frecuencia de evacuación intestinal
+usa_medicamentos_presion,distension_abdominal,rho de Spearman,-0.0449,0.0449,0.3028,529,0.8987,Medicamentos para la presión,Distensión abdominal
+usa_medicamentos_presion,lugar_trabajo_comprensivo,rho de Spearman,-0.0480,0.0480,0.4181,287,0.9304,Medicamentos para la presión,Lugar de trabajo comprensivo
+usa_medicamentos_presion,estres_entorno_laboral,rho de Spearman,-0.0372,0.0372,0.5300,287,0.9447,Medicamentos para la presión,Estrés del entorno laboral
+usa_medicamentos_presion,cantidad_personas_cuida,rho de Spearman,0.0143,0.0143,0.7434,529,0.9918,Medicamentos para la presión,Cantidad de personas que cuida
+usa_medicamentos_presion,doble_carga,rho de Spearman,-0.0083,0.0083,0.8498,529,0.9974,Medicamentos para la presión,Doble carga (trabaja y cuida)
+usa_medicamentos_presion,dias_ejercicio_semana,rho de Spearman,0.0212,0.0212,0.6265,529,0.9721,Medicamentos para la presión,Días de ejercicio a la semana
+usa_medicamentos_presion,frecuencia_aerobico,rho de Spearman,-0.0593,0.0593,0.1732,529,0.8273,Medicamentos para la presión,Frecuencia de ejercicio aeróbico
+usa_medicamentos_presion,frecuencia_bajo_impacto,rho de Spearman,0.0689,0.0689,0.1137,529,0.7049,Medicamentos para la presión,Frecuencia de ejercicio de bajo impacto
+usa_medicamentos_presion,frecuencia_fuerza,rho de Spearman,-0.0309,0.0309,0.4781,529,0.9411,Medicamentos para la presión,Frecuencia de ejercicio de fuerza
+usa_medicamentos_presion,horas_sedentarismo,rho de Spearman,0.0493,0.0493,0.2572,529,0.8652,Medicamentos para la presión,Horas sentada al día
+usa_medicamentos_presion,quien_prepara_comidas,eta (rangos),0.1061,0.1061,0.2032,529,0.8443,Medicamentos para la presión,Quién prepara las comidas
+usa_medicamentos_presion,frecuencia_comida_fuera,rho de Spearman,0.0544,0.0544,0.2115,529,0.8504,Medicamentos para la presión,Comidas fuera del hogar
+usa_medicamentos_presion,falta_tiempo_influye,rho de Spearman,0.0646,0.0646,0.1376,529,0.7618,Medicamentos para la presión,Falta de tiempo influye en lo que come
+usa_medicamentos_presion,vasos_agua_dia,rho de Spearman,-0.0137,0.0137,0.7524,529,0.9929,Medicamentos para la presión,Vasos de agua al día
+usa_medicamentos_presion,platos_verduras_dia,rho de Spearman,-0.0869,0.0869,0.0458,529,0.4902,Medicamentos para la presión,Platos de verduras al día
+usa_medicamentos_presion,frutas_dia,rho de Spearman,0.0023,0.0023,0.9583,529,0.9974,Medicamentos para la presión,Frutas al día
+usa_medicamentos_presion,panes_dia,rho de Spearman,0.0453,0.0453,0.2984,529,0.8927,Medicamentos para la presión,Panes al día
+usa_medicamentos_presion,lacteos_dia,rho de Spearman,-0.0501,0.0501,0.2498,529,0.8652,Medicamentos para la presión,Lácteos al día
+usa_medicamentos_presion,jugos_gaseosas_dia,rho de Spearman,0.0059,0.0059,0.8918,529,0.9974,Medicamentos para la presión,Jugos y gaseosas al día
+usa_medicamentos_presion,pescado_semana,rho de Spearman,0.0026,0.0026,0.9529,529,0.9974,Medicamentos para la presión,Pescado a la semana
+usa_medicamentos_presion,legumbres_semana,rho de Spearman,-0.0228,0.0228,0.6007,529,0.9616,Medicamentos para la presión,Legumbres a la semana
+usa_medicamentos_presion,carnes_semana,rho de Spearman,0.0503,0.0503,0.2482,529,0.8652,Medicamentos para la presión,Carnes a la semana
+usa_medicamentos_presion,golosinas_semana,rho de Spearman,0.0146,0.0146,0.7374,529,0.9918,Medicamentos para la presión,Dulces y snacks a la semana
+usa_medicamentos_presion,tabaco_frecuencia,rho de Spearman,0.0059,0.0059,0.8921,529,0.9974,Medicamentos para la presión,Tabaco
+usa_medicamentos_presion,alcohol_frecuencia,rho de Spearman,0.0573,0.0573,0.1885,529,0.8339,Medicamentos para la presión,Alcohol
+evacuacion_intestinal,distension_abdominal,rho de Spearman,0.0087,0.0087,0.8423,529,0.9974,Frecuencia de evacuación intestinal,Distensión abdominal
+evacuacion_intestinal,lugar_trabajo_comprensivo,rho de Spearman,0.0887,0.0887,0.1339,287,0.7496,Frecuencia de evacuación intestinal,Lugar de trabajo comprensivo
+evacuacion_intestinal,estres_entorno_laboral,rho de Spearman,0.0126,0.0126,0.8317,287,0.9974,Frecuencia de evacuación intestinal,Estrés del entorno laboral
+evacuacion_intestinal,cantidad_personas_cuida,rho de Spearman,0.0550,0.0550,0.2062,529,0.8467,Frecuencia de evacuación intestinal,Cantidad de personas que cuida
+evacuacion_intestinal,doble_carga,rho de Spearman,0.1172,0.1172,0.0070,529,0.1614,Frecuencia de evacuación intestinal,Doble carga (trabaja y cuida)
+evacuacion_intestinal,dias_ejercicio_semana,rho de Spearman,0.0834,0.0834,0.0551,529,0.5502,Frecuencia de evacuación intestinal,Días de ejercicio a la semana
+evacuacion_intestinal,frecuencia_aerobico,rho de Spearman,0.0632,0.0632,0.1467,529,0.7856,Frecuencia de evacuación intestinal,Frecuencia de ejercicio aeróbico
+evacuacion_intestinal,frecuencia_bajo_impacto,rho de Spearman,0.0830,0.0830,0.0564,529,0.5555,Frecuencia de evacuación intestinal,Frecuencia de ejercicio de bajo impacto
+evacuacion_intestinal,frecuencia_fuerza,rho de Spearman,0.0316,0.0316,0.4678,529,0.9411,Frecuencia de evacuación intestinal,Frecuencia de ejercicio de fuerza
+evacuacion_intestinal,horas_sedentarismo,rho de Spearman,0.0427,0.0427,0.3264,529,0.8994,Frecuencia de evacuación intestinal,Horas sentada al día
+evacuacion_intestinal,quien_prepara_comidas,eta (rangos),0.0845,0.0845,0.4375,529,0.9304,Frecuencia de evacuación intestinal,Quién prepara las comidas
+evacuacion_intestinal,frecuencia_comida_fuera,rho de Spearman,-0.0034,0.0034,0.9376,529,0.9974,Frecuencia de evacuación intestinal,Comidas fuera del hogar
+evacuacion_intestinal,falta_tiempo_influye,rho de Spearman,0.0490,0.0490,0.2607,529,0.8652,Frecuencia de evacuación intestinal,Falta de tiempo influye en lo que come
+evacuacion_intestinal,vasos_agua_dia,rho de Spearman,0.0070,0.0070,0.8723,529,0.9974,Frecuencia de evacuación intestinal,Vasos de agua al día
+evacuacion_intestinal,platos_verduras_dia,rho de Spearman,-0.0180,0.0180,0.6788,529,0.9792,Frecuencia de evacuación intestinal,Platos de verduras al día
+evacuacion_intestinal,frutas_dia,rho de Spearman,-0.0316,0.0316,0.4687,529,0.9411,Frecuencia de evacuación intestinal,Frutas al día
+evacuacion_intestinal,panes_dia,rho de Spearman,-0.0424,0.0424,0.3300,529,0.8994,Frecuencia de evacuación intestinal,Panes al día
+evacuacion_intestinal,lacteos_dia,rho de Spearman,-0.0037,0.0037,0.9319,529,0.9974,Frecuencia de evacuación intestinal,Lácteos al día
+evacuacion_intestinal,jugos_gaseosas_dia,rho de Spearman,-0.0267,0.0267,0.5408,529,0.9447,Frecuencia de evacuación intestinal,Jugos y gaseosas al día
+evacuacion_intestinal,pescado_semana,rho de Spearman,-0.0029,0.0029,0.9468,529,0.9974,Frecuencia de evacuación intestinal,Pescado a la semana
+evacuacion_intestinal,legumbres_semana,rho de Spearman,0.0530,0.0530,0.2236,529,0.8504,Frecuencia de evacuación intestinal,Legumbres a la semana
+evacuacion_intestinal,carnes_semana,rho de Spearman,0.0507,0.0507,0.2443,529,0.8652,Frecuencia de evacuación intestinal,Carnes a la semana
+evacuacion_intestinal,golosinas_semana,rho de Spearman,-0.0587,0.0587,0.1780,529,0.8273,Frecuencia de evacuación intestinal,Dulces y snacks a la semana
+evacuacion_intestinal,tabaco_frecuencia,rho de Spearman,0.0196,0.0196,0.6530,529,0.9792,Frecuencia de evacuación intestinal,Tabaco
+evacuacion_intestinal,alcohol_frecuencia,rho de Spearman,0.0106,0.0106,0.8074,529,0.9974,Frecuencia de evacuación intestinal,Alcohol
+distension_abdominal,lugar_trabajo_comprensivo,rho de Spearman,0.0664,0.0664,0.2622,287,0.8652,Distensión abdominal,Lugar de trabajo comprensivo
+distension_abdominal,estres_entorno_laboral,rho de Spearman,-0.1364,0.1364,0.0208,287,0.3347,Distensión abdominal,Estrés del entorno laboral
+distension_abdominal,cantidad_personas_cuida,rho de Spearman,0.0064,0.0064,0.8825,529,0.9974,Distensión abdominal,Cantidad de personas que cuida
+distension_abdominal,doble_carga,rho de Spearman,-0.0237,0.0237,0.5868,529,0.9530,Distensión abdominal,Doble carga (trabaja y cuida)
+distension_abdominal,dias_ejercicio_semana,rho de Spearman,0.0140,0.0140,0.7486,529,0.9918,Distensión abdominal,Días de ejercicio a la semana
+distension_abdominal,frecuencia_aerobico,rho de Spearman,-0.0193,0.0193,0.6580,529,0.9792,Distensión abdominal,Frecuencia de ejercicio aeróbico
+distension_abdominal,frecuencia_bajo_impacto,rho de Spearman,-0.0429,0.0429,0.3246,529,0.8994,Distensión abdominal,Frecuencia de ejercicio de bajo impacto
+distension_abdominal,frecuencia_fuerza,rho de Spearman,0.0569,0.0569,0.1916,529,0.8393,Distensión abdominal,Frecuencia de ejercicio de fuerza
+distension_abdominal,horas_sedentarismo,rho de Spearman,-0.0193,0.0193,0.6577,529,0.9792,Distensión abdominal,Horas sentada al día
+distension_abdominal,quien_prepara_comidas,eta (rangos),0.0550,0.0550,0.8092,529,0.9974,Distensión abdominal,Quién prepara las comidas
+distension_abdominal,frecuencia_comida_fuera,rho de Spearman,0.0465,0.0465,0.2855,529,0.8754,Distensión abdominal,Comidas fuera del hogar
+distension_abdominal,falta_tiempo_influye,rho de Spearman,0.0114,0.0114,0.7938,529,0.9974,Distensión abdominal,Falta de tiempo influye en lo que come
+distension_abdominal,vasos_agua_dia,rho de Spearman,-0.0132,0.0132,0.7627,529,0.9974,Distensión abdominal,Vasos de agua al día
+distension_abdominal,platos_verduras_dia,rho de Spearman,0.0487,0.0487,0.2631,529,0.8652,Distensión abdominal,Platos de verduras al día
+distension_abdominal,frutas_dia,rho de Spearman,0.0239,0.0239,0.5833,529,0.9511,Distensión abdominal,Frutas al día
+distension_abdominal,panes_dia,rho de Spearman,-0.0250,0.0250,0.5656,529,0.9479,Distensión abdominal,Panes al día
+distension_abdominal,lacteos_dia,rho de Spearman,0.0302,0.0302,0.4882,529,0.9411,Distensión abdominal,Lácteos al día
+distension_abdominal,jugos_gaseosas_dia,rho de Spearman,0.0143,0.0143,0.7432,529,0.9918,Distensión abdominal,Jugos y gaseosas al día
+distension_abdominal,pescado_semana,rho de Spearman,-0.0323,0.0323,0.4587,529,0.9349,Distensión abdominal,Pescado a la semana
+distension_abdominal,legumbres_semana,rho de Spearman,-0.0036,0.0036,0.9349,529,0.9974,Distensión abdominal,Legumbres a la semana
+distension_abdominal,carnes_semana,rho de Spearman,0.0139,0.0139,0.7495,529,0.9918,Distensión abdominal,Carnes a la semana
+distension_abdominal,golosinas_semana,rho de Spearman,-0.0076,0.0076,0.8615,529,0.9974,Distensión abdominal,Dulces y snacks a la semana
+distension_abdominal,tabaco_frecuencia,rho de Spearman,0.0048,0.0048,0.9114,529,0.9974,Distensión abdominal,Tabaco
+distension_abdominal,alcohol_frecuencia,rho de Spearman,0.0368,0.0368,0.3984,529,0.9304,Distensión abdominal,Alcohol
+lugar_trabajo_comprensivo,estres_entorno_laboral,rho de Spearman,-0.3778,0.3778,0.0000,287,0.0000,Lugar de trabajo comprensivo,Estrés del entorno laboral
+lugar_trabajo_comprensivo,cantidad_personas_cuida,rho de Spearman,-0.0225,0.0225,0.7040,287,0.9792,Lugar de trabajo comprensivo,Cantidad de personas que cuida
+lugar_trabajo_comprensivo,doble_carga,rho de Spearman,-0.0190,0.0190,0.7484,287,0.9918,Lugar de trabajo comprensivo,Doble carga (trabaja y cuida)
+lugar_trabajo_comprensivo,dias_ejercicio_semana,rho de Spearman,-0.0094,0.0094,0.8742,287,0.9974,Lugar de trabajo comprensivo,Días de ejercicio a la semana
+lugar_trabajo_comprensivo,frecuencia_aerobico,rho de Spearman,-0.0347,0.0347,0.5588,287,0.9447,Lugar de trabajo comprensivo,Frecuencia de ejercicio aeróbico
+lugar_trabajo_comprensivo,frecuencia_bajo_impacto,rho de Spearman,0.0404,0.0404,0.4957,287,0.9411,Lugar de trabajo comprensivo,Frecuencia de ejercicio de bajo impacto
+lugar_trabajo_comprensivo,frecuencia_fuerza,rho de Spearman,-0.0282,0.0282,0.6339,287,0.9780,Lugar de trabajo comprensivo,Frecuencia de ejercicio de fuerza
+lugar_trabajo_comprensivo,horas_sedentarismo,rho de Spearman,0.0524,0.0524,0.3760,287,0.9304,Lugar de trabajo comprensivo,Horas sentada al día
+lugar_trabajo_comprensivo,quien_prepara_comidas,eta (rangos),0.0549,0.0549,0.9300,287,0.9974,Lugar de trabajo comprensivo,Quién prepara las comidas
+lugar_trabajo_comprensivo,frecuencia_comida_fuera,rho de Spearman,0.0140,0.0140,0.8133,287,0.9974,Lugar de trabajo comprensivo,Comidas fuera del hogar
+lugar_trabajo_comprensivo,falta_tiempo_influye,rho de Spearman,-0.0497,0.0497,0.4015,287,0.9304,Lugar de trabajo comprensivo,Falta de tiempo influye en lo que come
+lugar_trabajo_comprensivo,vasos_agua_dia,rho de Spearman,0.0328,0.0328,0.5795,287,0.9511,Lugar de trabajo comprensivo,Vasos de agua al día
+lugar_trabajo_comprensivo,platos_verduras_dia,rho de Spearman,-0.0379,0.0379,0.5227,287,0.9447,Lugar de trabajo comprensivo,Platos de verduras al día
+lugar_trabajo_comprensivo,frutas_dia,rho de Spearman,-0.0132,0.0132,0.8241,287,0.9974,Lugar de trabajo comprensivo,Frutas al día
+lugar_trabajo_comprensivo,panes_dia,rho de Spearman,-0.0270,0.0270,0.6490,287,0.9792,Lugar de trabajo comprensivo,Panes al día
+lugar_trabajo_comprensivo,lacteos_dia,rho de Spearman,0.0654,0.0654,0.2698,287,0.8669,Lugar de trabajo comprensivo,Lácteos al día
+lugar_trabajo_comprensivo,jugos_gaseosas_dia,rho de Spearman,-0.0106,0.0106,0.8582,287,0.9974,Lugar de trabajo comprensivo,Jugos y gaseosas al día
+lugar_trabajo_comprensivo,pescado_semana,rho de Spearman,-0.0007,0.0007,0.9907,287,0.9995,Lugar de trabajo comprensivo,Pescado a la semana
+lugar_trabajo_comprensivo,legumbres_semana,rho de Spearman,-0.1038,0.1038,0.0791,287,0.6640,Lugar de trabajo comprensivo,Legumbres a la semana
+lugar_trabajo_comprensivo,carnes_semana,rho de Spearman,0.0232,0.0232,0.6957,287,0.9792,Lugar de trabajo comprensivo,Carnes a la semana
+lugar_trabajo_comprensivo,golosinas_semana,rho de Spearman,0.0362,0.0362,0.5416,287,0.9447,Lugar de trabajo comprensivo,Dulces y snacks a la semana
+lugar_trabajo_comprensivo,tabaco_frecuencia,rho de Spearman,-0.0697,0.0697,0.2395,287,0.8652,Lugar de trabajo comprensivo,Tabaco
+lugar_trabajo_comprensivo,alcohol_frecuencia,rho de Spearman,0.0170,0.0170,0.7747,287,0.9974,Lugar de trabajo comprensivo,Alcohol
+estres_entorno_laboral,cantidad_personas_cuida,rho de Spearman,-0.0661,0.0661,0.2643,287,0.8652,Estrés del entorno laboral,Cantidad de personas que cuida
+estres_entorno_laboral,doble_carga,rho de Spearman,-0.0813,0.0813,0.1698,287,0.8273,Estrés del entorno laboral,Doble carga (trabaja y cuida)
+estres_entorno_laboral,dias_ejercicio_semana,rho de Spearman,-0.0337,0.0337,0.5694,287,0.9511,Estrés del entorno laboral,Días de ejercicio a la semana
+estres_entorno_laboral,frecuencia_aerobico,rho de Spearman,-0.0108,0.0108,0.8557,287,0.9974,Estrés del entorno laboral,Frecuencia de ejercicio aeróbico
+estres_entorno_laboral,frecuencia_bajo_impacto,rho de Spearman,-0.0642,0.0642,0.2783,287,0.8715,Estrés del entorno laboral,Frecuencia de ejercicio de bajo impacto
+estres_entorno_laboral,frecuencia_fuerza,rho de Spearman,0.0314,0.0314,0.5961,287,0.9598,Estrés del entorno laboral,Frecuencia de ejercicio de fuerza
+estres_entorno_laboral,horas_sedentarismo,rho de Spearman,0.0001,0.0001,0.9989,287,0.9995,Estrés del entorno laboral,Horas sentada al día
+estres_entorno_laboral,quien_prepara_comidas,eta (rangos),0.1032,0.1032,0.5499,287,0.9447,Estrés del entorno laboral,Quién prepara las comidas
+estres_entorno_laboral,frecuencia_comida_fuera,rho de Spearman,-0.1190,0.1190,0.0439,287,0.4879,Estrés del entorno laboral,Comidas fuera del hogar
+estres_entorno_laboral,falta_tiempo_influye,rho de Spearman,0.0678,0.0678,0.2519,287,0.8652,Estrés del entorno laboral,Falta de tiempo influye en lo que come
+estres_entorno_laboral,vasos_agua_dia,rho de Spearman,-0.0087,0.0087,0.8836,287,0.9974,Estrés del entorno laboral,Vasos de agua al día
+estres_entorno_laboral,platos_verduras_dia,rho de Spearman,0.0024,0.0024,0.9680,287,0.9995,Estrés del entorno laboral,Platos de verduras al día
+estres_entorno_laboral,frutas_dia,rho de Spearman,0.0531,0.0531,0.3703,287,0.9304,Estrés del entorno laboral,Frutas al día
+estres_entorno_laboral,panes_dia,rho de Spearman,0.0465,0.0465,0.4326,287,0.9304,Estrés del entorno laboral,Panes al día
+estres_entorno_laboral,lacteos_dia,rho de Spearman,0.0169,0.0169,0.7751,287,0.9974,Estrés del entorno laboral,Lácteos al día
+estres_entorno_laboral,jugos_gaseosas_dia,rho de Spearman,0.0963,0.0963,0.1036,287,0.7049,Estrés del entorno laboral,Jugos y gaseosas al día
+estres_entorno_laboral,pescado_semana,rho de Spearman,0.0223,0.0223,0.7062,287,0.9792,Estrés del entorno laboral,Pescado a la semana
+estres_entorno_laboral,legumbres_semana,rho de Spearman,-0.0062,0.0062,0.9171,287,0.9974,Estrés del entorno laboral,Legumbres a la semana
+estres_entorno_laboral,carnes_semana,rho de Spearman,0.0455,0.0455,0.4423,287,0.9304,Estrés del entorno laboral,Carnes a la semana
+estres_entorno_laboral,golosinas_semana,rho de Spearman,-0.0503,0.0503,0.3960,287,0.9304,Estrés del entorno laboral,Dulces y snacks a la semana
+estres_entorno_laboral,tabaco_frecuencia,rho de Spearman,-0.0080,0.0080,0.8930,287,0.9974,Estrés del entorno laboral,Tabaco
+estres_entorno_laboral,alcohol_frecuencia,rho de Spearman,0.0520,0.0520,0.3805,287,0.9304,Estrés del entorno laboral,Alcohol
+cantidad_personas_cuida,doble_carga,rho de Spearman,0.6267,0.6267,0.0000,529,0.0000,Cantidad de personas que cuida,Doble carga (trabaja y cuida)
+cantidad_personas_cuida,dias_ejercicio_semana,rho de Spearman,0.0267,0.0267,0.5400,529,0.9447,Cantidad de personas que cuida,Días de ejercicio a la semana
+cantidad_personas_cuida,frecuencia_aerobico,rho de Spearman,0.0507,0.0507,0.2447,529,0.8652,Cantidad de personas que cuida,Frecuencia de ejercicio aeróbico
+cantidad_personas_cuida,frecuencia_bajo_impacto,rho de Spearman,0.0483,0.0483,0.2676,529,0.8652,Cantidad de personas que cuida,Frecuencia de ejercicio de bajo impacto
+cantidad_personas_cuida,frecuencia_fuerza,rho de Spearman,-0.0133,0.0133,0.7606,529,0.9974,Cantidad de personas que cuida,Frecuencia de ejercicio de fuerza
+cantidad_personas_cuida,horas_sedentarismo,rho de Spearman,0.0069,0.0069,0.8740,529,0.9974,Cantidad de personas que cuida,Horas sentada al día
+cantidad_personas_cuida,quien_prepara_comidas,eta (rangos),0.1061,0.1061,0.2030,529,0.8443,Cantidad de personas que cuida,Quién prepara las comidas
+cantidad_personas_cuida,frecuencia_comida_fuera,rho de Spearman,-0.0557,0.0557,0.2005,529,0.8443,Cantidad de personas que cuida,Comidas fuera del hogar
+cantidad_personas_cuida,falta_tiempo_influye,rho de Spearman,0.3056,0.3056,0.0000,529,0.0000,Cantidad de personas que cuida,Falta de tiempo influye en lo que come
+cantidad_personas_cuida,vasos_agua_dia,rho de Spearman,0.0464,0.0464,0.2870,529,0.8765,Cantidad de personas que cuida,Vasos de agua al día
+cantidad_personas_cuida,platos_verduras_dia,rho de Spearman,0.0707,0.0707,0.1041,529,0.7049,Cantidad de personas que cuida,Platos de verduras al día
+cantidad_personas_cuida,frutas_dia,rho de Spearman,0.0264,0.0264,0.5442,529,0.9447,Cantidad de personas que cuida,Frutas al día
+cantidad_personas_cuida,panes_dia,rho de Spearman,-0.0645,0.0645,0.1388,529,0.7618,Cantidad de personas que cuida,Panes al día
+cantidad_personas_cuida,lacteos_dia,rho de Spearman,0.0335,0.0335,0.4419,529,0.9304,Cantidad de personas que cuida,Lácteos al día
+cantidad_personas_cuida,jugos_gaseosas_dia,rho de Spearman,0.0167,0.0167,0.7017,529,0.9792,Cantidad de personas que cuida,Jugos y gaseosas al día
+cantidad_personas_cuida,pescado_semana,rho de Spearman,-0.0522,0.0522,0.2308,529,0.8652,Cantidad de personas que cuida,Pescado a la semana
+cantidad_personas_cuida,legumbres_semana,rho de Spearman,-0.0112,0.0112,0.7965,529,0.9974,Cantidad de personas que cuida,Legumbres a la semana
+cantidad_personas_cuida,carnes_semana,rho de Spearman,-0.0199,0.0199,0.6482,529,0.9792,Cantidad de personas que cuida,Carnes a la semana
+cantidad_personas_cuida,golosinas_semana,rho de Spearman,0.0197,0.0197,0.6506,529,0.9792,Cantidad de personas que cuida,Dulces y snacks a la semana
+cantidad_personas_cuida,tabaco_frecuencia,rho de Spearman,-0.0644,0.0644,0.1392,529,0.7618,Cantidad de personas que cuida,Tabaco
+cantidad_personas_cuida,alcohol_frecuencia,rho de Spearman,-0.0591,0.0591,0.1749,529,0.8273,Cantidad de personas que cuida,Alcohol
+doble_carga,dias_ejercicio_semana,rho de Spearman,-0.0038,0.0038,0.9298,529,0.9974,Doble carga (trabaja y cuida),Días de ejercicio a la semana
+doble_carga,frecuencia_aerobico,rho de Spearman,0.0105,0.0105,0.8092,529,0.9974,Doble carga (trabaja y cuida),Frecuencia de ejercicio aeróbico
+doble_carga,frecuencia_bajo_impacto,rho de Spearman,0.0165,0.0165,0.7050,529,0.9792,Doble carga (trabaja y cuida),Frecuencia de ejercicio de bajo impacto
+doble_carga,frecuencia_fuerza,rho de Spearman,-0.0291,0.0291,0.5039,529,0.9411,Doble carga (trabaja y cuida),Frecuencia de ejercicio de fuerza
+doble_carga,horas_sedentarismo,rho de Spearman,-0.0420,0.0420,0.3344,529,0.8994,Doble carga (trabaja y cuida),Horas sentada al día
+doble_carga,quien_prepara_comidas,eta (rangos),0.0651,0.0651,0.6920,529,0.9792,Doble carga (trabaja y cuida),Quién prepara las comidas
+doble_carga,frecuencia_comida_fuera,rho de Spearman,0.0901,0.0901,0.0384,529,0.4525,Doble carga (trabaja y cuida),Comidas fuera del hogar
+doble_carga,falta_tiempo_influye,rho de Spearman,0.3266,0.3266,0.0000,529,0.0000,Doble carga (trabaja y cuida),Falta de tiempo influye en lo que come
+doble_carga,vasos_agua_dia,rho de Spearman,0.0642,0.0642,0.1403,529,0.7622,Doble carga (trabaja y cuida),Vasos de agua al día
+doble_carga,platos_verduras_dia,rho de Spearman,0.0698,0.0698,0.1088,529,0.7049,Doble carga (trabaja y cuida),Platos de verduras al día
+doble_carga,frutas_dia,rho de Spearman,-0.0179,0.0179,0.6808,529,0.9792,Doble carga (trabaja y cuida),Frutas al día
+doble_carga,panes_dia,rho de Spearman,-0.0202,0.0202,0.6435,529,0.9792,Doble carga (trabaja y cuida),Panes al día
+doble_carga,lacteos_dia,rho de Spearman,0.0482,0.0482,0.2681,529,0.8652,Doble carga (trabaja y cuida),Lácteos al día
+doble_carga,jugos_gaseosas_dia,rho de Spearman,0.0254,0.0254,0.5600,529,0.9447,Doble carga (trabaja y cuida),Jugos y gaseosas al día
+doble_carga,pescado_semana,rho de Spearman,0.0147,0.0147,0.7365,529,0.9918,Doble carga (trabaja y cuida),Pescado a la semana
+doble_carga,legumbres_semana,rho de Spearman,0.0301,0.0301,0.4894,529,0.9411,Doble carga (trabaja y cuida),Legumbres a la semana
+doble_carga,carnes_semana,rho de Spearman,0.0071,0.0071,0.8708,529,0.9974,Doble carga (trabaja y cuida),Carnes a la semana
+doble_carga,golosinas_semana,rho de Spearman,-0.0063,0.0063,0.8850,529,0.9974,Doble carga (trabaja y cuida),Dulces y snacks a la semana
+doble_carga,tabaco_frecuencia,rho de Spearman,-0.0699,0.0699,0.1084,529,0.7049,Doble carga (trabaja y cuida),Tabaco
+doble_carga,alcohol_frecuencia,rho de Spearman,-0.0598,0.0598,0.1696,529,0.8273,Doble carga (trabaja y cuida),Alcohol
+dias_ejercicio_semana,frecuencia_aerobico,rho de Spearman,0.5116,0.5116,0.0000,529,0.0000,Días de ejercicio a la semana,Frecuencia de ejercicio aeróbico
+dias_ejercicio_semana,frecuencia_bajo_impacto,rho de Spearman,0.6353,0.6353,0.0000,529,0.0000,Días de ejercicio a la semana,Frecuencia de ejercicio de bajo impacto
+dias_ejercicio_semana,frecuencia_fuerza,rho de Spearman,0.4242,0.4242,0.0000,529,0.0000,Días de ejercicio a la semana,Frecuencia de ejercicio de fuerza
+dias_ejercicio_semana,horas_sedentarismo,rho de Spearman,-0.0090,0.0090,0.8367,529,0.9974,Días de ejercicio a la semana,Horas sentada al día
+dias_ejercicio_semana,quien_prepara_comidas,eta (rangos),0.0702,0.0702,0.6270,529,0.9721,Días de ejercicio a la semana,Quién prepara las comidas
+dias_ejercicio_semana,frecuencia_comida_fuera,rho de Spearman,-0.0126,0.0126,0.7731,529,0.9974,Días de ejercicio a la semana,Comidas fuera del hogar
+dias_ejercicio_semana,falta_tiempo_influye,rho de Spearman,-0.0496,0.0496,0.2550,529,0.8652,Días de ejercicio a la semana,Falta de tiempo influye en lo que come
+dias_ejercicio_semana,vasos_agua_dia,rho de Spearman,0.2376,0.2376,0.0000,529,0.0000,Días de ejercicio a la semana,Vasos de agua al día
+dias_ejercicio_semana,platos_verduras_dia,rho de Spearman,0.0117,0.0117,0.7891,529,0.9974,Días de ejercicio a la semana,Platos de verduras al día
+dias_ejercicio_semana,frutas_dia,rho de Spearman,-0.0623,0.0623,0.1522,529,0.7923,Días de ejercicio a la semana,Frutas al día
+dias_ejercicio_semana,panes_dia,rho de Spearman,-0.0623,0.0623,0.1522,529,0.7923,Días de ejercicio a la semana,Panes al día
+dias_ejercicio_semana,lacteos_dia,rho de Spearman,0.0172,0.0172,0.6931,529,0.9792,Días de ejercicio a la semana,Lácteos al día
+dias_ejercicio_semana,jugos_gaseosas_dia,rho de Spearman,-0.0251,0.0251,0.5641,529,0.9475,Días de ejercicio a la semana,Jugos y gaseosas al día
+dias_ejercicio_semana,pescado_semana,rho de Spearman,-0.0406,0.0406,0.3513,529,0.9015,Días de ejercicio a la semana,Pescado a la semana
+dias_ejercicio_semana,legumbres_semana,rho de Spearman,-0.0124,0.0124,0.7762,529,0.9974,Días de ejercicio a la semana,Legumbres a la semana
+dias_ejercicio_semana,carnes_semana,rho de Spearman,0.0554,0.0554,0.2034,529,0.8443,Días de ejercicio a la semana,Carnes a la semana
+dias_ejercicio_semana,golosinas_semana,rho de Spearman,0.0068,0.0068,0.8763,529,0.9974,Días de ejercicio a la semana,Dulces y snacks a la semana
+dias_ejercicio_semana,tabaco_frecuencia,rho de Spearman,0.0518,0.0518,0.2342,529,0.8652,Días de ejercicio a la semana,Tabaco
+dias_ejercicio_semana,alcohol_frecuencia,rho de Spearman,0.0226,0.0226,0.6041,529,0.9616,Días de ejercicio a la semana,Alcohol
+frecuencia_aerobico,frecuencia_bajo_impacto,rho de Spearman,0.2970,0.2970,0.0000,529,0.0000,Frecuencia de ejercicio aeróbico,Frecuencia de ejercicio de bajo impacto
+frecuencia_aerobico,frecuencia_fuerza,rho de Spearman,0.2857,0.2857,0.0000,529,0.0000,Frecuencia de ejercicio aeróbico,Frecuencia de ejercicio de fuerza
+frecuencia_aerobico,horas_sedentarismo,rho de Spearman,0.0383,0.0383,0.3797,529,0.9304,Frecuencia de ejercicio aeróbico,Horas sentada al día
+frecuencia_aerobico,quien_prepara_comidas,eta (rangos),0.0432,0.0432,0.9120,529,0.9974,Frecuencia de ejercicio aeróbico,Quién prepara las comidas
+frecuencia_aerobico,frecuencia_comida_fuera,rho de Spearman,-0.0097,0.0097,0.8237,529,0.9974,Frecuencia de ejercicio aeróbico,Comidas fuera del hogar
+frecuencia_aerobico,falta_tiempo_influye,rho de Spearman,-0.0143,0.0143,0.7426,529,0.9918,Frecuencia de ejercicio aeróbico,Falta de tiempo influye en lo que come
+frecuencia_aerobico,vasos_agua_dia,rho de Spearman,0.1488,0.1488,0.0006,529,0.0170,Frecuencia de ejercicio aeróbico,Vasos de agua al día
+frecuencia_aerobico,platos_verduras_dia,rho de Spearman,0.0262,0.0262,0.5481,529,0.9447,Frecuencia de ejercicio aeróbico,Platos de verduras al día
+frecuencia_aerobico,frutas_dia,rho de Spearman,-0.0265,0.0265,0.5431,529,0.9447,Frecuencia de ejercicio aeróbico,Frutas al día
+frecuencia_aerobico,panes_dia,rho de Spearman,-0.0005,0.0005,0.9915,529,0.9995,Frecuencia de ejercicio aeróbico,Panes al día
+frecuencia_aerobico,lacteos_dia,rho de Spearman,-0.0012,0.0012,0.9783,529,0.9995,Frecuencia de ejercicio aeróbico,Lácteos al día
+frecuencia_aerobico,jugos_gaseosas_dia,rho de Spearman,-0.0100,0.0100,0.8179,529,0.9974,Frecuencia de ejercicio aeróbico,Jugos y gaseosas al día
+frecuencia_aerobico,pescado_semana,rho de Spearman,-0.0227,0.0227,0.6020,529,0.9616,Frecuencia de ejercicio aeróbico,Pescado a la semana
+frecuencia_aerobico,legumbres_semana,rho de Spearman,0.0116,0.0116,0.7902,529,0.9974,Frecuencia de ejercicio aeróbico,Legumbres a la semana
+frecuencia_aerobico,carnes_semana,rho de Spearman,0.0741,0.0741,0.0885,529,0.6833,Frecuencia de ejercicio aeróbico,Carnes a la semana
+frecuencia_aerobico,golosinas_semana,rho de Spearman,-0.0047,0.0047,0.9138,529,0.9974,Frecuencia de ejercicio aeróbico,Dulces y snacks a la semana
+frecuencia_aerobico,tabaco_frecuencia,rho de Spearman,-0.0051,0.0051,0.9066,529,0.9974,Frecuencia de ejercicio aeróbico,Tabaco
+frecuencia_aerobico,alcohol_frecuencia,rho de Spearman,0.0270,0.0270,0.5360,529,0.9447,Frecuencia de ejercicio aeróbico,Alcohol
+frecuencia_bajo_impacto,frecuencia_fuerza,rho de Spearman,0.2090,0.2090,0.0000,529,0.0001,Frecuencia de ejercicio de bajo impacto,Frecuencia de ejercicio de fuerza
+frecuencia_bajo_impacto,horas_sedentarismo,rho de Spearman,-0.0046,0.0046,0.9158,529,0.9974,Frecuencia de ejercicio de bajo impacto,Horas sentada al día
+frecuencia_bajo_impacto,quien_prepara_comidas,eta (rangos),0.0379,0.0379,0.9439,529,0.9974,Frecuencia de ejercicio de bajo impacto,Quién prepara las comidas
+frecuencia_bajo_impacto,frecuencia_comida_fuera,rho de Spearman,-0.0441,0.0441,0.3109,529,0.8994,Frecuencia de ejercicio de bajo impacto,Comidas fuera del hogar
+frecuencia_bajo_impacto,falta_tiempo_influye,rho de Spearman,-0.0334,0.0334,0.4433,529,0.9304,Frecuencia de ejercicio de bajo impacto,Falta de tiempo influye en lo que come
+frecuencia_bajo_impacto,vasos_agua_dia,rho de Spearman,0.1989,0.1989,0.0000,529,0.0002,Frecuencia de ejercicio de bajo impacto,Vasos de agua al día
+frecuencia_bajo_impacto,platos_verduras_dia,rho de Spearman,-0.0070,0.0070,0.8726,529,0.9974,Frecuencia de ejercicio de bajo impacto,Platos de verduras al día
+frecuencia_bajo_impacto,frutas_dia,rho de Spearman,-0.0169,0.0169,0.6978,529,0.9792,Frecuencia de ejercicio de bajo impacto,Frutas al día
+frecuencia_bajo_impacto,panes_dia,rho de Spearman,-0.0538,0.0538,0.2171,529,0.8504,Frecuencia de ejercicio de bajo impacto,Panes al día
+frecuencia_bajo_impacto,lacteos_dia,rho de Spearman,0.0347,0.0347,0.4264,529,0.9304,Frecuencia de ejercicio de bajo impacto,Lácteos al día
+frecuencia_bajo_impacto,jugos_gaseosas_dia,rho de Spearman,-0.0194,0.0194,0.6561,529,0.9792,Frecuencia de ejercicio de bajo impacto,Jugos y gaseosas al día
+frecuencia_bajo_impacto,pescado_semana,rho de Spearman,-0.0145,0.0145,0.7392,529,0.9918,Frecuencia de ejercicio de bajo impacto,Pescado a la semana
+frecuencia_bajo_impacto,legumbres_semana,rho de Spearman,-0.0110,0.0110,0.8009,529,0.9974,Frecuencia de ejercicio de bajo impacto,Legumbres a la semana
+frecuencia_bajo_impacto,carnes_semana,rho de Spearman,-0.0360,0.0360,0.4085,529,0.9304,Frecuencia de ejercicio de bajo impacto,Carnes a la semana
+frecuencia_bajo_impacto,golosinas_semana,rho de Spearman,-0.0007,0.0007,0.9871,529,0.9995,Frecuencia de ejercicio de bajo impacto,Dulces y snacks a la semana
+frecuencia_bajo_impacto,tabaco_frecuencia,rho de Spearman,0.0413,0.0413,0.3433,529,0.8994,Frecuencia de ejercicio de bajo impacto,Tabaco
+frecuencia_bajo_impacto,alcohol_frecuencia,rho de Spearman,-0.0518,0.0518,0.2343,529,0.8652,Frecuencia de ejercicio de bajo impacto,Alcohol
+frecuencia_fuerza,horas_sedentarismo,rho de Spearman,0.0185,0.0185,0.6708,529,0.9792,Frecuencia de ejercicio de fuerza,Horas sentada al día
+frecuencia_fuerza,quien_prepara_comidas,eta (rangos),0.0644,0.0644,0.7007,529,0.9792,Frecuencia de ejercicio de fuerza,Quién prepara las comidas
+frecuencia_fuerza,frecuencia_comida_fuera,rho de Spearman,0.0656,0.0656,0.1316,529,0.7496,Frecuencia de ejercicio de fuerza,Comidas fuera del hogar
+frecuencia_fuerza,falta_tiempo_influye,rho de Spearman,-0.0240,0.0240,0.5814,529,0.9511,Frecuencia de ejercicio de fuerza,Falta de tiempo influye en lo que come
+frecuencia_fuerza,vasos_agua_dia,rho de Spearman,0.0588,0.0588,0.1765,529,0.8273,Frecuencia de ejercicio de fuerza,Vasos de agua al día
+frecuencia_fuerza,platos_verduras_dia,rho de Spearman,0.0219,0.0219,0.6159,529,0.9721,Frecuencia de ejercicio de fuerza,Platos de verduras al día
+frecuencia_fuerza,frutas_dia,rho de Spearman,0.0000,0.0000,0.9995,529,0.9995,Frecuencia de ejercicio de fuerza,Frutas al día
+frecuencia_fuerza,panes_dia,rho de Spearman,-0.0557,0.0557,0.2007,529,0.8443,Frecuencia de ejercicio de fuerza,Panes al día
+frecuencia_fuerza,lacteos_dia,rho de Spearman,0.0417,0.0417,0.3386,529,0.8994,Frecuencia de ejercicio de fuerza,Lácteos al día
+frecuencia_fuerza,jugos_gaseosas_dia,rho de Spearman,0.0457,0.0457,0.2944,529,0.8881,Frecuencia de ejercicio de fuerza,Jugos y gaseosas al día
+frecuencia_fuerza,pescado_semana,rho de Spearman,-0.0556,0.0556,0.2019,529,0.8443,Frecuencia de ejercicio de fuerza,Pescado a la semana
+frecuencia_fuerza,legumbres_semana,rho de Spearman,-0.0188,0.0188,0.6660,529,0.9792,Frecuencia de ejercicio de fuerza,Legumbres a la semana
+frecuencia_fuerza,carnes_semana,rho de Spearman,0.0947,0.0947,0.0294,529,0.4025,Frecuencia de ejercicio de fuerza,Carnes a la semana
+frecuencia_fuerza,golosinas_semana,rho de Spearman,0.0166,0.0166,0.7028,529,0.9792,Frecuencia de ejercicio de fuerza,Dulces y snacks a la semana
+frecuencia_fuerza,tabaco_frecuencia,rho de Spearman,0.0056,0.0056,0.8975,529,0.9974,Frecuencia de ejercicio de fuerza,Tabaco
+frecuencia_fuerza,alcohol_frecuencia,rho de Spearman,-0.0341,0.0341,0.4339,529,0.9304,Frecuencia de ejercicio de fuerza,Alcohol
+horas_sedentarismo,quien_prepara_comidas,eta (rangos),0.1214,0.1214,0.1000,529,0.7008,Horas sentada al día,Quién prepara las comidas
+horas_sedentarismo,frecuencia_comida_fuera,rho de Spearman,-0.0013,0.0013,0.9766,529,0.9995,Horas sentada al día,Comidas fuera del hogar
+horas_sedentarismo,falta_tiempo_influye,rho de Spearman,0.0773,0.0773,0.0756,529,0.6627,Horas sentada al día,Falta de tiempo influye en lo que come
+horas_sedentarismo,vasos_agua_dia,rho de Spearman,-0.0372,0.0372,0.3933,529,0.9304,Horas sentada al día,Vasos de agua al día
+horas_sedentarismo,platos_verduras_dia,rho de Spearman,0.0683,0.0683,0.1164,529,0.7049,Horas sentada al día,Platos de verduras al día
+horas_sedentarismo,frutas_dia,rho de Spearman,0.0108,0.0108,0.8042,529,0.9974,Horas sentada al día,Frutas al día
+horas_sedentarismo,panes_dia,rho de Spearman,-0.0360,0.0360,0.4080,529,0.9304,Horas sentada al día,Panes al día
+horas_sedentarismo,lacteos_dia,rho de Spearman,0.0195,0.0195,0.6553,529,0.9792,Horas sentada al día,Lácteos al día
+horas_sedentarismo,jugos_gaseosas_dia,rho de Spearman,0.0125,0.0125,0.7747,529,0.9974,Horas sentada al día,Jugos y gaseosas al día
+horas_sedentarismo,pescado_semana,rho de Spearman,-0.0359,0.0359,0.4104,529,0.9304,Horas sentada al día,Pescado a la semana
+horas_sedentarismo,legumbres_semana,rho de Spearman,-0.0453,0.0453,0.2983,529,0.8927,Horas sentada al día,Legumbres a la semana
+horas_sedentarismo,carnes_semana,rho de Spearman,0.1033,0.1033,0.0175,529,0.3137,Horas sentada al día,Carnes a la semana
+horas_sedentarismo,golosinas_semana,rho de Spearman,-0.0857,0.0857,0.0488,529,0.5012,Horas sentada al día,Dulces y snacks a la semana
+horas_sedentarismo,tabaco_frecuencia,rho de Spearman,0.0050,0.0050,0.9084,529,0.9974,Horas sentada al día,Tabaco
+horas_sedentarismo,alcohol_frecuencia,rho de Spearman,-0.0628,0.0628,0.1494,529,0.7923,Horas sentada al día,Alcohol
+quien_prepara_comidas,frecuencia_comida_fuera,eta (rangos),0.0940,0.0940,0.3230,529,0.8994,Quién prepara las comidas,Comidas fuera del hogar
+quien_prepara_comidas,falta_tiempo_influye,eta (rangos),0.0472,0.0472,0.8819,529,0.9974,Quién prepara las comidas,Falta de tiempo influye en lo que come
+quien_prepara_comidas,vasos_agua_dia,eta (rangos),0.0968,0.0968,0.2930,529,0.8874,Quién prepara las comidas,Vasos de agua al día
+quien_prepara_comidas,platos_verduras_dia,eta (rangos),0.1004,0.1004,0.2554,529,0.8652,Quién prepara las comidas,Platos de verduras al día
+quien_prepara_comidas,frutas_dia,eta (rangos),0.0706,0.0706,0.6212,529,0.9721,Quién prepara las comidas,Frutas al día
+quien_prepara_comidas,panes_dia,eta (rangos),0.0464,0.0464,0.8883,529,0.9974,Quién prepara las comidas,Panes al día
+quien_prepara_comidas,lacteos_dia,eta (rangos),0.0895,0.0895,0.3759,529,0.9304,Quién prepara las comidas,Lácteos al día
+quien_prepara_comidas,jugos_gaseosas_dia,eta (rangos),0.1100,0.1100,0.1722,529,0.8273,Quién prepara las comidas,Jugos y gaseosas al día
+quien_prepara_comidas,pescado_semana,eta (rangos),0.1226,0.1226,0.0940,529,0.6906,Quién prepara las comidas,Pescado a la semana
+quien_prepara_comidas,legumbres_semana,eta (rangos),0.0855,0.0855,0.4249,529,0.9304,Quién prepara las comidas,Legumbres a la semana
+quien_prepara_comidas,carnes_semana,eta (rangos),0.0471,0.0471,0.8828,529,0.9974,Quién prepara las comidas,Carnes a la semana
+quien_prepara_comidas,golosinas_semana,eta (rangos),0.1499,0.1499,0.0184,529,0.3137,Quién prepara las comidas,Dulces y snacks a la semana
+quien_prepara_comidas,tabaco_frecuencia,eta (rangos),0.0936,0.0936,0.3278,529,0.8994,Quién prepara las comidas,Tabaco
+quien_prepara_comidas,alcohol_frecuencia,eta (rangos),0.0668,0.0668,0.6711,529,0.9792,Quién prepara las comidas,Alcohol
+frecuencia_comida_fuera,falta_tiempo_influye,rho de Spearman,0.0606,0.0606,0.1639,529,0.8273,Comidas fuera del hogar,Falta de tiempo influye en lo que come
+frecuencia_comida_fuera,vasos_agua_dia,rho de Spearman,-0.0531,0.0531,0.2229,529,0.8504,Comidas fuera del hogar,Vasos de agua al día
+frecuencia_comida_fuera,platos_verduras_dia,rho de Spearman,0.0306,0.0306,0.4823,529,0.9411,Comidas fuera del hogar,Platos de verduras al día
+frecuencia_comida_fuera,frutas_dia,rho de Spearman,-0.0909,0.0909,0.0367,529,0.4447,Comidas fuera del hogar,Frutas al día
+frecuencia_comida_fuera,panes_dia,rho de Spearman,0.0226,0.0226,0.6034,529,0.9616,Comidas fuera del hogar,Panes al día
+frecuencia_comida_fuera,lacteos_dia,rho de Spearman,0.0239,0.0239,0.5835,529,0.9511,Comidas fuera del hogar,Lácteos al día
+frecuencia_comida_fuera,jugos_gaseosas_dia,rho de Spearman,0.0293,0.0293,0.5007,529,0.9411,Comidas fuera del hogar,Jugos y gaseosas al día
+frecuencia_comida_fuera,pescado_semana,rho de Spearman,-0.0334,0.0334,0.4439,529,0.9304,Comidas fuera del hogar,Pescado a la semana
+frecuencia_comida_fuera,legumbres_semana,rho de Spearman,0.0342,0.0342,0.4318,529,0.9304,Comidas fuera del hogar,Legumbres a la semana
+frecuencia_comida_fuera,carnes_semana,rho de Spearman,0.0084,0.0084,0.8463,529,0.9974,Comidas fuera del hogar,Carnes a la semana
+frecuencia_comida_fuera,golosinas_semana,rho de Spearman,-0.0568,0.0568,0.1919,529,0.8393,Comidas fuera del hogar,Dulces y snacks a la semana
+frecuencia_comida_fuera,tabaco_frecuencia,rho de Spearman,-0.0043,0.0043,0.9212,529,0.9974,Comidas fuera del hogar,Tabaco
+frecuencia_comida_fuera,alcohol_frecuencia,rho de Spearman,0.0140,0.0140,0.7483,529,0.9918,Comidas fuera del hogar,Alcohol
+falta_tiempo_influye,vasos_agua_dia,rho de Spearman,-0.0036,0.0036,0.9333,529,0.9974,Falta de tiempo influye en lo que come,Vasos de agua al día
+falta_tiempo_influye,platos_verduras_dia,rho de Spearman,0.0289,0.0289,0.5068,529,0.9411,Falta de tiempo influye en lo que come,Platos de verduras al día
+falta_tiempo_influye,frutas_dia,rho de Spearman,0.0293,0.0293,0.5008,529,0.9411,Falta de tiempo influye en lo que come,Frutas al día
+falta_tiempo_influye,panes_dia,rho de Spearman,-0.0042,0.0042,0.9235,529,0.9974,Falta de tiempo influye en lo que come,Panes al día
+falta_tiempo_influye,lacteos_dia,rho de Spearman,-0.0164,0.0164,0.7061,529,0.9792,Falta de tiempo influye en lo que come,Lácteos al día
+falta_tiempo_influye,jugos_gaseosas_dia,rho de Spearman,0.0271,0.0271,0.5332,529,0.9447,Falta de tiempo influye en lo que come,Jugos y gaseosas al día
+falta_tiempo_influye,pescado_semana,rho de Spearman,0.0129,0.0129,0.7675,529,0.9974,Falta de tiempo influye en lo que come,Pescado a la semana
+falta_tiempo_influye,legumbres_semana,rho de Spearman,0.0036,0.0036,0.9338,529,0.9974,Falta de tiempo influye en lo que come,Legumbres a la semana
+falta_tiempo_influye,carnes_semana,rho de Spearman,0.0330,0.0330,0.4495,529,0.9304,Falta de tiempo influye en lo que come,Carnes a la semana
+falta_tiempo_influye,golosinas_semana,rho de Spearman,-0.0434,0.0434,0.3186,529,0.8994,Falta de tiempo influye en lo que come,Dulces y snacks a la semana
+falta_tiempo_influye,tabaco_frecuencia,rho de Spearman,-0.0400,0.0400,0.3587,529,0.9139,Falta de tiempo influye en lo que come,Tabaco
+falta_tiempo_influye,alcohol_frecuencia,rho de Spearman,-0.0211,0.0211,0.6275,529,0.9721,Falta de tiempo influye en lo que come,Alcohol
+vasos_agua_dia,platos_verduras_dia,rho de Spearman,0.1153,0.1153,0.0080,529,0.1760,Vasos de agua al día,Platos de verduras al día
+vasos_agua_dia,frutas_dia,rho de Spearman,0.0380,0.0380,0.3832,529,0.9304,Vasos de agua al día,Frutas al día
+vasos_agua_dia,panes_dia,rho de Spearman,-0.0148,0.0148,0.7335,529,0.9918,Vasos de agua al día,Panes al día
+vasos_agua_dia,lacteos_dia,rho de Spearman,0.0659,0.0659,0.1301,529,0.7496,Vasos de agua al día,Lácteos al día
+vasos_agua_dia,jugos_gaseosas_dia,rho de Spearman,0.0045,0.0045,0.9169,529,0.9974,Vasos de agua al día,Jugos y gaseosas al día
+vasos_agua_dia,pescado_semana,rho de Spearman,-0.0287,0.0287,0.5094,529,0.9411,Vasos de agua al día,Pescado a la semana
+vasos_agua_dia,legumbres_semana,rho de Spearman,-0.0424,0.0424,0.3302,529,0.8994,Vasos de agua al día,Legumbres a la semana
+vasos_agua_dia,carnes_semana,rho de Spearman,-0.0745,0.0745,0.0870,529,0.6833,Vasos de agua al día,Carnes a la semana
+vasos_agua_dia,golosinas_semana,rho de Spearman,-0.0123,0.0123,0.7773,529,0.9974,Vasos de agua al día,Dulces y snacks a la semana
+vasos_agua_dia,tabaco_frecuencia,rho de Spearman,-0.0262,0.0262,0.5479,529,0.9447,Vasos de agua al día,Tabaco
+vasos_agua_dia,alcohol_frecuencia,rho de Spearman,-0.0112,0.0112,0.7967,529,0.9974,Vasos de agua al día,Alcohol
+platos_verduras_dia,frutas_dia,rho de Spearman,0.1681,0.1681,0.0001,529,0.0036,Platos de verduras al día,Frutas al día
+platos_verduras_dia,panes_dia,rho de Spearman,-0.0726,0.0726,0.0953,529,0.6906,Platos de verduras al día,Panes al día
+platos_verduras_dia,lacteos_dia,rho de Spearman,-0.0310,0.0310,0.4766,529,0.9411,Platos de verduras al día,Lácteos al día
+platos_verduras_dia,jugos_gaseosas_dia,rho de Spearman,0.0370,0.0370,0.3960,529,0.9304,Platos de verduras al día,Jugos y gaseosas al día
+platos_verduras_dia,pescado_semana,rho de Spearman,0.0154,0.0154,0.7244,529,0.9918,Platos de verduras al día,Pescado a la semana
+platos_verduras_dia,legumbres_semana,rho de Spearman,-0.0253,0.0253,0.5608,529,0.9447,Platos de verduras al día,Legumbres a la semana
+platos_verduras_dia,carnes_semana,rho de Spearman,0.0050,0.0050,0.9091,529,0.9974,Platos de verduras al día,Carnes a la semana
+platos_verduras_dia,golosinas_semana,rho de Spearman,-0.0805,0.0805,0.0643,529,0.5937,Platos de verduras al día,Dulces y snacks a la semana
+platos_verduras_dia,tabaco_frecuencia,rho de Spearman,0.0330,0.0330,0.4484,529,0.9304,Platos de verduras al día,Tabaco
+platos_verduras_dia,alcohol_frecuencia,rho de Spearman,-0.0981,0.0981,0.0240,529,0.3553,Platos de verduras al día,Alcohol
+frutas_dia,panes_dia,rho de Spearman,-0.0685,0.0685,0.1155,529,0.7049,Frutas al día,Panes al día
+frutas_dia,lacteos_dia,rho de Spearman,0.0100,0.0100,0.8181,529,0.9974,Frutas al día,Lácteos al día
+frutas_dia,jugos_gaseosas_dia,rho de Spearman,-0.0470,0.0470,0.2805,529,0.8718,Frutas al día,Jugos y gaseosas al día
+frutas_dia,pescado_semana,rho de Spearman,-0.0814,0.0814,0.0613,529,0.5806,Frutas al día,Pescado a la semana
+frutas_dia,legumbres_semana,rho de Spearman,-0.0106,0.0106,0.8083,529,0.9974,Frutas al día,Legumbres a la semana
+frutas_dia,carnes_semana,rho de Spearman,0.0200,0.0200,0.6470,529,0.9792,Frutas al día,Carnes a la semana
+frutas_dia,golosinas_semana,rho de Spearman,0.0152,0.0152,0.7280,529,0.9918,Frutas al día,Dulces y snacks a la semana
+frutas_dia,tabaco_frecuencia,rho de Spearman,0.0772,0.0772,0.0762,529,0.6627,Frutas al día,Tabaco
+frutas_dia,alcohol_frecuencia,rho de Spearman,-0.0418,0.0418,0.3370,529,0.8994,Frutas al día,Alcohol
+panes_dia,lacteos_dia,rho de Spearman,-0.0268,0.0268,0.5379,529,0.9447,Panes al día,Lácteos al día
+panes_dia,jugos_gaseosas_dia,rho de Spearman,0.0538,0.0538,0.2167,529,0.8504,Panes al día,Jugos y gaseosas al día
+panes_dia,pescado_semana,rho de Spearman,0.0465,0.0465,0.2855,529,0.8754,Panes al día,Pescado a la semana
+panes_dia,legumbres_semana,rho de Spearman,0.0818,0.0818,0.0601,529,0.5771,Panes al día,Legumbres a la semana
+panes_dia,carnes_semana,rho de Spearman,-0.0014,0.0014,0.9735,529,0.9995,Panes al día,Carnes a la semana
+panes_dia,golosinas_semana,rho de Spearman,0.0192,0.0192,0.6591,529,0.9792,Panes al día,Dulces y snacks a la semana
+panes_dia,tabaco_frecuencia,rho de Spearman,0.0023,0.0023,0.9583,529,0.9974,Panes al día,Tabaco
+panes_dia,alcohol_frecuencia,rho de Spearman,0.0064,0.0064,0.8835,529,0.9974,Panes al día,Alcohol
+lacteos_dia,jugos_gaseosas_dia,rho de Spearman,0.0243,0.0243,0.5777,529,0.9511,Lácteos al día,Jugos y gaseosas al día
+lacteos_dia,pescado_semana,rho de Spearman,-0.0872,0.0872,0.0449,529,0.4881,Lácteos al día,Pescado a la semana
+lacteos_dia,legumbres_semana,rho de Spearman,-0.0191,0.0191,0.6608,529,0.9792,Lácteos al día,Legumbres a la semana
+lacteos_dia,carnes_semana,rho de Spearman,0.0178,0.0178,0.6825,529,0.9792,Lácteos al día,Carnes a la semana
+lacteos_dia,golosinas_semana,rho de Spearman,-0.0196,0.0196,0.6528,529,0.9792,Lácteos al día,Dulces y snacks a la semana
+lacteos_dia,tabaco_frecuencia,rho de Spearman,-0.0769,0.0769,0.0773,529,0.6640,Lácteos al día,Tabaco
+lacteos_dia,alcohol_frecuencia,rho de Spearman,0.0654,0.0654,0.1331,529,0.7496,Lácteos al día,Alcohol
+jugos_gaseosas_dia,pescado_semana,rho de Spearman,0.0925,0.0925,0.0334,529,0.4324,Jugos y gaseosas al día,Pescado a la semana
+jugos_gaseosas_dia,legumbres_semana,rho de Spearman,-0.0029,0.0029,0.9466,529,0.9974,Jugos y gaseosas al día,Legumbres a la semana
+jugos_gaseosas_dia,carnes_semana,rho de Spearman,0.0637,0.0637,0.1432,529,0.7725,Jugos y gaseosas al día,Carnes a la semana
+jugos_gaseosas_dia,golosinas_semana,rho de Spearman,0.0035,0.0035,0.9368,529,0.9974,Jugos y gaseosas al día,Dulces y snacks a la semana
+jugos_gaseosas_dia,tabaco_frecuencia,rho de Spearman,0.0807,0.0807,0.0637,529,0.5937,Jugos y gaseosas al día,Tabaco
+jugos_gaseosas_dia,alcohol_frecuencia,rho de Spearman,-0.0049,0.0049,0.9103,529,0.9974,Jugos y gaseosas al día,Alcohol
+pescado_semana,legumbres_semana,rho de Spearman,-0.0231,0.0231,0.5961,529,0.9598,Pescado a la semana,Legumbres a la semana
+pescado_semana,carnes_semana,rho de Spearman,0.0219,0.0219,0.6147,529,0.9721,Pescado a la semana,Carnes a la semana
+pescado_semana,golosinas_semana,rho de Spearman,0.0716,0.0716,0.0998,529,0.7008,Pescado a la semana,Dulces y snacks a la semana
+pescado_semana,tabaco_frecuencia,rho de Spearman,-0.0026,0.0026,0.9521,529,0.9974,Pescado a la semana,Tabaco
+pescado_semana,alcohol_frecuencia,rho de Spearman,-0.0296,0.0296,0.4967,529,0.9411,Pescado a la semana,Alcohol
+legumbres_semana,carnes_semana,rho de Spearman,0.0231,0.0231,0.5959,529,0.9598,Legumbres a la semana,Carnes a la semana
+legumbres_semana,golosinas_semana,rho de Spearman,0.0026,0.0026,0.9533,529,0.9974,Legumbres a la semana,Dulces y snacks a la semana
+legumbres_semana,tabaco_frecuencia,rho de Spearman,-0.0113,0.0113,0.7961,529,0.9974,Legumbres a la semana,Tabaco
+legumbres_semana,alcohol_frecuencia,rho de Spearman,0.0288,0.0288,0.5091,529,0.9411,Legumbres a la semana,Alcohol
+carnes_semana,golosinas_semana,rho de Spearman,-0.0046,0.0046,0.9168,529,0.9974,Carnes a la semana,Dulces y snacks a la semana
+carnes_semana,tabaco_frecuencia,rho de Spearman,-0.0240,0.0240,0.5815,529,0.9511,Carnes a la semana,Tabaco
+carnes_semana,alcohol_frecuencia,rho de Spearman,-0.0327,0.0327,0.4531,529,0.9304,Carnes a la semana,Alcohol
+golosinas_semana,tabaco_frecuencia,rho de Spearman,-0.0796,0.0796,0.0675,529,0.6159,Dulces y snacks a la semana,Tabaco
+golosinas_semana,alcohol_frecuencia,rho de Spearman,-0.0467,0.0467,0.2839,529,0.8754,Dulces y snacks a la semana,Alcohol
+tabaco_frecuencia,alcohol_frecuencia,rho de Spearman,0.1190,0.1190,0.0061,529,0.1459,Tabaco,Alcohol
