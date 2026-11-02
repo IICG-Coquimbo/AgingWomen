@@ -4,6 +4,8 @@ Generado por `analisis/eda_usuaria.py` el 2026-10-30. Volver a ejecutar el scrip
 regenera este informe, las figuras (`analisis/figuras/eda_usuaria/`) y las tablas
 (`analisis/resultados/usuaria/`).
 
+*Nota del 02-11-2026: este informe se corrigió a mano y el análisis no se volvió a ejecutar; sus resultados son los del 30-10-2026. `etapa_menopausica` pasa de variable de control a descriptiva (decisión de la usuaria, 01-11-2026). Si se vuelve a ejecutar el script, estos textos deben revisarse.*
+
 Responde a la reunión con la profesora del 20 de octubre: el análisis se hace sobre el conjunto
 sintético de la usuaria común (Fase 34A, ronda 1, encuestas autoaplicadas), ya limpio (Fase 34B).
 El EDA del dataset de la profesora (`informe_eda.md`) queda como anexo.
@@ -16,8 +18,9 @@ El EDA del dataset de la profesora (`informe_eda.md`) queda como anexo.
   En 22 el dato "trabaja" vino vacío y la limpieza lo imputó con la moda ("sí"), por eso
   no tienen respondida la sección Trabajo.
 - **Variables incluidas:** actividad física, alimentación, sustancias, cuidado de otras personas y
-  trabajo (predictores); edad, etapa menopáusica, IMC, terapia hormonal, previsión de salud y
-  medicamentos para la diabetes (control); salud ginecológica (menstruación, sangrado, método
+  trabajo (predictores); edad, IMC, terapia hormonal, previsión de salud y
+  medicamentos para la diabetes (control); etapa menopáusica (descriptiva: variable derivada, no es
+  una pregunta de la encuesta); salud ginecológica (menstruación, sangrado, método
   anticonceptivo, útero, ovarios, operada para no tener más hijos) y medicamentos para la presión,
   evacuación intestinal y distensión abdominal; origen, pueblo originario, comuna, pareja y
   actividad sexual (otras características).
@@ -124,7 +127,7 @@ pregunta: ¿esta variable se reparte distinto en los dos grupos?
 - Que una variable **no** difiera entre los grupos es un resultado normal y esperado: solo dice que
   trabajar no cambia esa respuesta.
 
-### 3.1 Variables de control
+### 3.1 Variables de control y etapa menopáusica (descriptiva)
 
 **Figura 4. Edad**
 
@@ -139,6 +142,8 @@ pregunta: ¿esta variable se reparte distinto en los dos grupos?
 ![Etapa menopáusica](figuras/eda_usuaria/frecuencias/etapa_menopausica.png)
 
 *n trabaja = 320 · n no trabaja = 226 · trabaja vs. no trabaja, chi²: V = 0.14, p ajustado = 0.403*
+
+**Variable descriptiva.** La etapa menopáusica es una variable derivada, no una pregunta de la encuesta; su regla es una aproximación propia, aún sin validar. Sus resultados son hallazgos exploratorios en el conjunto sintético de usuarias, limitados por esa clasificación, y no son evidencia causal. No entra al modelado.
 
 **Qué interpretar.** V = 0.14: diferencia pequeña; p ajustado = 0.403 (0,05 o más). Quienes trabajan y quienes no responden de forma parecida: las diferencias que se ven entre las barras pueden ser azar. No dice nada sobre la relación con los síntomas.
 
@@ -892,7 +897,7 @@ la severidad: una prueba por variable.
 
 | Bloque | Pruebas |
 |---|---|
-| Variables de control | 8 |
+| Variables de control y etapa menopáusica (descriptiva) | 8 |
 | Actividad física | 5 |
 | Alimentación (contexto) | 3 |
 | Alimentación (consumo) | 11 |
@@ -946,7 +951,7 @@ aparecen por azar al probar muchas variables.
 
 **Por qué hay dos familias de pruebas.** Como el número total de pruebas multiplica al p, mientras más
 pruebas entran en la misma corrección, más exigente se vuelve. A las 41 pruebas principales
-(hábitos, trabajo, cuidado, control y otras características) se suman 10 pruebas de
+(hábitos, trabajo, cuidado, control, etapa menopáusica y otras características) se suman 10 pruebas de
 salud ginecológica y general, que responden otra pregunta: si la severidad depende de la situación
 ginecológica o de otros problemas de salud.
 Si se corrigieran todas juntas, estas variables dejarían de ser significativas aunque sus datos
@@ -1158,7 +1163,8 @@ variables por entropía.
 - Si la clase severa (cerca de la mitad) es aceptable o conviene revisar los cortes para el modelado.
 - Si comuna, origen y pueblo originario se mantienen: tienen muchas categorías con pocos casos.
 - La definición de etapa menopáusica (STRAW+10 simplificado) es nuestra: se mantiene como variable
-  de control (decisión 2026-10-26), pero conviene que la profesora la valide.
+  descriptiva y fuera del modelado (decisión 2026-11-01, reemplaza la del 2026-10-26), pero conviene que la
+  profesora la valide. Su relación con la severidad en el conjunto sintético de usuarias (p ajustado = 0.310) es un resultado exploratorio, no causal.
 
 ## Anexo A. Dirección de las variables no significativas
 

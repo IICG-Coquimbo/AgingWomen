@@ -11,18 +11,18 @@ Variables de control,edad,55-59,Trabaja,40,12.50000
 Variables de control,edad,55-59,No trabaja,43,19.02655
 Variables de control,edad,60-65,Trabaja,48,15.00000
 Variables de control,edad,60-65,No trabaja,48,21.23894
-Variables de control,etapa_menopausica,premenopausia,Trabaja,65,20.31250
-Variables de control,etapa_menopausica,premenopausia,No trabaja,35,15.48673
-Variables de control,etapa_menopausica,perimenopausia,Trabaja,50,15.62500
-Variables de control,etapa_menopausica,perimenopausia,No trabaja,32,14.15929
-Variables de control,etapa_menopausica,posmenopausia,Trabaja,178,55.62500
-Variables de control,etapa_menopausica,posmenopausia,No trabaja,145,64.15929
-Variables de control,etapa_menopausica,quirurgica,Trabaja,9,2.81250
-Variables de control,etapa_menopausica,quirurgica,No trabaja,10,4.42478
-Variables de control,etapa_menopausica,indeterminada,Trabaja,17,5.31250
-Variables de control,etapa_menopausica,indeterminada,No trabaja,3,1.32743
-Variables de control,etapa_menopausica,indeterminada (histerectomía),Trabaja,1,0.31250
-Variables de control,etapa_menopausica,indeterminada (histerectomía),No trabaja,1,0.44248
+descriptiva,etapa_menopausica,premenopausia,Trabaja,65,20.31250
+descriptiva,etapa_menopausica,premenopausia,No trabaja,35,15.48673
+descriptiva,etapa_menopausica,perimenopausia,Trabaja,50,15.62500
+descriptiva,etapa_menopausica,perimenopausia,No trabaja,32,14.15929
+descriptiva,etapa_menopausica,posmenopausia,Trabaja,178,55.62500
+descriptiva,etapa_menopausica,posmenopausia,No trabaja,145,64.15929
+descriptiva,etapa_menopausica,quirurgica,Trabaja,9,2.81250
+descriptiva,etapa_menopausica,quirurgica,No trabaja,10,4.42478
+descriptiva,etapa_menopausica,indeterminada,Trabaja,17,5.31250
+descriptiva,etapa_menopausica,indeterminada,No trabaja,3,1.32743
+descriptiva,etapa_menopausica,indeterminada (histerectomía),Trabaja,1,0.31250
+descriptiva,etapa_menopausica,indeterminada (histerectomía),No trabaja,1,0.44248
 Variables de control,imc_categoria,bajo peso,Trabaja,2,0.62500
 Variables de control,imc_categoria,bajo peso,No trabaja,0,0.00000
 Variables de control,imc_categoria,normal,Trabaja,36,11.25000

@@ -1,6 +1,6 @@
 ﻿variable,n,categoria_dominante,pct_dominante,poca_variacion,prueba,efecto,medida,p,p_ajustado,bloque,etiqueta
 edad,546,,6.22711,False,Mann-Whitney,-0.10998,r,0.02839,0.28574,Variables de control,Edad
-etapa_menopausica,546,posmenopausia,59.15751,False,chi²,0.13733,V,0.06723,0.40340,Variables de control,Etapa menopáusica
+etapa_menopausica,546,posmenopausia,59.15751,False,chi²,0.13733,V,0.06723,0.40340,descriptiva,Etapa menopáusica
 imc_categoria,546,no informado,49.26740,False,chi²,0.08944,V,0.35856,0.72806,Variables de control,IMC (categoría)
 imc,277,,2.16606,False,Mann-Whitney,-0.03911,r,0.57624,0.80919,Variables de control,IMC
 peso_kg,290,,1.37931,False,Mann-Whitney,-0.02218,r,0.74569,0.93904,Variables de control,Peso (kg)

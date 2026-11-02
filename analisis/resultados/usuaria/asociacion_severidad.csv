@@ -15,7 +15,7 @@ falta_tiempo_influye,predictor,529,Spearman,0.08853,rho,0.04181,0.13187,principa
 frecuencia_fuerza,predictor,529,Spearman,-0.08432,rho,0.05260,0.15403,principal,Frecuencia de ejercicio de fuerza
 marihuana_frecuencia,predictor,529,Spearman,0.08149,rho,0.06107,0.16692,principal,Marihuana
 sobrecarga_fisica_emocional,predictor,529,Spearman,0.06916,rho,0.11211,0.28728,principal,Sobrecarga por trabajo y cuidado
-etapa_menopausica,control,527,Kruskal-Wallis,0.00603,ε²,0.12841,0.30969,principal,Etapa menopáusica
+etapa_menopausica,descriptiva,527,Kruskal-Wallis,0.00603,ε²,0.12841,0.30969,principal,Etapa menopáusica
 tiene_pareja,otra,529,Spearman,-0.06256,rho,0.15077,0.32534,principal,Tiene pareja
 bebidas_energeticas_dia,predictor,529,Spearman,-0.06318,rho,0.14677,0.32534,principal,Bebidas energéticas al día
 quien_prepara_comidas,predictor,529,Kruskal-Wallis,0.00411,ε²,0.18792,0.38525,principal,Quién prepara las comidas
