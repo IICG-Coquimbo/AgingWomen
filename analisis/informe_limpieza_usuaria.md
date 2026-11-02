@@ -407,6 +407,11 @@ Todas las encuestas son autoaplicadas: los campos solo para personal de salud
   y `mrs_severidad` con los cortes de `MRS.SEVERIDAD_TOTAL` (confirmados por la profesora el 20-10).
 - `meses_desde_fum` y `etapa_menopausica` (STRAW+10 simplificado: ovario = NO → quirúrgica;
   ≥ 12 meses → posmenopausia; < 12 meses y regular → premenopausia; si no → perimenopausia).
+  **Nota metodológica sobre el conjunto sintético de usuarias (02-11-2026):** `etapa_menopausica` es una variable derivada, no una pregunta de la
+  encuesta. Su regla es una aproximación propia, basada en parte en el criterio de 12 meses de STRAW+10, y aún no
+  ha sido validada por la profesora. Se conserva en el conjunto limpio como variable descriptiva y no entra al
+  modelado (decisión de la usuaria, 01-11-2026). Las 22 indeterminadas no se imputan ni se eliminan. Esta nota se
+  agregó a mano: ni los datos ni la regla cambiaron.
 - `imc`, `imc_categoria` (OMS), `perdida_talla_cm`, `presion_elevada` (≥ 140/90),
   `doble_carga` (trabaja y cuida a otras personas).
 
@@ -439,7 +444,7 @@ MRS completo en 529 de 546 filas. Media del total: 16.4 ± 9.3 (somático 5.9, p
 
 ## 5. Decisiones que conviene validar con la profesora
 
-- La definición de etapa menopáusica (los cortes del MRS los confirmó el 20-10).
+- La definición de etapa menopáusica, aún sin validar (los cortes del MRS los confirmó el 20-10).
 - `cambio_relacion_pareja_menopausia` se trata como "no aplica" sin pareja (regla propia del
   análisis: la plataforma muestra la pregunta a todas).
 - Correcciones de unidad: talla en metros (×100) y presión en cmHg (×10).

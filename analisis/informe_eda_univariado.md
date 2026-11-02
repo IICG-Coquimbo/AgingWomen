@@ -136,6 +136,8 @@ Respuestas repartidas entre 2 categorías (entropía normalizada 0.98).
 
 Predomina «Posmenopausia» (59,2 %), sin llegar al 80 %.
 
+**Nota metodológica sobre el conjunto sintético de usuarias (02-11-2026).** `etapa_menopausica` es una variable derivada, no una pregunta de la encuesta. Su regla de clasificación es una aproximación propia, basada en parte en el criterio de 12 meses de STRAW+10, y aún no ha sido validada por la profesora. Se describe aquí, pero no entra al modelado.
+
 **Figura 9. Regularidad de la menstruación** (`menstruacion_llega`)
 
 ![Regularidad de la menstruación](figuras/eda_univariado/univariado_menstruacion_llega.png)
