@@ -37,21 +37,22 @@ def _figura(numero, archivo, titulo, pie):
 def generar(r):
     num = iter(range(1, 100))
     datos, pares, grupos, resumen = r['datos'], r['pares'], r['grupos'], r['resumen']
-    n_pred = len(r['predictoras'])
-    nominales = [v for v in r['predictoras'] if r['tipos'][v] == 'nominal']
+    n_expl = len(r['exploratorias'])
+    nominales = [v for v in r['exploratorias'] if r['tipos'][v] == 'nominal']
     out = [
         '# Fase 34E. Análisis multivariado exploratorio',
         '',
         f'*Generado por `analisis/eda_multivariado.py` el {date.today():%d-%m-%Y}. Entradas: '
-        '`datos/analitico/dataset_fase35.csv` (Fase 35A) y `datos/analitico/conjunto_eda_usuaria.csv` (Fase 34C).*',
+        '`datos/analitico/dataset_fase35.csv` (Fase 35A), `datos/analitico/conjunto_eda_usuaria.csv` (Fase 34C) y '
+        '`datos/limpio_usuaria/dataset_usuaria_limpio.csv` (Fase 34B).*',
         '',
         '## 1. Propósito',
         '',
         'Las fases anteriores miraron las variables de a una (34D) o de a dos, cada una contra la severidad (34C). '
         'Esta fase agrega dos miradas:',
         '',
-        '1. **Cómo se relacionan las variables entre ellas**: una matriz de asociación de las predictoras y los '
-        'grupos de variables que "dicen lo mismo". Esto importa para la selección de variables (Fase 35B) y para '
+        '1. **Cómo se relacionan las variables entre ellas**: una matriz de asociación de las variables exploratorias '
+        'y los grupos de variables que "dicen lo mismo". Esto importa para la selección de variables (Fase 35B) y para '
         'el PCA (Fase 37): variables muy relacionadas aportan información repetida.',
         '2. **Cómo actúan juntas sobre la severidad**: la severidad según dos variables a la vez (tríadas), para '
         'ver si el efecto de una se mantiene al tener en cuenta la otra y si el efecto de una cambia según la otra.',
@@ -61,9 +62,11 @@ def generar(r):
         '## 2. Datos y decisiones de preparación',
         '',
         f'- **Participantes:** {len(datos)} con el MRS completo.',
-        f'- **Variables:** las {n_pred} predictoras que dejó la Fase 35A, más la severidad del MRS en 4 clases '
+        f'- **Variables:** {n_expl} variables exploratorias, más la severidad del MRS en 4 clases '
         '(0 = sin síntomas o muy leves … 3 = severa) como referencia. La severidad no se agrupa con las demás: '
-        'solo se muestra cuánto se asocia cada predictora con ella.',
+        'solo se muestra cuánto se asocia cada variable con ella. Esta lista no es la del modelado: las predictoras '
+        f'son {n_expl - 3} (Fase 35A). Etapa menopáusica, tipo de sangrado y uso de método anticonceptivo solo se '
+        'exploran aquí. La etapa es una variable derivada, no una pregunta de la encuesta.',
         '- **Sin imputaciones.** Se usa lo que las participantes respondieron:',
         '  - **IMC observado** (n = '
         f'{int(datos["imc"].notna().sum())}). La Fase 35A imputó el resto con la media; aquí no se usa ese valor, '
@@ -80,7 +83,7 @@ def generar(r):
         '',
         '### 3.1 ¿Qué es y para qué sirve?',
         '',
-        f'Una **matriz de asociación** es una tabla cuadrada con las {n_pred + 1} variables en las filas y las '
+        f'Una **matriz de asociación** es una tabla cuadrada con las {n_expl + 1} variables en las filas y las '
         'mismas en las columnas. Cada casilla dice qué tan relacionadas están dos variables, de 0 (nada) a 1 '
         '(totalmente). Sirve para detectar variables que dicen lo mismo y para ver con qué se asocia cada una.',
         '',
@@ -125,7 +128,7 @@ def generar(r):
         '',
         '### 3.4 Resultados',
         '',
-        *_figura(next(num), 'matriz_asociacion.png', f'Matriz de asociación de las {n_pred} predictoras y la severidad',
+        *_figura(next(num), 'matriz_asociacion.png', f'Matriz de asociación de {n_expl} variables exploratorias y la severidad',
                  'Color: |asociación|. Se anotan los valores de 0,30 o más (con signo cuando es Spearman). '
                  'Orden: el de la encuesta.'),
         '**Cómo leerla.** Cada casilla cruza la variable de su fila con la de su columna; la diagonal es la '
@@ -157,7 +160,7 @@ def generar(r):
         '**Cómo leerla.** En el árbol, cuanto más a la derecha se unen dos ramas, más asociadas están. En la '
         'matriz reordenada, los grupos aparecen como bloques oscuros pegados a la diagonal.',
         '',
-        *_seccion_grupos(grupos, n_pred),
+        *_seccion_grupos(grupos, n_expl),
         '## 5. Relaciones entre tres variables (tríadas)',
         '',
         '### 5.1 Conceptos',
@@ -241,9 +244,9 @@ def _seccion_pares(pares):
          + '. Entre quienes responden las preguntas de trabajo, "trabaja actualmente" vale siempre sí: una '
          'variable constante no puede asociarse con nada.') if len(nulos) else '',
         '',
-        '**Asociación de cada predictora con la severidad** (las 10 más altas):',
+        '**Asociación de cada variable exploratoria con la severidad** (las 10 más altas):',
         '',
-        _tabla(['Predictora', 'Medida', 'Valor', 'n', 'p ajustado (741 pares)'],
+        _tabla(['Variable', 'Medida', 'Valor', 'n', 'p ajustado (741 pares)'],
                [[t.etiqueta_2, t.medida, _n(t.valor, signo=t.medida == 'rho de Spearman'), t.n_par,
                  _p(t.p_ajustado)] for t in sev.itertuples()]),
         '',
@@ -254,15 +257,15 @@ def _seccion_pares(pares):
     ]
 
 
-def _seccion_grupos(grupos, n_pred):
+def _seccion_grupos(grupos, n_expl):
     en_grupo = int(grupos['n_variables'].sum())
     return [
         _tabla(['Grupo', 'Variables', 'Asociación promedio', 'Mínima', 'Máxima', 'Máx. con la severidad'],
                [[t.grupo, t.etiquetas, _n(t.asociacion_promedio), _n(t.asociacion_minima),
                  _n(t.asociacion_maxima), _n(t.max_asociacion_con_severidad)] for t in grupos.itertuples()]),
         '',
-        f'**Qué muestra.** Se forman {len(grupos)} grupos, que reúnen a {en_grupo} de las {n_pred} predictoras; '
-        f'las otras {n_pred - en_grupo} quedan solas, sin una compañera con asociación moderada. Los grupos tienen '
+        f'**Qué muestra.** Se forman {len(grupos)} grupos, que reúnen a {en_grupo} de las {n_expl} variables exploratorias; '
+        f'las otras {n_expl - en_grupo} quedan solas, sin una compañera con asociación moderada. Los grupos tienen '
         'sentido temático:',
         '',
         '- **Actividad física:** los días de ejercicio y las tres frecuencias (aeróbico, bajo impacto, fuerza). '
@@ -270,16 +273,21 @@ def _seccion_grupos(grupos, n_pred):
         '- **Carga de cuidado y tiempo:** doble carga, cantidad de personas que cuida y falta de tiempo para '
         'comer bien.',
         '- **Trabajo y comidas fuera:** quienes trabajan comen más fuera del hogar.',
-        '- **Etapa de la vida:** edad y etapa menopáusica (la etapa se definió en parte con la edad).',
+        '- **Etapa de la vida:** edad y etapa menopáusica. La regla de la etapa no usa la edad; se relacionan porque '
+        'las mujeres mayores tienden a llevar más tiempo sin menstruar.',
         '- **Clima laboral:** lugar comprensivo y estrés laboral, en sentido opuesto.',
         '- **Pareja:** tener pareja y tener actividad sexual.',
         '',
         '**Qué implica para las fases siguientes.**',
         '',
+        f'Estos grupos se calcularon sobre las {n_expl} variables exploratorias, así que para el modelado, que usa '
+        f'{n_expl - 3} predictoras, son solo una orientación.',
+        '',
         '- **Selección (35B):** dentro de cada grupo las variables comparten información; el FCBF (que descarta '
         'las redundantes con una ya elegida) probablemente se quedará con una o dos por grupo.',
-        f'- **PCA (37):** con {n_pred - en_grupo} variables casi independientes, el PCA no podrá resumir los '
-        'datos en pocas componentes: cada componente explicará poca varianza. Es una característica del conjunto '
+        f'- **PCA (37):** con {n_expl - en_grupo} de las {n_expl} variables exploratorias casi independientes, es '
+        'probable que el PCA no pueda resumir los '
+        'datos en pocas componentes: cada componente explicaría poca varianza. Es una característica del conjunto '
         'sintético (el simulador generó la mayoría de los hábitos de forma independiente), no un error, y conviene '
         'anticiparlo al interpretar la Fase 37.',
         '',
@@ -376,7 +384,7 @@ def _seccion_resumen(pares, grupos, resumen, modelos):
     return [
         '## 6. Resumen',
         '',
-        '- **Matriz:** la mayoría de las predictoras se relacionan poco entre sí; las asociaciones fuertes son '
+        '- **Matriz:** la mayoría de las variables exploratorias se relacionan poco entre sí; las asociaciones fuertes son '
         'entre variables del mismo tema y ninguna llega a 0,80.',
         f'- **Grupos:** {len(grupos)} grupos temáticos (actividad física, carga de cuidado, trabajo y comidas '
         'fuera, etapa de la vida, clima laboral, pareja); el resto de las variables va por su cuenta.',

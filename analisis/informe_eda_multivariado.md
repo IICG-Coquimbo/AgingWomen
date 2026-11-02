@@ -2,11 +2,13 @@
 
 *Generado por `analisis/eda_multivariado.py` el 30-10-2026. Entradas: `datos/analitico/dataset_fase35.csv` (Fase 35A) y `datos/analitico/conjunto_eda_usuaria.csv` (Fase 34C).*
 
+*Nota del 02-11-2026: este análisis no se volvió a ejecutar; sus resultados son los del 30-10-2026. Solo se corrigieron textos, porque las 38 variables de la matriz ya no son la lista de predictoras: desde el ajuste de la Fase 35A, el modelado usa 35.*
+
 ## 1. Propósito
 
 Las fases anteriores miraron las variables de a una (34D) o de a dos, cada una contra la severidad (34C). Esta fase agrega dos miradas:
 
-1. **Cómo se relacionan las variables entre ellas**: una matriz de asociación de las predictoras y los grupos de variables que "dicen lo mismo". Esto importa para la selección de variables (Fase 35B) y para el PCA (Fase 37): variables muy relacionadas aportan información repetida.
+1. **Cómo se relacionan las variables entre ellas**: una matriz de asociación de las variables exploratorias y los grupos de variables que "dicen lo mismo". Esto importa para la selección de variables (Fase 35B) y para el PCA (Fase 37): variables muy relacionadas aportan información repetida.
 2. **Cómo actúan juntas sobre la severidad**: la severidad según dos variables a la vez (tríadas), para ver si el efecto de una se mantiene al tener en cuenta la otra y si el efecto de una cambia según la otra.
 
 Todo es **exploratorio**: describe y genera hipótesis; no confirma causas.
@@ -14,7 +16,7 @@ Todo es **exploratorio**: describe y genera hipótesis; no confirma causas.
 ## 2. Datos y decisiones de preparación
 
 - **Participantes:** 529 con el MRS completo.
-- **Variables:** las 38 predictoras que dejó la Fase 35A, más la severidad del MRS en 4 clases (0 = sin síntomas o muy leves … 3 = severa) como referencia. La severidad no se agrupa con las demás: solo se muestra cuánto se asocia cada predictora con ella.
+- **Variables:** 38 variables exploratorias, más la severidad del MRS en 4 clases (0 = sin síntomas o muy leves … 3 = severa) como referencia. La severidad no se agrupa con las demás: solo se muestra cuánto se asocia cada variable con ella. Esta lista no es la del modelado: las predictoras son 35 (Fase 35A). Etapa menopáusica, tipo de sangrado y uso de método anticonceptivo solo se exploran aquí. La etapa es una variable derivada, no una pregunta de la encuesta.
 - **Sin imputaciones.** Se usa lo que las participantes respondieron:
   - **IMC observado** (n = 267). La Fase 35A imputó el resto con la media; aquí no se usa ese valor, porque pondría a la mitad de la muestra en un mismo IMC y crearía asociaciones falsas.
   - **"No aplica" queda fuera del par.** Las preguntas de trabajo para quien no trabaja y las de menstruación para quien ya no menstrúa no tienen una respuesta en la escala: esas participantes no entran en los pares de esa pregunta.
@@ -47,9 +49,11 @@ Las variables nominales son 4: Etapa menopáusica, Previsión de salud, Usa mét
 
 ### 3.4 Resultados
 
-**Figura 1. Matriz de asociación de las 38 predictoras y la severidad**
+**Figura 1. Matriz de asociación de 38 variables exploratorias y la severidad**
 
-![Matriz de asociación de las 38 predictoras y la severidad](figuras/eda_multivariado/matriz_asociacion.png)
+![Matriz de asociación de 38 variables exploratorias y la severidad](figuras/eda_multivariado/matriz_asociacion.png)
+
+*El título dentro de la imagen dice "38 predictoras" porque es la figura original del 30-10-2026, que no se regeneró; hoy deben leerse como variables exploratorias.*
 
 *Color: |asociación|. Se anotan los valores de 0,30 o más (con signo cuando es Spearman). Orden: el de la encuesta.*
 
@@ -75,9 +79,9 @@ Las variables nominales son 4: Etapa menopáusica, Previsión de salud, Usa mét
 
 Hay 2 pares sin valor: Trabaja actualmente × Lugar de trabajo comprensivo, Trabaja actualmente × Estrés del entorno laboral. Entre quienes responden las preguntas de trabajo, "trabaja actualmente" vale siempre sí: una variable constante no puede asociarse con nada.
 
-**Asociación de cada predictora con la severidad** (las 10 más altas):
+**Asociación de cada variable exploratoria con la severidad** (las 10 más altas):
 
-| Predictora | Medida | Valor | n | p ajustado (741 pares) |
+| Variable | Medida | Valor | n | p ajustado (741 pares) |
 |---|---|---|---|---|
 | Lugar de trabajo comprensivo | rho de Spearman | -0,23 | 287 | 0,003 |
 | IMC | rho de Spearman | +0,22 | 267 | 0,010 |
@@ -120,19 +124,21 @@ Son las mismas que destacó la 34C (lugar comprensivo, IMC, estrés laboral, eje
 | 5 | Lugar de trabajo comprensivo, Estrés del entorno laboral | 0,38 | 0,38 | 0,38 | 0,23 |
 | 6 | Tiene pareja, Tiene actividad sexual | 0,49 | 0,49 | 0,49 | 0,06 |
 
-**Qué muestra.** Se forman 6 grupos, que reúnen a 15 de las 38 predictoras; las otras 23 quedan solas, sin una compañera con asociación moderada. Los grupos tienen sentido temático:
+**Qué muestra.** Se forman 6 grupos, que reúnen a 15 de las 38 variables exploratorias; las otras 23 quedan solas, sin una compañera con asociación moderada. Los grupos tienen sentido temático:
 
 - **Actividad física:** los días de ejercicio y las tres frecuencias (aeróbico, bajo impacto, fuerza). Es el grupo más grande; los días de ejercicio resumen bien a las demás.
 - **Carga de cuidado y tiempo:** doble carga, cantidad de personas que cuida y falta de tiempo para comer bien.
 - **Trabajo y comidas fuera:** quienes trabajan comen más fuera del hogar.
-- **Etapa de la vida:** edad y etapa menopáusica (la etapa se definió en parte con la edad).
+- **Etapa de la vida:** edad y etapa menopáusica. La regla de la etapa no usa la edad; se relacionan porque las mujeres mayores tienden a llevar más tiempo sin menstruar.
 - **Clima laboral:** lugar comprensivo y estrés laboral, en sentido opuesto.
 - **Pareja:** tener pareja y tener actividad sexual.
 
 **Qué implica para las fases siguientes.**
 
+Estos grupos se calcularon sobre las 38 variables exploratorias, así que para el modelado, que usa 35 predictoras, son solo una orientación.
+
 - **Selección (35B):** dentro de cada grupo las variables comparten información; el FCBF (que descarta las redundantes con una ya elegida) probablemente se quedará con una o dos por grupo.
-- **PCA (37):** con 23 variables casi independientes, el PCA no podrá resumir los datos en pocas componentes: cada componente explicará poca varianza. Es una característica del conjunto sintético (el simulador generó la mayoría de los hábitos de forma independiente), no un error, y conviene anticiparlo al interpretar la Fase 37.
+- **PCA (37):** con 23 de las 38 variables exploratorias casi independientes, es probable que el PCA no pueda resumir los datos en pocas componentes: cada componente explicaría poca varianza. Es una característica del conjunto sintético (el simulador generó la mayoría de los hábitos de forma independiente), no un error, y conviene anticiparlo al interpretar la Fase 37.
 
 ## 5. Relaciones entre tres variables (tríadas)
 
@@ -278,7 +284,7 @@ El IMC sigue los cortes de la OMS (normal < 25; sobrepeso 25-29,9; obesidad ≥ 
 
 ## 6. Resumen
 
-- **Matriz:** la mayoría de las predictoras se relacionan poco entre sí; las asociaciones fuertes son entre variables del mismo tema y ninguna llega a 0,80.
+- **Matriz:** la mayoría de las variables exploratorias se relacionan poco entre sí; las asociaciones fuertes son entre variables del mismo tema y ninguna llega a 0,80.
 - **Grupos:** 6 grupos temáticos (actividad física, carga de cuidado, trabajo y comidas fuera, etapa de la vida, clima laboral, pareja); el resto de las variables va por su cuenta.
 - **Tríadas:** en las cuatro, cada variable conserva su efecto al descontar la otra (la ρ parcial casi no cambia) y ninguna interacción es significativa tras la corrección FDR. Es decir, los factores **se suman**: por ejemplo, la obesidad y no hacer ejercicio aumentan cada uno las chances de síntomas severos, y juntas dan el mayor % de severas.
 - **Pista para mirar:** IMC × ejercicio es la única con p < 0,05 sin corregir. En el mapa, hacer 3 o más días de ejercicio se asocia con muchas menos severas entre quienes tienen sobrepeso u obesidad, y no entre quienes tienen peso normal; con grupos de 14 a 16 participantes, no se puede afirmar.

@@ -1,7 +1,8 @@
 """
 Fase 34E (OB2): análisis multivariado exploratorio (plan aprobado 2026-10-30).
 
-1. Matriz de asociación mixta de las 38 predictoras de la Fase 35A + severidad:
+1. Matriz de asociación mixta de 38 variables exploratorias + severidad (no es
+   la lista de predictoras del modelado, ver EXPLORATORIAS_34E):
    rho de Spearman (numérica/ordinal/binaria × numérica/ordinal/binaria),
    V de Cramér con corrección de sesgo (nominal × nominal) y razón de
    correlación eta sobre rangos (nominal × numérica/ordinal). Nunca Pearson:
@@ -19,11 +20,29 @@ from scipy import stats
 from scipy.cluster import hierarchy
 from scipy.spatial.distance import squareform
 
+from preprocesamiento import configuracion as C
+from preprocesamiento import pasos as P
+
 from . import graficos as G
 from . import variables as V
 
 ANALITICO = V.RAIZ / 'datos' / 'analitico'
 RESULTADOS_35 = V.RAIZ / 'analisis' / 'resultados' / 'usuaria'
+
+# Variables de la matriz exploratoria, en el orden original (define filas y
+# columnas). Son las 35 predictoras del modelado más las 3 de SOLO_EXPLORATORIAS.
+EXPLORATORIAS_34E = [
+    'edad', 'etapa_menopausica', 'imc', 'prevision', 'usa_medicamentos_diabetes', 'trabaja_actualmente',
+    'tiene_pareja', 'tiene_actividad_sexual', 'tipo_sangrado', 'usa_metodo_anticonceptivo', 'operada_no_mas_hijos',
+    'usa_medicamentos_presion', 'evacuacion_intestinal', 'distension_abdominal', 'lugar_trabajo_comprensivo',
+    'estres_entorno_laboral', 'cantidad_personas_cuida', 'doble_carga', 'dias_ejercicio_semana',
+    'frecuencia_aerobico', 'frecuencia_bajo_impacto', 'frecuencia_fuerza', 'horas_sedentarismo',
+    'quien_prepara_comidas', 'frecuencia_comida_fuera', 'falta_tiempo_influye', 'vasos_agua_dia',
+    'platos_verduras_dia', 'frutas_dia', 'panes_dia', 'lacteos_dia', 'jugos_gaseosas_dia', 'pescado_semana',
+    'legumbres_semana', 'carnes_semana', 'golosinas_semana', 'tabaco_frecuencia', 'alcohol_frecuencia']
+# Fuera del modelado (decisión de la usuaria 2026-11-01) y de dataset_fase35.csv:
+# para este análisis se codifican desde el conjunto limpio, igual que en la 35A.
+SOLO_EXPLORATORIAS = ['etapa_menopausica', 'tipo_sangrado', 'usa_metodo_anticonceptivo']
 
 # Preguntas que no aplican a una parte (0 / 'NO_APLICA' en la Fase 35A): quedan
 # fuera del par, porque "no aplica" no es un nivel de la escala.
@@ -43,18 +62,31 @@ def etiqueta(v):
 
 # --- Datos ----------------------------------------------------------------------
 
+def _solo_exploratorias(ids):
+    """Columnas de SOLO_EXPLORATORIAS para los participantes `ids`, codificadas como en la Fase 35A."""
+    limpio, _ = V.cargar(V.LIMPIO_USUARIA, 'dataset_usuaria_limpio.csv')
+    limpio = limpio.set_index('participante_id').reindex(ids)
+    return pd.DataFrame({v: P.codificar(limpio, v, C.EXCLUIDAS_MODELADO[v][0]) for v in SOLO_EXPLORATORIAS})
+
+
 def cargar():
     """
-    (datos para asociación, tipos {variable: 'nominal' | 'ordenada'}, predictoras).
-    Parte del conjunto de la Fase 35A y deshace lo que no es una observación:
-    IMC imputado por la media, "no aplica" y las 22 respuestas laborales imputadas.
+    (datos para asociación, tipos {variable: 'nominal' | 'ordenada'}, exploratorias).
+    Parte del conjunto de la Fase 35A, agrega SOLO_EXPLORATORIAS y deshace lo que
+    no es una observación: IMC imputado por la media, "no aplica" y las 22
+    respuestas laborales imputadas.
     """
     f = pd.read_csv(ANALITICO / 'dataset_fase35.csv', dtype=str, encoding='utf-8-sig')
     crudo = pd.read_csv(ANALITICO / 'conjunto_eda_usuaria.csv', dtype=str, encoding='utf-8-sig',
                         usecols=['participante_id', *IMPUTADAS_TRABAJO]).set_index('participante_id')
     dicc = pd.read_csv(RESULTADOS_35 / 'diccionario_datos_fase35.csv', encoding='utf-8-sig')
-    pred = dicc[dicc['rol'] == 'predictora']
-    tipos = {v: 'nominal' if t == 'nominal' else 'ordenada' for v, t in zip(pred['variable'], pred['tipo_final'])}
+    predictoras = set(dicc.loc[dicc['rol'] == 'predictora', 'variable'])
+    if set(EXPLORATORIAS_34E) - set(SOLO_EXPLORATORIAS) != predictoras:
+        raise ValueError('Las variables exploratorias de la 34E ya no corresponden a las predictoras de la 35A: '
+                         f'{sorted(predictoras ^ (set(EXPLORATORIAS_34E) - set(SOLO_EXPLORATORIAS)))}')
+    f = f.join(_solo_exploratorias(f['participante_id']), on='participante_id')
+    tipo_final = dicc.set_index('variable')['tipo_final']
+    tipos = {v: 'nominal' if tipo_final[v] == 'nominal' else 'ordenada' for v in EXPLORATORIAS_34E}
     datos = pd.DataFrame(index=f.index)
     datos['participante_id'] = f['participante_id']
     datos[SEVERIDAD] = f['severidad_mrs_4'].map({s: i for i, s in enumerate(V.ORDEN_SEVERIDAD)})

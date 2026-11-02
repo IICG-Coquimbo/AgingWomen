@@ -4,8 +4,9 @@ Fase 34E (OB2): análisis multivariado exploratorio (plan aprobado 2026-10-30).
 Uso:
     python analisis/eda_multivariado.py
 
-Necesita las Fases 34C (datos/analitico/conjunto_eda_usuaria.csv) y 35A
-(datos/analitico/dataset_fase35.csv, resultados/usuaria/diccionario_datos_fase35.csv).
+Necesita las Fases 34B (datos/limpio_usuaria/dataset_usuaria_limpio.csv), 34C
+(datos/analitico/conjunto_eda_usuaria.csv) y 35A (datos/analitico/dataset_fase35.csv,
+resultados/usuaria/diccionario_datos_fase35.csv).
 Escribe:
   - analisis/figuras/eda_multivariado/: matriz de asociación, grupos
     (dendrograma + matriz reordenada) y una figura por tríada
@@ -33,20 +34,20 @@ def main():
     FIGURAS.mkdir(parents=True, exist_ok=True)
     for viejo in FIGURAS.glob('*.png'):
         viejo.unlink()
-    datos, tipos, predictoras = M.cargar()
+    datos, tipos, exploratorias = M.cargar()
 
-    # 1. Matriz de asociación mixta (predictoras + severidad como referencia)
-    variables = [M.SEVERIDAD, *predictoras]
+    # 1. Matriz de asociación mixta (exploratorias + severidad como referencia)
+    variables = [M.SEVERIDAD, *exploratorias]
     pares, matriz = M.matriz_mixta(datos, variables, tipos)
     M.figura_matriz(matriz, FIGURAS / 'matriz_asociacion.png',
-                    f'Matriz de asociación de las {len(predictoras)} predictoras y la severidad')
+                    f'Matriz de asociación de {len(exploratorias)} variables exploratorias y la severidad')
 
-    # 2. Grupos de variables (solo predictoras: la severidad es la referencia, no se agrupa)
-    m_pred = matriz.loc[predictoras, predictoras]
-    enlace, grupo, orden = M.agrupar(m_pred)
+    # 2. Grupos de variables (sin severidad: es la referencia, no se agrupa)
+    m_expl = matriz.loc[exploratorias, exploratorias]
+    enlace, grupo, orden = M.agrupar(m_expl)
     con_severidad = matriz[M.SEVERIDAD].abs().to_dict()
-    grupos = M.tabla_grupos(m_pred, grupo, orden, con_severidad)
-    M.figura_grupos(m_pred, enlace, orden, grupo, FIGURAS / 'grupos_variables.png')
+    grupos = M.tabla_grupos(m_expl, grupo, orden, con_severidad)
+    M.figura_grupos(m_expl, enlace, orden, grupo, FIGURAS / 'grupos_variables.png')
 
     # 3. Tríadas
     estratos, modelos, resumen = [], [], []
@@ -74,7 +75,7 @@ def main():
     estratos.to_csv(RESULTADOS / 'triadas_estratificadas.csv', **GUARDAR)
     modelos.to_csv(RESULTADOS / 'triadas_modelos.csv', **GUARDAR)
     resumen.to_csv(RESULTADOS / 'triadas_resumen.csv', **GUARDAR)
-    r = {'datos': datos, 'tipos': tipos, 'predictoras': predictoras, 'pares': pares, 'matriz': matriz,
+    r = {'datos': datos, 'tipos': tipos, 'exploratorias': exploratorias, 'pares': pares, 'matriz': matriz,
          'grupo': grupo, 'grupos': grupos, 'orden': orden, 'estratos': estratos, 'modelos': modelos,
          'resumen': resumen}
     (ANALISIS / 'informe_eda_multivariado.md').write_text(generar(r), encoding='utf-8')
