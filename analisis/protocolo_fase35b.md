@@ -154,3 +154,25 @@ La implementación y la ejecución requieren una aprobación aparte de la usuari
 | Crear, sin versionar | `datos/analitico/dataset_fase35b.csv` |
 
 El conjunto `dataset_fase35b.csv` tendría `participante_id`, `severo_mrs`, `mrs_total`, `severidad_mrs_4`, `imc_fue_imputado`, las 4 de control y las seleccionadas. Las columnas de resultado y auditoría no son predictoras. Si se seleccionan variables laborales, conservan la codificación de la 35A (0 = "no aplica" y las 22 imputadas), y su tratamiento se decide en la Fase 36.
+
+## 12. Tolerancia numérica
+
+Decisión incorporada el 2 de noviembre de 2026, antes de ejecutar la selección real. No modifica candidatas, umbrales, permutaciones ni reglas de selección.
+
+**Motivo:** dos valores de SU que deberían ser iguales pueden diferir en cifras muy pequeñas por la representación numérica de punto flotante, por ejemplo según el orden en que se suman los términos. La tolerancia evita que esas diferencias alteren decisiones que deberían ser numéricamente equivalentes.
+
+**Se usa una tolerancia absoluta τ = 1e-12 exclusivamente para:**
+
+- **Conteo de permutaciones:** al comparar la SU permutada con la observada, se cuenta como igual o superior si SU permutada ≥ SU observada − τ.
+- **Condiciones de eliminación de FCBF, en las comparaciones de SU:**
+  - SU(Z,Y) ≥ SU(Y, severidad) − τ, en las Etapas 1 y 2 y en la lista única.
+  - SU₂₈₇(Z, severidad) ≥ SU₂₈₇(Y, severidad) − τ, en la Etapa 2.
+
+**No se usa para:**
+
+- Ordenar las variables por SU.
+- Determinar empates en ese ordenamiento.
+- Aplicar la corrección de Benjamini-Hochberg.
+- Relajar el criterio de significancia ajustada: q < 0,05 es una comparación estricta.
+
+**Ordenamiento:** se realiza con precisión completa y en orden descendente. El desempate alfabético se aplica únicamente cuando los valores de SU son exactamente iguales.

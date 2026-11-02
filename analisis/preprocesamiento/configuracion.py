@@ -193,3 +193,36 @@ PROHIBIDAS = ['mrs_total', 'mrs_severidad', 'severidad_mrs_4', 'severo_mrs', 'mr
               'mrs_urogenital', *[f'pregunta_{i}' for i in range(1, 12)], 'rendimiento_afectado',
               'bienestar_trabajo_afectado', 'frecuencia_ausencias', 'cambio_relacion_pareja_menopausia',
               'usa_antidepresivos', 'imc_fue_imputado', 'comuna', 'nivel_educacion', *EXCLUIDAS_MODELADO]
+
+# --- Fase 35B: selección entrópica -------------------------------------------------
+# Protocolo: analisis/protocolo_fase35b.md. Este bloque solo agrega
+# nombres nuevos: la Fase 35A no los usa y sus resultados no dependen de ellos.
+CONTROL_35B = ['edad', 'imc', 'usa_medicamentos_diabetes', 'trabaja_actualmente']
+PENDIENTES_35B = ['prevision']    # pendiente de consultar a la profesora: SU solo descriptiva
+LABORALES_35B = ['lugar_trabajo_comprensivo', 'estres_entorno_laboral']
+N_CANDIDATAS_35B = 30
+N_PERMUTACIONES_35B = 5000
+N_REMUESTREOS_35B = 500
+N_PROCESOS_35B = 11
+ALFA_Q_35B = 0.05                 # q < 0,05, comparación estricta y sin tolerancia
+
+# Conteos del protocolo; la verificación estructural falla si los datos no coinciden.
+N_PARTICIPANTES_35B = 529
+N_TRABAJADORAS_35B = 309
+N_RESPUESTA_LABORAL_35B = 287
+N_IMC_OBSERVADO_35B = 267
+
+# Discretización, solo para calcular SU (los valores originales pasan a la Fase 36).
+# Intervalos [a, b): 36-39, 40-44, 45-49, 50-54, 55-59, 60-65.
+CORTES_EDAD_35B = [36, 40, 45, 50, 55, 60, 66]
+CONTEO_EDAD_35B = [22, 104, 120, 110, 79, 94]
+# Categorías OMS, intervalos [a, b).
+CORTES_IMC_35B = [18.5, 25, 30, 35, 40]
+CONTEO_IMC_35B = [2, 61, 363, 47, 44, 12]
+# Cuartiles de horas sentada, sobre las 529: intervalos (a, b], así un empate queda en un solo tramo.
+CUARTILES_HORAS_35B = [5, 6, 8]
+CONTEO_HORAS_35B = [185, 118, 129, 97]
+
+# Protocolo, sección 12: solo en el conteo de permutaciones y las condiciones de FCBF; el orden no la usa.
+TOLERANCIA_SU_35B = 1e-12
+DECIMALES_35B = 6                 # al guardar los resultados; ninguna decisión usa valores redondeados
