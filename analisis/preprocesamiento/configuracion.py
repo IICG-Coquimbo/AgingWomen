@@ -11,7 +11,9 @@ Origen de cada decisión:
   - reunión con la profesora del 27-10-2026 (MRS binario, filtros de
     redundancia y de dominancia, IMC imputado por la media, módulo de cuidado);
   - decisiones de la usuaria del 28-10-2026 (umbral de dominancia > 85 %,
-    excepciones de diabetes y previsión, "no aplica" en trabajo).
+    excepciones de diabetes y previsión, "no aplica" en trabajo);
+  - decisión de la usuaria del 01-11-2026 (etapa menopáusica solo descriptiva,
+    preguntas menstruales fuera del modelado, edad se evalúa en la Fase 37).
 """
 SEMILLA = 42                      # para cualquier proceso aleatorio desde la Fase 35 en adelante
 
@@ -53,18 +55,46 @@ ELIMINAR_POR_DECISION = {
 # ninguna está, se usa el orden: control > menor % de faltantes > más categorías.
 # Las frecuencias de ejercicio contienen a "realiza" (0 = no lo realiza) y
 # agregan cuánto: por eso se prefieren.
-PREFERENCIA = ['imc', 'cantidad_personas_cuida', 'etapa_menopausica', 'dias_ejercicio_semana',
+PREFERENCIA = ['imc', 'cantidad_personas_cuida', 'dias_ejercicio_semana',
                'frecuencia_aerobico', 'frecuencia_bajo_impacto', 'frecuencia_fuerza']
+
+# --- Variables solo descriptivas (decisión de la usuaria 2026-11-01) ---------------
+# Siguen en el conjunto limpio y en el EDA, pero no son candidatas: no entran a
+# dataset_fase35.csv ni a ninguna fase de modelado (35B, 36, 37, 38, 39, 40).
+# La etapa puede usarse para describir los clústeres DESPUÉS de formarlos.
+# (variable: tipo, motivo)
+EXCLUIDAS_MODELADO = {
+    'etapa_menopausica': ('nominal', 'Clasificación derivada con una regla propia, basada en parte en STRAW+10 y sin '
+                                     'validar por la profesora. No es una respuesta de la encuesta. Se usa solo para '
+                                     'describir la muestra y caracterizar los clústeres ya formados.'),
+    'menstruacion_llega': ('nominal', 'Cumple los criterios originales de selección, pero se excluye por una razón '
+                                      'metodológica adicional: con su "no aplica" permite reconstruir indirectamente '
+                                      'la etapa menopáusica, que se decidió mantener solo como descriptiva.'),
+    'tipo_sangrado': ('ordinal', 'Comparte con la clasificación menopáusica las respuestas "no aplica": transmitiría '
+                                 'indirectamente la etapa reproductiva y podría condicionar la segmentación.'),
+    'usa_metodo_anticonceptivo': ('nominal', 'Comparte con la clasificación menopáusica las respuestas "no aplica": '
+                                             'transmitiría indirectamente la etapa reproductiva y podría condicionar '
+                                             'la segmentación.'),
+}
+N_PREDICTORAS_ESPERADAS = 35      # se verifica al correr: si cambia, revisar antes de usar el conjunto
+
+# La edad sigue como candidata: es demográfica y no equivale a la etapa, aunque
+# aporta información indirecta sobre ella. La Fase 37 debe comparar la
+# segmentación con y sin edad (métricas, tamaño de grupos e interpretabilidad).
+NOTA_EDAD = ('Se mantiene como candidata: es una característica demográfica y no equivale a la etapa menopáusica, '
+             'aunque aporta información indirecta sobre la etapa reproductiva. No se usa la clasificación derivada. La '
+             'Fase 37 comparará la segmentación con y sin edad (métricas de calidad, tamaño de los grupos e '
+             'interpretabilidad), priorizando los patrones de hábitos, estilos de vida y contexto laboral.')
 
 # --- Variables candidatas (tipo, bloque) ------------------------------------------
 # Tipos: continua, ordinal, binaria, nominal. Las de "control" tienen prioridad
 # ante la redundancia.
-CONTROL = ['edad', 'etapa_menopausica', 'imc', 'usa_terapia_hormonal', 'prevision',
+CONTROL = ['edad', 'imc', 'usa_terapia_hormonal', 'prevision',
            'usa_medicamentos_diabetes', 'trabaja_actualmente']
 
 CANDIDATAS = {
     # Control
-    'edad': ('continua', 'Control'), 'etapa_menopausica': ('nominal', 'Control'),
+    'edad': ('continua', 'Control'),
     'imc': ('continua', 'Control'), 'usa_terapia_hormonal': ('binaria', 'Control'),
     'prevision': ('nominal', 'Control'), 'usa_medicamentos_diabetes': ('binaria', 'Control'),
     'trabaja_actualmente': ('binaria', 'Control'),
@@ -72,9 +102,7 @@ CANDIDATAS = {
     'origen_procedencia': ('nominal', 'Identificación'), 'pueblo_originario_afro': ('nominal', 'Identificación'),
     'genero': ('nominal', 'Identificación'), 'tiene_pareja': ('binaria', 'Identificación'),
     'tiene_actividad_sexual': ('binaria', 'Identificación'),
-    # Ginecológicas (las de menstruación solo aplican a quienes aún menstrúan)
-    'menstruacion_llega': ('nominal', 'Ginecológica'), 'tipo_sangrado': ('ordinal', 'Ginecológica'),
-    'usa_metodo_anticonceptivo': ('nominal', 'Ginecológica'),
+    # Ginecológicas (las preguntas menstruales están en EXCLUIDAS_MODELADO)
     'tipo_metodo_anticonceptivo': ('nominal', 'Ginecológica'),
     'operada_no_mas_hijos': ('binaria', 'Ginecológica'), 'tiene_utero': ('binaria', 'Ginecológica'),
     'tiene_ovario': ('binaria', 'Ginecológica'),
@@ -164,4 +192,4 @@ PATRONES_SIMULACION = [
 PROHIBIDAS = ['mrs_total', 'mrs_severidad', 'severidad_mrs_4', 'severo_mrs', 'mrs_somatico', 'mrs_psicologico',
               'mrs_urogenital', *[f'pregunta_{i}' for i in range(1, 12)], 'rendimiento_afectado',
               'bienestar_trabajo_afectado', 'frecuencia_ausencias', 'cambio_relacion_pareja_menopausia',
-              'usa_antidepresivos', 'imc_fue_imputado', 'comuna', 'nivel_educacion']
+              'usa_antidepresivos', 'imc_fue_imputado', 'comuna', 'nivel_educacion', *EXCLUIDAS_MODELADO]

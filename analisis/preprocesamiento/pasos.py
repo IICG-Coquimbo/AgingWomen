@@ -8,6 +8,8 @@ Todos los umbrales y excepciones vienen de `configuracion.py`.
 import numpy as np
 import pandas as pd
 from scipy import stats
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import StratifiedKFold, cross_val_score
 
 from eda import variables as V
 
@@ -220,6 +222,55 @@ def _por_que(queda, sale, faltantes, X):
     if faltantes.get(queda, 0) < faltantes.get(sale, 0):
         return f'{queda} tenía menor % de faltantes antes de la limpieza.'
     return f'{queda} tiene más niveles ({X[queda].nunique()} vs {X[sale].nunique()}): conserva más información.'
+
+
+# --- Variables solo descriptivas (decisión de la usuaria 2026-11-01) ----------------------
+
+def revisar_excluidas(X_excluidas, X, tipos):
+    """Criterios originales de cada excluida frente a las predictoras finales, y su relación con la etapa."""
+    etapa = X_excluidas['etapa_menopausica']
+    filas = []
+    for v in X_excluidas.columns:
+        cat, pct, _ = dominancia(X_excluidas[v])
+        asociaciones = [(c, *asociacion(X.assign(**{v: X_excluidas[v]}), v, c, tipos)) for c in X.columns]
+        mayor = max((a for a in asociaciones if pd.notna(a[2])), key=lambda a: abs(a[2]))
+        filas.append({'variable': v, 'etiqueta': V.etiqueta(v), 'tipo': C.EXCLUIDAS_MODELADO[v][0],
+                      'n_no_aplica': int(X_excluidas[v].isin([C.NO_APLICA, 'NO_APLICA']).sum()),
+                      'categoria_dominante': cat, 'porcentaje_dominancia': pct,
+                      'supera_dominancia': pct > C.UMBRAL_ELIMINAR_DOMINANCIA,
+                      'mayor_asociacion_con': mayor[0], 'mayor_asociacion_metrica': mayor[1],
+                      'mayor_asociacion_valor': mayor[2], 'n_par': mayor[3],
+                      'supera_redundancia': abs(mayor[2]) > C.UMBRAL_REDUNDANCIA,
+                      'v_con_etapa_todas_las_filas': np.nan if v == 'etapa_menopausica' else
+                      cramer_v(etapa, X_excluidas[v].astype(str)),
+                      'motivo': C.EXCLUIDAS_MODELADO[v][1]})
+    return pd.DataFrame(filas)
+
+
+def reconstruccion_etapa(X_excluidas, X):
+    """
+    ¿Cuánto de la etapa menopáusica se puede recuperar desde otras variables?
+    Acierto de un bosque aleatorio (validación cruzada estratificada de 5
+    particiones). Solo documenta la exclusión; no decide nada ni es un modelo final.
+    """
+    objetivo = X_excluidas['etapa_menopausica'].replace({'indeterminada (histerectomía)': 'indeterminada'})
+    todo = pd.concat([X, X_excluidas.drop(columns='etapa_menopausica')], axis=1)
+    gine = ['tipo_sangrado', 'usa_metodo_anticonceptivo']
+    finales = list(X.columns)
+    cv = StratifiedKFold(5, shuffle=True, random_state=C.SEMILLA)
+    modelo = RandomForestClassifier(300, random_state=C.SEMILLA, n_jobs=-1)
+    filas = [{'escenario': 'Línea base: siempre la categoría más frecuente', 'n_variables': 0,
+              'acierto': objetivo.value_counts(normalize=True).iloc[0]}]
+    for nombre, columnas in (('Solo regularidad de la menstruación', ['menstruacion_llega']),
+                             ('Solo tipo de sangrado y método anticonceptivo', gine),
+                             ('Solo edad', ['edad']),
+                             ('Predictoras finales más sangrado y método anticonceptivo', finales + gine),
+                             ('Predictoras finales', finales),
+                             ('Predictoras finales sin edad', [v for v in finales if v != 'edad'])):
+        entrada = pd.get_dummies(todo[columnas], dtype=float).fillna(-1)
+        filas.append({'escenario': nombre, 'n_variables': len(columnas),
+                      'acierto': cross_val_score(modelo, entrada, objetivo, cv=cv, scoring='accuracy').mean()})
+    return pd.DataFrame(filas)
 
 
 # --- Módulo 3: validación contra la simulación --------------------------------------------

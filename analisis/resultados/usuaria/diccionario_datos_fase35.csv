@@ -4,15 +4,12 @@ severo_mrs,MRS severo (≥ 16 puntos),binaria,1 = severo; 0 = no severo,sin falt
 mrs_total,MRS total,numérica discreta,0-44,sin faltantes,referencia
 severidad_mrs_4,Severidad MRS (4 clases),ordinal,Sin síntomas o muy leves / Leve / Moderada / Severa,sin faltantes,referencia
 edad,Edad,continua,36.0 a 65.0,imputada en la Fase 34B si tenía vacíos (moda/mediana),predictora
-etapa_menopausica,Etapa menopáusica,nominal,"indeterminada, indeterminada (histerectomía), perimenopausia, posmenopausia, premenopausia, quirurgica",imputada en la Fase 34B si tenía vacíos (moda/mediana),predictora
 imc,IMC,continua,18.2 a 45.7,imputado con la media de las observadas (ver imc_fue_imputado),predictora
 prevision,Previsión de salud,nominal,"FONASA (Fonasa); ISAPRE (Isapre); FFAA (FF.AA. y de Orden (Capredena, Dipreca)); NINGUNA (Ninguna (particular)); NS (No sé)",imputada en la Fase 34B si tenía vacíos (moda/mediana),predictora
 usa_medicamentos_diabetes,Medicamentos para la diabetes,binaria,1 = sí; 0 = no,imputada en la Fase 34B si tenía vacíos (moda/mediana),predictora
 trabaja_actualmente,Trabaja actualmente,binaria,1 = sí; 0 = no,imputada en la Fase 34B si tenía vacíos (moda/mediana),predictora
 tiene_pareja,Tiene pareja,binaria,1 = sí; 0 = no,imputada en la Fase 34B si tenía vacíos (moda/mediana),predictora
 tiene_actividad_sexual,Tiene actividad sexual,binaria,1 = sí; 0 = no,imputada en la Fase 34B si tenía vacíos (moda/mediana),predictora
-tipo_sangrado,Tipo de sangrado,ordinal,0 = no aplica (no menstrúa o sin fecha de última menstruación); 1 = Muy leve; 2 = Leve; 3 = Moderado; 4 = Abundante; 5 = Muy abundante,no aplica (no menstrúa o sin fecha de última menstruación),predictora
-usa_metodo_anticonceptivo,Usa método anticonceptivo,nominal,NO_APLICA = no aplica (no menstrúa o sin fecha de última menstruación); SI (Sí); NO (No),no aplica (no menstrúa o sin fecha de última menstruación),predictora
 operada_no_mas_hijos,Operada para no tener más hijos,binaria,1 = sí; 0 = no,imputada en la Fase 34B si tenía vacíos (moda/mediana),predictora
 usa_medicamentos_presion,Medicamentos para la presión,binaria,1 = sí; 0 = no,imputada en la Fase 34B si tenía vacíos (moda/mediana),predictora
 evacuacion_intestinal,Frecuencia de evacuación intestinal,ordinal,1 = Más de una vez al día; 2 = 1 vez al día; 3 = Cada 2 días; 4 = 3 o más días entre evacuaciones,imputada en la Fase 34B si tenía vacíos (moda/mediana),predictora
@@ -42,3 +39,7 @@ golosinas_semana,Dulces y snacks a la semana,ordinal,1 = Nunca; 2 = 1-2 veces po
 tabaco_frecuencia,Tabaco,ordinal,1 = Nunca; 2 = 1-2 veces por semana; 3 = 3-4 veces por semana; 4 = 5-6 veces por semana; 5 = Diariamente,imputada en la Fase 34B si tenía vacíos (moda/mediana),predictora
 alcohol_frecuencia,Alcohol,ordinal,1 = Nunca; 2 = 1-2 veces por semana; 3 = 3-4 veces por semana; 4 = 5-6 veces por semana; 5 = Diariamente,imputada en la Fase 34B si tenía vacíos (moda/mediana),predictora
 imc_fue_imputado,IMC imputado,binaria,1 = imputado; 0 = observado,sin faltantes,auditoría (no predictora)
+etapa_menopausica,Etapa menopáusica,nominal,"indeterminada, indeterminada (histerectomía), perimenopausia, posmenopausia, premenopausia, quirurgica",queda en el conjunto limpio; no entra a dataset_fase35.csv,solo descriptiva
+menstruacion_llega,Regularidad de la menstruación,nominal,NO_APLICA = no aplica (no menstrúa o sin fecha de última menstruación); REGULAR (Regular (cada 21-35 días)); IRREGULAR (Irregular (<21 o >35 días)); NO_SEGURA (No estoy segura / No sé),queda en el conjunto limpio; no entra a dataset_fase35.csv,solo descriptiva
+tipo_sangrado,Tipo de sangrado,ordinal,0 = no aplica (no menstrúa o sin fecha de última menstruación); 1 = Muy leve; 2 = Leve; 3 = Moderado; 4 = Abundante; 5 = Muy abundante,queda en el conjunto limpio; no entra a dataset_fase35.csv,solo descriptiva
+usa_metodo_anticonceptivo,Usa método anticonceptivo,nominal,NO_APLICA = no aplica (no menstrúa o sin fecha de última menstruación); SI (Sí); NO (No),queda en el conjunto limpio; no entra a dataset_fase35.csv,solo descriptiva

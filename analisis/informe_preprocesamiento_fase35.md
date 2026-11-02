@@ -1,6 +1,6 @@
 # Fase 35A. Preprocesamiento para la selección por entropía
 
-*Generado por `analisis/preprocesar_fase35.py` el 28-10-2026. Configuración: `analisis/preprocesamiento/configuracion.py`. Conjunto: `datos/limpio_usuaria/dataset_usuaria_limpio.csv`.*
+*Generado por `analisis/preprocesar_fase35.py` el 01-11-2026. Configuración: `analisis/preprocesamiento/configuracion.py`. Conjunto: `datos/limpio_usuaria/dataset_usuaria_limpio.csv`.*
 
 Este paso aplica los acuerdos de la reunión con la profesora del 27-10-2026 y las decisiones de la usuaria del 28-10-2026. Todo umbral o excepción está en el archivo de configuración: si la profesora pide cambiar algo, se edita ese archivo y se vuelve a correr el script.
 
@@ -34,7 +34,7 @@ Peso y talla siguen en el conjunto limpio; solo salen del conjunto para el model
 ## 4. Preguntas que no aplican a todas
 
 - **Trabajo** (lugar comprensivo, estrés laboral): quienes no trabajan quedan en la categoría "no aplica / no trabaja" (código 0, fuera de la escala 1-5), en el conjunto general. Así no se pierden participantes y no se confunde "no trabaja" con "no respondió". 22 trabajadoras sin respuesta en lugar de trabajo comprensivo, 22 trabajadoras sin respuesta en estrés del entorno laboral reciben la mediana de las trabajadoras.
-- **Menstruación** (regularidad, sangrado, método anticonceptivo): "no aplica" para quienes ya no menstrúan y para las 22 sin fecha de última menstruación.
+- **Tipo de método anticonceptivo:** "no aplica" para quienes no usan método o ya no menstrúan. Regularidad, sangrado y uso de método anticonceptivo no entran al modelado (sección 8).
 - **Frecuencias de ejercicio**: 0 = "no lo realiza" (es un valor real: frecuencia cero).
 
 ## 5. Filtro por baja variabilidad (> 85 % elimina)
@@ -70,7 +70,6 @@ Se midieron todos los pares de las variables que quedaban: rho de Spearman entre
 
 | Variable 1 | Variable 2 | Métrica | Valor | Se conserva | Se elimina | Por qué |
 |---|---|---|---|---|---|---|
-| etapa_menopausica | menstruacion_llega | V de Cramér | 1,00 | etapa_menopausica | menstruacion_llega | etapa_menopausica representa mejor el constructo (lista de preferencia de configuracion.py). |
 | realiza_fuerza | frecuencia_fuerza | rho de Spearman | 1,00 | frecuencia_fuerza | realiza_fuerza | frecuencia_fuerza representa mejor el constructo (lista de preferencia de configuracion.py). |
 | realiza_aerobico | frecuencia_aerobico | rho de Spearman | 0,99 | frecuencia_aerobico | realiza_aerobico | frecuencia_aerobico representa mejor el constructo (lista de preferencia de configuracion.py). |
 | realiza_bajo_impacto | frecuencia_bajo_impacto | rho de Spearman | 0,96 | frecuencia_bajo_impacto | realiza_bajo_impacto | frecuencia_bajo_impacto representa mejor el constructo (lista de preferencia de configuracion.py). |
@@ -128,13 +127,40 @@ Se compara lo observado con los efectos que la simulación puso a propósito. Qu
 
 Resumen: 24 esperados, 1 parciales, 0 no esperados. Los comentarios de cada fila están en `resultados/usuaria/validacion_patrones_simulacion.csv`.
 
-## 8. Conjunto para la Fase 35B (38 predictoras)
+## 8. Variables solo descriptivas (fuera del modelado)
+
+`etapa_menopausica` es una variable derivada: no es una pregunta de la encuesta y su regla es una aproximación propia, basada en parte en el criterio de 12 meses de STRAW+10 y pendiente de validación por la profesora. Por decisión de la usuaria (01-11-2026) se conserva en el conjunto limpio para describir la muestra y caracterizar los clústeres ya formados, pero no participa en la selección entrópica, la codificación, PCA, K-Means, el agrupamiento aglomerativo, las reglas ni la plataforma. La regla no se modificó.
+
+Quitarla no bastaba: las tres preguntas menstruales usan el mismo corte de 12 meses y comparten las respuestas "no aplica", así que la información de la etapa seguiría entrando. El filtro de redundancia no lo detecta, porque mide cada par solo donde ambas variables aplican (sección 6). Por eso también se excluyen, aunque cumplen los criterios originales. Las cuatro siguen en el conjunto limpio y en el análisis exploratorio.
+
+| Variable | "No aplica" | Dominancia | Mayor asociación con una predictora | V con la etapa | Motivo |
+|---|---|---|---|---|---|
+| Etapa menopáusica | 0 | 59,2 % | 0,37 (Edad) | - | Clasificación derivada con una regla propia, basada en parte en STRAW+10 y sin validar por la profesora. No es una respuesta de la encuesta. Se usa solo para describir la muestra y caracterizar los clústeres ya formados. |
+| Regularidad de la menstruación | 354 | 66,9 % | 0,32 (Edad) | 0,82 | Cumple los criterios originales de selección, pero se excluye por una razón metodológica adicional: con su "no aplica" permite reconstruir indirectamente la etapa menopáusica, que se decidió mantener solo como descriptiva. |
+| Tipo de sangrado | 354 | 66,9 % | 0,18 (Quién prepara las comidas) | 0,46 | Comparte con la clasificación menopáusica las respuestas "no aplica": transmitiría indirectamente la etapa reproductiva y podría condicionar la segmentación. |
+| Usa método anticonceptivo | 354 | 66,9 % | 0,22 (Comidas fuera del hogar) | 0,71 | Comparte con la clasificación menopáusica las respuestas "no aplica": transmitiría indirectamente la etapa reproductiva y podría condicionar la segmentación. |
+
+**Cuánto de la etapa se puede reconstruir.** Acierto de un bosque aleatorio al predecir la etapa (validación cruzada de 5 particiones, semilla 42). Solo documenta la exclusión; no es un modelo del estudio.
+
+| Variables usadas | n | Acierto |
+|---|---|---|
+| Línea base: siempre la categoría más frecuente | 0 | 59,2 % |
+| Solo regularidad de la menstruación | 1 | 92,2 % |
+| Solo tipo de sangrado y método anticonceptivo | 2 | 78,6 % |
+| Solo edad | 1 | 69,9 % |
+| Predictoras finales más sangrado y método anticonceptivo | 37 | 80,0 % |
+| Predictoras finales | 35 | 66,4 % |
+| Predictoras finales sin edad | 34 | 58,2 % |
+
+**Edad.** Se mantiene como candidata: es una característica demográfica y no equivale a la etapa menopáusica, aunque aporta información indirecta sobre la etapa reproductiva. No se usa la clasificación derivada. La Fase 37 comparará la segmentación con y sin edad (métricas de calidad, tamaño de los grupos e interpretabilidad), priorizando los patrones de hábitos, estilos de vida y contexto laboral.
+
+## 9. Conjunto para la Fase 35B (35 predictoras)
 
 | Bloque | Predictoras |
 |---|---|
-| Control | Edad, Etapa menopáusica, IMC, Previsión de salud, Medicamentos para la diabetes, Trabaja actualmente |
+| Control | Edad, IMC, Previsión de salud, Medicamentos para la diabetes, Trabaja actualmente |
 | Identificación | Tiene pareja, Tiene actividad sexual |
-| Ginecológica | Tipo de sangrado, Usa método anticonceptivo, Operada para no tener más hijos |
+| Ginecológica | Operada para no tener más hijos |
 | Salud | Medicamentos para la presión, Frecuencia de evacuación intestinal, Distensión abdominal |
 | Trabajo | Lugar de trabajo comprensivo, Estrés del entorno laboral |
 | Cuidado | Cantidad de personas que cuida, Doble carga (trabaja y cuida) |
@@ -146,6 +172,11 @@ Archivo: `datos/analitico/dataset_fase35.csv` (identificador, `severo_mrs`, `mrs
 
 **Verificaciones antes de entregar.**
 
+- ✔ variables solo descriptivas fuera de las predictoras y de dataset_fase35.csv
+- ✔ variables solo descriptivas presentes en el conjunto limpio
+- ✔ ninguna predictora con el "no aplica" de las preguntas menstruales
+- ✔ edad se mantiene como candidata
+- ✔ 35 predictoras
 - ✔ sin fuga de información (objetivo, ítems MRS, consecuencias, auditoría)
 - ✔ sin variables del personal de salud
 - ✔ no se leyeron dataset_usuaria_verdad.csv ni bitacora_suciedad.csv
@@ -154,8 +185,9 @@ Archivo: `datos/analitico/dataset_fase35.csv` (identificador, `severo_mrs`, `mrs
 - ✔ ordinales con su orden (códigos numéricos)
 - ✔ Se regenera con el mismo script, la misma configuración y la semilla 42.
 
-## 9. Productos
+## 10. Productos
 
+- `resultados/usuaria/variables_excluidas_modelado.csv` y `reconstruccion_etapa.csv`: exclusiones de la sección 8.
 - `resultados/usuaria/decisiones_preprocesamiento.csv`: cada decisión, con motivo, regla, efecto en n y fuente.
 - `resultados/usuaria/variables_baja_variabilidad.csv`, `pares_redundantes.csv` (y todos los pares en `pares_asociacion_todos.csv`), `imc_imputacion.csv` y `validacion_patrones_simulacion.csv`.
 - `resultados/usuaria/log_eda_fase34c_35.txt`: registro de la ejecución, con advertencias y limitaciones.

@@ -12,8 +12,12 @@ Escribe:
   - datos/analitico/dataset_fase35.csv (participantes con MRS completo)
   - analisis/resultados/usuaria/{variables_baja_variabilidad,pares_redundantes,
     pares_asociacion_todos,decisiones_preprocesamiento,validacion_patrones_simulacion,
-    imc_imputacion,diccionario_datos_fase35}.csv y log_eda_fase34c_35.txt
+    imc_imputacion,diccionario_datos_fase35,variables_excluidas_modelado,
+    reconstruccion_etapa}.csv y log_eda_fase34c_35.txt
   - analisis/informe_preprocesamiento_fase35.md
+
+Las variables de C.EXCLUIDAS_MODELADO siguen en el conjunto limpio, pero no
+entran a dataset_fase35.csv.
 """
 import hashlib
 from datetime import datetime
@@ -33,6 +37,7 @@ ANALITICO = V.RAIZ / 'datos' / 'analitico'
 ENTRADA = V.LIMPIO_USUARIA / 'dataset_usuaria_limpio.csv'
 GUARDAR = dict(index=False, encoding='utf-8-sig', float_format='%.4f')
 PROFESORA, USUARIA = 'reunión con la profesora 2026-10-27', 'decisión de la usuaria 2026-10-28'
+USUARIA_ETAPA = 'decisión de la usuaria 2026-11-01'
 
 
 def main():
@@ -68,6 +73,9 @@ def main():
     X = pd.DataFrame({v: P.codificar(df, v, t) for v, t in tipos.items() if v != 'a_quien_cuida'}, index=df.index)
     X['a_quien_cuida'] = df['a_quien_cuida']
     X['imc'] = imc
+    # Solo descriptivas: se codifican aparte, únicamente para documentar su exclusión.
+    tipos_excluidas = {v: t for v, (t, _) in C.EXCLUIDAS_MODELADO.items()}
+    X_excluidas = pd.DataFrame({v: P.codificar(df, v, t) for v, t in tipos_excluidas.items()}, index=df.index)
     # 2.3 Cuidado: 0 para quienes no cuidan (CERO_SI_NO ya lo aplicó en codificar)
     no_cuida = int((df['cuida_otras_personas'] == 'NO').sum())
     decisiones.append(_d('cantidad_personas_cuida', 'recodificar', f'{no_cuida} participantes que no cuidan '
@@ -92,7 +100,7 @@ def main():
                              f'{int(vacio.sum())} trabajadoras sin respuesta → mediana de las trabajadoras '
                              f'({mediana:g}).', 'variables laborales en el conjunto general',
                              f'{int((~trabajadoras).sum())} no aplica; {int(vacio.sum())} imputadas', USUARIA))
-    for v in ('menstruacion_llega', 'tipo_sangrado', 'usa_metodo_anticonceptivo', 'tipo_metodo_anticonceptivo'):
+    for v in ('tipo_metodo_anticonceptivo',):
         n_na = int((X[v].isin([C.NO_APLICA, 'NO_APLICA'])).sum())
         decisiones.append(_d(v, 'categoría "no aplica"', f'{n_na} participantes: '
                              f'{C.CONDICIONALES_NO_APLICA[v]}. Incluye a las 22 sin fecha de última menstruación '
@@ -152,6 +160,17 @@ def main():
             decisiones.append(_d(v, 'excluir de las predictoras', motivo, 'reglas metodológicas 4-5 del prompt',
                                  'sin cambio en filas', 'reuniones 2026-10-20 y 2026-10-22'))
 
+    # Solo descriptivas: criterios originales y capacidad de reconstruir la etapa
+    excluidas = P.revisar_excluidas(X_excluidas, X, {**tipos, **tipos_excluidas})
+    reconstruccion = P.reconstruccion_etapa(X_excluidas, X)
+    for f in excluidas.itertuples():
+        decisiones.append(_d(f.variable, 'excluir del modelado (se conserva en el conjunto limpio)',
+                             f'{f.motivo} Criterios originales: dominancia {f.porcentaje_dominancia:.1f} %; mayor '
+                             f'asociación {f.mayor_asociacion_valor:.2f} con {f.mayor_asociacion_con}.',
+                             'decisión metodológica, además de los filtros', 'sin cambio en filas', USUARIA_ETAPA))
+    decisiones.append(_d('edad', 'conservar como candidata (evaluar en la Fase 37)', C.NOTA_EDAD,
+                         'decisión metodológica', 'sin cambio en filas', USUARIA_ETAPA))
+
     # Módulo 3
     validacion = P.validar(df)
 
@@ -159,8 +178,8 @@ def main():
     predictoras = list(X.columns)
     salida = pd.concat([df[['participante_id']], df[['severo_mrs']], total.rename('mrs_total'),
                         df[['severidad_mrs_4']], X, imc_marca.rename('imc_fue_imputado')], axis=1)
-    verificaciones = verificar(salida, predictoras)
-    diccionario_35 = diccionario_fase35(salida, predictoras, tipos, campos)
+    verificaciones = verificar(salida, predictoras, df_todo)
+    diccionario_35 = diccionario_fase35(salida, predictoras, tipos, campos, X_excluidas, tipos_excluidas)
 
     ANALITICO.mkdir(parents=True, exist_ok=True)
     RESULTADOS.mkdir(parents=True, exist_ok=True)
@@ -172,11 +191,14 @@ def main():
     validacion.to_csv(RESULTADOS / 'validacion_patrones_simulacion.csv', **GUARDAR)
     sens_imc.to_csv(RESULTADOS / 'imc_imputacion.csv', **GUARDAR)
     diccionario_35.to_csv(RESULTADOS / 'diccionario_datos_fase35.csv', **GUARDAR)
+    excluidas.to_csv(RESULTADOS / 'variables_excluidas_modelado.csv', **GUARDAR)
+    reconstruccion.to_csv(RESULTADOS / 'reconstruccion_etapa.csv', **GUARDAR)
 
     r = dict(n_todo=len(df_todo), n=len(df), clases=clases, imc_media=imc_media, imc_marca=imc_marca,
              sens_imc=sens_imc, dom=dom, elim_dom=elim_dom, pares_red=pares_red, elim_red=elim_red,
              validacion=validacion, predictoras=predictoras, tipos=tipos, verificaciones=verificaciones,
-             imputados_trabajo=imputados_trabajo, n_candidatas=len(C.CANDIDATAS), todos_pares=todos_pares)
+             imputados_trabajo=imputados_trabajo, n_candidatas=len(C.CANDIDATAS), todos_pares=todos_pares,
+             excluidas=excluidas, reconstruccion=reconstruccion)
     (RESULTADOS / 'log_eda_fase34c_35.txt').write_text(log(r), encoding='utf-8')
     (ANALISIS / 'informe_preprocesamiento_fase35.md').write_text(informe(r), encoding='utf-8')
     print(f'{len(df)} participantes · {len(C.CANDIDATAS)} candidatas → {len(predictoras)} predictoras '
@@ -189,10 +211,21 @@ def _d(variable, decision, motivo, regla, impacto, fuente):
             'impacto_en_n': impacto, 'fuente_decision': fuente}
 
 
-def verificar(salida, predictoras):
+def verificar(salida, predictoras, df_todo):
     prohibidas = set(predictoras) & set(C.PROHIBIDAS)
     profesional = set(predictoras) & set(V.SUBGRUPO_PROFESIONAL) | ({'circunferencia_cintura_cm'} & set(predictoras))
+    descriptivas = set(C.EXCLUIDAS_MODELADO)
+    menstruales = {v for v, m in C.CONDICIONALES_NO_APLICA.items() if 'menstrúa' in m} & set(predictoras)
     return {
+        'variables solo descriptivas fuera de las predictoras y de dataset_fase35.csv': (
+            not descriptivas & (set(predictoras) | set(salida.columns)),
+            ', '.join(descriptivas & (set(predictoras) | set(salida.columns)))),
+        'variables solo descriptivas presentes en el conjunto limpio': (
+            descriptivas <= set(df_todo.columns), ', '.join(descriptivas - set(df_todo.columns))),
+        'ninguna predictora con el "no aplica" de las preguntas menstruales': (not menstruales, ', '.join(menstruales)),
+        'edad se mantiene como candidata': ('edad' in predictoras, ''),
+        f'{C.N_PREDICTORAS_ESPERADAS} predictoras': (len(predictoras) == C.N_PREDICTORAS_ESPERADAS,
+                                                     str(len(predictoras))),
         'sin fuga de información (objetivo, ítems MRS, consecuencias, auditoría)': (not prohibidas,
                                                                                   ', '.join(prohibidas)),
         'sin variables del personal de salud': (not profesional, ', '.join(profesional)),
@@ -206,7 +239,7 @@ def verificar(salida, predictoras):
     }
 
 
-def diccionario_fase35(salida, predictoras, tipos, campos):
+def diccionario_fase35(salida, predictoras, tipos, campos, X_excluidas, tipos_excluidas):
     filas = [
         ('participante_id', 'Identificador de participante', 'identificador', 'texto', 'sin faltantes', 'identificador'),
         ('severo_mrs', 'MRS severo (≥ 16 puntos)', 'binaria', '1 = severo; 0 = no severo', 'sin faltantes',
@@ -231,6 +264,9 @@ def diccionario_fase35(salida, predictoras, tipos, campos):
         filas.append((v, V.etiqueta(v), tipo, valores, trat, 'predictora'))
     filas.append(('imc_fue_imputado', 'IMC imputado', 'binaria', '1 = imputado; 0 = observado', 'sin faltantes',
                   'auditoría (no predictora)'))
+    for v, tipo in tipos_excluidas.items():
+        filas.append((v, V.etiqueta(v), tipo, _valores(v, tipo, X_excluidas[v], campos),
+                      'queda en el conjunto limpio; no entra a dataset_fase35.csv', 'solo descriptiva'))
     return pd.DataFrame(filas, columns=['variable', 'etiqueta', 'tipo_final', 'valores_permitidos',
                                         'tratamiento_faltantes', 'rol'])
 
@@ -273,12 +309,13 @@ def log(r):
         f'Eliminadas por redundancia (> {C.UMBRAL_REDUNDANCIA}): '
         + (', '.join(f'{s} (queda {q})' for s, q in r['elim_red'].items()) or 'ninguna'),
         f'Predictoras finales ({len(r["predictoras"])}): {", ".join(r["predictoras"])}',
+        f'Solo descriptivas, fuera del modelado (no son candidatas): {", ".join(C.EXCLUIDAS_MODELADO)}',
         '',
         'Imputaciones de esta fase:',
         f'  - imc: {int(falt.sum())} valores ({100 * falt.mean():.1f} %) con la media {r["imc_media"]:.2f}',
         *[f'  - {v}: {n} trabajadoras sin respuesta → mediana' for v, n in r['imputados_trabajo'].items()],
         '  - cantidad_personas_cuida = 0 para quienes no cuidan; frecuencias de ejercicio = 0 si no lo realiza',
-        '  - preguntas laborales y de menstruación: categoría "no aplica" (no es imputación)',
+        '  - preguntas laborales y tipo de método anticonceptivo: categoría "no aplica" (no es imputación)',
         '',
         'Verificaciones:',
         *[f'  [{"OK" if ok else "FALLA"}] {k}{(": " + d) if d and not ok else ""}'
@@ -289,8 +326,9 @@ def log(r):
         'reduce la variabilidad y acerca a 0 la asociación del IMC (ver imc_imputacion.csv).',
         '  - La Fase 34B ya había imputado por moda/mediana hasta un 7 % de varias preguntas; eso eleva un poco '
         'la dominancia (ver pct_dominante_sin_imputados_34B en eda_univariado_resumen.csv).',
-        '  - "No aplica" se codifica 0 en las ordinales de trabajo y menstruación: no es un punto de la escala; '
+        '  - "No aplica" se codifica 0 en las ordinales de trabajo: no es un punto de la escala; '
         'la Fase 36 debe codificarlo como indicador aparte antes de escalar.',
+        '  - Edad: ' + C.NOTA_EDAD,
         '  - La V de Cramér y la rho de Spearman no están en la misma escala; el umbral 0,80 se aplica a ambas.',
         '  - El conjunto es sintético: las asociaciones esperadas fueron puestas por la simulación y se verifican, '
         'no se descubren.',
@@ -364,8 +402,8 @@ def informe(r):
         'pierden participantes y no se confunde "no trabaja" con "no respondió". '
         + ', '.join(f'{n} trabajadoras sin respuesta en {V.etiqueta(v).lower()}' for v, n in r['imputados_trabajo'].items())
         + ' reciben la mediana de las trabajadoras.',
-        '- **Menstruación** (regularidad, sangrado, método anticonceptivo): "no aplica" para quienes ya no menstrúan '
-        'y para las 22 sin fecha de última menstruación.',
+        '- **Tipo de método anticonceptivo:** "no aplica" para quienes no usan método o ya no menstrúan. Regularidad, '
+        'sangrado y uso de método anticonceptivo no entran al modelado (sección 8).',
         '- **Frecuencias de ejercicio**: 0 = "no lo realiza" (es un valor real: frecuencia cero).',
         '',
         f'## 5. Filtro por baja variabilidad (> {C.UMBRAL_ELIMINAR_DOMINANCIA} % elimina)',
@@ -434,7 +472,34 @@ def informe(r):
         f'parciales, {(val.coherencia == "no esperado").sum()} no esperados. Los comentarios de cada fila están en '
         '`resultados/usuaria/validacion_patrones_simulacion.csv`.',
         '',
-        f'## 8. Conjunto para la Fase 35B ({len(r["predictoras"])} predictoras)',
+        '## 8. Variables solo descriptivas (fuera del modelado)',
+        '',
+        '`etapa_menopausica` es una variable derivada: no es una pregunta de la encuesta y su regla es una '
+        'aproximación propia, basada en parte en el criterio de 12 meses de STRAW+10 y pendiente de validación por la '
+        'profesora. Por decisión de la usuaria (01-11-2026) se conserva en el conjunto limpio para describir la muestra '
+        'y caracterizar los clústeres ya formados, pero no participa en la selección entrópica, la codificación, PCA, '
+        'K-Means, el agrupamiento aglomerativo, las reglas ni la plataforma. La regla no se modificó.',
+        '',
+        'Quitarla no bastaba: las tres preguntas menstruales usan el mismo corte de 12 meses y comparten las respuestas '
+        '"no aplica", así que la información de la etapa seguiría entrando. El filtro de redundancia no lo detecta, '
+        'porque mide cada par solo donde ambas variables aplican (sección 6). Por eso también se excluyen, aunque '
+        'cumplen los criterios originales. Las cuatro siguen en el conjunto limpio y en el análisis exploratorio.',
+        '',
+        _tabla(['Variable', '"No aplica"', 'Dominancia', 'Mayor asociación con una predictora', 'V con la etapa',
+                'Motivo'],
+               [[f.etiqueta, f.n_no_aplica, _pct(f.porcentaje_dominancia),
+                 f'{_num(f.mayor_asociacion_valor)} ({V.etiqueta(f.mayor_asociacion_con)})',
+                 _num(f.v_con_etapa_todas_las_filas), f.motivo] for f in r['excluidas'].itertuples()]),
+        '',
+        '**Cuánto de la etapa se puede reconstruir.** Acierto de un bosque aleatorio al predecir la etapa (validación '
+        'cruzada de 5 particiones, semilla 42). Solo documenta la exclusión; no es un modelo del estudio.',
+        '',
+        _tabla(['Variables usadas', 'n', 'Acierto'],
+               [[f.escenario, f.n_variables, _pct(100 * f.acierto)] for f in r['reconstruccion'].itertuples()]),
+        '',
+        f'**Edad.** {C.NOTA_EDAD}',
+        '',
+        f'## 9. Conjunto para la Fase 35B ({len(r["predictoras"])} predictoras)',
         '',
         _tabla(['Bloque', 'Predictoras'],
                [[b, ', '.join(V.etiqueta(v) for v in r['predictoras'] if C.CANDIDATAS[v][1] == b)]
@@ -450,8 +515,10 @@ def informe(r):
         *[f'- {"✔" if ok else "✘"} {k}' for k, (ok, _) in r['verificaciones'].items()],
         '- ✔ Se regenera con el mismo script, la misma configuración y la semilla 42.',
         '',
-        '## 9. Productos',
+        '## 10. Productos',
         '',
+        '- `resultados/usuaria/variables_excluidas_modelado.csv` y `reconstruccion_etapa.csv`: exclusiones de la '
+        'sección 8.',
         '- `resultados/usuaria/decisiones_preprocesamiento.csv`: cada decisión, con motivo, regla, efecto en n y '
         'fuente.',
         '- `resultados/usuaria/variables_baja_variabilidad.csv`, `pares_redundantes.csv` (y todos los pares en '
