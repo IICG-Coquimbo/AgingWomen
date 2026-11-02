@@ -9,7 +9,8 @@ Escribe:
   - analisis/informe_eda_usuaria.md
   - analisis/figuras/eda_usuaria/ (frecuencias/: una figura por variable)
   - analisis/resultados/usuaria/{frecuencias,diferencias_trabajo,atipicos,faltantes,
-    asociacion_severidad,consecuencias,matriz_spearman,perfil_sintomas}.csv
+    asociacion_severidad,consecuencias,matriz_spearman,perfil_sintomas,
+    severidad_por_respuesta}.csv
   - datos/analitico/conjunto_eda_usuaria.csv: participantes con MRS completo +
     `severidad` (0-3), entrada de la Fase 35.
 
@@ -319,6 +320,28 @@ def main():
         return [(v, _eje_y(v, campos), _limites_y(mrs, v, campos)) for v in variables]
 
     G.direccion(df, ejes_y(para_direccion), FIGURAS / 'direccion.png')
+    # 7.1 Numéricas: violín + caja por clase de severidad (valores medidos, sin imputados).
+    spear_v = spear.set_index('variable')
+
+    def nota_rho(v):
+        if v not in spear_v.index:
+            return 'sin prueba: la representa el IMC'
+        t = spear_v.loc[v]
+        return f'rho = {t.efecto:+.2f} · p ajustado = {t.p_ajustado:.3f}'
+
+    violin = [(v, revision._observados(mrs, v)) for v in V.CONTINUAS_USUARIA]
+    G.violin_severidad(mrs, violin, FIGURAS / 'violin_severidad.png',
+                       {**{v: _eje_y(v, campos) for v in V.CONTINUAS_USUARIA},
+                        'peso_kg': 'kg', 'talla_actual_cm': 'cm'},
+                       notas={v: nota_rho(v) for v in V.CONTINUAS_USUARIA})
+    medianas_sev = pd.DataFrame({v: x.groupby(mrs.loc[x.index, 'mrs_severidad']).median()
+                                 .reindex(V.ORDEN_SEVERIDAD) for v, x in violin}).T
+    # 7.2 Significativas no numéricas: % de severidad dentro de cada respuesta (hasta 8 paneles).
+    apiladas = []
+    for v in [v for v in orden_sig if v not in V.CONTINUAS_USUARIA][:8]:
+        s, orden = respuestas(mrs, v, campos)
+        apiladas.append((v, E.severidad_por(mrs.assign(respuesta=s), 'respuesta', orden), nota_rho(v)))
+    G.severidad_por_respuesta(apiladas, FIGURAS / 'severidad_por_respuesta.png')
     # Anexo: las no significativas, en paneles por bloque (mismo orden que la sección 3).
     no_sig = spear[spear['p_ajustado'] >= 0.05].set_index('variable')
     carpeta_dir = FIGURAS / 'direccion_anexo'
@@ -359,6 +382,8 @@ def main():
     salida.to_csv(ANALITICO / 'conjunto_eda_usuaria.csv', index=False, encoding='utf-8-sig')
 
     perfil.to_csv(RESULTADOS / 'perfil_sintomas.csv', **guardar)
+    pd.concat([t.rename_axis('respuesta').reset_index().assign(variable=v, etiqueta=V.etiqueta(v))
+               for v, t, _ in apiladas]).to_csv(RESULTADOS / 'severidad_por_respuesta.csv', **guardar)
     r = {'n': len(df), 'n_mrs': len(mrs), 'mrs': mrs, 'df': df, 'conteo': conteo, 'bloques': bloques,
          'perfil': perfil, 'fdr_conjunta': fdr_conjunta,
          'bloque_de': bloque_de, 'subescalas': subescalas, 'direccion_anexo': direccion_anexo, 'continuas': continuas,
@@ -368,7 +393,8 @@ def main():
          'pruebas_sev': pruebas_sev, 'kw_tramo': kw_tramo, 'asoc': asoc, 'spear': spear,
          'kruskal': kruskal, 'sig': sig, 'orden_sig': orden_sig, 'redundantes': redundantes,
          'n_matriz': len(matriz) - 1, 'para_direccion': para_direccion, 'sev_ejercicio': sev_ejercicio,
-         'conse': conse, 'trabajadoras': len(trabajadoras)}
+         'conse': conse, 'trabajadoras': len(trabajadoras), 'violin': violin, 'medianas_sev': medianas_sev,
+         'apiladas': apiladas}
     (ANALISIS / 'informe_eda_usuaria.md').write_text(informe_usuaria.generar(r), encoding='utf-8')
     print(f'{len(df)} participantes, {len(mrs)} con MRS completo; {len(sig)} correlaciones significativas')
     print('Informe: analisis/informe_eda_usuaria.md')

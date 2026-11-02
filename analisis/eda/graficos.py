@@ -360,3 +360,87 @@ def perfil_sintomas(t, ruta):
     ax.set_xlabel('% de participantes del grupo (respuesta ≥ 2 en el ítem MRS)', fontsize=8)
     ax.legend(loc='best', frameon=False, fontsize=8)
     _guardar(fig, ruta)
+
+
+CORTAS_SEVERIDAD = ['Muy leve', 'Leve', 'Moderada', 'Severa']
+
+
+def violin_severidad(mrs, datos, ruta, unidades, notas=None, columnas=3):
+    """
+    Violín + caja de cada variable numérica en cada clase de severidad del MRS.
+    El violín es la densidad (KDE de matplotlib, recortada al mínimo y máximo
+    observados) y la caja, mediana y cuartiles: se ve cómo se reparten los
+    valores dentro de cada clase, no solo su media.
+    `datos` = [(variable, valores observados con el índice de `mrs`)].
+    """
+    notas = notas or {}
+    filas = int(np.ceil(len(datos) / columnas))
+    fig, ejes = plt.subplots(filas, columnas, figsize=(10, 2.9 * filas + 0.7), squeeze=False)
+    for ax, (v, x) in zip(ejes.flat, datos):
+        sev = mrs.loc[x.index, 'mrs_severidad']
+        grupos = [x[sev == s].to_numpy() for s in V.ORDEN_SEVERIDAD]
+        partes = ax.violinplot(grupos, positions=range(4), widths=0.8, showextrema=False)
+        for cuerpo, color in zip(partes['bodies'], RAMPA_SEVERIDAD):
+            cuerpo.set_facecolor(color)
+            cuerpo.set_edgecolor(color)
+            cuerpo.set_alpha(0.55)
+        ax.boxplot(grupos, positions=range(4), widths=0.16, showfliers=False, patch_artist=True,
+                   boxprops={'facecolor': SUPERFICIE, 'edgecolor': TINTA, 'linewidth': 0.8},
+                   medianprops={'color': TINTA, 'linewidth': 1.4},
+                   whiskerprops={'color': TINTA, 'linewidth': 0.8}, capprops={'linewidth': 0})
+        ax.set_xticks(range(4), [f'{c}\nn = {len(g)}' for c, g in zip(CORTAS_SEVERIDAD, grupos)], fontsize=7)
+        ax.set_title(V.etiqueta(v), fontsize=9, loc='left', pad=14 if v in notas else 6)
+        if v in notas:
+            ax.text(0, 1.02, notas[v], transform=ax.transAxes, fontsize=7, color=TENUE, va='bottom')
+        ax.set_ylabel(unidades.get(v, ''), fontsize=7)
+        ax.tick_params(axis='y', labelsize=7)
+        ax.grid(axis='y', color=GRILLA, linewidth=0.8)
+        ax.set_axisbelow(True)
+    for ax in list(ejes.flat)[len(datos):]:
+        ax.set_visible(False)
+    fig.suptitle('Variables numéricas según la severidad del MRS (violín y caja)', x=0.01, ha='left',
+                 fontweight='bold', fontsize=11)
+    _guardar(fig, ruta)
+
+
+def severidad_por_respuesta(paneles, ruta, columnas=2):
+    """
+    Barras 100 % apiladas: % de cada clase de severidad dentro de cada respuesta,
+    un panel por variable (hasta 8 por imagen). `paneles` = [(variable, tabla de
+    `estadistica.severidad_por`, nota bajo el título)].
+    """
+    filas = int(np.ceil(len(paneles) / columnas))
+    # Alto de cada fila según la variable con más respuestas en esa fila.
+    alturas = [max(len(t) for _, t, _ in paneles[i * columnas:(i + 1) * columnas]) * 0.32 + 1.0
+               for i in range(filas)]
+    fig, ejes = plt.subplots(filas, columnas, figsize=(10, sum(alturas) + 0.8), squeeze=False,
+                             gridspec_kw={'height_ratios': alturas})
+    for ax, (v, tabla, nota) in zip(ejes.flat, paneles):
+        t = tabla.iloc[::-1]
+        etiquetas = ['\n'.join(textwrap.wrap(f'{i} (n={int(n)})', 26)) for i, n in zip(t.index, t['n'])]
+        izquierda = np.zeros(len(t))
+        for sev, color in zip(V.ORDEN_SEVERIDAD, RAMPA_SEVERIDAD):
+            valores = t[sev].to_numpy()
+            ax.barh(etiquetas, valores, left=izquierda, color=color, edgecolor=SUPERFICIE, linewidth=1.2,
+                    height=0.7, label=sev)
+            for k, (x0, p) in enumerate(zip(izquierda, valores)):
+                if p >= 12:
+                    tinta = TINTA if color == RAMPA_SEVERIDAD[0] else 'white'
+                    ax.text(x0 + p / 2, k, f'{p:.0f}', ha='center', va='center', color=tinta, fontsize=6.5)
+            izquierda += valores
+        ax.set_xlim(0, 100)
+        ax.tick_params(axis='y', labelsize=6.5)
+        ax.tick_params(axis='x', labelsize=6.5)
+        ax.set_title(V.etiqueta(v), fontsize=9, loc='left', pad=14)
+        ax.text(0, 1.02, nota, transform=ax.transAxes, fontsize=7, color=TENUE, va='bottom')
+        _grilla_x(ax)
+    for ax in list(ejes.flat)[len(paneles):]:
+        ax.set_visible(False)
+    fig.suptitle('Severidad del MRS dentro de cada respuesta (variables significativas)', x=0.01, ha='left',
+                 fontweight='bold', fontsize=11)
+    manejadores, nombres = ejes.flat[0].get_legend_handles_labels()
+    fig.legend(manejadores, nombres, ncol=4, loc='upper left', bbox_to_anchor=(0.01, 1 - 0.38 / sum(alturas)),
+               frameon=False, fontsize=8)
+    fig.tight_layout(rect=(0, 0, 1, 1 - 0.6 / sum(alturas)))
+    fig.savefig(ruta, dpi=150)
+    plt.close(fig)

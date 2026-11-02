@@ -598,6 +598,81 @@ def _seccion_asociacion(r, num):
     ]
 
 
+def _nota_rho(spear, v):
+    if v not in spear.index:
+        return 'sin prueba (la representa el IMC)'
+    t = spear.loc[v]
+    return f'rho = {t.efecto:+.2f}; p ajustado {_igual(t.p_ajustado)}'
+
+
+def _violin(r, num):
+    """7.1: violín + caja de las numéricas por clase de severidad."""
+    med, spear = r['medianas_sev'], r['spear'].set_index('variable')
+    return [
+        '### 7.1 Variables numéricas por clase de severidad (violín y caja)',
+        '',
+        'La figura anterior muestra solo la media de cada clase. Aquí se ve cómo se reparten los valores dentro',
+        'de cada clase de severidad, para las cinco variables numéricas (valores medidos, sin imputados: peso,',
+        'talla e IMC solo de quienes los informaron). Peso y talla no tienen prueba propia porque el IMC, que se',
+        'calcula con ambos, las representa en la asociación.',
+        '',
+        _tabla(['Variable', *[f'Mediana: {s.lower()}' for s in V.ORDEN_SEVERIDAD], 'Asociación con la severidad'],
+               [(V.etiqueta(v), *[_f(med.at[v, s]) for s in V.ORDEN_SEVERIDAD], _nota_rho(spear, v))
+                for v in med.index]),
+        '',
+        *_figura(next(num), f'{FIG}/violin_severidad.png', 'Variables numéricas según la severidad del MRS',
+                 'Violín: densidad de los valores en cada clase (más ancho = más participantes con ese valor; '
+                 'se recorta al mínimo y máximo observados). Caja: mediana (línea) y cuartiles; bigotes hasta '
+                 '1,5 × RIC. Bajo cada clase, n con el dato.',
+                 como='si las cajas y los violines suben de izquierda a derecha, las participantes con síntomas '
+                 'más severos tienen valores más altos de la variable; si se ven a la misma altura, la variable '
+                 'no distingue entre clases. Formas muy distintas entre clases (más anchas, con dos jorobas o '
+                 'colas largas) indican que el grupo no es homogéneo aunque la mediana sea parecida.',
+                 muestra='el IMC es la única numérica asociada a la severidad, y la diferencia está sobre todo '
+                 'en la clase severa: su mediana ahí es la más alta '
+                 f'({_f(med.at["imc", "Severa"])} kg/m²) y el violín se estira hacia valores altos, mientras que '
+                 'entre las tres primeras clases no sube de forma ordenada ('
+                 + ' / '.join(_f(med.at['imc', s]) for s in V.ORDEN_SEVERIDAD[:3]) + '). El peso repite ese '
+                 f'patrón (mediana {_f(med.at["peso_kg", "Severa"])} kg en la severa) y la talla casi no cambia, '
+                 'lo que confirma que la señal viene del peso y no de la estatura. Edad y horas sentada se ven '
+                 'parecidas en las cuatro clases, en línea con su rho no significativo.'),
+    ]
+
+
+def _apiladas(r, num):
+    """7.2: % de severidad dentro de cada respuesta de las significativas no numéricas."""
+    spear = r['spear'].set_index('variable')
+    lineas = []
+    for v, t, _ in r['apiladas']:
+        validas = t[t['n'] >= 10]
+        a, b = validas.iloc[0], validas.iloc[-1]
+        lineas.append(f'- **{V.etiqueta(v)}** ({_nota_rho(spear, v)}): clase severa '
+                      f'{a["Severa"]:.0f} % en «{validas.index[0]}» (n = {int(a["n"])}) y '
+                      f'{b["Severa"]:.0f} % en «{validas.index[-1]}» (n = {int(b["n"])}).')
+    return [
+        '### 7.2 Severidad dentro de cada respuesta (variables significativas)',
+        '',
+        f'Las {len(r["apiladas"])} variables significativas que no son numéricas (escalas, frecuencias y sí/no)',
+        'no se grafican con violín: con pocas opciones, la curva de densidad dibujaría valores intermedios que',
+        'no existen. En su lugar se muestra, para cada respuesta, cómo se reparten las participantes en las',
+        'cuatro clases de severidad. Las preguntas de trabajo incluyen solo a quienes trabajan.',
+        '',
+        *_figura(next(num), f'{FIG}/severidad_por_respuesta.png',
+                 'Severidad del MRS dentro de cada respuesta (variables significativas)',
+                 'Barras 100 % apiladas; cada barra es una respuesta y suma 100 %. Números dentro de las barras: '
+                 '% (se omiten bajo 12 %). Tabla completa en `resultados/usuaria/severidad_por_respuesta.csv`.',
+                 como='compare el tramo más oscuro (severa) entre las respuestas de una misma variable. Si crece '
+                 'hacia abajo o hacia arriba de forma ordenada, la variable se asocia con más síntomas en ese '
+                 'sentido. Fíjese en el n de cada barra: las respuestas con pocas participantes cambian mucho '
+                 'por azar.',
+                 muestra='en todas se ve el sentido que indica su rho, con diferencias moderadas (ninguna '
+                 'respuesta concentra a todas las severas). Primera y última respuesta con al menos 10 '
+                 'participantes:'),
+        *lineas,
+        '',
+    ]
+
+
 def _seccion_direccion(r, num):
     ej = r['sev_ejercicio']
     return [
@@ -608,7 +683,9 @@ def _seccion_direccion(r, num):
                  como='si la línea sube, a mayor severidad mayor valor de la variable.'),
         'Las variables no significativas tienen el mismo gráfico en el Anexo A, agrupadas por bloque.',
         '',
-        '### 7.1 Ejercicio',
+        *_violin(r, num),
+        *_apiladas(r, num),
+        '### 7.3 Ejercicio',
         '',
         _tabla(['Días de ejercicio', 'n'] + V.ORDEN_SEVERIDAD + ['MRS medio'],
                [(g, int(f['n']), *[f'{f[s]:.1f} %' for s in V.ORDEN_SEVERIDAD], _f(f['mrs_medio']))

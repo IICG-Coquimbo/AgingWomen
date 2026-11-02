@@ -1,6 +1,6 @@
 # Análisis exploratorio del conjunto de la usuaria común (Fase 34C)
 
-Generado por `analisis/eda_usuaria.py` el 2026-10-27. Volver a ejecutar el script
+Generado por `analisis/eda_usuaria.py` el 2026-10-30. Volver a ejecutar el script
 regenera este informe, las figuras (`analisis/figuras/eda_usuaria/`) y las tablas
 (`analisis/resultados/usuaria/`).
 
@@ -1049,7 +1049,57 @@ se descartan como variables: el resultado nulo es del diseño de la simulación,
 
 Las variables no significativas tienen el mismo gráfico en el Anexo A, agrupadas por bloque.
 
-### 7.1 Ejercicio
+### 7.1 Variables numéricas por clase de severidad (violín y caja)
+
+La figura anterior muestra solo la media de cada clase. Aquí se ve cómo se reparten los valores dentro
+de cada clase de severidad, para las cinco variables numéricas (valores medidos, sin imputados: peso,
+talla e IMC solo de quienes los informaron). Peso y talla no tienen prueba propia porque el IMC, que se
+calcula con ambos, las representa en la asociación.
+
+| Variable | Mediana: sin síntomas o muy leves | Mediana: leve | Mediana: moderada | Mediana: severa | Asociación con la severidad |
+|---|---|---|---|---|---|
+| Edad | 48.5 | 49.5 | 52.0 | 51.0 | rho = +0.05; p ajustado = 0.431 |
+| IMC | 27.9 | 25.8 | 27.6 | 29.7 | rho = +0.22; p ajustado = 0.004 |
+| Peso (kg) | 67.4 | 65.9 | 66.1 | 73.1 | sin prueba (la representa el IMC) |
+| Talla (cm) | 155.0 | 155.0 | 156.0 | 156.0 | sin prueba (la representa el IMC) |
+| Horas sentada al día | 6.0 | 6.0 | 6.0 | 6.0 | rho = -0.03; p ajustado = 0.702 |
+
+**Figura 85. Variables numéricas según la severidad del MRS**
+
+![Variables numéricas según la severidad del MRS](figuras/eda_usuaria/violin_severidad.png)
+
+*Violín: densidad de los valores en cada clase (más ancho = más participantes con ese valor; se recorta al mínimo y máximo observados). Caja: mediana (línea) y cuartiles; bigotes hasta 1,5 × RIC. Bajo cada clase, n con el dato.*
+
+**Cómo leerla.** Si las cajas y los violines suben de izquierda a derecha, las participantes con síntomas más severos tienen valores más altos de la variable; si se ven a la misma altura, la variable no distingue entre clases. Formas muy distintas entre clases (más anchas, con dos jorobas o colas largas) indican que el grupo no es homogéneo aunque la mediana sea parecida.
+
+**Qué muestra.** El IMC es la única numérica asociada a la severidad, y la diferencia está sobre todo en la clase severa: su mediana ahí es la más alta (29.7 kg/m²) y el violín se estira hacia valores altos, mientras que entre las tres primeras clases no sube de forma ordenada (27.9 / 25.8 / 27.6). El peso repite ese patrón (mediana 73.1 kg en la severa) y la talla casi no cambia, lo que confirma que la señal viene del peso y no de la estatura. Edad y horas sentada se ven parecidas en las cuatro clases, en línea con su rho no significativo.
+
+### 7.2 Severidad dentro de cada respuesta (variables significativas)
+
+Las 7 variables significativas que no son numéricas (escalas, frecuencias y sí/no)
+no se grafican con violín: con pocas opciones, la curva de densidad dibujaría valores intermedios que
+no existen. En su lugar se muestra, para cada respuesta, cómo se reparten las participantes en las
+cuatro clases de severidad. Las preguntas de trabajo incluyen solo a quienes trabajan.
+
+**Figura 86. Severidad del MRS dentro de cada respuesta (variables significativas)**
+
+![Severidad del MRS dentro de cada respuesta (variables significativas)](figuras/eda_usuaria/severidad_por_respuesta.png)
+
+*Barras 100 % apiladas; cada barra es una respuesta y suma 100 %. Números dentro de las barras: % (se omiten bajo 12 %). Tabla completa en `resultados/usuaria/severidad_por_respuesta.csv`.*
+
+**Cómo leerla.** Compare el tramo más oscuro (severa) entre las respuestas de una misma variable. Si crece hacia abajo o hacia arriba de forma ordenada, la variable se asocia con más síntomas en ese sentido. Fíjese en el n de cada barra: las respuestas con pocas participantes cambian mucho por azar.
+
+**Qué muestra.** En todas se ve el sentido que indica su rho, con diferencias moderadas (ninguna respuesta concentra a todas las severas). Primera y última respuesta con al menos 10 participantes:
+
+- **Lugar de trabajo comprensivo** (rho = -0.23; p ajustado = 0.002): clase severa 74 % en «Muy en desacuerdo» (n = 19) y 42 % en «Muy de acuerdo» (n = 36).
+- **Estrés del entorno laboral** (rho = +0.20; p ajustado = 0.007): clase severa 50 % en «Nada de estrés» (n = 24) y 75 % en «Estrés extremo» (n = 32).
+- **Frecuencia de ejercicio de bajo impacto** (rho = -0.17; p ajustado = 0.002): clase severa 59 % en «No lo realiza» (n = 305) y 19 % en «Siempre» (n = 16).
+- **Días de ejercicio a la semana** (rho = -0.15; p ajustado = 0.005): clase severa 59 % en «0 días» (n = 302) y 25 % en «Todos los días» (n = 12).
+- **Medicamentos para la diabetes** (rho = +0.13; p ajustado = 0.020): clase severa 67 % en «Sí» (n = 66) y 51 % en «No» (n = 463).
+- **Tabaco** (rho = +0.11; p ajustado = 0.043): clase severa 50 % en «Nunca» (n = 399) y 61 % en «Diariamente» (n = 82).
+- **Vasos de agua al día** (rho = -0.11; p ajustado = 0.043): clase severa 71 % en «No consumo» (n = 24) y 44 % en «7 o más porciones» (n = 66).
+
+### 7.3 Ejercicio
 
 | Días de ejercicio | n | Sin síntomas o muy leves | Leve | Moderada | Severa | MRS medio |
 |---|---|---|---|---|---|---|
@@ -1059,7 +1109,7 @@ Las variables no significativas tienen el mismo gráfico en el Anexo A, agrupada
 | 5-6 días | 15 | 13.3 % | 0.0 % | 53.3 % | 33.3 % | 15.9 |
 | Todos los días | 12 | 16.7 % | 8.3 % | 50.0 % | 25.0 % | 13.2 |
 
-**Figura 85. Severidad según días de ejercicio a la semana**
+**Figura 87. Severidad según días de ejercicio a la semana**
 
 ![Severidad según días de ejercicio a la semana](figuras/eda_usuaria/ejercicio_severidad.png)
 
@@ -1081,7 +1131,7 @@ Las preguntas laborales solo las responden quienes trabajan.
 | Ausencias o atrasos por síntomas | 287 | +0.46 | < 0,001 |
 | Usa antidepresivos o medicamentos para dormir | 529 | +0.22 | < 0,001 |
 
-**Figura 86. Consecuencias según la severidad**
+**Figura 88. Consecuencias según la severidad**
 
 ![Consecuencias según la severidad](figuras/eda_usuaria/consecuencias.png)
 
@@ -1128,7 +1178,7 @@ atención.
 Las variables nominales (etapa menopáusica, IMC por categoría, previsión, comuna, entre otras) no
 tienen una media con sentido: se compararon con Kruskal-Wallis y no aparecen aquí.
 
-**Figura 87. Variables de control**
+**Figura 89. Variables de control**
 
 ![Variables de control](figuras/eda_usuaria/direccion_anexo/control.png)
 
@@ -1136,25 +1186,25 @@ tienen una media con sentido: se compararon con Kruskal-Wallis y no aparecen aqu
 
 **Qué muestra.** Cerca del límite (p ajustado < 0,10): trabaja actualmente.
 
-**Figura 88. Actividad física**
+**Figura 90. Actividad física**
 
 ![Actividad física](figuras/eda_usuaria/direccion_anexo/actividad.png)
 
 *Puntos: media en cada clase; barras: IC 95 %.*
 
-**Figura 89. Alimentación (contexto)**
+**Figura 91. Alimentación (contexto)**
 
 ![Alimentación (contexto)](figuras/eda_usuaria/direccion_anexo/alimentacion_contexto.png)
 
 *Puntos: media en cada clase; barras: IC 95 %.*
 
-**Figura 90. Alimentación (consumo)**
+**Figura 92. Alimentación (consumo)**
 
 ![Alimentación (consumo)](figuras/eda_usuaria/direccion_anexo/alimentacion_consumo.png)
 
 *Puntos: media en cada clase; barras: IC 95 %.*
 
-**Figura 91. Sustancias**
+**Figura 93. Sustancias**
 
 ![Sustancias](figuras/eda_usuaria/direccion_anexo/sustancias.png)
 
@@ -1162,25 +1212,25 @@ tienen una media con sentido: se compararon con Kruskal-Wallis y no aparecen aqu
 
 **Qué muestra.** Cerca del límite (p ajustado < 0,10): alcohol.
 
-**Figura 92. Cuidado de otras personas**
+**Figura 94. Cuidado de otras personas**
 
 ![Cuidado de otras personas](figuras/eda_usuaria/direccion_anexo/cuidado.png)
 
 *Puntos: media en cada clase; barras: IC 95 %.*
 
-**Figura 93. Salud ginecológica**
+**Figura 95. Salud ginecológica**
 
 ![Salud ginecológica](figuras/eda_usuaria/direccion_anexo/ginecologicas.png)
 
 *Puntos: media en cada clase; barras: IC 95 %.*
 
-**Figura 94. Medicamentos y digestión**
+**Figura 96. Medicamentos y digestión**
 
 ![Medicamentos y digestión](figuras/eda_usuaria/direccion_anexo/salud.png)
 
 *Puntos: media en cada clase; barras: IC 95 %.*
 
-**Figura 95. Otras características**
+**Figura 97. Otras características**
 
 ![Otras características](figuras/eda_usuaria/direccion_anexo/otras.png)
 
@@ -1193,7 +1243,7 @@ por bloque como en la sección 3. Se calcula con las participantes que tienen MR
 cada par, con quienes tienen ambos datos. Los valores exactos están en
 `resultados/usuaria/matriz_spearman.csv`.
 
-**Figura 96. Matriz de Spearman con todas las variables**
+**Figura 98. Matriz de Spearman con todas las variables**
 
 ![Matriz de Spearman con todas las variables](figuras/eda_usuaria/matriz_completa.png)
 
