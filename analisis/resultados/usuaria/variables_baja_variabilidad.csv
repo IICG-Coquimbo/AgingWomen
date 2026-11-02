@@ -1,0 +1,49 @@
+﻿variable,etiqueta,categoria_dominante,porcentaje_dominancia,entropia_bits,decision,justificacion
+genero,Género,F,98.8658,0.0896,eliminar,La categoría dominante supera el 85 %: casi no varía y no puede discriminar entre participantes.
+origen_procedencia,Origen,CL,96.4083,0.3004,eliminar,La categoría dominante supera el 85 %: casi no varía y no puede discriminar entre participantes.
+tiene_ovario,Tiene ovarios,Sí,96.4083,0.2232,eliminar,La categoría dominante supera el 85 %: casi no varía y no puede discriminar entre participantes.
+usa_terapia_hormonal,Usa terapia hormonal,No,93.9509,0.3294,eliminar,La categoría dominante supera el 85 %: casi no varía y no puede discriminar entre participantes.
+bebidas_energeticas_dia,Bebidas energéticas al día,1,93.0057,0.3657,eliminar,La categoría dominante supera el 85 %: casi no varía y no puede discriminar entre participantes.
+pueblo_originario_afro,Pueblo originario / afro,NINGUNO,92.2495,0.5315,eliminar,La categoría dominante supera el 85 %: casi no varía y no puede discriminar entre participantes.
+marihuana_frecuencia,Marihuana,1,90.5482,0.5846,eliminar,La categoría dominante supera el 85 %: casi no varía y no puede discriminar entre participantes.
+tiene_utero,Tiene útero,Sí,89.9811,0.4696,eliminar,La categoría dominante supera el 85 %: casi no varía y no puede discriminar entre participantes.
+usa_medicamentos_diabetes,Medicamentos para la diabetes,No,87.5236,0.5429,conservar (excepción),Factor validado por la profesora (20-10) y variable de control; la diabetes es un modificador clínico conocido de los síntomas.
+tipo_metodo_anticonceptivo,Método anticonceptivo,NO_APLICA,86.3894,0.8955,eliminar,"La categoría dominante supera el 85 %: casi no varía y no puede discriminar entre participantes. La categoría dominante es ""no aplica"": la pregunta solo corresponde a muy pocas participantes, así que en el conjunto general casi no aporta información."
+frecuencia_fuerza,Frecuencia de ejercicio de fuerza,0,84.6881,0.9068,revisar → conservar,Entre 80 % y 85 %: se conserva por relevancia (decisión de la usuaria 2026-10-28).
+realiza_fuerza,Realiza ejercicio de fuerza,No,84.6881,0.6176,revisar → conservar,Entre 80 % y 85 %: se conserva por relevancia (decisión de la usuaria 2026-10-28).
+usa_medicamentos_presion,Medicamentos para la presión,No,83.1758,0.6537,revisar → conservar,Entre 80 % y 85 %: se conserva por relevancia (decisión de la usuaria 2026-10-28).
+prevision,Previsión de salud,FONASA,82.2306,0.8769,revisar → conservar,Entre 80 % y 85 %: se conserva por relevancia (decisión de la usuaria 2026-10-28). Variable de control (acceso a salud); no supera el 85 % pero se deja explícita para que la excepción no dependa de pequeñas variaciones.
+platos_verduras_dia,Platos de verduras al día,2,80.7183,0.9661,revisar → conservar,Entre 80 % y 85 %: se conserva por relevancia (decisión de la usuaria 2026-10-28).
+operada_no_mas_hijos,Operada para no tener más hijos,No,80.3403,0.7151,revisar → conservar,Entre 80 % y 85 %: se conserva por relevancia (decisión de la usuaria 2026-10-28).
+realiza_aerobico,Realiza ejercicio aeróbico,No,80.1512,0.7189,revisar → conservar,Entre 80 % y 85 %: se conserva por relevancia (decisión de la usuaria 2026-10-28).
+frecuencia_aerobico,Frecuencia de ejercicio aeróbico,0,80.1512,1.1022,revisar → conservar,Entre 80 % y 85 %: se conserva por relevancia (decisión de la usuaria 2026-10-28).
+tabaco_frecuencia,Tabaco,1,75.4253,1.1745,conservar,Ninguna categoría llega al 80 %.
+doble_carga,Doble carga (trabaja y cuida),No,72.2117,0.8525,conservar,Ninguna categoría llega al 80 %.
+frutas_dia,Frutas al día,2,71.8336,1.2609,conservar,Ninguna categoría llega al 80 %.
+quien_prepara_comidas,Quién prepara las comidas,YO_MAYORIA,68.9981,1.3868,conservar,Ninguna categoría llega al 80 %.
+tiene_pareja,Tiene pareja,Sí,67.2968,0.9119,conservar,Ninguna categoría llega al 80 %.
+panes_dia,Panes al día,2,67.2968,1.3070,conservar,Ninguna categoría llega al 80 %.
+tipo_sangrado,Tipo de sangrado,0.0,66.9187,1.5969,conservar,Ninguna categoría llega al 80 %.
+menstruacion_llega,Regularidad de la menstruación,NO_APLICA,66.9187,1.3207,conservar,Ninguna categoría llega al 80 %.
+usa_metodo_anticonceptivo,Usa método anticonceptivo,NO_APLICA,66.9187,1.2390,conservar,Ninguna categoría llega al 80 %.
+legumbres_semana,Legumbres a la semana,2,66.5406,1.1872,conservar,Ninguna categoría llega al 80 %.
+lacteos_dia,Lácteos al día,2,66.3516,1.3367,conservar,Ninguna categoría llega al 80 %.
+etapa_menopausica,Etapa menopáusica,posmenopausia,59.1682,1.6859,conservar,Ninguna categoría llega al 80 %.
+trabaja_actualmente,Trabaja actualmente,Sí,58.4121,0.9795,conservar,Ninguna categoría llega al 80 %.
+realiza_bajo_impacto,Realiza ejercicio de bajo impacto,No,57.6560,0.9830,conservar,Ninguna categoría llega al 80 %.
+frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,0,57.6560,1.7347,conservar,Ninguna categoría llega al 80 %.
+dias_ejercicio_semana,Días de ejercicio a la semana,1,57.0888,1.5745,conservar,Ninguna categoría llega al 80 %.
+evacuacion_intestinal,Frecuencia de evacuación intestinal,2,56.7108,1.6015,conservar,Ninguna categoría llega al 80 %.
+pescado_semana,Pescado a la semana,2,56.5217,1.3637,conservar,Ninguna categoría llega al 80 %.
+tiene_actividad_sexual,Tiene actividad sexual,No,52.5520,0.9981,conservar,Ninguna categoría llega al 80 %.
+cantidad_personas_cuida,Cantidad de personas que cuida,0,52.5520,1.6833,conservar,Ninguna categoría llega al 80 %.
+alcohol_frecuencia,Alcohol,2,50.6616,1.5889,conservar,Ninguna categoría llega al 80 %.
+jugos_gaseosas_dia,Jugos y gaseosas al día,2,48.7713,1.7212,conservar,Ninguna categoría llega al 80 %.
+frecuencia_comida_fuera,Comidas fuera del hogar,2,46.6919,1.6702,conservar,Ninguna categoría llega al 80 %.
+carnes_semana,Carnes a la semana,3,44.2344,1.8525,conservar,Ninguna categoría llega al 80 %.
+distension_abdominal,Distensión abdominal,2,42.7221,1.7121,conservar,Ninguna categoría llega al 80 %.
+falta_tiempo_influye,Falta de tiempo influye en lo que come,3,42.3440,1.9676,conservar,Ninguna categoría llega al 80 %.
+golosinas_semana,Dulces y snacks a la semana,2,41.9660,1.9413,conservar,Ninguna categoría llega al 80 %.
+lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,0.0,41.5879,2.1816,conservar,Ninguna categoría llega al 80 %.
+estres_entorno_laboral,Estrés del entorno laboral,0.0,41.5879,2.1940,conservar,Ninguna categoría llega al 80 %.
+vasos_agua_dia,Vasos de agua al día,3,38.7524,2.0688,conservar,Ninguna categoría llega al 80 %.
