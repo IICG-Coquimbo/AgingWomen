@@ -14,6 +14,7 @@ respuestas válidas (criterio de la profesora). La decisión de eliminar (más
 del 85 %, decisión de la usuaria 2026-10-28) se toma en la Fase 35A.
 """
 import textwrap
+from functools import lru_cache
 
 import numpy as np
 import pandas as pd
@@ -22,6 +23,12 @@ from . import graficos as G
 from . import variables as V
 
 UMBRAL_BAJA_VARIABILIDAD = 80
+
+# Desglose por origen de cada respuesta (corrección controlada de la Fase 34, H10). Solo se usa en los rótulos.
+ORIGEN_RESPUESTAS = V.RAIZ / 'analisis' / 'revision_correctiva_fase34' / 'tablas' / 'origen_respuestas_34D.csv'
+POBLACION_FIGURA = {'sobrecarga_fisica_emocional': 'cuidadoras', 'cantidad_personas_cuida': 'cuidadoras',
+                    'a_quien_cuida': 'cuidadoras', 'lugar_trabajo_comprensivo': 'con respuesta laboral',
+                    'estres_entorno_laboral': 'con respuesta laboral'}
 
 SECCIONES = {
     'identificacion': 'Identificación',
@@ -203,6 +210,26 @@ def respuestas(df, v, tipo, campos, comunas):
     return s.map(lambda x: etiquetas.get(x, x) if pd.notna(x) else x), list(etiquetas.values())
 
 
+def recuento_imputados(v, n_valido, base, mrs, dicc):
+    """
+    Valores imputados en 34B dentro de la población que describe la figura (H11, 529 con MRS completo).
+
+    Orden: 1) la marca `_imputado` de la fila, si existe; 2) la tabla de origen de las respuestas, solo si su
+    n válido coincide con el de la figura; 3) sin esos datos, los faltantes del diccionario. Este último valor se
+    cuenta sobre 546 y es solo una cota superior: el conjunto limpio no permite saber cuántos caen en las 529.
+    """
+    marca = f'{v}_imputado'
+    if marca in mrs:
+        return int((base[marca] == '1').sum())
+    origen = _tabla_origen().get(v)
+    if origen and origen['n_valido'] == n_valido:
+        return int(origen['imputadas'])
+    tratamiento = dicc.at[v, 'tratamiento'] if v in dicc.index else ''
+    if isinstance(tratamiento, str) and tratamiento.startswith('imputada'):
+        return int(dicc.at[v, 'faltantes'])
+    return 0
+
+
 def describir(mrs, campos, comunas, diccionario):
     """
     Una fila por variable (resumen) + frecuencias largas. Las figuras se
@@ -240,12 +267,7 @@ def describir(mrs, campos, comunas, diccionario):
         pct_dom = float(pct.max())
         # Imputación de la Fase 34B (por moda/mediana): cota de la dominancia sin esos valores.
         tratamiento = dicc.at[v, 'tratamiento'] if v in dicc.index else ''
-        imputados = 0
-        marca = f'{v}_imputado'
-        if marca in mrs:
-            imputados = int((base[marca] == '1').sum())
-        elif isinstance(tratamiento, str) and tratamiento.startswith('imputada'):
-            imputados = int(dicc.at[v, 'faltantes'])     # cota superior (diccionario cuenta sobre 546)
+        imputados = recuento_imputados(v, n_valido, base, mrs, dicc)
         cota = (100 * max(conteo.max() - imputados, 0) / (n_valido - imputados)
                 if imputados and tipo != 'selección múltiple' and n_valido > imputados else np.nan)
         forma = forma_distribucion(V.numerica(base[v]).dropna()) if tipo.startswith('numérica') else {}
@@ -347,6 +369,63 @@ def _rotulo(p, n):
     return f'{p:.1f}'.replace('.', ',') + f'%\n(n = {n})'
 
 
+@lru_cache(maxsize=1)
+def _tabla_origen():
+    if not ORIGEN_RESPUESTAS.exists():
+        return {}
+    return pd.read_csv(ORIGEN_RESPUESTAS, encoding='utf-8-sig').set_index('variable').to_dict('index')
+
+
+def origen_de(f):
+    """Desglose de la variable; None si no existe o ya no corresponde a esta figura (limpieza distinta)."""
+    origen = _tabla_origen().get(f.variable)
+    return origen if origen and origen['n_valido'] == f.n_valido else None
+
+
+def _enumerar(partes):
+    return partes[0] if len(partes) == 1 else f'{", ".join(partes[:-1])} y {partes[-1]}'
+
+
+def _composicion(f, o):
+    """Primera línea del subtítulo: de dónde sale el n que muestran las barras."""
+    if o['derivada']:
+        if not o['dependen_de_imputada']:
+            return f'n = {f.n_valido} (variable derivada, calculada solo con respuestas observadas)'
+        return (f'n = {f.n_valido} (variable derivada): {o["observadas"]} sin imputaciones en su cálculo y '
+                f'{o["dependen_de_imputada"]} que dependen de una imputada')
+    partes = [f'{o["observadas"]} respuestas observadas']
+    if o['deducidas']:
+        partes.append(f'{o["deducidas"]} deducida' + ('s' if o['deducidas'] > 1 else ''))
+    if o['imputadas']:
+        partes.append(f'{o["imputadas"]} imputadas')
+    poblacion = POBLACION_FIGURA.get(f.variable)
+    return f'n = {f.n_valido}{" " + poblacion if poblacion else ""}: {_enumerar(partes)}'
+
+
+def subtitulo(f, ancho_texto=95):
+    """
+    Rótulo de la figura. Separa observadas, deducidas, imputadas, faltantes reales y no aplicables para que
+    "n válido" no oculte las imputaciones de la Fase 34B. Solo cambia el texto: las barras no dependen de esto.
+    Sin desglose disponible lo dice, en vez de presentar el n como si fueran solo respuestas.
+    """
+    o = origen_de(f)
+    faltante = f'{f.n_faltante} ({_pct(f.porcentaje_faltante)})'
+    if o is None:
+        lineas = [f'n válido = {f.n_valido} (sin desglose: puede incluir imputadas) · faltantes = {faltante} · {f.tipo}']
+    else:
+        if o['faltantes_por_previa_imputada']:
+            faltante += f', {o["faltantes_por_previa_imputada"]} con la pregunta previa imputada'
+        elif f.n_faltante and CONDICIONES.get(f.variable) is _MENSTRUA:
+            faltante += ', sin fecha de última menstruación'
+        no_aplica = str(o['no_aplica'])
+        if o['no_aplica_por_previa_imputada']:
+            no_aplica += f' ({o["no_aplica_por_previa_imputada"]} con la pregunta previa imputada)'
+        lineas = [_composicion(f, o), f'faltantes reales = {faltante} · no aplica = {no_aplica} · {f.tipo}']
+    if f.n_no_aplica:
+        lineas.append(f'% sobre {f.denominador}')
+    return '\n'.join(fila for linea in lineas for fila in textwrap.wrap(linea, ancho_texto))
+
+
 def figura(frec, f, ruta):
     """Barras verticales: % de respuestas válidas, rotuladas con % y n (incluye categorías con 0 casos)."""
     import matplotlib.pyplot as plt
@@ -373,13 +452,10 @@ def figura(frec, f, ruta):
     ax.grid(axis='y', color=G.GRILLA, linewidth=0.8)
     ax.set_axisbelow(True)
     ax.tick_params(axis='x', length=0)
-    subtitulo = (f'n válido = {f.n_valido} · faltante = {f.n_faltante} '
-                 f'({_pct(f.porcentaje_faltante)}) · {f.tipo}')
-    if f.n_no_aplica:
-        subtitulo += f'\n% sobre {f.denominador}'
-    lineas = subtitulo.count('\n') + 1
+    rotulo = subtitulo(f, int(ancho * 15))
+    lineas = rotulo.count('\n') + 1
     ax.set_title(f.etiqueta, fontsize=11, pad=8 + 11 * lineas)
-    ax.text(0, 1.02, subtitulo, transform=ax.transAxes, fontsize=7.5, color=G.TENUE, va='bottom')
+    ax.text(0, 1.02, rotulo, transform=ax.transAxes, fontsize=7.5, color=G.TENUE, va='bottom')
     fig.tight_layout()
     fig.savefig(ruta, dpi=300)
     plt.close(fig)
@@ -421,7 +497,10 @@ def figura_distribucion(x, f, ruta):
     ax2.set_yticks([])
     ax2.spines['left'].set_visible(False)
     ax2.set_xlabel(f.unidad, fontsize=8)
-    ax1.set_title(f'{f.etiqueta}: distribución (valores observados)', fontsize=11, pad=18)
+    origen = origen_de(f)
+    imputadas = origen['imputadas'] if origen else 0
+    aclaracion = f'incluye {imputadas} imputadas' if imputadas else 'valores observados' if origen else 'sin desglose de imputadas'
+    ax1.set_title(f'{f.etiqueta}: distribución ({aclaracion})', fontsize=11, pad=18)
     ax1.text(0, 1.02, f'n = {len(x)} · curva: densidad KDE · línea roja: media · caja: regla de Tukey (1,5 × RIC)',
              transform=ax1.transAxes, fontsize=7.5, color=G.TENUE, va='bottom')
     fig.tight_layout()
@@ -458,7 +537,9 @@ def figura_puntos(numericas, ruta, semilla=42):
         ax.spines['bottom'].set_color(G.EJE)
         ax.tick_params(axis='x', labelsize=7.5, colors=G.TINTA_2)
         ax.set_xlabel(f.unidad, fontsize=7.5, color=G.TINTA_2)
-        ax.set_title(f'{f.etiqueta} (n = {len(x)}; atípicos: {int(fuera.sum())})', fontsize=9, loc='left')
+        origen = origen_de(f)
+        imputadas = f'; imputadas: {origen["imputadas"]}' if origen and origen['imputadas'] else ''
+        ax.set_title(f'{f.etiqueta} (n = {len(x)}{imputadas}; atípicos: {int(fuera.sum())})', fontsize=9, loc='left')
     for ax in list(ejes.flat)[len(numericas):]:
         ax.set_visible(False)
     fig.suptitle('Variables numéricas: un punto por participante', fontsize=11, x=0.01, y=0.995, ha='left',

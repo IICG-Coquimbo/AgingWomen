@@ -1,0 +1,122 @@
+{
+ "descripcion": "Complemento retrospectivo de la Fase 35B: estabilidad de la selección con las 33 candidatas finales",
+ "ejecutado_despues_de": "cierre de las Fases 36 a 39",
+ "n_remuestreos": 500,
+ "n_permutaciones_por_remuestreo": 5000,
+ "alfa_q": 0.1,
+ "tolerancia_su": 1e-12,
+ "semilla_raiz": 42,
+ "id_analisis": 1,
+ "clave_semilla": "SeedSequence(42, spawn_key=(id_analisis, remuestreo, tipo, indice)); tipo 0 bootstrap, 1 relevancia, 2 par",
+ "indice_semilla": "alfabético entre las 34 de la revisión 03-11 (mapa de revision_33_variables)",
+ "remuestreo": "bootstrap estratificado por severo_mrs, con reemplazo, 281 + 248 = 529 filas",
+ "familia_bh": 33,
+ "variantes": [
+  "adaptado",
+  "estandar"
+ ],
+ "etapas": [
+  "no laboral",
+  "laboral",
+  "cuidadoras"
+ ],
+ "objetivo_su": "severo_mrs (MRS >= 16), igual que la selección definitiva",
+ "candidatas": [
+  "alcohol_frecuencia",
+  "cantidad_personas_cuida",
+  "carnes_semana",
+  "dias_ejercicio_semana",
+  "distension_abdominal",
+  "edad",
+  "estres_entorno_laboral",
+  "evacuacion_intestinal",
+  "falta_tiempo_influye",
+  "frecuencia_aerobico",
+  "frecuencia_bajo_impacto",
+  "frecuencia_comida_fuera",
+  "frecuencia_fuerza",
+  "frutas_dia",
+  "golosinas_semana",
+  "horas_sedentarismo",
+  "imc",
+  "jugos_gaseosas_dia",
+  "lacteos_dia",
+  "legumbres_semana",
+  "lugar_trabajo_comprensivo",
+  "operada_no_mas_hijos",
+  "panes_dia",
+  "pescado_semana",
+  "platos_verduras_dia",
+  "quien_prepara_comidas",
+  "sobrecarga_fisica_emocional",
+  "tabaco_frecuencia",
+  "tiene_actividad_sexual",
+  "tiene_pareja",
+  "trabaja_actualmente",
+  "usa_medicamentos_presion",
+  "vasos_agua_dia"
+ ],
+ "excluidas": [
+  "doble_carga",
+  "prevision",
+  "usa_medicamentos_diabetes"
+ ],
+ "poblaciones": {
+  "general": 529,
+  "laboral": 287,
+  "cuidadoras_observadas": 239
+ },
+ "procesos": 1,
+ "versiones": {
+  "python": "3.12.5",
+  "numpy": "2.2.4",
+  "pandas": "2.2.3",
+  "scipy": "1.15.2",
+  "matplotlib": "3.10.1"
+ },
+ "git_head": "745d689937a18c35b62fd25eccc401b169b20e11",
+ "protocolo_sha256": "4fe6794944fce62f8ed61f60f5d69b46c7d255a095c7b2c032c40c3f23f1a4ef",
+ "entradas_sha256": {
+  "datos/analitico/dataset_fase35.csv": "df47276f200cb977a02295ead9eb03cc49a4437ba257f271044e795e4959d43d",
+  "datos/limpio_usuaria/dataset_usuaria_limpio.csv": "4ecfd5169997bab0082264fe87499b7f29a67dc34141b8a491c60025f4065fd1",
+  "datos/sintetico/dataset_usuaria_sucio.csv": "04e961414339d4d6a86041600fce71f998508564c837bbab668e9a08d9736a57",
+  "analisis/reunion_2026-11-03/revision_33_variables/permutaciones_10000/decisiones_fcbf.csv": "8caaa16f5f9198f52e3e01a9474c550c098f42f8d48acb410bb3c1b0792109b2",
+  "analisis/reunion_2026-11-03/revision_33_variables/permutaciones_50000/decisiones_fcbf.csv": "fd0bf92d40837b6d1b073f14ff114774eba9e2378110cd87be14a7f3b6f86943",
+  "analisis/reunion_2026-11-03/revision_33_variables/permutaciones_50000/relevancia_33.csv": "667ae1f58cb4d8094b9a18a6255e418a6077304354a42c073cdff5ede3260680",
+  "analisis/resultados/usuaria/estabilidad_remuestreos.csv": "a478d5577d0696b9727f5fb9adb789c3c04198114acdb2fdf0757078aec00216",
+  "analisis/resultados/usuaria/estabilidad_fcbf.csv": "f85d4655c5e4d252d2e1529918f2356513825c96fc5cbe0dfce64e06b6e93816",
+  "analisis/resultados/usuaria/estabilidad_global.csv": "3d46ccbfe32200e56386f79bc0c4a341b9cc42622c23ad78b458cdde258fd84e",
+  "analisis/resultados/usuaria/log_seleccion_fase35b.txt": "a61e70e00b52e263ece28b68863675bd59ed3f5771f902850636e72391200fc6",
+  "analisis/reunion_2026-11-03/revision_33_variables/log_revision_33.txt": "86d956b8fcb51312068b5b95694525412f9094bf3e1b41687c8b79c3e078684c",
+  "analisis/figuras/seleccion_35b/estabilidad_seleccion.png": "36398320a8c9daa666ab99a6b4ce2508cc14e0a50b4daf71be60c5ec37e3f9bc"
+ },
+ "codigo_reutilizado_sha256": {
+  "fcbf.py": "8ce0e0f8c99dcd8831db48f55387af5d8560a14403e02c10f842607b46c64713",
+  "entropia.py": "80964f98494a55fac4077c76d069e68551f0bfa59a340f5dfa50d1b64a046326",
+  "estabilidad.py": "50870968ed24fe76f3b4e3fddf50c450ab2f88464d3d9b79a0fa0af19a6b59ea",
+  "configuracion.py": "1057a449388446551d8cd667ad72fd5a98e974fd34ab452bc274cde8aa3db49e",
+  "complementario_cuidados.py": "551a7117874eac22ca33c9948258b2542a437e60141a80ad5df9c0edcad09b5f",
+  "revision_35b_reunion_1103.py": "1111ee54236bb7e8701ffe1ca736abdb40a10ff3255273233ede26129b953978",
+  "revision_33_variables.py": "81f235543ba6d1cc386374632b7eb26827c8cca74d611a8dbefd2e57171f22c6",
+  "seleccionar_fase35b.py": "fc1974d7a9de90d6542cebbab9c7f2b1fec6826e702866ee85befbd92813a6b5",
+  "complementario_fase35b.py": "830aaa55b3a73a488487bce1d7c06e80fa5fa0b506cb76ef0b7d563edc1e89af"
+ },
+ "codigo_propio_sha256": {
+  "nucleo_b33.py": "cee8f8ecc674a23ec49f1c1d1402103f15e9394bdddd698b62120b9883a82c18",
+  "ejecutar_b33.py": "c96d9232c1f18d6333b141f887509b11cbce5d98a37dbff27bbb18baf47ba1ca",
+  "resumir_b33.py": "13b33e4b1d2e716efc6762c7b3e2d5c9111cb6c3fc27cc2f71912a602c0d3b98",
+  "pruebas_b33.py": "ea4176186608db9f394d4fc4d6aed6a5872b20b71b69d9fe5925a3753836e5e0",
+  "integridad_b33.py": "7e65934422951cbb2bff9ccd29e3b109cc961ffdceb00ae8f55f79e4b078762b"
+ },
+ "ejecucion": {
+  "fin": "2026-11-05T22:42:00",
+  "segundos_esta_sesion": 3697.2,
+  "memoria_libre_minima_mb": 1224,
+  "procesos": 1,
+  "remuestreos": 500,
+  "permutaciones": 5000,
+  "alfa": 0.1,
+  "id_analisis": 1
+ },
+ "fecha_resumen": "2026-11-05T22:49:19"
+}

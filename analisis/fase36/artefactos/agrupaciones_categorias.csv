@@ -1,0 +1,32 @@
+variable,grupo,niveles,n_529,p,columna,valor_maximo_columna
+trabaja_actualmente,False,False,220,0.4158790170132325,trabaja_actualmente__False,0.9057728587006165
+trabaja_actualmente,True,True,309,0.5841209829867675,trabaja_actualmente__True,0.5441462055542885
+tiene_pareja,NO,NO,173,0.3270321361058601,tiene_pareja__NO,1.1767903824870223
+tiene_pareja,SI,SI,356,0.6729678638941399,tiene_pareja__SI,0.39865137661108757
+tiene_actividad_sexual,NO,NO,278,0.5255198487712666,tiene_actividad_sexual__NO,0.654520852695308
+tiene_actividad_sexual,SI,SI,251,0.47448015122873344,tiene_actividad_sexual__SI,0.762921930700823
+operada_no_mas_hijos,NO,NO,425,0.8034026465028355,operada_no_mas_hijos__NO,0.21933656525024894
+operada_no_mas_hijos,SI,SI,104,0.19659735349716445,operada_no_mas_hijos__SI,1.8119425529071351
+usa_medicamentos_presion,NO,NO,440,0.831758034026465,usa_medicamentos_presion__NO,0.18447428357142986
+usa_medicamentos_presion,SI,SI,89,0.16824196597353497,usa_medicamentos_presion__SI,2.0278220313165147
+quien_prepara_comidas,YO_MAYORIA,YO_MAYORIA,365,0.6899810964083176,quien_prepara_comidas__YO_MAYORIA,0.3732240143686741
+quien_prepara_comidas,COMPARTIDO,COMPARTIDO,86,0.16257088846880907,quien_prepara_comidas__COMPARTIDO,2.0769529795270967
+quien_prepara_comidas,OTRA_HOGAR,OTRA_HOGAR,49,0.09262759924385633,quien_prepara_comidas__OTRA_HOGAR,2.981366459627329
+quien_prepara_comidas,COMPRO + OTRO,COMPRO | OTRO,29,0.054820415879017016,quien_prepara_comidas__COMPRO+OTRO,4.036855177761997
+cantidad_personas_cuida,0,0,278,0.5255198487712666,cantidad_personas_cuida__0,0.654520852695308
+cantidad_personas_cuida,1,1,136,0.2570888468809074,cantidad_personas_cuida__1,1.4651944339349123
+cantidad_personas_cuida,2,2,67,0.1266540642722117,cantidad_personas_cuida__2,2.454012317070131
+cantidad_personas_cuida,3,3,48,0.09073724007561437,cantidad_personas_cuida__3,3.0185378204370648
+frecuencia_aerobico,0,0 | 1,424,0.8015122873345936,frecuencia_aerobico__0,0.2217065555380712
+frecuencia_aerobico,2 + 3,2 | 3,59,0.11153119092627599,frecuencia_aerobico__2+3,2.660382093955966
+frecuencia_aerobico,4 + 5,4 | 5,46,0.08695652173913043,frecuencia_aerobico__4+5,3.09628107925284
+frecuencia_bajo_impacto,0,0 | 1,305,0.5765595463137996,frecuencia_bajo_impacto__0,0.5576609864622022
+frecuencia_bajo_impacto,2,2,79,0.14933837429111532,frecuencia_bajo_impacto__2,2.2012589365943946
+frecuencia_bajo_impacto,3,3,89,0.16824196597353497,frecuencia_bajo_impacto__3,2.0278220313165147
+frecuencia_bajo_impacto,4 + 5,4 | 5,56,0.10586011342155009,frecuencia_bajo_impacto__4+5,2.7481427700994945
+frecuencia_fuerza,0,0 | 1,448,0.8468809073724007,frecuencia_fuerza__0,0.16638653431384462
+frecuencia_fuerza,2 + 3,2 | 3,43,0.08128544423440454,frecuencia_fuerza__2+3,3.2223610948541683
+frecuencia_fuerza,4 + 5,4 | 5,38,0.07183364839319471,frecuencia_fuerza__4+5,3.4630746858784525
+tabaco_frecuencia,1,1,399,0.7542533081285444,tabaco_frecuencia__1,0.28296262026882024
+tabaco_frecuencia,2 + 3 + 4,2 | 3 | 4,48,0.09073724007561437,tabaco_frecuencia__2+3+4,3.0185378204370648
+tabaco_frecuencia,5,5,82,0.15500945179584122,tabaco_frecuencia__5,2.1462127024111477

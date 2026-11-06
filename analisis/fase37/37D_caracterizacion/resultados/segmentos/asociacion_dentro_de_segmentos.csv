@@ -1,0 +1,73 @@
+segmentacion,variable,etiqueta,medida,marginal,dentro_ponderado,grupos_con_variacion
+A,trabaja_actualmente,Trabaja actualmente,r_rb,0.12450720800235371,0.26828656943564394,4
+A,tiene_pareja,Tiene pareja,r_rb,-0.06415210755341949,-0.18510514079167958,4
+A,dias_ejercicio_semana,Días de ejercicio a la semana,rho,-0.151371960042051,-0.10739618876145537,4
+A,frecuencia_aerobico,Frecuencia de ejercicio aeróbico,rho,-0.05213902914299364,-0.003327035225071928,4
+A,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,rho,-0.1662599853777488,-0.14155379633677775,4
+A,frecuencia_fuerza,Frecuencia de ejercicio de fuerza,rho,-0.07953174424099713,-0.01986830567176011,4
+A,horas_sedentarismo,Horas sentada al día,rho,-0.020230001484631194,-0.013523656781400523,4
+A,cantidad_personas_cuida,Personas a su cuidado,rho,0.01999634755142643,0.023780356300790433,4
+A,quien_prepara_comidas,Quién prepara las comidas,epsilon2,-0.0006394381020511901,-0.008832392212756378,4
+A,carnes_semana,Carnes a la semana,rho,0.01081185280287503,0.020453322872457724,4
+A,falta_tiempo_influye,La falta de tiempo influye en su alimentación,rho,0.09816775018438352,0.08016609014096715,4
+A,frecuencia_comida_fuera,Comidas fuera de casa,rho,0.05816167119453295,0.04930487553995434,4
+A,frutas_dia,Frutas al día,rho,-0.09122971007805833,-0.09948342113876082,4
+A,golosinas_semana,Golosinas a la semana,rho,0.0034001985314924166,0.004498917822645497,4
+A,jugos_gaseosas_dia,Jugos o gaseosas al día,rho,0.02174558391156488,0.024352221930728127,4
+A,lacteos_dia,Lácteos al día,rho,-0.02439111635155272,-0.022590454765402924,4
+A,legumbres_semana,Legumbres a la semana,rho,-0.017172177307352553,-0.024402295284252227,4
+A,panes_dia,Panes al día,rho,0.027669855165861217,0.024416704164627136,4
+A,pescado_semana,Pescado a la semana,rho,-0.029425450462117086,-0.03173077196502565,4
+A,platos_verduras_dia,Platos de verduras al día,rho,-0.03556177409509932,-0.040298051255064006,4
+A,vasos_agua_dia,Vasos de agua al día,rho,-0.12517869489314032,-0.11091869969484143,4
+A,tabaco_frecuencia,Frecuencia de tabaco,rho,0.14361107215217017,0.153968196021673,4
+A,alcohol_frecuencia,Frecuencia de alcohol,rho,0.11100062482599643,0.11554201436542895,4
+A,edad,Edad,rho,0.025177891767634755,0.02499585248833279,4
+A,operada_no_mas_hijos,Operada para no tener más hijos,r_rb,0.061900452488687696,0.07383403143714698,4
+A,usa_medicamentos_presion,Usa medicamentos para la presión,r_rb,0.07765577119509715,0.05319668852685568,4
+A,tiene_actividad_sexual,Tiene actividad sexual,r_rb,0.07253002378973306,0.21053580354932425,4
+A,distension_abdominal,Distensión abdominal,rho,-0.06887579404163767,-0.0650301392638578,4
+A,evacuacion_intestinal,Evacuación intestinal,rho,-0.05088264612610032,-0.04748138674307827,4
+A,imc,IMC (solo observado),rho,0.25039138185023624,0.25608365146803463,4
+A,etapa_menopausica,Etapa menopáusica,epsilon2,0.005551374882240632,-3.633754936699678e-05,4
+A,usa_medicamentos_diabetes,Usa medicamentos para la diabetes,r_rb,0.28440997447476923,0.2751889422256406,4
+A,prevision,Previsión de salud,epsilon2,0.0028147218393694043,0.01308115754280074,4
+A,lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,rho,-0.2689097483235527,-0.2698548151480895,4
+A,estres_entorno_laboral,Estrés en el entorno laboral,rho,0.19542938249887823,0.18261636923550906,4
+A,sobrecarga_fisica_emocional,Sobrecarga física o emocional por cuidar,rho,0.23000829418549856,0.21788214484117005,4
+B1,trabaja_actualmente,Trabaja actualmente,r_rb,0.12450720800235371,0.05688125739956965,2
+B1,tiene_pareja,Tiene pareja,r_rb,-0.06415210755341949,0.006987577639751663,1
+B1,dias_ejercicio_semana,Días de ejercicio a la semana,rho,-0.151371960042051,-0.06403613048130559,4
+B1,frecuencia_aerobico,Frecuencia de ejercicio aeróbico,rho,-0.05213902914299364,0.02008516998650791,4
+B1,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,rho,-0.1662599853777488,-0.13105094954306065,4
+B1,frecuencia_fuerza,Frecuencia de ejercicio de fuerza,rho,-0.07953174424099713,-0.021279544950899378,4
+B1,horas_sedentarismo,Horas sentada al día,rho,-0.020230001484631194,-0.010298039626661464,4
+B1,cantidad_personas_cuida,Personas a su cuidado,rho,0.01999634755142643,0.025334477096304618,4
+B1,quien_prepara_comidas,Quién prepara las comidas,epsilon2,-0.0006394381020511901,-0.008302962583489493,4
+B1,carnes_semana,Carnes a la semana,rho,0.01081185280287503,0.019872902006073456,4
+B1,falta_tiempo_influye,La falta de tiempo influye en su alimentación,rho,0.09816775018438352,0.07285330397568072,4
+B1,frecuencia_comida_fuera,Comidas fuera de casa,rho,0.05816167119453295,0.035774365405968886,4
+B1,frutas_dia,Frutas al día,rho,-0.09122971007805833,-0.09239252052988814,4
+B1,golosinas_semana,Golosinas a la semana,rho,0.0034001985314924166,-0.0008981259126170472,4
+B1,jugos_gaseosas_dia,Jugos o gaseosas al día,rho,0.02174558391156488,0.03174752465598084,4
+B1,lacteos_dia,Lácteos al día,rho,-0.02439111635155272,-0.01430639071052669,4
+B1,legumbres_semana,Legumbres a la semana,rho,-0.017172177307352553,-0.02111510863929786,4
+B1,panes_dia,Panes al día,rho,0.027669855165861217,0.015615074875057443,4
+B1,pescado_semana,Pescado a la semana,rho,-0.029425450462117086,-0.03274548498789237,4
+B1,platos_verduras_dia,Platos de verduras al día,rho,-0.03556177409509932,-0.04608638323661441,4
+B1,vasos_agua_dia,Vasos de agua al día,rho,-0.12517869489314032,-0.10762130572594268,4
+B1,tabaco_frecuencia,Frecuencia de tabaco,rho,0.14361107215217017,0.15840845408576779,4
+B1,alcohol_frecuencia,Frecuencia de alcohol,rho,0.11100062482599643,0.1227510842281411,4
+B1,edad,Edad,rho,0.025177891767634755,0.037874654998306514,4
+B1,operada_no_mas_hijos,Operada para no tener más hijos,r_rb,0.061900452488687696,0.0611373230927629,4
+B1,usa_medicamentos_presion,Usa medicamentos para la presión,r_rb,0.07765577119509715,0.05721973102970448,4
+B1,tiene_actividad_sexual,Tiene actividad sexual,r_rb,0.07253002378973306,0.18500616542154988,4
+B1,distension_abdominal,Distensión abdominal,rho,-0.06887579404163767,-0.05836848203756553,4
+B1,evacuacion_intestinal,Evacuación intestinal,rho,-0.05088264612610032,-0.04843371710828329,4
+B1,imc,IMC (solo observado),rho,0.25039138185023624,0.23750982434037024,4
+B1,etapa_menopausica,Etapa menopáusica,epsilon2,0.005551374882240632,0.0032442336364780743,4
+B1,usa_medicamentos_diabetes,Usa medicamentos para la diabetes,r_rb,0.28440997447476923,0.2919178060647265,4
+B1,prevision,Previsión de salud,epsilon2,0.0028147218393694043,0.008993974550640159,4
+B1,lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,rho,-0.2689097483235527,-0.2679909099988585,3
+B1,estres_entorno_laboral,Estrés en el entorno laboral,rho,0.19542938249887823,0.18112186209350808,3
+B1,sobrecarga_fisica_emocional,Sobrecarga física o emocional por cuidar,rho,0.23000829418549856,0.18914922971429166,4

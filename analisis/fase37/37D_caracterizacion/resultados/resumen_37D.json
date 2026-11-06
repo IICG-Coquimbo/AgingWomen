@@ -1,0 +1,93 @@
+{
+ "estado": "Fase 37D completa; descriptiva y exploratoria; datos sintéticos",
+ "conclusion_37C": "Sin cambios (conclusión B, P2_c12_km_k4)",
+ "f1_destacadas": 11,
+ "f1_destacadas_variables": {
+  "lugar_trabajo_comprensivo": -0.2689097483235527,
+  "frecuencia_bajo_impacto": -0.1662599853777488,
+  "dias_ejercicio_semana": -0.151371960042051,
+  "vasos_agua_dia": -0.1251786948931403,
+  "alcohol_frecuencia": 0.1110006248259964,
+  "trabaja_actualmente": 0.1245072080023537,
+  "tabaco_frecuencia": 0.1436110721521701,
+  "estres_entorno_laboral": 0.1954293824988782,
+  "sobrecarga_fisica_emocional": 0.2300082941854985,
+  "imc": 0.2503913818502362,
+  "usa_medicamentos_diabetes": 0.2844099744747692
+ },
+ "f2_destacadas": 24,
+ "f3_destacadas": 7,
+ "f4_destacadas": 60,
+ "F5": {
+  "A|mrs_total": {
+   "efecto": 0.0075259136016207,
+   "q": 0.0881672051476484
+  },
+  "A|mrs_somatico": {
+   "efecto": -0.000479756567556,
+   "q": 0.4713930971998805
+  },
+  "A|mrs_psicologico": {
+   "efecto": 0.0215668538379096,
+   "q": 0.0059936663420306
+  },
+  "A|mrs_urogenital": {
+   "efecto": -0.0031297796772126,
+   "q": 0.7156760589798266
+  },
+  "A|severidad": {
+   "efecto": 0.1236740230642279,
+   "q": 0.0077782092718824
+  },
+  "A|severo_mrs": {
+   "efecto": 0.1444364234159829,
+   "q": 0.0197710995030145
+  },
+  "B1|mrs_total": {
+   "efecto": 0.0273643091843459,
+   "q": 0.0017824430503929
+  },
+  "B1|mrs_somatico": {
+   "efecto": 0.0111563756171209,
+   "q": 0.0468786730369656
+  },
+  "B1|mrs_psicologico": {
+   "efecto": 0.0391371663500786,
+   "q": 0.0002192580383014
+  },
+  "B1|mrs_urogenital": {
+   "efecto": 0.0075397954278782,
+   "q": 0.0881672051476484
+  },
+  "B1|severidad": {
+   "efecto": 0.1438863984371577,
+   "q": 0.0005659076138428
+  },
+  "B1|severo_mrs": {
+   "efecto": 0.2094558379526191,
+   "q": 0.0002192580383014
+  }
+ },
+ "correspondencia": {
+  "ari_A_B1": 0.6879246115811954,
+  "coincidencia_A_B1": 0.8752362948960303,
+  "ari_A_B1_cv": 0.6767549378538654,
+  "coincidencia_A_B1_cv": 0.8695652173913043,
+  "tamanos_A": [
+   150,
+   76,
+   132,
+   171
+  ],
+  "tamanos_B1": [
+   150,
+   79,
+   126,
+   174
+  ],
+  "mismo_numero_mismo_grupo_pct": 87.52362948960302
+ },
+ "pruebas": "15/15",
+ "mutaciones": "20/20",
+ "fases_38_39_40": "No iniciadas"
+}

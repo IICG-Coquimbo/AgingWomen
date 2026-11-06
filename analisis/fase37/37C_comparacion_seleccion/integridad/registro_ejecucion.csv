@@ -1,0 +1,855 @@
+etapa,trabajo,estado,segundos
+estabilidad,P1_E1_r06,completa,3.8
+estabilidad,P1_E1_r02,completa,3.89
+estabilidad,P1_E1_r03,completa,3.9
+estabilidad,P1_E1_r04,completa,3.99
+estabilidad,P1_E1_r05,completa,4.0
+estabilidad,P1_E1_r08,completa,3.96
+estabilidad,P1_E1_r09,completa,3.92
+estabilidad,P1_E1_r00,completa,4.1
+estabilidad,P1_E1_r01,completa,4.18
+estabilidad,P1_E1_r07,completa,4.15
+estabilidad,P1_E1_r10,completa,3.35
+estabilidad,P1_E1_r12,completa,3.33
+estabilidad,P1_E1_r11,completa,3.42
+estabilidad,P1_E1_r15,completa,3.3
+estabilidad,P1_E1_r17,completa,3.32
+estabilidad,P1_E1_r16,completa,3.35
+estabilidad,P1_E1_r13,completa,3.41
+estabilidad,P1_E1_r14,completa,3.46
+estabilidad,P1_E1_r18,completa,3.43
+estabilidad,P1_E1_r19,completa,3.45
+estabilidad,P1_E1_r20,completa,3.18
+estabilidad,P1_E1_r21,completa,3.36
+estabilidad,P1_E1_r25,completa,3.18
+estabilidad,P1_E1_r22,completa,3.43
+estabilidad,P1_E1_r26,completa,3.32
+estabilidad,P1_E1_r24,completa,3.35
+estabilidad,P1_E1_r23,completa,3.45
+estabilidad,P1_E1_r27,completa,3.43
+estabilidad,P1_E1_r29,completa,3.37
+estabilidad,P1_E1_r28,completa,3.52
+estabilidad,P1_E2_r00,completa,3.92
+estabilidad,P1_E2_r09,completa,3.5
+estabilidad,P1_E2_r05,completa,3.93
+estabilidad,P1_E2_r02,completa,4.1
+estabilidad,P1_E2_r03,completa,4.08
+estabilidad,P1_E2_r01,completa,4.39
+estabilidad,P1_E2_r07,completa,4.09
+estabilidad,P1_E2_r04,completa,4.37
+estabilidad,P1_E2_r06,completa,4.33
+estabilidad,P1_E2_r08,completa,4.19
+estabilidad,P1_E2_r10,completa,5.05
+estabilidad,P1_E2_r12,completa,4.86
+estabilidad,P1_E2_r13,completa,5.14
+estabilidad,P1_E2_r11,completa,5.26
+estabilidad,P1_E2_r14,completa,5.25
+estabilidad,P1_E2_r16,completa,5.31
+estabilidad,P1_E2_r17,completa,5.24
+estabilidad,P1_E2_r15,completa,5.46
+estabilidad,P1_E2_r18,completa,5.45
+estabilidad,P1_E2_r19,completa,5.65
+estabilidad,P1_E2_r20,completa,5.35
+estabilidad,P1_E2_r21,completa,5.59
+estabilidad,P1_E2_r22,completa,5.72
+estabilidad,P1_E2_r23,completa,5.71
+estabilidad,P1_E2_r24,completa,5.54
+estabilidad,P1_E2_r26,completa,5.45
+estabilidad,P1_E2_r25,completa,5.67
+estabilidad,P1_E2_r27,completa,5.66
+estabilidad,P1_E2_r28,completa,5.72
+estabilidad,P1_E2_r29,completa,5.52
+estabilidad,P1_E3_r00,completa,5.84
+estabilidad,P1_E3_r01,completa,6.0
+estabilidad,P1_E3_r03,completa,5.58
+estabilidad,P1_E3_r04,completa,5.8
+estabilidad,P1_E3_r02,completa,5.85
+estabilidad,P1_E3_r05,completa,5.89
+estabilidad,P1_E3_r06,completa,5.85
+estabilidad,P1_E3_r07,completa,6.1
+estabilidad,P1_E3_r08,completa,5.99
+estabilidad,P1_E3_r09,completa,5.96
+estabilidad,P1_E3_r10,completa,5.84
+estabilidad,P1_E3_r12,completa,5.31
+estabilidad,P1_E3_r11,completa,5.75
+estabilidad,P1_E3_r13,completa,5.59
+estabilidad,P1_E3_r14,completa,5.74
+estabilidad,P1_E3_r16,completa,5.54
+estabilidad,P1_E3_r15,completa,5.72
+estabilidad,P1_E3_r17,completa,5.52
+estabilidad,P1_E3_r18,completa,5.64
+estabilidad,P1_E3_r19,completa,5.72
+estabilidad,P1_E3_r21,completa,5.38
+estabilidad,P1_E3_r20,completa,5.47
+estabilidad,P1_E3_r22,completa,5.58
+estabilidad,P1_E3_r24,completa,5.48
+estabilidad,P1_E3_r26,completa,5.25
+estabilidad,P1_E3_r23,completa,5.75
+estabilidad,P1_E3_r25,completa,5.6
+estabilidad,P1_E3_r27,completa,5.48
+estabilidad,P1_E3_r28,completa,5.68
+estabilidad,P1_E3_r29,completa,5.63
+estabilidad,P2_E1_r01,completa,4.9
+estabilidad,P2_E1_r00,completa,5.0
+estabilidad,P2_E1_r02,completa,4.64
+estabilidad,P2_E1_r03,completa,4.82
+estabilidad,P2_E1_r05,completa,4.8
+estabilidad,P2_E1_r04,completa,4.92
+estabilidad,P2_E1_r06,completa,5.07
+estabilidad,P2_E1_r09,completa,4.72
+estabilidad,P2_E1_r07,completa,5.27
+estabilidad,P2_E1_r08,completa,4.91
+estabilidad,P2_E1_r10,completa,4.5
+estabilidad,P2_E1_r11,completa,4.51
+estabilidad,P2_E1_r12,completa,4.38
+estabilidad,P2_E1_r13,completa,4.39
+estabilidad,P2_E1_r15,completa,4.55
+estabilidad,P2_E1_r14,completa,4.6
+estabilidad,P2_E1_r16,completa,4.57
+estabilidad,P2_E1_r18,completa,4.48
+estabilidad,P2_E1_r17,completa,4.52
+estabilidad,P2_E1_r19,completa,4.52
+estabilidad,P2_E1_r20,completa,4.66
+estabilidad,P2_E1_r21,completa,4.72
+estabilidad,P2_E1_r22,completa,4.84
+estabilidad,P2_E1_r25,completa,4.52
+estabilidad,P2_E1_r23,completa,5.06
+estabilidad,P2_E1_r24,completa,4.97
+estabilidad,P2_E1_r26,completa,4.87
+estabilidad,P2_E1_r28,completa,4.77
+estabilidad,P2_E1_r29,completa,4.66
+estabilidad,P2_E1_r27,completa,5.08
+estabilidad,P2_E2_r02,completa,5.51
+estabilidad,P2_E2_r00,completa,5.94
+estabilidad,P2_E2_r01,completa,5.79
+estabilidad,P2_E2_r03,completa,5.79
+estabilidad,P2_E2_r04,completa,5.67
+estabilidad,P2_E2_r05,completa,5.57
+estabilidad,P2_E2_r06,completa,6.08
+estabilidad,P2_E2_r07,completa,5.93
+estabilidad,P2_E2_r08,completa,5.98
+estabilidad,P2_E2_r09,completa,5.86
+estabilidad,P2_E2_r10,completa,5.15
+estabilidad,P2_E2_r12,completa,5.16
+estabilidad,P2_E2_r11,completa,5.53
+estabilidad,P2_E2_r13,completa,5.07
+estabilidad,P2_E2_r14,completa,5.22
+estabilidad,P2_E2_r15,completa,5.34
+estabilidad,P2_E2_r16,completa,5.2
+estabilidad,P2_E2_r18,completa,5.34
+estabilidad,P2_E2_r17,completa,5.41
+estabilidad,P2_E2_r19,completa,5.47
+estabilidad,P2_E2_r20,completa,4.99
+estabilidad,P2_E2_r21,completa,5.24
+estabilidad,P2_E2_r22,completa,5.4
+estabilidad,P2_E2_r23,completa,5.46
+estabilidad,P2_E2_r24,completa,5.23
+estabilidad,P2_E2_r25,completa,5.31
+estabilidad,P2_E2_r26,completa,5.06
+estabilidad,P2_E2_r27,completa,5.07
+estabilidad,P2_E2_r28,completa,5.4
+estabilidad,P2_E2_r29,completa,5.21
+estabilidad,P2_E3_r00,completa,5.3
+estabilidad,P2_E3_r01,completa,5.47
+estabilidad,P2_E3_r03,completa,5.15
+estabilidad,P2_E3_r02,completa,5.34
+estabilidad,P2_E3_r04,completa,5.29
+estabilidad,P2_E3_r05,completa,5.23
+estabilidad,P2_E3_r06,completa,5.31
+estabilidad,P2_E3_r07,completa,5.33
+estabilidad,P2_E3_r09,completa,5.26
+estabilidad,P2_E3_r08,completa,5.54
+estabilidad,P2_E3_r10,completa,5.38
+estabilidad,P2_E3_r11,completa,5.32
+estabilidad,P2_E3_r12,completa,5.09
+estabilidad,P2_E3_r13,completa,5.45
+estabilidad,P2_E3_r14,completa,5.39
+estabilidad,P2_E3_r15,completa,5.47
+estabilidad,P2_E3_r16,completa,5.43
+estabilidad,P2_E3_r17,completa,5.25
+estabilidad,P2_E3_r18,completa,5.6
+estabilidad,P2_E3_r19,completa,5.67
+estabilidad,P2_E3_r20,completa,5.38
+estabilidad,P2_E3_r21,completa,5.51
+estabilidad,P2_E3_r22,completa,5.47
+estabilidad,P2_E3_r24,completa,5.39
+estabilidad,P2_E3_r23,completa,5.57
+estabilidad,P2_E3_r25,completa,5.59
+estabilidad,P2_E3_r26,completa,5.32
+estabilidad,P2_E3_r27,completa,5.37
+estabilidad,P2_E3_r28,completa,5.51
+estabilidad,F1_E1_r00,completa,2.91
+estabilidad,P2_E3_r29,completa,5.35
+estabilidad,F1_E1_r02,completa,2.72
+estabilidad,F1_E1_r01,completa,2.83
+estabilidad,F1_E1_r03,completa,2.73
+estabilidad,F1_E1_r04,completa,2.72
+estabilidad,F1_E1_r05,completa,2.85
+estabilidad,F1_E1_r06,completa,2.81
+estabilidad,F1_E1_r07,completa,2.84
+estabilidad,F1_E1_r09,completa,2.4
+estabilidad,F1_E1_r12,completa,2.32
+estabilidad,F1_E1_r08,completa,2.86
+estabilidad,F1_E1_r11,completa,2.44
+estabilidad,F1_E1_r10,completa,2.85
+estabilidad,F1_E1_r13,completa,2.39
+estabilidad,F1_E1_r14,completa,2.35
+estabilidad,F1_E1_r15,completa,2.45
+estabilidad,F1_E1_r16,completa,2.28
+estabilidad,F1_E1_r17,completa,2.39
+estabilidad,F1_E1_r18,completa,2.45
+estabilidad,F1_E1_r21,completa,2.3
+estabilidad,F1_E1_r20,completa,2.38
+estabilidad,F1_E1_r19,completa,2.51
+estabilidad,F1_E1_r22,completa,2.56
+estabilidad,F1_E1_r23,completa,2.49
+estabilidad,F1_E1_r24,completa,2.52
+estabilidad,F1_E1_r25,completa,2.47
+estabilidad,F1_E1_r26,completa,2.43
+estabilidad,F1_E1_r27,completa,2.48
+estabilidad,F1_E1_r28,completa,2.52
+estabilidad,F1_E1_r29,completa,2.46
+estabilidad,F1_E2_r01,completa,3.09
+estabilidad,F1_E2_r00,completa,3.15
+estabilidad,F1_E2_r02,completa,3.13
+estabilidad,F1_E2_r04,completa,3.2
+estabilidad,F1_E2_r03,completa,3.22
+estabilidad,F1_E2_r06,completa,3.38
+estabilidad,F1_E2_r05,completa,3.42
+estabilidad,F1_E2_r07,completa,3.33
+estabilidad,F1_E2_r08,completa,3.45
+estabilidad,F1_E2_r09,completa,3.37
+estabilidad,F1_E2_r10,completa,3.31
+estabilidad,F1_E2_r12,completa,3.17
+estabilidad,F1_E2_r11,completa,3.42
+estabilidad,F1_E2_r13,completa,3.08
+estabilidad,F1_E2_r14,completa,3.08
+estabilidad,F1_E2_r15,completa,3.27
+estabilidad,F1_E2_r16,completa,3.27
+estabilidad,F1_E2_r17,completa,3.31
+estabilidad,F1_E2_r18,completa,3.43
+estabilidad,F1_E2_r19,completa,3.35
+estabilidad,F1_E2_r20,completa,3.2
+estabilidad,F1_E2_r21,completa,3.22
+estabilidad,F1_E2_r22,completa,3.4
+estabilidad,F1_E2_r23,completa,3.27
+estabilidad,F1_E2_r24,completa,3.33
+estabilidad,F1_E2_r25,completa,3.01
+estabilidad,F1_E2_r26,completa,3.0
+estabilidad,F1_E2_r27,completa,2.97
+estabilidad,F1_E2_r28,completa,2.95
+estabilidad,F1_E2_r29,completa,3.03
+estabilidad,F1_E3_r00,completa,3.05
+estabilidad,F1_E3_r01,completa,2.97
+estabilidad,F1_E3_r02,completa,3.03
+estabilidad,F1_E3_r03,completa,3.07
+estabilidad,F1_E3_r04,completa,3.01
+estabilidad,F1_E3_r06,completa,2.97
+estabilidad,F1_E3_r05,completa,3.13
+estabilidad,F1_E3_r07,completa,2.99
+estabilidad,F1_E3_r08,completa,2.93
+estabilidad,F1_E3_r09,completa,2.96
+estabilidad,F1_E3_r11,completa,2.83
+estabilidad,F1_E3_r10,completa,2.97
+estabilidad,F1_E3_r12,completa,2.95
+estabilidad,F1_E3_r13,completa,2.86
+estabilidad,F1_E3_r14,completa,2.91
+estabilidad,F1_E3_r15,completa,2.99
+estabilidad,F1_E3_r16,completa,2.91
+estabilidad,F1_E3_r17,completa,2.88
+estabilidad,F1_E3_r18,completa,2.97
+estabilidad,F1_E3_r19,completa,3.02
+estabilidad,F1_E3_r20,completa,2.89
+estabilidad,F1_E3_r21,completa,2.94
+estabilidad,F1_E3_r22,completa,3.12
+estabilidad,F1_E3_r24,completa,3.0
+estabilidad,F1_E3_r23,completa,3.12
+estabilidad,F1_E3_r26,completa,2.97
+estabilidad,F1_E3_r25,completa,3.06
+estabilidad,F1_E3_r27,completa,3.06
+estabilidad,F2_E1_r00,completa,2.39
+estabilidad,F1_E3_r28,completa,3.05
+estabilidad,F2_E1_r01,completa,2.46
+estabilidad,F1_E3_r29,completa,3.12
+estabilidad,F2_E1_r03,completa,2.29
+estabilidad,F2_E1_r02,completa,2.3
+estabilidad,F2_E1_r04,completa,2.39
+estabilidad,F2_E1_r05,completa,2.39
+estabilidad,F2_E1_r06,completa,2.42
+estabilidad,F2_E1_r07,completa,2.41
+estabilidad,F2_E1_r08,completa,2.11
+estabilidad,F2_E1_r10,completa,2.11
+estabilidad,F2_E1_r09,completa,2.34
+estabilidad,F2_E1_r12,completa,1.95
+estabilidad,F2_E1_r13,completa,2.03
+estabilidad,F2_E1_r14,completa,1.95
+estabilidad,F2_E1_r11,completa,2.45
+estabilidad,F2_E1_r16,completa,1.95
+estabilidad,F2_E1_r15,completa,1.98
+estabilidad,F2_E1_r17,completa,2.04
+estabilidad,F2_E1_r18,completa,1.95
+estabilidad,F2_E1_r20,completa,1.92
+estabilidad,F2_E1_r21,completa,1.95
+estabilidad,F2_E1_r19,completa,2.15
+estabilidad,F2_E1_r23,completa,2.02
+estabilidad,F2_E1_r22,completa,2.13
+estabilidad,F2_E1_r24,completa,1.93
+estabilidad,F2_E1_r25,completa,1.95
+estabilidad,F2_E1_r26,completa,1.99
+estabilidad,F2_E1_r27,completa,2.06
+estabilidad,F2_E1_r28,completa,2.05
+estabilidad,F2_E1_r29,completa,2.08
+estabilidad,F2_E2_r00,completa,2.76
+estabilidad,F2_E2_r01,completa,2.71
+estabilidad,F2_E2_r03,completa,2.74
+estabilidad,F2_E2_r02,completa,2.77
+estabilidad,F2_E2_r04,completa,2.73
+estabilidad,F2_E2_r06,completa,2.72
+estabilidad,F2_E2_r05,completa,2.77
+estabilidad,F2_E2_r07,completa,2.87
+estabilidad,F2_E2_r08,completa,2.8
+estabilidad,F2_E2_r09,completa,2.71
+estabilidad,F2_E2_r11,completa,2.77
+estabilidad,F2_E2_r10,completa,2.82
+estabilidad,F2_E2_r13,completa,2.73
+estabilidad,F2_E2_r12,completa,2.74
+estabilidad,F2_E2_r14,completa,2.76
+estabilidad,F2_E2_r16,completa,2.7
+estabilidad,F2_E2_r15,completa,2.75
+estabilidad,F2_E2_r17,completa,2.74
+estabilidad,F2_E2_r18,completa,2.68
+estabilidad,F2_E2_r19,completa,2.72
+estabilidad,F2_E2_r20,completa,2.69
+estabilidad,F2_E2_r21,completa,2.74
+estabilidad,F2_E2_r22,completa,2.81
+estabilidad,F2_E2_r24,completa,2.72
+estabilidad,F2_E2_r23,completa,2.91
+estabilidad,F2_E2_r26,completa,2.67
+estabilidad,F2_E2_r25,completa,2.76
+estabilidad,F2_E2_r27,completa,2.76
+estabilidad,F2_E2_r28,completa,2.78
+estabilidad,F2_E2_r29,completa,2.77
+estabilidad,F2_E3_r00,completa,2.78
+estabilidad,F2_E3_r01,completa,2.78
+estabilidad,F2_E3_r03,completa,2.72
+estabilidad,F2_E3_r02,completa,2.76
+estabilidad,F2_E3_r04,completa,2.85
+estabilidad,F2_E3_r06,completa,2.81
+estabilidad,F2_E3_r05,completa,2.91
+estabilidad,F2_E3_r07,completa,2.88
+estabilidad,F2_E3_r08,completa,2.9
+estabilidad,F2_E3_r09,completa,2.86
+estabilidad,F2_E3_r11,completa,2.8
+estabilidad,F2_E3_r10,completa,2.88
+estabilidad,F2_E3_r12,completa,2.71
+estabilidad,F2_E3_r13,completa,2.73
+estabilidad,F2_E3_r14,completa,2.72
+estabilidad,F2_E3_r15,completa,2.8
+estabilidad,F2_E3_r16,completa,2.82
+estabilidad,F2_E3_r17,completa,2.78
+estabilidad,F2_E3_r18,completa,2.89
+estabilidad,F2_E3_r19,completa,2.71
+estabilidad,F2_E3_r20,completa,2.64
+estabilidad,F2_E3_r21,completa,2.85
+estabilidad,F2_E3_r22,completa,2.81
+estabilidad,F2_E3_r23,completa,2.84
+estabilidad,F2_E3_r24,completa,2.83
+estabilidad,F2_E3_r25,completa,2.44
+estabilidad,F2_E3_r26,completa,2.5
+estabilidad,F2_E3_r27,completa,2.27
+estabilidad,F2_E3_r28,completa,2.13
+estabilidad,F2_E3_r29,completa,2.11
+sensibilidades,sensibilidades,completa,0.0
+validacion de avances,validacion,completa,0.0
+referencia correlacionada,replica_000,omitida,0.0
+referencia correlacionada,replica_001,omitida,0.0
+referencia correlacionada,replica_002,omitida,0.0
+referencia correlacionada,replica_003,omitida,0.0
+referencia correlacionada,replica_004,omitida,0.0
+referencia correlacionada,replica_005,omitida,0.0
+referencia correlacionada,replica_006,omitida,0.0
+referencia correlacionada,replica_007,omitida,0.0
+referencia correlacionada,replica_008,omitida,0.0
+referencia correlacionada,replica_009,omitida,0.0
+referencia correlacionada,replica_010,omitida,0.0
+referencia correlacionada,replica_011,omitida,0.0
+referencia correlacionada,replica_012,omitida,0.0
+referencia correlacionada,replica_013,omitida,0.0
+referencia correlacionada,replica_014,omitida,0.0
+referencia correlacionada,replica_015,omitida,0.0
+referencia correlacionada,replica_016,omitida,0.0
+referencia correlacionada,replica_017,omitida,0.0
+referencia correlacionada,replica_018,omitida,0.0
+referencia correlacionada,replica_019,omitida,0.0
+referencia correlacionada,replica_020,omitida,0.0
+referencia correlacionada,replica_021,omitida,0.0
+referencia correlacionada,replica_022,omitida,0.0
+referencia correlacionada,replica_023,omitida,0.0
+referencia correlacionada,replica_024,omitida,0.0
+referencia correlacionada,replica_025,omitida,0.0
+referencia correlacionada,replica_026,omitida,0.0
+referencia correlacionada,replica_027,omitida,0.0
+referencia correlacionada,replica_028,omitida,0.0
+referencia correlacionada,replica_029,omitida,0.0
+referencia correlacionada,replica_030,omitida,0.0
+referencia correlacionada,replica_031,omitida,0.0
+referencia correlacionada,replica_032,omitida,0.0
+referencia correlacionada,replica_033,omitida,0.0
+referencia correlacionada,replica_034,omitida,0.0
+referencia correlacionada,replica_035,omitida,0.0
+referencia correlacionada,replica_036,omitida,0.0
+referencia correlacionada,replica_037,omitida,0.0
+referencia correlacionada,replica_038,omitida,0.0
+referencia correlacionada,replica_039,omitida,0.0
+referencia correlacionada,replica_040,omitida,0.0
+referencia correlacionada,replica_041,omitida,0.0
+referencia correlacionada,replica_042,omitida,0.0
+referencia correlacionada,replica_043,omitida,0.0
+referencia correlacionada,replica_044,omitida,0.0
+referencia correlacionada,replica_045,omitida,0.0
+referencia correlacionada,replica_046,omitida,0.0
+referencia correlacionada,replica_047,omitida,0.0
+referencia correlacionada,replica_048,omitida,0.0
+referencia correlacionada,replica_049,omitida,0.0
+referencia correlacionada,replica_050,omitida,0.0
+referencia correlacionada,replica_052,omitida,0.0
+referencia correlacionada,replica_051,omitida,0.0
+referencia correlacionada,replica_053,omitida,0.0
+referencia correlacionada,replica_054,omitida,0.0
+referencia correlacionada,replica_055,omitida,0.0
+referencia correlacionada,replica_056,omitida,0.0
+referencia correlacionada,replica_058,omitida,0.0
+referencia correlacionada,replica_057,omitida,0.0
+referencia correlacionada,replica_059,omitida,0.0
+referencia correlacionada,replica_060,omitida,0.0
+referencia correlacionada,replica_061,omitida,0.0
+referencia correlacionada,replica_062,omitida,0.0
+referencia correlacionada,replica_063,omitida,0.0
+referencia correlacionada,replica_064,omitida,0.0
+referencia correlacionada,replica_065,omitida,0.0
+referencia correlacionada,replica_066,omitida,0.0
+referencia correlacionada,replica_067,omitida,0.0
+referencia correlacionada,replica_068,omitida,0.0
+referencia correlacionada,replica_069,omitida,0.0
+referencia correlacionada,replica_070,omitida,0.0
+referencia correlacionada,replica_071,omitida,0.0
+referencia correlacionada,replica_072,completa,2.43
+referencia correlacionada,replica_073,completa,2.57
+referencia correlacionada,replica_074,completa,2.45
+referencia correlacionada,replica_077,completa,2.25
+referencia correlacionada,replica_075,completa,2.56
+referencia correlacionada,replica_076,completa,2.49
+referencia correlacionada,replica_078,completa,2.57
+referencia correlacionada,replica_080,completa,2.45
+referencia correlacionada,replica_079,completa,2.76
+referencia correlacionada,replica_081,completa,3.39
+referencia correlacionada,replica_082,completa,3.31
+referencia correlacionada,replica_083,completa,3.13
+referencia correlacionada,replica_084,completa,2.82
+referencia correlacionada,replica_086,completa,3.14
+referencia correlacionada,replica_085,completa,3.45
+referencia correlacionada,replica_087,completa,3.38
+referencia correlacionada,replica_088,completa,3.09
+referencia correlacionada,replica_089,completa,3.18
+referencia correlacionada,replica_090,completa,3.11
+referencia correlacionada,replica_091,completa,3.19
+referencia correlacionada,replica_092,completa,3.04
+referencia correlacionada,replica_093,completa,2.92
+referencia correlacionada,replica_094,completa,3.19
+referencia correlacionada,replica_095,completa,3.21
+referencia correlacionada,replica_096,completa,3.23
+referencia correlacionada,replica_097,completa,3.29
+referencia correlacionada,replica_098,completa,3.34
+referencia correlacionada,replica_099,completa,2.1
+referencia correlacionada,replica_002,completa,166.07
+referencia correlacionada,replica_001,completa,177.93
+referencia correlacionada,replica_000,completa,180.97
+referencia correlacionada,replica_003,completa,167.81
+referencia correlacionada,replica_004,completa,172.95
+referencia correlacionada,replica_005,completa,170.52
+referencia correlacionada,replica_006,completa,167.96
+referencia correlacionada,replica_007,completa,163.7
+referencia correlacionada,replica_008,completa,167.34
+referencia correlacionada,replica_009,completa,170.02
+referencia correlacionada,replica_011,completa,174.54
+referencia correlacionada,replica_010,completa,180.48
+referencia correlacionada,replica_012,completa,165.97
+referencia correlacionada,replica_014,completa,172.33
+referencia correlacionada,replica_013,completa,177.51
+referencia correlacionada,replica_015,completa,169.46
+referencia correlacionada,replica_017,completa,159.16
+referencia correlacionada,replica_016,completa,170.92
+referencia correlacionada,replica_018,completa,142.96
+referencia correlacionada,replica_019,completa,134.84
+s_ord,P1_ridit_r-1,completa,1.25
+s_ord,P1_ridit_r0,completa,1.2
+s_ord,P1_ridit_r1,completa,1.24
+s_ord,P1_ridit_r2,completa,1.17
+s_ord,P1_ridit_r3,completa,1.2
+s_ord,P1_ridit_r4,completa,1.06
+s_ord,P1_ridit_r5,completa,1.06
+s_ord,P1_ridit_r6,completa,1.14
+s_ord,P1_ridit_r7,completa,1.2
+s_ord,P1_ridit_r8,completa,1.11
+s_ord,P1_ridit_r9,completa,1.1
+s_ord,P1_ridit_r10,completa,1.2
+s_ord,P1_ridit_r11,completa,1.28
+s_ord,P1_ridit_r12,completa,1.29
+s_ord,P1_ridit_r13,completa,1.46
+s_ord,P1_ridit_r14,completa,1.41
+s_ord,P1_ridit_r15,completa,1.41
+s_ord,P1_ridit_r16,completa,1.28
+s_ord,P1_ridit_r17,completa,1.21
+s_ord,P1_ridit_r18,completa,1.15
+s_ord,P1_ridit_r19,completa,1.01
+s_ord,P1_ridit_r20,completa,1.12
+s_ord,P1_ridit_r21,completa,1.25
+s_ord,P1_ridit_r22,completa,1.44
+s_ord,P1_ridit_r23,completa,1.05
+s_ord,P1_ridit_r24,completa,1.07
+s_ord,P1_ridit_r25,completa,1.0
+s_ord,P1_ridit_r26,completa,1.0
+s_ord,P1_ridit_r27,completa,1.01
+s_ord,P1_ridit_r28,completa,0.99
+s_ord,P1_ridit_r29,completa,1.0
+s_ord,P1_normal_r-1,completa,1.29
+s_ord,P1_normal_r0,completa,0.98
+s_ord,P1_normal_r1,completa,1.2
+s_ord,P1_normal_r2,completa,1.17
+s_ord,P1_normal_r3,completa,1.11
+s_ord,P1_normal_r4,completa,1.2
+s_ord,P1_normal_r5,completa,1.11
+s_ord,P1_normal_r6,completa,1.17
+s_ord,P1_normal_r7,completa,1.09
+s_ord,P1_normal_r8,completa,1.15
+s_ord,P1_normal_r9,completa,1.13
+s_ord,P1_normal_r10,completa,1.23
+s_ord,P1_normal_r11,completa,1.07
+s_ord,P1_normal_r12,completa,1.15
+s_ord,P1_normal_r13,completa,1.31
+s_ord,P1_normal_r14,completa,1.12
+s_ord,P1_normal_r15,completa,1.25
+s_ord,P1_normal_r16,completa,1.33
+s_ord,P1_normal_r17,completa,1.26
+s_ord,P1_normal_r18,completa,1.32
+s_ord,P1_normal_r19,completa,1.23
+s_ord,P1_normal_r20,completa,1.13
+s_ord,P1_normal_r21,completa,1.21
+s_ord,P1_normal_r22,completa,1.29
+s_ord,P1_normal_r23,completa,1.28
+s_ord,P1_normal_r24,completa,1.24
+s_ord,P1_normal_r25,completa,1.2
+s_ord,P1_normal_r26,completa,1.21
+s_ord,P1_normal_r27,completa,1.22
+s_ord,P1_normal_r28,completa,1.21
+s_ord,P1_normal_r29,completa,1.27
+s_ord,P2_ridit_r-1,completa,1.14
+s_ord,P2_ridit_r0,completa,0.96
+s_ord,P2_ridit_r1,completa,0.81
+s_ord,P2_ridit_r2,completa,0.88
+s_ord,P2_ridit_r3,completa,0.99
+s_ord,P2_ridit_r4,completa,0.9
+s_ord,P2_ridit_r5,completa,0.76
+s_ord,P2_ridit_r6,completa,0.81
+s_ord,P2_ridit_r7,completa,0.87
+s_ord,P2_ridit_r8,completa,0.89
+s_ord,P2_ridit_r9,completa,0.83
+s_ord,P2_ridit_r10,completa,0.94
+s_ord,P2_ridit_r11,completa,0.87
+s_ord,P2_ridit_r12,completa,1.03
+s_ord,P2_ridit_r13,completa,0.88
+s_ord,P2_ridit_r14,completa,0.71
+s_ord,P2_ridit_r15,completa,1.04
+s_ord,P2_ridit_r16,completa,0.85
+s_ord,P2_ridit_r17,completa,0.78
+s_ord,P2_ridit_r18,completa,0.83
+s_ord,P2_ridit_r19,completa,0.84
+s_ord,P2_ridit_r20,completa,0.88
+s_ord,P2_ridit_r21,completa,0.86
+s_ord,P2_ridit_r22,completa,0.8
+s_ord,P2_ridit_r23,completa,0.96
+s_ord,P2_ridit_r24,completa,0.86
+s_ord,P2_ridit_r25,completa,0.92
+s_ord,P2_ridit_r26,completa,0.88
+s_ord,P2_ridit_r27,completa,0.92
+s_ord,P2_ridit_r28,completa,0.82
+s_ord,P2_ridit_r29,completa,0.99
+s_ord,P2_normal_r-1,completa,1.16
+s_ord,P2_normal_r0,completa,1.03
+s_ord,P2_normal_r1,completa,1.06
+s_ord,P2_normal_r2,completa,0.97
+s_ord,P2_normal_r3,completa,1.11
+s_ord,P2_normal_r4,completa,1.08
+s_ord,P2_normal_r5,completa,0.99
+s_ord,P2_normal_r6,completa,1.04
+s_ord,P2_normal_r7,completa,1.05
+s_ord,P2_normal_r8,completa,1.11
+s_ord,P2_normal_r9,completa,0.92
+s_ord,P2_normal_r10,completa,1.11
+s_ord,P2_normal_r11,completa,0.98
+s_ord,P2_normal_r12,completa,1.14
+s_ord,P2_normal_r13,completa,1.1
+s_ord,P2_normal_r14,completa,1.11
+s_ord,P2_normal_r15,completa,1.14
+s_ord,P2_normal_r16,completa,0.97
+s_ord,P2_normal_r17,completa,1.05
+s_ord,P2_normal_r18,completa,1.15
+s_ord,P2_normal_r19,completa,0.93
+s_ord,P2_normal_r20,completa,1.22
+s_ord,P2_normal_r21,completa,0.94
+s_ord,P2_normal_r22,completa,1.02
+s_ord,P2_normal_r23,completa,1.05
+s_ord,P2_normal_r24,completa,1.2
+s_ord,P2_normal_r25,completa,0.97
+s_ord,P2_normal_r26,completa,0.99
+s_ord,P2_normal_r27,completa,1.16
+s_ord,P2_normal_r28,completa,1.11
+s_ord,P2_normal_r29,completa,1.08
+s_ord,F1_ridit_r-1,completa,0.82
+s_ord,F1_ridit_r0,completa,0.64
+s_ord,F1_ridit_r1,completa,0.72
+s_ord,F1_ridit_r2,completa,0.8
+s_ord,F1_ridit_r3,completa,0.65
+s_ord,F1_ridit_r4,completa,0.65
+s_ord,F1_ridit_r5,completa,0.72
+s_ord,F1_ridit_r6,completa,0.71
+s_ord,F1_ridit_r7,completa,0.68
+s_ord,F1_ridit_r8,completa,0.79
+s_ord,F1_ridit_r9,completa,0.74
+s_ord,F1_ridit_r10,completa,0.72
+s_ord,F1_ridit_r11,completa,0.69
+s_ord,F1_ridit_r12,completa,0.75
+s_ord,F1_ridit_r13,completa,0.73
+s_ord,F1_ridit_r14,completa,0.61
+s_ord,F1_ridit_r15,completa,0.8
+s_ord,F1_ridit_r16,completa,0.73
+s_ord,F1_ridit_r17,completa,0.61
+s_ord,F1_ridit_r18,completa,0.74
+s_ord,F1_ridit_r19,completa,0.81
+s_ord,F1_ridit_r20,completa,0.81
+s_ord,F1_ridit_r21,completa,0.78
+s_ord,F1_ridit_r22,completa,0.9
+s_ord,F1_ridit_r23,completa,0.9
+s_ord,F1_ridit_r24,completa,0.91
+s_ord,F1_ridit_r25,completa,0.92
+s_ord,F1_ridit_r26,completa,0.99
+s_ord,F1_ridit_r27,completa,0.72
+s_ord,F1_ridit_r28,completa,0.61
+s_ord,F1_ridit_r29,completa,0.73
+s_ord,F1_normal_r-1,completa,0.91
+s_ord,F1_normal_r0,completa,0.91
+s_ord,F1_normal_r1,completa,0.85
+s_ord,F1_normal_r2,completa,0.91
+s_ord,F1_normal_r3,completa,0.74
+s_ord,F1_normal_r4,completa,0.97
+s_ord,F1_normal_r5,completa,0.87
+s_ord,F1_normal_r6,completa,0.85
+s_ord,F1_normal_r7,completa,0.96
+s_ord,F1_normal_r8,completa,0.89
+s_ord,F1_normal_r9,completa,0.79
+s_ord,F1_normal_r10,completa,0.92
+s_ord,F1_normal_r11,completa,0.76
+s_ord,F1_normal_r12,completa,0.87
+s_ord,F1_normal_r13,completa,0.71
+s_ord,F1_normal_r14,completa,0.88
+s_ord,F1_normal_r15,completa,0.96
+s_ord,F1_normal_r16,completa,0.74
+s_ord,F1_normal_r17,completa,0.88
+s_ord,F1_normal_r18,completa,0.84
+s_ord,F1_normal_r19,completa,0.86
+s_ord,F1_normal_r20,completa,0.85
+s_ord,F1_normal_r21,completa,1.04
+s_ord,F1_normal_r22,completa,0.81
+s_ord,F1_normal_r23,completa,0.82
+s_ord,F1_normal_r24,completa,0.94
+s_ord,F1_normal_r25,completa,0.89
+s_ord,F1_normal_r26,completa,0.74
+s_ord,F1_normal_r27,completa,0.73
+s_ord,F1_normal_r28,completa,0.92
+s_ord,F1_normal_r29,completa,0.88
+s_ord,F2_ridit_r-1,completa,0.73
+s_ord,F2_ridit_r0,completa,0.58
+s_ord,F2_ridit_r1,completa,0.54
+s_ord,F2_ridit_r2,completa,0.6
+s_ord,F2_ridit_r3,completa,0.6
+s_ord,F2_ridit_r4,completa,0.64
+s_ord,F2_ridit_r5,completa,0.65
+s_ord,F2_ridit_r6,completa,0.61
+s_ord,F2_ridit_r7,completa,0.74
+s_ord,F2_ridit_r8,completa,0.49
+s_ord,F2_ridit_r9,completa,0.6
+s_ord,F2_ridit_r10,completa,0.69
+s_ord,F2_ridit_r11,completa,0.52
+s_ord,F2_ridit_r12,completa,0.64
+s_ord,F2_ridit_r13,completa,0.58
+s_ord,F2_ridit_r14,completa,0.52
+s_ord,F2_ridit_r15,completa,0.66
+s_ord,F2_ridit_r16,completa,0.61
+s_ord,F2_ridit_r17,completa,0.55
+s_ord,F2_ridit_r18,completa,0.61
+s_ord,F2_ridit_r19,completa,0.68
+s_ord,F2_ridit_r20,completa,0.53
+s_ord,F2_ridit_r21,completa,0.61
+s_ord,F2_ridit_r22,completa,0.55
+s_ord,F2_ridit_r23,completa,0.53
+s_ord,F2_ridit_r24,completa,0.68
+s_ord,F2_ridit_r25,completa,0.61
+s_ord,F2_ridit_r26,completa,0.47
+s_ord,F2_ridit_r27,completa,0.63
+s_ord,F2_ridit_r28,completa,0.56
+s_ord,F2_ridit_r29,completa,0.67
+s_ord,F2_normal_r-1,completa,0.62
+s_ord,F2_normal_r0,completa,0.79
+s_ord,F2_normal_r1,completa,0.81
+s_ord,F2_normal_r2,completa,0.72
+s_ord,F2_normal_r3,completa,0.66
+s_ord,F2_normal_r4,completa,0.78
+s_ord,F2_normal_r5,completa,0.77
+s_ord,F2_normal_r6,completa,0.73
+s_ord,F2_normal_r7,completa,0.76
+s_ord,F2_normal_r8,completa,0.75
+s_ord,F2_normal_r9,completa,0.73
+s_ord,F2_normal_r10,completa,0.72
+s_ord,F2_normal_r11,completa,0.78
+s_ord,F2_normal_r12,completa,0.77
+s_ord,F2_normal_r13,completa,0.67
+s_ord,F2_normal_r14,completa,0.82
+s_ord,F2_normal_r15,completa,0.76
+s_ord,F2_normal_r16,completa,0.6
+s_ord,F2_normal_r17,completa,0.82
+s_ord,F2_normal_r18,completa,0.65
+s_ord,F2_normal_r19,completa,0.7
+s_ord,F2_normal_r20,completa,0.75
+s_ord,F2_normal_r21,completa,0.58
+s_ord,F2_normal_r22,completa,0.81
+s_ord,F2_normal_r23,completa,0.77
+s_ord,F2_normal_r24,completa,0.62
+s_ord,F2_normal_r25,completa,0.73
+s_ord,F2_normal_r26,completa,0.78
+s_ord,F2_normal_r27,completa,0.65
+s_ord,F2_normal_r28,completa,0.68
+s_ord,F2_normal_r29,completa,0.54
+asignacion,P1_r00,completa,0.73
+asignacion,P1_r01,completa,0.9
+asignacion,P1_r02,completa,0.81
+asignacion,P1_r03,completa,0.82
+asignacion,P1_r04,completa,0.71
+asignacion,P1_r05,completa,0.77
+asignacion,P1_r06,completa,0.89
+asignacion,P1_r07,completa,0.94
+asignacion,P1_r08,completa,0.92
+asignacion,P1_r09,completa,1.07
+asignacion,P1_r10,completa,1.26
+asignacion,P1_r11,completa,0.94
+asignacion,P1_r12,completa,1.08
+asignacion,P1_r13,completa,1.07
+asignacion,P1_r14,completa,1.11
+asignacion,P1_r15,completa,0.95
+asignacion,P1_r16,completa,1.18
+asignacion,P1_r17,completa,1.2
+asignacion,P1_r18,completa,1.05
+asignacion,P1_r19,completa,1.05
+asignacion,P1_r20,completa,1.05
+asignacion,P1_r21,completa,1.04
+asignacion,P1_r22,completa,1.27
+asignacion,P1_r23,completa,1.06
+asignacion,P1_r24,completa,1.04
+asignacion,P1_r25,completa,1.15
+asignacion,P1_r26,completa,0.98
+asignacion,P1_r27,completa,1.05
+asignacion,P1_r28,completa,0.96
+asignacion,P1_r29,completa,1.14
+asignacion,P2_r00,completa,1.09
+asignacion,P2_r01,completa,0.9
+asignacion,P2_r02,completa,1.09
+asignacion,P2_r03,completa,0.93
+asignacion,P2_r04,completa,1.01
+asignacion,P2_r05,completa,0.89
+asignacion,P2_r06,completa,0.92
+asignacion,P2_r07,completa,0.94
+asignacion,P2_r08,completa,0.99
+asignacion,P2_r09,completa,0.88
+asignacion,P2_r10,completa,0.91
+asignacion,P2_r11,completa,1.01
+asignacion,P2_r12,completa,1.02
+asignacion,P2_r13,completa,0.95
+asignacion,P2_r14,completa,0.96
+asignacion,P2_r15,completa,0.96
+asignacion,P2_r16,completa,0.97
+asignacion,P2_r17,completa,1.12
+asignacion,P2_r18,completa,0.97
+asignacion,P2_r19,completa,0.94
+asignacion,P2_r20,completa,0.99
+asignacion,P2_r21,completa,0.88
+asignacion,P2_r22,completa,1.05
+asignacion,P2_r23,completa,1.01
+asignacion,P2_r24,completa,0.87
+asignacion,P2_r25,completa,0.99
+asignacion,P2_r26,completa,0.95
+asignacion,P2_r27,completa,0.94
+asignacion,P2_r28,completa,0.91
+asignacion,P2_r29,completa,0.94
+asignacion,F1_r00,completa,0.85
+asignacion,F1_r01,completa,0.68
+asignacion,F1_r02,completa,0.87
+asignacion,F1_r03,completa,0.72
+asignacion,F1_r04,completa,0.73
+asignacion,F1_r05,completa,0.75
+asignacion,F1_r06,completa,0.84
+asignacion,F1_r07,completa,0.75
+asignacion,F1_r08,completa,0.85
+asignacion,F1_r09,completa,0.66
+asignacion,F1_r10,completa,0.8
+asignacion,F1_r11,completa,0.87
+asignacion,F1_r12,completa,0.66
+asignacion,F1_r13,completa,0.83
+asignacion,F1_r14,completa,0.85
+asignacion,F1_r15,completa,0.71
+asignacion,F1_r16,completa,0.67
+asignacion,F1_r17,completa,0.77
+asignacion,F1_r18,completa,0.76
+asignacion,F1_r19,completa,0.84
+asignacion,F1_r20,completa,0.75
+asignacion,F1_r21,completa,0.76
+asignacion,F1_r22,completa,0.84
+asignacion,F1_r23,completa,0.82
+asignacion,F1_r24,completa,0.76
+asignacion,F1_r25,completa,0.82
+asignacion,F1_r26,completa,0.75
+asignacion,F1_r27,completa,0.81
+asignacion,F1_r28,completa,0.76
+asignacion,F1_r29,completa,0.93
+asignacion,F2_r00,completa,0.67
+asignacion,F2_r01,completa,0.55
+asignacion,F2_r02,completa,0.57
+asignacion,F2_r03,completa,0.66
+asignacion,F2_r04,completa,0.68
+asignacion,F2_r05,completa,0.7
+asignacion,F2_r06,completa,0.65
+asignacion,F2_r07,completa,0.67
+asignacion,F2_r08,completa,0.73
+asignacion,F2_r09,completa,0.67
+asignacion,F2_r10,completa,0.67
+asignacion,F2_r11,completa,0.73
+asignacion,F2_r12,completa,0.58
+asignacion,F2_r13,completa,0.65
+asignacion,F2_r14,completa,0.6
+asignacion,F2_r15,completa,0.65
+asignacion,F2_r16,completa,0.66
+asignacion,F2_r17,completa,0.63
+asignacion,F2_r18,completa,0.65
+asignacion,F2_r19,completa,0.71
+asignacion,F2_r20,completa,0.65
+asignacion,F2_r21,completa,0.61
+asignacion,F2_r22,completa,0.66
+asignacion,F2_r23,completa,0.69
+asignacion,F2_r24,completa,0.74
+asignacion,F2_r25,completa,0.66
+asignacion,F2_r26,completa,0.68
+asignacion,F2_r27,completa,0.74
+asignacion,F2_r28,completa,0.7
+asignacion,F2_r29,completa,0.59
+interpretabilidad,interpretabilidad,completa,0.0
+seleccion,seleccion,completa,0.0
+revision de la decision,revision,completa,0.0
+revision de la decision,revision,completa,0.0

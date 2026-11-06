@@ -1,0 +1,12 @@
+{
+ "python": "3.12.5",
+ "numpy": "2.2.4",
+ "pandas": "2.2.3",
+ "scipy": "1.15.2",
+ "scikit_learn": "1.6.1",
+ "semilla": 42,
+ "remuestreos": 30,
+ "tamano_subconjunto": 423,
+ "replicas_nulas": 20,
+ "hilos_por_proceso": 1
+}

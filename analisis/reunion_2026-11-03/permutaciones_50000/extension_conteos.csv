@@ -1,0 +1,50 @@
+﻿tipo,nombre,k_primeros,k_siguientes,k_total
+variable,alcohol_frecuencia,3218,12664,15882
+variable,cantidad_personas_cuida,522,2134,2656
+variable,carnes_semana,9582,38290,47872
+variable,dias_ejercicio_semana,23,79,102
+variable,distension_abdominal,3741,14665,18406
+variable,edad,9363,37542,46905
+variable,estres_entorno_laboral,517,1930,2447
+variable,evacuacion_intestinal,8676,34727,43403
+variable,falta_tiempo_influye,1122,4373,5495
+variable,frecuencia_aerobico,1668,6579,8247
+variable,frecuencia_bajo_impacto,32,106,138
+variable,frecuencia_comida_fuera,2081,8524,10605
+variable,frecuencia_fuerza,117,479,596
+variable,frutas_dia,4064,16040,20104
+variable,golosinas_semana,9644,38543,48187
+variable,horas_sedentarismo,5358,21190,26548
+variable,imc,69,298,367
+variable,jugos_gaseosas_dia,7842,31405,39247
+variable,lacteos_dia,9632,38392,48024
+variable,legumbres_semana,5529,21978,27507
+variable,lugar_trabajo_comprensivo,151,625,776
+variable,operada_no_mas_hijos,5832,23344,29176
+variable,panes_dia,9193,36685,45878
+variable,pescado_semana,2723,10785,13508
+variable,platos_verduras_dia,6990,28014,35004
+variable,quien_prepara_comidas,635,2500,3135
+variable,sobrecarga_fisica_emocional,421,1638,2059
+variable,tabaco_frecuencia,644,2443,3087
+variable,tiene_actividad_sexual,5361,21698,27059
+variable,tiene_pareja,1371,5453,6824
+variable,trabaja_actualmente,143,669,812
+variable,usa_medicamentos_diabetes,261,958,1219
+variable,usa_medicamentos_presion,849,3157,4006
+variable,vasos_agua_dia,888,3390,4278
+par,dias_ejercicio_semana | frecuencia_bajo_impacto,0,0,0
+par,dias_ejercicio_semana | frecuencia_fuerza,0,0,0
+par,dias_ejercicio_semana | imc,2685,10729,13414
+par,dias_ejercicio_semana | lugar_trabajo_comprensivo,9523,38083,47606
+par,dias_ejercicio_semana | trabaja_actualmente,7362,29301,36663
+par,frecuencia_bajo_impacto | frecuencia_fuerza,0,0,0
+par,frecuencia_bajo_impacto | imc,9066,36094,45160
+par,frecuencia_bajo_impacto | lugar_trabajo_comprensivo,5763,23498,29261
+par,frecuencia_bajo_impacto | trabaja_actualmente,8804,35273,44077
+par,frecuencia_fuerza | imc,6300,25337,31637
+par,frecuencia_fuerza | lugar_trabajo_comprensivo,8751,34841,43592
+par,frecuencia_fuerza | trabaja_actualmente,948,3794,4742
+par,imc | lugar_trabajo_comprensivo,6095,24507,30602
+par,imc | trabaja_actualmente,6452,25765,32217
+par,lugar_trabajo_comprensivo | trabaja_actualmente,10000,40000,50000

@@ -1,0 +1,8 @@
+fase,manifiesto,archivos,comparados_por_huella,verificados_con_git,sin_verificar_por_nombre,distintos,ejemplos
+Fases 34-35 (cierre),analisis/cierre_fases_34_35/integridad/manifiesto_despues.csv,1130,1126,0,4,0,analisis/revision_correctiva_fase34/tablas/diabetes_diagnostico_verdad.csv; datos/sintetico/bitacora_suciedad.csv; datos/sintetico/dataset_usuaria_sucio.csv; datos/sintetico/dataset_usuaria_verdad.csv
+Fase 36,analisis/fase36/integridad/manifiesto_final_36B.csv,258,258,0,0,0,
+Fase 37A,analisis/fase37/37A_reduccion/integridad/manifiesto_final_37A.csv,175,175,0,0,0,
+Fase 37B,analisis/fase37/37B_clustering/integridad/manifiesto_final_37B.csv,654,654,0,0,0,
+Fase 37C,analisis/fase37/37C_comparacion_seleccion/integridad/manifiesto_final_37C.csv,1131,1131,0,0,0,
+Complemento 37C,analisis/fase37/37C_complemento_tres_preguntas/integridad/manifiesto_final.csv,188,188,0,0,0,
+Fase 37D,analisis/fase37/37D_caracterizacion/integridad/manifiesto_final.csv,110,110,0,0,0,

@@ -1,0 +1,51 @@
+config,motivo,1. Integridad,2. Asignación,3. Estabilidad,4. Codificación,4. Población e imputación,4. Variables,5. Nula correlacionada,6. Tamaños,7. Separación,8. Interpretabilidad,9. Complejidad,clase
+F1_c03_km_k3,Lista B,OK,CRIT,CRIT,OK,ADV,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+F1_c05_km_k3,Lista B,OK,CRIT,CRIT,CRIT,OK,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+F1_c08_km_k3,Lista B,OK,ADV,ADV,CRIT,OK,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+F2_c03_km_k3,Lista B,OK,CRIT,CRIT,OK,ADV,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+F2_c05_km_k3,Lista B,OK,ADV,CRIT,CRIT,OK,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+F2_c08_km_k3,Lista B,OK,ADV,ADV,CRIT,OK,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+P1_c03_km_k3,Lista B,OK,ADV,CRIT,ADV,OK,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+P1_c05_km_k3,Lista B,OK,ADV,ADV,ADV,ADV,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+P2_c03_km_k3,Lista B,OK,ADV,ADV,ADV,OK,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+P2_c05_km_k3,Lista B,OK,ADV,ADV,ADV,OK,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+F1_c03_km_k4,Lista B + Vista A,OK,CRIT,CRIT,ADV,ADV,ADV,ADV,OK,OK,OK,OK,Segmentación multivariable
+F2_c03_km_k4,Lista B,OK,CRIT,CRIT,ADV,CRIT,ADV,ADV,OK,OK,OK,OK,Segmentación multivariable
+P1_c12_km_k4,Lista B,OK,OK,ADV,OK,OK,CRIT,ADV,OK,OK,OK,ADV,Segmentación multivariable
+P2_c08_km_k4,Lista B,OK,ADV,ADV,ADV,OK,CRIT,ADV,OK,OK,OK,OK,Segmentación multivariable
+P2_c12_km_k4,Lista B + Vista A,OK,OK,ADV,OK,OK,CRIT,ADV,OK,OK,OK,ADV,Segmentación multivariable
+P1_c02_km_k3,Vista A,OK,CRIT,CRIT,CRIT,ADV,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+P1_c02_km_k5,Vista A,OK,CRIT,CRIT,OK,OK,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+P1_c02_km_k6,Vista A,OK,CRIT,CRIT,ADV,CRIT,CRIT,ADV,OK,OK,OK,OK,Segmentación multivariable
+P1_c02_ward_k5,Vista A,OK,CRIT,CRIT,ADV,CRIT,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+P1_c08_km_k2,Vista A,OK,OK,OK,CRIT,OK,OK,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+P2_c02_km_k7,Vista A,OK,CRIT,CRIT,ADV,CRIT,CRIT,ADV,ADV,OK,OK,OK,Segmentación multivariable
+P2_c02_km_k8,Vista A,OK,CRIT,CRIT,ADV,ADV,CRIT,ADV,ADV,OK,OK,OK,Segmentación multivariable
+P2_c02_ward_k2,Vista A,OK,CRIT,CRIT,CRIT,ADV,OK,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+F1_c02_km_k2,Vista A,OK,OK,OK,ADV,OK,OK,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+F1_c03_km_k6,Vista A,OK,CRIT,CRIT,CRIT,CRIT,CRIT,ADV,OK,OK,OK,OK,Segmentación multivariable
+F2_c02_km_k3,Vista A,OK,CRIT,CRIT,CRIT,ADV,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+F2_c03_ward_k2,Vista A,OK,ADV,CRIT,CRIT,ADV,OK,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+R0P1_cTodas_km_k2,Vista A,OK,OK,OK,NE,OK,NE,ADV,OK,OK,OK,ADV,Principalmente gradiente de ejercicio
+R0P1_cTodas_ward_k2,Vista A,OK,ADV,CRIT,NE,ADV,NE,ADV,OK,OK,OK,ADV,Principalmente gradiente de ejercicio
+F1_c05_km_k2,Referencia k = 2,OK,OK,OK,CRIT,OK,OK,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+P1_c05_km_k2,Referencia k = 2,OK,OK,OK,CRIT,OK,OK,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+F1_c03_ward_k3,Comparador Ward,OK,CRIT,CRIT,CRIT,CRIT,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+F1_c05_ward_k3,Comparador Ward,OK,CRIT,CRIT,CRIT,CRIT,CRIT,ADV,OK,ADV,OK,OK,Principalmente gradiente de ejercicio
+F1_c08_ward_k3,Comparador Ward,OK,CRIT,CRIT,CRIT,CRIT,CRIT,ADV,OK,ADV,OK,OK,Principalmente gradiente de ejercicio
+F2_c03_ward_k3,Comparador Ward,OK,CRIT,CRIT,CRIT,CRIT,CRIT,ADV,OK,ADV,OK,OK,Principalmente gradiente de ejercicio
+F2_c05_ward_k3,Comparador Ward,OK,CRIT,CRIT,CRIT,CRIT,CRIT,ADV,OK,ADV,OK,OK,Principalmente gradiente de ejercicio
+F2_c08_ward_k3,Comparador Ward,OK,CRIT,CRIT,CRIT,CRIT,CRIT,ADV,OK,ADV,OK,OK,Principalmente gradiente de ejercicio
+P1_c03_ward_k3,Comparador Ward,OK,CRIT,CRIT,CRIT,CRIT,CRIT,ADV,OK,OK,OK,OK,Principalmente gradiente de ejercicio
+P1_c05_ward_k3,Comparador Ward,OK,CRIT,CRIT,ADV,CRIT,CRIT,ADV,OK,ADV,OK,OK,Principalmente gradiente de ejercicio
+P2_c03_ward_k3,Comparador Ward,OK,CRIT,CRIT,CRIT,CRIT,CRIT,ADV,OK,ADV,OK,OK,Principalmente gradiente de ejercicio
+P2_c05_ward_k3,Comparador Ward,OK,CRIT,CRIT,CRIT,CRIT,CRIT,ADV,OK,ADV,OK,OK,Principalmente gradiente de ejercicio
+F1_c03_ward_k4,Comparador Ward,OK,CRIT,CRIT,CRIT,CRIT,CRIT,ADV,OK,ADV,OK,OK,Segmentación multivariable
+F2_c03_ward_k4,Comparador Ward,OK,CRIT,CRIT,CRIT,CRIT,CRIT,ADV,OK,ADV,OK,OK,Segmentación multivariable
+P1_c12_ward_k4,Comparador Ward,OK,CRIT,CRIT,CRIT,CRIT,CRIT,ADV,OK,ADV,OK,ADV,Segmentación multivariable
+P2_c08_ward_k4,Comparador Ward,OK,CRIT,CRIT,CRIT,CRIT,CRIT,ADV,OK,ADV,OK,OK,Segmentación multivariable
+P2_c12_ward_k4,Comparador Ward,OK,CRIT,CRIT,CRIT,CRIT,CRIT,ADV,OK,ADV,OK,ADV,Segmentación multivariable
+R0P1_cTodas_km_k3,Referencia sin reducción,OK,CRIT,CRIT,NE,OK,NE,ADV,OK,OK,OK,ADV,Dominada por pocas variables
+R0P1_cTodas_km_k4,Referencia sin reducción,OK,ADV,CRIT,NE,OK,NE,ADV,OK,OK,OK,ADV,Segmentación multivariable
+R0P2_cTodas_km_k3,Referencia sin reducción,OK,CRIT,CRIT,NE,OK,NE,ADV,OK,OK,OK,ADV,Dominada por pocas variables
+R0P2_cTodas_km_k4,Referencia sin reducción,OK,CRIT,CRIT,NE,OK,NE,ADV,OK,OK,OK,ADV,Dominada por pocas variables

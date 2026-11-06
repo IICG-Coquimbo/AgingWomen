@@ -1,0 +1,30 @@
+variable,bloque,parte_ssb_A
+tiene_pareja,Las tres preguntas,0.18163765077830743
+dias_ejercicio_semana,Las tres preguntas,0.1566802095326242
+frecuencia_aerobico,Actividad física adicional,0.14171860312340603
+trabaja_actualmente,Las tres preguntas,0.11988662659642553
+frecuencia_fuerza,Actividad física adicional,0.1018377298194956
+tiene_actividad_sexual,Actividad sexual (descriptiva),0.0843433468581632
+frecuencia_bajo_impacto,Actividad física adicional,0.0727092161401749
+frecuencia_comida_fuera,Alimentación,0.048365682787267855
+falta_tiempo_influye,Alimentación,0.027984571532573506
+vasos_agua_dia,Alimentación,0.011304617258928978
+platos_verduras_dia,Alimentación,0.007171527002291797
+evacuacion_intestinal,Digestión (descriptiva),0.007024820879354858
+frutas_dia,Alimentación,0.006876364871394502
+pescado_semana,Alimentación,0.006459438852567023
+tabaco_frecuencia,Tabaco y alcohol,0.004078337858675267
+carnes_semana,Alimentación,0.003714602233926684
+golosinas_semana,Alimentación,0.003289389854101995
+horas_sedentarismo,Sedentarismo,0.0027619534418527425
+cantidad_personas_cuida,Cuidados,0.002425097502750302
+usa_medicamentos_presion,Otras generales,0.002136835305669548
+alcohol_frecuencia,Tabaco y alcohol,0.0020363895624874646
+panes_dia,Alimentación,0.0014473223028540361
+operada_no_mas_hijos,Otras generales,0.0008337554000003982
+distension_abdominal,Digestión (descriptiva),0.000708310308800936
+edad,Otras generales,0.0006683767326119245
+jugos_gaseosas_dia,Alimentación,0.0006353802780149104
+legumbres_semana,Alimentación,0.00046418064931246883
+quien_prepara_comidas,Alimentación,0.0004066153745807858
+lacteos_dia,Alimentación,0.00039304716138493845

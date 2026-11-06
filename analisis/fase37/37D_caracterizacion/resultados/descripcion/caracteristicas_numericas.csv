@@ -1,0 +1,34 @@
+variable,etiqueta,bloque,usada_por_A,tipo,n,media,de,mediana,q1,q3,minimo,maximo
+trabaja_actualmente,Trabaja actualmente,Las tres preguntas,True,binaria,529,0.5841209829867675,0.49333937903957464,1.0,0.0,1.0,0.0,1.0
+tiene_pareja,Tiene pareja,Las tres preguntas,True,binaria,529,0.6729678638941399,0.4695731468612676,1.0,0.0,1.0,0.0,1.0
+dias_ejercicio_semana,Días de ejercicio a la semana,Las tres preguntas,True,ordinal,529,1.6521739130434783,0.9313561308244244,1.0,1.0,2.0,1.0,5.0
+frecuencia_aerobico,Frecuencia de ejercicio aeróbico,Actividad física adicional,True,ordinal,529,0.48582230623818523,1.0732135149485194,0.0,0.0,0.0,0.0,4.0
+frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,Actividad física adicional,True,ordinal,529,0.833648393194707,1.1376486404724504,0.0,0.0,2.0,0.0,4.0
+frecuencia_fuerza,Frecuencia de ejercicio de fuerza,Actividad física adicional,True,ordinal,529,0.3761814744801512,0.9575654564405903,0.0,0.0,0.0,0.0,4.0
+horas_sedentarismo,Horas sentada al día,Sedentarismo,True,cuantitativa,529,6.274102079395085,2.388916642415249,6.0,5.0,8.0,1.0,14.0
+cantidad_personas_cuida,Personas a su cuidado,Cuidados,True,ordinal,529,0.782608695652174,0.9847319278346619,0.0,0.0,1.0,0.0,3.0
+carnes_semana,Carnes a la semana,Alimentación,True,ordinal,529,2.850661625708885,0.8867738903657872,3.0,2.0,3.0,1.0,5.0
+falta_tiempo_influye,La falta de tiempo influye en su alimentación,Alimentación,True,ordinal,529,2.727788279773157,0.9641308618263459,3.0,2.0,3.0,1.0,5.0
+frecuencia_comida_fuera,Comidas fuera de casa,Alimentación,True,ordinal,529,1.9754253308128544,0.8008997417920605,2.0,1.0,2.0,1.0,4.0
+frutas_dia,Frutas al día,Alimentación,True,ordinal,529,2.1436672967863895,0.6262582568321506,2.0,2.0,2.0,1.0,4.0
+golosinas_semana,Golosinas a la semana,Alimentación,True,ordinal,529,2.45179584120983,0.9837898214485156,2.0,2.0,3.0,1.0,5.0
+jugos_gaseosas_dia,Jugos o gaseosas al día,Alimentación,True,ordinal,529,2.0340264650283553,0.8565561812995796,2.0,1.0,2.0,1.0,4.0
+lacteos_dia,Lácteos al día,Alimentación,True,ordinal,529,2.058601134215501,0.6203361821321947,2.0,2.0,2.0,1.0,4.0
+legumbres_semana,Legumbres a la semana,Alimentación,True,ordinal,529,2.172022684310019,0.5527923875442494,2.0,2.0,3.0,1.0,3.0
+panes_dia,Panes al día,Alimentación,True,ordinal,529,2.122873345935728,0.6077361626545386,2.0,2.0,2.0,1.0,4.0
+pescado_semana,Pescado a la semana,Alimentación,True,ordinal,529,1.8147448015122873,0.6334205340908696,2.0,1.0,2.0,1.0,3.0
+platos_verduras_dia,Platos de verduras al día,Alimentación,True,ordinal,529,2.1587901701323253,0.5306186100177133,2.0,2.0,2.0,1.0,4.0
+vasos_agua_dia,Vasos de agua al día,Alimentación,True,ordinal,529,3.1852551984877127,1.0443253862670876,3.0,2.0,4.0,1.0,5.0
+tabaco_frecuencia,Frecuencia de tabaco,Tabaco y alcohol,True,ordinal,529,1.7958412098298677,1.5050111060332352,1.0,1.0,1.0,1.0,5.0
+alcohol_frecuencia,Frecuencia de alcohol,Tabaco y alcohol,True,ordinal,529,1.8431001890359169,0.846088723598608,2.0,1.0,2.0,1.0,5.0
+edad,Edad,Otras generales,True,cuantitativa,529,50.9773156899811,7.706958655671305,50.0,45.0,58.0,36.0,65.0
+operada_no_mas_hijos,Operada para no tener más hijos,Otras generales,True,binaria,529,0.19659735349716445,0.39780142763232523,0.0,0.0,0.0,0.0,1.0
+usa_medicamentos_presion,Usa medicamentos para la presión,Otras generales,True,binaria,529,0.16824196597353497,0.3744350922540236,0.0,0.0,0.0,0.0,1.0
+tiene_actividad_sexual,Tiene actividad sexual,Actividad sexual,True,binaria,529,0.47448015122873344,0.4998209566586105,0.0,0.0,1.0,0.0,1.0
+distension_abdominal,Distensión abdominal,Digestión,True,ordinal,529,1.9281663516068053,0.8497663686953263,2.0,1.0,2.0,1.0,4.0
+evacuacion_intestinal,Evacuación intestinal,Digestión,True,ordinal,529,2.391304347826087,0.7881701093115123,2.0,2.0,3.0,1.0,4.0
+imc,IMC (solo observado),Externa: salud,False,cuantitativa,267,29.229588014981278,6.275341483288849,28.5,25.15,33.7,18.2,45.7
+usa_medicamentos_diabetes,Usa medicamentos para la diabetes,Externa: salud,False,binaria,529,0.12476370510396975,0.3307635664065856,0.0,0.0,0.0,0.0,1.0
+lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,Externa: módulo laboral,False,ordinal,287,3.181184668989547,1.081598139656404,3.0,2.5,4.0,1.0,5.0
+estres_entorno_laboral,Estrés en el entorno laboral,Externa: módulo laboral,False,ordinal,287,3.0209059233449476,1.1028801525908323,3.0,2.0,4.0,1.0,5.0
+sobrecarga_fisica_emocional,Sobrecarga física o emocional por cuidar,Externa: módulo de cuidados,False,ordinal,251,3.314741035856574,0.9922408138498047,3.0,3.0,4.0,1.0,5.0

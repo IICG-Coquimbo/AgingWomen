@@ -1,0 +1,27 @@
+error_introducido,prueba,detectado
+Se pierde una fila de etiquetas,p02,True
+Etiquetas en otro orden,p03,True
+Etiqueta fuera de los k grupos,p08,True
+Etiquetas que no corresponden a los tamaños,p09,True
+Huella de entrada incorrecta,p01,True
+Coordenadas reescaladas,p05,True
+Coordenadas reescaladas,p10,True
+Inercia y centroides alterados,p05,True
+Inercia y centroides alterados,p19,True
+Silueta alterada en la tabla,p10,True
+Davies-Bouldin alterado en la tabla,p10,True
+ARI de remuestreo alterado,p11,True
+Estabilidad alterada,p12,True
+Estabilidad alterada,p23,True
+Subconjuntos repetidos,p12,True
+Subconjuntos de otro tamaño,p12,True
+Nula con una sola permutación,p14,True
+Nula con la madre separada de su frecuencia,p14,True
+Nula con marginal alterada,p14,True
+Nula incompleta,p14,True
+Proyección donde no corresponde,p16,True
+Filas de ajuste incorrectas,p16,True
+Huella de protocolo incorrecta,p17,True
+Acuerdo de K-means alterado,p18,True
+Acuerdo de K-means alterado,p19,True
+Lista para la Fase 37C inflada,p24,True

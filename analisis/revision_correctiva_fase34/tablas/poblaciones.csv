@@ -1,0 +1,12 @@
+﻿poblacion,n,segun_simulador_si,segun_simulador_no,nota
+Trabaja = Sí en el conjunto limpio,309,297,12,denominador de 34C y 34D
+  Respondida o deducida,287,287,0,población laboral de la Fase 35B
+  Imputada,22,10,12,sin ninguna respuesta laboral
+Trabaja = No,220,0,220,
+Con respuesta laboral (lugar o estrés),287,287,0,
+Laboral con ambas observadas,263,263,0,
+Cuida = Sí en el conjunto limpio,251,251,0,denominador de 34D
+  Con sobrecarga observada,239,239,0,población de cuidadoras de la Fase 35B
+  Con sobrecarga imputada,12,12,0,
+Cuida = No respondida,257,0,257,
+Cuida = No imputada,21,14,7,cantidad 0 y doble carga 0

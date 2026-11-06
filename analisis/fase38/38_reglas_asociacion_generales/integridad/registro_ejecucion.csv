@@ -1,0 +1,10 @@
+momento,etapa,archivos_leidos,escrituras_fuera
+2026-11-05T17:52:34,integridad inicial,3504,0
+2026-11-05T17:57:08,preparacion,7,0
+2026-11-05T17:58:53,reglas principal,7,0
+2026-11-05T18:02:00,sensibilidades,7,0
+2026-11-05T18:04:19,sensibilidades,7,0
+2026-11-05T18:10:37,pruebas,3504,0
+2026-11-05T18:16:24,pruebas,3504,0
+2026-11-05T18:21:44,pruebas,3504,0
+2026-11-05T18:28:51,integridad final,3504,0

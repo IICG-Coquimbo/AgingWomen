@@ -1,0 +1,48 @@
+# Criterio
+
+Todo el análisis usa el conjunto **sintético** de 529 participantes. Las reglas describen lo que contiene la simulación: no son hechos sobre la menopausia en mujeres reales, no son diagnósticos ni predicciones y no permiten recomendaciones de salud. Ninguna asociación indica causa.
+
+Una regla de 2 o 3 condiciones es **redundante** si alguna regla más simple, con un subconjunto propio de sus condiciones y en la misma dirección, tiene una confianza menor en **menos de 5 puntos**. Es decir, la condición agregada casi no aporta. Las reglas con las mismas variables y la misma dirección forman una **familia**.
+
+# Resultados
+
+- **Reglas marcadas:** de las 1.119, **926 son redundantes** (83 %).
+- **No redundantes:** quedan 193 marcadas. Una supera la referencia nula; las demás son compatibles con ella.
+- **Familias:** las reglas marcadas pertenecen a 1.089 familias distintas. Casi todas tienen una o dos reglas, así que no hay un patrón dominante que se repita con muchas variantes.
+- **Trabajo:** 24 % de las reglas marcadas incluyen la pregunta de trabajo. Muchas reglas de tres condiciones agregan a «trabaja: sí» o «trabaja: no» uno o dos hábitos.
+
+**Ejemplos de reglas marcadas redundantes:**
+
+| Regla | Consecuente | Confianza | Regla más simple casi igual | Mejora |
+|---|---|---|---|---|
+| Vasos de agua al día: no consumo o 1-2 porciones y Operada para no tener más hijos: no y Trabaja actualmente: sí | severos | 73,2 % | Vasos de agua al día: no consumo o 1-2 porciones y Trabaja actualmente: sí | 2,6 pts |
+| Frecuencia de ejercicio aeróbico: no realiza o nunca y Vasos de agua al día: no consumo o 1-2 porciones y La falta de tiempo influye en su alimentación: a veces | severos | 72,7 % | Vasos de agua al día: no consumo o 1-2 porciones y La falta de tiempo influye en su alimentación: a veces | −1,4 pts |
+| Vasos de agua al día: no consumo o 1-2 porciones y Usa medicamentos para la presión: no y Trabaja actualmente: sí | severos | 72,2 % | Vasos de agua al día: no consumo o 1-2 porciones y Trabaja actualmente: sí | 1,6 pts |
+| Distensión abdominal: nunca o casi nunca y Evacuación intestinal: 1 vez al día y Trabaja actualmente: sí | severos | 71,9 % | Distensión abdominal: nunca o casi nunca y Trabaja actualmente: sí | 3,1 pts |
+| Vasos de agua al día: no consumo o 1-2 porciones y Días de ejercicio a la semana: 0 días y Legumbres a la semana: 1-2 veces por semana | severos | 71,6 % | Vasos de agua al día: no consumo o 1-2 porciones y Legumbres a la semana: 1-2 veces por semana | 5,0 pts |
+| Distensión abdominal: nunca o casi nunca y Frutas al día: 1-2 porciones y Trabaja actualmente: sí | severos | 71,4 % | Distensión abdominal: nunca o casi nunca y Trabaja actualmente: sí | 2,6 pts |
+| Vasos de agua al día: no consumo o 1-2 porciones y Frutas al día: 1-2 porciones y Trabaja actualmente: sí | severos | 71,4 % | Vasos de agua al día: no consumo o 1-2 porciones y Trabaja actualmente: sí | 0,8 pts |
+| Distensión abdominal: nunca o casi nunca y La falta de tiempo influye en su alimentación: a veces y Trabaja actualmente: sí | severos | 70,9 % | Distensión abdominal: nunca o casi nunca y Trabaja actualmente: sí | 2,1 pts |
+| Días de ejercicio a la semana: 0 días y La falta de tiempo influye en su alimentación: a veces y Trabaja actualmente: sí | severos | 70,9 % | Días de ejercicio a la semana: 0 días y La falta de tiempo influye en su alimentación: a veces | 5,0 pts |
+| Distensión abdominal: nunca o casi nunca y Frecuencia de ejercicio de fuerza: no realiza o nunca y Trabaja actualmente: sí | severos | 70,5 % | Distensión abdominal: nunca o casi nunca y Trabaja actualmente: sí | 1,7 pts |
+| Tiene actividad sexual: sí y Vasos de agua al día: no consumo o 1-2 porciones y Usa medicamentos para la diabetes: no | severos | 70,4 % | Tiene actividad sexual: sí y Vasos de agua al día: no consumo o 1-2 porciones | 2,1 pts |
+| Personas a su cuidado: 1 persona y Días de ejercicio a la semana: 0 días y Frutas al día: 1-2 porciones | severos | 70,2 % | Personas a su cuidado: 1 persona y Días de ejercicio a la semana: 0 días | 3,9 pts |
+
+
+**Familias con más reglas marcadas:**
+
+| Familia | Reglas marcadas | Redundantes | Confianza máxima |
+|---|---|---|---|
+| carnes_semana & falta_tiempo_influye & trabaja_actualmente → severos | 2 | 2 | 67,2 % |
+| dias_ejercicio_semana & golosinas_semana & trabaja_actualmente → severos | 2 | 2 | 69,8 % |
+| distension_abdominal & jugos_gaseosas_dia & trabaja_actualmente → severos | 2 | 2 | 66,7 % |
+| alcohol_frecuencia & horas_sedentarismo & tabaco_frecuencia → no severos | 2 | 2 | 64,2 % |
+| distension_abdominal & tabaco_frecuencia & trabaja_actualmente → no severos | 2 | 2 | 58,7 % |
+| dias_ejercicio_semana & falta_tiempo_influye & tiene_actividad_sexual → severos | 2 | 2 | 67,7 % |
+| carnes_semana & prevision & trabaja_actualmente → no severos | 2 | 2 | 57,6 % |
+| carnes_semana & frecuencia_bajo_impacto & trabaja_actualmente → severos | 2 | 1 | 70,7 % |
+| distension_abdominal & falta_tiempo_influye & trabaja_actualmente → severos | 2 | 2 | 70,9 % |
+| carnes_semana & evacuacion_intestinal & trabaja_actualmente → severos | 2 | 1 | 69,5 % |
+
+
+La lista completa está en `reglas/redundantes_marcadas.csv` y `reglas/familias_marcadas.csv`.

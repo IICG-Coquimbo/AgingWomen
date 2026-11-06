@@ -1,0 +1,19 @@
+control_negativo,detectado,pruebas_que_fallan,motivo
+Lift calculado con la basal equivocada,True,9,AssertionError: lift
+Wilson sin corrección,True,9,AssertionError: Wilson distinto de statsmodels
+R2 desactivada (sin unir categorías escasas),True,6,AssertionError: ítem con menos de 27: lacteos=5-6_porciones (9)
+Severidad del MRS como antecedente,True,construcción,KeyError: 'severidad_mrs'
+Dos estados de una variable en la transacción,True,5,AssertionError: dos estados de una misma variable
+Corte de severidad en 15,True,3,AssertionError: severo_mrs no reproduce MRS total ≥ 16
+Identificadores en otro orden,True,"1, 2",AssertionError: identificadores u orden distintos de la Fase 36
+S1 sin quitar imputados,True,7,AssertionError: S1: las celdas imputadas de pareja conservan ítem
+S7a sin restringir a quienes trabajan,True,8,AssertionError: S7a no es la población que trabaja
+FP-Growth pierde un conjunto frecuente,True,10,AssertionError: algoritmos distintos con consecuente permutado
+Evaluador matricial con recuento desplazado,True,"11, 12",AssertionError: evaluador matricial distinto de FP-Growth
+BH aplicado solo a las reglas seleccionadas,True,"12, 15",AssertionError: q no se reproduce
+Sin excluir pares determinados,True,16,AssertionError: el filtro deja pasar pares determinados
+Mejora mínima de redundancia en 0,True,20,AssertionError: la clasificación no se reproduce
+Reglas compatibles con la nula pasadas a la clase 6,True,20,AssertionError: la clasificación no se reproduce
+Agrupación que usa el consecuente (fuga),True,13,AssertionError: 
+Consecuente permutado (sin relación real),True,"3, 12",AssertionError: severo_mrs no reproduce MRS total ≥ 16
+Pares determinados nunca detectados,True,16,AssertionError: S2a debería tener pares determinados

@@ -1,0 +1,411 @@
+escenario,variable,tipo_nivel,nivel,n,componente,baricentro
+F1,frecuencia_aerobico,grupo activo,0,424,1,-0.4932726009588025
+F1,frecuencia_aerobico,grupo activo,0,424,2,0.012523398336497
+F1,frecuencia_aerobico,grupo activo,0,424,3,0.07393613390281088
+F1,frecuencia_aerobico,grupo activo,0,424,4,0.05457555602820112
+F1,frecuencia_aerobico,grupo activo,0,424,5,-0.10460584399597882
+F1,frecuencia_aerobico,grupo activo,2 + 3,59,1,0.8140217141076559
+F1,frecuencia_aerobico,grupo activo,2 + 3,59,2,-0.2256382652865967
+F1,frecuencia_aerobico,grupo activo,2 + 3,59,3,-0.41208730949162575
+F1,frecuencia_aerobico,grupo activo,2 + 3,59,4,-0.7643708421859907
+F1,frecuencia_aerobico,grupo activo,2 + 3,59,5,1.2433285253481823
+F1,frecuencia_aerobico,grupo activo,4 + 5,46,1,3.502615253786532
+F1,frecuencia_aerobico,grupo activo,4 + 5,46,2,0.1739725382007488
+F1,frecuencia_aerobico,grupo activo,4 + 5,46,3,-0.15295151119099754
+F1,frecuencia_aerobico,grupo activo,4 + 5,46,4,0.4773444333264382
+F1,frecuencia_aerobico,grupo activo,4 + 5,46,5,-0.6305109813314694
+F1,frecuencia_aerobico,nivel original,0,424,1,-0.4932726009588025
+F1,frecuencia_aerobico,nivel original,0,424,2,0.012523398336497
+F1,frecuencia_aerobico,nivel original,0,424,3,0.07393613390281088
+F1,frecuencia_aerobico,nivel original,0,424,4,0.05457555602820112
+F1,frecuencia_aerobico,nivel original,0,424,5,-0.10460584399597882
+F1,frecuencia_aerobico,nivel original,2,19,1,0.09587663937997334
+F1,frecuencia_aerobico,nivel original,2,19,2,0.0733715600128422
+F1,frecuencia_aerobico,nivel original,2,19,3,-0.5379274985391957
+F1,frecuencia_aerobico,nivel original,2,19,4,-0.8762207223098436
+F1,frecuencia_aerobico,nivel original,2,19,5,1.2592941808747
+F1,frecuencia_aerobico,nivel original,3,40,1,1.155140624603305
+F1,frecuencia_aerobico,nivel original,3,40,2,-0.3676679323038302
+F1,frecuencia_aerobico,nivel original,3,40,3,-0.35231321969403007
+F1,frecuencia_aerobico,nivel original,3,40,4,-0.7112421491271609
+F1,frecuencia_aerobico,nivel original,3,40,5,1.235744838973086
+F1,frecuencia_aerobico,nivel original,4,26,1,3.255326955950034
+F1,frecuencia_aerobico,nivel original,4,26,2,0.39179308003830815
+F1,frecuencia_aerobico,nivel original,4,26,3,-0.18295968734720333
+F1,frecuencia_aerobico,nivel original,4,26,4,0.29980396769841283
+F1,frecuencia_aerobico,nivel original,4,26,5,-0.6656890288642163
+F1,frecuencia_aerobico,nivel original,5,20,1,3.824090040973983
+F1,frecuencia_aerobico,nivel original,5,20,2,-0.10919416618807809
+F1,frecuencia_aerobico,nivel original,5,20,3,-0.11394088218793
+F1,frecuencia_aerobico,nivel original,5,20,4,0.7081470386428712
+F1,frecuencia_aerobico,nivel original,5,20,5,-0.5847795195388984
+F1,frecuencia_bajo_impacto,grupo activo,0,305,1,-0.6962225425739509
+F1,frecuencia_bajo_impacto,grupo activo,0,305,2,0.07365024860274537
+F1,frecuencia_bajo_impacto,grupo activo,0,305,3,0.1462478813070178
+F1,frecuencia_bajo_impacto,grupo activo,0,305,4,-0.030767085296840406
+F1,frecuencia_bajo_impacto,grupo activo,0,305,5,-0.40411669959006674
+F1,frecuencia_bajo_impacto,grupo activo,2,79,1,-0.25478834039693454
+F1,frecuencia_bajo_impacto,grupo activo,2,79,2,-0.016994817363416907
+F1,frecuencia_bajo_impacto,grupo activo,2,79,3,-0.15507817220548367
+F1,frecuencia_bajo_impacto,grupo activo,2,79,4,-0.4708253151469981
+F1,frecuencia_bajo_impacto,grupo activo,2,79,5,0.7118591591385166
+F1,frecuencia_bajo_impacto,grupo activo,3,89,1,0.7134371183514201
+F1,frecuencia_bajo_impacto,grupo activo,3,89,2,-0.18602642820345985
+F1,frecuencia_bajo_impacto,grupo activo,3,89,3,-0.6576607534987619
+F1,frecuencia_bajo_impacto,grupo activo,3,89,4,0.5241765152548522
+F1,frecuencia_bajo_impacto,grupo activo,3,89,5,0.8931216441090988
+F1,frecuencia_bajo_impacto,grupo activo,4 + 5,56,1,3.0175044793417194
+F1,frecuencia_bajo_impacto,grupo activo,4 + 5,56,2,-0.08150684182177671
+F1,frecuencia_bajo_impacto,grupo activo,4 + 5,56,3,0.4674531940532601
+F1,frecuencia_bajo_impacto,grupo activo,4 + 5,56,4,-0.0012955168845121545
+F1,frecuencia_bajo_impacto,grupo activo,4 + 5,56,5,-0.2226626164764672
+F1,frecuencia_bajo_impacto,nivel original,0,305,1,-0.6962225425739509
+F1,frecuencia_bajo_impacto,nivel original,0,305,2,0.07365024860274537
+F1,frecuencia_bajo_impacto,nivel original,0,305,3,0.1462478813070178
+F1,frecuencia_bajo_impacto,nivel original,0,305,4,-0.030767085296840406
+F1,frecuencia_bajo_impacto,nivel original,0,305,5,-0.40411669959006674
+F1,frecuencia_bajo_impacto,nivel original,2,79,1,-0.25478834039693454
+F1,frecuencia_bajo_impacto,nivel original,2,79,2,-0.016994817363416907
+F1,frecuencia_bajo_impacto,nivel original,2,79,3,-0.15507817220548367
+F1,frecuencia_bajo_impacto,nivel original,2,79,4,-0.4708253151469981
+F1,frecuencia_bajo_impacto,nivel original,2,79,5,0.7118591591385166
+F1,frecuencia_bajo_impacto,nivel original,3,89,1,0.7134371183514201
+F1,frecuencia_bajo_impacto,nivel original,3,89,2,-0.18602642820345985
+F1,frecuencia_bajo_impacto,nivel original,3,89,3,-0.6576607534987619
+F1,frecuencia_bajo_impacto,nivel original,3,89,4,0.5241765152548522
+F1,frecuencia_bajo_impacto,nivel original,3,89,5,0.8931216441090988
+F1,frecuencia_bajo_impacto,nivel original,4,40,1,2.666746797833036
+F1,frecuencia_bajo_impacto,nivel original,4,40,2,-0.10010271955345243
+F1,frecuencia_bajo_impacto,nivel original,4,40,3,0.7620584015314805
+F1,frecuencia_bajo_impacto,nivel original,4,40,4,-0.19567729824507585
+F1,frecuencia_bajo_impacto,nivel original,4,40,5,-0.019554206714336643
+F1,frecuencia_bajo_impacto,nivel original,5,16,1,3.894398683113433
+F1,frecuencia_bajo_impacto,nivel original,5,16,2,-0.035017147492587504
+F1,frecuencia_bajo_impacto,nivel original,5,16,3,-0.2690598246422915
+F1,frecuencia_bajo_impacto,nivel original,5,16,4,0.4846589365168972
+F1,frecuencia_bajo_impacto,nivel original,5,16,5,-0.7304336408817935
+F1,frecuencia_fuerza,grupo activo,0,448,1,-0.37662289324048215
+F1,frecuencia_fuerza,grupo activo,0,448,2,0.0029132538303482318
+F1,frecuencia_fuerza,grupo activo,0,448,3,0.01635614402908376
+F1,frecuencia_fuerza,grupo activo,0,448,4,-0.0434892229111121
+F1,frecuencia_fuerza,grupo activo,0,448,5,0.0869265145943301
+F1,frecuencia_fuerza,grupo activo,2 + 3,43,1,0.8376887773549806
+F1,frecuencia_fuerza,grupo activo,2 + 3,43,2,-0.08173798625154567
+F1,frecuencia_fuerza,grupo activo,2 + 3,43,3,-0.38530111069583284
+F1,frecuencia_fuerza,grupo activo,2 + 3,43,4,1.0171146555834414
+F1,frecuencia_fuerza,grupo activo,2 + 3,43,5,-0.3954459520513122
+F1,frecuencia_fuerza,grupo activo,4 + 5,38,1,3.4922747038282065
+F1,frecuencia_fuerza,grupo activo,4 + 5,38,2,0.058147255074221985
+F1,frecuencia_fuerza,grupo activo,4 + 5,38,3,0.24316829565503398
+F1,frecuencia_fuerza,grupo activo,4 + 5,38,4,-0.6382304822607828
+F1,frecuencia_fuerza,grupo activo,4 + 5,38,5,-0.5773395421066687
+F1,frecuencia_fuerza,nivel original,0,448,1,-0.37662289324048215
+F1,frecuencia_fuerza,nivel original,0,448,2,0.0029132538303482318
+F1,frecuencia_fuerza,nivel original,0,448,3,0.01635614402908376
+F1,frecuencia_fuerza,nivel original,0,448,4,-0.0434892229111121
+F1,frecuencia_fuerza,nivel original,0,448,5,0.0869265145943301
+F1,frecuencia_fuerza,nivel original,2,13,1,0.03162832748091208
+F1,frecuencia_fuerza,nivel original,2,13,2,-0.10050837269125937
+F1,frecuencia_fuerza,nivel original,2,13,3,0.09038425741471423
+F1,frecuencia_fuerza,nivel original,2,13,4,1.101575720989186
+F1,frecuencia_fuerza,nivel original,2,13,5,-0.5686157304932405
+F1,frecuencia_fuerza,nivel original,3,30,1,1.186981638967077
+F1,frecuencia_fuerza,nivel original,3,30,2,-0.07360415212766976
+F1,frecuencia_fuerza,nivel original,3,30,3,-0.5914314368770699
+F1,frecuencia_fuerza,nivel original,3,30,4,0.9805148605742854
+F1,frecuencia_fuerza,nivel original,3,30,5,-0.32040571472647655
+F1,frecuencia_fuerza,nivel original,4,26,1,3.3318271114269185
+F1,frecuencia_fuerza,nivel original,4,26,2,0.2032641916556606
+F1,frecuencia_fuerza,nivel original,4,26,3,0.4174789546025346
+F1,frecuencia_fuerza,nivel original,4,26,4,-0.7456412379759485
+F1,frecuencia_fuerza,nivel original,4,26,5,-0.5643592320913755
+F1,frecuencia_fuerza,nivel original,5,12,1,3.839911154030998
+F1,frecuencia_fuerza,nivel original,5,12,2,-0.25627277418556155
+F1,frecuencia_fuerza,nivel original,5,12,3,-0.1345047987312176
+F1,frecuencia_fuerza,nivel original,5,12,4,-0.4055071782112565
+F1,frecuencia_fuerza,nivel original,5,12,5,-0.6054635471398034
+F1,cantidad_personas_cuida,grupo activo,0,278,1,-0.050462827356174716
+F1,cantidad_personas_cuida,grupo activo,0,278,2,-0.4723732747096119
+F1,cantidad_personas_cuida,grupo activo,0,278,3,-0.44773135347676796
+F1,cantidad_personas_cuida,grupo activo,0,278,4,0.34910763297696457
+F1,cantidad_personas_cuida,grupo activo,0,278,5,-0.1713269368075817
+F1,cantidad_personas_cuida,grupo activo,1,136,1,-0.1588186052094055
+F1,cantidad_personas_cuida,grupo activo,1,136,2,0.7446197077473355
+F1,cantidad_personas_cuida,grupo activo,1,136,3,0.24128723797616422
+F1,cantidad_personas_cuida,grupo activo,1,136,4,-0.48069064603311834
+F1,cantidad_personas_cuida,grupo activo,1,136,5,-0.3643782597271412
+F1,cantidad_personas_cuida,grupo activo,2,67,1,-0.20573513228208673
+F1,cantidad_personas_cuida,grupo activo,2,67,2,0.7178122131281395
+F1,cantidad_personas_cuida,grupo activo,2,67,3,0.4436063941695512
+F1,cantidad_personas_cuida,grupo activo,2,67,4,0.2146591060210637
+F1,cantidad_personas_cuida,grupo activo,2,67,5,1.250031976240943
+F1,cantidad_personas_cuida,grupo activo,3,48,1,1.0294218786749074
+F1,cantidad_personas_cuida,grupo activo,3,48,2,-0.3758735034156437
+F1,cantidad_personas_cuida,grupo activo,3,48,3,1.290262989425483
+F1,cantidad_personas_cuida,grupo activo,3,48,4,-0.9595865460521531
+F1,cantidad_personas_cuida,grupo activo,3,48,5,0.2798372780678307
+F1,cantidad_personas_cuida,nivel original,0,278,1,-0.050462827356174716
+F1,cantidad_personas_cuida,nivel original,0,278,2,-0.4723732747096119
+F1,cantidad_personas_cuida,nivel original,0,278,3,-0.44773135347676796
+F1,cantidad_personas_cuida,nivel original,0,278,4,0.34910763297696457
+F1,cantidad_personas_cuida,nivel original,0,278,5,-0.1713269368075817
+F1,cantidad_personas_cuida,nivel original,1,136,1,-0.1588186052094055
+F1,cantidad_personas_cuida,nivel original,1,136,2,0.7446197077473355
+F1,cantidad_personas_cuida,nivel original,1,136,3,0.24128723797616422
+F1,cantidad_personas_cuida,nivel original,1,136,4,-0.48069064603311834
+F1,cantidad_personas_cuida,nivel original,1,136,5,-0.3643782597271412
+F1,cantidad_personas_cuida,nivel original,2,67,1,-0.20573513228208673
+F1,cantidad_personas_cuida,nivel original,2,67,2,0.7178122131281395
+F1,cantidad_personas_cuida,nivel original,2,67,3,0.4436063941695512
+F1,cantidad_personas_cuida,nivel original,2,67,4,0.2146591060210637
+F1,cantidad_personas_cuida,nivel original,2,67,5,1.250031976240943
+F1,cantidad_personas_cuida,nivel original,3,48,1,1.0294218786749074
+F1,cantidad_personas_cuida,nivel original,3,48,2,-0.3758735034156437
+F1,cantidad_personas_cuida,nivel original,3,48,3,1.290262989425483
+F1,cantidad_personas_cuida,nivel original,3,48,4,-0.9595865460521531
+F1,cantidad_personas_cuida,nivel original,3,48,5,0.2798372780678307
+F1,tabaco_frecuencia,grupo activo,1,399,1,-0.04013711779028504
+F1,tabaco_frecuencia,grupo activo,1,399,2,0.17426121009732767
+F1,tabaco_frecuencia,grupo activo,1,399,3,0.023590281164599224
+F1,tabaco_frecuencia,grupo activo,1,399,4,0.02222980817349152
+F1,tabaco_frecuencia,grupo activo,1,399,5,0.18471889603049013
+F1,tabaco_frecuencia,grupo activo,2 + 3 + 4,48,1,-0.12201636298318697
+F1,tabaco_frecuencia,grupo activo,2 + 3 + 4,48,2,-0.8601728745913585
+F1,tabaco_frecuencia,grupo activo,2 + 3 + 4,48,3,-0.7482871325260118
+F1,tabaco_frecuencia,grupo activo,2 + 3 + 4,48,4,0.04349630534576008
+F1,tabaco_frecuencia,grupo activo,2 + 3 + 4,48,5,-0.802499257906454
+F1,tabaco_frecuencia,grupo activo,5,82,1,0.2667255539209353
+F1,tabaco_frecuencia,grupo activo,5,82,2,-0.34441371766400564
+F1,tabaco_frecuencia,grupo activo,5,82,3,0.3232348802021155
+F1,tabaco_frecuencia,grupo activo,5,82,4,-0.13362824533926349
+F1,tabaco_frecuencia,grupo activo,5,82,5,-0.42905945288604525
+F1,tabaco_frecuencia,nivel original,1,399,1,-0.04013711779028504
+F1,tabaco_frecuencia,nivel original,1,399,2,0.17426121009732767
+F1,tabaco_frecuencia,nivel original,1,399,3,0.023590281164599224
+F1,tabaco_frecuencia,nivel original,1,399,4,0.02222980817349152
+F1,tabaco_frecuencia,nivel original,1,399,5,0.18471889603049013
+F1,tabaco_frecuencia,nivel original,2,21,1,-0.150583591748143
+F1,tabaco_frecuencia,nivel original,2,21,2,-0.8873447121575145
+F1,tabaco_frecuencia,nivel original,2,21,3,-0.7664776318861284
+F1,tabaco_frecuencia,nivel original,2,21,4,0.06974064285450125
+F1,tabaco_frecuencia,nivel original,2,21,5,-0.7994974121005003
+F1,tabaco_frecuencia,nivel original,3,9,1,-0.03772154184274265
+F1,tabaco_frecuencia,nivel original,3,9,2,-1.3353817947297009
+F1,tabaco_frecuencia,nivel original,3,9,3,-0.1495693139123945
+F1,tabaco_frecuencia,nivel original,3,9,4,-0.2983564546590919
+F1,tabaco_frecuencia,nivel original,3,9,5,-0.9453380600234278
+F1,tabaco_frecuencia,nivel original,4,18,1,-0.13083533999429384
+F1,tabaco_frecuencia,nivel original,4,18,2,-0.5908679373616712
+F1,tabaco_frecuencia,nivel original,4,18,3,-1.0264237925793502
+F1,tabaco_frecuencia,nivel original,4,18,4,0.1838042915879881
+F1,tabaco_frecuencia,nivel original,4,18,5,-0.7345820102882468
+F1,tabaco_frecuencia,nivel original,5,82,1,0.2667255539209353
+F1,tabaco_frecuencia,nivel original,5,82,2,-0.34441371766400564
+F1,tabaco_frecuencia,nivel original,5,82,3,0.3232348802021155
+F1,tabaco_frecuencia,nivel original,5,82,4,-0.13362824533926349
+F1,tabaco_frecuencia,nivel original,5,82,5,-0.42905945288604525
+F2,frecuencia_aerobico,grupo activo,0,424,1,-0.49277123551196744
+F2,frecuencia_aerobico,grupo activo,0,424,2,0.01300581279193156
+F2,frecuencia_aerobico,grupo activo,0,424,3,0.07633823187305673
+F2,frecuencia_aerobico,grupo activo,0,424,4,0.0508387134575569
+F2,frecuencia_aerobico,grupo activo,0,424,5,-0.1041848180541082
+F2,frecuencia_aerobico,grupo activo,2 + 3,59,1,0.8095121146890843
+F2,frecuencia_aerobico,grupo activo,2 + 3,59,2,-0.22371646291536718
+F2,frecuencia_aerobico,grupo activo,2 + 3,59,3,-0.4540885923490511
+F2,frecuencia_aerobico,grupo activo,2 + 3,59,4,-0.7254506456042024
+F2,frecuencia_aerobico,grupo activo,2 + 3,59,5,1.2386432792026139
+F2,frecuencia_aerobico,grupo activo,4 + 5,46,1,3.503778023704745
+F2,frecuencia_aerobico,grupo activo,4 + 5,46,2,0.16706101496146758
+F2,frecuencia_aerobico,grupo activo,4 + 5,46,3,-0.12122137751265152
+F2,frecuencia_aerobico,grupo activo,4 + 5,46,4,0.46186899097051876
+F2,frecuencia_aerobico,grupo activo,4 + 5,46,5,-0.6283824047394004
+F2,frecuencia_aerobico,nivel original,0,424,1,-0.49277123551196744
+F2,frecuencia_aerobico,nivel original,0,424,2,0.01300581279193156
+F2,frecuencia_aerobico,nivel original,0,424,3,0.07633823187305673
+F2,frecuencia_aerobico,nivel original,0,424,4,0.0508387134575569
+F2,frecuencia_aerobico,nivel original,0,424,5,-0.1041848180541082
+F2,frecuencia_aerobico,nivel original,2,19,1,0.09106310819331907
+F2,frecuencia_aerobico,nivel original,2,19,2,0.0754849756241757
+F2,frecuencia_aerobico,nivel original,2,19,3,-0.5917351878600744
+F2,frecuencia_aerobico,nivel original,2,19,4,-0.826920814513552
+F2,frecuencia_aerobico,nivel original,2,19,5,1.2516959526849032
+F2,frecuencia_aerobico,nivel original,3,40,1,1.1507753927745727
+F2,frecuencia_aerobico,nivel original,3,40,2,-0.3658371462216499
+F2,frecuencia_aerobico,nivel original,3,40,3,-0.38870645948131477
+F2,frecuencia_aerobico,nivel original,3,40,4,-0.6772523153722619
+F2,frecuencia_aerobico,nivel original,3,40,5,1.2324432592985268
+F2,frecuencia_aerobico,nivel original,4,26,1,3.2573751175418786
+F2,frecuencia_aerobico,nivel original,4,26,2,0.3842164054639463
+F2,frecuencia_aerobico,nivel original,4,26,3,-0.15285733523119116
+F2,frecuencia_aerobico,nivel original,4,26,4,0.27990937216349604
+F2,frecuencia_aerobico,nivel original,4,26,5,-0.6600682446999866
+F2,frecuencia_aerobico,nivel original,5,20,1,3.8241018017164685
+F2,frecuencia_aerobico,nivel original,5,20,2,-0.11524099269175477
+F2,frecuencia_aerobico,nivel original,5,20,3,-0.08009463247855
+F2,frecuencia_aerobico,nivel original,5,20,4,0.6984164954196482
+F2,frecuencia_aerobico,nivel original,5,20,5,-0.587190812790638
+F2,frecuencia_bajo_impacto,grupo activo,0,305,1,-0.6962267635475862
+F2,frecuencia_bajo_impacto,grupo activo,0,305,2,0.0749391402161178
+F2,frecuencia_bajo_impacto,grupo activo,0,305,3,0.14797830080586757
+F2,frecuencia_bajo_impacto,grupo activo,0,305,4,-0.041103090655142276
+F2,frecuencia_bajo_impacto,grupo activo,0,305,5,-0.4010612282039197
+F2,frecuencia_bajo_impacto,grupo activo,2,79,1,-0.253780979190458
+F2,frecuencia_bajo_impacto,grupo activo,2,79,2,-0.01676031341682461
+F2,frecuencia_bajo_impacto,grupo activo,2,79,3,-0.17341045905410288
+F2,frecuencia_bajo_impacto,grupo activo,2,79,4,-0.4538515635841436
+F2,frecuencia_bajo_impacto,grupo activo,2,79,5,0.7084353272923535
+F2,frecuencia_bajo_impacto,grupo activo,3,89,1,0.7125767155394946
+F2,frecuencia_bajo_impacto,grupo activo,3,89,2,-0.19096271194318765
+F2,frecuencia_bajo_impacto,grupo activo,3,89,3,-0.6614376835067038
+F2,frecuencia_bajo_impacto,grupo activo,3,89,4,0.5665151875218528
+F2,frecuencia_bajo_impacto,grupo activo,3,89,5,0.8791506719634893
+F2,frecuencia_bajo_impacto,grupo activo,4 + 5,56,1,3.017473795625804
+F2,frecuencia_bajo_impacto,grupo activo,4 + 5,56,2,-0.08101235076862955
+F2,frecuencia_bajo_impacto,grupo activo,4 + 5,56,3,0.4898928277068077
+F2,frecuencia_bajo_impacto,grupo activo,4 + 5,56,4,-0.03623456279427014
+F2,frecuencia_bajo_impacto,grupo activo,4 + 5,56,5,-0.2122701081901953
+F2,frecuencia_bajo_impacto,nivel original,0,305,1,-0.6962267635475862
+F2,frecuencia_bajo_impacto,nivel original,0,305,2,0.0749391402161178
+F2,frecuencia_bajo_impacto,nivel original,0,305,3,0.14797830080586757
+F2,frecuencia_bajo_impacto,nivel original,0,305,4,-0.041103090655142276
+F2,frecuencia_bajo_impacto,nivel original,0,305,5,-0.4010612282039197
+F2,frecuencia_bajo_impacto,nivel original,2,79,1,-0.253780979190458
+F2,frecuencia_bajo_impacto,nivel original,2,79,2,-0.01676031341682461
+F2,frecuencia_bajo_impacto,nivel original,2,79,3,-0.17341045905410288
+F2,frecuencia_bajo_impacto,nivel original,2,79,4,-0.4538515635841436
+F2,frecuencia_bajo_impacto,nivel original,2,79,5,0.7084353272923535
+F2,frecuencia_bajo_impacto,nivel original,3,89,1,0.7125767155394946
+F2,frecuencia_bajo_impacto,nivel original,3,89,2,-0.19096271194318765
+F2,frecuencia_bajo_impacto,nivel original,3,89,3,-0.6614376835067038
+F2,frecuencia_bajo_impacto,nivel original,3,89,4,0.5665151875218528
+F2,frecuencia_bajo_impacto,nivel original,3,89,5,0.8791506719634893
+F2,frecuencia_bajo_impacto,nivel original,4,40,1,2.664661114156011
+F2,frecuencia_bajo_impacto,nivel original,4,40,2,-0.09500375454803996
+F2,frecuencia_bajo_impacto,nivel original,4,40,3,0.7738001883245138
+F2,frecuencia_bajo_impacto,nivel original,4,40,4,-0.2337753892689131
+F2,frecuencia_bajo_impacto,nivel original,4,40,5,-0.007841425443244713
+F2,frecuencia_bajo_impacto,nivel original,5,16,1,3.899505499300289
+F2,frecuencia_bajo_impacto,nivel original,5,16,2,-0.046033841320103464
+F2,frecuencia_bajo_impacto,nivel original,5,16,3,-0.2198755738374579
+F2,frecuencia_bajo_impacto,nivel original,5,16,4,0.4576175033923372
+F2,frecuencia_bajo_impacto,nivel original,5,16,5,-0.7233418150575717
+F2,frecuencia_fuerza,grupo activo,0,448,1,-0.3771993821235993
+F2,frecuencia_fuerza,grupo activo,0,448,2,0.0037723771788027586
+F2,frecuencia_fuerza,grupo activo,0,448,3,0.012626060165079786
+F2,frecuencia_fuerza,grupo activo,0,448,4,-0.04205066795174438
+F2,frecuencia_fuerza,grupo activo,0,448,5,0.08714254454262285
+F2,frecuencia_fuerza,grupo activo,2 + 3,43,1,0.8386854460931517
+F2,frecuencia_fuerza,grupo activo,2 + 3,43,2,-0.08748423711207567
+F2,frecuencia_fuerza,grupo activo,2 + 3,43,3,-0.36444113087363844
+F2,frecuencia_fuerza,grupo activo,2 + 3,43,4,1.0378498067463786
+F2,frecuencia_fuerza,grupo activo,2 + 3,43,5,-0.4116421688858457
+F2,frecuencia_fuerza,grupo activo,4 + 5,38,1,3.497943394983341
+F2,frecuencia_fuerza,grupo activo,4 + 5,38,2,0.05452097946619631
+F2,frecuencia_fuerza,grupo activo,4 + 5,38,3,0.2635393072002836
+F2,frecuencia_fuerza,grupo activo,4 + 5,38,4,-0.6786537486240196
+F2,frecuencia_fuerza,grupo activo,4 + 5,38,5,-0.5615591235000974
+F2,frecuencia_fuerza,nivel original,0,448,1,-0.3771993821235993
+F2,frecuencia_fuerza,nivel original,0,448,2,0.0037723771788027586
+F2,frecuencia_fuerza,nivel original,0,448,3,0.012626060165079786
+F2,frecuencia_fuerza,nivel original,0,448,4,-0.04205066795174438
+F2,frecuencia_fuerza,nivel original,0,448,5,0.08714254454262285
+F2,frecuencia_fuerza,nivel original,2,13,1,0.030512394423176898
+F2,frecuencia_fuerza,nivel original,2,13,2,-0.10023914225813299
+F2,frecuencia_fuerza,nivel original,2,13,3,0.10652256955914963
+F2,frecuencia_fuerza,nivel original,2,13,4,1.1142199040459377
+F2,frecuencia_fuerza,nivel original,2,13,5,-0.5857535979738682
+F2,frecuencia_fuerza,nivel original,3,30,1,1.188893768483474
+F2,frecuencia_fuerza,nivel original,3,30,2,-0.08195711154878423
+F2,frecuencia_fuerza,nivel original,3,30,3,-0.5685254010611799
+F2,frecuencia_fuerza,nivel original,3,30,4,1.0047560979165697
+F2,frecuencia_fuerza,nivel original,3,30,5,-0.33619388294770297
+F2,frecuencia_fuerza,nivel original,4,26,1,3.3369477433155
+F2,frecuencia_fuerza,nivel original,4,26,2,0.20160885015365165
+F2,frecuencia_fuerza,nivel original,4,26,3,0.4343957339816237
+F2,frecuencia_fuerza,nivel original,4,26,4,-0.7920544200675371
+F2,frecuencia_fuerza,nivel original,4,26,5,-0.5462937960606987
+F2,frecuencia_fuerza,nivel original,5,12,1,3.8467673069303294
+F2,frecuencia_fuerza,nivel original,5,12,2,-0.26416940702329034
+F2,frecuencia_fuerza,nivel original,5,12,3,-0.10664961749261975
+F2,frecuencia_fuerza,nivel original,5,12,4,-0.4329522938297315
+F2,frecuencia_fuerza,nivel original,5,12,5,-0.5946339996187944
+F2,cantidad_personas_cuida,grupo activo,0,278,1,-0.04860079934814862
+F2,cantidad_personas_cuida,grupo activo,0,278,2,-0.4783840178367368
+F2,cantidad_personas_cuida,grupo activo,0,278,3,-0.4304102042092825
+F2,cantidad_personas_cuida,grupo activo,0,278,4,0.357095098931947
+F2,cantidad_personas_cuida,grupo activo,0,278,5,-0.17463544047008156
+F2,cantidad_personas_cuida,grupo activo,1,136,1,-0.15964670449719048
+F2,cantidad_personas_cuida,grupo activo,1,136,2,0.749265722469096
+F2,cantidad_personas_cuida,grupo activo,1,136,3,0.21479744576402343
+F2,cantidad_personas_cuida,grupo activo,1,136,4,-0.478190911971827
+F2,cantidad_personas_cuida,grupo activo,1,136,5,-0.36585050892256943
+F2,cantidad_personas_cuida,grupo activo,2,67,1,-0.20616736067150393
+F2,cantidad_personas_cuida,grupo activo,2,67,2,0.72142510725051
+F2,cantidad_personas_cuida,grupo activo,2,67,3,0.4443534540395757
+F2,cantidad_personas_cuida,grupo activo,2,67,4,0.20212825533787865
+F2,cantidad_personas_cuida,grupo activo,2,67,5,1.2576577779017732
+F2,cantidad_personas_cuida,grupo activo,3,48,1,1.0215872332373752
+F2,cantidad_personas_cuida,grupo activo,3,48,2,-0.35926798922850905
+F2,cantidad_personas_cuida,grupo activo,3,48,3,1.2639563067837882
+F2,cantidad_personas_cuida,grupo activo,3,48,4,-0.9954388871364701
+F2,cantidad_personas_cuida,grupo activo,3,48,5,0.2925260530152765
+F2,cantidad_personas_cuida,nivel original,0,278,1,-0.04860079934814862
+F2,cantidad_personas_cuida,nivel original,0,278,2,-0.4783840178367368
+F2,cantidad_personas_cuida,nivel original,0,278,3,-0.4304102042092825
+F2,cantidad_personas_cuida,nivel original,0,278,4,0.357095098931947
+F2,cantidad_personas_cuida,nivel original,0,278,5,-0.17463544047008156
+F2,cantidad_personas_cuida,nivel original,1,136,1,-0.15964670449719048
+F2,cantidad_personas_cuida,nivel original,1,136,2,0.749265722469096
+F2,cantidad_personas_cuida,nivel original,1,136,3,0.21479744576402343
+F2,cantidad_personas_cuida,nivel original,1,136,4,-0.478190911971827
+F2,cantidad_personas_cuida,nivel original,1,136,5,-0.36585050892256943
+F2,cantidad_personas_cuida,nivel original,2,67,1,-0.20616736067150393
+F2,cantidad_personas_cuida,nivel original,2,67,2,0.72142510725051
+F2,cantidad_personas_cuida,nivel original,2,67,3,0.4443534540395757
+F2,cantidad_personas_cuida,nivel original,2,67,4,0.20212825533787865
+F2,cantidad_personas_cuida,nivel original,2,67,5,1.2576577779017732
+F2,cantidad_personas_cuida,nivel original,3,48,1,1.0215872332373752
+F2,cantidad_personas_cuida,nivel original,3,48,2,-0.35926798922850905
+F2,cantidad_personas_cuida,nivel original,3,48,3,1.2639563067837882
+F2,cantidad_personas_cuida,nivel original,3,48,4,-0.9954388871364701
+F2,cantidad_personas_cuida,nivel original,3,48,5,0.2925260530152765
+F2,tabaco_frecuencia,grupo activo,1,399,1,-0.038652545266569555
+F2,tabaco_frecuencia,grupo activo,1,399,2,0.17339941546142482
+F2,tabaco_frecuencia,grupo activo,1,399,3,0.02742163851487124
+F2,tabaco_frecuencia,grupo activo,1,399,4,0.018949034040514123
+F2,tabaco_frecuencia,grupo activo,1,399,5,0.18575009066517068
+F2,tabaco_frecuencia,grupo activo,2 + 3 + 4,48,1,-0.12068864253778055
+F2,tabaco_frecuencia,grupo activo,2 + 3 + 4,48,2,-0.8677419100253522
+F2,tabaco_frecuencia,grupo activo,2 + 3 + 4,48,3,-0.7369446500780387
+F2,tabaco_frecuencia,grupo activo,2 + 3 + 4,48,4,0.05590366280030909
+F2,tabaco_frecuencia,grupo activo,2 + 3 + 4,48,5,-0.8038456073455377
+F2,tabaco_frecuencia,grupo activo,5,82,1,0.2587246390631065
+F2,tabaco_frecuencia,grupo activo,5,82,2,-0.33578969619380267
+F2,tabaco_frecuencia,grupo activo,5,82,3,0.2979525541013699
+F2,tabaco_frecuencia,grupo activo,5,82,4,-0.1249273219095114
+F2,tabaco_frecuencia,grupo activo,5,82,5,-0.4332889880831378
+F2,tabaco_frecuencia,nivel original,1,399,1,-0.038652545266569555
+F2,tabaco_frecuencia,nivel original,1,399,2,0.17339941546142482
+F2,tabaco_frecuencia,nivel original,1,399,3,0.02742163851487124
+F2,tabaco_frecuencia,nivel original,1,399,4,0.018949034040514123
+F2,tabaco_frecuencia,nivel original,1,399,5,0.18575009066517068
+F2,tabaco_frecuencia,nivel original,2,21,1,-0.14839006909022967
+F2,tabaco_frecuencia,nivel original,2,21,2,-0.8955362954922961
+F2,tabaco_frecuencia,nivel original,2,21,3,-0.7525192328623207
+F2,tabaco_frecuencia,nivel original,2,21,4,0.08143463509427173
+F2,tabaco_frecuencia,nivel original,2,21,5,-0.8007162241320378
+F2,tabaco_frecuencia,nivel original,3,9,1,-0.04681887425100718
+F2,tabaco_frecuencia,nivel original,3,9,2,-1.3310817507466977
+F2,tabaco_frecuencia,nivel original,3,9,3,-0.16635954721713953
+F2,tabaco_frecuencia,nivel original,3,9,4,-0.2862282714230062
+F2,tabaco_frecuencia,nivel original,3,9,5,-0.9479667840966375
+F2,tabaco_frecuencia,nivel original,4,18,1,-0.12530519570330986
+F2,tabaco_frecuencia,nivel original,4,18,2,-0.6036452066199123
+F2,tabaco_frecuencia,nivel original,4,18,3,-1.0040668549268263
+F2,tabaco_frecuencia,nivel original,4,18,4,0.19718349556901027
+F2,tabaco_frecuencia,nivel original,4,18,5,-0.735435966052405
+F2,tabaco_frecuencia,nivel original,5,82,1,0.2587246390631065
+F2,tabaco_frecuencia,nivel original,5,82,2,-0.33578969619380267
+F2,tabaco_frecuencia,nivel original,5,82,3,0.2979525541013699
+F2,tabaco_frecuencia,nivel original,5,82,4,-0.1249273219095114
+F2,tabaco_frecuencia,nivel original,5,82,5,-0.4332889880831378

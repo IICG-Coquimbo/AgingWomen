@@ -1,0 +1,373 @@
+{
+ "edad": {
+  "tipo": "cuantitativa",
+  "modo": "valor"
+ },
+ "horas_sedentarismo": {
+  "tipo": "cuantitativa",
+  "modo": "valor"
+ },
+ "trabaja_actualmente": {
+  "tipo": "binaria",
+  "mapa": {
+   "False": 0,
+   "True": 1
+  },
+  "modo": "indicadoras",
+  "grupos": {
+   "False": [
+    "False"
+   ],
+   "True": [
+    "True"
+   ]
+  },
+  "proporciones": {
+   "False": 0.4158790170132325,
+   "True": 0.5841209829867675
+  }
+ },
+ "tiene_pareja": {
+  "tipo": "binaria",
+  "mapa": {
+   "NO": 0,
+   "SI": 1
+  },
+  "modo": "indicadoras",
+  "grupos": {
+   "NO": [
+    "NO"
+   ],
+   "SI": [
+    "SI"
+   ]
+  },
+  "proporciones": {
+   "NO": 0.3270321361058601,
+   "SI": 0.6729678638941399
+  }
+ },
+ "tiene_actividad_sexual": {
+  "tipo": "binaria",
+  "mapa": {
+   "NO": 0,
+   "SI": 1
+  },
+  "modo": "indicadoras",
+  "grupos": {
+   "NO": [
+    "NO"
+   ],
+   "SI": [
+    "SI"
+   ]
+  },
+  "proporciones": {
+   "NO": 0.5255198487712666,
+   "SI": 0.47448015122873344
+  }
+ },
+ "operada_no_mas_hijos": {
+  "tipo": "binaria",
+  "mapa": {
+   "NO": 0,
+   "SI": 1
+  },
+  "modo": "indicadoras",
+  "grupos": {
+   "NO": [
+    "NO"
+   ],
+   "SI": [
+    "SI"
+   ]
+  },
+  "proporciones": {
+   "NO": 0.8034026465028355,
+   "SI": 0.19659735349716445
+  }
+ },
+ "usa_medicamentos_presion": {
+  "tipo": "binaria",
+  "mapa": {
+   "NO": 0,
+   "SI": 1
+  },
+  "modo": "indicadoras",
+  "grupos": {
+   "NO": [
+    "NO"
+   ],
+   "SI": [
+    "SI"
+   ]
+  },
+  "proporciones": {
+   "NO": 0.831758034026465,
+   "SI": 0.16824196597353497
+  }
+ },
+ "quien_prepara_comidas": {
+  "tipo": "nominal",
+  "mapa": {
+   "YO_MAYORIA": null,
+   "COMPARTIDO": null,
+   "OTRA_HOGAR": null,
+   "COMPRO": null,
+   "OTRO": null
+  },
+  "modo": "indicadoras",
+  "grupos": {
+   "YO_MAYORIA": [
+    "YO_MAYORIA"
+   ],
+   "COMPARTIDO": [
+    "COMPARTIDO"
+   ],
+   "OTRA_HOGAR": [
+    "OTRA_HOGAR"
+   ],
+   "COMPRO + OTRO": [
+    "COMPRO",
+    "OTRO"
+   ]
+  },
+  "proporciones": {
+   "YO_MAYORIA": 0.6899810964083176,
+   "COMPARTIDO": 0.16257088846880907,
+   "OTRA_HOGAR": 0.09262759924385633,
+   "COMPRO + OTRO": 0.054820415879017016
+  }
+ },
+ "alcohol_frecuencia": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5
+  },
+  "modo": "consecutivo"
+ },
+ "cantidad_personas_cuida": {
+  "tipo": "ordinal",
+  "mapa": {
+   "0": 0,
+   "1": 1,
+   "2": 2,
+   "3": 3
+  },
+  "modo": "consecutivo"
+ },
+ "carnes_semana": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5
+  },
+  "modo": "consecutivo"
+ },
+ "dias_ejercicio_semana": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5
+  },
+  "modo": "consecutivo"
+ },
+ "distension_abdominal": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4
+  },
+  "modo": "consecutivo"
+ },
+ "evacuacion_intestinal": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4
+  },
+  "modo": "consecutivo"
+ },
+ "falta_tiempo_influye": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5
+  },
+  "modo": "consecutivo"
+ },
+ "frecuencia_aerobico": {
+  "tipo": "ordinal",
+  "mapa": {
+   "0": 0,
+   "1": 0,
+   "2": 1,
+   "3": 2,
+   "4": 3,
+   "5": 4
+  },
+  "modo": "consecutivo"
+ },
+ "frecuencia_bajo_impacto": {
+  "tipo": "ordinal",
+  "mapa": {
+   "0": 0,
+   "1": 0,
+   "2": 1,
+   "3": 2,
+   "4": 3,
+   "5": 4
+  },
+  "modo": "consecutivo"
+ },
+ "frecuencia_comida_fuera": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5
+  },
+  "modo": "consecutivo"
+ },
+ "frecuencia_fuerza": {
+  "tipo": "ordinal",
+  "mapa": {
+   "0": 0,
+   "1": 0,
+   "2": 1,
+   "3": 2,
+   "4": 3,
+   "5": 4
+  },
+  "modo": "consecutivo"
+ },
+ "frutas_dia": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5
+  },
+  "modo": "consecutivo"
+ },
+ "golosinas_semana": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5
+  },
+  "modo": "consecutivo"
+ },
+ "jugos_gaseosas_dia": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5
+  },
+  "modo": "consecutivo"
+ },
+ "lacteos_dia": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5
+  },
+  "modo": "consecutivo"
+ },
+ "legumbres_semana": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5
+  },
+  "modo": "consecutivo"
+ },
+ "panes_dia": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5
+  },
+  "modo": "consecutivo"
+ },
+ "pescado_semana": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5
+  },
+  "modo": "consecutivo"
+ },
+ "platos_verduras_dia": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5
+  },
+  "modo": "consecutivo"
+ },
+ "tabaco_frecuencia": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5
+  },
+  "modo": "consecutivo"
+ },
+ "vasos_agua_dia": {
+  "tipo": "ordinal",
+  "mapa": {
+   "1": 1,
+   "2": 2,
+   "3": 3,
+   "4": 4,
+   "5": 5
+  },
+  "modo": "consecutivo"
+ }
+}

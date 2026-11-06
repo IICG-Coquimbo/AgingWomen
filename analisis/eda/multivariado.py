@@ -30,7 +30,8 @@ ANALITICO = V.RAIZ / 'datos' / 'analitico'
 RESULTADOS_35 = V.RAIZ / 'analisis' / 'resultados' / 'usuaria'
 
 # Variables de la matriz exploratoria, en el orden original (define filas y
-# columnas). Son las 35 predictoras del modelado más las 3 de SOLO_EXPLORATORIAS.
+# columnas). Son las 35 predictoras de la versión previa de la 35A más las 3 de SOLO_EXPLORATORIAS. No es la
+# lista vigente: hoy son 33 elegibles (sin previsión, doble carga ni diabetes; con sobrecarga, en su población).
 EXPLORATORIAS_34E = [
     'edad', 'etapa_menopausica', 'imc', 'prevision', 'usa_medicamentos_diabetes', 'trabaja_actualmente',
     'tiene_pareja', 'tiene_actividad_sexual', 'tipo_sangrado', 'usa_metodo_anticonceptivo', 'operada_no_mas_hijos',
@@ -48,7 +49,8 @@ SOLO_EXPLORATORIAS = ['etapa_menopausica', 'tipo_sangrado', 'usa_metodo_anticonc
 # fuera del par, porque "no aplica" no es un nivel de la escala.
 NO_APLICA_ORDINAL = ['lugar_trabajo_comprensivo', 'estres_entorno_laboral', 'tipo_sangrado']
 NO_APLICA_NOMINAL = 'NO_APLICA'
-# Respuestas laborales imputadas por mediana en la 35A: se usan las originales.
+# Respuestas laborales imputadas por mediana en la 35A: se retiran. Lo que queda (287) aún incluye
+# 16 valores de lugar y 10 de estrés imputados en la 34B: no son todas respuestas originales.
 IMPUTADAS_TRABAJO = ['lugar_trabajo_comprensivo', 'estres_entorno_laboral']
 SEVERIDAD = 'severidad'
 CORTE_GRUPO = 0.30            # asociación promedio mínima para formar un grupo (distancia 0,70)

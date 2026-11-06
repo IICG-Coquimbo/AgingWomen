@@ -1,0 +1,93 @@
+{
+ "estado": "PROVISIONAL. La decisión final queda en manos de la responsable del proyecto. No es una clasificación clínica ni un modelo validado.",
+ "conclusion": "B. Segmentación operativa condicionada",
+ "configuracion_propuesta": "P2_c12_km_k4",
+ "equivalente_practica": "P1_c12_km_k4 (ARI 0,97 con la propuesta)",
+ "alternativa_elegible": "P2_c08_km_k4",
+ "motivo_entre_elegibles": "Regla 10.2 del protocolo: menos advertencias, luego mayor percentil 5 en E3, luego menor complejidad",
+ "protocolo_sha256": "62fd1d0b06e761129d26c4028526260bb1ea00565054eb8b378faa54ccb5e18f",
+ "reduccion": "PCA",
+ "escenario_imc": "Sin IMC",
+ "componentes": 12,
+ "algoritmo": "K-means",
+ "k": 4,
+ "tamanos": [
+  150,
+  76,
+  132,
+  171
+ ],
+ "estabilidad_E3": {
+  "ari_entre_media": 0.770920795474335,
+  "ari_entre_p05": 0.6791699115042775,
+  "ari_fuera_media": 0.8277879195213144,
+  "ari_fuera_p05": 0.7251977413831041
+ },
+ "sensibilidades_criticas": {
+  "S-ORD": 0.6918312949961586,
+  "S-TRA": 0.9592572396489332,
+  "S-CUI": 0.9513450185526726,
+  "S-EJE": 0.8790328097638251,
+  "S-IMPMODA": 0.9105453203170204,
+  "S-EDAD": 0.9663135726288018,
+  "S-SOLAPE": 0.3627552492447231,
+  "S-BLOQUE": 0.1370695929856459
+ },
+ "referencia_nula": {
+  "silueta_obs": 0.080105679741071,
+  "silueta_nula_media": 0.0778593094089704,
+  "silueta_nula_max": 0.0896516765143178,
+  "silueta_p": 0.2376237623762376,
+  "E1_obs": 0.7343463960575648,
+  "E1_nula_max": 0.648891998947011,
+  "E1_p": 0.0476190476190476,
+  "supera_control_busqueda_multiple": false
+ },
+ "asignacion": {
+  "margen_mediano": 0.151514125240751,
+  "desacuerdo_pct": 6.352201257861636,
+  "nota": "Sin umbrales definitivos de incertidumbre"
+ },
+ "clase_interpretabilidad": "Segmentación multivariable",
+ "reconstruccion": {
+  "1_variable": 0.3104818111310502,
+  "2_variables": 0.551692761407513,
+  "3_variables_exploratorio": 0.6767549378538654,
+  "mejor_trio": "trabaja_actualmente + tiene_pareja + dias_ejercicio_semana"
+ },
+ "condiciones_de_uso": [
+  "Depende de tiene_actividad_sexual y distension_abdominal (S-SOLAPE); regla V",
+  "Se presenta como cortes de un continuo, no como tipos naturales",
+  "Toda asignación lleva su margen; las cercanas a una frontera se señalan",
+  "Debe compararse con la regla simple de tres preguntas",
+  "Depende de la codificación ordinal consecutiva"
+ ],
+ "advertencias": [
+  {
+   "etapa": "3. Estabilidad",
+   "criterio": "E3 ari_entre media",
+   "estado": "ADV"
+  },
+  {
+   "etapa": "4. Variables",
+   "criterio": "S-SOLAPE",
+   "estado": "CRIT"
+  },
+  {
+   "etapa": "5. Nula correlacionada",
+   "criterio": "Silueta supera a todas",
+   "estado": "ADV"
+  },
+  {
+   "etapa": "5. Nula correlacionada",
+   "criterio": "Supera control de búsqueda múltiple",
+   "estado": "ADV"
+  },
+  {
+   "etapa": "9. Complejidad",
+   "criterio": "Componentes",
+   "estado": "ADV"
+  }
+ ],
+ "artefactos": "seleccion/artefactos_provisionales/P2_c12_km_k4/"
+}

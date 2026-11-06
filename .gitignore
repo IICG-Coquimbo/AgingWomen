@@ -39,3 +39,10 @@ Thumbs.db
 /datos/referencia/*
 !/datos/referencia/data_set_menopause.xlsx
 !/datos/dataset_menopausia_sucio.csv
+# Entradas sintéticas de los análisis (Fases 34-39). La verdad del simulador y la
+# bitácora de suciedad siguen ignoradas a propósito.
+!/datos/sintetico/
+/datos/sintetico/*
+!/datos/sintetico/dataset_usuaria_sucio.csv
+!/datos/limpio_usuaria/
+!/datos/analitico/

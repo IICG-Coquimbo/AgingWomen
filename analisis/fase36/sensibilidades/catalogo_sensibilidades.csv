@@ -1,0 +1,33 @@
+id,sensibilidad,factor,base,filas,columnas,filas_ajuste,filas_proyeccion,inercia_en_529,estado,archivo
+S-ORD_P1,S-ORD,Ordinales en ridit en vez de códigos consecutivos,P1,529,34,529,0,29.504726,"preparada, no ejecutada",sensibilidades/S-ORD/P1/matriz.csv
+S-ORD_P2,S-ORD,Ordinales en ridit en vez de códigos consecutivos,P2,529,33,529,0,29.0,"preparada, no ejecutada",sensibilidades/S-ORD/P2/matriz.csv
+S-ORD_F1,S-ORD,Ordinales en ridit en vez de códigos consecutivos,F1,529,50,529,0,38.504726,"preparada, no ejecutada",sensibilidades/S-ORD/F1/matriz.csv
+S-ORD_F2,S-ORD,Ordinales en ridit en vez de códigos consecutivos,F2,529,49,529,0,38.0,"preparada, no ejecutada",sensibilidades/S-ORD/F2/matriz.csv
+S-FAMD_F1,S-FAMD,Las cinco ordinales categóricas pasan a cuantitativas,F1,529,38,529,0,31.504726,"preparada, no ejecutada",sensibilidades/S-FAMD/F1/matriz.csv
+S-RARA_F1,S-RARA,FAMD sin agrupar categorías raras,F1,529,58,529,0,46.504726,"preparada, no ejecutada",sensibilidades/S-RARA/F1/matriz.csv
+S-FAMD_F2,S-FAMD,Las cinco ordinales categóricas pasan a cuantitativas,F2,529,37,529,0,31.0,"preparada, no ejecutada",sensibilidades/S-FAMD/F2/matriz.csv
+S-RARA_F2,S-RARA,FAMD sin agrupar categorías raras,F2,529,57,529,0,46.0,"preparada, no ejecutada",sensibilidades/S-RARA/F2/matriz.csv
+S-TRA_P1,S-TRA,Ajustar sin las marcadas y proyectarlas con parámetros congelados (grupos de FAMD fijos),P1,529,34,507,22,29.591378,"preparada, no ejecutada",sensibilidades/S-TRA/P1/matriz.csv
+S-TRA_P2,S-TRA,Ajustar sin las marcadas y proyectarlas con parámetros congelados (grupos de FAMD fijos),P2,529,33,507,22,29.095431,"preparada, no ejecutada",sensibilidades/S-TRA/P2/matriz.csv
+S-TRA_F1,S-TRA,Ajustar sin las marcadas y proyectarlas con parámetros congelados (grupos de FAMD fijos),F1,529,50,507,22,38.600411,"preparada, no ejecutada",sensibilidades/S-TRA/F1/matriz.csv
+S-TRA_F2,S-TRA,Ajustar sin las marcadas y proyectarlas con parámetros congelados (grupos de FAMD fijos),F2,529,49,507,22,38.104464,"preparada, no ejecutada",sensibilidades/S-TRA/F2/matriz.csv
+S-CUI_P1,S-CUI,Ajustar sin las marcadas y proyectarlas con parámetros congelados (grupos de FAMD fijos),P1,529,34,508,21,29.480602,"preparada, no ejecutada",sensibilidades/S-CUI/P1/matriz.csv
+S-CUI_P2,S-CUI,Ajustar sin las marcadas y proyectarlas con parámetros congelados (grupos de FAMD fijos),P2,529,33,508,21,28.991123,"preparada, no ejecutada",sensibilidades/S-CUI/P2/matriz.csv
+S-CUI_F1,S-CUI,Ajustar sin las marcadas y proyectarlas con parámetros congelados (grupos de FAMD fijos),F1,529,50,508,21,38.389941,"preparada, no ejecutada",sensibilidades/S-CUI/F1/matriz.csv
+S-CUI_F2,S-CUI,Ajustar sin las marcadas y proyectarlas con parámetros congelados (grupos de FAMD fijos),F2,529,49,508,21,37.900462,"preparada, no ejecutada",sensibilidades/S-CUI/F2/matriz.csv
+S-EJE_P1,S-EJE,Ajustar sin las marcadas y proyectarlas con parámetros congelados (grupos de FAMD fijos),P1,529,34,454,75,29.216199,"preparada, no ejecutada",sensibilidades/S-EJE/P1/matriz.csv
+S-EJE_P2,S-EJE,Ajustar sin las marcadas y proyectarlas con parámetros congelados (grupos de FAMD fijos),P2,529,33,454,75,28.70632,"preparada, no ejecutada",sensibilidades/S-EJE/P2/matriz.csv
+S-EJE_F1,S-EJE,Ajustar sin las marcadas y proyectarlas con parámetros congelados (grupos de FAMD fijos),F1,529,50,454,75,37.989348,"preparada, no ejecutada",sensibilidades/S-EJE/F1/matriz.csv
+S-EJE_F2,S-EJE,Ajustar sin las marcadas y proyectarlas con parámetros congelados (grupos de FAMD fijos),F2,529,49,454,75,37.47947,"preparada, no ejecutada",sensibilidades/S-EJE/F2/matriz.csv
+S-EDAD_P1,S-EDAD,Sin edad,P1,529,33,529,0,28.504726,"preparada, no ejecutada","matrices/P1_pca_con_imc.csv, omitiendo: edad"
+S-EDAD_P2,S-EDAD,Sin edad,P2,529,32,529,0,28.0,"preparada, no ejecutada","matrices/P2_pca_sin_imc.csv, omitiendo: edad"
+S-EDAD_F1,S-EDAD,Sin edad,F1,529,49,529,0,37.504726,"preparada, no ejecutada","matrices/F1_famd_con_imc.csv, omitiendo: edad"
+S-EDAD_F2,S-EDAD,Sin edad,F2,529,48,529,0,37.0,"preparada, no ejecutada","matrices/F2_famd_sin_imc.csv, omitiendo: edad"
+S-SOLAPE_P1,S-SOLAPE,Sin tiene_actividad_sexual ni distension_abdominal,P1,529,32,529,0,27.504726,"preparada, no ejecutada","matrices/P1_pca_con_imc.csv, omitiendo: tiene_actividad_sexual; distension_abdominal"
+S-SOLAPE_P2,S-SOLAPE,Sin tiene_actividad_sexual ni distension_abdominal,P2,529,31,529,0,27.0,"preparada, no ejecutada","matrices/P2_pca_sin_imc.csv, omitiendo: tiene_actividad_sexual; distension_abdominal"
+S-SOLAPE_F1,S-SOLAPE,Sin tiene_actividad_sexual ni distension_abdominal,F1,529,47,529,0,36.504726,"preparada, no ejecutada","matrices/F1_famd_con_imc.csv, omitiendo: tiene_actividad_sexual__NO; tiene_actividad_sexual__SI; distension_abdominal"
+S-SOLAPE_F2,S-SOLAPE,Sin tiene_actividad_sexual ni distension_abdominal,F2,529,46,529,0,36.0,"preparada, no ejecutada","matrices/F2_famd_sin_imc.csv, omitiendo: tiene_actividad_sexual__NO; tiene_actividad_sexual__SI; distension_abdominal"
+S-BLOQUE_P1,S-BLOQUE,Misma inercia total por bloque,P1,529,34,529,0,29.504726,"preparada, no ejecutada",matrices/P1_pca_con_imc.csv por sensibilidades/pesos_bloques.json
+S-BLOQUE_P2,S-BLOQUE,Misma inercia total por bloque,P2,529,33,529,0,29.0,"preparada, no ejecutada",matrices/P2_pca_sin_imc.csv por sensibilidades/pesos_bloques.json
+S-BLOQUE_F1,S-BLOQUE,Misma inercia total por bloque,F1,529,50,529,0,38.504726,"preparada, no ejecutada",matrices/F1_famd_con_imc.csv por sensibilidades/pesos_bloques.json
+S-BLOQUE_F2,S-BLOQUE,Misma inercia total por bloque,F2,529,49,529,0,38.0,"preparada, no ejecutada",matrices/F2_famd_sin_imc.csv por sensibilidades/pesos_bloques.json

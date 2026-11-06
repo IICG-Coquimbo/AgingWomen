@@ -1,0 +1,29 @@
+{
+ "estado": "NO VINCULANTE. La decisión final queda en manos de la responsable del proyecto. No modifica la conclusión de la Fase 37C.",
+ "recomendacion": "Opción B: estudiar la regla de tres preguntas como alternativa principal",
+ "igual_de_defendible": "Opción C, si no hay un uso concreto de los grupos",
+ "no_respaldada": "Opción A: mantener los cuatro segmentos como opción principal",
+ "dr2_A_X_por_bloque": {
+  "Alimentación": -0.0104257408745353,
+  "Actividad física adicional": -0.0062444183380372,
+  "Sedentarismo": -0.006422557521428,
+  "Cuidados": -0.0006967192279141,
+  "Tabaco y alcohol": -0.002778154955529,
+  "Otras generales": -0.0089899292608941
+ },
+ "estabilidad_entre": {
+  "A": 0.770920795474335,
+  "B1": 0.997813339803,
+  "B1N": 0.997813339803,
+  "B2": 0.9626389797331616,
+  "B2C": 0.94930182505851
+ },
+ "imitacion_fuera_de_muestra": {
+  "B1": 0.6159520763607218,
+  "B1N": 0.6159520763607218,
+  "B2": 0.6126776340864882,
+  "B2C": 0.5215423321180663
+ },
+ "caracter": "Exploratorio y posterior al cierre técnico de la Fase 37C; datos sintéticos",
+ "fase_37D": "No iniciada"
+}

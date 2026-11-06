@@ -1,0 +1,437 @@
+{
+ "edad": {
+  "variable": "edad",
+  "clase": "z",
+  "media": 50.9773156899811,
+  "de": 7.699670749875186,
+  "n_referencia": 529,
+  "minimo_referencia": 36.0,
+  "maximo_referencia": 65.0
+ },
+ "horas_sedentarismo": {
+  "variable": "horas_sedentarismo",
+  "clase": "z",
+  "media": 6.274102079395085,
+  "de": 2.386657619080293,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 14.0
+ },
+ "trabaja_actualmente__False": {
+  "variable": "trabaja_actualmente",
+  "clase": "indicadora_famd",
+  "grupo": "False",
+  "p": 0.4158790170132325,
+  "divisor": 0.6448868249648403
+ },
+ "trabaja_actualmente__True": {
+  "variable": "trabaja_actualmente",
+  "clase": "indicadora_famd",
+  "grupo": "True",
+  "p": 0.5841209829867675,
+  "divisor": 0.7642780796194324
+ },
+ "tiene_pareja__NO": {
+  "variable": "tiene_pareja",
+  "clase": "indicadora_famd",
+  "grupo": "NO",
+  "p": 0.3270321361058601,
+  "divisor": 0.5718672364333003
+ },
+ "tiene_pareja__SI": {
+  "variable": "tiene_pareja",
+  "clase": "indicadora_famd",
+  "grupo": "SI",
+  "p": 0.6729678638941399,
+  "divisor": 0.8203461853962264
+ },
+ "tiene_actividad_sexual__NO": {
+  "variable": "tiene_actividad_sexual",
+  "clase": "indicadora_famd",
+  "grupo": "NO",
+  "p": 0.5255198487712666,
+  "divisor": 0.7249274782840464
+ },
+ "tiene_actividad_sexual__SI": {
+  "variable": "tiene_actividad_sexual",
+  "clase": "indicadora_famd",
+  "grupo": "SI",
+  "p": 0.47448015122873344,
+  "divisor": 0.6888251964241243
+ },
+ "operada_no_mas_hijos__NO": {
+  "variable": "operada_no_mas_hijos",
+  "clase": "indicadora_famd",
+  "grupo": "NO",
+  "p": 0.8034026465028355,
+  "divisor": 0.8963273099168827
+ },
+ "operada_no_mas_hijos__SI": {
+  "variable": "operada_no_mas_hijos",
+  "clase": "indicadora_famd",
+  "grupo": "SI",
+  "p": 0.19659735349716445,
+  "divisor": 0.44339300118198127
+ },
+ "usa_medicamentos_presion__NO": {
+  "variable": "usa_medicamentos_presion",
+  "clase": "indicadora_famd",
+  "grupo": "NO",
+  "p": 0.831758034026465,
+  "divisor": 0.9120076940610014
+ },
+ "usa_medicamentos_presion__SI": {
+  "variable": "usa_medicamentos_presion",
+  "clase": "indicadora_famd",
+  "grupo": "SI",
+  "p": 0.16824196597353497,
+  "divisor": 0.4101730926981132
+ },
+ "quien_prepara_comidas__YO_MAYORIA": {
+  "variable": "quien_prepara_comidas",
+  "clase": "indicadora_famd",
+  "grupo": "YO_MAYORIA",
+  "p": 0.6899810964083176,
+  "divisor": 0.8306510075888174
+ },
+ "quien_prepara_comidas__COMPARTIDO": {
+  "variable": "quien_prepara_comidas",
+  "clase": "indicadora_famd",
+  "grupo": "COMPARTIDO",
+  "p": 0.16257088846880907,
+  "divisor": 0.4032008041519871
+ },
+ "quien_prepara_comidas__OTRA_HOGAR": {
+  "variable": "quien_prepara_comidas",
+  "clase": "indicadora_famd",
+  "grupo": "OTRA_HOGAR",
+  "p": 0.09262759924385633,
+  "divisor": 0.30434782608695654
+ },
+ "quien_prepara_comidas__COMPRO": {
+  "variable": "quien_prepara_comidas",
+  "clase": "indicadora_famd",
+  "grupo": "COMPRO",
+  "p": 0.04158790170132325,
+  "divisor": 0.20393111999232302
+ },
+ "quien_prepara_comidas__OTRO": {
+  "variable": "quien_prepara_comidas",
+  "clase": "indicadora_famd",
+  "grupo": "OTRO",
+  "p": 0.013232514177693762,
+  "divisor": 0.11503266569846046
+ },
+ "alcohol_frecuencia": {
+  "variable": "alcohol_frecuencia",
+  "clase": "z",
+  "media": 1.8431001890359169,
+  "de": 0.8452886395202787,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 5.0
+ },
+ "cantidad_personas_cuida__0": {
+  "variable": "cantidad_personas_cuida",
+  "clase": "indicadora_famd",
+  "grupo": "0",
+  "p": 0.5255198487712666,
+  "divisor": 0.7249274782840464
+ },
+ "cantidad_personas_cuida__1": {
+  "variable": "cantidad_personas_cuida",
+  "clase": "indicadora_famd",
+  "grupo": "1",
+  "p": 0.2570888468809074,
+  "divisor": 0.5070392952039392
+ },
+ "cantidad_personas_cuida__2": {
+  "variable": "cantidad_personas_cuida",
+  "clase": "indicadora_famd",
+  "grupo": "2",
+  "p": 0.1266540642722117,
+  "divisor": 0.35588490312488913
+ },
+ "cantidad_personas_cuida__3": {
+  "variable": "cantidad_personas_cuida",
+  "clase": "indicadora_famd",
+  "grupo": "3",
+  "p": 0.09073724007561437,
+  "divisor": 0.30122622740328303
+ },
+ "carnes_semana": {
+  "variable": "carnes_semana",
+  "clase": "z",
+  "media": 2.850661625708885,
+  "de": 0.8859353333079149,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 5.0
+ },
+ "dias_ejercicio_semana": {
+  "variable": "dias_ejercicio_semana",
+  "clase": "z",
+  "media": 1.6521739130434783,
+  "de": 0.9304754156101172,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 5.0
+ },
+ "distension_abdominal": {
+  "variable": "distension_abdominal",
+  "clase": "z",
+  "media": 1.9281663516068053,
+  "de": 0.8489628069376407,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 4.0
+ },
+ "evacuacion_intestinal": {
+  "variable": "evacuacion_intestinal",
+  "clase": "z",
+  "media": 2.391304347826087,
+  "de": 0.787424794620645,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 4.0
+ },
+ "falta_tiempo_influye": {
+  "variable": "falta_tiempo_influye",
+  "clase": "z",
+  "media": 2.727788279773157,
+  "de": 0.9632191539516772,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 5.0
+ },
+ "frecuencia_aerobico__0": {
+  "variable": "frecuencia_aerobico",
+  "clase": "indicadora_famd",
+  "grupo": "0",
+  "p": 0.8015122873345936,
+  "divisor": 0.8952721861727826
+ },
+ "frecuencia_aerobico__2": {
+  "variable": "frecuencia_aerobico",
+  "clase": "indicadora_famd",
+  "grupo": "2",
+  "p": 0.035916824196597356,
+  "divisor": 0.18951734537133363
+ },
+ "frecuencia_aerobico__3": {
+  "variable": "frecuencia_aerobico",
+  "clase": "indicadora_famd",
+  "grupo": "3",
+  "p": 0.07561436672967864,
+  "divisor": 0.2749806661015982
+ },
+ "frecuencia_aerobico__4": {
+  "variable": "frecuencia_aerobico",
+  "clase": "indicadora_famd",
+  "grupo": "4",
+  "p": 0.04914933837429111,
+  "divisor": 0.22169650059099064
+ },
+ "frecuencia_aerobico__5": {
+  "variable": "frecuencia_aerobico",
+  "clase": "indicadora_famd",
+  "grupo": "5",
+  "p": 0.03780718336483932,
+  "divisor": 0.19444069369563388
+ },
+ "frecuencia_bajo_impacto__0": {
+  "variable": "frecuencia_bajo_impacto",
+  "clase": "indicadora_famd",
+  "grupo": "0",
+  "p": 0.5765595463137996,
+  "divisor": 0.7593151824596948
+ },
+ "frecuencia_bajo_impacto__2": {
+  "variable": "frecuencia_bajo_impacto",
+  "clase": "indicadora_famd",
+  "grupo": "2",
+  "p": 0.14933837429111532,
+  "divisor": 0.3864432355354604
+ },
+ "frecuencia_bajo_impacto__3": {
+  "variable": "frecuencia_bajo_impacto",
+  "clase": "indicadora_famd",
+  "grupo": "3",
+  "p": 0.16824196597353497,
+  "divisor": 0.4101730926981132
+ },
+ "frecuencia_bajo_impacto__4": {
+  "variable": "frecuencia_bajo_impacto",
+  "clase": "indicadora_famd",
+  "grupo": "4",
+  "p": 0.07561436672967864,
+  "divisor": 0.2749806661015982
+ },
+ "frecuencia_bajo_impacto__5": {
+  "variable": "frecuencia_bajo_impacto",
+  "clase": "indicadora_famd",
+  "grupo": "5",
+  "p": 0.030245746691871456,
+  "divisor": 0.17391304347826086
+ },
+ "frecuencia_comida_fuera": {
+  "variable": "frecuencia_comida_fuera",
+  "clase": "z",
+  "media": 1.9754253308128544,
+  "de": 0.8001423896209778,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 4.0
+ },
+ "frecuencia_fuerza__0": {
+  "variable": "frecuencia_fuerza",
+  "clase": "indicadora_famd",
+  "grupo": "0",
+  "p": 0.8468809073724007,
+  "divisor": 0.9202613255876837
+ },
+ "frecuencia_fuerza__2": {
+  "variable": "frecuencia_fuerza",
+  "clase": "indicadora_famd",
+  "grupo": "2",
+  "p": 0.024574669187145556,
+  "divisor": 0.1567630989332169
+ },
+ "frecuencia_fuerza__3": {
+  "variable": "frecuencia_fuerza",
+  "clase": "indicadora_famd",
+  "grupo": "3",
+  "p": 0.05671077504725898,
+  "divisor": 0.23814024239355047
+ },
+ "frecuencia_fuerza__4": {
+  "variable": "frecuencia_fuerza",
+  "clase": "indicadora_famd",
+  "grupo": "4",
+  "p": 0.04914933837429111,
+  "divisor": 0.22169650059099064
+ },
+ "frecuencia_fuerza__5": {
+  "variable": "frecuencia_fuerza",
+  "clase": "indicadora_famd",
+  "grupo": "5",
+  "p": 0.022684310018903593,
+  "divisor": 0.15061311370164152
+ },
+ "frutas_dia": {
+  "variable": "frutas_dia",
+  "clase": "z",
+  "media": 2.1436672967863895,
+  "de": 0.6256660503102595,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 4.0
+ },
+ "golosinas_semana": {
+  "variable": "golosinas_semana",
+  "clase": "z",
+  "media": 2.45179584120983,
+  "de": 0.9828595235369494,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 5.0
+ },
+ "jugos_gaseosas_dia": {
+  "variable": "jugos_gaseosas_dia",
+  "clase": "z",
+  "media": 2.0340264650283553,
+  "de": 0.8557461989138818,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 4.0
+ },
+ "lacteos_dia": {
+  "variable": "lacteos_dia",
+  "clase": "z",
+  "media": 2.058601134215501,
+  "de": 0.6197495756821942,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 4.0
+ },
+ "legumbres_semana": {
+  "variable": "legumbres_semana",
+  "clase": "z",
+  "media": 2.172022684310019,
+  "de": 0.5522696523090903,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 3.0
+ },
+ "panes_dia": {
+  "variable": "panes_dia",
+  "clase": "z",
+  "media": 2.122873345935728,
+  "de": 0.6071614711192386,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 4.0
+ },
+ "pescado_semana": {
+  "variable": "pescado_semana",
+  "clase": "z",
+  "media": 1.8147448015122873,
+  "de": 0.6328215547284483,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 3.0
+ },
+ "platos_verduras_dia": {
+  "variable": "platos_verduras_dia",
+  "clase": "z",
+  "media": 2.1587901701323253,
+  "de": 0.53011684289838,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 4.0
+ },
+ "tabaco_frecuencia__1": {
+  "variable": "tabaco_frecuencia",
+  "clase": "indicadora_famd",
+  "grupo": "1",
+  "p": 0.7542533081285444,
+  "divisor": 0.8684775806712252
+ },
+ "tabaco_frecuencia__2": {
+  "variable": "tabaco_frecuencia",
+  "clase": "indicadora_famd",
+  "grupo": "2",
+  "p": 0.03969754253308128,
+  "divisor": 0.19924242151981914
+ },
+ "tabaco_frecuencia__3": {
+  "variable": "tabaco_frecuencia",
+  "clase": "indicadora_famd",
+  "grupo": "3",
+  "p": 0.017013232514177693,
+  "divisor": 0.13043478260869565
+ },
+ "tabaco_frecuencia__4": {
+  "variable": "tabaco_frecuencia",
+  "clase": "indicadora_famd",
+  "grupo": "4",
+  "p": 0.034026465028355386,
+  "divisor": 0.1844626385704037
+ },
+ "tabaco_frecuencia__5": {
+  "variable": "tabaco_frecuencia",
+  "clase": "indicadora_famd",
+  "grupo": "5",
+  "p": 0.15500945179584122,
+  "divisor": 0.3937123973103225
+ },
+ "vasos_agua_dia": {
+  "variable": "vasos_agua_dia",
+  "clase": "z",
+  "media": 3.1852551984877127,
+  "de": 1.043337844309793,
+  "n_referencia": 529,
+  "minimo_referencia": 1.0,
+  "maximo_referencia": 5.0
+ }
+}

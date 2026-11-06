@@ -1,0 +1,102 @@
+﻿variable,seccion,tipo,ambito,filas_aplica,faltantes,pct_faltante,tratamiento
+genero,Identificacion,categorica,general,546,0,0.0,sin faltantes
+nivel_educacion,Identificacion,categorica,general,546,0,0.0,sin faltantes
+origen_procedencia,Identificacion,categorica,general,546,0,0.0,sin faltantes
+pueblo_originario_afro,Identificacion,categorica,general,546,0,0.0,sin faltantes
+region_residencia,Identificacion,categorica,general,546,0,0.0,sin faltantes
+trabaja_actualmente,Identificacion,categorica,general,546,22,4.0,imputada (moda = True)
+excepcion_edad,Identificacion,categorica,general,546,0,0.0,sin faltantes
+pregunta_1,MRS,ordinal,general,546,1,0.2,no se imputa (variable resultado)
+pregunta_2,MRS,ordinal,general,546,1,0.2,no se imputa (variable resultado)
+pregunta_3,MRS,ordinal,general,546,0,0.0,no se imputa (variable resultado)
+pregunta_4,MRS,ordinal,general,546,3,0.5,no se imputa (variable resultado)
+pregunta_5,MRS,ordinal,general,546,3,0.5,no se imputa (variable resultado)
+pregunta_6,MRS,ordinal,general,546,2,0.4,no se imputa (variable resultado)
+pregunta_7,MRS,ordinal,general,546,1,0.2,no se imputa (variable resultado)
+pregunta_8,MRS,ordinal,general,546,1,0.2,no se imputa (variable resultado)
+pregunta_9,MRS,ordinal,general,546,1,0.2,no se imputa (variable resultado)
+pregunta_10,MRS,ordinal,general,546,0,0.0,no se imputa (variable resultado)
+pregunta_11,MRS,ordinal,general,546,4,0.7,no se imputa (variable resultado)
+menstruacion_llega,MRS,categorica,general,204,27,13.2,imputada (moda = REGULAR) + marca menstruacion_llega_imputado; 22 sin fecha de última menstruación quedan sin dato
+tipo_sangrado,MRS,categorica,general,204,33,16.2,imputada (moda = MODERADO) + marca tipo_sangrado_imputado; 22 sin fecha de última menstruación quedan sin dato
+usa_metodo_anticonceptivo,MRS,categorica,general,204,25,12.3,imputada (moda = NO) + marca usa_metodo_anticonceptivo_imputado; 22 sin fecha de última menstruación quedan sin dato
+tipo_metodo_anticonceptivo,MRS,categorica,general,73,6,8.2,imputada (moda = DIU) + marca tipo_metodo_anticonceptivo_imputado
+usa_terapia_hormonal,MRS,categorica,general,546,25,4.6,imputada (moda = NO)
+operada_no_mas_hijos,MRS,categorica,general,546,18,3.3,imputada (moda = NO)
+tiene_utero,MRS,categorica,general,546,26,4.8,imputada (moda = SI)
+tiene_ovario,MRS,categorica,general,546,23,4.2,imputada (moda = SI)
+tiene_pareja,MRS,categorica,general,546,28,5.1,imputada (moda = SI) + marca tiene_pareja_imputado
+cambio_relacion_pareja_menopausia,MRS,ordinal,general,339,23,6.8,imputada (mediana = 2) + marca cambio_relacion_pareja_menopausia_imputado
+tiene_actividad_sexual,MRS,categorica,general,546,30,5.5,imputada (moda = NO) + marca tiene_actividad_sexual_imputado
+usa_antidepresivos,MRS,categorica,general,546,26,4.8,imputada (moda = NO)
+usa_medicamentos_diabetes,MRS,categorica,general,546,24,4.4,imputada (moda = NO)
+usa_medicamentos_presion,MRS,categorica,general,546,30,5.5,imputada (moda = NO) + marca usa_medicamentos_presion_imputado
+evacuacion_intestinal,MRS,ordinal,general,546,33,6.0,imputada (mediana = 2) + marca evacuacion_intestinal_imputado
+distension_abdominal,MRS,ordinal,general,546,18,3.3,imputada (mediana = 2)
+talla_actual_cm,SegmentoEMPA,continua,general,546,215,39.4,> 30 %: no se modela
+talla_maxima_cm,SegmentoEMPA,continua,subgrupo profesional,0,0,0.0,sin faltantes
+peso_kg,SegmentoEMPA,continua,general,546,256,46.9,> 30 %: no se modela
+circunferencia_cintura_cm,SegmentoEMPA,continua,general,546,286,52.4,> 30 %: no se modela
+presion_sistolica,SegmentoEMPA,continua,subgrupo profesional,0,0,0.0,sin faltantes
+presion_diastolica,SegmentoEMPA,continua,subgrupo profesional,0,0,0.0,sin faltantes
+colesterol_total_mg_dl,SegmentoEMPA,continua,subgrupo profesional,0,0,0.0,sin faltantes
+colesterol_hdl_mg_dl,SegmentoEMPA,continua,subgrupo profesional,0,0,0.0,sin faltantes
+trigliceridos_mg_dl,SegmentoEMPA,continua,subgrupo profesional,0,0,0.0,sin faltantes
+glicemia_mg_dl,SegmentoEMPA,continua,subgrupo profesional,0,0,0.0,sin faltantes
+riesgo_cv_atp3,SegmentoEMPA,categorica,subgrupo profesional,0,0,0.0,sin faltantes
+resultado_pap,SegmentoEMPA,categorica,subgrupo profesional,0,0,0.0,sin faltantes
+resultado_birads,SegmentoEMPA,ordinal,subgrupo profesional,0,0,0.0,sin faltantes
+prevision,ConocimientoSistema,categorica,general,546,19,3.5,imputada (moda = FONASA)
+conoce_sistema_publico_climaterio,ConocimientoSistema,categorica,general,428,25,5.8,imputada (moda = NO) + marca conoce_sistema_publico_climaterio_imputado
+ha_escuchado_programa_climaterio,ConocimientoSistema,categorica,general,428,15,3.5,imputada (moda = NO)
+sabe_donde_acudir,ConocimientoSistema,categorica,general,428,21,4.9,imputada (moda = SI)
+ha_consultado_por_sintomas,ConocimientoSistema,categorica,general,428,21,4.9,imputada (moda = NO)
+evaluacion_atencion_recibida,ConocimientoSistema,ordinal,general,127,11,8.7,imputada (mediana = 3) + marca evaluacion_atencion_recibida_imputado
+en_control_programa_consultorio,ConocimientoSistema,categorica,general,428,26,6.1,imputada (moda = NO) + marca en_control_programa_consultorio_imputado
+considera_informacion_suficiente,ConocimientoSistema,ordinal,general,428,13,3.0,imputada (mediana = 2)
+nivel_informacion_servicios,ConocimientoSistema,ordinal,general,428,26,6.1,imputada (mediana = 2) + marca nivel_informacion_servicios_imputado
+conoce_recursos_disponibles,ConocimientoSistema,categorica,general,428,20,4.7,imputada (moda = NO)
+ha_tenido_dificultades_acceso,ConocimientoSistema,categorica,general,428,20,4.7,imputada (moda = NO)
+principales_dificultades,ConocimientoSistema,multiseleccion,general,151,7,4.6,no se imputa (selección múltiple)
+sintomas_tomados_en_serio,ConocimientoSistema,ordinal,general,546,31,5.7,imputada (mediana = 2) + marca sintomas_tomados_en_serio_imputado
+desea_mas_informacion_apoyo,ConocimientoSistema,categorica,general,546,31,5.7,imputada (moda = SI) + marca desea_mas_informacion_apoyo_imputado
+tipo_informacion_apoyo_deseado,ConocimientoSistema,multiseleccion,general,417,20,4.8,no se imputa (selección múltiple)
+rendimiento_afectado,EvaluacionTrabajo,ordinal,general,298,10,3.4,imputada (mediana = 2)
+bienestar_trabajo_afectado,EvaluacionTrabajo,ordinal,general,298,16,5.4,imputada (mediana = 2) + marca bienestar_trabajo_afectado_imputado
+frecuencia_ausencias,EvaluacionTrabajo,ordinal,general,298,17,5.7,imputada (mediana = 2) + marca frecuencia_ausencias_imputado
+lugar_trabajo_comprensivo,EvaluacionTrabajo,ordinal,general,298,16,5.4,imputada (mediana = 3) + marca lugar_trabajo_comprensivo_imputado
+estres_entorno_laboral,EvaluacionTrabajo,ordinal,general,298,10,3.4,imputada (mediana = 3)
+cuida_otras_personas,TareasCuidado,categorica,general,546,21,3.8,imputada (moda = NO)
+cantidad_personas_cuida,TareasCuidado,ordinal,general,257,7,2.7,imputada (mediana = 1)
+a_quien_cuida,TareasCuidado,multiseleccion,general,257,16,6.2,no se imputa (selección múltiple)
+sobrecarga_fisica_emocional,TareasCuidado,ordinal,general,257,12,4.7,imputada (mediana = 3)
+dias_ejercicio_semana,ActividadFisica,ordinal,general,546,37,6.8,imputada (mediana = 1) + marca dias_ejercicio_semana_imputado
+realiza_aerobico,ActividadFisica,categorica,general,546,29,5.3,imputada (moda = NO) + marca realiza_aerobico_imputado
+frecuencia_aerobico,ActividadFisica,ordinal,general,106,7,6.6,imputada (mediana = 3) + marca frecuencia_aerobico_imputado
+realiza_bajo_impacto,ActividadFisica,categorica,general,546,24,4.4,imputada (moda = NO)
+frecuencia_bajo_impacto,ActividadFisica,ordinal,general,231,15,6.5,imputada (mediana = 3) + marca frecuencia_bajo_impacto_imputado
+realiza_fuerza,ActividadFisica,categorica,general,546,28,5.1,imputada (moda = NO) + marca realiza_fuerza_imputado
+frecuencia_fuerza,ActividadFisica,ordinal,general,83,2,2.4,imputada (mediana = 3)
+horas_sedentarismo,ActividadFisica,continua,general,546,27,4.9,imputada (mediana = 6)
+quien_prepara_comidas,HabitosDeVida,categorica,general,546,24,4.4,imputada (moda = YO_MAYORIA)
+frecuencia_comida_fuera,HabitosDeVida,ordinal,general,546,35,6.4,imputada (mediana = 2) + marca frecuencia_comida_fuera_imputado
+falta_tiempo_influye,HabitosDeVida,ordinal,general,546,30,5.5,imputada (mediana = 3) + marca falta_tiempo_influye_imputado
+vasos_agua_dia,HabitosDeVida,ordinal,general,546,25,4.6,imputada (mediana = 3)
+platos_verduras_dia,HabitosDeVida,ordinal,general,546,33,6.0,imputada (mediana = 2) + marca platos_verduras_dia_imputado
+frutas_dia,HabitosDeVida,ordinal,general,546,24,4.4,imputada (mediana = 2)
+panes_dia,HabitosDeVida,ordinal,general,546,33,6.0,imputada (mediana = 2) + marca panes_dia_imputado
+lacteos_dia,HabitosDeVida,ordinal,general,546,32,5.9,imputada (mediana = 2) + marca lacteos_dia_imputado
+jugos_gaseosas_dia,HabitosDeVida,ordinal,general,546,31,5.7,imputada (mediana = 2) + marca jugos_gaseosas_dia_imputado
+bebidas_energeticas_dia,HabitosDeVida,ordinal,general,546,22,4.0,imputada (mediana = 1)
+pescado_semana,HabitosDeVida,ordinal,general,546,19,3.5,imputada (mediana = 2)
+legumbres_semana,HabitosDeVida,ordinal,general,546,27,4.9,imputada (mediana = 2)
+carnes_semana,HabitosDeVida,ordinal,general,546,31,5.7,imputada (mediana = 3) + marca carnes_semana_imputado
+golosinas_semana,HabitosDeVida,ordinal,general,546,17,3.1,imputada (mediana = 2)
+tabaco_frecuencia,HabitosDeVida,ordinal,general,546,18,3.3,imputada (mediana = 1)
+marihuana_frecuencia,HabitosDeVida,ordinal,general,546,18,3.3,imputada (mediana = 1)
+alcohol_frecuencia,HabitosDeVida,ordinal,general,546,29,5.3,imputada (mediana = 2) + marca alcohol_frecuencia_imputado
+facilidad_uso,EvaluacionSatisfaccion,ordinal,satisfacción,264,3,1.1,"no se imputa (encuesta voluntaria, Fase 39)"
+fatiga_mental,EvaluacionSatisfaccion,ordinal,satisfacción,264,1,0.4,"no se imputa (encuesta voluntaria, Fase 39)"
+comodidad_diseno,EvaluacionSatisfaccion,ordinal,satisfacción,264,1,0.4,"no se imputa (encuesta voluntaria, Fase 39)"
+recomendaria,EvaluacionSatisfaccion,categorica,satisfacción,264,3,1.1,"no se imputa (encuesta voluntaria, Fase 39)"
+incomodidad,EvaluacionSatisfaccion,categorica,satisfacción,264,0,0.0,"no se imputa (encuesta voluntaria, Fase 39)"

@@ -1,0 +1,6 @@
+{
+ "archivo": "01_protocolo_37B.md",
+ "sha256": "6b7c974d25b6e52114985e146017f721d5e9f27da43405193647915ac86926c6",
+ "commit": "745d689",
+ "nota": "Sellado antes de ajustar K-means o el método aglomerativo. La ejecución se detiene si la huella no coincide."
+}

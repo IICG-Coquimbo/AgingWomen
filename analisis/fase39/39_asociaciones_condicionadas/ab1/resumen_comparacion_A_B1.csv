@@ -1,0 +1,3 @@
+grupo,estratos,comparabilidad_minima,largo_maximo,candidatos,comparables,marcadas,nula_media_marcadas,p_exceso_marcadas,nula_p95_max_Q,supera_nula_dimension,clases
+A,A_0 / A_1 / A_2 / A_3,20,2,3645,294,251,258.512,0.8281718281718282,22.59624038068116,0,"{'H2 redundante': 152, 'H3 diferencia compatible con la nula': 99, 'H1 sin diferencia apreciable': 43}"
+B1,B1_0 / B1_1 / B1_2 / B1_3,20,2,3645,333,297,291.691,0.34165834165834164,23.985836831996796,0,"{'H2 redundante': 180, 'H3 diferencia compatible con la nula': 117, 'H1 sin diferencia apreciable': 36}"

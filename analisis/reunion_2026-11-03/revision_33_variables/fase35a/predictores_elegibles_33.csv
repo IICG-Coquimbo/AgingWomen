@@ -1,0 +1,34 @@
+﻿orden,variable,etiqueta,tipo,poblacion,n,antigua_control,pct_dominante_poblacion,origen
+1,alcohol_frecuencia,Alcohol,ordinal,general,529,False,50.661626,dataset_fase35_33_variables.csv
+2,cantidad_personas_cuida,Cantidad de personas que cuida,ordinal,general,529,False,52.551985,dataset_fase35_33_variables.csv
+3,carnes_semana,Carnes a la semana,ordinal,general,529,False,44.234405,dataset_fase35_33_variables.csv
+4,dias_ejercicio_semana,Días de ejercicio a la semana,ordinal,general,529,False,57.088847,dataset_fase35_33_variables.csv
+5,distension_abdominal,Distensión abdominal,ordinal,general,529,False,42.722117,dataset_fase35_33_variables.csv
+6,edad,Edad,continua,general,529,True,22.684310,dataset_fase35_33_variables.csv
+7,estres_entorno_laboral,Estrés del entorno laboral,ordinal,laboral,287,False,37.282230,dataset_fase35_33_variables.csv
+8,evacuacion_intestinal,Frecuencia de evacuación intestinal,ordinal,general,529,False,56.710775,dataset_fase35_33_variables.csv
+9,falta_tiempo_influye,Falta de tiempo influye en lo que come,ordinal,general,529,False,42.344045,dataset_fase35_33_variables.csv
+10,frecuencia_aerobico,Frecuencia de ejercicio aeróbico,ordinal,general,529,False,80.151229,dataset_fase35_33_variables.csv
+11,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,ordinal,general,529,False,57.655955,dataset_fase35_33_variables.csv
+12,frecuencia_comida_fuera,Comidas fuera del hogar,ordinal,general,529,False,46.691871,dataset_fase35_33_variables.csv
+13,frecuencia_fuerza,Frecuencia de ejercicio de fuerza,ordinal,general,529,False,84.688091,dataset_fase35_33_variables.csv
+14,frutas_dia,Frutas al día,ordinal,general,529,False,71.833648,dataset_fase35_33_variables.csv
+15,golosinas_semana,Dulces y snacks a la semana,ordinal,general,529,False,41.965974,dataset_fase35_33_variables.csv
+16,horas_sedentarismo,Horas sentada al día,continua,general,529,False,34.971645,dataset_fase35_33_variables.csv
+17,imc,IMC,continua,general,529,True,68.620038,dataset_fase35_33_variables.csv
+18,jugos_gaseosas_dia,Jugos y gaseosas al día,ordinal,general,529,False,48.771267,dataset_fase35_33_variables.csv
+19,lacteos_dia,Lácteos al día,ordinal,general,529,False,66.351607,dataset_fase35_33_variables.csv
+20,legumbres_semana,Legumbres a la semana,ordinal,general,529,False,66.540643,dataset_fase35_33_variables.csv
+21,lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,ordinal,laboral,287,False,37.630662,dataset_fase35_33_variables.csv
+22,operada_no_mas_hijos,Operada para no tener más hijos,binaria,general,529,False,80.340265,dataset_fase35_33_variables.csv
+23,panes_dia,Panes al día,ordinal,general,529,False,67.296786,dataset_fase35_33_variables.csv
+24,pescado_semana,Pescado a la semana,ordinal,general,529,False,56.521739,dataset_fase35_33_variables.csv
+25,platos_verduras_dia,Platos de verduras al día,ordinal,general,529,False,80.718336,dataset_fase35_33_variables.csv
+26,quien_prepara_comidas,Quién prepara las comidas,nominal,general,529,False,68.998110,dataset_fase35_33_variables.csv
+27,sobrecarga_fisica_emocional,Sobrecarga por trabajo y cuidado,ordinal,cuidadoras,239,False,39.330544,"en memoria desde el conjunto limpio; n = 239 observadas, 251 con 12 imputadas"
+28,tabaco_frecuencia,Tabaco,ordinal,general,529,False,75.425331,dataset_fase35_33_variables.csv
+29,tiene_actividad_sexual,Tiene actividad sexual,binaria,general,529,False,52.551985,dataset_fase35_33_variables.csv
+30,tiene_pareja,Tiene pareja,binaria,general,529,False,67.296786,dataset_fase35_33_variables.csv
+31,trabaja_actualmente,Trabaja actualmente,binaria,general,529,True,58.412098,dataset_fase35_33_variables.csv
+32,usa_medicamentos_presion,Medicamentos para la presión,binaria,general,529,False,83.175803,dataset_fase35_33_variables.csv
+33,vasos_agua_dia,Vasos de agua al día,ordinal,general,529,False,38.752363,dataset_fase35_33_variables.csv

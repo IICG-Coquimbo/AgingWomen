@@ -1,0 +1,301 @@
+{
+ "reconstruccion": {
+  "filas_memoria": 546,
+  "filas_disco": 546,
+  "celdas_distintas": 0
+ },
+ "familia": {
+  "n_principal": 41,
+  "n_secundaria": 10,
+  "max_dif_p": 4.976578337295007e-06,
+  "max_dif_q": 4.893301314340404e-06,
+  "max_dif_efecto": 4.953560415424385e-06,
+  "variables_iguales": true
+ },
+ "diabetes": {
+  "imputadas_529": 23,
+  "imputadas_a": {
+   "NO": 23
+  },
+  "imputados_resumen_34D": 24,
+  "rango_bh": 6,
+  "p_original": 0.0028904132499059025,
+  "q_verificado_a_mano": 0.019751157207690332,
+  "q_familia_principal": 0.019751157207690332,
+  "q_familia_conjunta_51": 0.02456851262420017,
+  "familias_rol": "control / principal",
+  "codigo_si": 1,
+  "codigo_no": 0,
+  "x_igual_codigo": true,
+  "dominancia_todas": 87.52362948960302,
+  "dominancia_observadas": 86.95652173913044,
+  "su_34": 0.010053,
+  "p_shannon_50000": 0.0244,
+  "q_shannon_34": 0.118512,
+  "imputadas_erroneas_segun_verdad": 2
+ },
+ "imputacion": {
+  "trabaja_situacion": {
+   "Respondida": 506,
+   "Imputada": 22,
+   "Deducida": 1
+  },
+  "cuida_situacion": {
+   "Respondida": 504,
+   "Imputada": 21,
+   "Deducida": 4
+  },
+  "trabaja_imputadas_erroneas": 12,
+  "cuida_imputadas_erroneas": 14,
+  "doble1_con_trabaja_imputada": 10,
+  "doble0_con_cuida_imputada": 21,
+  "doble_con_alguna_imputada": 43,
+  "doble_ambas_imputadas": 0,
+  "doble_distinta_de_verdad": 9,
+  "doble1_mal": 5,
+  "doble0_mal": 4,
+  "cantidad_imputadas": 7,
+  "cantidad_ceros_por_cuida_imputada": 21,
+  "sobrecarga_imputadas": 12,
+  "lugar_imputadas": 16,
+  "estres_imputadas": 10,
+  "imputadas_trabaja_en_lugar_35": {
+   "3.0": 22
+  },
+  "imputadas_trabaja_en_estres_35": {
+   "3.0": 22
+  },
+  "no_trabaja_en_lugar_35": {
+   "0.0": 220
+  },
+  "poblaciones_35b": [
+   {
+    "poblacion": "todas",
+    "n": 529
+   },
+   {
+    "poblacion": "laboral",
+    "n": 287
+   },
+   {
+    "poblacion": "cuidadoras",
+    "n": 251
+   },
+   {
+    "poblacion": "sobrecarga_observada",
+    "n": 239
+   },
+   {
+    "poblacion": "sobrecarga_imputada",
+    "n": 12
+   },
+   {
+    "poblacion": "sobrecarga_y_laboral",
+    "n": 130
+   },
+   {
+    "poblacion": "cuidadoras_y_laboral",
+    "n": 137
+   },
+   {
+    "poblacion": "cuida_imputada_no",
+    "n": 21
+   },
+   {
+    "poblacion": "cuida_deducida",
+    "n": 4
+   },
+   {
+    "poblacion": "cuida_imputada_en_observadas",
+    "n": 0
+   },
+   {
+    "poblacion": "cuida_deducida_en_observadas",
+    "n": 3
+   },
+   {
+    "poblacion": "sobrecarga_borrada_por_condicional",
+    "n": 2
+   },
+   {
+    "poblacion": "trabaja_imputada",
+    "n": 22
+   },
+   {
+    "poblacion": "doble_con_trabaja_imputada",
+    "n": 10
+   },
+   {
+    "poblacion": "trabaja_imputada_en_observadas",
+    "n": 10
+   },
+   {
+    "poblacion": "trabaja_imputada_en_sobrecarga_y_laboral",
+    "n": 0
+   },
+   {
+    "poblacion": "laborales_observadas_en_287",
+    "n": 263
+   },
+   {
+    "poblacion": "laborales_observadas_en_sobrecarga_y_laboral",
+    "n": 122
+   }
+  ],
+  "laboral_coincide": true,
+  "cuida_columna_en_35": false,
+  "doble_columna_en_35": true
+ },
+ "imc_familia": {
+  "q05_antes": [
+   "dias_ejercicio_semana",
+   "estres_entorno_laboral",
+   "frecuencia_bajo_impacto",
+   "imc",
+   "lugar_trabajo_comprensivo",
+   "tabaco_frecuencia",
+   "usa_medicamentos_diabetes",
+   "vasos_agua_dia"
+  ],
+  "q05_despues": [
+   "dias_ejercicio_semana",
+   "estres_entorno_laboral",
+   "frecuencia_bajo_impacto",
+   "imc",
+   "imc_categoria",
+   "lugar_trabajo_comprensivo",
+   "tabaco_frecuencia",
+   "usa_medicamentos_diabetes",
+   "vasos_agua_dia"
+  ],
+  "cambian_de_lado": [
+   "imc_categoria"
+  ]
+ },
+ "imc": {
+  "bajo_peso": [
+   {
+    "imc": "18.2",
+    "mrs_total": "12",
+    "mrs_severidad": "Moderada"
+   },
+   {
+    "imc": "18.4",
+    "mrs_total": "10",
+    "mrs_severidad": "Moderada"
+   }
+  ],
+  "chi_faltante_p": 0.8584217420515756,
+  "mw_faltante_p": 0.9729335664371966,
+  "original_n_guardado": 527,
+  "original_p_guardado": 0.01961,
+  "original_q_guardado": 0.0731,
+  "original_efecto_guardado": 0.01316
+ },
+ "figuras": {
+  "evaluadas": 65,
+  "con_imputadas": 46,
+  "faltante_cero_con_imputadas": 41,
+  "resumen_distinto_de_exacto": 9,
+  "resumen_sobreestima_sin_marca": [
+   {
+    "variable": "usa_terapia_hormonal",
+    "imputados_34B_resumen": 25,
+    "imputadas_exactas_529": 24,
+    "marca_en_limpio": false
+   },
+   {
+    "variable": "tiene_utero",
+    "imputados_34B_resumen": 26,
+    "imputadas_exactas_529": 25,
+    "marca_en_limpio": false
+   },
+   {
+    "variable": "tiene_ovario",
+    "imputados_34B_resumen": 23,
+    "imputadas_exactas_529": 22,
+    "marca_en_limpio": false
+   },
+   {
+    "variable": "usa_medicamentos_diabetes",
+    "imputados_34B_resumen": 24,
+    "imputadas_exactas_529": 23,
+    "marca_en_limpio": false
+   },
+   {
+    "variable": "distension_abdominal",
+    "imputados_34B_resumen": 18,
+    "imputadas_exactas_529": 17,
+    "marca_en_limpio": false
+   },
+   {
+    "variable": "realiza_bajo_impacto",
+    "imputados_34B_resumen": 24,
+    "imputadas_exactas_529": 22,
+    "marca_en_limpio": false
+   },
+   {
+    "variable": "vasos_agua_dia",
+    "imputados_34B_resumen": 25,
+    "imputadas_exactas_529": 24,
+    "marca_en_limpio": false
+   },
+   {
+    "variable": "legumbres_semana",
+    "imputados_34B_resumen": 27,
+    "imputadas_exactas_529": 24,
+    "marca_en_limpio": false
+   },
+   {
+    "variable": "tabaco_frecuencia",
+    "imputados_34B_resumen": 18,
+    "imputadas_exactas_529": 17,
+    "marca_en_limpio": false
+   }
+  ],
+  "cambian_tramo": [
+   {
+    "variable": "operada_no_mas_hijos",
+    "dominante_figura_pct": 80.3403,
+    "dominante_solo_observadas_pct": 79.6477495107632
+   },
+   {
+    "variable": "realiza_aerobico",
+    "dominante_figura_pct": 80.1512,
+    "dominante_solo_observadas_pct": 79.0
+   },
+   {
+    "variable": "platos_verduras_dia",
+    "dominante_figura_pct": 80.7183,
+    "dominante_solo_observadas_pct": 79.43548387096774
+   }
+  ],
+  "max_dif_puntos": 5.429315151515148,
+  "variable_max_dif": "tipo_metodo_anticonceptivo",
+  "lugar_neutral_total": 108,
+  "lugar_neutral_imputadas": 16
+ },
+ "evaluacion_claves": [
+  "cambios",
+  "cambios_error",
+  "celdas_revisadas",
+  "celdas_sucias",
+  "filas",
+  "tipos"
+ ],
+ "cambios_error": 1,
+ "tabla_celdas": [
+  {
+   "Variable": "cambio_relacion_pareja_menopausia",
+   "Celdas": 196,
+   "Ejemplo": "1 → (vacío)",
+   "Motivo": "regla del análisis: \"no aplica\" sin pareja (la plataforma la muestra a todas)"
+  },
+  {
+   "Variable": "circunferencia_cintura_cm",
+   "Celdas": 1,
+   "Ejemplo": "75 → (vacío)",
+   "Motivo": ""
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+segmentacion,variable,etiqueta,bloque,usada_por_A,en_regla_B1,tipo,medida,efecto,prueba,p,n,aviso,q,banda,lectura
+A,trabaja_actualmente,Trabaja actualmente,Las tres preguntas,True,True,binaria,η²,0.4314601082752707,χ²,3.3175831165273243e-49,529,,5.971649609749184e-48,grande,diferencia importante
+A,tiene_pareja,Tiene pareja,Las tres preguntas,True,True,binaria,η²,0.6536959350394382,χ²,1.2077363291508814e-74,529,,4.347850784943173e-73,grande,diferencia importante
+A,dias_ejercicio_semana,Días de ejercicio a la semana,Las tres preguntas,True,True,ordinal,η²,0.5638765731319169,Kruskal-Wallis,8.074211846652144e-44,529,,7.266790661986929e-43,grande,diferencia importante
+A,frecuencia_aerobico,Frecuencia de ejercicio aeróbico,Actividad física adicional,True,False,ordinal,η²,0.5100312318744317,Kruskal-Wallis,7.704482535671366e-47,529,,9.245379042805638e-46,grande,diferencia importante
+A,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,Actividad física adicional,True,False,ordinal,η²,0.26167327548596897,Kruskal-Wallis,1.3811727263980703e-21,529,,7.10317402147579e-21,grande,diferencia importante
+A,frecuencia_fuerza,Frecuencia de ejercicio de fuerza,Actividad física adicional,True,False,ordinal,η²,0.36650391442190605,Kruskal-Wallis,1.1754697728075645e-33,529,,7.052818636845387e-33,grande,diferencia importante
+A,horas_sedentarismo,Horas sentada al día,Sedentarismo,True,False,cuantitativa,η²,0.009939997186546675,Kruskal-Wallis,0.1781065212438211,529,,0.3233300536339682,despreciable,distribución semejante
+A,cantidad_personas_cuida,Personas a su cuidado,Cuidados,True,False,ordinal,η²,0.008727685988171183,Kruskal-Wallis,0.3236072414380162,529,,0.5295391223531175,despreciable,distribución semejante
+A,quien_prepara_comidas,Quién prepara las comidas,Alimentación,True,False,nominal,V²,0.0024157712716298212,χ²,0.9862515683669887,529,25% de esperadas < 5,0.9862515683669888,despreciable,distribución semejante
+A,carnes_semana,Carnes a la semana,Alimentación,True,False,ordinal,η²,0.013368485940010227,Kruskal-Wallis,0.08861670367648287,529,,0.18765890190314022,pequeña,diferencia pequeña
+A,falta_tiempo_influye,La falta de tiempo influye en su alimentación,Alimentación,True,False,ordinal,η²,0.10071370432439228,Kruskal-Wallis,1.9538223120588515e-11,529,,7.815289248235406e-11,moderada,diferencia importante
+A,frecuencia_comida_fuera,Comidas fuera de casa,Alimentación,True,False,ordinal,η²,0.17406330734827907,Kruskal-Wallis,8.145395421998464e-20,529,,3.665427939899309e-19,grande,diferencia importante
+A,frutas_dia,Frutas al día,Alimentación,True,False,ordinal,η²,0.024747356866913463,Kruskal-Wallis,0.001691242088952656,529,,0.005073726266857968,pequeña,diferencia pequeña
+A,golosinas_semana,Golosinas a la semana,Alimentación,True,False,ordinal,η²,0.01183818865291801,Kruskal-Wallis,0.179276025813189,529,,0.3233300536339682,pequeña,diferencia pequeña
+A,jugos_gaseosas_dia,Jugos o gaseosas al día,Alimentación,True,False,ordinal,η²,0.0022866707599599545,Kruskal-Wallis,0.7084207040362444,529,,0.852477108785406,despreciable,distribución semejante
+A,lacteos_dia,Lácteos al día,Alimentación,True,False,ordinal,η²,0.001414537848156373,Kruskal-Wallis,0.9568373845026468,529,,0.9841755954884367,despreciable,distribución semejante
+A,legumbres_semana,Legumbres a la semana,Alimentación,True,False,ordinal,η²,0.001670540233697866,Kruskal-Wallis,0.8296970618925369,529,,0.8785027714156273,despreciable,distribución semejante
+A,panes_dia,Panes al día,Alimentación,True,False,ordinal,η²,0.0052087697788073175,Kruskal-Wallis,0.543146860864061,529,,0.8147202912960916,despreciable,distribución semejante
+A,pescado_semana,Pescado a la semana,Alimentación,True,False,ordinal,η²,0.023246881373248613,Kruskal-Wallis,0.00495808263154353,529,,0.012749355338254791,pequeña,diferencia pequeña
+A,platos_verduras_dia,Platos de verduras al día,Alimentación,True,False,ordinal,η²,0.02580961617448749,Kruskal-Wallis,0.0037866556997646237,529,,0.010486123476271265,pequeña,diferencia pequeña
+A,vasos_agua_dia,Vasos de agua al día,Alimentación,True,False,ordinal,η²,0.04068419910560249,Kruskal-Wallis,6.717787704542905e-05,529,,0.0002418403573635446,pequeña,diferencia pequeña
+A,tabaco_frecuencia,Frecuencia de tabaco,Tabaco y alcohol,True,False,ordinal,η²,0.014677534467715445,Kruskal-Wallis,0.07421376153372763,529,,0.16698096345088717,pequeña,diferencia pequeña
+A,alcohol_frecuencia,Frecuencia de alcohol,Tabaco y alcohol,True,False,ordinal,η²,0.007328764567537419,Kruskal-Wallis,0.6083918771491144,529,,0.852477108785406,despreciable,distribución semejante
+A,edad,Edad,Otras generales,True,False,cuantitativa,η²,0.002405421735588409,Kruskal-Wallis,0.7593863179399488,529,,0.852477108785406,despreciable,distribución semejante
+A,operada_no_mas_hijos,Operada para no tener más hijos,Otras generales,True,False,binaria,η²,0.003000603197971619,χ²,0.6622685366015657,529,,0.852477108785406,despreciable,distribución semejante
+A,usa_medicamentos_presion,Usa medicamentos para la presión,Otras generales,True,False,binaria,η²,0.007690258859765874,χ²,0.2541988946359259,529,,0.4357695336615872,despreciable,distribución semejante
+A,tiene_actividad_sexual,Tiene actividad sexual,Actividad sexual,True,False,binaria,η²,0.3035433609306916,χ²,1.3777230028137008e-34,529,,9.919605620258646e-34,grande,diferencia importante
+A,distension_abdominal,Distensión abdominal,Digestión,True,False,ordinal,η²,0.0025491387255103092,Kruskal-Wallis,0.7814373497199554,529,,0.852477108785406,despreciable,distribución semejante
+A,evacuacion_intestinal,Evacuación intestinal,Digestión,True,False,ordinal,η²,0.02528163535223866,Kruskal-Wallis,0.0010997030704201825,529,,0.003599028230466052,pequeña,diferencia pequeña
+A,imc,IMC (solo observado),Externa: salud,False,False,cuantitativa,η²,0.00416304188110203,Kruskal-Wallis,0.6806724053691819,267,,0.852477108785406,despreciable,distribución semejante
+A,etapa_menopausica,Etapa menopáusica,Externa: etapa,False,False,nominal,V²,0.006949681192345405,χ²,0.5264226994844861,529,,0.8147202912960916,despreciable,distribución semejante
+A,usa_medicamentos_diabetes,Usa medicamentos para la diabetes,Externa: salud,False,False,binaria,η²,0.009253838031365492,χ²,0.17962780757442678,529,,0.3233300536339682,despreciable,distribución semejante
+A,prevision,Previsión de salud,Externa: acceso a salud,False,False,nominal,V²,0.003975919749740077,χ²,0.6487507495513312,529,,0.852477108785406,despreciable,distribución semejante
+A,lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,Externa: módulo laboral,False,False,ordinal,η²,0.0046633613247015065,Kruskal-Wallis,0.7291686113339337,287,,0.852477108785406,despreciable,distribución semejante
+A,estres_entorno_laboral,Estrés en el entorno laboral,Externa: módulo laboral,False,False,ordinal,η²,0.00612559015994218,Kruskal-Wallis,0.7462108236264557,287,,0.852477108785406,despreciable,distribución semejante
+A,sobrecarga_fisica_emocional,Sobrecarga física o emocional por cuidar,Externa: módulo de cuidados,False,False,ordinal,η²,0.04938865078296951,Kruskal-Wallis,0.012513865632523165,251,,0.030033277518055592,pequeña,diferencia pequeña
+B1,trabaja_actualmente,Trabaja actualmente,Las tres preguntas,True,True,binaria,η²,0.5688274672496131,χ²,6.322322411775409e-65,529,,1.1380180341195736e-63,grande,diferencia importante
+B1,tiene_pareja,Tiene pareja,Las tres preguntas,True,True,binaria,η²,0.8599612122368074,χ²,2.8012292322718873e-98,529,,1.0084425236178795e-96,grande,diferencia importante
+B1,dias_ejercicio_semana,Días de ejercicio a la semana,Las tres preguntas,True,True,ordinal,η²,0.6887316784448335,Kruskal-Wallis,3.689569656202683e-55,529,,4.42748358744322e-54,grande,diferencia importante
+B1,frecuencia_aerobico,Frecuencia de ejercicio aeróbico,Actividad física adicional,True,False,ordinal,η²,0.38619462511311564,Kruskal-Wallis,3.327042564892169e-36,529,,2.9943383084029523e-35,grande,diferencia importante
+B1,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,Actividad física adicional,True,False,ordinal,η²,0.2054873882413097,Kruskal-Wallis,1.9034476862860723e-16,529,,9.789159529471229e-16,grande,diferencia importante
+B1,frecuencia_fuerza,Frecuencia de ejercicio de fuerza,Actividad física adicional,True,False,ordinal,η²,0.2805075506361143,Kruskal-Wallis,1.6385888802399607e-26,529,,1.1797839937727717e-25,grande,diferencia importante
+B1,horas_sedentarismo,Horas sentada al día,Sedentarismo,True,False,cuantitativa,η²,0.0036307696570732372,Kruskal-Wallis,0.5870760148293952,529,,0.8171692812870089,despreciable,distribución semejante
+B1,cantidad_personas_cuida,Personas a su cuidado,Cuidados,True,False,ordinal,η²,0.0012593541822556158,Kruskal-Wallis,0.9771329263845442,529,,0.9771329263845442,despreciable,distribución semejante
+B1,quien_prepara_comidas,Quién prepara las comidas,Alimentación,True,False,nominal,V²,0.003541342555261584,χ²,0.9340092619520255,529,25% de esperadas < 5,0.9771329263845442,despreciable,distribución semejante
+B1,carnes_semana,Carnes a la semana,Alimentación,True,False,ordinal,η²,0.012242001555183528,Kruskal-Wallis,0.156444159951188,529,,0.4022849827316262,pequeña,diferencia pequeña
+B1,falta_tiempo_influye,La falta de tiempo influye en su alimentación,Alimentación,True,False,ordinal,η²,0.045783962882244365,Kruskal-Wallis,5.324747060492749e-05,529,,0.00021298988241970996,pequeña,diferencia pequeña
+B1,frecuencia_comida_fuera,Comidas fuera de casa,Alimentación,True,False,ordinal,η²,0.09667490558971374,Kruskal-Wallis,4.6678511333218285e-11,529,,2.100533009994823e-10,moderada,diferencia importante
+B1,frutas_dia,Frutas al día,Alimentación,True,False,ordinal,η²,0.0037746483130864377,Kruskal-Wallis,0.5517228040546827,529,,0.8171692812870089,despreciable,distribución semejante
+B1,golosinas_semana,Golosinas a la semana,Alimentación,True,False,ordinal,η²,0.0013559256828890721,Kruskal-Wallis,0.8696797358086319,529,,0.9771329263845442,despreciable,distribución semejante
+B1,jugos_gaseosas_dia,Jugos o gaseosas al día,Alimentación,True,False,ordinal,η²,0.004371412859710571,Kruskal-Wallis,0.5435508269935541,529,,0.8171692812870089,despreciable,distribución semejante
+B1,lacteos_dia,Lácteos al día,Alimentación,True,False,ordinal,η²,0.0019484345457881015,Kruskal-Wallis,0.8027146104428187,529,,0.9321847089013379,despreciable,distribución semejante
+B1,legumbres_semana,Legumbres a la semana,Alimentación,True,False,ordinal,η²,0.0007997598306413392,Kruskal-Wallis,0.9496701986065423,529,,0.9771329263845442,despreciable,distribución semejante
+B1,panes_dia,Panes al día,Alimentación,True,False,ordinal,η²,0.005687276463956,Kruskal-Wallis,0.5387308375340571,529,,0.8171692812870089,despreciable,distribución semejante
+B1,pescado_semana,Pescado a la semana,Alimentación,True,False,ordinal,η²,0.005650884371050231,Kruskal-Wallis,0.3752843635617868,529,,0.8171692812870089,despreciable,distribución semejante
+B1,platos_verduras_dia,Platos de verduras al día,Alimentación,True,False,ordinal,η²,0.014531860155661621,Kruskal-Wallis,0.05615698865630835,529,,0.16847096596892505,pequeña,diferencia pequeña
+B1,vasos_agua_dia,Vasos de agua al día,Alimentación,True,False,ordinal,η²,0.028166284310211214,Kruskal-Wallis,0.0018195533791895344,529,,0.006550392165082323,pequeña,diferencia pequeña
+B1,tabaco_frecuencia,Frecuencia de tabaco,Tabaco y alcohol,True,False,ordinal,η²,0.004185730670505082,Kruskal-Wallis,0.5822974502397282,529,,0.8171692812870089,despreciable,distribución semejante
+B1,alcohol_frecuencia,Frecuencia de alcohol,Tabaco y alcohol,True,False,ordinal,η²,0.006704970545394545,Kruskal-Wallis,0.5901778142628398,529,,0.8171692812870089,despreciable,distribución semejante
+B1,edad,Edad,Otras generales,True,False,cuantitativa,η²,0.004183144577632015,Kruskal-Wallis,0.6158151905467919,529,,0.8192216802660405,despreciable,distribución semejante
+B1,operada_no_mas_hijos,Operada para no tener más hijos,Otras generales,True,False,binaria,η²,0.0004241004956079289,χ²,0.9735659700466045,529,,0.9771329263845442,despreciable,distribución semejante
+B1,usa_medicamentos_presion,Usa medicamentos para la presión,Otras generales,True,False,binaria,η²,0.004801533105612575,χ²,0.4681035732544806,529,,0.8171692812870089,despreciable,distribución semejante
+B1,tiene_actividad_sexual,Tiene actividad sexual,Actividad sexual,True,False,binaria,η²,0.20931736561180928,χ²,7.646605651840521e-24,529,,4.587963391104313e-23,grande,diferencia importante
+B1,distension_abdominal,Distensión abdominal,Digestión,True,False,ordinal,η²,0.00326001406345684,Kruskal-Wallis,0.5593545959597885,529,,0.8171692812870089,despreciable,distribución semejante
+B1,evacuacion_intestinal,Evacuación intestinal,Digestión,True,False,ordinal,η²,0.010713168717395201,Kruskal-Wallis,0.07809446289665571,529,,0.21626158955996966,pequeña,diferencia pequeña
+B1,imc,IMC (solo observado),Externa: salud,False,False,cuantitativa,η²,0.005951652571021701,Kruskal-Wallis,0.6467955872339795,267,,0.8192216802660405,despreciable,distribución semejante
+B1,etapa_menopausica,Etapa menopáusica,Externa: etapa,False,False,nominal,V²,0.005514434245389149,χ²,0.7240041126186543,529,,0.8688049351423852,despreciable,distribución semejante
+B1,usa_medicamentos_diabetes,Usa medicamentos para la diabetes,Externa: salud,False,False,binaria,η²,0.006275721126197164,χ²,0.344888541066877,529,,0.8171692812870089,despreciable,distribución semejante
+B1,prevision,Previsión de salud,Externa: acceso a salud,False,False,nominal,V²,0.005283518063961671,χ²,0.47065093344832376,529,,0.8171692812870089,despreciable,distribución semejante
+B1,lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,Externa: módulo laboral,False,False,ordinal,η²,0.0019561965891112774,Kruskal-Wallis,0.6599285757698659,287,grupos sin participantes aplicables: [2],0.8192216802660405,despreciable,distribución semejante
+B1,estres_entorno_laboral,Estrés en el entorno laboral,Externa: módulo laboral,False,False,ordinal,η²,0.005582908557306145,Kruskal-Wallis,0.5414096008288516,287,grupos sin participantes aplicables: [2],0.8171692812870089,despreciable,distribución semejante
+B1,sobrecarga_fisica_emocional,Sobrecarga física o emocional por cuidar,Externa: módulo de cuidados,False,False,ordinal,η²,0.04889873252490717,Kruskal-Wallis,0.014997688009163665,251,,0.04908334257544473,pequeña,diferencia pequeña

@@ -1,0 +1,16 @@
+n,prueba,resultado,detalle,segundos
+1,"529 identificadores únicos, alineados en todas las fuentes",superada,"529 en procedencia, Fase 35, limpieza, A y B1",0.12
+2,"Etiquetas de A idénticas a las históricas, con sus tamaños",superada,"idénticas en 3 fuentes; tamaños (150, 76, 132, 171)",0.03
+3,Etiquetas de B1 idénticas a las históricas y a la regla,superada,"idénticas a la columna guardada, a la regla y al mapa; tamaños (150, 79, 126, 174)",0.01
+4,"MRS: ítems, dimensiones, total, severidad y severo correctos",superada,"recalculado desde los ítems; coincide con la limpieza y la Fase 35; cortes 4/5, 8/9, 15/16",0.02
+5,"Faltantes, no aplica e imputadas tratados según el protocolo",superada,"no aplica = 0 en ejercicio y cuidado; módulos solo en su población; IMC solo observado (267); S-OBS quita imputadas, deducida y heredadas",0.02
+6,Ninguna lectura del simulador ni escritura fuera de la carpeta,superada,"3405 archivos leídos, ninguno del simulador; 0 escrituras fuera; el gancho bloquea",0.04
+7,"Prueba estadística apropiada para cada tipo de variable, con valores correctos",superada,"Spearman, Mann-Whitney, Kruskal-Wallis y χ² según el tipo; valores iguales a scipy",0.02
+8,Control de comparaciones múltiples (Benjamini-Hochberg y Holm),superada,BH y Holm iguales a statsmodels; F1 a F5 con el número de pruebas del protocolo,0.03
+9,Resultados reproducibles,superada,"efectos, p e IC bootstrap recalculados iguales a los guardados",1.89
+10,Sin selección retrospectiva por MRS,superada,todos los resultados son posteriores al sello; las 36 variables son las del protocolo; ninguna elección guardada,0.0
+11,Fases anteriores intactas,superada,3532 archivos iguales a sus manifiestos; 4 del simulador sin abrir,0.9
+12,"Django, datos versionados y git sin cambios",superada,"HEAD 745d689; sin cambios en src/, datos/ ni fuera de analisis/",0.15
+13,Caracterización de A reproduce los efectos de la Fase 37C,superada,10 de 10 variables con el mismo η² que la 37C,0.0
+14,Agrupaciones de etapa y previsión fijadas en el protocolo,superada,etapa: 5 categorías (22 indeterminadas); previsión: 3 categorías (24 otra o ninguna),0.01
+15,Tamaños efectivos informados y coherentes,superada,n por prueba y por grupo según el protocolo,0.0

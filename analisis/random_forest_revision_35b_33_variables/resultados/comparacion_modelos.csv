@@ -1,0 +1,61 @@
+﻿modelo,referencia,tipo,metrica,media_modelo,media_referencia,diferencia,de,minimo,maximo,particiones_positivas,particiones,ic95_inferior,ic95_superior,lectura
+B,A,principal,roc_auc,0.622443,0.538268,0.084175,0.056539,-0.026071,0.183750,13,15,0.015937,0.152414,Mejora respaldada
+B,A,principal,balanced_accuracy,0.592910,0.517368,0.075542,0.062718,-0.056429,0.160357,13,15,-0.000155,0.151238,Sin diferencia clara
+C1,C0,principal,roc_auc,0.659274,0.628299,0.030975,0.028508,-0.012626,0.091912,14,15,-0.003433,0.065383,Sin diferencia clara
+C1,C0,principal,balanced_accuracy,0.604514,0.594249,0.010264,0.044676,-0.071970,0.075758,10,15,-0.043656,0.064185,Sin diferencia clara
+D1,D0,principal,roc_auc,0.653704,0.644813,0.008890,0.031782,-0.055357,0.068783,10,15,-0.029469,0.047250,Sin diferencia clara
+D1,D0,principal,balanced_accuracy,0.597099,0.597831,-0.000732,0.035434,-0.055556,0.071429,7,15,-0.043499,0.042035,Sin diferencia clara
+A,Ref_general,referencia,roc_auc,0.538268,0.500000,0.038268,0.046994,-0.074107,0.110000,13,15,-0.018450,0.094986,Sin diferencia clara
+A,Ref_general,referencia,balanced_accuracy,0.517368,0.500000,0.017368,0.046351,-0.115714,0.076786,12,15,-0.038574,0.073311,Sin diferencia clara
+B,Ref_general,referencia,roc_auc,0.622443,0.500000,0.122443,0.045005,0.011278,0.175714,15,15,0.068125,0.176761,Mejora respaldada
+B,Ref_general,referencia,balanced_accuracy,0.592910,0.500000,0.092910,0.049369,0.010357,0.155612,15,15,0.033325,0.152496,Mejora respaldada
+C0,Ref_laboral,referencia,roc_auc,0.628299,0.500000,0.128299,0.051051,0.045455,0.232323,15,15,0.066685,0.189914,Mejora respaldada
+C0,Ref_laboral,referencia,balanced_accuracy,0.594249,0.500000,0.094249,0.046332,0.046569,0.181818,15,15,0.038329,0.150169,Mejora respaldada
+C1,Ref_laboral,referencia,roc_auc,0.659274,0.500000,0.159274,0.049254,0.062424,0.252525,15,15,0.099828,0.218721,Mejora respaldada
+C1,Ref_laboral,referencia,balanced_accuracy,0.604514,0.500000,0.104514,0.033007,0.041667,0.164773,15,15,0.064676,0.144352,Mejora respaldada
+D0,Ref_cuidadoras,referencia,roc_auc,0.644813,0.500000,0.144813,0.081082,-0.005556,0.274250,14,15,0.046952,0.242675,Mejora respaldada
+D0,Ref_cuidadoras,referencia,balanced_accuracy,0.597831,0.500000,0.097831,0.069421,-0.037037,0.193122,13,15,0.014044,0.181618,Mejora respaldada
+D1,Ref_cuidadoras,referencia,roc_auc,0.653704,0.500000,0.153704,0.079154,0.027778,0.288360,15,15,0.058170,0.249237,Mejora respaldada
+D1,Ref_cuidadoras,referencia,balanced_accuracy,0.597099,0.500000,0.097099,0.061255,-0.005291,0.182540,13,15,0.023167,0.171030,Mejora respaldada
+A,A_sin_imc,sensibilidad sin IMC,roc_auc,0.538268,0.524519,0.013749,0.042625,-0.074651,0.083393,10,15,-0.037696,0.065195,Sin diferencia clara
+A,A_sin_imc,sensibilidad sin IMC,balanced_accuracy,0.517368,0.500822,0.016546,0.042096,-0.070000,0.084643,11,15,-0.034261,0.067354,Sin diferencia clara
+B,B_sin_imc,sensibilidad sin IMC,roc_auc,0.622443,0.599386,0.023057,0.015610,0.001790,0.056429,15,15,0.004217,0.041897,Mejora respaldada
+B,B_sin_imc,sensibilidad sin IMC,balanced_accuracy,0.592910,0.579981,0.012929,0.029070,-0.047194,0.057857,10,15,-0.022157,0.048015,Sin diferencia clara
+C0,C0_sin_imc,sensibilidad sin IMC,roc_auc,0.628299,0.623488,0.004812,0.038609,-0.085859,0.056373,11,15,-0.041787,0.051411,Sin diferencia clara
+C0,C0_sin_imc,sensibilidad sin IMC,balanced_accuracy,0.594249,0.566193,0.028056,0.045434,-0.060606,0.100490,11,15,-0.026780,0.082892,Sin diferencia clara
+C1,C1_sin_imc,sensibilidad sin IMC,roc_auc,0.659274,0.651912,0.007363,0.031605,-0.058081,0.050505,8,15,-0.030782,0.045508,Sin diferencia clara
+C1,C1_sin_imc,sensibilidad sin IMC,balanced_accuracy,0.604514,0.588534,0.015980,0.039133,-0.056373,0.068182,10,15,-0.031251,0.063211,Sin diferencia clara
+D0,D0_sin_imc,sensibilidad sin IMC,roc_auc,0.644813,0.649562,-0.004749,0.036411,-0.085714,0.049383,8,15,-0.048695,0.039198,Sin diferencia clara
+D0,D0_sin_imc,sensibilidad sin IMC,balanced_accuracy,0.597831,0.598563,-0.000732,0.054273,-0.140212,0.066138,8,15,-0.066237,0.064773,Sin diferencia clara
+D1,D1_sin_imc,sensibilidad sin IMC,roc_auc,0.653704,0.662695,-0.008992,0.038344,-0.103571,0.050000,7,15,-0.055271,0.037287,Sin diferencia clara
+D1,D1_sin_imc,sensibilidad sin IMC,balanced_accuracy,0.597099,0.607725,-0.010626,0.049092,-0.114286,0.071429,4,15,-0.069877,0.048625,Sin diferencia clara
+B_sin_imc,A_sin_imc,sensibilidad sin IMC,roc_auc,0.599386,0.524519,0.074867,0.072972,-0.099535,0.167857,13,15,-0.013205,0.162940,Sin diferencia clara
+B_sin_imc,A_sin_imc,sensibilidad sin IMC,balanced_accuracy,0.579981,0.500822,0.079159,0.050605,-0.032044,0.160357,13,15,0.018081,0.140236,Mejora respaldada
+C1_sin_imc,C0_sin_imc,sensibilidad sin IMC,roc_auc,0.651912,0.623488,0.028424,0.045072,-0.085859,0.096814,12,15,-0.025975,0.082823,Sin diferencia clara
+C1_sin_imc,C0_sin_imc,sensibilidad sin IMC,balanced_accuracy,0.588534,0.566193,0.022341,0.049944,-0.056818,0.127451,11,15,-0.037939,0.082621,Sin diferencia clara
+D1_sin_imc,D0_sin_imc,sensibilidad sin IMC,roc_auc,0.662695,0.649562,0.013133,0.024745,-0.048214,0.051146,12,15,-0.016732,0.042999,Sin diferencia clara
+D1_sin_imc,D0_sin_imc,sensibilidad sin IMC,balanced_accuracy,0.607725,0.598563,0.009162,0.025103,-0.025000,0.055556,9,15,-0.021136,0.039460,Sin diferencia clara
+B,B_sin_dias,retirada de variables,roc_auc,0.622443,0.618016,0.004427,0.017884,-0.021124,0.031071,9,15,-0.017158,0.026013,Sin diferencia clara
+B,B_sin_dias,retirada de variables,balanced_accuracy,0.592910,0.589322,0.003588,0.032355,-0.068564,0.046786,9,15,-0.035463,0.042639,Sin diferencia clara
+B,B_sin_fuerza,retirada de variables,roc_auc,0.622443,0.621631,0.000812,0.015968,-0.027569,0.040357,8,15,-0.018460,0.020085,Sin diferencia clara
+B,B_sin_fuerza,retirada de variables,balanced_accuracy,0.592910,0.584638,0.008272,0.024985,-0.039384,0.055714,11,15,-0.021884,0.038427,Sin diferencia clara
+B,B_sin_bajo_impacto,retirada de variables,roc_auc,0.622443,0.620512,0.001931,0.018742,-0.028285,0.037143,8,15,-0.020690,0.024552,Sin diferencia clara
+B,B_sin_bajo_impacto,retirada de variables,balanced_accuracy,0.592910,0.595954,-0.003044,0.030333,-0.054064,0.054643,8,15,-0.039653,0.033566,Sin diferencia clara
+B,B_sin_dias_bajo_impacto,retirada de variables,roc_auc,0.622443,0.604808,0.017635,0.027324,-0.018976,0.079643,11,15,-0.015343,0.050614,Sin diferencia clara
+B,B_sin_dias_bajo_impacto,retirada de variables,balanced_accuracy,0.592910,0.581337,0.011573,0.029764,-0.026316,0.075714,10,15,-0.024350,0.047497,Sin diferencia clara
+B,B_sin_actividad,retirada de variables,roc_auc,0.622443,0.589970,0.032473,0.038981,-0.042248,0.081071,11,15,-0.014574,0.079521,Sin diferencia clara
+B,B_sin_actividad,retirada de variables,balanced_accuracy,0.592910,0.562415,0.030495,0.035587,-0.033477,0.077857,11,15,-0.012456,0.073446,Sin diferencia clara
+B,B_imp_particion,imputación en partición,roc_auc,0.622443,0.623781,-0.001337,0.003934,-0.010357,0.003938,3,15,-0.006085,0.003411,Sin diferencia clara
+B,B_imp_particion,imputación en partición,balanced_accuracy,0.592910,0.591342,0.001569,0.011292,-0.017857,0.030000,5,15,-0.012060,0.015197,Sin diferencia clara
+C1,C1_imp_particion,imputación en partición,roc_auc,0.659274,0.662093,-0.002818,0.004545,-0.013889,0.003788,2,15,-0.008304,0.002667,Sin diferencia clara
+C1,C1_imp_particion,imputación en partición,balanced_accuracy,0.604514,0.600755,0.003758,0.007894,0.000000,0.020833,3,15,-0.005770,0.013286,Sin diferencia clara
+D1,D1_imp_particion,imputación en partición,roc_auc,0.653704,0.656177,-0.002474,0.004401,-0.014109,0.003704,4,15,-0.007785,0.002838,Sin diferencia clara
+D1,D1_imp_particion,imputación en partición,balanced_accuracy,0.597099,0.595591,0.001508,0.013122,-0.025000,0.023810,3,15,-0.014329,0.017345,Sin diferencia clara
+B,B_shannon,conjunto Shannon,roc_auc,0.622443,0.603048,0.019395,0.026026,-0.014680,0.059767,11,15,-0.012017,0.050807,Sin diferencia clara
+B,B_shannon,conjunto Shannon,balanced_accuracy,0.592910,0.553507,0.039403,0.030747,-0.011457,0.085714,13,15,0.002294,0.076513,Mejora respaldada
+B_shannon,A,conjunto Shannon,roc_auc,0.603048,0.538268,0.064780,0.042086,-0.045536,0.124286,14,15,0.013985,0.115575,Mejora respaldada
+B_shannon,A,conjunto Shannon,balanced_accuracy,0.553507,0.517368,0.036138,0.041958,-0.051071,0.104592,12,15,-0.014503,0.086779,Sin diferencia clara
+B_resto,Ref_general,conjunto Shannon,roc_auc,0.553686,0.500000,0.053686,0.036191,-0.020773,0.115160,14,15,0.010005,0.097366,Mejora respaldada
+B_resto,Ref_general,conjunto Shannon,balanced_accuracy,0.546176,0.500000,0.046176,0.037120,-0.025510,0.105979,13,15,0.001374,0.090977,Mejora respaldada
+C1,C1_shannon,conjunto Shannon,roc_auc,0.659274,0.623102,0.036172,0.059586,-0.083333,0.176768,11,15,-0.035745,0.108089,Sin diferencia clara
+C1,C1_shannon,conjunto Shannon,balanced_accuracy,0.604514,0.603429,0.001085,0.056680,-0.083333,0.132576,7,15,-0.067325,0.069494,Sin diferencia clara

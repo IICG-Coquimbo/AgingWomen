@@ -1,0 +1,12 @@
+﻿comprobacion,resultado,detalle
+La matriz cubre exactamente las 33 variables,OK,33 filas
+Reparto 30 + 2 + 1,OK,"{'general': 30, 'laboral': 2, 'cuidadoras': 1}"
+El diccionario cubre las 33 variables,OK,143 filas
+Sin variables excluidas,OK,
+Roles de FAMD en la capa general,OK,19 cuantitativas; 11 categóricas
+Módulos fuera de la matriz general,OK,
+Campos completos en la matriz,OK,12 campos
+Ocho entregables presentes,OK,
+Archivos históricos sin cambios frente al manifiesto de cierre,OK,1130 revisados; 0 distintos: []
+Sin commit ni archivos preparados,OK,HEAD 745d689
+No existe carpeta de implementación de la Fase 36B,OK,

@@ -1,0 +1,15 @@
+error_introducido,prueba,detectado
+Se pierde una fila,p01,True
+IMC estandarizado dos veces,p11,True
+IMC estandarizado dos veces,p18,True
+IMC estandarizado dos veces,p27,True
+Entra una variable del MRS,p03,True
+Entra una variable del MRS,p05,True
+Valor no finito en una matriz,p05,True
+Nominal sin ponderar en PCA,p19,True
+«Nunca» deja de unificarse,p16,True
+Se pierde una marca de cero heredado,p25,True
+Se pierde una marca de cero heredado,p29,True
+Se abre la verdad del simulador,p23,True
+Aparece sobrecarga 0,p15,True
+Aparece un 0 laboral de relleno,p14,True

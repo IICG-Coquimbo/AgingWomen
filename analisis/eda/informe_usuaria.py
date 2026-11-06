@@ -76,10 +76,11 @@ def generar(r):
         f'  (las {n - n_mrs} restantes se describen, pero no entran a los cruces con la severidad).',
         f'- Trabajan {r["trabajadoras"]} ({_pct(r["trabajadoras"], n)}); {trabajan_mrs} de ellas tienen MRS completo.',
         f'  En {sin_seccion} el dato "trabaja" vino vacío y la limpieza lo imputó con la moda ("sí"), por eso',
-        '  no tienen respondida la sección Trabajo.',
+        '  no tienen respondida la sección Trabajo. Las poblaciones de la Fase 35 usan a las demás (287 con MRS completo).',
         '- **Variables incluidas:** actividad física, alimentación, sustancias, cuidado de otras personas y',
-        '  trabajo (predictores); edad, etapa menopáusica, IMC, terapia hormonal, previsión de salud y',
-        '  medicamentos para la diabetes (control); salud ginecológica (menstruación, sangrado, método',
+        '  trabajo (predictores); edad, IMC, terapia hormonal, previsión de salud y',
+        '  medicamentos para la diabetes (control); etapa menopáusica (descriptiva: variable derivada, no es una',
+        '  pregunta de la encuesta); salud ginecológica (menstruación, sangrado, método',
         '  anticonceptivo, útero, ovarios, operada para no tener más hijos) y medicamentos para la presión,',
         '  evacuación intestinal y distensión abdominal; origen, pueblo originario, comuna, pareja y',
         '  actividad sexual (otras características).',
@@ -129,7 +130,8 @@ def generar(r):
         '- Pares redundantes (|rho| ≥ 0,8): '
         + ('; '.join(f'{V.etiqueta(a).lower()} y {V.etiqueta(b).lower()} ({c:+.2f})' for a, b, c in r['redundantes'])
            or 'ninguno') + '.',
-        '- El IMC entra como categoría con "no informado"; el IMC numérico solo sirve en quienes lo informaron.',
+        '- El IMC se prueba aquí como categoría con "no informado", lo que mezcla faltantes con estado nutricional; la Fase 35A',
+        '  usa el IMC numérico imputado con la media (decisión 2026-10-27), con la marca `imc_fue_imputado`.',
         '- Las variables de trabajo solo existen para quienes trabajan: van en un análisis aparte o con un',
         '  nivel "no trabaja".',
         '',
@@ -138,7 +140,8 @@ def generar(r):
         '- Si la clase severa (cerca de la mitad) es aceptable o conviene revisar los cortes para el modelado.',
         '- Si comuna, origen y pueblo originario se mantienen: tienen muchas categorías con pocos casos.',
         '- La definición de etapa menopáusica (STRAW+10 simplificado) es nuestra: se mantiene como variable',
-        '  de control (decisión 2026-10-26), pero conviene que la profesora la valide.',
+        '  descriptiva y fuera del modelado (decisión 2026-11-01, reemplaza la del 2026-10-26), pero conviene que la',
+        '  profesora la valide.',
         '',
     ]
     out += _anexo_direccion(r, num)
@@ -324,7 +327,8 @@ def _seccion_calidad(r, num):
         '',
         f'- **Más del 30 %:** ' + ', '.join(f'{V.etiqueta(v).lower()} ({p:.1f} %)'
                                              for v, p in zip(altas['variable'], altas['pct_faltante']))
-        + '. No se imputan ni se modelan; el IMC entra como categoría con "no informado".',
+        + '. No se imputan ni se modelan; en esta fase el IMC se prueba como categoría con "no informado" y la Fase 35A '
+        'usa el IMC numérico imputado con la media.',
         f'- **Resto:** {len(resto)} variables entre {resto["pct_faltante"].min():.1f} % y '
         f'{resto["pct_faltante"].max():.1f} %, imputadas en la limpieza (moda o mediana; con marca',
         '  `_imputado` cuando superan el 5 %). Las más altas son las preguntas de menstruación, que quedan',
@@ -499,7 +503,7 @@ def _explicacion_fdr(r):
     out += [
         '**Por qué hay dos familias de pruebas.** Como el número total de pruebas multiplica al p, mientras más',
         f'pruebas entran en la misma corrección, más exigente se vuelve. A las {n_p} pruebas principales',
-        f'(hábitos, trabajo, cuidado, control y otras características) se suman {len(secundaria)} pruebas de',
+        f'(hábitos, trabajo, cuidado, control, etapa menopáusica y otras características) se suman {len(secundaria)} pruebas de',
         'salud ginecológica y general, que responden otra pregunta: si la severidad depende de la situación',
         'ginecológica o de otros problemas de salud.',
     ]

@@ -1,0 +1,361 @@
+repeticion,variable,bloque,particion,r2_fuera
+10,edad,Otras generales,A,0.0027631069383182716
+10,edad,Otras generales,B1,-0.000968918586400136
+10,edad,Otras generales,B2,-0.0053594846572269095
+10,edad,Otras generales,B2C,-0.016192001420806346
+10,edad,Otras generales,celdas,-0.04671051322593467
+10,edad,Otras generales,A-X,-0.0006694491204199959
+10,edad,Otras generales,A8-X,-0.0041365549168979054
+10,edad,Otras generales,A16-X,0.000949048998132862
+10,edad,Otras generales,celdas+A,-0.06250854409092543
+10,edad,Otras generales,celdas+A-X,-0.025733631885658692
+10,edad,Otras generales,celdas+A8-X,-0.03579538059335352
+10,edad,Otras generales,celdas+A16-X,-0.05213634466925465
+10,imc,IMC observado,A,-0.013541322638155329
+10,imc,IMC observado,B1,-0.0005461065116485475
+10,imc,IMC observado,B2,-0.0043391020688507975
+10,imc,IMC observado,B2C,-0.022958919900618824
+10,imc,IMC observado,celdas,-0.02603657257020031
+10,imc,IMC observado,A-X,-0.013541322638155329
+10,imc,IMC observado,A8-X,-0.0225134373942395
+10,imc,IMC observado,A16-X,-0.0018646873064189773
+10,imc,IMC observado,celdas+A,-0.1020028525337835
+10,imc,IMC observado,celdas+A-X,-0.1020028525337835
+10,imc,IMC observado,celdas+A8-X,-0.0804300113864922
+10,imc,IMC observado,celdas+A16-X,-0.029002863520243505
+10,horas_sedentarismo,Sedentarismo,A,-0.022801060084398195
+10,horas_sedentarismo,Sedentarismo,B1,-0.02592404096030454
+10,horas_sedentarismo,Sedentarismo,B2,-0.016501937542370504
+10,horas_sedentarismo,Sedentarismo,B2C,-0.024877623903508672
+10,horas_sedentarismo,Sedentarismo,celdas,0.015344242518967488
+10,horas_sedentarismo,Sedentarismo,A-X,-0.016081025744231203
+10,horas_sedentarismo,Sedentarismo,A8-X,-0.009453418004655267
+10,horas_sedentarismo,Sedentarismo,A16-X,-0.007514663140543609
+10,horas_sedentarismo,Sedentarismo,celdas+A,0.010273059260239692
+10,horas_sedentarismo,Sedentarismo,celdas+A-X,0.0028269686664629257
+10,horas_sedentarismo,Sedentarismo,celdas+A8-X,0.008444699701915859
+10,horas_sedentarismo,Sedentarismo,celdas+A16-X,0.00262603573176734
+10,trabaja_actualmente,Las tres preguntas,A,0.4939705700961151
+10,trabaja_actualmente,Las tres preguntas,B1,0.5593769762898058
+10,trabaja_actualmente,Las tres preguntas,B2,0.5829354551027651
+10,trabaja_actualmente,Las tres preguntas,B2C,1.0
+10,trabaja_actualmente,Las tres preguntas,celdas,0.9888316432905038
+10,trabaja_actualmente,Las tres preguntas,A-X,-0.0004987490726924282
+10,trabaja_actualmente,Las tres preguntas,A8-X,-0.012946745178291641
+10,trabaja_actualmente,Las tres preguntas,A16-X,0.0008508699733654757
+10,trabaja_actualmente,Las tres preguntas,celdas+A,0.9888316432905038
+10,trabaja_actualmente,Las tres preguntas,celdas+A-X,0.9888316432905038
+10,trabaja_actualmente,Las tres preguntas,celdas+A8-X,0.9888316432905038
+10,trabaja_actualmente,Las tres preguntas,celdas+A16-X,0.9888316432905038
+10,tiene_pareja,Las tres preguntas,A,0.5834078512302527
+10,tiene_pareja,Las tres preguntas,B1,0.819625569754289
+10,tiene_pareja,Las tres preguntas,B2,0.8484536850821658
+10,tiene_pareja,Las tres preguntas,B2C,1.0
+10,tiene_pareja,Las tres preguntas,celdas,0.9873505781937858
+10,tiene_pareja,Las tres preguntas,A-X,-0.0077663608552018815
+10,tiene_pareja,Las tres preguntas,A8-X,0.010180603165601543
+10,tiene_pareja,Las tres preguntas,A16-X,-0.0006338400453727022
+10,tiene_pareja,Las tres preguntas,celdas+A,0.9873505781937858
+10,tiene_pareja,Las tres preguntas,celdas+A-X,0.9873505781937859
+10,tiene_pareja,Las tres preguntas,celdas+A8-X,0.9873505781937858
+10,tiene_pareja,Las tres preguntas,celdas+A16-X,0.9873505781937858
+10,tiene_actividad_sexual,Actividad sexual (descriptiva),A,0.2336119777929988
+10,tiene_actividad_sexual,Actividad sexual (descriptiva),B1,0.08054434794580345
+10,tiene_actividad_sexual,Actividad sexual (descriptiva),B2,0.10243433411254632
+10,tiene_actividad_sexual,Actividad sexual (descriptiva),B2C,0.1490464272107619
+10,tiene_actividad_sexual,Actividad sexual (descriptiva),celdas,0.08986957316558031
+10,tiene_actividad_sexual,Actividad sexual (descriptiva),A-X,-0.0065873890479055675
+10,tiene_actividad_sexual,Actividad sexual (descriptiva),A8-X,-0.006146438727730352
+10,tiene_actividad_sexual,Actividad sexual (descriptiva),A16-X,-0.011730241111067796
+10,tiene_actividad_sexual,Actividad sexual (descriptiva),celdas+A,0.23568264424703012
+10,tiene_actividad_sexual,Actividad sexual (descriptiva),celdas+A-X,0.05308051424447291
+10,tiene_actividad_sexual,Actividad sexual (descriptiva),celdas+A8-X,0.07348207501328652
+10,tiene_actividad_sexual,Actividad sexual (descriptiva),celdas+A16-X,0.07261327341700718
+10,operada_no_mas_hijos,Otras generales,A,-0.008798746471751828
+10,operada_no_mas_hijos,Otras generales,B1,-0.0011832853213005201
+10,operada_no_mas_hijos,Otras generales,B2,-0.0019886794932992835
+10,operada_no_mas_hijos,Otras generales,B2C,-0.02078239209444277
+10,operada_no_mas_hijos,Otras generales,celdas,-0.06869039024895374
+10,operada_no_mas_hijos,Otras generales,A-X,-0.002397923636940247
+10,operada_no_mas_hijos,Otras generales,A8-X,-0.0038791797886061907
+10,operada_no_mas_hijos,Otras generales,A16-X,-0.004748993175074379
+10,operada_no_mas_hijos,Otras generales,celdas+A,-0.09888464828317578
+10,operada_no_mas_hijos,Otras generales,celdas+A-X,-0.07614656503786299
+10,operada_no_mas_hijos,Otras generales,celdas+A8-X,-0.08133254952827307
+10,operada_no_mas_hijos,Otras generales,celdas+A16-X,-0.08631881487314996
+10,usa_medicamentos_presion,Otras generales,A,-0.004264933393898884
+10,usa_medicamentos_presion,Otras generales,B1,-0.013251882460023179
+10,usa_medicamentos_presion,Otras generales,B2,-0.018135861364535932
+10,usa_medicamentos_presion,Otras generales,B2C,-0.029510162180331534
+10,usa_medicamentos_presion,Otras generales,celdas,-0.04683303429744656
+10,usa_medicamentos_presion,Otras generales,A-X,-0.011355410523880227
+10,usa_medicamentos_presion,Otras generales,A8-X,-0.005770325529165898
+10,usa_medicamentos_presion,Otras generales,A16-X,-0.006719600029932549
+10,usa_medicamentos_presion,Otras generales,celdas+A,-0.023468806377721974
+10,usa_medicamentos_presion,Otras generales,celdas+A-X,-0.058842187083497866
+10,usa_medicamentos_presion,Otras generales,celdas+A8-X,-0.021625495592930477
+10,usa_medicamentos_presion,Otras generales,celdas+A16-X,-0.04356849571690069
+10,quien_prepara_comidas,Alimentación,A,-0.01526321715417045
+10,quien_prepara_comidas,Alimentación,B1,-0.014437309125776565
+10,quien_prepara_comidas,Alimentación,B2,-0.012549345980858329
+10,quien_prepara_comidas,Alimentación,B2C,-0.03671071503147316
+10,quien_prepara_comidas,Alimentación,celdas,-0.1071830869614796
+10,quien_prepara_comidas,Alimentación,A-X,-0.0013171892697312337
+10,quien_prepara_comidas,Alimentación,A8-X,-0.008992438010542836
+10,quien_prepara_comidas,Alimentación,A16-X,-0.005796779336170399
+10,quien_prepara_comidas,Alimentación,celdas+A,-0.11461427846601091
+10,quien_prepara_comidas,Alimentación,celdas+A-X,-0.10440961816998628
+10,quien_prepara_comidas,Alimentación,celdas+A8-X,-0.10762368455482041
+10,quien_prepara_comidas,Alimentación,celdas+A16-X,-0.10310972366395132
+10,alcohol_frecuencia,Tabaco y alcohol,A,0.0015451743511141203
+10,alcohol_frecuencia,Tabaco y alcohol,B1,-0.0004839504425220298
+10,alcohol_frecuencia,Tabaco y alcohol,B2,0.004975244852506
+10,alcohol_frecuencia,Tabaco y alcohol,B2C,-0.007017437044263941
+10,alcohol_frecuencia,Tabaco y alcohol,celdas,-0.08688735337433484
+10,alcohol_frecuencia,Tabaco y alcohol,A-X,0.0033550553966037455
+10,alcohol_frecuencia,Tabaco y alcohol,A8-X,0.004751930405695326
+10,alcohol_frecuencia,Tabaco y alcohol,A16-X,0.011070836620111102
+10,alcohol_frecuencia,Tabaco y alcohol,celdas+A,-0.08534153893619845
+10,alcohol_frecuencia,Tabaco y alcohol,celdas+A-X,-0.0825382709776028
+10,alcohol_frecuencia,Tabaco y alcohol,celdas+A8-X,-0.08556684175949725
+10,alcohol_frecuencia,Tabaco y alcohol,celdas+A16-X,-0.08470647231892947
+10,cantidad_personas_cuida,Cuidados,A,0.0034307923455668687
+10,cantidad_personas_cuida,Cuidados,B1,-0.009795751019829435
+10,cantidad_personas_cuida,Cuidados,B2,-0.009482477988445037
+10,cantidad_personas_cuida,Cuidados,B2C,-0.018255152066736224
+10,cantidad_personas_cuida,Cuidados,celdas,-0.13435217664208876
+10,cantidad_personas_cuida,Cuidados,A-X,-0.004097337384030952
+10,cantidad_personas_cuida,Cuidados,A8-X,-0.008946430264871186
+10,cantidad_personas_cuida,Cuidados,A16-X,-0.00459594688282583
+10,cantidad_personas_cuida,Cuidados,celdas+A,-0.11558805457466792
+10,cantidad_personas_cuida,Cuidados,celdas+A-X,-0.12896982576446891
+10,cantidad_personas_cuida,Cuidados,celdas+A8-X,-0.1595063202762974
+10,cantidad_personas_cuida,Cuidados,celdas+A16-X,-0.12545078404376264
+10,carnes_semana,Alimentación,A,0.013798460306005289
+10,carnes_semana,Alimentación,B1,0.003310731207773032
+10,carnes_semana,Alimentación,B2,0.014795650296887897
+10,carnes_semana,Alimentación,B2C,0.04829819805628266
+10,carnes_semana,Alimentación,celdas,-0.002014846043486118
+10,carnes_semana,Alimentación,A-X,0.004913681711539164
+10,carnes_semana,Alimentación,A8-X,-0.012044556563444608
+10,carnes_semana,Alimentación,A16-X,0.026350243750100533
+10,carnes_semana,Alimentación,celdas+A,-0.015017679349174529
+10,carnes_semana,Alimentación,celdas+A-X,0.0004769351980142833
+10,carnes_semana,Alimentación,celdas+A8-X,-0.019647321771433024
+10,carnes_semana,Alimentación,celdas+A16-X,0.015196380973162449
+10,dias_ejercicio_semana,Las tres preguntas,A,0.5983959027220122
+10,dias_ejercicio_semana,Las tres preguntas,B1,0.5748901069631249
+10,dias_ejercicio_semana,Las tres preguntas,B2,0.662071472026135
+10,dias_ejercicio_semana,Las tres preguntas,B2C,0.6724943141224997
+10,dias_ejercicio_semana,Las tres preguntas,celdas,0.953198457224303
+10,dias_ejercicio_semana,Las tres preguntas,A-X,0.4232891528965472
+10,dias_ejercicio_semana,Las tres preguntas,A8-X,0.42131124207468607
+10,dias_ejercicio_semana,Las tres preguntas,A16-X,0.4459589716606772
+10,dias_ejercicio_semana,Las tres preguntas,celdas+A,0.953198457224303
+10,dias_ejercicio_semana,Las tres preguntas,celdas+A-X,0.9531984572243031
+10,dias_ejercicio_semana,Las tres preguntas,celdas+A8-X,0.9531984572243031
+10,dias_ejercicio_semana,Las tres preguntas,celdas+A16-X,0.9531984572243031
+10,distension_abdominal,Digestión (descriptiva),A,0.002238484303566768
+10,distension_abdominal,Digestión (descriptiva),B1,-0.002677859177386832
+10,distension_abdominal,Digestión (descriptiva),B2,-0.002055232679029295
+10,distension_abdominal,Digestión (descriptiva),B2C,-0.026176848263487873
+10,distension_abdominal,Digestión (descriptiva),celdas,-0.01867529573512372
+10,distension_abdominal,Digestión (descriptiva),A-X,1.680824703509387e-05
+10,distension_abdominal,Digestión (descriptiva),A8-X,0.00190577019307403
+10,distension_abdominal,Digestión (descriptiva),A16-X,-0.00012555227748922704
+10,distension_abdominal,Digestión (descriptiva),celdas+A,-0.02953148663069527
+10,distension_abdominal,Digestión (descriptiva),celdas+A-X,-0.03839286608391257
+10,distension_abdominal,Digestión (descriptiva),celdas+A8-X,-0.017617397693013404
+10,distension_abdominal,Digestión (descriptiva),celdas+A16-X,-0.04259801507990102
+10,evacuacion_intestinal,Digestión (descriptiva),A,0.0608476450658485
+10,evacuacion_intestinal,Digestión (descriptiva),B1,-0.027017086831376158
+10,evacuacion_intestinal,Digestión (descriptiva),B2,-0.020159826767353728
+10,evacuacion_intestinal,Digestión (descriptiva),B2C,-0.037703230294574785
+10,evacuacion_intestinal,Digestión (descriptiva),celdas,-0.13461003598148835
+10,evacuacion_intestinal,Digestión (descriptiva),A-X,-0.00654685932317256
+10,evacuacion_intestinal,Digestión (descriptiva),A8-X,-0.007381324746724038
+10,evacuacion_intestinal,Digestión (descriptiva),A16-X,-0.005590892560143557
+10,evacuacion_intestinal,Digestión (descriptiva),celdas+A,-0.04525508052206728
+10,evacuacion_intestinal,Digestión (descriptiva),celdas+A-X,-0.13312190625356535
+10,evacuacion_intestinal,Digestión (descriptiva),celdas+A8-X,-0.13276782636312312
+10,evacuacion_intestinal,Digestión (descriptiva),celdas+A16-X,-0.132443575227571
+10,falta_tiempo_influye,Alimentación,A,0.08350405437695174
+10,falta_tiempo_influye,Alimentación,B1,0.05132036181788968
+10,falta_tiempo_influye,Alimentación,B2,0.055274999271438086
+10,falta_tiempo_influye,Alimentación,B2C,0.07650163778092833
+10,falta_tiempo_influye,Alimentación,celdas,0.07059563279296244
+10,falta_tiempo_influye,Alimentación,A-X,-0.01568404392219991
+10,falta_tiempo_influye,Alimentación,A8-X,-0.013428982502607933
+10,falta_tiempo_influye,Alimentación,A16-X,-0.014247478202406683
+10,falta_tiempo_influye,Alimentación,celdas+A,0.08966056682859391
+10,falta_tiempo_influye,Alimentación,celdas+A-X,0.06456414755751283
+10,falta_tiempo_influye,Alimentación,celdas+A8-X,0.05891485816932385
+10,falta_tiempo_influye,Alimentación,celdas+A16-X,0.0655406333860089
+10,frecuencia_aerobico,Actividad física adicional,A,0.6150156160695623
+10,frecuencia_aerobico,Actividad física adicional,B1,0.47518943174521233
+10,frecuencia_aerobico,Actividad física adicional,B2,0.4738725206776675
+10,frecuencia_aerobico,Actividad física adicional,B2C,0.5434370250034528
+10,frecuencia_aerobico,Actividad física adicional,celdas,0.5495580898853388
+10,frecuencia_aerobico,Actividad física adicional,A-X,-0.005783879284325444
+10,frecuencia_aerobico,Actividad física adicional,A8-X,-0.029956184369946515
+10,frecuencia_aerobico,Actividad física adicional,A16-X,-0.0403764524423349
+10,frecuencia_aerobico,Actividad física adicional,celdas+A,0.6333350573727048
+10,frecuencia_aerobico,Actividad física adicional,celdas+A-X,0.5492770831675018
+10,frecuencia_aerobico,Actividad física adicional,celdas+A8-X,0.5417359787458843
+10,frecuencia_aerobico,Actividad física adicional,celdas+A16-X,0.5419243805016134
+10,frecuencia_bajo_impacto,Actividad física adicional,A,0.2908536579071882
+10,frecuencia_bajo_impacto,Actividad física adicional,B1,0.1680667967388777
+10,frecuencia_bajo_impacto,Actividad física adicional,B2,0.22716871228380275
+10,frecuencia_bajo_impacto,Actividad física adicional,B2C,0.2654120288928703
+10,frecuencia_bajo_impacto,Actividad física adicional,celdas,0.35913440417964415
+10,frecuencia_bajo_impacto,Actividad física adicional,A-X,0.01429953964246522
+10,frecuencia_bajo_impacto,Actividad física adicional,A8-X,-0.0010764025465823668
+10,frecuencia_bajo_impacto,Actividad física adicional,A16-X,-0.033954387500382044
+10,frecuencia_bajo_impacto,Actividad física adicional,celdas+A,0.3431438416064434
+10,frecuencia_bajo_impacto,Actividad física adicional,celdas+A-X,0.3616032284995516
+10,frecuencia_bajo_impacto,Actividad física adicional,celdas+A8-X,0.380088006722761
+10,frecuencia_bajo_impacto,Actividad física adicional,celdas+A16-X,0.3558542314536013
+10,frecuencia_comida_fuera,Alimentación,A,0.1335407224883407
+10,frecuencia_comida_fuera,Alimentación,B1,0.07360306266398631
+10,frecuencia_comida_fuera,Alimentación,B2,0.07999121162106215
+10,frecuencia_comida_fuera,Alimentación,B2C,0.08568005768107956
+10,frecuencia_comida_fuera,Alimentación,celdas,0.04081885202631075
+10,frecuencia_comida_fuera,Alimentación,A-X,0.010821106768094002
+10,frecuencia_comida_fuera,Alimentación,A8-X,0.0026723083348808574
+10,frecuencia_comida_fuera,Alimentación,A16-X,0.008007401166672312
+10,frecuencia_comida_fuera,Alimentación,celdas+A,0.08738245803064493
+10,frecuencia_comida_fuera,Alimentación,celdas+A-X,0.04759256231337616
+10,frecuencia_comida_fuera,Alimentación,celdas+A8-X,0.05043622413002402
+10,frecuencia_comida_fuera,Alimentación,celdas+A16-X,0.04649731585808636
+10,frecuencia_fuerza,Actividad física adicional,A,0.4397120568799733
+10,frecuencia_fuerza,Actividad física adicional,B1,0.3583804340373965
+10,frecuencia_fuerza,Actividad física adicional,B2,0.40049941116282795
+10,frecuencia_fuerza,Actividad física adicional,B2C,0.39156765534748683
+10,frecuencia_fuerza,Actividad física adicional,celdas,0.2979935440915996
+10,frecuencia_fuerza,Actividad física adicional,A-X,-0.014339970757749843
+10,frecuencia_fuerza,Actividad física adicional,A8-X,-0.04723431521040111
+10,frecuencia_fuerza,Actividad física adicional,A16-X,-0.014243604117954778
+10,frecuencia_fuerza,Actividad física adicional,celdas+A,0.3790618207026446
+10,frecuencia_fuerza,Actividad física adicional,celdas+A-X,0.2866268287839867
+10,frecuencia_fuerza,Actividad física adicional,celdas+A8-X,0.2677203451727709
+10,frecuencia_fuerza,Actividad física adicional,celdas+A16-X,0.2842809412727868
+10,frutas_dia,Alimentación,A,0.02309941891417555
+10,frutas_dia,Alimentación,B1,-0.008659936533587542
+10,frutas_dia,Alimentación,B2,-0.006478919014326845
+10,frutas_dia,Alimentación,B2C,-0.021895131013004
+10,frutas_dia,Alimentación,celdas,0.005275810722838448
+10,frutas_dia,Alimentación,A-X,0.0003069483901325665
+10,frutas_dia,Alimentación,A8-X,-0.004471091178298803
+10,frutas_dia,Alimentación,A16-X,-0.0007082194304315337
+10,frutas_dia,Alimentación,celdas+A,0.049046432374030946
+10,frutas_dia,Alimentación,celdas+A-X,0.0077650457400590955
+10,frutas_dia,Alimentación,celdas+A8-X,0.0015427437867305827
+10,frutas_dia,Alimentación,celdas+A16-X,0.0004808128394134803
+10,golosinas_semana,Alimentación,A,-0.05416439466028411
+10,golosinas_semana,Alimentación,B1,-0.02397026740061925
+10,golosinas_semana,Alimentación,B2,-0.026151388045933643
+10,golosinas_semana,Alimentación,B2C,-0.10062726955667567
+10,golosinas_semana,Alimentación,celdas,-0.15865923771153412
+10,golosinas_semana,Alimentación,A-X,-0.0556473000649802
+10,golosinas_semana,Alimentación,A8-X,-0.05980261951587851
+10,golosinas_semana,Alimentación,A16-X,-0.030673497474994704
+10,golosinas_semana,Alimentación,celdas+A,-0.225813411144822
+10,golosinas_semana,Alimentación,celdas+A-X,-0.19178800128168128
+10,golosinas_semana,Alimentación,celdas+A8-X,-0.1956315485290514
+10,golosinas_semana,Alimentación,celdas+A16-X,-0.16804567810058302
+10,jugos_gaseosas_dia,Alimentación,A,-0.006885466913820082
+10,jugos_gaseosas_dia,Alimentación,B1,0.003496825773603107
+10,jugos_gaseosas_dia,Alimentación,B2,0.006476556293641189
+10,jugos_gaseosas_dia,Alimentación,B2C,0.0035959324217794686
+10,jugos_gaseosas_dia,Alimentación,celdas,-0.07448170356296435
+10,jugos_gaseosas_dia,Alimentación,A-X,-0.004772483662788263
+10,jugos_gaseosas_dia,Alimentación,A8-X,-0.012234389337066665
+10,jugos_gaseosas_dia,Alimentación,A16-X,-0.0037283480653120815
+10,jugos_gaseosas_dia,Alimentación,celdas+A,-0.0950113376305779
+10,jugos_gaseosas_dia,Alimentación,celdas+A-X,-0.07560710931581771
+10,jugos_gaseosas_dia,Alimentación,celdas+A8-X,-0.07608526527277193
+10,jugos_gaseosas_dia,Alimentación,celdas+A16-X,-0.07343367277354718
+10,lacteos_dia,Alimentación,A,0.0022577820921828584
+10,lacteos_dia,Alimentación,B1,-0.001953492306085769
+10,lacteos_dia,Alimentación,B2,-0.002546768174509273
+10,lacteos_dia,Alimentación,B2C,0.006796775025797119
+10,lacteos_dia,Alimentación,celdas,-0.05524789781601358
+10,lacteos_dia,Alimentación,A-X,-0.0015657491319625017
+10,lacteos_dia,Alimentación,A8-X,0.0067207266434740065
+10,lacteos_dia,Alimentación,A16-X,-0.0024820677315100514
+10,lacteos_dia,Alimentación,celdas+A,-0.05450961799140441
+10,lacteos_dia,Alimentación,celdas+A-X,-0.0725201263472166
+10,lacteos_dia,Alimentación,celdas+A8-X,-0.05453385694327406
+10,lacteos_dia,Alimentación,celdas+A16-X,-0.05910044402165138
+10,legumbres_semana,Alimentación,A,-0.005673646419106504
+10,legumbres_semana,Alimentación,B1,-0.010144250038884861
+10,legumbres_semana,Alimentación,B2,-0.00966297087944823
+10,legumbres_semana,Alimentación,B2C,0.005765284728243003
+10,legumbres_semana,Alimentación,celdas,0.019815820043330712
+10,legumbres_semana,Alimentación,A-X,-0.001710680762606831
+10,legumbres_semana,Alimentación,A8-X,-0.0009507048950521124
+10,legumbres_semana,Alimentación,A16-X,-0.0018498984303112476
+10,legumbres_semana,Alimentación,celdas+A,0.007311603640131281
+10,legumbres_semana,Alimentación,celdas+A-X,0.01407686349508197
+10,legumbres_semana,Alimentación,celdas+A8-X,0.011483743021977633
+10,legumbres_semana,Alimentación,celdas+A16-X,0.018685111737197557
+10,panes_dia,Alimentación,A,0.0019929400477916026
+10,panes_dia,Alimentación,B1,-0.012386097395508333
+10,panes_dia,Alimentación,B2,-0.005525686415996933
+10,panes_dia,Alimentación,B2C,-0.02011206013957767
+10,panes_dia,Alimentación,celdas,0.01259462184553739
+10,panes_dia,Alimentación,A-X,-0.0012973987576267998
+10,panes_dia,Alimentación,A8-X,-0.004203630922038348
+10,panes_dia,Alimentación,A16-X,0.0011564115123744445
+10,panes_dia,Alimentación,celdas+A,0.008008035650195033
+10,panes_dia,Alimentación,celdas+A-X,0.022692080004824033
+10,panes_dia,Alimentación,celdas+A8-X,0.018224939772497728
+10,panes_dia,Alimentación,celdas+A16-X,0.011772542626095062
+10,pescado_semana,Alimentación,A,0.00582620303763115
+10,pescado_semana,Alimentación,B1,-0.017650090867408652
+10,pescado_semana,Alimentación,B2,-0.012030437619564571
+10,pescado_semana,Alimentación,B2C,-0.03190759175069924
+10,pescado_semana,Alimentación,celdas,-0.043606784832999956
+10,pescado_semana,Alimentación,A-X,-0.00878192102290054
+10,pescado_semana,Alimentación,A8-X,-0.01540281865611548
+10,pescado_semana,Alimentación,A16-X,-0.012621995219830984
+10,pescado_semana,Alimentación,celdas+A,-0.011806478224568817
+10,pescado_semana,Alimentación,celdas+A-X,-0.048522810379770576
+10,pescado_semana,Alimentación,celdas+A8-X,-0.050604524039043586
+10,pescado_semana,Alimentación,celdas+A16-X,-0.04846470246782797
+10,platos_verduras_dia,Alimentación,A,-0.031477374650874745
+10,platos_verduras_dia,Alimentación,B1,-0.030937114794850062
+10,platos_verduras_dia,Alimentación,B2,-0.04984140542342175
+10,platos_verduras_dia,Alimentación,B2C,-0.04772104185495918
+10,platos_verduras_dia,Alimentación,celdas,-0.07277209811954632
+10,platos_verduras_dia,Alimentación,A-X,0.002875987780578515
+10,platos_verduras_dia,Alimentación,A8-X,-0.000260034770959372
+10,platos_verduras_dia,Alimentación,A16-X,0.001752720537229302
+10,platos_verduras_dia,Alimentación,celdas+A,-0.0660431989191792
+10,platos_verduras_dia,Alimentación,celdas+A-X,-0.07437842537426476
+10,platos_verduras_dia,Alimentación,celdas+A8-X,-0.06644600420155733
+10,platos_verduras_dia,Alimentación,celdas+A16-X,-0.06718127999961832
+10,tabaco_frecuencia,Tabaco y alcohol,A,-0.006509577366119901
+10,tabaco_frecuencia,Tabaco y alcohol,B1,-0.005079409458531803
+10,tabaco_frecuencia,Tabaco y alcohol,B2,0.0014144456635357683
+10,tabaco_frecuencia,Tabaco y alcohol,B2C,-0.006108311324531712
+10,tabaco_frecuencia,Tabaco y alcohol,celdas,-0.14166359296167785
+10,tabaco_frecuencia,Tabaco y alcohol,A-X,-0.005125498903694403
+10,tabaco_frecuencia,Tabaco y alcohol,A8-X,-0.0009570208768758803
+10,tabaco_frecuencia,Tabaco y alcohol,A16-X,-0.009537454656876498
+10,tabaco_frecuencia,Tabaco y alcohol,celdas+A,-0.16519013194485566
+10,tabaco_frecuencia,Tabaco y alcohol,celdas+A-X,-0.14743784375896052
+10,tabaco_frecuencia,Tabaco y alcohol,celdas+A8-X,-0.1338159780610546
+10,tabaco_frecuencia,Tabaco y alcohol,celdas+A16-X,-0.16858306343310647
+10,vasos_agua_dia,Alimentación,A,0.04581895685243942
+10,vasos_agua_dia,Alimentación,B1,0.023847163194294918
+10,vasos_agua_dia,Alimentación,B2,0.014926066830543872
+10,vasos_agua_dia,Alimentación,B2C,-0.01746783951092512
+10,vasos_agua_dia,Alimentación,celdas,-0.02572229485636135
+10,vasos_agua_dia,Alimentación,A-X,-0.019907578737536458
+10,vasos_agua_dia,Alimentación,A8-X,-0.02521939967349396
+10,vasos_agua_dia,Alimentación,A16-X,-0.023322686299391604
+10,vasos_agua_dia,Alimentación,celdas+A,-0.00045492988404394197
+10,vasos_agua_dia,Alimentación,celdas+A-X,-0.03598433519794808
+10,vasos_agua_dia,Alimentación,celdas+A8-X,-0.06282302029764764
+10,vasos_agua_dia,Alimentación,celdas+A16-X,-0.04283050762130891

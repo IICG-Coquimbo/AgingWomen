@@ -1,0 +1,20 @@
+prueba,nombre,resultado,detalle
+1,Exactamente las 33 candidatas documentadas,superada,33 = predictores_elegibles_33.csv = VARIABLES_33
+2,doble_carga no es candidata,superada,ausente del escenario y de los 500 resultados
+3,prevision no ingresa a la selección,superada,ausente del escenario y de los 500 resultados
+4,Población analítica correcta (529; 281/248; 287 laborales; 239 cuidadoras) y datos idénticos al conjunto de 33,superada,tamaños correctos; dataset de 33 igual texto a texto sin la diabetes
+5,Exactamente 500 remuestreos,superada,"500 archivos, rem_0000 a rem_0499"
+6,Índices dentro del conjunto original y guardados con su huella,superada,500 vectores en 0-528; huellas iguales
+7,"Mecanismo: bootstrap estratificado con reemplazo, mismas muestras que la corrida antigua",superada,281/248 en cada muestra; personas distintas 314-358 (media 335); n laboral igual a la antigua en 500/500
+8,"Sin filtraciones del MRS: solo severo_mrs como objetivo, como en la definitiva",superada,"ninguna candidata es ítem, puntaje o categoría del MRS; objetivo = severo_mrs"
+9,Cada remuestreo aplica el procedimiento completo; tres se recalculan desde cero,superada,"500 registros coherentes; 0, 250 y 499 recalculados iguales"
+10,Parámetros constantes y umbral restaurado,superada,"500 / 5.000 / q < 0,10 / id 1 / 1 proceso; umbral global 0,05 restaurado"
+11,Frecuencias recalculadas de forma independiente,superada,cinco columnas iguales al recuento directo
+12,Ninguna frecuencia supera 100 %,superada,todas en 0-100; estados suman 100
+13,Las nunca seleccionadas aparecen con 0 %,superada,33 por variante; con 0 % en adaptado: 0
+14,Reproducibilidad y fidelidad con la función original,superada,mismo resultado dos veces; medir_remuestreo(i = 0) = complementario_cuidados.medir
+15,Comparación con la corrida antigua bien identificada; el código reproduce un remuestreo antiguo,superada,"30 antiguas con doble_carga, 29 comunes; remuestreos antiguos 0 y 1 reproducidos exactamente"
+16,Ningún archivo de las Fases 34 a 39 (ni del resto de analisis/ y datos/) cambió,superada,5873 archivos con la misma huella
+17,Django intacto,superada,104 archivos de src/ iguales; git sin cambios en src/
+18,Resultados antiguos no sobrescritos,superada,6 archivos históricos con la misma huella
+19,La selección definitiva leída coincide con el registro del 03-11,superada,"adaptado y estándar, 10.000 y 50.000, iguales al log"

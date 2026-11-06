@@ -1,0 +1,24 @@
+control_negativo,detectado,detalle
+Candidata extra doble_carga,True,AssertionError: 34 candidatas
+Candidata extra prevision,True,AssertionError: 34 candidatas
+Candidata del MRS (mrs_total),True,AssertionError: 34 candidatas
+Falta una candidata (32),True,AssertionError: 32 candidatas
+Escenario con doble_carga,True,RuntimeError: Las candidatas no son las 33 finales.
+Población laboral alterada,True,"RuntimeError: Tamaños inesperados: {'general': 529, 'laboral': 529, 'cuidadoras': 239}"
+Índice fuera del conjunto (529),True,AssertionError: índices fuera del conjunto
+Remuestreo sin estratificar,True,AssertionError: no respeta la estratificación
+Remuestreo sin reemplazo,True,AssertionError: sin repetidas: no es con reemplazo
+499 remuestreos,True,AssertionError: 499 archivos de remuestreo
+Decisión incoherente con la relevancia,True,AssertionError: carnes_semana: decisión incoherente con la relevancia
+Faltan pares,True,AssertionError: no se evaluaron todos los pares de relevantes
+"Umbral 0,05 en vez de 0,10",True,AssertionError: frecuencia_fuerza: decisión incoherente con la relevancia
+Laboral elimina a una general,True,AssertionError: edad: decisión incoherente con la relevancia
+Parámetro de permutaciones alterado,True,AssertionError: 
+Alfa alterado en la configuración,True,AssertionError: 
+Frecuencia con un conteo de más,True,AssertionError: veces_seleccionada mal calculada
+Porcentaje con otra base (sobre 499),True,AssertionError: pct_seleccionada mal calculada
+Frecuencia mayor que 100,True,AssertionError: pct_seleccionada fuera de 0-100
+Falta una variable con 0 %,True,AssertionError: faltan variables en adaptado
+Remuestreo guardado alterado,True,AssertionError: r0: difiere
+Archivo de una fase anterior alterado,True,"AssertionError: cambiados ['analisis/fase37/37A_reduccion/artefactos/entorno.json'], nuevos []"
+Archivo de Django alterado,True,"AssertionError: cambiados ['src/apps/__init__.py'], nuevos []"

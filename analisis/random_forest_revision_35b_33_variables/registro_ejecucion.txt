@@ -1,0 +1,25 @@
+REGISTRO Random Forest, revisión de 33 variables de la Fase 35B — análisis complementario
+Tablas y figuras generadas: 2026-11-04 01:11
+HEAD: 745d689937a18c35b62fd25eccc401b169b20e11
+Parámetros: {'n_estimators': 500, 'min_samples_leaf': 5, 'max_features': 'sqrt', 'class_weight': 'balanced', 'random_state': 42, 'n_jobs': 1}; particiones 5x3, semilla 42; importancia 20 repeticiones; etiquetas 200; procesos 4
+Versiones: Python 3.12.5, numpy 2.2.4, pandas 2.2.3, scikit-learn 1.6.1
+Modelos: 26
+Poblaciones: todas=529, trabajadoras=287, cuidadoras=239, imc_reconstruido=262, lugar_reconstruido=16, estres_reconstruido=10, laborales_observadas=263
+Durante el cálculo, SHA-256 rf_33_variables.py: 69a5c52c047b6bf2d9ea5b3463c0b5db5936f4301fc6189f1d8fb418cbf79c25
+Durante el cálculo, SHA-256 protocolo_random_forest_33.md: b437c8735751605131365ec498cc9640cff242e9aee1f89bf1f9563cede0b1fa
+Durante el cálculo, SHA-256 test_rf_33_variables.py: ce820183ab6c5834495ece727aa386abf4ac8bbab0db21e820c660fcaef5356f
+Durante el cálculo, SHA-256 random_forest_fase35b.py: 745e19caf7dfdd1abc72b2bcd503e482f86c2d48bed50ea886060b5b8b4a1559
+Al resumir, SHA-256 rf_33_variables.py: 0b7c135fa90378f5bc40947b000d75a104e6b44f3c58500f75fb6f11f14d5636
+Al resumir, SHA-256 protocolo_random_forest_33.md: d549dd88702a1159682f8b559302869820aeaab54928522e88bab5abac2dd35f
+Al resumir, SHA-256 test_rf_33_variables.py: ce820183ab6c5834495ece727aa386abf4ac8bbab0db21e820c660fcaef5356f
+Al resumir, SHA-256 random_forest_fase35b.py: 745e19caf7dfdd1abc72b2bcd503e482f86c2d48bed50ea886060b5b8b4a1559
+Comprobaciones: particiones sin superposición; modelos de control iguales con uno y con varios procesos; permutación de control igual a la guardada.
+Tiempo modelos e importancia: 1486.4 s
+Tiempo control de reproducibilidad: 12.4 s
+Tiempo azar A: 533.1 s
+Tiempo azar B: 608.7 s
+Tiempo azar C0: 571.6 s
+Tiempo azar C1: 522.5 s
+Tiempo azar D0: 506.9 s
+Tiempo azar D1: 504.4 s
+Tiempo control de la prueba contra el azar: 5.7 s

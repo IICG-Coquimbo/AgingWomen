@@ -1,0 +1,12 @@
+{
+ "participantes": 529,
+ "identificadores_unicos": true,
+ "orden": "fase36/matrices/identificadores.csv",
+ "severo_si": 281,
+ "severo_no": 248,
+ "mrs_recalculado_coincide_con_limpieza_y_fase35": true,
+ "items_principal": 94,
+ "variables_principal": 31,
+ "categorias_escasas": 40,
+ "sin_item_por_R3": 5
+}

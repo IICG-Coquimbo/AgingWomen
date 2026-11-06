@@ -65,17 +65,19 @@ def generar(r):
         f'- **Variables:** {n_expl} variables exploratorias, más la severidad del MRS en 4 clases '
         '(0 = sin síntomas o muy leves … 3 = severa) como referencia. La severidad no se agrupa con las demás: '
         'solo se muestra cuánto se asocia cada variable con ella. Esta lista no es la del modelado: las predictoras '
-        f'son {n_expl - 3} (Fase 35A). Etapa menopáusica, tipo de sangrado y uso de método anticonceptivo solo se '
+        f'eran {n_expl - 3} en la versión previa de la Fase 35A y hoy son 33 las variables elegibles. Etapa menopáusica, tipo de sangrado y uso de método anticonceptivo solo se '
         'exploran aquí. La etapa es una variable derivada, no una pregunta de la encuesta.',
-        '- **Sin imputaciones.** Se usa lo que las participantes respondieron:',
+        '- **Sin imputaciones nuevas en esta fase, pero con las de la limpieza.** El conjunto de entrada conserva las '
+        'imputaciones de la Fase 34B en las variables generales. Solo se retiran dos imputaciones de la 35A:',
         '  - **IMC observado** (n = '
         f'{int(datos["imc"].notna().sum())}). La Fase 35A imputó el resto con la media; aquí no se usa ese valor, '
         'porque pondría a la mitad de la muestra en un mismo IMC y crearía asociaciones falsas.',
         '  - **"No aplica" queda fuera del par.** Las preguntas de trabajo para quien no trabaja y las de '
         'menstruación para quien ya no menstrúa no tienen una respuesta en la escala: esas participantes no '
         'entran en los pares de esa pregunta.',
-        '  - **Respuestas laborales originales.** Las 22 trabajadoras sin respuesta en la sección Trabajo, '
-        'imputadas por mediana en la 35A, quedan fuera de esos pares.',
+        '  - **Lugar y estrés laboral.** Las 22 participantes con situación laboral imputada recibieron un valor por '
+        'mediana en la 35A y quedan fuera de esos pares. Las 287 restantes incluyen 16 valores de lugar y 10 de estrés '
+        'imputados en la 34B.',
         '  - Las frecuencias de ejercicio y la cantidad de personas que cuida valen 0 cuando la participante no '
         'lo hace: ese 0 **sí** es un valor real de la escala ("frecuencia cero") y se conserva.',
         '',
@@ -280,8 +282,8 @@ def _seccion_grupos(grupos, n_expl):
         '',
         '**Qué implica para las fases siguientes.**',
         '',
-        f'Estos grupos se calcularon sobre las {n_expl} variables exploratorias, así que para el modelado, que usa '
-        f'{n_expl - 3} predictoras, son solo una orientación.',
+        f'Estos grupos se calcularon sobre las {n_expl} variables exploratorias, así que para el modelado, que hoy '
+        'parte de 33 variables elegibles, son solo una orientación.',
         '',
         '- **Selección (35B):** dentro de cada grupo las variables comparten información; el FCBF (que descarta '
         'las redundantes con una ya elegida) probablemente se quedará con una o dos por grupo.',

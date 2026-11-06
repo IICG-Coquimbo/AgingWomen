@@ -1,0 +1,46 @@
+bloque_a,bloque_b,corr_abs_media,corr_abs_max
+Las tres preguntas,Las tres preguntas,0.03047755664177255,0.03789967582014969
+Las tres preguntas,Alimentación,0.05382657850264363,0.3488585896756985
+Las tres preguntas,Actividad física adicional,0.20728775369940156,0.6767984519801143
+Las tres preguntas,Sedentarismo,0.03299093157433,0.05840247322739672
+Las tres preguntas,Cuidados,0.011921558884555726,0.02397452730371462
+Las tres preguntas,Tabaco y alcohol,0.04886827088952637,0.08859877676616736
+Las tres preguntas,Otras generales,0.04284365196220087,0.10234759972356144
+Las tres preguntas,Actividad sexual (descriptiva),0.19341558559137326,0.529372313171879
+Las tres preguntas,Digestión (descriptiva),0.048593137679321496,0.0933732866917491
+Alimentación,Alimentación,0.039191010511297975,0.18547712477017017
+Alimentación,Actividad física adicional,0.040418848311479155,0.20270107801184145
+Alimentación,Sedentarismo,0.04652478893113322,0.11287120376434914
+Alimentación,Cuidados,0.062217056082385945,0.3350460250634452
+Alimentación,Tabaco y alcohol,0.036830859971393466,0.09933850297087124
+Alimentación,Otras generales,0.03585415111816284,0.1032418123889633
+Alimentación,Actividad sexual (descriptiva),0.026399183093836442,0.06732673787579434
+Alimentación,Digestión (descriptiva),0.026779797971310748,0.0586122272068271
+Actividad física adicional,Actividad física adicional,0.26990878382020295,0.3116999793124308
+Actividad física adicional,Sedentarismo,0.02595038731147785,0.05200744650173493
+Actividad física adicional,Cuidados,0.041459831561792726,0.0672272038817302
+Actividad física adicional,Tabaco y alcohol,0.033315849604218704,0.0533666013155045
+Actividad física adicional,Otras generales,0.0470444027907968,0.07776781483965
+Actividad física adicional,Actividad sexual (descriptiva),0.035364687757472486,0.05894271931261279
+Actividad física adicional,Digestión (descriptiva),0.052859182954830296,0.10975500198562567
+Sedentarismo,Sedentarismo,,
+Sedentarismo,Cuidados,0.005509593541113096,0.005509593541113096
+Sedentarismo,Tabaco y alcohol,0.038370380164117854,0.06972454481420207
+Sedentarismo,Otras generales,0.028649058577211766,0.04285246976795226
+Sedentarismo,Actividad sexual (descriptiva),0.012428473016360336,0.012428473016360336
+Sedentarismo,Digestión (descriptiva),0.03515689459477113,0.0501852217430812
+Cuidados,Cuidados,,
+Cuidados,Tabaco y alcohol,0.07473216999304107,0.07803010342673505
+Cuidados,Otras generales,0.04929803483586897,0.10694744867281308
+Cuidados,Actividad sexual (descriptiva),0.09003706888914138,0.09003706888914138
+Cuidados,Digestión (descriptiva),0.037110336929980677,0.062201719942876155
+Tabaco y alcohol,Tabaco y alcohol,0.1179350340613625,0.1179350340613625
+Tabaco y alcohol,Otras generales,0.02369902796954225,0.05791806825796884
+Tabaco y alcohol,Actividad sexual (descriptiva),0.02965405788587846,0.0434057166298249
+Tabaco y alcohol,Digestión (descriptiva),0.020029828828740246,0.03421316619362062
+Otras generales,Otras generales,0.07552632921928805,0.18687057892869885
+Otras generales,Actividad sexual (descriptiva),0.03794438657512656,0.04160821624900546
+Otras generales,Digestión (descriptiva),0.0339764749761915,0.052064071150932464
+Actividad sexual (descriptiva),Actividad sexual (descriptiva),,
+Actividad sexual (descriptiva),Digestión (descriptiva),0.07621631888008573,0.0958056803737651
+Digestión (descriptiva),Digestión (descriptiva),0.023071278385611464,0.023071278385611464

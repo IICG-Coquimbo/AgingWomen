@@ -1,0 +1,824 @@
+{
+ "35A": {
+  "trabajadoras": 309,
+  "con_respuesta": 287,
+  "imputadas": 22
+ },
+ "shannon": {
+  "sensibilidades": [
+   {
+    "variable": "imc",
+    "version": "solo observados",
+    "n": 267,
+    "su": 0.028407,
+    "p": 0.00612,
+    "q_al_reemplazar": 0.067319,
+    "rho_mrs": 0.250391
+   },
+   {
+    "variable": "sobrecarga_fisica_emocional",
+    "version": "cuidadoras, con 12 imputadas",
+    "n": 251,
+    "su": 0.02131,
+    "p": 0.030099,
+    "q_al_reemplazar": 0.141897,
+    "rho_mrs": 0.230008
+   }
+  ],
+  "primeras": [
+   {
+    "variable": "dias_ejercicio_semana",
+    "poblacion": "general",
+    "n": 529,
+    "su": 0.018255,
+    "k": 102,
+    "p": 0.00206,
+    "q": 0.045869,
+    "q_10000": 0.054445,
+    "mc_inf": 0.038471,
+    "mc_sup": 0.053668
+   },
+   {
+    "variable": "frecuencia_bajo_impacto",
+    "poblacion": "general",
+    "n": 529,
+    "su": 0.016664,
+    "k": 138,
+    "p": 0.00278,
+    "q": 0.045869,
+    "q_10000": 0.054445,
+    "mc_inf": 0.038471,
+    "mc_sup": 0.053673
+   },
+   {
+    "variable": "imc",
+    "poblacion": "general",
+    "n": 529,
+    "su": 0.017585,
+    "k": 367,
+    "p": 0.00736,
+    "q": 0.080958,
+    "q_10000": 0.076992,
+    "mc_inf": 0.072807,
+    "mc_sup": 0.088443
+   },
+   {
+    "variable": "frecuencia_fuerza",
+    "poblacion": "general",
+    "n": 529,
+    "su": 0.019287,
+    "k": 596,
+    "p": 0.01194,
+    "q": 0.089428,
+    "q_10000": 0.083592,
+    "mc_inf": 0.084595,
+    "mc_sup": 0.095196
+   },
+   {
+    "variable": "lugar_trabajo_comprensivo",
+    "poblacion": "laboral",
+    "n": 287,
+    "su": 0.020521,
+    "k": 776,
+    "p": 0.01554,
+    "q": 0.089428,
+    "q_10000": 0.083592,
+    "mc_inf": 0.084605,
+    "mc_sup": 0.095481
+   },
+   {
+    "variable": "trabaja_actualmente",
+    "poblacion": "general",
+    "n": 529,
+    "su": 0.00829,
+    "k": 812,
+    "p": 0.01626,
+    "q": 0.089428,
+    "q_10000": 0.083592,
+    "mc_inf": 0.084605,
+    "mc_sup": 0.095499
+   },
+   {
+    "variable": "sobrecarga_fisica_emocional",
+    "poblacion": "cuidadoras",
+    "n": 239,
+    "su": 0.020333,
+    "k": 2059,
+    "p": 0.041199,
+    "q": 0.188156,
+    "q_10000": 0.191747,
+    "mc_inf": 0.183396,
+    "mc_sup": 0.193216
+   },
+   {
+    "variable": "estres_entorno_laboral",
+    "poblacion": "laboral",
+    "n": 287,
+    "su": 0.015609,
+    "k": 2447,
+    "p": 0.048959,
+    "q": 0.188156,
+    "q_10000": 0.191747,
+    "mc_inf": 0.183602,
+    "mc_sup": 0.193837
+   },
+   {
+    "variable": "cantidad_personas_cuida",
+    "poblacion": "general",
+    "n": 529,
+    "su": 0.007843,
+    "k": 2656,
+    "p": 0.053139,
+    "q": 0.188156,
+    "q_10000": 0.191747,
+    "mc_inf": 0.183602,
+    "mc_sup": 0.193844
+   },
+   {
+    "variable": "tabaco_frecuencia",
+    "poblacion": "general",
+    "n": 529,
+    "su": 0.011628,
+    "k": 3087,
+    "p": 0.061759,
+    "q": 0.188156,
+    "q_10000": 0.193481,
+    "mc_inf": 0.183642,
+    "mc_sup": 0.194559
+   },
+   {
+    "variable": "quien_prepara_comidas",
+    "poblacion": "general",
+    "n": 529,
+    "su": 0.01075,
+    "k": 3135,
+    "p": 0.062719,
+    "q": 0.188156,
+    "q_10000": 0.193481,
+    "mc_inf": 0.183642,
+    "mc_sup": 0.194564
+   }
+  ],
+  "componentes": [
+   {
+    "variable": "alcohol_frecuencia",
+    "h_x": 1.588854,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.006598
+   },
+   {
+    "variable": "cantidad_personas_cuida",
+    "h_x": 1.683293,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.010511
+   },
+   {
+    "variable": "carnes_semana",
+    "h_x": 1.85245,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.000923
+   },
+   {
+    "variable": "dias_ejercicio_semana",
+    "h_x": 1.574453,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.023472
+   },
+   {
+    "variable": "distension_abdominal",
+    "h_x": 1.712066,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.004346
+   },
+   {
+    "variable": "edad",
+    "h_x": 2.461378,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.001758
+   },
+   {
+    "variable": "estres_entorno_laboral",
+    "h_x": 2.136061,
+    "h_severidad": 0.982193,
+    "informacion_mutua": 0.024336
+   },
+   {
+    "variable": "evacuacion_intestinal",
+    "h_x": 1.601531,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.001001
+   },
+   {
+    "variable": "falta_tiempo_influye",
+    "h_x": 1.967632,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.010398
+   },
+   {
+    "variable": "frecuencia_aerobico",
+    "h_x": 1.102179,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.009054
+   },
+   {
+    "variable": "frecuencia_bajo_impacto",
+    "h_x": 1.734687,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.022761
+   },
+   {
+    "variable": "frecuencia_comida_fuera",
+    "h_x": 1.670239,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.006229
+   },
+   {
+    "variable": "frecuencia_fuerza",
+    "h_x": 0.906787,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.018361
+   },
+   {
+    "variable": "frutas_dia",
+    "h_x": 1.260873,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.004039
+   },
+   {
+    "variable": "golosinas_semana",
+    "h_x": 1.9413,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.000803
+   },
+   {
+    "variable": "horas_sedentarismo",
+    "h_x": 1.958093,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.003014
+   },
+   {
+    "variable": "imc",
+    "h_x": 1.495207,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.021915
+   },
+   {
+    "variable": "jugos_gaseosas_dia",
+    "h_x": 1.721225,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.001466
+   },
+   {
+    "variable": "lacteos_dia",
+    "h_x": 1.336689,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.000422
+   },
+   {
+    "variable": "legumbres_semana",
+    "h_x": 1.18719,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.001638
+   },
+   {
+    "variable": "lugar_trabajo_comprensivo",
+    "h_x": 2.114149,
+    "h_severidad": 0.982193,
+    "informacion_mutua": 0.03177
+   },
+   {
+    "variable": "operada_no_mas_hijos",
+    "h_x": 0.71507,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.000499
+   },
+   {
+    "variable": "panes_dia",
+    "h_x": 1.307044,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.000696
+   },
+   {
+    "variable": "pescado_semana",
+    "h_x": 1.363674,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.003585
+   },
+   {
+    "variable": "platos_verduras_dia",
+    "h_x": 0.966059,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.001994
+   },
+   {
+    "variable": "quien_prepara_comidas",
+    "h_x": 1.386768,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.012813
+   },
+   {
+    "variable": "sobrecarga_fisica_emocional",
+    "h_x": 2.027174,
+    "h_severidad": 0.986204,
+    "informacion_mutua": 0.030636
+   },
+   {
+    "variable": "tabaco_frecuencia",
+    "h_x": 1.174527,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.012626
+   },
+   {
+    "variable": "tiene_actividad_sexual",
+    "h_x": 0.99812,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.00056
+   },
+   {
+    "variable": "tiene_pareja",
+    "h_x": 0.911865,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.003099
+   },
+   {
+    "variable": "trabaja_actualmente",
+    "h_x": 0.979485,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.008193
+   },
+   {
+    "variable": "usa_medicamentos_presion",
+    "h_x": 0.653667,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.004458
+   },
+   {
+    "variable": "vasos_agua_dia",
+    "h_x": 2.068802,
+    "h_severidad": 0.997191,
+    "informacion_mutua": 0.011265
+   }
+  ]
+ },
+ "fcbf": {
+  "q_par_estandar": {
+   "imc": 1.0,
+   "trabaja_actualmente": 0.3557178856422872
+  }
+ },
+ "rf": {
+  "lista33": [
+   {
+    "variable": "imc",
+    "etiqueta": "IMC",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Coinciden ambos métodos"
+   },
+   {
+    "variable": "tabaco_frecuencia",
+    "etiqueta": "Tabaco",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Solo Random Forest"
+   },
+   {
+    "variable": "trabaja_actualmente",
+    "etiqueta": "Trabaja actualmente",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Coinciden ambos métodos"
+   },
+   {
+    "variable": "dias_ejercicio_semana",
+    "etiqueta": "Días de ejercicio a la semana",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Coinciden ambos métodos"
+   },
+   {
+    "variable": "vasos_agua_dia",
+    "etiqueta": "Vasos de agua al día",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Solo Random Forest"
+   },
+   {
+    "variable": "distension_abdominal",
+    "etiqueta": "Distensión abdominal",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Solo Random Forest"
+   },
+   {
+    "variable": "falta_tiempo_influye",
+    "etiqueta": "Falta de tiempo influye en lo que come",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Solo Random Forest"
+   },
+   {
+    "variable": "frecuencia_bajo_impacto",
+    "etiqueta": "Frecuencia de ejercicio de bajo impacto",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Coinciden ambos métodos"
+   },
+   {
+    "variable": "frutas_dia",
+    "etiqueta": "Frutas al día",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "frecuencia_fuerza",
+    "etiqueta": "Frecuencia de ejercicio de fuerza",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Solo Shannon"
+   },
+   {
+    "variable": "frecuencia_aerobico",
+    "etiqueta": "Frecuencia de ejercicio aeróbico",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "frecuencia_comida_fuera",
+    "etiqueta": "Comidas fuera del hogar",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "usa_medicamentos_presion",
+    "etiqueta": "Medicamentos para la presión",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "alcohol_frecuencia",
+    "etiqueta": "Alcohol",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "edad",
+    "etiqueta": "Edad",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "pescado_semana",
+    "etiqueta": "Pescado a la semana",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "legumbres_semana",
+    "etiqueta": "Legumbres a la semana",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "quien_prepara_comidas",
+    "etiqueta": "Quién prepara las comidas",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "tiene_pareja",
+    "etiqueta": "Tiene pareja",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "cantidad_personas_cuida",
+    "etiqueta": "Cantidad de personas que cuida",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "platos_verduras_dia",
+    "etiqueta": "Platos de verduras al día",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "operada_no_mas_hijos",
+    "etiqueta": "Operada para no tener más hijos",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "evacuacion_intestinal",
+    "etiqueta": "Frecuencia de evacuación intestinal",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "tiene_actividad_sexual",
+    "etiqueta": "Tiene actividad sexual",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "lacteos_dia",
+    "etiqueta": "Lácteos al día",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "carnes_semana",
+    "etiqueta": "Carnes a la semana",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "panes_dia",
+    "etiqueta": "Panes al día",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "horas_sedentarismo",
+    "etiqueta": "Horas sentada al día",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "golosinas_semana",
+    "etiqueta": "Dulces y snacks a la semana",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "jugos_gaseosas_dia",
+    "etiqueta": "Jugos y gaseosas al día",
+    "poblacion": "general",
+    "n": 529,
+    "consistencia": "Sin respaldo en ninguno"
+   },
+   {
+    "variable": "lugar_trabajo_comprensivo",
+    "etiqueta": "Lugar de trabajo comprensivo",
+    "poblacion": "laboral",
+    "n": 287,
+    "consistencia": "Coinciden ambos métodos"
+   },
+   {
+    "variable": "estres_entorno_laboral",
+    "etiqueta": "Estrés del entorno laboral",
+    "poblacion": "laboral",
+    "n": 287,
+    "consistencia": "Solo Random Forest"
+   },
+   {
+    "variable": "sobrecarga_fisica_emocional",
+    "etiqueta": "Sobrecarga por trabajo y cuidado",
+    "poblacion": "cuidadoras",
+    "n": 239,
+    "consistencia": "Solo Random Forest"
+   }
+  ],
+  "comparar": [
+   {
+    "modelo": "B",
+    "referencia": "A",
+    "diferencia": 0.084175,
+    "ic_inf": 0.015937,
+    "ic_sup": 0.152414,
+    "lectura": "Mejora respaldada"
+   },
+   {
+    "modelo": "C1",
+    "referencia": "C0",
+    "diferencia": 0.030975,
+    "ic_inf": -0.003433,
+    "ic_sup": 0.065383,
+    "lectura": "Sin diferencia clara"
+   },
+   {
+    "modelo": "D1",
+    "referencia": "D0",
+    "diferencia": 0.00889,
+    "ic_inf": -0.029469,
+    "ic_sup": 0.04725,
+    "lectura": "Sin diferencia clara"
+   }
+  ],
+  "azar_p": {
+   "A": 0.11940298507462686,
+   "B": 0.004975124378109453,
+   "C0": 0.004975124378109453,
+   "C1": 0.004975124378109453,
+   "D0": 0.004975124378109453,
+   "D1": 0.004975124378109453
+  },
+  "rendimiento": [
+   {
+    "modelo": "A",
+    "n": 529,
+    "n_variables": 3,
+    "roc_auc_evaluacion": 0.538268,
+    "roc_auc_de": 0.046994,
+    "roc_auc_entrenamiento": 0.795715,
+    "roc_auc_diferencia_ent_eval": 0.257447,
+    "balanced_accuracy_evaluacion": 0.517368
+   },
+   {
+    "modelo": "B",
+    "n": 529,
+    "n_variables": 30,
+    "roc_auc_evaluacion": 0.622443,
+    "roc_auc_de": 0.045005,
+    "roc_auc_entrenamiento": 0.980964,
+    "roc_auc_diferencia_ent_eval": 0.358521,
+    "balanced_accuracy_evaluacion": 0.59291
+   },
+   {
+    "modelo": "C0",
+    "n": 287,
+    "n_variables": 29,
+    "roc_auc_evaluacion": 0.628299,
+    "roc_auc_de": 0.051051,
+    "roc_auc_entrenamiento": 0.981039,
+    "roc_auc_diferencia_ent_eval": 0.352739,
+    "balanced_accuracy_evaluacion": 0.594249
+   },
+   {
+    "modelo": "C1",
+    "n": 287,
+    "n_variables": 31,
+    "roc_auc_evaluacion": 0.659274,
+    "roc_auc_de": 0.049254,
+    "roc_auc_entrenamiento": 0.986975,
+    "roc_auc_diferencia_ent_eval": 0.3277,
+    "balanced_accuracy_evaluacion": 0.604514
+   },
+   {
+    "modelo": "D0",
+    "n": 239,
+    "n_variables": 30,
+    "roc_auc_evaluacion": 0.644813,
+    "roc_auc_de": 0.081082,
+    "roc_auc_entrenamiento": 0.965597,
+    "roc_auc_diferencia_ent_eval": 0.320783,
+    "balanced_accuracy_evaluacion": 0.597831
+   },
+   {
+    "modelo": "D1",
+    "n": 239,
+    "n_variables": 31,
+    "roc_auc_evaluacion": 0.653704,
+    "roc_auc_de": 0.079154,
+    "roc_auc_entrenamiento": 0.968338,
+    "roc_auc_diferencia_ent_eval": 0.314634,
+    "balanced_accuracy_evaluacion": 0.597099
+   }
+  ],
+  "consistencia": [
+   {
+    "variable": "imc",
+    "consistencia": "Coinciden ambos métodos",
+    "modelo_rf": "B",
+    "auc_media": 0.029761,
+    "orden_en_modelo": 1,
+    "q_50000": 0.080958,
+    "su": 0.017585,
+    "direccion": "positiva"
+   },
+   {
+    "variable": "tabaco_frecuencia",
+    "consistencia": "Solo Random Forest",
+    "modelo_rf": "B",
+    "auc_media": 0.01687,
+    "orden_en_modelo": 2,
+    "q_50000": 0.188156,
+    "su": 0.011628,
+    "direccion": "positiva"
+   },
+   {
+    "variable": "trabaja_actualmente",
+    "consistencia": "Coinciden ambos métodos",
+    "modelo_rf": "B",
+    "auc_media": 0.015897,
+    "orden_en_modelo": 3,
+    "q_50000": 0.089428,
+    "su": 0.00829,
+    "direccion": "positiva"
+   },
+   {
+    "variable": "dias_ejercicio_semana",
+    "consistencia": "Coinciden ambos métodos",
+    "modelo_rf": "B",
+    "auc_media": 0.014786,
+    "orden_en_modelo": 4,
+    "q_50000": 0.045869,
+    "su": 0.018255,
+    "direccion": "negativa"
+   },
+   {
+    "variable": "vasos_agua_dia",
+    "consistencia": "Solo Random Forest",
+    "modelo_rf": "B",
+    "auc_media": 0.011215,
+    "orden_en_modelo": 5,
+    "q_50000": 0.217237,
+    "su": 0.007348,
+    "direccion": "negativa"
+   },
+   {
+    "variable": "distension_abdominal",
+    "consistencia": "Solo Random Forest",
+    "modelo_rf": "B",
+    "auc_media": 0.009988,
+    "orden_en_modelo": 6,
+    "q_50000": 0.607419,
+    "su": 0.003208,
+    "direccion": "poco clara"
+   },
+   {
+    "variable": "falta_tiempo_influye",
+    "consistencia": "Solo Random Forest",
+    "modelo_rf": "B",
+    "auc_media": 0.008778,
+    "orden_en_modelo": 7,
+    "q_50000": 0.259092,
+    "su": 0.007014,
+    "direccion": "positiva"
+   },
+   {
+    "variable": "frecuencia_bajo_impacto",
+    "consistencia": "Coinciden ambos métodos",
+    "modelo_rf": "B",
+    "auc_media": 0.007099,
+    "orden_en_modelo": 8,
+    "q_50000": 0.045869,
+    "su": 0.016664,
+    "direccion": "negativa"
+   },
+   {
+    "variable": "frecuencia_fuerza",
+    "consistencia": "Solo Shannon",
+    "modelo_rf": "B",
+    "auc_media": 0.00212,
+    "orden_en_modelo": 10,
+    "q_50000": 0.089428,
+    "su": 0.019287,
+    "direccion": "mixta"
+   },
+   {
+    "variable": "lugar_trabajo_comprensivo",
+    "consistencia": "Coinciden ambos métodos",
+    "modelo_rf": "C1",
+    "auc_media": 0.036829,
+    "orden_en_modelo": 1,
+    "q_50000": 0.089428,
+    "su": 0.020521,
+    "direccion": "negativa"
+   },
+   {
+    "variable": "estres_entorno_laboral",
+    "consistencia": "Solo Random Forest",
+    "modelo_rf": "C1",
+    "auc_media": 0.015827,
+    "orden_en_modelo": 6,
+    "q_50000": 0.188156,
+    "su": 0.015609,
+    "direccion": "positiva"
+   },
+   {
+    "variable": "sobrecarga_fisica_emocional",
+    "consistencia": "Solo Random Forest",
+    "modelo_rf": "D1",
+    "auc_media": 0.018685,
+    "orden_en_modelo": 4,
+    "q_50000": 0.188156,
+    "su": 0.020333,
+    "direccion": "positiva"
+   }
+  ]
+ },
+ "n_comprobaciones": 110,
+ "n_ok": 110
+}

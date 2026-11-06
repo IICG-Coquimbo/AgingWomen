@@ -1,0 +1,23 @@
+{
+ "n": 529,
+ "con_alguna_imputacion_en_A": 385,
+ "pct_con_alguna_imputacion_en_A": 72.77882797731569,
+ "con_imputacion_en_las_tres_preguntas": 82,
+ "celdas_imputadas_en_A": 665,
+ "celdas_A": 15341,
+ "etapa": {
+  "posmenopausia": 313,
+  "premenopausia": 96,
+  "perimenopausia": 79,
+  "indeterminada": 20,
+  "quirurgica": 19,
+  "indeterminada (histerectomía)": 2
+ },
+ "prevision": {
+  "FONASA": 435,
+  "ISAPRE": 70,
+  "NINGUNA": 15,
+  "FFAA": 7,
+  "NS": 2
+ }
+}

@@ -1,0 +1,154 @@
+[
+ {
+  "tipo": "Prueba unitaria",
+  "prueba": "H11 y H13: recuento en la población analítica y ausencia de cambios estadísticos",
+  "ruta": "cierre_fases_34_35/scripts/test_h11_h13.py",
+  "estado": "Correcta",
+  "casos": 21,
+  "detalle": "Sin fallos"
+ },
+ {
+  "tipo": "Prueba unitaria",
+  "prueba": "Corrección controlada: rótulos y figuras revisadas, en carpeta temporal",
+  "ruta": "revision_correctiva_fase34/test_correccion_fase34.py",
+  "estado": "Correcta",
+  "casos": 8,
+  "detalle": "Sin fallos"
+ },
+ {
+  "tipo": "Prueba unitaria",
+  "prueba": "Entropía, SU y FCBF: funciones con datos de prueba",
+  "ruta": "preprocesamiento/test_entropia.py",
+  "estado": "Correcta",
+  "casos": 79,
+  "detalle": "Sin fallos"
+ },
+ {
+  "tipo": "Prueba unitaria",
+  "prueba": "Revisión de 33 variables: lista, poblaciones y resultados guardados",
+  "ruta": "preprocesamiento/test_revision_33_variables.py",
+  "estado": "Correcta",
+  "casos": 29,
+  "detalle": "Sin fallos"
+ },
+ {
+  "tipo": "Prueba unitaria",
+  "prueba": "Documentales: 33 variables, 35A revisada y estructura de los Word",
+  "ruta": "cierre_fases_34_35/scripts/test_documental_cierre.py",
+  "estado": "Correcta",
+  "casos": 13,
+  "detalle": "Sin fallos"
+ },
+ {
+  "tipo": "Verificación",
+  "prueba": "Cifras de la Fase 35 contra los archivos",
+  "ruta": "cierre_fases_34_35/scripts/verificar_fase35.py",
+  "estado": "Correcta",
+  "casos": 110,
+  "detalle": "110 de 110 comprobaciones OK"
+ },
+ {
+  "tipo": "Verificación",
+  "prueba": "Integridad de archivos protegidos, comparando manifiestos",
+  "ruta": "cierre_fases_34_35/scripts/verificar_integridad_cierre.py",
+  "estado": "Correcta",
+  "casos": 15,
+  "detalle": "15 de 15 comprobaciones OK"
+ },
+ {
+  "tipo": "No ejecutada",
+  "prueba": "eda_univariado.py completo",
+  "ruta": "",
+  "estado": "No ejecutada",
+  "casos": 0,
+  "detalle": "Borra figuras históricas al iniciarse. Se probó describir() en memoria."
+ },
+ {
+  "tipo": "No ejecutada",
+  "prueba": "eda_usuaria.py completo",
+  "ruta": "",
+  "estado": "No ejecutada",
+  "casos": 0,
+  "detalle": "Regenera informes y figuras históricos. Se probaron en memoria las familias FDR y el rótulo."
+ },
+ {
+  "tipo": "No ejecutada",
+  "prueba": "Análisis multivariado completo (34E)",
+  "ruta": "",
+  "estado": "No ejecutada",
+  "casos": 0,
+  "detalle": "Prohibido en este cierre."
+ },
+ {
+  "tipo": "No ejecutada",
+  "prueba": "Generación sintética y limpieza completa",
+  "ruta": "",
+  "estado": "No ejecutada",
+  "casos": 0,
+  "detalle": "Prohibidas en este cierre."
+ },
+ {
+  "tipo": "No ejecutada",
+  "prueba": "preprocesar_fase35.py",
+  "ruta": "",
+  "estado": "No ejecutada",
+  "casos": 0,
+  "detalle": "Regeneraría conjuntos e informes de la Fase 35."
+ },
+ {
+  "tipo": "No ejecutada",
+  "prueba": "seleccionar_fase35b.py, revision_33_variables.py y análisis complementarios",
+  "ruta": "",
+  "estado": "No ejecutada",
+  "casos": 0,
+  "detalle": "Repetirían Shannon, permutaciones y FCBF."
+ },
+ {
+  "tipo": "No ejecutada",
+  "prueba": "rf_33_variables.py y random_forest_fase35b.py",
+  "ruta": "",
+  "estado": "No ejecutada",
+  "casos": 0,
+  "detalle": "Reentrenarían Random Forest."
+ },
+ {
+  "tipo": "No ejecutada",
+  "prueba": "random_forest_revision_35b_33_variables/test_rf_33_variables.py y preprocesamiento/test_random_forest_35b.py",
+  "ruta": "",
+  "estado": "No ejecutada",
+  "casos": 0,
+  "detalle": "Pueden entrenar modelos de control; quedan fuera por precaución."
+ },
+ {
+  "tipo": "No ejecutada",
+  "prueba": "test_complementario_35b, test_complementario_cuidados, test_revision_35b, test_revision_35b_50000",
+  "ruta": "",
+  "estado": "No ejecutada",
+  "casos": 0,
+  "detalle": "Corresponden a etapas previas ya cerradas y este cierre no cambió su código; no se revisó si son seguros de ejecutar."
+ },
+ {
+  "tipo": "No ejecutada",
+  "prueba": "test_informe_integrado_35b, test_informe_word_33, test_informe_word_rf_33",
+  "ruta": "",
+  "estado": "No ejecutada",
+  "casos": 0,
+  "detalle": "Corresponden a generadores de informes históricos que no cambiaron."
+ },
+ {
+  "tipo": "No ejecutada",
+  "prueba": "Ejecución real del rótulo H13 y del recuento H11 en el flujo completo",
+  "ruta": "",
+  "estado": "No ejecutada",
+  "casos": 0,
+  "detalle": "Queda sin probar de extremo a extremo; requiere copia aislada del repositorio y autorización."
+ },
+ {
+  "tipo": "No ejecutada",
+  "prueba": "Suite de Django de la plataforma",
+  "ruta": "",
+  "estado": "No ejecutada",
+  "casos": 0,
+  "detalle": "No se relaciona con estos cambios."
+ }
+]

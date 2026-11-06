@@ -1,0 +1,37 @@
+{
+ "configuracion": "principal",
+ "descripcion": "Análisis principal",
+ "n": 529,
+ "n_si": 281,
+ "frecuencia_basal_si": 0.5311909262759924,
+ "items": 94,
+ "items_constantes_quitados": [],
+ "umbral_antecedente": 53,
+ "umbral_conjunto": 27,
+ "largo_maximo": 3,
+ "conjuntos_frecuentes": 52685,
+ "antecedentes_evaluados": 12325,
+ "pares_determinados": 0,
+ "reglas": 12201,
+ "marcadas": 1119,
+ "nula_media_marcadas": 649.98,
+ "nula_p95_marcadas": 970.05,
+ "nula_p95_max_z": 4.105989215536869,
+ "nula_p95_max_dif": 0.267039982879766,
+ "supera_nula": 1,
+ "segundos": 15.2,
+ "estabilidad": {
+  "n_submuestra": 423,
+  "umbral_antecedente": 43,
+  "umbral_conjunto": 22,
+  "antecedentes_evaluados": 16409
+ },
+ "sello_protocolo": "9f9614115801805f9cde6c1586a8d7571ee44116c18ac7638025a645ee7f5a82",
+ "clases": {
+  "2 asociación débil": 11082,
+  "3 redundante": 926,
+  "4 compatible con la referencia nula": 192,
+  "6 asociación relativamente más marcada": 1
+ },
+ "destacadas": 1
+}

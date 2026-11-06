@@ -103,7 +103,8 @@ CONTINUAS_PROFESIONAL = ['presion_sistolica', 'presion_diastolica', 'colesterol_
 # Sin servicios de salud (laboratorio, presión, cintura, tamizaje), sin nivel
 # educacional ni ConocimientoSistema. La diabetes pasa a control; el IMC entra
 # como categoría con "no informado" (no se imputa) y, aparte, como número solo
-# en quienes lo informaron.
+# en quienes lo informaron. Son decisiones de la 34C: hoy la etapa es descriptiva
+# (2026-11-01), la diabetes queda fuera de las 33 elegibles y la 35A imputa el IMC.
 CONTROL_USUARIA = {
     'edad': 'Edad', 'etapa_menopausica': 'Etapa menopáusica', 'imc_categoria': 'IMC (categoría)',
     'imc': 'IMC (solo informadas)', 'usa_terapia_hormonal': 'Usa terapia hormonal',

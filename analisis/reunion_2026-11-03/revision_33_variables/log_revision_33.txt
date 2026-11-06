@@ -1,0 +1,15 @@
+LOG corrección de 34 a 33 variables, Fases 35A y 35B
+Fecha: 2026-11-03 19:33
+HEAD: 745d689937a18c35b62fd25eccc401b169b20e11
+Variable excluida: usa_medicamentos_diabetes
+Permutaciones nuevas: 0
+Versiones: Python 3.12.5, numpy 2.2.4, pandas 2.2.3
+10000: q<0,10 = dias_ejercicio_semana;frecuencia_bajo_impacto;frecuencia_fuerza;imc;lugar_trabajo_comprensivo;trabaja_actualmente
+10000: adaptado = frecuencia_fuerza;imc;lugar_trabajo_comprensivo;trabaja_actualmente
+10000: estandar = frecuencia_fuerza;lugar_trabajo_comprensivo
+50000: q<0,10 = dias_ejercicio_semana;frecuencia_bajo_impacto;frecuencia_fuerza;imc;lugar_trabajo_comprensivo;trabaja_actualmente
+50000: adaptado = frecuencia_fuerza;imc;lugar_trabajo_comprensivo;trabaja_actualmente
+50000: estandar = frecuencia_fuerza;lugar_trabajo_comprensivo
+SHA-256 revision_33_variables.py: 81f235543ba6d1cc386374632b7eb26827c8cca74d611a8dbefd2e57171f22c6
+SHA-256 protocolo_revision_33.md: 70c7779f981517d1f34d02438baea5e5ac61b8cee9bfb4a8ff070e27503c1dfd
+SHA-256 dataset_fase35_33_variables.csv: b611e8fd0424970ce2df1943985dfdf5fb2f662caf9e27c217d59a26ca3270f6

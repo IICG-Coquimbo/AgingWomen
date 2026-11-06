@@ -1,0 +1,90 @@
+﻿modelo,variable,auc_con_imc,auc_sin_imc,orden_con_imc,orden_sin_imc,aporte_con_imc,aporte_sin_imc
+B,trabaja_actualmente,0.015897,0.018372,3,1,Aporte consistente,Aporte consistente
+B,tabaco_frecuencia,0.016870,0.017470,2,2,Aporte consistente,Aporte consistente
+B,dias_ejercicio_semana,0.014786,0.017155,4,3,Aporte consistente,Aporte consistente
+B,vasos_agua_dia,0.011215,0.016567,5,4,Aporte consistente,Aporte consistente
+B,falta_tiempo_influye,0.008778,0.014157,7,5,Aporte consistente,Aporte inestable
+B,frecuencia_bajo_impacto,0.007099,0.012107,8,6,Aporte consistente,Aporte inestable
+B,distension_abdominal,0.009988,0.009462,6,7,Aporte consistente,Aporte consistente
+B,alcohol_frecuencia,0.000831,0.004907,14,8,Aporte inestable,Aporte pequeño
+B,frutas_dia,0.004561,0.004407,9,9,Aporte inestable,Aporte pequeño
+B,frecuencia_aerobico,0.001587,0.002540,11,10,Aporte inestable,Aporte inestable
+B,tiene_pareja,-0.000540,0.000617,19,11,Nulo o negativo,Aporte inestable
+B,usa_medicamentos_presion,0.001246,0.000413,13,12,Aporte inestable,Aporte inestable
+B,frecuencia_comida_fuera,0.001384,0.000262,12,13,Aporte inestable,Aporte inestable
+B,pescado_semana,0.000645,0.000181,16,14,Aporte inestable,Aporte inestable
+B,frecuencia_fuerza,0.002120,0.000146,10,15,Aporte inestable,Aporte inestable
+B,legumbres_semana,-0.000181,-0.000115,17,16,Nulo o negativo,Nulo o negativo
+B,quien_prepara_comidas,-0.000280,-0.000733,18,17,Nulo o negativo,Nulo o negativo
+B,edad,0.000806,-0.001257,15,18,Aporte inestable,Nulo o negativo
+B,platos_verduras_dia,-0.001444,-0.001855,21,19,Nulo o negativo,Nulo o negativo
+B,lacteos_dia,-0.002487,-0.002118,25,20,Nulo o negativo,Nulo o negativo
+B,evacuacion_intestinal,-0.001626,-0.002651,23,21,Nulo o negativo,Nulo o negativo
+B,tiene_actividad_sexual,-0.002399,-0.002804,24,22,Nulo o negativo,Nulo o negativo
+B,golosinas_semana,-0.003765,-0.002862,29,23,Nulo o negativo,Nulo o negativo
+B,jugos_gaseosas_dia,-0.003854,-0.003513,30,24,Nulo o negativo,Nulo o negativo
+B,operada_no_mas_hijos,-0.001581,-0.003555,22,25,Nulo o negativo,Nulo o negativo
+B,horas_sedentarismo,-0.003378,-0.003561,28,26,Nulo o negativo,Nulo o negativo
+B,carnes_semana,-0.002503,-0.003708,26,27,Nulo o negativo,Nulo o negativo
+B,panes_dia,-0.003136,-0.004044,27,28,Nulo o negativo,Nulo o negativo
+B,cantidad_personas_cuida,-0.000762,-0.004298,20,29,Nulo o negativo,Nulo o negativo
+C1,lugar_trabajo_comprensivo,0.036829,0.031907,1,1,Aporte consistente,Aporte consistente
+C1,distension_abdominal,0.016686,0.023345,4,2,Aporte consistente,Aporte consistente
+C1,tabaco_frecuencia,0.019467,0.018608,3,3,Aporte consistente,Aporte consistente
+C1,frecuencia_bajo_impacto,0.027458,0.017539,2,4,Aporte consistente,Aporte inestable
+C1,alcohol_frecuencia,0.012891,0.009193,7,5,Aporte consistente,Aporte inestable
+C1,frecuencia_fuerza,0.007749,0.008643,9,6,Aporte consistente,Aporte consistente
+C1,usa_medicamentos_presion,0.007374,0.008090,10,7,Aporte consistente,Aporte consistente
+C1,estres_entorno_laboral,0.015827,0.007862,6,8,Aporte consistente,Aporte inestable
+C1,carnes_semana,0.006092,0.005826,11,9,Aporte inestable,Aporte consistente
+C1,legumbres_semana,0.009597,0.005262,8,10,Aporte consistente,Aporte inestable
+C1,cantidad_personas_cuida,0.002856,0.003849,15,11,Aporte inestable,Aporte inestable
+C1,frecuencia_aerobico,0.003872,0.003276,14,12,Aporte pequeño,Aporte inestable
+C1,frutas_dia,0.005698,0.003073,12,13,Aporte consistente,Aporte inestable
+C1,vasos_agua_dia,0.002763,0.002480,16,14,Aporte inestable,Aporte inestable
+C1,falta_tiempo_influye,-0.001638,0.000724,22,15,Nulo o negativo,Aporte inestable
+C1,frecuencia_comida_fuera,0.002131,0.000403,17,16,Aporte pequeño,Aporte inestable
+C1,lacteos_dia,-0.000667,0.000071,19,17,Nulo o negativo,Aporte inestable
+C1,dias_ejercicio_semana,0.005241,-0.000242,13,18,Aporte inestable,Nulo o negativo
+C1,panes_dia,0.000463,-0.001488,18,19,Aporte inestable,Nulo o negativo
+C1,quien_prepara_comidas,-0.001155,-0.001838,20,20,Nulo o negativo,Nulo o negativo
+C1,pescado_semana,-0.002159,-0.002457,23,21,Nulo o negativo,Nulo o negativo
+C1,operada_no_mas_hijos,-0.001431,-0.002580,21,22,Nulo o negativo,Nulo o negativo
+C1,platos_verduras_dia,-0.002980,-0.002719,26,23,Nulo o negativo,Nulo o negativo
+C1,jugos_gaseosas_dia,-0.002211,-0.003208,24,24,Nulo o negativo,Nulo o negativo
+C1,evacuacion_intestinal,-0.002226,-0.003943,25,25,Nulo o negativo,Nulo o negativo
+C1,tiene_pareja,-0.004044,-0.004634,29,26,Nulo o negativo,Nulo o negativo
+C1,golosinas_semana,-0.003222,-0.004890,27,27,Nulo o negativo,Nulo o negativo
+C1,horas_sedentarismo,-0.003576,-0.005881,28,28,Nulo o negativo,Nulo o negativo
+C1,tiene_actividad_sexual,-0.007258,-0.008710,31,29,Nulo o negativo,Nulo o negativo
+C1,edad,-0.005645,-0.010089,30,30,Nulo o negativo,Nulo o negativo
+D1,dias_ejercicio_semana,0.034387,0.038795,1,1,Aporte consistente,Aporte consistente
+D1,vasos_agua_dia,0.028485,0.024235,2,2,Aporte consistente,Aporte consistente
+D1,tabaco_frecuencia,0.019121,0.023713,3,3,Aporte consistente,Aporte consistente
+D1,sobrecarga_fisica_emocional,0.018685,0.022382,4,4,Aporte consistente,Aporte consistente
+D1,frecuencia_bajo_impacto,0.016822,0.022282,5,5,Aporte consistente,Aporte consistente
+D1,distension_abdominal,0.016747,0.018601,6,6,Aporte consistente,Aporte consistente
+D1,frecuencia_fuerza,0.003831,0.005634,7,7,Aporte inestable,Aporte consistente
+D1,trabaja_actualmente,0.003396,0.004480,8,8,Aporte inestable,Aporte inestable
+D1,usa_medicamentos_presion,0.002926,0.003285,9,9,Aporte inestable,Aporte inestable
+D1,falta_tiempo_influye,-0.000511,0.002638,14,10,Nulo o negativo,Aporte inestable
+D1,lacteos_dia,-0.000625,0.001992,15,11,Nulo o negativo,Aporte inestable
+D1,legumbres_semana,0.001007,0.001465,11,12,Aporte inestable,Aporte inestable
+D1,jugos_gaseosas_dia,-0.002148,0.001230,21,13,Nulo o negativo,Aporte inestable
+D1,frecuencia_aerobico,-0.000634,0.001044,16,14,Nulo o negativo,Aporte inestable
+D1,carnes_semana,-0.003410,0.001017,23,15,Nulo o negativo,Aporte inestable
+D1,frutas_dia,-0.000699,0.000792,17,16,Nulo o negativo,Aporte inestable
+D1,pescado_semana,0.002720,0.000707,10,17,Aporte inestable,Aporte inestable
+D1,tiene_pareja,-0.004133,0.000211,26,18,Nulo o negativo,Aporte pequeño
+D1,operada_no_mas_hijos,-0.000431,0.000029,13,19,Nulo o negativo,Aporte inestable
+D1,golosinas_semana,-0.002836,-0.000354,22,20,Nulo o negativo,Nulo o negativo
+D1,cantidad_personas_cuida,-0.001491,-0.000929,20,21,Nulo o negativo,Nulo o negativo
+D1,evacuacion_intestinal,-0.000763,-0.000967,18,22,Nulo o negativo,Nulo o negativo
+D1,platos_verduras_dia,-0.001484,-0.001008,19,23,Nulo o negativo,Nulo o negativo
+D1,edad,-0.003726,-0.002085,24,24,Nulo o negativo,Nulo o negativo
+D1,panes_dia,-0.003788,-0.002860,25,25,Nulo o negativo,Nulo o negativo
+D1,horas_sedentarismo,-0.005744,-0.002965,29,26,Nulo o negativo,Nulo o negativo
+D1,alcohol_frecuencia,-0.006536,-0.003782,30,27,Nulo o negativo,Nulo o negativo
+D1,frecuencia_comida_fuera,-0.004813,-0.004055,28,28,Nulo o negativo,Nulo o negativo
+D1,tiene_actividad_sexual,-0.004553,-0.004430,27,29,Nulo o negativo,Nulo o negativo
+D1,quien_prepara_comidas,-0.007608,-0.005991,31,30,Nulo o negativo,Nulo o negativo

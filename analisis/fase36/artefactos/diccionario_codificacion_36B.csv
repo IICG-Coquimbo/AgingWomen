@@ -1,0 +1,124 @@
+variable,tipo,rol_famd,nivel,significado,codigo_pca,grupo_famd,n_529,unificado_con_cero
+edad,cuantitativa,cuantitativa,numérico,valor,z,cuantitativa,529,False
+imc,cuantitativa,cuantitativa,numérico,valor,z,cuantitativa,267,False
+horas_sedentarismo,cuantitativa,cuantitativa,numérico,valor,z,cuantitativa,529,False
+trabaja_actualmente,binaria,categorica,False,No,0,False,220,False
+trabaja_actualmente,binaria,categorica,True,Sí,1,True,309,False
+tiene_pareja,binaria,categorica,NO,No,0,NO,173,False
+tiene_pareja,binaria,categorica,SI,Sí,1,SI,356,False
+tiene_actividad_sexual,binaria,categorica,NO,No,0,NO,278,False
+tiene_actividad_sexual,binaria,categorica,SI,Sí,1,SI,251,False
+operada_no_mas_hijos,binaria,categorica,NO,No,0,NO,425,False
+operada_no_mas_hijos,binaria,categorica,SI,Sí,1,SI,104,False
+usa_medicamentos_presion,binaria,categorica,NO,No,0,NO,440,False
+usa_medicamentos_presion,binaria,categorica,SI,Sí,1,SI,89,False
+quien_prepara_comidas,nominal,categorica,YO_MAYORIA,Yo preparo la mayoría,,YO_MAYORIA,365,False
+quien_prepara_comidas,nominal,categorica,COMPARTIDO,Yo preparo algunas y otras personas otras,,COMPARTIDO,86,False
+quien_prepara_comidas,nominal,categorica,OTRA_HOGAR,Otra persona de mi hogar prepara la mayoría,,OTRA_HOGAR,49,False
+quien_prepara_comidas,nominal,categorica,COMPRO,Generalmente compro comida preparada,,COMPRO + OTRO,22,False
+quien_prepara_comidas,nominal,categorica,OTRO,Otro,,COMPRO + OTRO,7,False
+alcohol_frecuencia,ordinal,cuantitativa,1,Nunca,1,cuantitativa,190,False
+alcohol_frecuencia,ordinal,cuantitativa,2,1-2 veces por semana,2,cuantitativa,268,False
+alcohol_frecuencia,ordinal,cuantitativa,3,3-4 veces por semana,3,cuantitativa,46,False
+alcohol_frecuencia,ordinal,cuantitativa,4,5-6 veces por semana,4,cuantitativa,14,False
+alcohol_frecuencia,ordinal,cuantitativa,5,Diariamente,5,cuantitativa,11,False
+cantidad_personas_cuida,ordinal,categorica,0,No cuida,0,0,278,False
+cantidad_personas_cuida,ordinal,categorica,1,1 persona,1,1,136,False
+cantidad_personas_cuida,ordinal,categorica,2,2 personas,2,2,67,False
+cantidad_personas_cuida,ordinal,categorica,3,3 o más personas,3,3,48,False
+carnes_semana,ordinal,cuantitativa,1,Nunca,1,cuantitativa,22,False
+carnes_semana,ordinal,cuantitativa,2,1-2 veces por semana,2,cuantitativa,165,False
+carnes_semana,ordinal,cuantitativa,3,3-4 veces por semana,3,cuantitativa,234,False
+carnes_semana,ordinal,cuantitativa,4,5-6 veces por semana,4,cuantitativa,86,False
+carnes_semana,ordinal,cuantitativa,5,Diariamente,5,cuantitativa,22,False
+dias_ejercicio_semana,ordinal,cuantitativa,1,0 días,1,cuantitativa,302,False
+dias_ejercicio_semana,ordinal,cuantitativa,2,1-2 días,2,cuantitativa,148,False
+dias_ejercicio_semana,ordinal,cuantitativa,3,3-4 días,3,cuantitativa,52,False
+dias_ejercicio_semana,ordinal,cuantitativa,4,5-6 días,4,cuantitativa,15,False
+dias_ejercicio_semana,ordinal,cuantitativa,5,Todos los días,5,cuantitativa,12,False
+distension_abdominal,ordinal,cuantitativa,1,Nunca o casi nunca,1,cuantitativa,184,False
+distension_abdominal,ordinal,cuantitativa,2,A veces,2,cuantitativa,226,False
+distension_abdominal,ordinal,cuantitativa,3,Frecuentemente,3,cuantitativa,92,False
+distension_abdominal,ordinal,cuantitativa,4,Siempre,4,cuantitativa,27,False
+evacuacion_intestinal,ordinal,cuantitativa,1,Más de una vez al día,1,cuantitativa,41,False
+evacuacion_intestinal,ordinal,cuantitativa,2,1 vez al día,2,cuantitativa,300,False
+evacuacion_intestinal,ordinal,cuantitativa,3,Cada 2 días,3,cuantitativa,128,False
+evacuacion_intestinal,ordinal,cuantitativa,4,3 o más días entre evacuaciones,4,cuantitativa,60,False
+falta_tiempo_influye,ordinal,cuantitativa,1,Nunca o casi nunca,1,cuantitativa,59,False
+falta_tiempo_influye,ordinal,cuantitativa,2,Rara vez,2,cuantitativa,144,False
+falta_tiempo_influye,ordinal,cuantitativa,3,A veces,3,cuantitativa,224,False
+falta_tiempo_influye,ordinal,cuantitativa,4,Frecuentemente,4,cuantitativa,86,False
+falta_tiempo_influye,ordinal,cuantitativa,5,Siempre,5,cuantitativa,16,False
+frecuencia_aerobico,ordinal,categorica,0,No lo realiza,0,0,424,False
+frecuencia_aerobico,ordinal,categorica,1,Nunca,0,0,0,True
+frecuencia_aerobico,ordinal,categorica,2,Rara vez,1,2 + 3,19,False
+frecuencia_aerobico,ordinal,categorica,3,A veces,2,2 + 3,40,False
+frecuencia_aerobico,ordinal,categorica,4,Frecuentemente,3,4 + 5,26,False
+frecuencia_aerobico,ordinal,categorica,5,Siempre,4,4 + 5,20,False
+frecuencia_bajo_impacto,ordinal,categorica,0,No lo realiza,0,0,305,False
+frecuencia_bajo_impacto,ordinal,categorica,1,Nunca,0,0,0,True
+frecuencia_bajo_impacto,ordinal,categorica,2,Rara vez,1,2,79,False
+frecuencia_bajo_impacto,ordinal,categorica,3,A veces,2,3,89,False
+frecuencia_bajo_impacto,ordinal,categorica,4,Frecuentemente,3,4 + 5,40,False
+frecuencia_bajo_impacto,ordinal,categorica,5,Siempre,4,4 + 5,16,False
+frecuencia_comida_fuera,ordinal,cuantitativa,1,Nunca,1,cuantitativa,157,False
+frecuencia_comida_fuera,ordinal,cuantitativa,2,1-2 veces por semana,2,cuantitativa,247,False
+frecuencia_comida_fuera,ordinal,cuantitativa,3,3-4 veces por semana,3,cuantitativa,106,False
+frecuencia_comida_fuera,ordinal,cuantitativa,4,5-6 veces por semana,4,cuantitativa,19,False
+frecuencia_comida_fuera,ordinal,cuantitativa,5,Diariamente,5,cuantitativa,0,False
+frecuencia_fuerza,ordinal,categorica,0,No lo realiza,0,0,448,False
+frecuencia_fuerza,ordinal,categorica,1,Nunca,0,0,0,True
+frecuencia_fuerza,ordinal,categorica,2,Rara vez,1,2 + 3,13,False
+frecuencia_fuerza,ordinal,categorica,3,A veces,2,2 + 3,30,False
+frecuencia_fuerza,ordinal,categorica,4,Frecuentemente,3,4 + 5,26,False
+frecuencia_fuerza,ordinal,categorica,5,Siempre,4,4 + 5,12,False
+frutas_dia,ordinal,cuantitativa,1,No consumo,1,cuantitativa,48,False
+frutas_dia,ordinal,cuantitativa,2,1-2 porciones,2,cuantitativa,380,False
+frutas_dia,ordinal,cuantitativa,3,3-4 porciones,3,cuantitativa,78,False
+frutas_dia,ordinal,cuantitativa,4,5-6 porciones,4,cuantitativa,23,False
+frutas_dia,ordinal,cuantitativa,5,7 o más porciones,5,cuantitativa,0,False
+golosinas_semana,ordinal,cuantitativa,1,Nunca,1,cuantitativa,78,False
+golosinas_semana,ordinal,cuantitativa,2,1-2 veces por semana,2,cuantitativa,222,False
+golosinas_semana,ordinal,cuantitativa,3,3-4 veces por semana,3,cuantitativa,165,False
+golosinas_semana,ordinal,cuantitativa,4,5-6 veces por semana,4,cuantitativa,40,False
+golosinas_semana,ordinal,cuantitativa,5,Diariamente,5,cuantitativa,24,False
+jugos_gaseosas_dia,ordinal,cuantitativa,1,No consumo,1,cuantitativa,146,False
+jugos_gaseosas_dia,ordinal,cuantitativa,2,1-2 porciones,2,cuantitativa,258,False
+jugos_gaseosas_dia,ordinal,cuantitativa,3,3-4 porciones,3,cuantitativa,86,False
+jugos_gaseosas_dia,ordinal,cuantitativa,4,5-6 porciones,4,cuantitativa,39,False
+jugos_gaseosas_dia,ordinal,cuantitativa,5,7 o más porciones,5,cuantitativa,0,False
+lacteos_dia,ordinal,cuantitativa,1,No consumo,1,cuantitativa,78,False
+lacteos_dia,ordinal,cuantitativa,2,1-2 porciones,2,cuantitativa,351,False
+lacteos_dia,ordinal,cuantitativa,3,3-4 porciones,3,cuantitativa,91,False
+lacteos_dia,ordinal,cuantitativa,4,5-6 porciones,4,cuantitativa,9,False
+lacteos_dia,ordinal,cuantitativa,5,7 o más porciones,5,cuantitativa,0,False
+legumbres_semana,ordinal,cuantitativa,1,Nunca,1,cuantitativa,43,False
+legumbres_semana,ordinal,cuantitativa,2,1-2 veces por semana,2,cuantitativa,352,False
+legumbres_semana,ordinal,cuantitativa,3,3-4 veces por semana,3,cuantitativa,134,False
+legumbres_semana,ordinal,cuantitativa,4,5-6 veces por semana,4,cuantitativa,0,False
+legumbres_semana,ordinal,cuantitativa,5,Diariamente,5,cuantitativa,0,False
+panes_dia,ordinal,cuantitativa,1,No consumo,1,cuantitativa,59,False
+panes_dia,ordinal,cuantitativa,2,1-2 porciones,2,cuantitativa,356,False
+panes_dia,ordinal,cuantitativa,3,3-4 porciones,3,cuantitativa,104,False
+panes_dia,ordinal,cuantitativa,4,5-6 porciones,4,cuantitativa,10,False
+panes_dia,ordinal,cuantitativa,5,7 o más porciones,5,cuantitativa,0,False
+pescado_semana,ordinal,cuantitativa,1,Nunca,1,cuantitativa,164,False
+pescado_semana,ordinal,cuantitativa,2,1-2 veces por semana,2,cuantitativa,299,False
+pescado_semana,ordinal,cuantitativa,3,3-4 veces por semana,3,cuantitativa,66,False
+pescado_semana,ordinal,cuantitativa,4,5-6 veces por semana,4,cuantitativa,0,False
+pescado_semana,ordinal,cuantitativa,5,Diariamente,5,cuantitativa,0,False
+platos_verduras_dia,ordinal,cuantitativa,1,No consumo,1,cuantitativa,19,False
+platos_verduras_dia,ordinal,cuantitativa,2,1-2 porciones,2,cuantitativa,427,False
+platos_verduras_dia,ordinal,cuantitativa,3,3-4 porciones,3,cuantitativa,63,False
+platos_verduras_dia,ordinal,cuantitativa,4,5-6 porciones,4,cuantitativa,20,False
+platos_verduras_dia,ordinal,cuantitativa,5,7 o más porciones,5,cuantitativa,0,False
+tabaco_frecuencia,ordinal,categorica,1,Nunca,1,1,399,False
+tabaco_frecuencia,ordinal,categorica,2,1-2 veces por semana,2,2 + 3 + 4,21,False
+tabaco_frecuencia,ordinal,categorica,3,3-4 veces por semana,3,2 + 3 + 4,9,False
+tabaco_frecuencia,ordinal,categorica,4,5-6 veces por semana,4,2 + 3 + 4,18,False
+tabaco_frecuencia,ordinal,categorica,5,Diariamente,5,5,82,False
+vasos_agua_dia,ordinal,cuantitativa,1,No consumo,1,cuantitativa,24,False
+vasos_agua_dia,ordinal,cuantitativa,2,1-2 porciones,2,cuantitativa,110,False
+vasos_agua_dia,ordinal,cuantitativa,3,3-4 porciones,3,cuantitativa,205,False
+vasos_agua_dia,ordinal,cuantitativa,4,5-6 porciones,4,cuantitativa,124,False
+vasos_agua_dia,ordinal,cuantitativa,5,7 o más porciones,5,cuantitativa,66,False

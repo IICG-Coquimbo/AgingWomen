@@ -1,0 +1,35 @@
+﻿variable,tipo,mayor_valor,clase_models,niveles
+alcohol_frecuencia,ordinal,consume alcohol con mayor frecuencia,EscalaFrecuenciaSemanal,1 = Nunca; 2 = 1-2 veces por semana; 3 = 3-4 veces por semana; 4 = 5-6 veces por semana; 5 = Diariamente
+cantidad_personas_cuida,ordinal,más personas cuidadas (0 = no cuida),CantidadPersonasCuidado,0 = No cuida; 1 = 1 persona; 2 = 2 personas; 3 = 3 o más personas
+carnes_semana,ordinal,más carnes a la semana,EscalaFrecuenciaSemanal,1 = Nunca; 2 = 1-2 veces por semana; 3 = 3-4 veces por semana; 4 = 5-6 veces por semana; 5 = Diariamente
+dias_ejercicio_semana,ordinal,más días de ejercicio a la semana (1 = 0 días),DiasEjercicioSemana,1 = 0 días; 2 = 1-2 días; 3 = 3-4 días; 4 = 5-6 días; 5 = Todos los días
+distension_abdominal,ordinal,distensión abdominal más frecuente,FrecuenciaDistensionAbdominal,1 = Nunca o casi nunca; 2 = A veces; 3 = Frecuentemente; 4 = Siempre
+edad,continua,mayor edad,,1 = 36-39; 2 = 40-44; 3 = 45-49; 4 = 50-54; 5 = 55-59; 6 = 60-65
+estres_entorno_laboral,ordinal,más estrés del entorno laboral,EscalaEstresLaboral,1 = Nada de estrés; 2 = Estrés leve; 3 = Estrés moderado; 4 = Estrés alto; 5 = Estrés extremo
+evacuacion_intestinal,ordinal,evacuaciones MENOS frecuentes (escala inversa a la frecuencia),FrecuenciaEvacuacionIntestinal,1 = Más de una vez al día; 2 = 1 vez al día; 3 = Cada 2 días; 4 = 3 o más días entre evacuaciones
+falta_tiempo_influye,ordinal,la falta de tiempo influye más en la alimentación,EscalaFrecuenciaSubjetiva,1 = Nunca o casi nunca; 2 = Rara vez; 3 = A veces; 4 = Frecuentemente; 5 = Siempre
+frecuencia_aerobico,ordinal,ejercicio aeróbico más frecuente (0 = no lo realiza),EscalaFrecuencia,0 = No lo realiza; 2 = Rara vez; 3 = A veces; 4 = Frecuentemente; 5 = Siempre
+frecuencia_bajo_impacto,ordinal,ejercicio de bajo impacto más frecuente (0 = no lo realiza),EscalaFrecuencia,0 = No lo realiza; 2 = Rara vez; 3 = A veces; 4 = Frecuentemente; 5 = Siempre
+frecuencia_comida_fuera,ordinal,más comidas preparadas fuera del hogar,EscalaFrecuenciaSemanal,1 = Nunca; 2 = 1-2 veces por semana; 3 = 3-4 veces por semana; 4 = 5-6 veces por semana; 5 = Diariamente
+frecuencia_fuerza,ordinal,ejercicio de fuerza más frecuente (0 = no lo realiza),EscalaFrecuencia,0 = No lo realiza; 2 = Rara vez; 3 = A veces; 4 = Frecuentemente; 5 = Siempre
+frutas_dia,ordinal,más frutas al día,EscalaPorciones,1 = No consumo; 2 = 1-2 porciones; 3 = 3-4 porciones; 4 = 5-6 porciones; 5 = 7 o más porciones
+golosinas_semana,ordinal,más golosinas a la semana,EscalaFrecuenciaSemanal,1 = Nunca; 2 = 1-2 veces por semana; 3 = 3-4 veces por semana; 4 = 5-6 veces por semana; 5 = Diariamente
+horas_sedentarismo,continua,más horas sentada al día,,0 = <= 5; 1 = > 5 a 6; 2 = > 6 a 8; 3 = > 8
+imc,continua,mayor IMC,,"0 = < 18,5; 1 = 18,5-24,9; 2 = 25-29,9; 3 = 30-34,9; 4 = 35-39,9; 5 = >= 40"
+jugos_gaseosas_dia,ordinal,más jugos o gaseosas al día,EscalaPorciones,1 = No consumo; 2 = 1-2 porciones; 3 = 3-4 porciones; 4 = 5-6 porciones; 5 = 7 o más porciones
+lacteos_dia,ordinal,más lácteos al día,EscalaPorciones,1 = No consumo; 2 = 1-2 porciones; 3 = 3-4 porciones; 4 = 5-6 porciones; 5 = 7 o más porciones
+legumbres_semana,ordinal,más legumbres a la semana,EscalaFrecuenciaSemanal,1 = Nunca; 2 = 1-2 veces por semana; 3 = 3-4 veces por semana; 4 = 5-6 veces por semana; 5 = Diariamente
+lugar_trabajo_comprensivo,ordinal,lugar de trabajo percibido como más comprensivo,EscalaAcuerdo,1 = Muy en desacuerdo; 2 = En desacuerdo; 3 = Neutral; 4 = De acuerdo; 5 = Muy de acuerdo
+operada_no_mas_hijos,binaria,operada para no tener más hijos,RespuestaSiNo,0 = No; 1 = Sí
+panes_dia,ordinal,más panes al día,EscalaPorciones,1 = No consumo; 2 = 1-2 porciones; 3 = 3-4 porciones; 4 = 5-6 porciones; 5 = 7 o más porciones
+pescado_semana,ordinal,más pescado a la semana,EscalaFrecuenciaSemanal,1 = Nunca; 2 = 1-2 veces por semana; 3 = 3-4 veces por semana; 4 = 5-6 veces por semana; 5 = Diariamente
+platos_verduras_dia,ordinal,más platos de verduras al día,EscalaPorciones,1 = No consumo; 2 = 1-2 porciones; 3 = 3-4 porciones; 4 = 5-6 porciones; 5 = 7 o más porciones
+quien_prepara_comidas,nominal,sin orden: no tiene signo,QuienPreparaComidas,
+sobrecarga_fisica_emocional,ordinal,sobrecarga más frecuente,EscalaFrecuenciaSubjetiva,1 = Nunca o casi nunca; 2 = Rara vez; 3 = A veces; 4 = Frecuentemente; 5 = Siempre
+tabaco_frecuencia,ordinal,fuma con mayor frecuencia,EscalaFrecuenciaSemanal,1 = Nunca; 2 = 1-2 veces por semana; 3 = 3-4 veces por semana; 4 = 5-6 veces por semana; 5 = Diariamente
+tiene_actividad_sexual,binaria,tiene actividad sexual,RespuestaSiNo,0 = No; 1 = Sí
+tiene_pareja,binaria,tiene pareja,RespuestaSiNo,0 = No; 1 = Sí
+trabaja_actualmente,binaria,trabaja actualmente,,0 = No; 1 = Sí
+usa_medicamentos_diabetes,binaria,usa medicamentos para la diabetes,RespuestaSiNo,0 = No; 1 = Sí
+usa_medicamentos_presion,binaria,usa medicamentos para la presión,RespuestaSiNo,0 = No; 1 = Sí
+vasos_agua_dia,ordinal,más vasos de agua al día,EscalaPorciones,1 = No consumo; 2 = 1-2 porciones; 3 = 3-4 porciones; 4 = 5-6 porciones; 5 = 7 o más porciones

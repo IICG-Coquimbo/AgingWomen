@@ -1,0 +1,45 @@
+{
+ "imputadas_por_variable": {
+  "edad": 0,
+  "imc": 262,
+  "horas_sedentarismo": 27,
+  "trabaja_actualmente": 22,
+  "tiene_pareja": 28,
+  "tiene_actividad_sexual": 30,
+  "operada_no_mas_hijos": 18,
+  "usa_medicamentos_presion": 30,
+  "quien_prepara_comidas": 24,
+  "alcohol_frecuencia": 29,
+  "cantidad_personas_cuida": 7,
+  "carnes_semana": 31,
+  "dias_ejercicio_semana": 36,
+  "distension_abdominal": 17,
+  "evacuacion_intestinal": 32,
+  "falta_tiempo_influye": 29,
+  "frecuencia_aerobico": 7,
+  "frecuencia_bajo_impacto": 15,
+  "frecuencia_comida_fuera": 34,
+  "frecuencia_fuerza": 2,
+  "frutas_dia": 24,
+  "golosinas_semana": 17,
+  "jugos_gaseosas_dia": 30,
+  "lacteos_dia": 29,
+  "legumbres_semana": 24,
+  "panes_dia": 30,
+  "pescado_semana": 19,
+  "platos_verduras_dia": 33,
+  "tabaco_frecuencia": 17,
+  "vasos_agua_dia": 24
+ },
+ "heredadas_por_variable": {
+  "cantidad_personas_cuida": 21,
+  "frecuencia_aerobico": 29,
+  "frecuencia_bajo_impacto": 22,
+  "frecuencia_fuerza": 28
+ },
+ "avisos_al_transformar_referencia": {
+  "estructural": 1455,
+  "imc_ausente": 262
+ },
+ "detalle_por_celda": "procedencia/procedencia_celdas.csv"
+}

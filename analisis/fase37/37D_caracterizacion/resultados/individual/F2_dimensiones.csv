@@ -1,0 +1,109 @@
+familia,resultado,variable,etiqueta,bloque,usada_por_A,tipo,prueba,medida,efecto,p,n,aviso,q,banda,destacada
+F2,mrs_somatico,trabaja_actualmente,Trabaja actualmente,Las tres preguntas,True,binaria,Mann-Whitney,r_rb,0.11035598705501615,0.029912583411790858,529,,0.11537710744547902,pequeña,False
+F2,mrs_somatico,tiene_pareja,Tiene pareja,Las tres preguntas,True,binaria,Mann-Whitney,r_rb,-0.03463337013703971,0.5167488742249545,529,,0.755566523120234,despreciable,False
+F2,mrs_somatico,dias_ejercicio_semana,Días de ejercicio a la semana,Las tres preguntas,True,ordinal,Spearman,rho,-0.13046067274643164,0.002643995535155259,529,,0.021965501368982156,pequeña,True
+F2,mrs_somatico,frecuencia_aerobico,Frecuencia de ejercicio aeróbico,Actividad física adicional,True,ordinal,Spearman,rho,-0.020122647225369515,0.6442442360088881,529,,0.7817795223478642,despreciable,False
+F2,mrs_somatico,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,Actividad física adicional,True,ordinal,Spearman,rho,-0.16783553175441016,0.00010504548630808158,529,,0.001260545835696979,pequeña,True
+F2,mrs_somatico,frecuencia_fuerza,Frecuencia de ejercicio de fuerza,Actividad física adicional,True,ordinal,Spearman,rho,-0.04622311142383974,0.2886063030165653,529,,0.5282962834879501,despreciable,False
+F2,mrs_somatico,horas_sedentarismo,Horas sentada al día,Sedentarismo,True,cuantitativa,Spearman,rho,-0.025202588099496166,0.5630074568802623,529,,0.755566523120234,despreciable,False
+F2,mrs_somatico,cantidad_personas_cuida,Personas a su cuidado,Cuidados,True,ordinal,Spearman,rho,-0.012239143662639295,0.7788293418662056,529,,0.8761830095994813,despreciable,False
+F2,mrs_somatico,quien_prepara_comidas,Quién prepara las comidas,Alimentación,True,nominal,Kruskal-Wallis,epsilon2,-0.002209237807545206,0.5845430804483225,529,,0.755566523120234,despreciable,False
+F2,mrs_somatico,carnes_semana,Carnes a la semana,Alimentación,True,ordinal,Spearman,rho,-0.02450557602169039,0.5738575296010651,529,,0.755566523120234,despreciable,False
+F2,mrs_somatico,falta_tiempo_influye,La falta de tiempo influye en su alimentación,Alimentación,True,ordinal,Spearman,rho,0.04246919325513729,0.3295995855670887,529,,0.5835533646105832,despreciable,False
+F2,mrs_somatico,frecuencia_comida_fuera,Comidas fuera de casa,Alimentación,True,ordinal,Spearman,rho,0.06954784993677261,0.11009823904645397,529,,0.310722821513201,despreciable,False
+F2,mrs_somatico,frutas_dia,Frutas al día,Alimentación,True,ordinal,Spearman,rho,-0.0699601956176212,0.10799998934516122,529,,0.310722821513201,despreciable,False
+F2,mrs_somatico,golosinas_semana,Golosinas a la semana,Alimentación,True,ordinal,Spearman,rho,-0.010306442137371776,0.8130495892393239,529,,0.8869631882610806,despreciable,False
+F2,mrs_somatico,jugos_gaseosas_dia,Jugos o gaseosas al día,Alimentación,True,ordinal,Spearman,rho,0.0016426046157384966,0.9699344007852944,529,,0.9699344007852944,despreciable,False
+F2,mrs_somatico,lacteos_dia,Lácteos al día,Alimentación,True,ordinal,Spearman,rho,-0.024802758959235033,0.569219347560023,529,,0.755566523120234,despreciable,False
+F2,mrs_somatico,legumbres_semana,Legumbres a la semana,Alimentación,True,ordinal,Spearman,rho,-0.023278874586651156,0.5931893482930161,529,,0.755566523120234,despreciable,False
+F2,mrs_somatico,panes_dia,Panes al día,Alimentación,True,ordinal,Spearman,rho,0.04648923837722718,0.28583626499869436,529,,0.5282962834879501,despreciable,False
+F2,mrs_somatico,pescado_semana,Pescado a la semana,Alimentación,True,ordinal,Spearman,rho,-0.03358961455282352,0.4407358641026655,529,,0.6999922547512923,despreciable,False
+F2,mrs_somatico,platos_verduras_dia,Platos de verduras al día,Alimentación,True,ordinal,Spearman,rho,-0.02826399108258889,0.5165558156076446,529,,0.755566523120234,despreciable,False
+F2,mrs_somatico,vasos_agua_dia,Vasos de agua al día,Alimentación,True,ordinal,Spearman,rho,-0.12515565514029395,0.003937639487455195,529,,0.030376076046082934,pequeña,True
+F2,mrs_somatico,tabaco_frecuencia,Frecuencia de tabaco,Tabaco y alcohol,True,ordinal,Spearman,rho,0.1117981555954701,0.010072025103845918,529,,0.04843466477294,pequeña,True
+F2,mrs_somatico,alcohol_frecuencia,Frecuencia de alcohol,Tabaco y alcohol,True,ordinal,Spearman,rho,0.12141120182470733,0.005170694378796578,529,,0.03537225685870257,pequeña,True
+F2,mrs_somatico,edad,Edad,Otras generales,True,cuantitativa,Spearman,rho,0.03673557620551714,0.39911424243355154,529,,0.6631436643511318,despreciable,False
+F2,mrs_somatico,operada_no_mas_hijos,Operada para no tener más hijos,Otras generales,True,binaria,Mann-Whitney,r_rb,0.07056561085972857,0.2630133691738281,529,,0.5168980435241098,despreciable,False
+F2,mrs_somatico,usa_medicamentos_presion,Usa medicamentos para la presión,Otras generales,True,binaria,Mann-Whitney,r_rb,0.04203268641470892,0.5304155397975437,529,,0.755566523120234,despreciable,False
+F2,mrs_somatico,tiene_actividad_sexual,Tiene actividad sexual,Actividad sexual,True,binaria,Mann-Whitney,r_rb,0.08160165095015626,0.10383672665996983,529,,0.310722821513201,despreciable,False
+F2,mrs_somatico,distension_abdominal,Distensión abdominal,Digestión,True,ordinal,Spearman,rho,-0.07688905118632972,0.07724812235978648,529,,0.24537638867226294,despreciable,False
+F2,mrs_somatico,evacuacion_intestinal,Evacuación intestinal,Digestión,True,ordinal,Spearman,rho,-0.08496717752607581,0.05080117860182324,529,,0.17951016373746573,despreciable,False
+F2,mrs_somatico,imc,IMC (solo observado),Externa: salud,False,cuantitativa,Spearman,rho,0.3227591431686219,6.881508197263858e-08,267,,3.716014426522483e-06,moderada,True
+F2,mrs_somatico,etapa_menopausica,Etapa menopáusica,Externa: etapa,False,nominal,Kruskal-Wallis,epsilon2,0.0013886233927087406,0.3164018185587618,529,,0.5695232734057712,despreciable,False
+F2,mrs_somatico,usa_medicamentos_diabetes,Usa medicamentos para la diabetes,Externa: salud,False,binaria,Mann-Whitney,r_rb,0.3049283330060868,5.758813642212842e-05,529,,0.0010206078579029208,moderada,True
+F2,mrs_somatico,prevision,Previsión de salud,Externa: acceso a salud,False,nominal,Kruskal-Wallis,epsilon2,0.004190609037175472,0.1221958520485282,529,,0.32188175661563523,despreciable,False
+F2,mrs_somatico,lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,Externa: módulo laboral,False,ordinal,Spearman,rho,-0.18105852345163065,0.002073968776945223,287,,0.018665718992507005,pequeña,True
+F2,mrs_somatico,estres_entorno_laboral,Estrés en el entorno laboral,Externa: módulo laboral,False,ordinal,Spearman,rho,0.10687194563586166,0.07063685730559421,287,,0.2311751693637629,pequeña,False
+F2,mrs_somatico,sobrecarga_fisica_emocional,Sobrecarga física o emocional por cuidar,Externa: módulo de cuidados,False,ordinal,Spearman,rho,0.16834208988366126,0.0075214499268152785,251,,0.040615829604802506,pequeña,True
+F2,mrs_psicologico,trabaja_actualmente,Trabaja actualmente,Las tres preguntas,True,binaria,Mann-Whitney,r_rb,0.11840247131509263,0.019933356579840775,529,,0.08280009656241553,pequeña,False
+F2,mrs_psicologico,tiene_pareja,Tiene pareja,Las tres preguntas,True,binaria,Mann-Whitney,r_rb,-0.08376631811391833,0.11705124325930547,529,,0.31603835680012476,despreciable,False
+F2,mrs_psicologico,dias_ejercicio_semana,Días de ejercicio a la semana,Las tres preguntas,True,ordinal,Spearman,rho,-0.1725713374983484,6.615050930852264e-05,529,,0.0010206078579029208,pequeña,True
+F2,mrs_psicologico,frecuencia_aerobico,Frecuencia de ejercicio aeróbico,Actividad física adicional,True,ordinal,Spearman,rho,-0.09698035591593496,0.02571216474008234,529,,0.10284865896032935,despreciable,False
+F2,mrs_psicologico,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,Actividad física adicional,True,ordinal,Spearman,rho,-0.1757161008082209,4.832798183127199e-05,529,,0.0010206078579029208,pequeña,True
+F2,mrs_psicologico,frecuencia_fuerza,Frecuencia de ejercicio de fuerza,Actividad física adicional,True,ordinal,Spearman,rho,-0.11080277374300396,0.01076325883843111,529,,0.04843466477294,pequeña,True
+F2,mrs_psicologico,horas_sedentarismo,Horas sentada al día,Sedentarismo,True,cuantitativa,Spearman,rho,-0.023165552538726705,0.5949901211378725,529,,0.755566523120234,despreciable,False
+F2,mrs_psicologico,cantidad_personas_cuida,Personas a su cuidado,Cuidados,True,ordinal,Spearman,rho,0.0917783932975046,0.03482689639711839,529,,0.12970016589271677,despreciable,False
+F2,mrs_psicologico,quien_prepara_comidas,Quién prepara las comidas,Alimentación,True,nominal,Kruskal-Wallis,epsilon2,0.0010679617186416651,0.33553744977177224,529,,0.5844845899250226,despreciable,False
+F2,mrs_psicologico,carnes_semana,Carnes a la semana,Alimentación,True,ordinal,Spearman,rho,0.03198727619629906,0.4628543367132185,529,,0.7141181195003943,despreciable,False
+F2,mrs_psicologico,falta_tiempo_influye,La falta de tiempo influye en su alimentación,Alimentación,True,ordinal,Spearman,rho,0.1532372522923417,0.00040465249422140856,529,,0.0043702469375912125,pequeña,True
+F2,mrs_psicologico,frecuencia_comida_fuera,Comidas fuera de casa,Alimentación,True,ordinal,Spearman,rho,0.0388374492402982,0.37266921148086574,529,,0.628879294373961,despreciable,False
+F2,mrs_psicologico,frutas_dia,Frutas al día,Alimentación,True,ordinal,Spearman,rho,-0.05202141683074594,0.23229371882744523,529,,0.4824561852570017,despreciable,False
+F2,mrs_psicologico,golosinas_semana,Golosinas a la semana,Alimentación,True,ordinal,Spearman,rho,0.0103430546695953,0.8123977871324177,529,,0.8869631882610806,despreciable,False
+F2,mrs_psicologico,jugos_gaseosas_dia,Jugos o gaseosas al día,Alimentación,True,ordinal,Spearman,rho,0.046254533147263265,0.2882783072598767,529,,0.5282962834879501,despreciable,False
+F2,mrs_psicologico,lacteos_dia,Lácteos al día,Alimentación,True,ordinal,Spearman,rho,-0.02471520027702194,0.5705840339765701,529,,0.755566523120234,despreciable,False
+F2,mrs_psicologico,legumbres_semana,Legumbres a la semana,Alimentación,True,ordinal,Spearman,rho,-0.018320300494922,0.6741892924765549,529,,0.8090271509718658,despreciable,False
+F2,mrs_psicologico,panes_dia,Panes al día,Alimentación,True,ordinal,Spearman,rho,0.02608939504450402,0.5493472391209993,529,,0.755566523120234,despreciable,False
+F2,mrs_psicologico,pescado_semana,Pescado a la semana,Alimentación,True,ordinal,Spearman,rho,0.010595694147986279,0.8079036764399747,529,,0.8869631882610806,despreciable,False
+F2,mrs_psicologico,platos_verduras_dia,Platos de verduras al día,Alimentación,True,ordinal,Spearman,rho,-0.052457654956676064,0.2283958276385364,529,,0.4824561852570017,despreciable,False
+F2,mrs_psicologico,vasos_agua_dia,Vasos de agua al día,Alimentación,True,ordinal,Spearman,rho,-0.11138484024206044,0.010354113182650906,529,,0.04843466477294,pequeña,True
+F2,mrs_psicologico,tabaco_frecuencia,Frecuencia de tabaco,Tabaco y alcohol,True,ordinal,Spearman,rho,0.1704357388009809,8.16142852938556e-05,529,,0.0011017928514670506,pequeña,True
+F2,mrs_psicologico,alcohol_frecuencia,Frecuencia de alcohol,Tabaco y alcohol,True,ordinal,Spearman,rho,0.11981428613619792,0.005795096345305471,529,,0.03537225685870257,pequeña,True
+F2,mrs_psicologico,edad,Edad,Otras generales,True,cuantitativa,Spearman,rho,-0.01648439935771372,0.7052300130184528,529,,0.8252385332644941,despreciable,False
+F2,mrs_psicologico,operada_no_mas_hijos,Operada para no tener más hijos,Otras generales,True,binaria,Mann-Whitney,r_rb,0.04386877828054292,0.4869863165919899,529,,0.7407679181962663,despreciable,False
+F2,mrs_psicologico,usa_medicamentos_presion,Usa medicamentos para la presión,Otras generales,True,binaria,Mann-Whitney,r_rb,0.07722165474974463,0.2493480225103376,529,,0.508105404360688,despreciable,False
+F2,mrs_psicologico,tiene_actividad_sexual,Tiene actividad sexual,Actividad sexual,True,binaria,Mann-Whitney,r_rb,0.04491386970105182,0.3711296165731055,529,,0.628879294373961,despreciable,False
+F2,mrs_psicologico,distension_abdominal,Distensión abdominal,Digestión,True,ordinal,Spearman,rho,-0.061480602035195696,0.1579367437498935,529,,0.3647266277779636,despreciable,False
+F2,mrs_psicologico,evacuacion_intestinal,Evacuación intestinal,Digestión,True,ordinal,Spearman,rho,-0.02195840091678143,0.6143251214100272,529,,0.755566523120234,despreciable,False
+F2,mrs_psicologico,imc,IMC (solo observado),Externa: salud,False,cuantitativa,Spearman,rho,0.16104210478788095,0.008380741725319508,267,,0.04310095744450033,pequeña,True
+F2,mrs_psicologico,etapa_menopausica,Etapa menopáusica,Externa: etapa,False,nominal,Kruskal-Wallis,epsilon2,-0.0035676526933321267,0.7117620608476247,529,,0.8252385332644941,despreciable,False
+F2,mrs_psicologico,usa_medicamentos_diabetes,Usa medicamentos para la diabetes,Externa: salud,False,binaria,Mann-Whitney,r_rb,0.21110674782381045,0.005397059755129868,529,,0.03537225685870257,pequeña,True
+F2,mrs_psicologico,prevision,Previsión de salud,Externa: acceso a salud,False,nominal,Kruskal-Wallis,epsilon2,-0.0026507237293460573,0.7387027592457471,529,,0.8397883999846388,despreciable,False
+F2,mrs_psicologico,lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,Externa: módulo laboral,False,ordinal,Spearman,rho,-0.3301539992524676,1.0029516357424037e-08,287,,1.083187766601796e-06,moderada,True
+F2,mrs_psicologico,estres_entorno_laboral,Estrés en el entorno laboral,Externa: módulo laboral,False,ordinal,Spearman,rho,0.2868905009188314,7.680125648929749e-07,287,,2.7648452336147095e-05,pequeña,True
+F2,mrs_psicologico,sobrecarga_fisica_emocional,Sobrecarga física o emocional por cuidar,Externa: módulo de cuidados,False,ordinal,Spearman,rho,0.2780589705298394,7.756631981185307e-06,251,,0.00020942906349200328,pequeña,True
+F2,mrs_urogenital,trabaja_actualmente,Trabaja actualmente,Las tres preguntas,True,binaria,Mann-Whitney,r_rb,0.056325389820535365,0.2632351147576485,529,,0.5168980435241098,despreciable,False
+F2,mrs_urogenital,tiene_pareja,Tiene pareja,Las tres preguntas,True,binaria,Mann-Whitney,r_rb,-0.02705072416704557,0.6091799652857453,529,,0.755566523120234,despreciable,False
+F2,mrs_urogenital,dias_ejercicio_semana,Días de ejercicio a la semana,Las tres preguntas,True,ordinal,Spearman,rho,-0.05445409376834394,0.211150045194714,529,,0.4653919363475329,despreciable,False
+F2,mrs_urogenital,frecuencia_aerobico,Frecuencia de ejercicio aeróbico,Actividad física adicional,True,ordinal,Spearman,rho,0.0024226926312230727,0.9556682712012459,529,,0.9645997503713509,despreciable,False
+F2,mrs_urogenital,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,Actividad física adicional,True,ordinal,Spearman,rho,-0.047034032656322576,0.28022169944466,529,,0.5282962834879501,despreciable,False
+F2,mrs_urogenital,frecuencia_fuerza,Frecuencia de ejercicio de fuerza,Actividad física adicional,True,ordinal,Spearman,rho,-0.021876504966286053,0.6156467966164869,529,,0.755566523120234,despreciable,False
+F2,mrs_urogenital,horas_sedentarismo,Horas sentada al día,Sedentarismo,True,cuantitativa,Spearman,rho,-0.00440917726998498,0.9194141783583365,529,,0.9605668909035647,despreciable,False
+F2,mrs_urogenital,cantidad_personas_cuida,Personas a su cuidado,Cuidados,True,ordinal,Spearman,rho,-0.06045953750845494,0.1649695065093245,529,,0.37118138964598013,despreciable,False
+F2,mrs_urogenital,quien_prepara_comidas,Quién prepara las comidas,Alimentación,True,nominal,Kruskal-Wallis,epsilon2,-0.006029124042973229,0.9329044908305842,529,,0.9605668909035647,despreciable,False
+F2,mrs_urogenital,carnes_semana,Carnes a la semana,Alimentación,True,ordinal,Spearman,rho,0.022035957588438113,0.6130746258573188,529,,0.755566523120234,despreciable,False
+F2,mrs_urogenital,falta_tiempo_influye,La falta de tiempo influye en su alimentación,Alimentación,True,ordinal,Spearman,rho,0.03499199401707375,0.42188339811091613,529,,0.6800508506862529,despreciable,False
+F2,mrs_urogenital,frecuencia_comida_fuera,Comidas fuera de casa,Alimentación,True,ordinal,Spearman,rho,0.025082184914108456,0.5648746492984824,529,,0.755566523120234,despreciable,False
+F2,mrs_urogenital,frutas_dia,Frutas al día,Alimentación,True,ordinal,Spearman,rho,-0.11652264704966242,0.007300306215303168,529,,0.040615829604802506,pequeña,True
+F2,mrs_urogenital,golosinas_semana,Golosinas a la semana,Alimentación,True,ordinal,Spearman,rho,0.015722352387147576,0.7182631678413189,529,,0.8252385332644941,despreciable,False
+F2,mrs_urogenital,jugos_gaseosas_dia,Jugos o gaseosas al día,Alimentación,True,ordinal,Spearman,rho,0.00472938994809197,0.9135838005034802,529,,0.9605668909035647,despreciable,False
+F2,mrs_urogenital,lacteos_dia,Lácteos al día,Alimentación,True,ordinal,Spearman,rho,-0.006830541590081003,0.8754555496488698,529,,0.936130686753247,despreciable,False
+F2,mrs_urogenital,legumbres_semana,Legumbres a la semana,Alimentación,True,ordinal,Spearman,rho,0.00361543523079641,0.9338844772673546,529,,0.9605668909035647,despreciable,False
+F2,mrs_urogenital,panes_dia,Panes al día,Alimentación,True,ordinal,Spearman,rho,-0.0070696050046133,0.8711339444349488,529,,0.936130686753247,despreciable,False
+F2,mrs_urogenital,pescado_semana,Pescado a la semana,Alimentación,True,ordinal,Spearman,rho,-0.06913992540750952,0.11220546332421148,529,,0.310722821513201,despreciable,False
+F2,mrs_urogenital,platos_verduras_dia,Platos de verduras al día,Alimentación,True,ordinal,Spearman,rho,-0.023653470142033114,0.5872545347671869,529,,0.755566523120234,despreciable,False
+F2,mrs_urogenital,vasos_agua_dia,Vasos de agua al día,Alimentación,True,ordinal,Spearman,rho,-0.06429249808473614,0.1397406172016065,529,,0.34686074213091245,despreciable,False
+F2,mrs_urogenital,tabaco_frecuencia,Frecuencia de tabaco,Tabaco y alcohol,True,ordinal,Spearman,rho,0.08470349926941448,0.051526065517235535,529,,0.17951016373746573,despreciable,False
+F2,mrs_urogenital,alcohol_frecuencia,Frecuencia de alcohol,Tabaco y alcohol,True,ordinal,Spearman,rho,-0.0027195499357882316,0.9502428605063366,529,,0.9645997503713509,despreciable,False
+F2,mrs_urogenital,edad,Edad,Otras generales,True,cuantitativa,Spearman,rho,0.06255887156574853,0.15075832850022947,529,,0.36181998840055074,despreciable,False
+F2,mrs_urogenital,operada_no_mas_hijos,Operada para no tener más hijos,Otras generales,True,binaria,Mann-Whitney,r_rb,0.0752036199095023,0.22842344542537785,529,,0.4824561852570017,despreciable,False
+F2,mrs_urogenital,usa_medicamentos_presion,Usa medicamentos para la presión,Otras generales,True,binaria,Mann-Whitney,r_rb,0.09798263534218599,0.1396399958063518,529,,0.34686074213091245,despreciable,False
+F2,mrs_urogenital,tiene_actividad_sexual,Tiene actividad sexual,Actividad sexual,True,binaria,Mann-Whitney,r_rb,0.07308893920720005,0.14131363568296434,529,,0.34686074213091245,despreciable,False
+F2,mrs_urogenital,distension_abdominal,Distensión abdominal,Digestión,True,ordinal,Spearman,rho,-0.03290532383324952,0.45010697196492766,529,,0.7045152604668433,despreciable,False
+F2,mrs_urogenital,evacuacion_intestinal,Evacuación intestinal,Digestión,True,ordinal,Spearman,rho,-0.01623371059058922,0.7095082070700327,529,,0.8252385332644941,despreciable,False
+F2,mrs_urogenital,imc,IMC (solo observado),Externa: salud,False,cuantitativa,Spearman,rho,0.11496964206235592,0.060651055598532115,267,,0.2046973126450459,pequeña,False
+F2,mrs_urogenital,etapa_menopausica,Etapa menopáusica,Externa: etapa,False,nominal,Kruskal-Wallis,epsilon2,0.02854947413396696,0.0008003214096816737,529,,0.00785770111323825,pequeña,True
+F2,mrs_urogenital,usa_medicamentos_diabetes,Usa medicamentos para la diabetes,Externa: salud,False,binaria,Mann-Whitney,r_rb,0.18358531317494609,0.014483755888914816,529,,0.062569825440112,pequeña,False
+F2,mrs_urogenital,prevision,Previsión de salud,Externa: acceso a salud,False,nominal,Kruskal-Wallis,epsilon2,0.01571706060792337,0.005895376143117096,529,,0.03537225685870257,pequeña,True
+F2,mrs_urogenital,lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,Externa: módulo laboral,False,ordinal,Spearman,rho,-0.1007702267727635,0.08837254037465953,287,,0.27269241029894936,pequeña,False
+F2,mrs_urogenital,estres_entorno_laboral,Estrés en el entorno laboral,Externa: módulo laboral,False,ordinal,Spearman,rho,0.04928516309153035,0.40551878862342094,287,,0.663576199565598,despreciable,False
+F2,mrs_urogenital,sobrecarga_fisica_emocional,Sobrecarga física o emocional por cuidar,Externa: módulo de cuidados,False,ordinal,Spearman,rho,0.08922695421166567,0.15872362505152118,251,,0.3647266277779636,despreciable,False

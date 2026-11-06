@@ -14,7 +14,8 @@ Escribe:
     faltantes_por_variable}.csv
   - analisis/informe_eda_univariado.md
 
-No imputa nada: describe los datos tal como quedaron tras la limpieza. El
+No imputa nada nuevo: describe los datos tal como quedaron tras la limpieza, con las imputaciones de la 34B.
+Cuidado: borra las figuras de FIGURAS antes de redibujarlas; conserve una copia de las históricas. El
 conjunto verdadero y la bitácora de suciedad no se leen.
 """
 from datetime import date
@@ -101,8 +102,8 @@ def distribucion_numericas(resumen):
         '',
         '**Cómo se calculan.** *Asimetría*: coeficiente de Fisher-Pearson ajustado por tamaño muestral (G1, '
         '`pandas.Series.skew`). *Curtosis*: exceso de curtosis ajustado (G2, `pandas.Series.kurt`), que vale 0 '
-        'en una distribución normal. Se calculan sobre los valores observados, sin imputados (peso, talla e IMC '
-        'solo de quienes los informaron).',
+        'en una distribución normal. Se calculan sobre los valores disponibles tras la limpieza: en peso, talla e IMC, '
+        'solo de quienes los informaron; en horas sentada se incluyen los valores imputados en la Fase 34B.',
         '',
         _tabla(['Variable', 'n', 'Media', 'DE', 'Mediana', 'Mín.', 'Máx.', 'Asimetría', 'Curtosis',
                 'Atípicos (Tukey)', 'Lectura'],
@@ -159,8 +160,8 @@ def informe(resumen, n_total, n_mrs):
         f'- **Participantes.** Se describen las {n_mrs} participantes con las 11 preguntas del MRS completas '
         f'(de {n_total} tras la limpieza). Las {n_total - n_mrs} restantes no entran a los análisis con la '
         'variable objetivo.',
-        '- **Sin imputar.** Los gráficos muestran los datos tal como quedaron tras la limpieza; no se agrega '
-        'ninguna imputación nueva. El IMC se muestra solo para quienes informaron peso y talla, en los '
+        '- **Sin imputaciones nuevas.** Los gráficos muestran los datos tal como quedaron tras la limpieza, que ya '
+        'incluyen las imputaciones de la Fase 34B, y sus subtítulos las separan. El IMC se muestra solo para quienes informaron peso y talla, en los '
         'intervalos de la OMS, sin una categoría "no informado".',
         '- **Denominadores.** Preguntas generales: todas las participantes. Preguntas condicionales: solo quienes '
         'debían responder (por ejemplo, la frecuencia de fuerza solo entre quienes hacen fuerza; las preguntas de '

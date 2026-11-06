@@ -1,0 +1,13 @@
+﻿escenario,regla,n_relevantes,n_seleccionadas,seleccionadas,entran,salen,jaccard_con_definitiva
+S1 horas en terciles,adaptado,2,1,dias_ejercicio_semana,dias_ejercicio_semana,,0.000000
+S1 horas en terciles,estandar,2,1,dias_ejercicio_semana,dias_ejercicio_semana,,0.000000
+S1 horas en valores originales,adaptado,0,0,,,,1.000000
+S1 horas en valores originales,estandar,0,0,,,,1.000000
+S2 severidad en 4 clases,adaptado,2,2,dias_ejercicio_semana;lugar_trabajo_comprensivo,dias_ejercicio_semana;lugar_trabajo_comprensivo,,0.000000
+S2 severidad en 4 clases,estandar,2,2,dias_ejercicio_semana;lugar_trabajo_comprensivo,dias_ejercicio_semana;lugar_trabajo_comprensivo,,0.000000
+"S3 laborales con las trabajadoras, incluidas las imputadas",adaptado,2,1,dias_ejercicio_semana,dias_ejercicio_semana,,0.000000
+"S3 laborales con las trabajadoras, incluidas las imputadas",estandar,2,1,dias_ejercicio_semana,dias_ejercicio_semana,,0.000000
+"S4 lista única con ""no aplica"" como categoría",adaptado,3,2,dias_ejercicio_semana;lugar_trabajo_comprensivo,dias_ejercicio_semana;lugar_trabajo_comprensivo,,0.000000
+"S4 lista única con ""no aplica"" como categoría",estandar,3,2,dias_ejercicio_semana;lugar_trabajo_comprensivo,dias_ejercicio_semana;lugar_trabajo_comprensivo,,0.000000
+S5 FCBF completo con las respuestas laborales reales,adaptado,0,0,,,,1.000000
+S5 FCBF completo con las respuestas laborales reales,estandar,0,0,,,,1.000000

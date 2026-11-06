@@ -1,0 +1,20 @@
+{
+ "n_combinaciones": 4060,
+ "trio_guardado": "trabaja_actualmente + tiene_pareja + dias_ejercicio_semana",
+ "ari_guardado": 0.6767549378538654,
+ "trio_reproducido": "trabaja_actualmente + tiene_pareja + dias_ejercicio_semana",
+ "ari_reproducido": 0.6767549378538654,
+ "diferencia": 0.0,
+ "posicion": 1,
+ "segundo_trio": "trabaja_actualmente + tiene_pareja + frecuencia_aerobico",
+ "ari_segundo": 0.6069060183556622,
+ "tercero_trio": "trabaja_actualmente + tiene_pareja + frecuencia_fuerza",
+ "ari_tercero": 0.5840660475966429,
+ "mediana_combinaciones": 0.04034954254895989,
+ "p95_combinaciones": 0.3047681421516414,
+ "posicion_mejor_sin_trabajo": 29,
+ "ari_mejor_sin_trabajo": 0.45821108828408214,
+ "ari_mejor_sin_pareja": 0.39141025977114235,
+ "ari_mejor_sin_ejercicio": 0.6069060183556622,
+ "origen_codigo": "revision_decision_37c.pocas_variables: mayoría por celda con 5 pliegues; las etiquetas oficiales de A se ajustaron con las 529, y el trío se eligió con todos los datos"
+}

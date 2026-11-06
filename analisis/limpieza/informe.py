@@ -174,7 +174,8 @@ def _seccion_evaluacion(ev):
         '### 6.3 Celdas correctas que la limpieza cambió',
         '',
         f'Se revisaron {ev["celdas_revisadas"]} celdas que venían bien; la limpieza cambió por error '
-        f'**{ev["cambios_error"]}** ({_pct(ev["cambios_error"], ev["celdas_revisadas"])}).',
+        f'**{ev["cambios_error"]}** ({_pct(ev["cambios_error"], ev["celdas_revisadas"])}). Las filas de la tabla con '
+        'motivo son reglas intencionales de aplicabilidad, no errores; las que no tienen motivo son errores.',
         '',
     ]
     if len(ev['cambios']):

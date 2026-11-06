@@ -1,0 +1,13 @@
+configuracion,antecedente,consecuente,n,n_antecedente,confianza,frecuencia_basal,diferencia_basal,p_ajustado_busqueda,redundante,clase
+S2a,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,529,57,0.8070175438596491,0.5311909262759924,0.2758266175836567,0.0419580419580419,False,5-6 supera la nula (estabilidad no evaluada)
+S2b,comida_fuera=nunca_o_1-2_veces_por_semana & dias_ejercicio=3_o_mas_dias,severo_mrs=NO,529,60,0.7333333333333333,0.4688090737240076,0.2645242596093257,0.0329670329670329,False,5-6 supera la nula (estabilidad no evaluada)
+S2b,dias_ejercicio=3_o_mas_dias & prevision=FONASA,severo_mrs=NO,529,68,0.7352941176470589,0.4688090737240076,0.2664850439230513,0.0109890109890109,False,5-6 supera la nula (estabilidad no evaluada)
+S2b,agua=3-4_porciones_a_7_o_mas_porciones & dias_ejercicio=3_o_mas_dias & prevision=FONASA,severo_mrs=NO,529,61,0.7377049180327869,0.4688090737240076,0.2688958443087793,0.0219780219780219,True,3 redundante
+S2b,bajo_impacto=rara_vez_a_siempre & dias_ejercicio=3_o_mas_dias & prevision=FONASA,severo_mrs=NO,529,53,0.7547169811320755,0.4688090737240076,0.2859079074080679,0.0239760239760239,True,3 redundante
+S2b,comida_fuera=nunca_o_1-2_veces_por_semana & dias_ejercicio=3_o_mas_dias & med_diabetes=NO,severo_mrs=NO,529,55,0.7454545454545455,0.4688090737240076,0.2766454717305379,0.0299700299700299,True,3 redundante
+S2b,dias_ejercicio=3_o_mas_dias & falta_tiempo=nunca_o_casi_nunca_a_a_veces & prevision=FONASA,severo_mrs=NO,529,57,0.7368421052631579,0.4688090737240076,0.2680330315391502,0.0439560439560439,True,3 redundante
+S2b,dias_ejercicio=3_o_mas_dias & med_diabetes=NO & prevision=FONASA,severo_mrs=NO,529,61,0.7540983606557377,0.4688090737240076,0.28528928693173,0.0079920079920079,True,3 redundante
+S2b,dias_ejercicio=3_o_mas_dias & med_presion=NO & prevision=FONASA,severo_mrs=NO,529,60,0.75,0.4688090737240076,0.2811909262759924,0.0119880119880119,True,3 redundante
+S2b,dias_ejercicio=3_o_mas_dias & operada=NO & prevision=FONASA,severo_mrs=NO,529,55,0.7818181818181819,0.4688090737240076,0.3130091080941742,0.0039960039960039,True,3 redundante
+S2b,dias_ejercicio=3_o_mas_dias & pescado=nunca_o_1-2_veces_por_semana & prevision=FONASA,severo_mrs=NO,529,58,0.7586206896551724,0.4688090737240076,0.2898116159311648,0.0109890109890109,True,3 redundante
+S7b,aerobico=no_lo_realiza_o_nunca & agua=3-4_porciones & sobrecarga=frecuente_o_siempre,severo_mrs=SI,251,34,0.9117647058823528,0.5617529880478087,0.3500117178345442,0.0319680319680319,False,5-6 supera la nula (estabilidad no evaluada)

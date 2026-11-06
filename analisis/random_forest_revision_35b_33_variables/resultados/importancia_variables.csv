@@ -1,0 +1,244 @@
+﻿modelo,nombre,variables,particiones,auc_media,auc_de,auc_minimo,auc_maximo,auc_positivas,ba_media,ba_de,ba_minimo,ba_maximo,ba_positivas,aporte,q_menor_0_10,orden_en_modelo
+A,imc,imc,15,0.023064,0.034074,-0.033536,0.080554,12,0.019082,0.036249,-0.070357,0.081571,11,Aporte consistente,True,1
+A,trabaja_actualmente,trabaja_actualmente,15,0.004087,0.034683,-0.099107,0.040054,10,-0.002701,0.039014,-0.106571,0.041729,7,Aporte inestable,True,2
+A,edad,edad,15,-0.016970,0.025121,-0.060222,0.023348,4,-0.018702,0.036665,-0.102071,0.026647,6,Nulo o negativo,False,3
+B,imc,imc,15,0.029761,0.017307,-0.005054,0.056518,13,0.021806,0.034422,-0.040357,0.083571,11,Aporte consistente,True,1
+B,tabaco_frecuencia,tabaco_frecuencia,15,0.016870,0.009453,0.002417,0.029786,15,0.016335,0.023191,-0.027964,0.050946,12,Aporte consistente,False,2
+B,trabaja_actualmente,trabaja_actualmente,15,0.015897,0.015960,-0.021804,0.039018,13,0.019571,0.028108,-0.039268,0.055625,12,Aporte consistente,True,3
+B,dias_ejercicio_semana,dias_ejercicio_semana,15,0.014786,0.013395,-0.016130,0.035482,14,0.009879,0.016008,-0.014912,0.033446,9,Aporte consistente,True,4
+B,vasos_agua_dia,vasos_agua_dia,15,0.011215,0.012596,-0.018081,0.028839,13,0.012038,0.019456,-0.029288,0.040143,11,Aporte consistente,False,5
+B,distension_abdominal,distension_abdominal,15,0.009988,0.010414,-0.016631,0.021036,13,0.012583,0.015590,-0.012393,0.038696,12,Aporte consistente,False,6
+B,falta_tiempo_influye,falta_tiempo_influye,15,0.008778,0.015386,-0.027768,0.039868,12,0.012833,0.021446,-0.043071,0.057188,12,Aporte consistente,False,7
+B,frecuencia_bajo_impacto,frecuencia_bajo_impacto,15,0.007099,0.017424,-0.038579,0.033839,12,0.005864,0.018888,-0.027929,0.041250,8,Aporte consistente,True,8
+B,frutas_dia,frutas_dia,15,0.004561,0.005321,-0.006373,0.011732,11,0.006110,0.012670,-0.021455,0.026403,11,Aporte inestable,False,9
+B,frecuencia_fuerza,frecuencia_fuerza,15,0.002120,0.009236,-0.022964,0.015196,9,0.008116,0.014926,-0.016821,0.047929,11,Aporte inestable,True,10
+B,frecuencia_aerobico,frecuencia_aerobico,15,0.001587,0.003847,-0.005302,0.009398,9,0.001940,0.007557,-0.017538,0.011946,8,Aporte inestable,False,11
+B,frecuencia_comida_fuera,frecuencia_comida_fuera,15,0.001384,0.005001,-0.006643,0.011583,10,-0.003843,0.015680,-0.040179,0.025464,5,Aporte inestable,False,12
+B,usa_medicamentos_presion,usa_medicamentos_presion,15,0.001246,0.005667,-0.010214,0.007911,11,0.006690,0.006039,-0.001701,0.018625,13,Aporte inestable,False,13
+B,alcohol_frecuencia,alcohol_frecuencia,15,0.000831,0.008576,-0.016935,0.012982,8,-0.003124,0.013660,-0.027667,0.016446,8,Aporte inestable,False,14
+B,edad,edad,15,0.000806,0.010447,-0.016272,0.022145,7,0.010888,0.012044,-0.008857,0.028696,12,Aporte inestable,False,15
+B,pescado_semana,pescado_semana,15,0.000645,0.006307,-0.012442,0.007489,9,0.004536,0.013751,-0.031446,0.026446,10,Aporte inestable,False,16
+B,legumbres_semana,legumbres_semana,15,-0.000181,0.004967,-0.012911,0.008679,7,-0.000357,0.011601,-0.017538,0.027321,5,Nulo o negativo,False,17
+B,quien_prepara_comidas,quien_prepara_comidas,15,-0.000280,0.008330,-0.022449,0.012719,10,0.007389,0.007419,-0.010554,0.018179,14,Nulo o negativo,False,18
+B,tiene_pareja,tiene_pareja,15,-0.000540,0.004364,-0.007000,0.009275,6,0.002250,0.008798,-0.011520,0.023000,9,Nulo o negativo,False,19
+B,cantidad_personas_cuida,cantidad_personas_cuida,15,-0.000762,0.006993,-0.016837,0.010357,8,0.006205,0.008859,-0.011804,0.016821,11,Nulo o negativo,False,20
+B,platos_verduras_dia,platos_verduras_dia,15,-0.001444,0.001953,-0.004483,0.001482,4,-0.002993,0.006073,-0.012819,0.008357,4,Nulo o negativo,False,21
+B,operada_no_mas_hijos,operada_no_mas_hijos,15,-0.001581,0.004636,-0.011534,0.005411,7,-0.000629,0.009020,-0.020089,0.016946,6,Nulo o negativo,False,22
+B,evacuacion_intestinal,evacuacion_intestinal,15,-0.001626,0.002626,-0.006624,0.002775,3,-0.002626,0.006561,-0.014393,0.013250,5,Nulo o negativo,False,23
+B,tiene_actividad_sexual,tiene_actividad_sexual,15,-0.002399,0.003606,-0.011232,0.003018,4,-0.002869,0.008929,-0.022130,0.011732,4,Nulo o negativo,False,24
+B,lacteos_dia,lacteos_dia,15,-0.002487,0.005699,-0.013641,0.005875,5,0.000537,0.007432,-0.010332,0.014571,8,Nulo o negativo,False,25
+B,carnes_semana,carnes_semana,15,-0.002503,0.006081,-0.017804,0.004589,6,-0.005022,0.009770,-0.020855,0.007232,5,Nulo o negativo,False,26
+B,panes_dia,panes_dia,15,-0.003136,0.004515,-0.010411,0.005411,3,-0.003534,0.007576,-0.018554,0.008190,3,Nulo o negativo,False,27
+B,horas_sedentarismo,horas_sedentarismo,15,-0.003378,0.007915,-0.017894,0.007732,6,0.003209,0.012873,-0.016446,0.028232,8,Nulo o negativo,False,28
+B,golosinas_semana,golosinas_semana,15,-0.003765,0.004215,-0.015304,0.001339,2,-0.002556,0.010319,-0.019357,0.017321,6,Nulo o negativo,False,29
+B,jugos_gaseosas_dia,jugos_gaseosas_dia,15,-0.003854,0.008249,-0.018896,0.008857,5,0.000975,0.007676,-0.014089,0.015661,7,Nulo o negativo,False,30
+B_sin_imc,trabaja_actualmente,trabaja_actualmente,15,0.018372,0.014446,-0.020536,0.041017,14,0.018794,0.021821,-0.039089,0.048129,13,Aporte consistente,True,1
+B_sin_imc,tabaco_frecuencia,tabaco_frecuencia,15,0.017470,0.010811,-0.002524,0.034036,14,0.013479,0.024060,-0.033643,0.041679,10,Aporte consistente,False,2
+B_sin_imc,dias_ejercicio_semana,dias_ejercicio_semana,15,0.017155,0.014195,-0.003171,0.037929,13,0.015449,0.014979,-0.008982,0.045625,13,Aporte consistente,True,3
+B_sin_imc,vasos_agua_dia,vasos_agua_dia,15,0.016567,0.010474,-0.000768,0.035214,14,0.014702,0.018110,-0.004125,0.064857,12,Aporte consistente,False,4
+B_sin_imc,falta_tiempo_influye,falta_tiempo_influye,15,0.014157,0.015956,-0.021911,0.037415,11,0.007922,0.022004,-0.042321,0.046429,11,Aporte inestable,False,5
+B_sin_imc,frecuencia_bajo_impacto,frecuencia_bajo_impacto,15,0.012107,0.024549,-0.052918,0.037821,10,0.007179,0.025266,-0.042257,0.040857,10,Aporte inestable,True,6
+B_sin_imc,distension_abdominal,distension_abdominal,15,0.009462,0.011308,-0.008844,0.028286,12,0.012284,0.013125,-0.005839,0.037982,13,Aporte consistente,False,7
+B_sin_imc,alcohol_frecuencia,alcohol_frecuencia,15,0.004907,0.009638,-0.020429,0.015393,12,0.005808,0.013670,-0.021571,0.027870,10,Aporte pequeño,False,8
+B_sin_imc,frutas_dia,frutas_dia,15,0.004407,0.006950,-0.010007,0.017125,12,0.003096,0.013315,-0.018107,0.021365,9,Aporte pequeño,False,9
+B_sin_imc,frecuencia_aerobico,frecuencia_aerobico,15,0.002540,0.004068,-0.005908,0.009714,11,0.001779,0.012287,-0.024426,0.031643,9,Aporte inestable,False,10
+B_sin_imc,tiene_pareja,tiene_pareja,15,0.000617,0.004337,-0.008036,0.008393,8,0.004756,0.011679,-0.011798,0.023143,8,Aporte inestable,False,11
+B_sin_imc,usa_medicamentos_presion,usa_medicamentos_presion,15,0.000413,0.006495,-0.013536,0.008468,11,0.005286,0.012898,-0.018964,0.022530,8,Aporte inestable,False,12
+B_sin_imc,frecuencia_comida_fuera,frecuencia_comida_fuera,15,0.000262,0.005398,-0.011250,0.007518,9,0.000141,0.017083,-0.041482,0.030254,7,Aporte inestable,False,13
+B_sin_imc,pescado_semana,pescado_semana,15,0.000181,0.005331,-0.009148,0.012208,8,0.003472,0.014874,-0.029804,0.020855,10,Aporte inestable,False,14
+B_sin_imc,frecuencia_fuerza,frecuencia_fuerza,15,0.000146,0.007292,-0.013536,0.008455,8,0.002679,0.012390,-0.016625,0.031804,9,Aporte inestable,True,15
+B_sin_imc,legumbres_semana,legumbres_semana,15,-0.000115,0.004890,-0.007875,0.007839,7,-0.001498,0.011604,-0.017607,0.020372,5,Nulo o negativo,False,16
+B_sin_imc,quien_prepara_comidas,quien_prepara_comidas,15,-0.000733,0.006549,-0.012214,0.012609,8,0.006376,0.016538,-0.019321,0.034503,7,Nulo o negativo,False,17
+B_sin_imc,edad,edad,15,-0.001257,0.011956,-0.023446,0.017768,7,0.008347,0.016600,-0.038457,0.033468,12,Nulo o negativo,False,18
+B_sin_imc,platos_verduras_dia,platos_verduras_dia,15,-0.001855,0.002920,-0.005196,0.003079,4,0.000547,0.010828,-0.014626,0.028232,8,Nulo o negativo,False,19
+B_sin_imc,lacteos_dia,lacteos_dia,15,-0.002118,0.006280,-0.017705,0.005500,6,-0.000516,0.010657,-0.016964,0.017179,7,Nulo o negativo,False,20
+B_sin_imc,evacuacion_intestinal,evacuacion_intestinal,15,-0.002651,0.004082,-0.012281,0.001750,5,-0.000498,0.009889,-0.014054,0.024286,6,Nulo o negativo,False,21
+B_sin_imc,tiene_actividad_sexual,tiene_actividad_sexual,15,-0.002804,0.003968,-0.010277,0.002223,4,0.000530,0.011649,-0.024929,0.014375,9,Nulo o negativo,False,22
+B_sin_imc,golosinas_semana,golosinas_semana,15,-0.002862,0.006456,-0.015768,0.007289,5,0.000530,0.010470,-0.022554,0.014214,9,Nulo o negativo,False,23
+B_sin_imc,jugos_gaseosas_dia,jugos_gaseosas_dia,15,-0.003513,0.007203,-0.017741,0.006429,5,-0.000999,0.012998,-0.031232,0.016228,8,Nulo o negativo,False,24
+B_sin_imc,operada_no_mas_hijos,operada_no_mas_hijos,15,-0.003555,0.005058,-0.013036,0.004321,2,-0.003515,0.013699,-0.035482,0.016732,6,Nulo o negativo,False,25
+B_sin_imc,horas_sedentarismo,horas_sedentarismo,15,-0.003561,0.007523,-0.015268,0.007322,4,0.002239,0.014308,-0.019286,0.023214,7,Nulo o negativo,False,26
+B_sin_imc,carnes_semana,carnes_semana,15,-0.003708,0.006435,-0.016393,0.010222,3,0.000914,0.009291,-0.018179,0.016607,9,Nulo o negativo,False,27
+B_sin_imc,panes_dia,panes_dia,15,-0.004044,0.004502,-0.010974,0.003268,4,0.003359,0.010662,-0.013089,0.022704,9,Nulo o negativo,False,28
+B_sin_imc,cantidad_personas_cuida,cantidad_personas_cuida,15,-0.004298,0.006651,-0.017401,0.008000,4,-0.002378,0.013861,-0.022832,0.025255,7,Nulo o negativo,False,29
+C0,frecuencia_bajo_impacto,frecuencia_bajo_impacto,15,0.029191,0.030550,-0.040593,0.075394,12,0.030708,0.034515,-0.030966,0.092140,12,Aporte consistente,True,1
+C0,distension_abdominal,distension_abdominal,15,0.021909,0.025083,-0.012485,0.075126,11,0.013899,0.026268,-0.043970,0.077512,12,Aporte inestable,False,2
+C0,tabaco_frecuencia,tabaco_frecuencia,15,0.020609,0.018275,-0.010985,0.063447,14,0.023468,0.021949,-0.022333,0.055114,12,Aporte consistente,False,3
+C0,imc,imc,15,0.013166,0.018215,-0.024694,0.038542,12,0.020571,0.017975,-0.008364,0.055871,13,Aporte consistente,True,4
+C0,legumbres_semana,legumbres_semana,15,0.006637,0.009168,-0.010723,0.022222,13,0.011862,0.022456,-0.024387,0.055777,10,Aporte consistente,False,5
+C0,vasos_agua_dia,vasos_agua_dia,15,0.006539,0.011771,-0.020391,0.022485,11,0.012020,0.024086,-0.028788,0.044981,11,Aporte inestable,False,6
+C0,alcohol_frecuencia,alcohol_frecuencia,15,0.006171,0.023395,-0.067586,0.034091,11,-0.002113,0.022160,-0.060294,0.029963,7,Aporte inestable,False,7
+C0,usa_medicamentos_presion,usa_medicamentos_presion,15,0.005148,0.010340,-0.020404,0.017614,13,0.008891,0.019622,-0.033996,0.051515,11,Aporte consistente,False,8
+C0,dias_ejercicio_semana,dias_ejercicio_semana,15,0.003817,0.022866,-0.039030,0.034848,9,0.008194,0.022520,-0.026799,0.048390,10,Aporte inestable,True,9
+C0,frecuencia_aerobico,frecuencia_aerobico,15,0.003294,0.006326,-0.010859,0.014962,11,0.005043,0.010634,-0.012973,0.026136,11,Aporte inestable,False,10
+C0,frutas_dia,frutas_dia,15,0.002763,0.005560,-0.009498,0.013194,11,0.003739,0.008331,-0.012027,0.024053,11,Aporte inestable,False,11
+C0,carnes_semana,carnes_semana,15,0.002523,0.010965,-0.021275,0.016061,10,0.008376,0.017624,-0.021591,0.043561,9,Aporte inestable,False,12
+C0,cantidad_personas_cuida,cantidad_personas_cuida,15,0.001376,0.010869,-0.015576,0.029167,8,0.003439,0.018260,-0.027212,0.031534,7,Aporte inestable,False,13
+C0,frecuencia_fuerza,frecuencia_fuerza,15,-0.000732,0.010452,-0.027390,0.015972,7,0.008612,0.014635,-0.012868,0.048295,11,Nulo o negativo,True,14
+C0,frecuencia_comida_fuera,frecuencia_comida_fuera,15,-0.000755,0.008045,-0.020455,0.010417,8,0.005545,0.012159,-0.016098,0.029167,9,Nulo o negativo,False,15
+C0,operada_no_mas_hijos,operada_no_mas_hijos,15,-0.000849,0.003343,-0.006818,0.005366,7,-0.000422,0.007941,-0.016667,0.021875,3,Nulo o negativo,False,16
+C0,panes_dia,panes_dia,15,-0.001117,0.004911,-0.012071,0.009091,6,0.002562,0.007439,-0.017045,0.014299,9,Nulo o negativo,False,17
+C0,pescado_semana,pescado_semana,15,-0.001192,0.006722,-0.012255,0.011427,7,0.004144,0.017211,-0.019886,0.040380,5,Nulo o negativo,False,18
+C0,jugos_gaseosas_dia,jugos_gaseosas_dia,15,-0.001839,0.007253,-0.014951,0.010545,5,-0.002234,0.009463,-0.016394,0.012970,7,Nulo o negativo,False,19
+C0,lacteos_dia,lacteos_dia,15,-0.002303,0.008168,-0.020076,0.007843,8,0.006128,0.010648,-0.017519,0.021591,11,Nulo o negativo,False,20
+C0,evacuacion_intestinal,evacuacion_intestinal,15,-0.002594,0.010454,-0.034028,0.008712,6,-0.000899,0.013219,-0.020076,0.025852,7,Nulo o negativo,False,21
+C0,falta_tiempo_influye,falta_tiempo_influye,15,-0.003109,0.007996,-0.023407,0.006818,6,0.006732,0.013602,-0.014489,0.032576,10,Nulo o negativo,False,22
+C0,platos_verduras_dia,platos_verduras_dia,15,-0.004379,0.009242,-0.027145,0.005303,6,0.000737,0.012885,-0.034743,0.016761,8,Nulo o negativo,False,23
+C0,golosinas_semana,golosinas_semana,15,-0.005442,0.006388,-0.015576,0.004987,4,-0.000703,0.009060,-0.014000,0.019223,7,Nulo o negativo,False,24
+C0,tiene_actividad_sexual,tiene_actividad_sexual,15,-0.005443,0.006957,-0.025253,0.002778,3,-0.002181,0.009114,-0.018606,0.014000,4,Nulo o negativo,False,25
+C0,quien_prepara_comidas,quien_prepara_comidas,15,-0.005606,0.008289,-0.022222,0.008902,3,0.002267,0.013953,-0.031818,0.030682,8,Nulo o negativo,False,26
+C0,tiene_pareja,tiene_pareja,15,-0.006105,0.006425,-0.019363,0.001389,2,-0.005109,0.011101,-0.029451,0.009186,5,Nulo o negativo,False,27
+C0,horas_sedentarismo,horas_sedentarismo,15,-0.008057,0.018584,-0.062500,0.014216,4,-0.004804,0.016874,-0.037316,0.021446,6,Nulo o negativo,False,28
+C0,edad,edad,15,-0.010279,0.013794,-0.035333,0.011174,5,-0.008779,0.022831,-0.057818,0.021307,7,Nulo o negativo,False,29
+C1,lugar_trabajo_comprensivo,lugar_trabajo_comprensivo,15,0.036829,0.014504,0.015657,0.062500,15,0.040577,0.023583,-0.013419,0.061061,14,Aporte consistente,True,1
+C1,frecuencia_bajo_impacto,frecuencia_bajo_impacto,15,0.027458,0.024891,-0.030871,0.067424,14,0.018912,0.035603,-0.032047,0.075303,10,Aporte consistente,True,2
+C1,tabaco_frecuencia,tabaco_frecuencia,15,0.019467,0.011922,-0.006439,0.039205,14,0.012133,0.016308,-0.010606,0.039767,11,Aporte consistente,False,3
+C1,distension_abdominal,distension_abdominal,15,0.016686,0.020511,-0.025091,0.049758,13,-0.000828,0.030963,-0.039583,0.078121,7,Aporte consistente,False,4
+C1,imc,imc,15,0.015900,0.016546,-0.017172,0.047917,14,0.015336,0.020356,-0.014848,0.048897,12,Aporte consistente,True,5
+C1,estres_entorno_laboral,estres_entorno_laboral,15,0.015827,0.013956,-0.016856,0.047059,14,0.003289,0.022966,-0.048295,0.043371,10,Aporte consistente,False,6
+C1,alcohol_frecuencia,alcohol_frecuencia,15,0.012891,0.019122,-0.040686,0.040783,13,0.003060,0.022879,-0.049265,0.037311,8,Aporte consistente,False,7
+C1,legumbres_semana,legumbres_semana,15,0.009597,0.008667,-0.001818,0.027588,13,0.006254,0.023940,-0.032008,0.062364,6,Aporte consistente,False,8
+C1,frecuencia_fuerza,frecuencia_fuerza,15,0.007749,0.009997,-0.018566,0.024369,14,0.007819,0.015516,-0.036275,0.022159,13,Aporte consistente,True,9
+C1,usa_medicamentos_presion,usa_medicamentos_presion,15,0.007374,0.008505,-0.010417,0.025515,12,0.006501,0.011583,-0.012973,0.026788,11,Aporte consistente,False,10
+C1,carnes_semana,carnes_semana,15,0.006092,0.013393,-0.026073,0.026532,11,-0.002076,0.015215,-0.033946,0.022697,7,Aporte inestable,False,11
+C1,frutas_dia,frutas_dia,15,0.005698,0.004482,-0.000884,0.015783,14,0.003147,0.010658,-0.009314,0.032386,5,Aporte consistente,False,12
+C1,dias_ejercicio_semana,dias_ejercicio_semana,15,0.005241,0.015098,-0.021970,0.024369,10,0.006751,0.028319,-0.047917,0.051364,10,Aporte inestable,True,13
+C1,frecuencia_aerobico,frecuencia_aerobico,15,0.003872,0.005031,-0.009659,0.010669,13,-0.002790,0.008088,-0.022822,0.007230,6,Aporte pequeño,False,14
+C1,cantidad_personas_cuida,cantidad_personas_cuida,15,0.002856,0.008333,-0.010354,0.019129,9,-0.004698,0.019608,-0.026989,0.047394,4,Aporte inestable,False,15
+C1,vasos_agua_dia,vasos_agua_dia,15,0.002763,0.010131,-0.017803,0.016288,10,-0.000251,0.019546,-0.035294,0.035322,8,Aporte inestable,False,16
+C1,frecuencia_comida_fuera,frecuencia_comida_fuera,15,0.002131,0.010144,-0.021780,0.019455,12,-0.004741,0.018118,-0.040909,0.033697,6,Aporte pequeño,False,17
+C1,panes_dia,panes_dia,15,0.000463,0.004920,-0.009722,0.006692,7,-0.002081,0.011779,-0.028309,0.018750,6,Aporte inestable,False,18
+C1,lacteos_dia,lacteos_dia,15,-0.000667,0.005417,-0.011237,0.008333,6,-0.005184,0.009867,-0.022917,0.012576,5,Nulo o negativo,False,19
+C1,quien_prepara_comidas,quien_prepara_comidas,15,-0.001155,0.006234,-0.015758,0.008824,6,0.006215,0.011298,-0.008712,0.028314,10,Nulo o negativo,False,20
+C1,operada_no_mas_hijos,operada_no_mas_hijos,15,-0.001431,0.003135,-0.009455,0.003535,5,-0.002299,0.004889,-0.015625,0.003125,2,Nulo o negativo,False,21
+C1,falta_tiempo_influye,falta_tiempo_influye,15,-0.001638,0.006817,-0.012311,0.009681,5,-0.013239,0.014752,-0.036269,0.014773,2,Nulo o negativo,False,22
+C1,pescado_semana,pescado_semana,15,-0.002159,0.005364,-0.008902,0.009879,3,-0.001970,0.012291,-0.019981,0.025909,4,Nulo o negativo,False,23
+C1,jugos_gaseosas_dia,jugos_gaseosas_dia,15,-0.002211,0.006801,-0.017045,0.006503,7,-0.005142,0.015752,-0.037255,0.017424,7,Nulo o negativo,False,24
+C1,evacuacion_intestinal,evacuacion_intestinal,15,-0.002226,0.008468,-0.018750,0.009912,7,-0.006416,0.014658,-0.034754,0.021364,4,Nulo o negativo,False,25
+C1,platos_verduras_dia,platos_verduras_dia,15,-0.002980,0.009265,-0.032008,0.004735,7,-0.002820,0.017936,-0.037879,0.030682,7,Nulo o negativo,False,26
+C1,golosinas_semana,golosinas_semana,15,-0.003222,0.005568,-0.015783,0.007386,5,-0.005283,0.017332,-0.031556,0.024788,6,Nulo o negativo,False,27
+C1,horas_sedentarismo,horas_sedentarismo,15,-0.003576,0.014032,-0.026348,0.018561,5,-0.010735,0.024367,-0.049242,0.044939,5,Nulo o negativo,False,28
+C1,tiene_pareja,tiene_pareja,15,-0.004044,0.005810,-0.019381,0.003598,3,-0.007364,0.010414,-0.025000,0.011458,2,Nulo o negativo,False,29
+C1,edad,edad,15,-0.005645,0.013810,-0.029455,0.017866,6,-0.006985,0.019659,-0.042892,0.026136,6,Nulo o negativo,False,30
+C1,tiene_actividad_sexual,tiene_actividad_sexual,15,-0.007258,0.009253,-0.026263,0.003157,3,-0.009669,0.011144,-0.022727,0.010417,4,Nulo o negativo,False,31
+C1_sin_imc,lugar_trabajo_comprensivo,lugar_trabajo_comprensivo,15,0.031907,0.011457,0.016364,0.055821,15,0.019995,0.028938,-0.030682,0.072672,11,Aporte consistente,True,1
+C1_sin_imc,distension_abdominal,distension_abdominal,15,0.023345,0.016974,-0.010303,0.053157,14,0.006106,0.020552,-0.026420,0.045424,8,Aporte consistente,False,2
+C1_sin_imc,tabaco_frecuencia,tabaco_frecuencia,15,0.018608,0.020918,-0.021273,0.059722,12,0.014417,0.017672,-0.026420,0.034186,13,Aporte consistente,False,3
+C1_sin_imc,frecuencia_bajo_impacto,frecuencia_bajo_impacto,15,0.017539,0.020730,-0.021907,0.043813,11,0.017286,0.036635,-0.047917,0.083027,11,Aporte inestable,True,4
+C1_sin_imc,alcohol_frecuencia,alcohol_frecuencia,15,0.009193,0.020942,-0.043505,0.035543,10,0.008957,0.022226,-0.040625,0.047733,11,Aporte inestable,False,5
+C1_sin_imc,frecuencia_fuerza,frecuencia_fuerza,15,0.008643,0.008819,-0.016728,0.019318,14,0.006561,0.012588,-0.015931,0.032108,10,Aporte consistente,True,6
+C1_sin_imc,usa_medicamentos_presion,usa_medicamentos_presion,15,0.008090,0.005576,-0.000821,0.019318,13,0.007229,0.013812,-0.006818,0.038920,8,Aporte consistente,False,7
+C1_sin_imc,estres_entorno_laboral,estres_entorno_laboral,15,0.007862,0.018586,-0.035038,0.045404,11,-0.000341,0.019061,-0.047822,0.042045,6,Aporte inestable,False,8
+C1_sin_imc,carnes_semana,carnes_semana,15,0.005826,0.012896,-0.029735,0.024545,13,-0.001564,0.018585,-0.030492,0.027462,6,Aporte consistente,False,9
+C1_sin_imc,legumbres_semana,legumbres_semana,15,0.005262,0.008571,-0.008902,0.019697,10,0.000250,0.019268,-0.024527,0.034191,6,Aporte inestable,False,10
+C1_sin_imc,cantidad_personas_cuida,cantidad_personas_cuida,15,0.003849,0.010492,-0.015088,0.020833,10,0.000203,0.014827,-0.033617,0.024081,9,Aporte inestable,False,11
+C1_sin_imc,frecuencia_aerobico,frecuencia_aerobico,15,0.003276,0.005089,-0.003851,0.011336,11,0.001840,0.011180,-0.020739,0.014962,8,Aporte inestable,False,12
+C1_sin_imc,frutas_dia,frutas_dia,15,0.003073,0.004513,-0.004545,0.009576,11,0.003557,0.015385,-0.027273,0.028370,8,Aporte inestable,False,13
+C1_sin_imc,vasos_agua_dia,vasos_agua_dia,15,0.002480,0.012378,-0.014583,0.028346,8,-0.004154,0.018562,-0.037311,0.025189,5,Aporte inestable,False,14
+C1_sin_imc,falta_tiempo_influye,falta_tiempo_influye,15,0.000724,0.009089,-0.016856,0.017487,8,-0.009689,0.015694,-0.035038,0.020928,3,Aporte inestable,False,15
+C1_sin_imc,frecuencia_comida_fuera,frecuencia_comida_fuera,15,0.000403,0.011511,-0.023043,0.013603,10,-0.008811,0.017215,-0.037121,0.017892,4,Aporte inestable,False,16
+C1_sin_imc,lacteos_dia,lacteos_dia,15,0.000071,0.005424,-0.009533,0.010110,6,-0.004086,0.014333,-0.035985,0.013787,7,Aporte inestable,False,17
+C1_sin_imc,dias_ejercicio_semana,dias_ejercicio_semana,15,-0.000242,0.017479,-0.035606,0.022854,7,-0.008110,0.023743,-0.056495,0.021446,7,Nulo o negativo,True,18
+C1_sin_imc,panes_dia,panes_dia,15,-0.001488,0.005030,-0.009620,0.007333,6,-0.000696,0.015213,-0.036458,0.019240,8,Nulo o negativo,False,19
+C1_sin_imc,quien_prepara_comidas,quien_prepara_comidas,15,-0.001838,0.008567,-0.017758,0.014032,8,0.003103,0.017338,-0.041761,0.026225,10,Nulo o negativo,False,20
+C1_sin_imc,pescado_semana,pescado_semana,15,-0.002457,0.005616,-0.018485,0.004861,5,0.000436,0.012787,-0.032000,0.023958,7,Nulo o negativo,False,21
+C1_sin_imc,operada_no_mas_hijos,operada_no_mas_hijos,15,-0.002580,0.002965,-0.006881,0.003157,3,-0.001495,0.007826,-0.026103,0.012121,3,Nulo o negativo,False,22
+C1_sin_imc,platos_verduras_dia,platos_verduras_dia,15,-0.002719,0.007631,-0.020404,0.006629,8,-0.013701,0.022268,-0.085038,0.001042,3,Nulo o negativo,False,23
+C1_sin_imc,jugos_gaseosas_dia,jugos_gaseosas_dia,15,-0.003208,0.005333,-0.015319,0.006303,4,-0.012425,0.013307,-0.038352,0.011765,1,Nulo o negativo,False,24
+C1_sin_imc,evacuacion_intestinal,evacuacion_intestinal,15,-0.003943,0.008836,-0.020833,0.020667,3,-0.006450,0.014074,-0.040814,0.016544,3,Nulo o negativo,False,25
+C1_sin_imc,tiene_pareja,tiene_pareja,15,-0.004634,0.004425,-0.011742,0.001471,3,0.000205,0.009353,-0.011458,0.023529,6,Nulo o negativo,False,26
+C1_sin_imc,golosinas_semana,golosinas_semana,15,-0.004890,0.006732,-0.019879,0.002336,5,-0.002178,0.015385,-0.036553,0.021212,5,Nulo o negativo,False,27
+C1_sin_imc,horas_sedentarismo,horas_sedentarismo,15,-0.005881,0.013036,-0.025316,0.023529,5,-0.016336,0.028399,-0.065909,0.025551,4,Nulo o negativo,False,28
+C1_sin_imc,tiene_actividad_sexual,tiene_actividad_sexual,15,-0.008710,0.010563,-0.032702,0.006127,2,-0.008316,0.014341,-0.047064,0.011458,2,Nulo o negativo,False,29
+C1_sin_imc,edad,edad,15,-0.010089,0.012877,-0.039091,0.007071,3,-0.009498,0.014579,-0.035417,0.017708,3,Nulo o negativo,False,30
+D0,dias_ejercicio_semana,dias_ejercicio_semana,15,0.034643,0.026863,-0.024250,0.068519,13,0.029629,0.031223,-0.017685,0.080026,12,Aporte consistente,True,1
+D0,vasos_agua_dia,vasos_agua_dia,15,0.021176,0.020012,-0.021429,0.060141,13,0.018831,0.023041,-0.038624,0.058862,14,Aporte consistente,False,2
+D0,tabaco_frecuencia,tabaco_frecuencia,15,0.019973,0.015607,-0.012963,0.039771,13,0.021503,0.030290,-0.039286,0.062321,12,Aporte consistente,False,3
+D0,distension_abdominal,distension_abdominal,15,0.019916,0.018356,-0.005982,0.050529,12,0.007302,0.024912,-0.038095,0.045106,10,Aporte consistente,False,4
+D0,frecuencia_bajo_impacto,frecuencia_bajo_impacto,15,0.018501,0.028612,-0.035278,0.076019,12,0.007374,0.032227,-0.034524,0.077685,9,Aporte consistente,True,5
+D0,trabaja_actualmente,trabaja_actualmente,15,0.009150,0.017100,-0.025463,0.032716,11,-0.004448,0.027868,-0.048810,0.049339,7,Aporte inestable,True,6
+D0,frecuencia_fuerza,frecuencia_fuerza,15,0.004705,0.010767,-0.016944,0.016696,11,0.012564,0.014280,-0.010053,0.043915,12,Aporte inestable,True,7
+D0,pescado_semana,pescado_semana,15,0.003395,0.012936,-0.030159,0.020357,11,-0.002901,0.029579,-0.081217,0.035053,7,Aporte inestable,False,8
+D0,lacteos_dia,lacteos_dia,15,0.003393,0.003984,-0.004850,0.007496,12,-0.000026,0.020709,-0.058069,0.033333,8,Aporte pequeño,False,9
+D0,falta_tiempo_influye,falta_tiempo_influye,15,0.002699,0.011792,-0.031658,0.024515,12,-0.001357,0.020015,-0.037169,0.045000,5,Aporte pequeño,False,10
+D0,imc,imc,15,0.002428,0.026496,-0.066429,0.035273,12,0.000497,0.040275,-0.109392,0.054101,9,Aporte pequeño,True,11
+D0,edad,edad,15,0.002037,0.014051,-0.030511,0.025132,8,0.001388,0.024537,-0.043056,0.049028,9,Aporte inestable,False,12
+D0,usa_medicamentos_presion,usa_medicamentos_presion,15,0.000812,0.006395,-0.011389,0.013981,10,-0.000526,0.012902,-0.021032,0.020767,7,Aporte inestable,False,13
+D0,operada_no_mas_hijos,operada_no_mas_hijos,15,0.000441,0.002729,-0.005648,0.005732,10,-0.000662,0.007007,-0.016667,0.016270,3,Aporte inestable,False,14
+D0,legumbres_semana,legumbres_semana,15,-0.000085,0.003349,-0.006071,0.005026,8,0.004195,0.011453,-0.024643,0.020899,9,Nulo o negativo,False,15
+D0,frecuencia_aerobico,frecuencia_aerobico,15,-0.000614,0.010035,-0.030335,0.012434,7,-0.000561,0.010879,-0.034127,0.008333,9,Nulo o negativo,False,16
+D0,frutas_dia,frutas_dia,15,-0.000642,0.003241,-0.006161,0.004107,7,-0.001695,0.011884,-0.030179,0.023810,6,Nulo o negativo,False,17
+D0,evacuacion_intestinal,evacuacion_intestinal,15,-0.001447,0.007028,-0.015079,0.011199,7,-0.000330,0.019607,-0.041138,0.036508,8,Nulo o negativo,False,18
+D0,panes_dia,panes_dia,15,-0.001750,0.004837,-0.010053,0.005804,5,-0.000632,0.008984,-0.017500,0.012963,6,Nulo o negativo,False,19
+D0,golosinas_semana,golosinas_semana,15,-0.001948,0.005971,-0.009630,0.012054,5,-0.001476,0.015234,-0.024074,0.035536,5,Nulo o negativo,False,20
+D0,cantidad_personas_cuida,cantidad_personas_cuida,15,-0.002128,0.007153,-0.016226,0.009259,6,-0.010980,0.016610,-0.045106,0.009127,5,Nulo o negativo,False,21
+D0,platos_verduras_dia,platos_verduras_dia,15,-0.002358,0.004150,-0.012698,0.002768,5,-0.005378,0.010631,-0.022500,0.018783,2,Nulo o negativo,False,22
+D0,jugos_gaseosas_dia,jugos_gaseosas_dia,15,-0.002907,0.007733,-0.018056,0.010406,6,-0.000770,0.010704,-0.027083,0.016667,8,Nulo o negativo,False,23
+D0,tiene_pareja,tiene_pareja,15,-0.003629,0.006897,-0.019643,0.004409,6,-0.003121,0.015153,-0.028968,0.024074,5,Nulo o negativo,False,24
+D0,carnes_semana,carnes_semana,15,-0.004322,0.008862,-0.025926,0.007848,5,-0.001861,0.018346,-0.028968,0.048750,4,Nulo o negativo,False,25
+D0,horas_sedentarismo,horas_sedentarismo,15,-0.004951,0.009434,-0.022870,0.008113,5,-0.007692,0.016807,-0.035979,0.023545,4,Nulo o negativo,False,26
+D0,frecuencia_comida_fuera,frecuencia_comida_fuera,15,-0.005434,0.009620,-0.030159,0.009877,3,-0.005623,0.013832,-0.025265,0.020370,4,Nulo o negativo,False,27
+D0,tiene_actividad_sexual,tiene_actividad_sexual,15,-0.005715,0.010490,-0.029732,0.010053,3,-0.004596,0.016570,-0.042063,0.018386,4,Nulo o negativo,False,28
+D0,alcohol_frecuencia,alcohol_frecuencia,15,-0.005840,0.006566,-0.023280,0.003968,3,-0.001542,0.014011,-0.025926,0.028214,4,Nulo o negativo,False,29
+D0,quien_prepara_comidas,quien_prepara_comidas,15,-0.005863,0.016260,-0.058704,0.014021,5,-0.010718,0.022866,-0.051019,0.027963,3,Nulo o negativo,False,30
+D1,dias_ejercicio_semana,dias_ejercicio_semana,15,0.034387,0.034415,-0.042407,0.085089,13,0.021358,0.031157,-0.034954,0.074821,12,Aporte consistente,True,1
+D1,vasos_agua_dia,vasos_agua_dia,15,0.028485,0.026717,-0.041005,0.072663,14,0.005834,0.023855,-0.035847,0.036667,9,Aporte consistente,False,2
+D1,tabaco_frecuencia,tabaco_frecuencia,15,0.019121,0.012913,-0.001235,0.044797,13,0.008966,0.018998,-0.022222,0.035847,10,Aporte consistente,False,3
+D1,sobrecarga_fisica_emocional,sobrecarga_fisica_emocional,15,0.018685,0.019608,-0.036696,0.041711,13,0.002329,0.016646,-0.021250,0.030423,7,Aporte consistente,False,4
+D1,frecuencia_bajo_impacto,frecuencia_bajo_impacto,15,0.016822,0.030545,-0.050441,0.058148,12,-0.001859,0.033696,-0.071667,0.052679,8,Aporte consistente,True,5
+D1,distension_abdominal,distension_abdominal,15,0.016747,0.016333,-0.007679,0.046473,12,0.007331,0.021784,-0.043571,0.032672,11,Aporte consistente,False,6
+D1,frecuencia_fuerza,frecuencia_fuerza,15,0.003831,0.008370,-0.016759,0.017108,11,0.003640,0.012354,-0.013380,0.027143,9,Aporte inestable,True,7
+D1,trabaja_actualmente,trabaja_actualmente,15,0.003396,0.023323,-0.048929,0.035273,10,-0.004230,0.029736,-0.063214,0.041402,6,Aporte inestable,True,8
+D1,usa_medicamentos_presion,usa_medicamentos_presion,15,0.002926,0.004889,-0.005357,0.012434,11,0.000392,0.008660,-0.023016,0.015741,6,Aporte inestable,False,9
+D1,pescado_semana,pescado_semana,15,0.002720,0.011294,-0.025750,0.016931,10,-0.002101,0.019762,-0.064286,0.023810,7,Aporte inestable,False,10
+D1,legumbres_semana,legumbres_semana,15,0.001007,0.005606,-0.006667,0.014815,9,0.001163,0.012111,-0.023929,0.029762,6,Aporte inestable,False,11
+D1,imc,imc,15,0.000821,0.024819,-0.055996,0.031204,9,-0.001474,0.031604,-0.090873,0.039107,7,Aporte inestable,True,12
+D1,operada_no_mas_hijos,operada_no_mas_hijos,15,-0.000431,0.003745,-0.008661,0.006173,7,0.001232,0.005558,-0.003704,0.014815,4,Nulo o negativo,False,13
+D1,falta_tiempo_influye,falta_tiempo_influye,15,-0.000511,0.006632,-0.011817,0.015463,6,-0.004625,0.014134,-0.036508,0.023929,5,Nulo o negativo,False,14
+D1,lacteos_dia,lacteos_dia,15,-0.000625,0.007244,-0.015961,0.011640,8,-0.003981,0.014059,-0.032639,0.017593,4,Nulo o negativo,False,15
+D1,frecuencia_aerobico,frecuencia_aerobico,15,-0.000634,0.007388,-0.016667,0.009196,8,0.001593,0.009898,-0.012698,0.025000,6,Nulo o negativo,False,16
+D1,frutas_dia,frutas_dia,15,-0.000699,0.006098,-0.012522,0.006696,8,-0.002183,0.013419,-0.022884,0.025000,5,Nulo o negativo,False,17
+D1,evacuacion_intestinal,evacuacion_intestinal,15,-0.000763,0.009967,-0.022046,0.018519,9,-0.004112,0.014516,-0.038095,0.023942,5,Nulo o negativo,False,18
+D1,platos_verduras_dia,platos_verduras_dia,15,-0.001484,0.002754,-0.006878,0.003263,4,-0.000733,0.006360,-0.014815,0.010714,3,Nulo o negativo,False,19
+D1,cantidad_personas_cuida,cantidad_personas_cuida,15,-0.001491,0.006086,-0.017637,0.006790,8,-0.004602,0.017481,-0.045536,0.019306,8,Nulo o negativo,False,20
+D1,jugos_gaseosas_dia,jugos_gaseosas_dia,15,-0.002148,0.005253,-0.010714,0.010758,3,0.001642,0.008578,-0.010714,0.022354,6,Nulo o negativo,False,21
+D1,golosinas_semana,golosinas_semana,15,-0.002836,0.008166,-0.019753,0.008661,6,-0.002068,0.016593,-0.027778,0.031614,4,Nulo o negativo,False,22
+D1,carnes_semana,carnes_semana,15,-0.003410,0.007585,-0.021340,0.005379,5,-0.002780,0.014278,-0.041435,0.022487,6,Nulo o negativo,False,23
+D1,edad,edad,15,-0.003726,0.011007,-0.018519,0.014815,5,-0.003730,0.015251,-0.020238,0.033995,5,Nulo o negativo,False,24
+D1,panes_dia,panes_dia,15,-0.003788,0.006960,-0.017989,0.005714,4,0.000244,0.011686,-0.016667,0.023148,5,Nulo o negativo,False,25
+D1,tiene_pareja,tiene_pareja,15,-0.004133,0.006382,-0.017500,0.005291,4,-0.005647,0.013100,-0.035000,0.012037,4,Nulo o negativo,False,26
+D1,tiene_actividad_sexual,tiene_actividad_sexual,15,-0.004553,0.009483,-0.028125,0.006261,8,-0.004547,0.017750,-0.052500,0.023016,4,Nulo o negativo,False,27
+D1,frecuencia_comida_fuera,frecuencia_comida_fuera,15,-0.004813,0.006510,-0.020282,0.005644,3,-0.001852,0.010863,-0.023810,0.014550,5,Nulo o negativo,False,28
+D1,horas_sedentarismo,horas_sedentarismo,15,-0.005744,0.011819,-0.034196,0.009196,5,-0.003556,0.016352,-0.024213,0.030423,5,Nulo o negativo,False,29
+D1,alcohol_frecuencia,alcohol_frecuencia,15,-0.006536,0.007990,-0.022315,0.003214,3,0.000479,0.016106,-0.029491,0.032593,5,Nulo o negativo,False,30
+D1,quien_prepara_comidas,quien_prepara_comidas,15,-0.007608,0.011835,-0.048056,0.000794,3,-0.005429,0.019394,-0.048241,0.021071,5,Nulo o negativo,False,31
+D1_sin_imc,dias_ejercicio_semana,dias_ejercicio_semana,15,0.038795,0.032830,-0.025370,0.099554,13,0.019856,0.028676,-0.025661,0.073426,10,Aporte consistente,True,1
+D1_sin_imc,vasos_agua_dia,vasos_agua_dia,15,0.024235,0.027142,-0.024515,0.088007,13,0.015812,0.021526,-0.038492,0.042328,13,Aporte consistente,False,2
+D1_sin_imc,tabaco_frecuencia,tabaco_frecuencia,15,0.023713,0.017149,-0.018981,0.052232,14,0.020865,0.023821,-0.015079,0.057937,12,Aporte consistente,False,3
+D1_sin_imc,sobrecarga_fisica_emocional,sobrecarga_fisica_emocional,15,0.022382,0.017313,-0.027768,0.050705,14,0.002034,0.032974,-0.058333,0.047361,8,Aporte consistente,False,4
+D1_sin_imc,frecuencia_bajo_impacto,frecuencia_bajo_impacto,15,0.022282,0.032970,-0.039722,0.074732,12,0.013696,0.038977,-0.063750,0.089683,9,Aporte consistente,True,5
+D1_sin_imc,distension_abdominal,distension_abdominal,15,0.018601,0.021557,-0.019821,0.062257,12,0.007278,0.023445,-0.046250,0.043393,10,Aporte consistente,False,6
+D1_sin_imc,frecuencia_fuerza,frecuencia_fuerza,15,0.005634,0.011139,-0.018519,0.028924,12,0.007507,0.014167,-0.010450,0.044180,9,Aporte consistente,True,7
+D1_sin_imc,trabaja_actualmente,trabaja_actualmente,15,0.004480,0.019170,-0.036786,0.025000,11,-0.000906,0.024784,-0.036296,0.066931,6,Aporte inestable,True,8
+D1_sin_imc,usa_medicamentos_presion,usa_medicamentos_presion,15,0.003285,0.004284,-0.002222,0.013426,11,0.002514,0.008478,-0.019048,0.015741,7,Aporte inestable,False,9
+D1_sin_imc,falta_tiempo_influye,falta_tiempo_influye,15,0.002638,0.010875,-0.025044,0.015648,11,0.003326,0.015682,-0.024643,0.028393,8,Aporte inestable,False,10
+D1_sin_imc,lacteos_dia,lacteos_dia,15,0.001992,0.005951,-0.009171,0.010582,11,0.003534,0.012238,-0.023810,0.024339,9,Aporte inestable,False,11
+D1_sin_imc,legumbres_semana,legumbres_semana,15,0.001465,0.005094,-0.007937,0.009630,10,-0.001033,0.015337,-0.036964,0.019577,9,Aporte inestable,False,12
+D1_sin_imc,jugos_gaseosas_dia,jugos_gaseosas_dia,15,0.001230,0.007110,-0.012768,0.015608,8,0.001337,0.012340,-0.021157,0.024074,9,Aporte inestable,False,13
+D1_sin_imc,frecuencia_aerobico,frecuencia_aerobico,15,0.001044,0.007233,-0.018342,0.014727,9,-0.001323,0.009575,-0.023393,0.010185,8,Aporte inestable,False,14
+D1_sin_imc,carnes_semana,carnes_semana,15,0.001017,0.006083,-0.008889,0.013845,11,0.005863,0.011510,-0.013360,0.024107,10,Aporte inestable,False,15
+D1_sin_imc,frutas_dia,frutas_dia,15,0.000792,0.005549,-0.008642,0.015079,7,0.000166,0.008464,-0.010714,0.018750,6,Aporte inestable,False,16
+D1_sin_imc,pescado_semana,pescado_semana,15,0.000707,0.013820,-0.032011,0.021111,10,0.004287,0.018486,-0.041667,0.025794,11,Aporte inestable,False,17
+D1_sin_imc,tiene_pareja,tiene_pareja,15,0.000211,0.011538,-0.037232,0.009815,12,-0.000982,0.011776,-0.026190,0.013889,7,Aporte pequeño,False,18
+D1_sin_imc,operada_no_mas_hijos,operada_no_mas_hijos,15,0.000029,0.003909,-0.008929,0.005379,11,0.001149,0.008758,-0.018750,0.016667,6,Aporte inestable,False,19
+D1_sin_imc,golosinas_semana,golosinas_semana,15,-0.000354,0.007043,-0.012257,0.016931,8,-0.001465,0.009671,-0.026058,0.012566,6,Nulo o negativo,False,20
+D1_sin_imc,cantidad_personas_cuida,cantidad_personas_cuida,15,-0.000929,0.007049,-0.019732,0.005556,7,0.003007,0.016402,-0.021296,0.029630,9,Nulo o negativo,False,21
+D1_sin_imc,evacuacion_intestinal,evacuacion_intestinal,15,-0.000967,0.008534,-0.023545,0.010141,8,-0.001142,0.014929,-0.034921,0.014815,9,Nulo o negativo,False,22
+D1_sin_imc,platos_verduras_dia,platos_verduras_dia,15,-0.001008,0.002593,-0.004850,0.004145,5,-0.002617,0.009247,-0.029286,0.004630,6,Nulo o negativo,False,23
+D1_sin_imc,edad,edad,15,-0.002085,0.008752,-0.014991,0.013139,6,-0.001027,0.018987,-0.058069,0.027679,6,Nulo o negativo,False,24
+D1_sin_imc,panes_dia,panes_dia,15,-0.002860,0.005360,-0.013404,0.007055,4,-0.002929,0.015407,-0.032804,0.030556,5,Nulo o negativo,False,25
+D1_sin_imc,horas_sedentarismo,horas_sedentarismo,15,-0.002965,0.010044,-0.021296,0.013757,5,-0.004757,0.015417,-0.031607,0.022619,4,Nulo o negativo,False,26
+D1_sin_imc,alcohol_frecuencia,alcohol_frecuencia,15,-0.003782,0.005198,-0.015089,0.007937,3,0.002403,0.014700,-0.023611,0.028175,8,Nulo o negativo,False,27
+D1_sin_imc,frecuencia_comida_fuera,frecuencia_comida_fuera,15,-0.004055,0.008896,-0.027160,0.006702,6,0.001004,0.013038,-0.023810,0.023016,5,Nulo o negativo,False,28
+D1_sin_imc,tiene_actividad_sexual,tiene_actividad_sexual,15,-0.004430,0.008938,-0.022143,0.009375,4,-0.004889,0.010499,-0.023036,0.012037,3,Nulo o negativo,False,29
+D1_sin_imc,quien_prepara_comidas,quien_prepara_comidas,15,-0.005991,0.014880,-0.058519,0.004722,4,-0.009607,0.016935,-0.039947,0.019861,5,Nulo o negativo,False,30

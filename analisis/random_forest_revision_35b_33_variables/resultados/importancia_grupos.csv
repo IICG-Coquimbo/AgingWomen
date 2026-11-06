@@ -1,0 +1,21 @@
+﻿modelo,nombre,variables,particiones,auc_media,auc_de,auc_minimo,auc_maximo,auc_positivas,ba_media,ba_de,ba_minimo,ba_maximo,ba_positivas,aporte,q_menor_0_10,orden_en_modelo
+B,Actividad física,dias_ejercicio_semana;frecuencia_bajo_impacto;frecuencia_fuerza;frecuencia_aerobico,15,0.052456,0.033924,-0.026781,0.100518,14,0.044246,0.035974,-0.020429,0.092071,13,Aporte consistente,False,1
+B,Días y bajo impacto,dias_ejercicio_semana;frecuencia_bajo_impacto,15,0.039266,0.027318,-0.024848,0.078679,14,0.033257,0.030434,-0.018690,0.095214,13,Aporte consistente,False,2
+B_sin_imc,Actividad física,dias_ejercicio_semana;frecuencia_bajo_impacto;frecuencia_fuerza;frecuencia_aerobico,15,0.060754,0.036365,-0.022306,0.116696,14,0.053518,0.033866,-0.013668,0.114250,14,Aporte consistente,False,1
+B_sin_imc,Días y bajo impacto,dias_ejercicio_semana;frecuencia_bajo_impacto,15,0.042969,0.034332,-0.032886,0.090107,14,0.041148,0.031861,-0.020059,0.095518,13,Aporte consistente,False,2
+C0,Actividad física,dias_ejercicio_semana;frecuencia_bajo_impacto;frecuencia_fuerza;frecuencia_aerobico,15,0.062282,0.037505,-0.013212,0.107386,14,0.053908,0.036704,-0.008523,0.114867,14,Aporte consistente,False,1
+C0,Días y bajo impacto,dias_ejercicio_semana;frecuencia_bajo_impacto,15,0.050827,0.041022,-0.031394,0.118876,13,0.043027,0.042960,-0.048580,0.103883,13,Aporte consistente,False,2
+C1,Actividad física,dias_ejercicio_semana;frecuencia_bajo_impacto;frecuencia_fuerza;frecuencia_aerobico,15,0.059099,0.030116,-0.005429,0.115404,14,0.046212,0.028768,-0.002145,0.103370,14,Aporte consistente,False,1
+C1,Trabajo,lugar_trabajo_comprensivo;estres_entorno_laboral,15,0.050978,0.019782,0.025253,0.087816,15,0.037254,0.026053,-0.028883,0.069034,14,Aporte consistente,False,2
+C1,Días y bajo impacto,dias_ejercicio_semana;frecuencia_bajo_impacto,15,0.045422,0.034216,-0.025576,0.108081,13,0.040648,0.033617,-0.013848,0.081679,13,Aporte consistente,False,3
+C1_sin_imc,Actividad física,dias_ejercicio_semana;frecuencia_bajo_impacto;frecuencia_fuerza;frecuencia_aerobico,15,0.053629,0.025705,-0.002182,0.083586,14,0.045064,0.035419,0.000284,0.118873,15,Aporte consistente,False,1
+C1_sin_imc,Trabajo,lugar_trabajo_comprensivo;estres_entorno_laboral,15,0.047753,0.023084,0.017298,0.091115,15,0.018453,0.031720,-0.046212,0.077557,12,Aporte consistente,False,2
+C1_sin_imc,Días y bajo impacto,dias_ejercicio_semana;frecuencia_bajo_impacto,15,0.038346,0.039109,-0.046465,0.098927,13,0.029398,0.044308,-0.046507,0.103676,10,Aporte consistente,False,3
+D0,Actividad física,dias_ejercicio_semana;frecuencia_bajo_impacto;frecuencia_fuerza;frecuencia_aerobico,15,0.090542,0.061571,-0.092870,0.178482,14,0.060334,0.055506,-0.077500,0.131250,14,Aporte consistente,False,1
+D0,Días y bajo impacto,dias_ejercicio_semana;frecuencia_bajo_impacto,15,0.079928,0.046460,-0.049537,0.139167,14,0.055519,0.041898,-0.020833,0.132546,14,Aporte consistente,False,2
+D1,Actividad física,dias_ejercicio_semana;frecuencia_bajo_impacto;frecuencia_fuerza;frecuencia_aerobico,15,0.094604,0.055555,-0.056296,0.171429,14,0.061763,0.048123,-0.052130,0.135357,14,Aporte consistente,False,1
+D1,Días y bajo impacto,dias_ejercicio_semana;frecuencia_bajo_impacto,15,0.068660,0.057429,-0.069259,0.150000,13,0.043429,0.044116,-0.043194,0.108393,13,Aporte consistente,False,2
+D1,Cuidados,cantidad_personas_cuida;sobrecarga_fisica_emocional,15,0.013739,0.021768,-0.038750,0.041799,12,-0.004690,0.020572,-0.036772,0.031217,5,Aporte consistente,False,3
+D1_sin_imc,Actividad física,dias_ejercicio_semana;frecuencia_bajo_impacto;frecuencia_fuerza;frecuencia_aerobico,15,0.104150,0.057141,-0.023889,0.174464,13,0.079129,0.041881,-0.016343,0.144709,14,Aporte consistente,False,1
+D1_sin_imc,Días y bajo impacto,dias_ejercicio_semana;frecuencia_bajo_impacto,15,0.082527,0.053704,-0.054815,0.156696,14,0.060630,0.043037,-0.038287,0.125357,14,Aporte consistente,False,2
+D1_sin_imc,Cuidados,cantidad_personas_cuida;sobrecarga_fisica_emocional,15,0.013231,0.020284,-0.042232,0.034392,12,-0.005358,0.033931,-0.069464,0.046164,6,Aporte consistente,False,3

@@ -1,0 +1,211 @@
+variable,fuente,medida,esperado,reconstruido,coincide
+edad,origen_respuestas_34D,observadas,529,529,True
+edad,origen_respuestas_34D,deducidas,0,0,True
+edad,origen_respuestas_34D,imputadas,0,0,True
+edad,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+edad,origen_respuestas_34D,vacías por previa imputada,0,0,True
+edad,auditoria_figuras_34D,imputadas,0,0,True
+imc,origen_respuestas_34D,observadas,267,267,True
+imc,origen_respuestas_34D,imputadas en 35A = faltantes de la figura,262,262,True
+horas_sedentarismo,origen_respuestas_34D,observadas,502,502,True
+horas_sedentarismo,origen_respuestas_34D,deducidas,0,0,True
+horas_sedentarismo,origen_respuestas_34D,imputadas,27,27,True
+horas_sedentarismo,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+horas_sedentarismo,origen_respuestas_34D,vacías por previa imputada,0,0,True
+horas_sedentarismo,auditoria_figuras_34D,imputadas,27,27,True
+trabaja_actualmente,origen_respuestas_34D,observadas,506,506,True
+trabaja_actualmente,origen_respuestas_34D,deducidas,1,1,True
+trabaja_actualmente,origen_respuestas_34D,imputadas,22,22,True
+trabaja_actualmente,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+trabaja_actualmente,origen_respuestas_34D,vacías por previa imputada,0,0,True
+trabaja_actualmente,auditoria_figuras_34D,imputadas,22,22,True
+tiene_pareja,origen_respuestas_34D,observadas,501,501,True
+tiene_pareja,origen_respuestas_34D,deducidas,0,0,True
+tiene_pareja,origen_respuestas_34D,imputadas,28,28,True
+tiene_pareja,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+tiene_pareja,origen_respuestas_34D,vacías por previa imputada,0,0,True
+tiene_pareja,auditoria_figuras_34D,imputadas,28,28,True
+tiene_pareja,marca _imputado del conjunto limpio,imputadas,28,28,True
+tiene_actividad_sexual,origen_respuestas_34D,observadas,499,499,True
+tiene_actividad_sexual,origen_respuestas_34D,deducidas,0,0,True
+tiene_actividad_sexual,origen_respuestas_34D,imputadas,30,30,True
+tiene_actividad_sexual,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+tiene_actividad_sexual,origen_respuestas_34D,vacías por previa imputada,0,0,True
+tiene_actividad_sexual,auditoria_figuras_34D,imputadas,30,30,True
+tiene_actividad_sexual,marca _imputado del conjunto limpio,imputadas,30,30,True
+operada_no_mas_hijos,origen_respuestas_34D,observadas,511,511,True
+operada_no_mas_hijos,origen_respuestas_34D,deducidas,0,0,True
+operada_no_mas_hijos,origen_respuestas_34D,imputadas,18,18,True
+operada_no_mas_hijos,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+operada_no_mas_hijos,origen_respuestas_34D,vacías por previa imputada,0,0,True
+operada_no_mas_hijos,auditoria_figuras_34D,imputadas,18,18,True
+usa_medicamentos_presion,origen_respuestas_34D,observadas,499,499,True
+usa_medicamentos_presion,origen_respuestas_34D,deducidas,0,0,True
+usa_medicamentos_presion,origen_respuestas_34D,imputadas,30,30,True
+usa_medicamentos_presion,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+usa_medicamentos_presion,origen_respuestas_34D,vacías por previa imputada,0,0,True
+usa_medicamentos_presion,auditoria_figuras_34D,imputadas,30,30,True
+usa_medicamentos_presion,marca _imputado del conjunto limpio,imputadas,30,30,True
+quien_prepara_comidas,origen_respuestas_34D,observadas,505,505,True
+quien_prepara_comidas,origen_respuestas_34D,deducidas,0,0,True
+quien_prepara_comidas,origen_respuestas_34D,imputadas,24,24,True
+quien_prepara_comidas,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+quien_prepara_comidas,origen_respuestas_34D,vacías por previa imputada,0,0,True
+quien_prepara_comidas,auditoria_figuras_34D,imputadas,24,24,True
+alcohol_frecuencia,origen_respuestas_34D,observadas,500,500,True
+alcohol_frecuencia,origen_respuestas_34D,deducidas,0,0,True
+alcohol_frecuencia,origen_respuestas_34D,imputadas,29,29,True
+alcohol_frecuencia,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+alcohol_frecuencia,origen_respuestas_34D,vacías por previa imputada,0,0,True
+alcohol_frecuencia,auditoria_figuras_34D,imputadas,29,29,True
+alcohol_frecuencia,marca _imputado del conjunto limpio,imputadas,29,29,True
+cantidad_personas_cuida,origen_respuestas_34D,observadas,244,244,True
+cantidad_personas_cuida,origen_respuestas_34D,deducidas,0,0,True
+cantidad_personas_cuida,origen_respuestas_34D,imputadas,7,7,True
+cantidad_personas_cuida,origen_respuestas_34D,no aplicables y faltantes,278,278,True
+cantidad_personas_cuida,origen_respuestas_34D,vacías por previa imputada,21,21,True
+cantidad_personas_cuida,auditoria_figuras_34D,imputadas,7,7,True
+carnes_semana,origen_respuestas_34D,observadas,498,498,True
+carnes_semana,origen_respuestas_34D,deducidas,0,0,True
+carnes_semana,origen_respuestas_34D,imputadas,31,31,True
+carnes_semana,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+carnes_semana,origen_respuestas_34D,vacías por previa imputada,0,0,True
+carnes_semana,auditoria_figuras_34D,imputadas,31,31,True
+carnes_semana,marca _imputado del conjunto limpio,imputadas,31,31,True
+dias_ejercicio_semana,origen_respuestas_34D,observadas,493,493,True
+dias_ejercicio_semana,origen_respuestas_34D,deducidas,0,0,True
+dias_ejercicio_semana,origen_respuestas_34D,imputadas,36,36,True
+dias_ejercicio_semana,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+dias_ejercicio_semana,origen_respuestas_34D,vacías por previa imputada,0,0,True
+dias_ejercicio_semana,auditoria_figuras_34D,imputadas,36,36,True
+dias_ejercicio_semana,marca _imputado del conjunto limpio,imputadas,36,36,True
+distension_abdominal,origen_respuestas_34D,observadas,512,512,True
+distension_abdominal,origen_respuestas_34D,deducidas,0,0,True
+distension_abdominal,origen_respuestas_34D,imputadas,17,17,True
+distension_abdominal,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+distension_abdominal,origen_respuestas_34D,vacías por previa imputada,0,0,True
+distension_abdominal,auditoria_figuras_34D,imputadas,17,17,True
+evacuacion_intestinal,origen_respuestas_34D,observadas,497,497,True
+evacuacion_intestinal,origen_respuestas_34D,deducidas,0,0,True
+evacuacion_intestinal,origen_respuestas_34D,imputadas,32,32,True
+evacuacion_intestinal,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+evacuacion_intestinal,origen_respuestas_34D,vacías por previa imputada,0,0,True
+evacuacion_intestinal,auditoria_figuras_34D,imputadas,32,32,True
+evacuacion_intestinal,marca _imputado del conjunto limpio,imputadas,32,32,True
+falta_tiempo_influye,origen_respuestas_34D,observadas,500,500,True
+falta_tiempo_influye,origen_respuestas_34D,deducidas,0,0,True
+falta_tiempo_influye,origen_respuestas_34D,imputadas,29,29,True
+falta_tiempo_influye,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+falta_tiempo_influye,origen_respuestas_34D,vacías por previa imputada,0,0,True
+falta_tiempo_influye,auditoria_figuras_34D,imputadas,29,29,True
+falta_tiempo_influye,marca _imputado del conjunto limpio,imputadas,29,29,True
+frecuencia_aerobico,origen_respuestas_34D,observadas,98,98,True
+frecuencia_aerobico,origen_respuestas_34D,deducidas,0,0,True
+frecuencia_aerobico,origen_respuestas_34D,imputadas,7,7,True
+frecuencia_aerobico,origen_respuestas_34D,no aplicables y faltantes,424,424,True
+frecuencia_aerobico,origen_respuestas_34D,vacías por previa imputada,29,29,True
+frecuencia_aerobico,auditoria_figuras_34D,imputadas,7,7,True
+frecuencia_aerobico,marca _imputado del conjunto limpio,imputadas,7,7,True
+frecuencia_bajo_impacto,origen_respuestas_34D,observadas,209,209,True
+frecuencia_bajo_impacto,origen_respuestas_34D,deducidas,0,0,True
+frecuencia_bajo_impacto,origen_respuestas_34D,imputadas,15,15,True
+frecuencia_bajo_impacto,origen_respuestas_34D,no aplicables y faltantes,305,305,True
+frecuencia_bajo_impacto,origen_respuestas_34D,vacías por previa imputada,22,22,True
+frecuencia_bajo_impacto,auditoria_figuras_34D,imputadas,15,15,True
+frecuencia_bajo_impacto,marca _imputado del conjunto limpio,imputadas,15,15,True
+frecuencia_comida_fuera,origen_respuestas_34D,observadas,495,495,True
+frecuencia_comida_fuera,origen_respuestas_34D,deducidas,0,0,True
+frecuencia_comida_fuera,origen_respuestas_34D,imputadas,34,34,True
+frecuencia_comida_fuera,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+frecuencia_comida_fuera,origen_respuestas_34D,vacías por previa imputada,0,0,True
+frecuencia_comida_fuera,auditoria_figuras_34D,imputadas,34,34,True
+frecuencia_comida_fuera,marca _imputado del conjunto limpio,imputadas,34,34,True
+frecuencia_fuerza,origen_respuestas_34D,observadas,79,79,True
+frecuencia_fuerza,origen_respuestas_34D,deducidas,0,0,True
+frecuencia_fuerza,origen_respuestas_34D,imputadas,2,2,True
+frecuencia_fuerza,origen_respuestas_34D,no aplicables y faltantes,448,448,True
+frecuencia_fuerza,origen_respuestas_34D,vacías por previa imputada,28,28,True
+frecuencia_fuerza,auditoria_figuras_34D,imputadas,2,2,True
+frutas_dia,origen_respuestas_34D,observadas,505,505,True
+frutas_dia,origen_respuestas_34D,deducidas,0,0,True
+frutas_dia,origen_respuestas_34D,imputadas,24,24,True
+frutas_dia,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+frutas_dia,origen_respuestas_34D,vacías por previa imputada,0,0,True
+frutas_dia,auditoria_figuras_34D,imputadas,24,24,True
+golosinas_semana,origen_respuestas_34D,observadas,512,512,True
+golosinas_semana,origen_respuestas_34D,deducidas,0,0,True
+golosinas_semana,origen_respuestas_34D,imputadas,17,17,True
+golosinas_semana,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+golosinas_semana,origen_respuestas_34D,vacías por previa imputada,0,0,True
+golosinas_semana,auditoria_figuras_34D,imputadas,17,17,True
+jugos_gaseosas_dia,origen_respuestas_34D,observadas,499,499,True
+jugos_gaseosas_dia,origen_respuestas_34D,deducidas,0,0,True
+jugos_gaseosas_dia,origen_respuestas_34D,imputadas,30,30,True
+jugos_gaseosas_dia,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+jugos_gaseosas_dia,origen_respuestas_34D,vacías por previa imputada,0,0,True
+jugos_gaseosas_dia,auditoria_figuras_34D,imputadas,30,30,True
+jugos_gaseosas_dia,marca _imputado del conjunto limpio,imputadas,30,30,True
+lacteos_dia,origen_respuestas_34D,observadas,500,500,True
+lacteos_dia,origen_respuestas_34D,deducidas,0,0,True
+lacteos_dia,origen_respuestas_34D,imputadas,29,29,True
+lacteos_dia,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+lacteos_dia,origen_respuestas_34D,vacías por previa imputada,0,0,True
+lacteos_dia,auditoria_figuras_34D,imputadas,29,29,True
+lacteos_dia,marca _imputado del conjunto limpio,imputadas,29,29,True
+legumbres_semana,origen_respuestas_34D,observadas,505,505,True
+legumbres_semana,origen_respuestas_34D,deducidas,0,0,True
+legumbres_semana,origen_respuestas_34D,imputadas,24,24,True
+legumbres_semana,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+legumbres_semana,origen_respuestas_34D,vacías por previa imputada,0,0,True
+legumbres_semana,auditoria_figuras_34D,imputadas,24,24,True
+panes_dia,origen_respuestas_34D,observadas,499,499,True
+panes_dia,origen_respuestas_34D,deducidas,0,0,True
+panes_dia,origen_respuestas_34D,imputadas,30,30,True
+panes_dia,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+panes_dia,origen_respuestas_34D,vacías por previa imputada,0,0,True
+panes_dia,auditoria_figuras_34D,imputadas,30,30,True
+panes_dia,marca _imputado del conjunto limpio,imputadas,30,30,True
+pescado_semana,origen_respuestas_34D,observadas,510,510,True
+pescado_semana,origen_respuestas_34D,deducidas,0,0,True
+pescado_semana,origen_respuestas_34D,imputadas,19,19,True
+pescado_semana,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+pescado_semana,origen_respuestas_34D,vacías por previa imputada,0,0,True
+pescado_semana,auditoria_figuras_34D,imputadas,19,19,True
+platos_verduras_dia,origen_respuestas_34D,observadas,496,496,True
+platos_verduras_dia,origen_respuestas_34D,deducidas,0,0,True
+platos_verduras_dia,origen_respuestas_34D,imputadas,33,33,True
+platos_verduras_dia,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+platos_verduras_dia,origen_respuestas_34D,vacías por previa imputada,0,0,True
+platos_verduras_dia,auditoria_figuras_34D,imputadas,33,33,True
+platos_verduras_dia,marca _imputado del conjunto limpio,imputadas,33,33,True
+tabaco_frecuencia,origen_respuestas_34D,observadas,512,512,True
+tabaco_frecuencia,origen_respuestas_34D,deducidas,0,0,True
+tabaco_frecuencia,origen_respuestas_34D,imputadas,17,17,True
+tabaco_frecuencia,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+tabaco_frecuencia,origen_respuestas_34D,vacías por previa imputada,0,0,True
+tabaco_frecuencia,auditoria_figuras_34D,imputadas,17,17,True
+vasos_agua_dia,origen_respuestas_34D,observadas,505,505,True
+vasos_agua_dia,origen_respuestas_34D,deducidas,0,0,True
+vasos_agua_dia,origen_respuestas_34D,imputadas,24,24,True
+vasos_agua_dia,origen_respuestas_34D,no aplicables y faltantes,0,0,True
+vasos_agua_dia,origen_respuestas_34D,vacías por previa imputada,0,0,True
+vasos_agua_dia,auditoria_figuras_34D,imputadas,24,24,True
+lugar_trabajo_comprensivo,origen_respuestas_34D,observadas,271,271,True
+lugar_trabajo_comprensivo,origen_respuestas_34D,deducidas,0,0,True
+lugar_trabajo_comprensivo,origen_respuestas_34D,imputadas,16,16,True
+lugar_trabajo_comprensivo,origen_respuestas_34D,no aplicables y faltantes,242,242,True
+lugar_trabajo_comprensivo,origen_respuestas_34D,vacías por previa imputada,22,22,True
+lugar_trabajo_comprensivo,auditoria_figuras_34D,imputadas,16,16,True
+lugar_trabajo_comprensivo,marca _imputado del conjunto limpio,imputadas,16,16,True
+estres_entorno_laboral,origen_respuestas_34D,observadas,277,277,True
+estres_entorno_laboral,origen_respuestas_34D,deducidas,0,0,True
+estres_entorno_laboral,origen_respuestas_34D,imputadas,10,10,True
+estres_entorno_laboral,origen_respuestas_34D,no aplicables y faltantes,242,242,True
+estres_entorno_laboral,origen_respuestas_34D,vacías por previa imputada,22,22,True
+estres_entorno_laboral,auditoria_figuras_34D,imputadas,10,10,True
+sobrecarga_fisica_emocional,origen_respuestas_34D,observadas,239,239,True
+sobrecarga_fisica_emocional,origen_respuestas_34D,deducidas,0,0,True
+sobrecarga_fisica_emocional,origen_respuestas_34D,imputadas,12,12,True
+sobrecarga_fisica_emocional,origen_respuestas_34D,no aplicables y faltantes,278,278,True
+sobrecarga_fisica_emocional,origen_respuestas_34D,vacías por previa imputada,21,21,True
+sobrecarga_fisica_emocional,auditoria_figuras_34D,imputadas,12,12,True

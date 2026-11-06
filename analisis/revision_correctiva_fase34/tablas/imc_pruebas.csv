@@ -1,0 +1,7 @@
+﻿analisis,prueba,n,grupos,efecto,medida,p_sin_ajustar,q_familia_41
+"Original 34C: con «no informado», sin bajo peso",Kruskal-Wallis,527,4.0,0.013155046439584575,ε²,0.019613409279254035,0.0731045254954014
+"Solo observado: 3 categorías, sin bajo peso",Kruskal-Wallis,265,3.0,0.030254184682254815,ε²,0.0069898359421589305,0.03796479219148877
+"Solo observado: 4 categorías, con bajo peso (n = 2)",Kruskal-Wallis,267,4.0,0.028738484683942484,ε²,0.014371104148607448,0.0640214039711829
+Solo observado: bajo peso unido a normal,Kruskal-Wallis,267,3.0,0.03182002848460969,ε²,0.005515219867072292,0.03230343064999485
+Solo observado: categorías ordenadas,Spearman,267,4.0,0.19740076709872206,rho,0.0011853384189916263,0.008099812529776113
+IMC numérico observado (ya en 34C),Spearman,267,,0.21860870742215446,rho,0.000319487939869055,0.0043663351782104185

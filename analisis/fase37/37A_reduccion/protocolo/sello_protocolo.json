@@ -1,0 +1,7 @@
+{
+ "archivo": "01_protocolo_D13.md",
+ "sha256": "3c4d2de951c2769eb69e9680c7eb07bf0d0f69e2b3e26c6b7a62b574221eb39b",
+ "mtime_protocolo": 1793853268.327604,
+ "commit": "745d689",
+ "nota": "Sellado antes de ajustar PCA o FAMD. El pipeline se detiene si la huella no coincide."
+}

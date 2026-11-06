@@ -38,6 +38,7 @@ GRUPO = 'grupo_trabajo'
 NOMBRES_GRUPO = ['Trabaja', 'No trabaja']
 
 # Bloques de la sección 3 (una figura por variable; ajuste aprobado 2026-10-24/26).
+# La etapa menopáusica sigue en este bloque solo por su lugar en el informe; su uso vigente es descriptivo.
 BLOQUES = {
     'control': ('Variables de control', ['edad', 'etapa_menopausica', 'imc_categoria', 'imc', 'peso_kg',
                                          'talla_actual_cm', 'usa_terapia_hormonal', 'prevision',
@@ -79,9 +80,19 @@ SIN_ACTIVIDAD = {'realiza_aerobico': 'No lo realiza', 'realiza_bajo_impacto': 'N
                  'realiza_fuerza': 'No lo realiza', 'cuida_otras_personas': 'No cuida'}
 GRUPOS_ASOCIACION = ((V.PREDICTORES, 'predictor'), (V.PREDICTORES_TRABAJO, 'predictor (trabajo)'),
                      (V.CONTROL_USUARIA, 'control'), (V.OTRAS_USUARIA, 'otra'))
+# H13: la etapa sigue en V.CONTROL_USUARIA para no cambiar la familia FDR ni el orden de las pruebas; solo su rótulo
+# de salida es descriptivo. El rol no interviene en ningún cálculo de este flujo.
+ROLES_DESCRIPTIVOS = {'etapa_menopausica': 'descriptiva'}
+# Título de la sección 3 del informe; la figura de dirección del anexo no incluye la etapa y conserva el del bloque.
+TITULOS_INFORME = {'control': 'Variables de control y etapa menopáusica (descriptiva)'}
 # Ajuste 34C: familia FDR aparte, para que agregarlas no cambie la corrección de las principales.
 GRUPOS_SECUNDARIOS = ((V.GINECOLOGICAS, 'ginecológica'), (V.SALUD_USUARIA, 'salud'))
 CONTROL_GRUPO = [v for v in V.CONTROL_USUARIA if v not in ('imc', 'trabaja_actualmente')]
+
+
+def rotular_roles(asoc):
+    """Aplica los rótulos descriptivos de salida; devuelve una copia y no toca ninguna otra columna."""
+    return asoc.assign(rol=asoc['variable'].map(ROLES_DESCRIPTIVOS).fillna(asoc['rol']))
 
 
 def respuestas(df, v, campos):
@@ -226,7 +237,7 @@ def main():
             figuras.append((v, f'frecuencias/{v}.png', nota))
             largas += [{'bloque': titulo, 'variable': v, 'respuesta': r, 'grupo': g,
                         'n': int(n.at[r, g]), 'pct': pct.at[r, g]} for r in pct.index for g in pct.columns]
-        bloques[clave] = (titulo, figuras)
+        bloques[clave] = (TITULOS_INFORME.get(clave, titulo), figuras)
     frec = pd.DataFrame(largas)
 
     # 2.1 Perfil de los 11 síntomas del MRS
@@ -291,6 +302,7 @@ def main():
                       for grupos, familia in ((GRUPOS_ASOCIACION, 'principal'),
                                               (GRUPOS_SECUNDARIOS, 'secundaria'))],
                      ignore_index=True).sort_values('p_ajustado', ignore_index=True)
+    asoc = rotular_roles(asoc)
     # Solo para explicar en el informe por qué las familias van separadas.
     fdr_conjunta = E.corregir_fdr(asoc.drop(columns=['p_ajustado', 'familia'])).set_index('variable')['p_ajustado']
     spear = asoc[asoc['prueba'] == 'Spearman']

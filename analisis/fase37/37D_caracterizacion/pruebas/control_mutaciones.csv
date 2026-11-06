@@ -1,0 +1,21 @@
+control_negativo,funcion_alterada,detectado,pruebas_que_fallan,motivo
+Etiquetas de A desalineadas (permutadas),cargar,True,"2, 9",AssertionError: A distinta del artefacto de la 37C
+Se filtra una participante,cargar,True,"1, 2, 3, 4, 5, 9",AssertionError: no son 529 únicos
+B1 con validación cruzada en lugar de B1,cargar,True,"3, 9",AssertionError: B1 distinta de la guardada
+Regla B1 con corte de 2 días,regla_b1,True,3,AssertionError: B1 no sigue la regla de cuatro pasos
+MRS total sin el ítem 11,cargar,True,"4, 9",AssertionError: total distinto de la suma de 11 ítems
+Severidad con corte en 15,severidad,True,4,AssertionError: corte en 15
+No aplica como faltante en ejercicio,cargar,True,5,AssertionError: frecuencia_fuerza: no aplica no es 0 estructural
+IMC imputado por la media incluido,cargar,True,"5, 9",AssertionError: IMC con imputados
+S-OBS sin quitar las heredadas,solo_observado,True,5,AssertionError: S-OBS mal en frecuencia_aerobico
+Binaria analizada con Spearman,asociacion,True,"7, 9",AssertionError: binaria
+Bonferroni en lugar de Benjamini-Hochberg,bh,True,8,AssertionError: BH distinto de statsmodels
+q de F4 corregida con otro método,leer,True,8,AssertionError: individual/F4_items.csv: q mal corregida
+Bootstrap con otra semilla,bootstrap,True,9,AssertionError: trabaja_actualmente: IC distinto
+Se lee la verdad del simulador,leidos,True,6,AssertionError: lecturas prohibidas: ['datos/sintetico/dataset_usuaria_verdad.csv']
+Una variable fuera de F1,leer,True,"7, 8, 9, 10",KeyError: 'edad'
+Una variable externa agregada después,caracteristicas,True,10,AssertionError: variables distintas del protocolo: ['usa_antidepresivos']
+Un archivo protegido cambia,manifiestos,True,11,AssertionError: archivos distintos: ['seleccion/artefactos_provisionales/P2_c08_km_k4/etiquetas.csv; seleccion/artefactos_provisionales/P2_c12_km_k4/etiquetas.c
+Cambio en la plataforma Django,git,True,12,AssertionError: cambios en la plataforma: [' M src/apps/encuestas/models.py']
+Etapa sin agrupar las indeterminadas,para_prueba,True,14,AssertionError: etapa mal agrupada
+A distinta en la 37B,et37b,True,2,AssertionError: A distinta de la 37B

@@ -1,0 +1,13 @@
+momento,etapa,evento,libre_gb
+2026-11-05T19:34:07,PRINCIPAL,inicio,1.09
+2026-11-05T19:34:57,PRINCIPAL,"fin, código 0, mínimo libre",0.93
+2026-11-05T19:35:18,AB1,inicio,1.18
+2026-11-05T19:35:28,AB1,"fin, código 0, mínimo libre",0.92
+2026-11-05T19:36:21,SENSIBILIDADES,inicio,1.24
+2026-11-05T19:38:21,SENSIBILIDADES,lectura,0.96
+2026-11-05T19:40:21,SENSIBILIDADES,lectura,1.12
+2026-11-05T19:40:46,SENSIBILIDADES,"fin, código 0, mínimo libre",0.86
+2026-11-05T19:41:27,PRUEBAS,inicio,1.06
+2026-11-05T19:41:52,PRUEBAS,"fin, código 0, mínimo libre",0.74
+2026-11-05T19:42:14,PRUEBAS,inicio,0.87
+2026-11-05T19:42:39,PRUEBAS,"fin, código 0, mínimo libre",0.73

@@ -1,0 +1,54 @@
+comprobacion,resultado,detalle
+529 identificadores únicos,OK,
+Manifiesto final de la Fase 37A,OK,175 archivos; distintos: []
+Manifiesto final de la Fase 36,OK,258 archivos; distintos: []
+Sello del protocolo D-13,OK,
+Huella de la matriz P1,OK,
+Columnas de P1 en el orden de la Fase 36,OK,"(529, 34)"
+Sin variables del MRS en P1,OK,
+"Coordenadas P1, k = 2",OK,
+"Coordenadas P1, k = 3",OK,
+"Coordenadas P1, k = 5",OK,
+"Coordenadas P1, k = 8",OK,
+"Coordenadas P1, k = 12",OK,
+"Coordenadas P1, k = 16",OK,
+"Coordenadas P1, k = 20",OK,
+Sin valores faltantes o infinitos en la matriz P1,OK,
+Huella de la matriz P2,OK,
+Columnas de P2 en el orden de la Fase 36,OK,"(529, 33)"
+Sin variables del MRS en P2,OK,
+"Coordenadas P2, k = 2",OK,
+"Coordenadas P2, k = 3",OK,
+"Coordenadas P2, k = 5",OK,
+"Coordenadas P2, k = 8",OK,
+"Coordenadas P2, k = 12",OK,
+"Coordenadas P2, k = 16",OK,
+"Coordenadas P2, k = 20",OK,
+Sin valores faltantes o infinitos en la matriz P2,OK,
+Huella de la matriz F1,OK,
+Columnas de F1 en el orden de la Fase 36,OK,"(529, 50)"
+Sin variables del MRS en F1,OK,
+"Coordenadas F1, k = 2",OK,
+"Coordenadas F1, k = 3",OK,
+"Coordenadas F1, k = 5",OK,
+"Coordenadas F1, k = 8",OK,
+"Coordenadas F1, k = 12",OK,
+"Coordenadas F1, k = 16",OK,
+"Coordenadas F1, k = 20",OK,
+Sin valores faltantes o infinitos en la matriz F1,OK,
+Huella de la matriz F2,OK,
+Columnas de F2 en el orden de la Fase 36,OK,"(529, 49)"
+Sin variables del MRS en F2,OK,
+"Coordenadas F2, k = 2",OK,
+"Coordenadas F2, k = 3",OK,
+"Coordenadas F2, k = 5",OK,
+"Coordenadas F2, k = 8",OK,
+"Coordenadas F2, k = 12",OK,
+"Coordenadas F2, k = 16",OK,
+"Coordenadas F2, k = 20",OK,
+Sin valores faltantes o infinitos en la matriz F2,OK,
+La tabla general reproduce la matriz P1,OK,4.4e-16
+La tabla general reproduce la matriz P2,OK,4.4e-16
+La tabla general reproduce la matriz F1,OK,4.4e-16
+La tabla general reproduce la matriz F2,OK,4.4e-16
+HEAD sin cambios,OK,745d689

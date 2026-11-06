@@ -1,0 +1,255 @@
+{
+ "descripcion": "Campos que necesita el transformador para una participante nueva. Ningún parámetro se recalcula.",
+ "version_parametros": "36B-1",
+ "variables": [
+  "edad",
+  "imc",
+  "horas_sedentarismo",
+  "trabaja_actualmente",
+  "tiene_pareja",
+  "tiene_actividad_sexual",
+  "operada_no_mas_hijos",
+  "usa_medicamentos_presion",
+  "quien_prepara_comidas",
+  "alcohol_frecuencia",
+  "cantidad_personas_cuida",
+  "carnes_semana",
+  "dias_ejercicio_semana",
+  "distension_abdominal",
+  "evacuacion_intestinal",
+  "falta_tiempo_influye",
+  "frecuencia_aerobico",
+  "frecuencia_bajo_impacto",
+  "frecuencia_comida_fuera",
+  "frecuencia_fuerza",
+  "frutas_dia",
+  "golosinas_semana",
+  "jugos_gaseosas_dia",
+  "lacteos_dia",
+  "legumbres_semana",
+  "panes_dia",
+  "pescado_semana",
+  "platos_verduras_dia",
+  "tabaco_frecuencia",
+  "vasos_agua_dia"
+ ],
+ "campos_contexto": {
+  "realiza_aerobico": "Solo decide si la pregunta condicional aplica; no es variable de agrupamiento.",
+  "realiza_bajo_impacto": "Solo decide si la pregunta condicional aplica; no es variable de agrupamiento.",
+  "realiza_fuerza": "Solo decide si la pregunta condicional aplica; no es variable de agrupamiento.",
+  "cuida_otras_personas": "Solo decide si la pregunta condicional aplica; no es variable de agrupamiento."
+ },
+ "niveles_admitidos": {
+  "edad": {
+   "limites_plausibles": [
+    18,
+    110
+   ]
+  },
+  "imc": {
+   "limites_plausibles": [
+    10,
+    80
+   ]
+  },
+  "horas_sedentarismo": {
+   "limites_plausibles": [
+    0,
+    24
+   ]
+  },
+  "trabaja_actualmente": [
+   "False",
+   "True"
+  ],
+  "tiene_pareja": [
+   "NO",
+   "SI"
+  ],
+  "tiene_actividad_sexual": [
+   "NO",
+   "SI"
+  ],
+  "operada_no_mas_hijos": [
+   "NO",
+   "SI"
+  ],
+  "usa_medicamentos_presion": [
+   "NO",
+   "SI"
+  ],
+  "quien_prepara_comidas": [
+   "YO_MAYORIA",
+   "COMPARTIDO",
+   "OTRA_HOGAR",
+   "COMPRO",
+   "OTRO"
+  ],
+  "alcohol_frecuencia": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "cantidad_personas_cuida": [
+   "0",
+   "1",
+   "2",
+   "3"
+  ],
+  "carnes_semana": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "dias_ejercicio_semana": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "distension_abdominal": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "evacuacion_intestinal": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "falta_tiempo_influye": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "frecuencia_aerobico": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "frecuencia_bajo_impacto": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "frecuencia_comida_fuera": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "frecuencia_fuerza": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "frutas_dia": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "golosinas_semana": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "jugos_gaseosas_dia": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "lacteos_dia": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "legumbres_semana": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "panes_dia": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "pescado_semana": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "platos_verduras_dia": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "tabaco_frecuencia": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "vasos_agua_dia": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ]
+ },
+ "reglas_valores_desconocidos": {
+  "nivel_no_admitido": "Error: no se asigna perfil.",
+  "nivel_valido_no_observado": "Se transforma normalmente con los parámetros congelados, aunque quede fuera del rango de referencia.",
+  "pregunta_no_mostrada": "Nivel estructural de cero cuando la madre vale NO o falta.",
+  "imc_ausente": "Media congelada de las observadas: z = 0, con marca.",
+  "otra_ausente": "Valor congelado de la variable, con marca y aviso. El límite de respuestas ausentes queda pendiente (D-09)."
+ },
+ "flujo": [
+  "validar esquema",
+  "aplicar reglas condicionales",
+  "codificar con mapas guardados",
+  "completar con valores congelados y marcar",
+  "escalar con parámetros guardados",
+  "ordenar columnas",
+  "proyectar (Fases 37 y 40)"
+ ],
+ "uso": "from transformador import Transformador; matriz, avisos = Transformador.cargar('artefactos/P1').transformar(tabla)",
+ "congelacion": "Cambiar cualquier parámetro exige una versión nueva de parámetros y de perfiles. No se recalibra al llegar una usuaria.",
+ "advertencia": "La columna IMC ya tiene varianza 0,505: no aplicar otra estandarización. Los módulos no alimentan el perfil general."
+}

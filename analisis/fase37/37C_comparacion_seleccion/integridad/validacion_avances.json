@@ -1,0 +1,10 @@
+{
+ "alfa": 0.05,
+ "diferencia_R": 0.0,
+ "replicas": {
+  "recuperada": 72,
+  "pendiente": 28
+ },
+ "lotes_estabilidad_validos": 360,
+ "lotes_estabilidad_con_problema": []
+}

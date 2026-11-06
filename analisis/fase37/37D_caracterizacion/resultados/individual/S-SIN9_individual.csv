@@ -1,0 +1,11 @@
+variable,resultado,prueba,medida,efecto,p,n,aviso
+tiene_pareja,mrs_total,Mann-Whitney,r_rb,-0.06415210755341949,0.23085733165141364,529,
+tiene_pareja,mrs_total_sin9,Mann-Whitney,r_rb,-0.0603851399623303,0.2593700604684186,529,
+tiene_pareja,mrs_urogenital,Mann-Whitney,r_rb,-0.02705072416704557,0.6091799652857453,529,
+tiene_pareja,mrs_urogenital_sin9,Mann-Whitney,r_rb,-0.013931285315321174,0.7893422694717618,529,
+tiene_pareja,pregunta_9,Mann-Whitney,r_rb,-0.049035526401246976,0.335669275175976,529,
+tiene_actividad_sexual,mrs_total,Mann-Whitney,r_rb,0.07253002378973306,0.14931234883166825,529,
+tiene_actividad_sexual,mrs_total_sin9,Mann-Whitney,r_rb,0.07552523718077331,0.133185492048838,529,
+tiene_actividad_sexual,mrs_urogenital,Mann-Whitney,r_rb,0.07308893920720005,0.14131363568296434,529,
+tiene_actividad_sexual,mrs_urogenital_sin9,Mann-Whitney,r_rb,0.08484049413855366,0.08299853213224549,529,
+tiene_actividad_sexual,pregunta_9,Mann-Whitney,r_rb,0.03207314626386548,0.5027262588165231,529,

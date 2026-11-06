@@ -1,0 +1,37 @@
+﻿variable,grupo,n,su,p,q,relevante,nota
+alcohol_frecuencia,no laboral,529,0.005103,0.311538,0.549772,False,
+cantidad_personas_cuida,no laboral,529,0.007843,0.051590,0.208625,False,
+carnes_semana,no laboral,529,0.000648,0.954609,0.963407,False,
+dias_ejercicio_semana,no laboral,529,0.018255,0.003399,0.050990,False,
+distension_abdominal,no laboral,529,0.003208,0.377724,0.629541,False,
+doble_carga,no laboral,529,0.009384,0.011598,0.085183,False,
+estres_entorno_laboral,laboral,287,0.015609,0.052390,0.208625,False,
+evacuacion_intestinal,no laboral,529,0.000771,0.866427,0.963407,False,
+falta_tiempo_influye,no laboral,529,0.007014,0.110578,0.276445,False,
+frecuencia_aerobico,no laboral,529,0.008625,0.166367,0.356500,False,
+frecuencia_bajo_impacto,no laboral,529,0.016664,0.002200,0.050990,False,
+frecuencia_comida_fuera,no laboral,529,0.004670,0.208758,0.417516,False,
+frecuencia_fuerza,no laboral,529,0.019287,0.010998,0.085183,False,
+frutas_dia,no laboral,529,0.003578,0.398920,0.629874,False,
+golosinas_semana,no laboral,529,0.000547,0.962008,0.963407,False,
+horas_sedentarismo,no laboral,529,0.002039,0.522695,0.746033,False,
+jugos_gaseosas_dia,no laboral,529,0.001079,0.787443,0.944931,False,
+lacteos_dia,no laboral,529,0.000362,0.963407,0.963407,False,
+legumbres_semana,no laboral,529,0.001500,0.547091,0.746033,False,
+lugar_trabajo_comprensivo,laboral,287,0.020521,0.014197,0.085183,False,
+operada_no_mas_hijos,no laboral,529,0.000583,0.581684,0.758718,False,
+panes_dia,no laboral,529,0.000604,0.912218,0.963407,False,
+pescado_semana,no laboral,529,0.003037,0.272146,0.510273,False,
+platos_verduras_dia,no laboral,529,0.002031,0.704459,0.880574,False,
+quien_prepara_comidas,no laboral,529,0.010750,0.062587,0.208625,False,
+tabaco_frecuencia,no laboral,529,0.011628,0.062587,0.208625,False,
+tiene_actividad_sexual,no laboral,529,0.000561,0.533893,0.746033,False,
+tiene_pareja,no laboral,529,0.003246,0.141772,0.327165,False,
+usa_medicamentos_presion,no laboral,529,0.005401,0.076785,0.230354,False,
+vasos_agua_dia,no laboral,529,0.007348,0.088782,0.242133,False,
+edad,control,529,0.001017,0.940412,,,descriptiva; no decide
+imc,control,529,0.017585,0.006799,,,descriptiva; no decide
+imc,control,267,0.028407,0.006999,,,descriptiva; solo IMC observado
+usa_medicamentos_diabetes,control,529,0.010053,0.024795,,,descriptiva; no decide
+trabaja_actualmente,control,529,0.008290,0.016997,,,descriptiva; no decide
+prevision,pendiente,529,0.008225,0.296341,,,descriptiva; no decide

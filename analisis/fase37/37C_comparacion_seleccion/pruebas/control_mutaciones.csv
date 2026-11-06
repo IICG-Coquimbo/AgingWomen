@@ -1,0 +1,24 @@
+mutacion,prueba,detectada,detalle
+Manifiesto histórico alterado,1,True,AssertionError: 37B: cambió estabilidad/ari_por_remuestreo.csv
+Etiquetas en otro orden,2,True,AssertionError: etiquetas en otro orden
+Lista A sin una configuración,3,True,AssertionError: Lista A distinta de la tabla de la Fase 37B
+Lista B con un identificador sustituido,3,True,AssertionError: Lista B distinta del documento
+Variable MRS en la tabla de entrada,4,True,"AssertionError: Columnas prohibidas: [('entrada', 'mrs_total')]"
+Parámetros calibrados con todas las filas,6,True,AssertionError: Los parámetros usan filas no usadas
+Reducción ajustada con todas las filas (contaminación),6,True,AssertionError: La reducción usa filas no usadas
+Reducción ajustada con todas las filas (reajuste),7,True,AssertionError: 
+Recalibración con todas las filas,8,True,AssertionError: edad no usa la media de la submuestra
+ARI reemplazado por coincidencia directa,10,True,AssertionError: ARI distinto del propio
+ARI de pares con filas no compartidas,11,True,AssertionError: Los pares no usan solo a las compartidas
+Réplica sin semilla,12,True,"AssertionError: Misma semilla, tablas distintas"
+Marginal alterada en la referencia,13,True,AssertionError: Marginal distinta en edad
+Lógica de salto rota en la referencia,13,True,AssertionError: Marginal distinta en realiza_fuerza
+Lista B rotulada como confirmatoria,14,True,AssertionError: Lista B sin rótulo exploratorio
+Tamaños alterados en una repetición,16,True,AssertionError: Una repetición no suma 423
+Valor de una figura distinto de la tabla,20,True,"AssertionError: f02_estabilidad_completa: F1_c03_km_k4 dibujado 0.4533886586235165, tabla 0.6533886586235165"
+Cambio en la plataforma,21,True,AssertionError: Hay cambios fuera de analisis/:  M encuestas/models.py
+Commit nuevo,22,True,AssertionError: HEAD cambió: abc1234
+Rama publicada,22,True,AssertionError: La rama aparece en el remoto
+Estado de un criterio distinto de la regla,23,True,AssertionError: Estado distinto de la regla
+Finalista con debilidad crítica,23,True,AssertionError: Una finalista tiene CRIT en una etapa que la excluye
+Niveles E1 y E0 sin distinguir en las referencias,25,True,"AssertionError: Sin reducción, E1 debe igualar a E0"

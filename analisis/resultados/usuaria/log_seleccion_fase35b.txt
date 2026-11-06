@@ -1,0 +1,10 @@
+LOG Fase 35B — selección entrópica
+Fecha de ejecución: 2026-11-02 21:14
+Commit: 745d689937a18c35b62fd25eccc401b169b20e11
+Huella de la caché: 0c55d51ccd74108b
+Semilla: 42; permutaciones: 5000; remuestreos: 500; procesos: 11
+Versiones: Python 3.12.5, numpy 2.2.4, pandas 2.2.3
+Candidatas: 30; relevantes: 0; seleccionadas: 0
+Seleccionadas: ninguna
+Advertencia de valores p (23 o más relevantes): no
+Tiempo real (s): principal 2.4, remuestreos 1510.3, sensibilidad 27.7, total 1595.0

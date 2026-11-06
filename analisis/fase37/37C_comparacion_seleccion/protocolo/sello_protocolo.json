@@ -1,0 +1,6 @@
+{
+ "archivo": "01_protocolo_37C.md",
+ "sha256": "62fd1d0b06e761129d26c4028526260bb1ea00565054eb8b378faa54ccb5e18f",
+ "commit": "745d689",
+ "nota": "Sellado antes de toda evaluación nueva de la Fase 37C, conociendo los resultados de 37A y 37B. La ejecución se detiene si la huella no coincide."
+}

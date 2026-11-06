@@ -1,0 +1,334 @@
+{
+ "h11_h13": [
+  {
+   "hallazgo": "H11",
+   "estado_definitivo": "Resuelto en el código",
+   "problema": "imputados_34B contaba sobre 546 participantes cuando la variable no tenía marca _imputado. Era una cota que difería del valor exacto en 9 variables, entre 1 y 3 celdas.",
+   "ubicacion": "analisis/eda/univariado.py: bloque de describir(), ahora recuento_imputados()",
+   "correccion": "Orden del recuento: 1) marca de la fila, 2) tabla de origen si su n válido coincide, 3) cota del diccionario, solo si faltan los anteriores.",
+   "sin_cambio": "Frecuencias, n, porcentajes, entropía, forma y comentarios. Las tablas históricas tampoco se tocaron.",
+   "pruebas": "14 de 14 correctas: 5 de regla y 9 en memoria con los datos reales (65 variables iguales a la auditoría; solo cambian las 9).",
+   "alcance_pendiente": "El CSV histórico conserva la cota; los valores exactos están en tablas/h11_nueve_variables.csv. Depende de origen_respuestas_34D.csv. pct_dominante_sin_imputados_34B sigue siendo una cota inferior: supone que todas las imputadas cayeron en la categoría dominante."
+  },
+  {
+   "hallazgo": "H13",
+   "estado_definitivo": "Resuelto en rótulos y metadatos",
+   "problema": "Al volver a ejecutar el script, etapa_menopausica recibiría el rol «control» y la sección 3.1 perdería la mención descriptiva.",
+   "ubicacion": "analisis/eda_usuaria.py: ROLES_DESCRIPTIVOS, rotular_roles(), TITULOS_INFORME",
+   "correccion": "Rótulo de salida «descriptiva» aplicado después de la corrección FDR; título de la sección 3.1 alineado con el informe histórico.",
+   "sin_cambio": "Composición de V.CONTROL_USUARIA y de las familias FDR, orden de las pruebas, efecto, p y q. La etapa sigue fuera de las elegibles.",
+   "pruebas": "7 de 7 correctas: 2 de regla y 5 en memoria con los datos reales (roles iguales al CSV histórico en todas las filas; estadísticos iguales).",
+   "alcance_pendiente": "Internamente la etapa sigue agrupada en V.CONTROL_USUARIA y BLOQUES[\"control\"]. Sacarla de ahí alteraría el flujo, por lo que no se hizo. La figura 89 conserva «Variables de control» porque no incluye la etapa."
+  }
+ ],
+ "limitaciones": [
+  {
+   "id": "L01",
+   "origen": "H14",
+   "fase": "Fase 34E",
+   "limitacion": "La figura histórica de 34E dice «38 predictoras»; hoy hay 33 elegibles.",
+   "por_que_no_se_resuelve": "Regenerarla exige ejecutar el análisis multivariado completo.",
+   "efecto_o_tratamiento": "Solo de lectura de la figura; el texto revisado aclara 38, 35 y 33.",
+   "estado": "Abierta y documentada"
+  },
+  {
+   "id": "L02",
+   "origen": "H17",
+   "fase": "Random Forest",
+   "limitacion": "La sensibilidad de Random Forest identificó imputadas por celdas vacías del conjunto sucio y encontró menos en 10 variables.",
+   "por_que_no_se_resuelve": "Medir su efecto exige nueva sensibilidad de Random Forest.",
+   "efecto_o_tratamiento": "Efecto sin medir; afecta sobre todo a cantidad de personas que cuida (6 de 7).",
+   "estado": "Abierta y documentada"
+  },
+  {
+   "id": "L03",
+   "origen": "A1",
+   "fase": "Fase 34D",
+   "limitacion": "La asimetría y la curtosis de horas sentada incluyen 27 valores imputados.",
+   "por_que_no_se_resuelve": "Corregirlas exige recalcular estadísticos históricos.",
+   "efecto_o_tratamiento": "Se corrigieron título y texto, no las cifras.",
+   "estado": "Abierta y documentada"
+  },
+  {
+   "id": "L04",
+   "origen": "Sensibilidad",
+   "fase": "Shannon",
+   "limitacion": "No existe la sensibilidad de Shannon sin imputaciones laborales.",
+   "por_que_no_se_resuelve": "Exige nuevas permutaciones.",
+   "efecto_o_tratamiento": "Sin medir; trabaja_actualmente (q = 0,089) incluye las 22 imputadas.",
+   "estado": "Abierta y documentada"
+  },
+  {
+   "id": "L05",
+   "origen": "H06",
+   "fase": "Fase 35",
+   "limitacion": "Las 22 tienen lugar = 3 y estrés = 3 en los conjuntos de la Fase 35.",
+   "por_que_no_se_resuelve": "Los conjuntos no se modifican.",
+   "efecto_o_tratamiento": "Shannon y Random Forest laboral usaron 287, así que esos valores no entraron. El protocolo de la Fase 36 los deja fuera del módulo laboral.",
+   "estado": "Decisión tomada; datos intactos"
+  },
+  {
+   "id": "L06",
+   "origen": "H02, H03, H04",
+   "fase": "Fases 34B y 35",
+   "limitacion": "Imputaciones de situación laboral (22) y de cuidado (21), de las que depende doble carga (43 filas).",
+   "por_que_no_se_resuelve": "Cambiarlas exige repetir la limpieza.",
+   "efecto_o_tratamiento": "Rho casi igual en la auditoría; doble carga sigue fuera de las elegibles.",
+   "estado": "Conservada y documentada"
+  },
+  {
+   "id": "L07",
+   "origen": "IMC",
+   "fase": "Fases 35A y 36",
+   "limitacion": "IMC imputado por la media en 262 de 529 (49,5 %).",
+   "por_que_no_se_resuelve": "Decisión metodológica vigente.",
+   "efecto_o_tratamiento": "Rho baja de 0,250 a 0,192; con observados, n = 267, SU = 0,0284 y q de reemplazo = 0,0673.",
+   "estado": "Comparación con y sin IMC planificada para los perfiles"
+  },
+  {
+   "id": "L08",
+   "origen": "H11",
+   "fase": "Fase 34D",
+   "limitacion": "eda_univariado_resumen.csv conserva la cota en 9 variables.",
+   "por_que_no_se_resuelve": "El archivo histórico no se sobrescribe.",
+   "efecto_o_tratamiento": "Valores exactos en tablas/h11_nueve_variables.csv; ninguna cambia de tramo.",
+   "estado": "Código resuelto; histórico conservado"
+  },
+  {
+   "id": "L09",
+   "origen": "Reejecución",
+   "fase": "Fases 34C y 34D",
+   "limitacion": "eda_univariado.py borra figuras al ejecutarse; eda_usuaria.py regenera informes y figuras históricos.",
+   "por_que_no_se_resuelve": "Cambiar ese flujo excede este cierre.",
+   "efecto_o_tratamiento": "No se ejecutaron. Volver a ejecutarlos exige copia previa o carpeta aislada.",
+   "estado": "Riesgo documentado"
+  },
+  {
+   "id": "L10",
+   "origen": "Rótulos 34C",
+   "fase": "Fase 34C",
+   "limitacion": "Las figuras históricas de 34C muestran «n trabaja» con imputadas (por ejemplo, 320 sobre 546).",
+   "por_que_no_se_resuelve": "Las figuras históricas no se sobrescriben.",
+   "efecto_o_tratamiento": "Aclarado en los informes revisados.",
+   "estado": "Abierta y documentada"
+  },
+  {
+   "id": "L11",
+   "origen": "Criterio q",
+   "fase": "Shannon",
+   "limitacion": "q < 0,10 es un criterio exploratorio adoptado después del oficial (5.000 permutaciones y q < 0,05, sin seleccionadas).",
+   "por_que_no_se_resuelve": "Decisión registrada; no se cambia.",
+   "efecto_o_tratamiento": "Con 10.000 ninguna q < 0,05; con 50.000, dos, y el intervalo Monte Carlo de días de ejercicio cruza 0,05.",
+   "estado": "Limitación de interpretación"
+  },
+  {
+   "id": "L12",
+   "origen": "Datos",
+   "fase": "Todas",
+   "limitacion": "Los datos son sintéticos y contienen relaciones programadas.",
+   "por_que_no_se_resuelve": "Propio del diseño.",
+   "efecto_o_tratamiento": "Los hallazgos validan el procedimiento, no describen a una población real.",
+   "estado": "Limitación permanente"
+  },
+  {
+   "id": "L13",
+   "origen": "Sobreajuste",
+   "fase": "Random Forest",
+   "limitacion": "ROC-AUC de entrenamiento entre 0,796 y 0,987 frente a evaluación entre 0,538 y 0,659.",
+   "por_que_no_se_resuelve": "No se reentrena.",
+   "efecto_o_tratamiento": "Capacidad predictiva modesta.",
+   "estado": "Limitación de interpretación"
+  },
+  {
+   "id": "L14",
+   "origen": "Subpoblaciones",
+   "fase": "Shannon y Random Forest",
+   "limitacion": "Módulos con 287 y 239 participantes; las pruebas tienen menos potencia que con 529.",
+   "por_que_no_se_resuelve": "Tamaños fijados por la encuesta.",
+   "efecto_o_tratamiento": "C1 frente a C0 y D1 frente a D0 sin diferencia clara.",
+   "estado": "Limitación de interpretación"
+  },
+  {
+   "id": "L15",
+   "origen": "Causalidad",
+   "fase": "Shannon, FCBF y Random Forest",
+   "limitacion": "SU e importancia predictiva no demuestran causalidad; SU tampoco indica dirección.",
+   "por_que_no_se_resuelve": "Propio de los métodos.",
+   "efecto_o_tratamiento": "La dirección se informa por separado y solo como descripción.",
+   "estado": "Limitación permanente"
+  },
+  {
+   "id": "L16",
+   "origen": "Etapa",
+   "fase": "Fases 34 y 35",
+   "limitacion": "La regla de etapa menopáusica es una aproximación propia y no está validada.",
+   "por_que_no_se_resuelve": "Decisión de la responsable del proyecto.",
+   "efecto_o_tratamiento": "Solo descriptiva; fuera de las elegibles.",
+   "estado": "Abierta y documentada"
+  },
+  {
+   "id": "L17",
+   "origen": "Archivo 33",
+   "fase": "Fase 36",
+   "limitacion": "dataset_fase35_33_variables.csv trae prevision y doble_carga, y no trae sobrecarga.",
+   "por_que_no_se_resuelve": "Los conjuntos no se modifican.",
+   "efecto_o_tratamiento": "La Fase 36 debe armar su entrada con la lista de 33, sin usar todas las columnas del archivo.",
+   "estado": "Condición para la Fase 36"
+  },
+  {
+   "id": "L18",
+   "origen": "Reproducción",
+   "fase": "Fase 35B",
+   "limitacion": "complementario_fase35b.py exige HEAD 745d689 y árbol versionado limpio: hoy se detendría, y también después de un commit.",
+   "por_que_no_se_resuelve": "Protección del propio script.",
+   "efecto_o_tratamiento": "No afecta los resultados guardados.",
+   "estado": "Riesgo documentado"
+  }
+ ],
+ "hallazgos": [
+  {
+   "id": "H01",
+   "clase": "Verificado sin error",
+   "hallazgo": "Diabetes: asociación rho +0,13 con 87,5 % de «No». La codificación y el q son correctos.",
+   "antes": "Verificado; nota agregada",
+   "definitivo": "Verificado; nota agregada",
+   "cambia": "No"
+  },
+  {
+   "id": "H02",
+   "clase": "Metodológica discutible",
+   "hallazgo": "22 respuestas de trabajo imputadas como «Sí», sin marca; 12 distintas del simulador. Rho casi igual: 0,102 frente a 0,104.",
+   "antes": "Conservado y documentado",
+   "definitivo": "Conservado y documentado",
+   "cambia": "No"
+  },
+  {
+   "id": "H03",
+   "clase": "Metodológica discutible",
+   "hallazgo": "21 respuestas de cuidado imputadas como «No», sin marca; 14 distintas del simulador. Fijan cantidad = 0. Rho casi igual: 0,016 frente a 0,018.",
+   "antes": "Conservado y documentado",
+   "definitivo": "Conservado y documentado",
+   "cambia": "No"
+  },
+  {
+   "id": "H04",
+   "clase": "Metodológica discutible",
+   "hallazgo": "doble_carga depende de una imputada en 43 filas y difiere del simulador en 9. Sigue fuera de las 33.",
+   "antes": "Conservado y documentado",
+   "definitivo": "Conservado y documentado",
+   "cambia": "No"
+  },
+  {
+   "id": "H05",
+   "clase": "Error comprobado",
+   "hallazgo": "«Quienes trabajan» cuenta 309 e incluye las 22 imputadas; las figuras de lugar y estrés dicen «faltante = 22». Solo 287 tienen respuestas laborales.",
+   "antes": "Corregido en versiones revisadas; texto de 35A sin tocar",
+   "definitivo": "Corregido en versiones revisadas; texto de 35A sin tocar",
+   "cambia": "No"
+  },
+  {
+   "id": "H06",
+   "clase": "Metodológica discutible",
+   "hallazgo": "Las 22 tienen lugar = 3 y estrés = 3 en el conjunto de la Fase 35; quienes no trabajan tienen 0. Hoy no se usan: Shannon y Random Forest laboral trabajan con 287.",
+   "antes": "Limitación pendiente: requiere decisión",
+   "definitivo": "Decisión tomada para la Fase 36; datos intactos",
+   "cambia": "Sí"
+  },
+  {
+   "id": "H07",
+   "clase": "Error comprobado",
+   "hallazgo": "imc_categoria se probó con «no informado» como categoría: q 0,073. Sin mezclar con faltantes, solo observado: p 0,007 y q 0,038.",
+   "antes": "Corregido con resultado complementario",
+   "definitivo": "Corregido con resultado complementario",
+   "cambia": "No"
+  },
+  {
+   "id": "H08",
+   "clase": "Metodológica discutible",
+   "hallazgo": "Bajo peso (n = 2) salió sin aviso por la regla de mínimo 5 por grupo; por eso n = 527.",
+   "antes": "Conservado y documentado",
+   "definitivo": "Conservado y documentado",
+   "cambia": "No"
+  },
+  {
+   "id": "H09",
+   "clase": "Metodológica discutible",
+   "hallazgo": "En 34C, sobrecarga y cantidad valen 0 si no cuida. En sobrecarga rho 0,069 con las 529 y 0,156 entre cuidadoras.",
+   "antes": "Conservado y documentado",
+   "definitivo": "Conservado y documentado",
+   "cambia": "No"
+  },
+  {
+   "id": "H10",
+   "clase": "Error comprobado",
+   "hallazgo": "46 de 65 figuras 34D muestran imputados como «n válido», sin indicarlo; 41 dicen «faltante = 0». Porcentajes aritméticamente correctos.",
+   "antes": "Corregido",
+   "definitivo": "Corregido",
+   "cambia": "No"
+  },
+  {
+   "id": "H11",
+   "clase": "Error comprobado",
+   "hallazgo": "imputados_34B es una cota contada sobre 546 cuando no hay marca: difiere en 9 variables, por 1 a 3 celdas (diabetes 24 frente a 23).",
+   "antes": "Corregido por anexo; el código aún calcula la cota",
+   "definitivo": "Resuelto en el código; CSV histórico conservado",
+   "cambia": "Sí"
+  },
+  {
+   "id": "H12",
+   "clase": "Documental",
+   "hallazgo": "El informe 34E dice «Sin imputaciones», pero carga dataset_fase35.csv, con las imputaciones de 34B, salvo IMC y laborales.",
+   "antes": "Corregido",
+   "definitivo": "Corregido",
+   "cambia": "No"
+  },
+  {
+   "id": "H13",
+   "clase": "Documental",
+   "hallazgo": "Texto y CSV de 34C dicen etapa «descriptiva»; el script aún la trata como control, y volver a ejecutarlo reintroduce el texto antiguo.",
+   "antes": "Corrección parcial: rótulo pendiente de autorización",
+   "definitivo": "Resuelto en rótulos y metadatos",
+   "cambia": "Sí"
+  },
+  {
+   "id": "H14",
+   "clase": "Documental",
+   "hallazgo": "La figura de 34E dice «38 predictoras»; el texto habla de 35 predictoras y hoy el conjunto inicial es de 33. El código adaptado de 34E no se ha ejecutado completo.",
+   "antes": "Corregido en texto; figura histórica conservada",
+   "definitivo": "Limitación abierta: texto aclarado, figura histórica sin regenerar",
+   "cambia": "Sí"
+  },
+  {
+   "id": "H15",
+   "clase": "Documental",
+   "hallazgo": "34C dice que el IMC entra como categoría con «no informado» y no se imputa; la Fase 35 lo imputa por la media desde el 27-10.",
+   "antes": "Corregido",
+   "definitivo": "Corregido",
+   "cambia": "No"
+  },
+  {
+   "id": "H16",
+   "clase": "Documental",
+   "hallazgo": "La sección 6.3 dice «cambió por error 1» y su tabla lista 197: 1 celda de cintura y 196 por la regla de pareja.",
+   "antes": "Corregido",
+   "definitivo": "Corregido",
+   "cambia": "No"
+  },
+  {
+   "id": "H17",
+   "clase": "Metodológica discutible",
+   "hallazgo": "Random Forest identificó imputadas con celdas vacías del conjunto sucio: en 10 variables encontró menos. En la sensibilidad, afecta a cantidad (6 de 7).",
+   "antes": "Documentado; efecto sin medir",
+   "definitivo": "Limitación abierta: documentada, efecto sin medir",
+   "cambia": "Sí"
+  },
+  {
+   "id": "A1",
+   "clase": "Adicional (fuera de los 17)",
+   "hallazgo": "La figura e informe de horas sentada decían «valores observados» e incluían 27 imputadas.",
+   "antes": "Corregido",
+   "definitivo": "Limitación abierta: título y texto corregidos; asimetría y curtosis sin recalcular",
+   "cambia": "Sí"
+  }
+ ]
+}

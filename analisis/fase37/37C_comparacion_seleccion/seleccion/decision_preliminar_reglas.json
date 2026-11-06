@@ -1,0 +1,16 @@
+{
+ "conclusion": "B",
+ "finalistas": [
+  "F1_c02_km_k2",
+  "P2_c12_km_k4",
+  "P2_c03_km_k3",
+  "P2_c05_km_k3",
+  "P2_c08_km_k4"
+ ],
+ "elegibles_A": [],
+ "elegibles_B": [
+  "P2_c12_km_k4",
+  "P2_c08_km_k4"
+ ],
+ "protocolo_sha256": "62fd1d0b06e761129d26c4028526260bb1ea00565054eb8b378faa54ccb5e18f"
+}

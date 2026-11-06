@@ -1,0 +1,14 @@
+{
+ "momento": "inicial",
+ "fecha": "2026-11-05T16:47:10",
+ "protocolo_sha256": "f7c8d125aa9181224360c226586eb990779d15776a5adb00a26ac5e54eb326b9",
+ "protocolo_sellado": "2026-11-05T16:44:19",
+ "archivos_protegidos": 3536,
+ "archivos_distintos": 0,
+ "pycache_en_fases_protegidas": [],
+ "head": "745d689",
+ "rama": "datos-simulados",
+ "cambios_fuera_de_analisis": [],
+ "cambios_en_src": [],
+ "datos_versionados_modificados": []
+}
