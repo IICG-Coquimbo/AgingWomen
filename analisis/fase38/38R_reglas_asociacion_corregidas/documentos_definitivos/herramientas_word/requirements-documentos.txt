@@ -1,0 +1,7 @@
+# Versiones usadas en las figuras y la validación documental de 38R y 39R (8 de noviembre de 2026).
+# Python 3.12.5, Node.js 24.20.0, npm 11.19.0.
+matplotlib==3.10.1
+numpy==2.2.4
+pandas==2.2.3
+scipy==1.15.2
+pillow==11.1.0

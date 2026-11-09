@@ -1,0 +1,17 @@
+configuracion,esperada,obtenida,coincide
+principal,529,529,True
+S1,529,529,True
+S2a,529,529,True
+S2b,529,529,True
+S3-bajo,529,529,True
+S3-alto,529,529,True
+S4-1,529,529,True
+S4-2,529,529,True
+S5,529,529,True
+S6,529,529,True
+S7a,287,287,True
+S7a-309,309,309,True
+S7b,239,239,True
+S7b-251,251,251,True
+S8a,267,267,True
+S8b,267,267,True

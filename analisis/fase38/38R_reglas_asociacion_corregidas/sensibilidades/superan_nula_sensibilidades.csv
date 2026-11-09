@@ -1,0 +1,6 @@
+configuracion,antecedente,consecuente,n,n_antecedente,confianza,frecuencia_basal,diferencia_basal,p_ajustado_busqueda,redundante,clase
+S2a,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,529,57,0.8070175438596491,0.5311909262759924,0.2758266175836567,0.03596403596403597,False,5-6 supera la nula (estabilidad no evaluada)
+S2b,comida_fuera=nunca_o_1-2_veces_por_semana & dias_ejercicio=3_o_mas_dias,severo_mrs=NO,529,60,0.7333333333333333,0.4688090737240076,0.2645242596093257,0.030969030969030968,False,5-6 supera la nula (estabilidad no evaluada)
+S2b,bajo_impacto=rara_vez_a_siempre & med_presion=NO & tabaco=nunca,severo_mrs=NO,529,134,0.6417910447761194,0.4688090737240076,0.17298197105211177,0.04895104895104895,True,3 redundante
+S7b,aerobico=no_lo_realiza_o_nunca & agua=3-4_porciones & sobrecarga=frecuente_o_siempre,severo_mrs=SI,239,34,0.9117647058823529,0.5690376569037657,0.3427270489785872,0.03796203796203796,False,5-6 supera la nula (estabilidad no evaluada)
+S7b-251,aerobico=no_lo_realiza_o_nunca & agua=3-4_porciones & sobrecarga=frecuente_o_siempre,severo_mrs=SI,251,34,0.9117647058823529,0.5617529880478087,0.3500117178345442,0.026973026973026972,False,5-6 supera la nula (estabilidad no evaluada)

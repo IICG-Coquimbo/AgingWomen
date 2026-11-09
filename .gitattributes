@@ -1,0 +1,4 @@
+# Fases 38R y 39R: sus manifiestos sellan cada archivo con SHA-256. Se guardan
+# byte a byte para que ninguna configuración de Git cambie los finales de línea.
+analisis/fase38/38R_reglas_asociacion_corregidas/** -text
+analisis/fase39/39R_asociaciones_condicionadas_corregidas/** -text

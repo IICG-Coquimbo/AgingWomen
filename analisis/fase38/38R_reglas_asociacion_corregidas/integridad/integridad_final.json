@@ -1,0 +1,25 @@
+{
+ "momento": "final",
+ "fecha": "2026-11-08T10:40:38",
+ "archivos_con_huella": 6265,
+ "manifiestos_archivos": 6462,
+ "manifiestos_distintos": 4,
+ "prueba_40b1": {
+  "codigo": 0,
+  "cola": [
+   "Ran 5 tests in 6.667s",
+   "",
+   "OK"
+  ]
+ },
+ "rama": "datos-simulados",
+ "head": "573d3a31100c03519d47e220f4a065df3e9caf9a",
+ "lineas_git_status_sin_38R": 86,
+ "git_status_igual_al_inicial": true,
+ "pycache_fases_36_a_39": [],
+ "pendientes": 134,
+ "pendientes_distintos": [],
+ "huellas_cambiadas": [],
+ "huellas_nuevas": [],
+ "manifiestos_diferencias_no_documentadas": []
+}

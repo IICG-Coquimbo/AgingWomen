@@ -1,0 +1,25 @@
+indicador,fase_38,fase_38R
+variables,31.0,29.0
+items,94.0,90.0
+conjuntos_frecuentes,52685.0,42937.0
+antecedentes_evaluados,12325.0,9865.0
+reglas,12201.0,9761.0
+hacia_severo,6275.0,5319.0
+hacia_no_severo,5926.0,4442.0
+marcadas,1119.0,971.0
+marcadas_no_redundantes,193.0,184.0
+nula_media_marcadas,649.98,543.564
+nula_p95_marcadas,970.05,811.2499999999998
+p_exceso_marcadas,0.014985014985014986,0.012987012987012988
+nula_p95_max_z,4.105989215536869,4.08547003006446
+superan_nula,1.0,1.0
+superan_nula_no_redundantes,1.0,1.0
+compatibles_con_nula_marcadas_no_redundantes,192.0,183.0
+clase: 2 asociación débil,11082.0,8790.0
+clase: 3 redundante,926.0,787.0
+clase: 4 compatible con la referencia nula,192.0,183.0
+clase: 6 asociación relativamente más marcada,1.0,1.0
+estables (regla),535.0,480.0
+familias evaluadas,1089.0,944.0
+media de reaparición de familias,0.716267217630854,0.7233739406779661
+media de reglas marcadas por submuestra,1410.785,1211.795

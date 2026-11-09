@@ -1,0 +1,17 @@
+configuracion,descripcion,participantes,severo_si,severo_no,frecuencia_basal_si,variables,items,items_constantes_quitados,umbral_antecedente,umbral_conjunto,largo_maximo,items_por_transaccion_media,pares_determinados,historica_equivalente
+principal,Análisis principal,529,281,248,0.5311909262759924,29,90,,53,27,3,28.945179584120982,0,principal
+S1,Sin valores imputados,529,281,248,0.5311909262759924,29,90,,53,27,3,27.497164461247635,0,S1
+S2a,Categorías originales sin agrupar,529,281,248,0.5311909262759924,29,113,comida_fuera=diariamente; frutas=7_o_mas_porciones; jugos=7_o_mas_porciones; lacteos=7_o_mas_porciones; legumbres=5-6_veces_por_semana; legumbres=diariamente; panes=7_o_mas_porciones; pescado=5-6_veces_por_semana; pescado=diariamente; verduras=7_o_mas_porciones,53,27,3,29.0,8,S2a
+S2b,Agrupación gruesa,529,281,248,0.5311909262759924,29,60,,53,27,3,28.945179584120982,0,S2b
+S3-bajo,"Umbral 5 % (antecedente ≥ 27, conjunto ≥ 14)",529,281,248,0.5311909262759924,29,90,,27,14,3,28.945179584120982,0,S3-bajo
+S3-alto,"Umbral 15 % (antecedente ≥ 80, conjunto ≥ 40)",529,281,248,0.5311909262759924,29,90,,80,40,3,28.945179584120982,0,S3-alto
+S4-1,Antecedentes de una condición,529,281,248,0.5311909262759924,29,90,,53,27,1,28.945179584120982,0,S4-1
+S4-2,Antecedentes de hasta dos condiciones,529,281,248,0.5311909262759924,29,90,,53,27,2,28.945179584120982,0,S4-2
+S5,"Sin frecuencias de ejercicio aeróbico, bajo impacto y fuerza",529,281,248,0.5311909262759924,26,80,,53,27,3,25.945179584120982,0,S5
+S6,Sin variables próximas a síntomas,529,281,248,0.5311909262759924,26,80,,53,27,3,25.945179584120982,0,S6
+S7a,"Trabajadoras con información laboral (287), con módulo laboral",287,166,121,0.578397212543554,30,94,,29,15,3,29.94425087108014,3,sin equivalente (cambia la población)
+S7a-309,"Población laboral ampliada (309), con módulo laboral",309,178,131,0.5760517799352751,30,94,,31,16,3,29.802588996763753,1,S7a
+S7b,"Cuidadoras con sobrecarga observada (239), con sobrecarga",239,136,103,0.5690376569037657,30,92,cuida=no_cuida,24,12,3,29.94560669456067,4,sin equivalente (cambia la población)
+S7b-251,"Población de cuidadoras ampliada (251, 12 imputadas), con sobrecarga",251,141,110,0.5617529880478087,30,92,cuida=no_cuida,26,13,3,29.9402390438247,3,S7b
+S8a,"Con IMC observado, sin IMC",267,141,126,0.5280898876404494,29,90,,27,14,3,28.928838951310862,2,S8a
+S8b,"Con IMC observado, con IMC",267,141,126,0.5280898876404494,30,93,,27,14,3,29.928838951310862,2,S8b

@@ -1,0 +1,12 @@
+control_negativo,detectado,pruebas_que_fallan,motivo
+Lift con la basal equivocada,True,9,"AssertionError: recuentos, confianza o lift"
+Wilson sin corrección,True,9,AssertionError: Wilson o dirección
+Dos estados de una variable,True,5,AssertionError: transacción con dos estados o sin consecuente
+FP-Growth pierde un conjunto,True,10,AssertionError: algoritmos distintos
+Evaluador con recuento desplazado,True,"11, 12",AssertionError: evaluador distinto de FP-Growth
+BH solo en las seleccionadas,True,"12, 15",AssertionError: las reglas o q no se reproducen
+Mejora mínima en 0,True,18,AssertionError: la clasificación no se reproduce
+Compatibles con la nula pasadas a clase 6,True,18,AssertionError: la clasificación no se reproduce
+Pares determinados nunca detectados,True,16,AssertionError: S2a debería tener pares determinados
+S1 sin quitar imputados,True,7,AssertionError: S1 conserva imputadas
+S7a con la población de 309,True,8,AssertionError: S7a mal construida

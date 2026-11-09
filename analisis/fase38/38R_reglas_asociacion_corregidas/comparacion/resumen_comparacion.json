@@ -1,0 +1,34 @@
+{
+ "conservadas": {
+  "reglas_conservadas": 9761,
+  "p_ajustado_baja_o_igual": 9761,
+  "p_ajustado_igual": 9698,
+  "p_ajustado_baja_max": 0.04895104895104896,
+  "q_baja_o_igual": 7834,
+  "q_iguales": 732,
+  "q_sube": 1927,
+  "cambian_de_clase": 0,
+  "estabilidad_identica": {
+   "reaparece_marcada": 9761,
+   "misma_direccion": 9761
+  },
+  "estable_identica": 9761,
+  "filas_estabilidad_comparadas": 9761,
+  "nula_max_z_nunca_sube": true,
+  "nula_marcadas_nunca_sube": true,
+  "permutaciones_con_max_z_menor": 171,
+  "permutaciones": 1000
+ },
+ "configuraciones_verificadas": 16,
+ "archivos_barridos": 69,
+ "apariciones_en_resultados": 0,
+ "robustas": 0,
+ "clase6": 1,
+ "conviccion": {
+  "filas": 9761,
+  "mediana": 1.0880846393072747,
+  "maxima_finita": 2.429283382024402,
+  "infinitas": 0
+ },
+ "sello_protocolo": "32a64ec8d5cdd4ceec8a13f54e44abccfbda689517cf430299eaf6a4b601e867"
+}

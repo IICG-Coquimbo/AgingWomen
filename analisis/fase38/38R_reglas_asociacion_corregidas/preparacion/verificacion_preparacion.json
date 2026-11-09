@@ -1,0 +1,27 @@
+{
+ "participantes": 529,
+ "identificadores_unicos": true,
+ "severo_si": 281,
+ "severo_no": 248,
+ "variables_principal": 29,
+ "items_principal": 90,
+ "items_historicos_retirados": [
+  "med_diabetes=NO",
+  "med_diabetes=SI",
+  "prevision=FONASA",
+  "prevision=ISAPRE"
+ ],
+ "matriz_igual_a_historica_menos_4_items": true,
+ "filas_comparadas": 529,
+ "columnas_comparadas": 93,
+ "sello_protocolo": "32a64ec8d5cdd4ceec8a13f54e44abccfbda689517cf430299eaf6a4b601e867",
+ "decisiones_contrastadas": {
+  "elegibles_33": "9a534d717c24f975ac7c02a87466189d48a48036baa47c5cbaca3ed75f187866",
+  "candidatas_y_exclusiones": "cf31127cf22e7f0c5c3d88f193d4874ee7e022f6b67572786c6210d913a3ba4d",
+  "protocolo_revision_33": "70c7779f981517d1f34d02438baea5e5ac61b8cee9bfb4a8ff070e27503c1dfd",
+  "preprocesamiento_35_revisado": "2195e78d1b78f8d624720c6d9fdfa37d22a864a0695f3054ddad801eb23e3294",
+  "configuracion_36": "be9aa8c5d67a23e3a992d7bf455bf293a7a34854f7cfbc3c8bf6f16151428d5f",
+  "protocolo_36_ajustado": "c5fda8bb03655aa1c4cf580d6770ac09921c88f217170ab9dadfbb10d3b9c6b4",
+  "esquema_P2": "cb414a0ca59694770e7eab2d31e0ebf0b81330a50ab498251a29f2845f2aa2f4"
+ }
+}

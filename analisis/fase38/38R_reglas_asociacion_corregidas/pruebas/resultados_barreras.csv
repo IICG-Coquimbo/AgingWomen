@@ -1,0 +1,66 @@
+control,esperado,resultado,correcto,detalle
+Lista de 29 autorizada,pasa,pasó,True,
+Agrega prevision,detiene,detuvo,True,La matriz principal no tiene 29 variables únicas: 30
+Agrega usa_medicamentos_diabetes,detiene,detuvo,True,La matriz principal no tiene 29 variables únicas: 30
+Agrega doble_carga,detiene,detuvo,True,La matriz principal no tiene 29 variables únicas: 30
+Agrega imc reservada,detiene,detuvo,True,La matriz principal no tiene 29 variables únicas: 30
+Quita una variable,detiene,detuvo,True,La matriz principal no tiene 29 variables únicas: 28
+Cambia una autorizada por prevision,detiene,detuvo,True,"Variables principales distintas de las autorizadas: ['evacuacion_intestinal', 'prevision']"
+Variable repetida,detiene,detuvo,True,La matriz principal no tiene 29 variables únicas: 29
+Lista de la Fase 35 alterada con prevision,detiene,detuvo,True,prevision aparece entre las 33 elegibles de la Fase 35
+Protocolo 33 sin la exclusión de diabetes,detiene,detuvo,True,El protocolo de la revisión de 33 variables no declara las exclusiones definitivas
+Configuración 36 sin la exclusión de previsión,detiene,detuvo,True,La configuración de la Fase 36 no excluye las tres variables
+Protocolo 36 sin la población 239,detiene,detuvo,True,El protocolo ajustado de la Fase 36 no documenta las poblaciones de los módulos
+Ítem prohibido por nombre: med_diabetes=SI,detiene,detuvo,True,Ítem derivado de una variable excluida: med_diabetes=SI
+Ítem prohibido por nombre: prevision=FONASA,detiene,detuvo,True,Ítem derivado de una variable excluida: prevision=FONASA
+Ítem prohibido por nombre: seguro_fonasa=SI,detiene,detuvo,True,Ítem derivado de una variable excluida: seguro_fonasa=SI
+Ítem prohibido por nombre: ISAPRE=SI,detiene,detuvo,True,Ítem derivado de una variable excluida: ISAPRE=SI
+Ítem prohibido por nombre: tiene_diabetes=NO,detiene,detuvo,True,Ítem derivado de una variable excluida: tiene_diabetes=NO
+Ítem prohibido por nombre: doble_carga=SI,detiene,detuvo,True,Ítem derivado de una variable excluida: doble_carga=SI
+Ítem prohibido por nombre: doblecarga=1,detiene,detuvo,True,Ítem derivado de una variable excluida: doblecarga=1
+Ítem prohibido por nombre: pregunta_3=alta,detiene,detuvo,True,Ítem o variable del MRS como antecedente: pregunta_3=alta
+Ítem prohibido por nombre: mrs_total=alto,detiene,detuvo,True,Ítem o variable del MRS como antecedente: mrs_total=alto
+Ítem prohibido por nombre: severo_mrs=SI,detiene,detuvo,True,Ítem o variable del MRS como antecedente: severo_mrs=SI
+Ítem prohibido por nombre: severidad_mrs=alta,detiene,detuvo,True,Ítem o variable del MRS como antecedente: severidad_mrs=alta
+Ítem prohibido por nombre: consecuencias_laborales=SI,detiene,detuvo,True,Variable posterior a los síntomas como antecedente: consecuencias_laborales=SI
+Ítem prohibido por nombre: segmento=2,detiene,detuvo,True,Etiqueta de segmentación o etapa como antecedente: segmento=2
+Ítem prohibido por nombre: grupo_a=1,detiene,detuvo,True,Etiqueta de segmentación o etapa como antecedente: grupo_a=1
+Ítem prohibido por nombre: B1=2,detiene,detuvo,True,Etiqueta de segmentación o etapa como antecedente: B1=2
+Ítem prohibido por nombre: etapa_menopausica=post,detiene,detuvo,True,Etiqueta de segmentación o etapa como antecedente: etapa_menopausica=post
+Ítem de variable no autorizada (imc en la principal),detiene,detuvo,True,Ítem imc=30_o_mas de la variable no autorizada imc
+Ítem sin variable conocida,detiene,detuvo,True,Ítem sin variable de origen conocida: desconocida=1
+Contenido vetado con nombre inocuo: Disfraz de diabetes (sí),detiene,detuvo,True,El ítem x=1 reproduce exactamente usa_medicamentos_diabetes=0.0 (complemento)
+Contenido vetado con nombre inocuo: Disfraz de diabetes (complemento),detiene,detuvo,True,El ítem x=1 reproduce exactamente usa_medicamentos_diabetes=0.0
+Contenido vetado con nombre inocuo: Disfraz de previsión FONASA,detiene,detuvo,True,El ítem x=1 reproduce exactamente prevision=FONASA
+Contenido vetado con nombre inocuo: Disfraz de doble carga,detiene,detuvo,True,El ítem x=1 reproduce exactamente doble_carga=0
+Contenido vetado con nombre inocuo: Consecuente como ítem,detiene,detuvo,True,El ítem x=1 reproduce exactamente severo_mrs=1
+Contenido vetado con nombre inocuo: Ítem 3 del MRS binarizado,detiene,detuvo,True,El ítem x=1 reproduce exactamente pregunta_3>=2
+Contenido vetado con nombre inocuo: Severidad del MRS,detiene,detuvo,True,El ítem x=1 reproduce exactamente severo_mrs=1
+Contenido vetado con nombre inocuo: Segmento A,detiene,detuvo,True,El ítem x=1 reproduce exactamente A=0
+Contenido vetado con nombre inocuo: Segmento B1,detiene,detuvo,True,El ítem x=1 reproduce exactamente B1=0
+Principal con una participante menos,detiene,detuvo,True,"principal: población 528, se esperaba 529"
+S7a con la población de 309,detiene,detuvo,True,"S7a: población 309, se esperaba 287"
+S7a-309 con la población de 287,detiene,detuvo,True,"S7a-309: población 287, se esperaba 309"
+S7b con las 12 imputadas,detiene,detuvo,True,"S7b: población 251, se esperaba 239"
+S7b-251 sin las imputadas,detiene,detuvo,True,"S7b-251: población 239, se esperaba 251"
+S8 en toda la muestra,detiene,detuvo,True,"S8a: población 529, se esperaba 267"
+S1 con imputados,detiene,detuvo,True,S1: trabaja_actualmente conserva ítem en celdas imputadas
+S1 con ítem en una celda imputada,detiene,detuvo,True,S1: tiene_pareja conserva ítem en celdas imputadas
+Regla con un ítem excluido,detiene,detuvo,True,Ítem derivado de una variable excluida: med_diabetes=NO
+Regla con variable excluida en su columna,detiene,detuvo,True,Regla con la variable no autorizada prevision
+Configuración correcta: principal,pasa,pasó,True,"n=529, variables=29, ítems=90, umbrales=53/27"
+Configuración correcta: S1,pasa,pasó,True,"n=529, variables=29, ítems=90, umbrales=53/27"
+Configuración correcta: S2a,pasa,pasó,True,"n=529, variables=29, ítems=113, umbrales=53/27"
+Configuración correcta: S2b,pasa,pasó,True,"n=529, variables=29, ítems=60, umbrales=53/27"
+Configuración correcta: S3-bajo,pasa,pasó,True,"n=529, variables=29, ítems=90, umbrales=27/14"
+Configuración correcta: S3-alto,pasa,pasó,True,"n=529, variables=29, ítems=90, umbrales=80/40"
+Configuración correcta: S4-1,pasa,pasó,True,"n=529, variables=29, ítems=90, umbrales=53/27"
+Configuración correcta: S4-2,pasa,pasó,True,"n=529, variables=29, ítems=90, umbrales=53/27"
+Configuración correcta: S5,pasa,pasó,True,"n=529, variables=26, ítems=80, umbrales=53/27"
+Configuración correcta: S6,pasa,pasó,True,"n=529, variables=26, ítems=80, umbrales=53/27"
+Configuración correcta: S7a,pasa,pasó,True,"n=287, variables=30, ítems=94, umbrales=29/15"
+Configuración correcta: S7a-309,pasa,pasó,True,"n=309, variables=30, ítems=94, umbrales=31/16"
+Configuración correcta: S7b,pasa,pasó,True,"n=239, variables=30, ítems=92, umbrales=24/12"
+Configuración correcta: S7b-251,pasa,pasó,True,"n=251, variables=30, ítems=92, umbrales=26/13"
+Configuración correcta: S8a,pasa,pasó,True,"n=267, variables=29, ítems=90, umbrales=27/14"
+Configuración correcta: S8b,pasa,pasó,True,"n=267, variables=30, ítems=93, umbrales=27/14"

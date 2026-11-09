@@ -46,3 +46,8 @@ Thumbs.db
 !/datos/sintetico/dataset_usuaria_sucio.csv
 !/datos/limpio_usuaria/
 !/datos/analitico/
+
+# Registros de validación de 38R con huellas de archivos .env: solo en el respaldo privado.
+/analisis/fase38/38R_reglas_asociacion_corregidas/documentos_definitivos/validacion/huellas_final.csv
+/analisis/fase38/38R_reglas_asociacion_corregidas/documentos_definitivos/validacion/huellas_inicial.csv
+/analisis/fase38/38R_reglas_asociacion_corregidas/integridad/manifiesto_pendientes_inicial.csv

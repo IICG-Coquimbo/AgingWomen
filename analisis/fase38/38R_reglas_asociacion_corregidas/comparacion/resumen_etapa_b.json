@@ -1,0 +1,17 @@
+{
+ "reglas_historicas": 12201,
+ "reglas_historicas_retiradas": 2440,
+ "reglas_historicas_elegibles": 9761,
+ "reglas_38R": 9761,
+ "perdidas_sin_motivo": 0,
+ "nuevas_no_historicas": 0,
+ "metricas_con_diferencias": [],
+ "conjuntos_frecuentes": 42937,
+ "por_consecuente": {
+  "severo_mrs=SI": 5319,
+  "severo_mrs=NO": 4442
+ },
+ "reglas_con_variable_prohibida": 0,
+ "marcadas_descriptivas": 971,
+ "sello_protocolo": "32a64ec8d5cdd4ceec8a13f54e44abccfbda689517cf430299eaf6a4b601e867"
+}
