@@ -1,0 +1,35 @@
+{
+ "archivo": "01_protocolo_39R.md",
+ "sha256": "c17c5bf05cc8f8ce9346a91638a19381399011647571ce15fa722581d2d8bb4e",
+ "bytes": 10513,
+ "sellado": "2026-11-08T11:13:43",
+ "protocolo_historico_39_sha256": "18f15f821635f8c3d55a31f539d84d95ef8e5a32591e465073fb181a424c9042",
+ "protocolo_38R_sha256": "32a64ec8d5cdd4ceec8a13f54e44abccfbda689517cf430299eaf6a4b601e867",
+ "fuentes": {
+  "analisis/fase39/39_asociaciones_condicionadas/protocolo/01_protocolo_39.md": "18f15f821635f8c3d55a31f539d84d95ef8e5a32591e465073fb181a424c9042",
+  "analisis/fase39/39_asociaciones_condicionadas/protocolo/02_modificaciones_posteriores.md": "626ae2fd92f3cc62e89d1af571d8dc917b881413e4f321d52d053cf740f1f7ce",
+  "analisis/fase39/39_asociaciones_condicionadas/protocolo/sello_protocolo.json": "bb51d291516334a2bb3280a7d5a73a74f96a29da1360e54e9e1a1378e58bf94e",
+  "analisis/fase38/38R_reglas_asociacion_corregidas/protocolo/01_protocolo_38R.md": "32a64ec8d5cdd4ceec8a13f54e44abccfbda689517cf430299eaf6a4b601e867",
+  "analisis/fase38/38R_reglas_asociacion_corregidas/protocolo/sello_protocolo.json": "dbe20c6b4272475626bbe0bc684c84b7a2230992af3d9c4421ce06d961874649",
+  "analisis/fase38/38R_reglas_asociacion_corregidas/informes/informe_comparativo_38R.md": "977bdcea228d5b2ad22b3aabe3078d72496d9455fc50fa08535ba295ac5c6654",
+  "analisis/fase38/38R_reglas_asociacion_corregidas/preparacion/matriz_transaccional_principal.csv": "8a6cc86d58c783cd35a3a95ae1ed7d4be4ab13541eef9b09b2cfd7bf380aaa2c",
+  "analisis/fase39/39_asociaciones_condicionadas/scripts/nucleo_39.py": "0c681b9d8bf22b1bb31b8ceb8f54a328911bb07f3314b6b7fd5570d7db18a6aa",
+  "analisis/fase39/39_asociaciones_condicionadas/scripts/busqueda_39.py": "6143d56e92d4fa1fd9789fe66a80c95f97dcd39e0d28584d67c9e9491a2f5668",
+  "analisis/fase39/39_asociaciones_condicionadas/scripts/heterogeneidad_39.py": "ec2b02ea0117c771cc8aa3c30b21ac0ab6cff1fbec6b3b8ef7bef8c574e008c5",
+  "analisis/fase38/38_reglas_asociacion_generales/scripts/nucleo_38.py": "3bbbe85ad1ff8bd60906432c861ed3055971514af317d98a9e7bb1fcdae45ba0",
+  "analisis/fase38/38_reglas_asociacion_generales/scripts/algoritmos_38.py": "8ec61dfbbe5b2d6acd7c89c5e8ad1c126a9438559b9dbe5146661fd05b9e7c0f",
+  "analisis/fase38/38_reglas_asociacion_generales/scripts/evaluacion_38.py": "bc38cd1dfba1172b57afba124049f1c7a9fffd04113a654cb466bab20b52c7db",
+  "analisis/fase38/38R_reglas_asociacion_corregidas/scripts/nucleo_38r.py": "74f8594cd6c30ba47793aa8436e7d2eb2e34b6deea38387abca92c76a3bcca43",
+  "analisis/fase38/38R_reglas_asociacion_corregidas/scripts/barreras_38r.py": "89421acfd00cdc3e7c06c482452ca37029b53226dabf580c1e7c7fb2f8ed4439"
+ },
+ "codigo": {
+  "barreras_39r.py": "9128ac1d56ecafb086c40be08d2487479ed35b51fad0486c1e8dfc015290291a",
+  "nucleo_39r.py": "da7f72c0d97172474bead67adae4a841fc930169222d936aacdaa4602532b042",
+  "etapa_a_preparacion.py": "5a59029d32f4d3c9ca971d8c6b4d4d0782ee90e5715774c80a50bdd4463442cb",
+  "etapa_bc_reglas_nulas.py": "6a514de8697fc6eecd7b14d52d1d3fe69c4b08dca856ff327cb3ba347a39e095",
+  "etapa_d_comparacion.py": "99d9b8cad91b3df25efccd9cb63c907c7f29fb45827394629b134a5943cf5bd5",
+  "etapa_e_sensibilidades.py": "3f4549ed9e38ae68ae48f5bfe38479b32f9b95ea1d9df69005ecf975775a07d2",
+  "etapa_e_ab1.py": "05905c2364abbc3a0c45e3b69eaecdd79676f81e1b92ce06db319b2fbfbe9f3d",
+  "exploratorio_significacion.py": "8b12cef4a01c25c4dad2dd9dfd99beae0286141ae64f58a612d5c5ebf7813672"
+ }
+}

@@ -1,0 +1,7 @@
+sensibilidad,dimension,estrato,antecedente,consecuente,n,n_antecedente,n_conjunto,confianza,frecuencia_basal,p_ajustado_estrato,p_ajustado_conjunto,redundante,proxima_a_sintomas,incluye_modulo,fase
+S1,cuidado,cuida,bajo_impacto=no_lo_realiza_o_nunca & frutas=1-2_porciones & horas_sentada=6-7,severo_mrs=SI,251,29,27,0.9310344827586208,0.5617529880478087,0.0329670329670329,0.1838161838161838,False,False,False,39
+S4-1,trabajo,trabaja,bajo_impacto=frecuentemente_o_siempre,severo_mrs=NO,309,35,24,0.6857142857142857,0.4239482200647249,0.0209790209790209,0.1298701298701298,False,False,False,39
+S4-1,cuidado,cuida,bajo_impacto=frecuentemente_o_siempre,severo_mrs=NO,251,31,22,0.7096774193548387,0.4382470119521913,0.0269730269730269,0.1928071928071928,False,False,False,39
+S4-1,cuidado,cuida,dias_ejercicio=3-4_dias,severo_mrs=NO,251,26,19,0.7307692307692307,0.4382470119521913,0.0359640359640359,0.2257742257742257,False,False,False,39
+S6,cuidado,cuida,dias_ejercicio=0_dias & frutas=1-2_porciones & horas_sentada=6-7,severo_mrs=SI,251,36,32,0.8888888888888888,0.5617529880478087,0.0479520479520479,0.2227772227772227,False,False,False,39
+S7b,cuidado,cuida,aerobico=no_lo_realiza_o_nunca & agua=3-4_porciones & sobrecarga=frecuente_o_siempre,severo_mrs=SI,251,34,31,0.9117647058823528,0.5617529880478087,0.0369630369630369,0.0369630369630369,False,False,True,39

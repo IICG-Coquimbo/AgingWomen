@@ -1,0 +1,14 @@
+dimension,estrato,identico_byte_a_byte
+trabajo,trabaja,True
+trabajo,no_trabaja,True
+pareja,con_pareja,True
+pareja,sin_pareja,True
+ejercicio,0_dias,True
+ejercicio,1-2_dias,True
+ejercicio,3_o_mas_dias,True
+cuidado,cuida,True
+cuidado,no_cuida,True
+trabajo,(comparación),True
+pareja,(comparación),True
+ejercicio,(comparación),True
+cuidado,(comparación),True

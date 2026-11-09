@@ -1,0 +1,1350 @@
+grupo,verificacion,resultado,detalle
+Figuras 38R,f01: 90 barras y sus valores,superada,90
+Figuras 38R,f01: mismos límites de escala en los dos paneles,superada,
+Figuras 38R,f01: 29 variables,superada,
+Figuras 38R,f01: sin ítems de las variables retiradas,superada,
+Figuras 38R,f02: puntos por clase severo_mrs=SI,superada,"([4690, 520, 108, 1], [4690, 520, 108, 1])"
+Figuras 38R,f02: puntos por clase severo_mrs=NO,superada,"([4100, 267, 75, 0], [4100, 267, 75, 0])"
+Figuras 38R,f02: total 9.761 reglas,superada,
+Figuras 38R,f03: 1.000 permutaciones,superada,
+Figuras 38R,f03: máximo z y p95,superada,"[4.173018146716513, 4.08547003006446]"
+Figuras 38R,"f03: 971 marcadas y media 543,56",superada,"[971.0, 543.564]"
+Figuras 38R,f04: 971 marcadas en el título,superada,
+Figuras 38R,f04: línea de la clase 6,superada,
+Figuras 38R,f04: 200 submuestras,superada,
+Figuras 38R,f05: 16 configuraciones,superada,48
+Figuras 38R,f05: principal,superada,
+Figuras 38R,f05: S1,superada,
+Figuras 38R,f05: S2a,superada,
+Figuras 38R,f05: S2b,superada,
+Figuras 38R,f05: S3-bajo,superada,
+Figuras 38R,f05: S3-alto,superada,
+Figuras 38R,f05: S4-1,superada,
+Figuras 38R,f05: S4-2,superada,
+Figuras 38R,f05: S5,superada,
+Figuras 38R,f05: S6,superada,
+Figuras 38R,f05: S7a,superada,
+Figuras 38R,f05: S7a-309,superada,
+Figuras 38R,f05: S7b,superada,
+Figuras 38R,f05: S7b-251,superada,
+Figuras 38R,f05: S8a,superada,
+Figuras 38R,f05: S8b,superada,
+Figuras 38R,f06: anchos iguales a la lectura,superada,
+Figuras 38R,f06: cada fila suma 971,superada,
+Figuras 38R,f07: 10 reglas severo_mrs=SI,superada,10
+Figuras 38R,f07: 10 reglas severo_mrs=NO,superada,10
+Figuras 38R,f07: una sola regla de clase 6,superada,
+Figuras 38R,f08: reglas evaluadas,superada,
+Figuras 38R,f08: marcadas,superada,
+Figuras 38R,f01_items_principal: archivo,superada,
+Figuras 38R,f02_confianza_frente_a_casos: archivo,superada,
+Figuras 38R,f03_referencia_nula: archivo,superada,
+Figuras 38R,f04_estabilidad: archivo,superada,
+Figuras 38R,f05_exceso_frente_a_nula: archivo,superada,
+Figuras 38R,f06_lectura_sensibilidades: archivo,superada,
+Figuras 38R,f07_reglas_mayor_z: archivo,superada,
+Figuras 38R,f08_umbrales: archivo,superada,
+Figuras 39R,f01: datos idénticos a los que dibujó la figura histórica,superada,
+Figuras 39R,f01: 17 puntos con las basales,superada,17
+Figuras 39R,f02: marcadas,superada,
+Figuras 39R,f02: media nula,superada,
+Figuras 39R,f02: 9 estratos suman 9.085 marcadas y 47.912 reglas,superada,
+Figuras 39R,f03: trabajo,superada,
+Figuras 39R,f03: trabajo queda bajo el p95 nulo,superada,
+Figuras 39R,f03: pareja,superada,
+Figuras 39R,f03: pareja queda bajo el p95 nulo,superada,
+Figuras 39R,f03: ejercicio,superada,
+Figuras 39R,f03: ejercicio queda bajo el p95 nulo,superada,
+Figuras 39R,f03: cuidado,superada,
+Figuras 39R,f03: cuidado queda bajo el p95 nulo,superada,
+Figuras 39R,f04: trabajo p ajustados,superada,"['0,85', '0,82', '0,58', '0,44', '0,37', '0,34']"
+Figuras 39R,f04: trabajo ninguna supera,superada,
+Figuras 39R,f04: pareja p ajustados,superada,"['0,78', '0,45', '0,44', '0,37', '0,27', '0,23']"
+Figuras 39R,f04: pareja ninguna supera,superada,
+Figuras 39R,f04: ejercicio p ajustados,superada,"['1,00', '1,00', '0,99', '0,94', '0,91', '0,91']"
+Figuras 39R,f04: ejercicio ninguna supera,superada,
+Figuras 39R,f04: cuidado p ajustados,superada,"['1,00', '0,96', '0,93', '0,92', '0,88', '0,76']"
+Figuras 39R,f04: cuidado ninguna supera,superada,
+Figuras 39R,f05: anchos iguales a la lectura,superada,
+Figuras 39R,f06: trabajo,superada,207
+Figuras 39R,f06: pareja,superada,140
+Figuras 39R,f06: ejercicio,superada,76
+Figuras 39R,f06: cuidado,superada,226
+Coherencia 38R,Reglas: 9761,superada,9761
+Coherencia 38R,Hacia severos: 5319,superada,5319
+Coherencia 38R,Hacia no severos: 4442,superada,4442
+Coherencia 38R,Marcadas: 971,superada,971
+Coherencia 38R,Marcadas no redundantes: 184,superada,184
+Coherencia 38R,Nula media: 543.564,superada,543.564
+Coherencia 38R,Nula p95: 811.2499999999998,superada,811.25
+Coherencia 38R,p exceso: 0.012987012987012988,superada,0.012987
+Coherencia 38R,Clase 2: 8790,superada,8790
+Coherencia 38R,Clase 3: 787,superada,787
+Coherencia 38R,Clase 4: 183,superada,183
+Coherencia 38R,Clase 6: 1,superada,1
+Coherencia 38R,Estables: 480,superada,480
+Coherencia 38R,Supera la nula: 1,superada,1
+Coherencia 38R,"Regla clase 6: n, confianza, p",superada,
+Coherencia 38R,Regla clase 6 no robusta (4 de 8),superada,
+Coherencia 38R,S2b: dos reglas superan su nula,superada,
+Coherencia 38R,Sensibilidad S1,superada,"(7542, 889, 0)"
+Coherencia 38R,Sensibilidad S2a,superada,"(9269, 853, 1)"
+Coherencia 38R,Sensibilidad S2b,superada,"(13639, 1386, 2)"
+Coherencia 38R,Sensibilidad S3-bajo,superada,"(23025, 4519, 0)"
+Coherencia 38R,Sensibilidad S3-alto,superada,"(4938, 278, 0)"
+Coherencia 38R,Sensibilidad S4-1,superada,"(77, 3, 0)"
+Coherencia 38R,Sensibilidad S4-2,superada,"(1401, 91, 0)"
+Coherencia 38R,Sensibilidad S5,superada,"(6955, 657, 0)"
+Coherencia 38R,Sensibilidad S6,superada,"(7072, 716, 0)"
+Coherencia 38R,Sensibilidad S7a,superada,"(10435, 2700, 0)"
+Coherencia 38R,Sensibilidad S7a-309,superada,"(10178, 2568, 0)"
+Coherencia 38R,Sensibilidad S7b,superada,"(11315, 3249, 1)"
+Coherencia 38R,Sensibilidad S7b-251,superada,"(10747, 2942, 1)"
+Coherencia 38R,Sensibilidad S8a,superada,"(9808, 2359, 0)"
+Coherencia 38R,Sensibilidad S8b,superada,"(10798, 2855, 0)"
+Coherencia 39R,Reglas: 47912,superada,47912
+Coherencia 39R,Severos: 25807,superada,25807
+Coherencia 39R,No severos: 22105,superada,22105
+Coherencia 39R,Marcadas: 9085,superada,9085
+Coherencia 39R,Marcadas no redundantes: 1998,superada,1998
+Coherencia 39R,Comparables (suma de las cuatro dimensiones del informe): 4336,superada,4336
+Coherencia 39R,Superan la nula del estrato: 0,superada,0
+Coherencia 39R,Menor p estrato: 0.0549450549450549,superada,0.054945
+Coherencia 39R,trabajo: comparables y marcadas,superada,
+Coherencia 39R,pareja: comparables y marcadas,superada,
+Coherencia 39R,ejercicio: comparables y marcadas,superada,
+Coherencia 39R,cuidado: comparables y marcadas,superada,
+Coherencia 39R,Comparables por dimensión presentes en el informe comparativo,superada,
+Coherencia 39R,Conclusión C,superada,
+Coherencia 39R,"S3-alto: p 0,04995, redundante, no supera la conjunta",superada,
+Coherencia 39R,"S3-bajo: p conjunto 0,048 y no comparable en la principal",superada,"(np.int64(18), np.float64(0.0479520479520479))"
+Coherencia 39R,"S7b: regla de aeróbico, agua y sobrecarga",superada,
+Coherencia 39R,Sensibilidad S1,superada,"(37913, 7903, 1)"
+Coherencia 39R,Sensibilidad S2a,superada,"(45275, 8162, 0)"
+Coherencia 39R,Sensibilidad S3-bajo,superada,"(70715, 16852, 0)"
+Coherencia 39R,Sensibilidad S3-alto,superada,"(25091, 3152, 1)"
+Coherencia 39R,Sensibilidad S4-1,superada,"(619, 63, 3)"
+Coherencia 39R,Sensibilidad S4-2,superada,"(9918, 1497, 0)"
+Coherencia 39R,Sensibilidad S5,superada,"(33833, 6523, 0)"
+Coherencia 39R,Sensibilidad S6,superada,"(34624, 6647, 1)"
+Coherencia 39R,Sensibilidad S7a,superada,"(10178, 2568, 0)"
+Coherencia 39R,Sensibilidad S7b,superada,"(9785, 2666, 1)"
+Word 38R,01_protocolo_38R: Word existe,superada,
+Word 38R,01_protocolo_38R: ZIP íntegro,superada,
+Word 38R,01_protocolo_38R: documento XML válido,superada,
+Word 38R,01_protocolo_38R: imágenes de la fuente existen,superada,
+Word 38R,01_protocolo_38R: imágenes insertadas,superada,"(0, 0)"
+Word 38R,01_protocolo_38R: sin valores vacíos,superada,[]
+Word 38R,01_protocolo_38R: filas de tablas iguales en fuente y Word,superada,"(19, 19)"
+Word 38R,03_diccionario_variables_categorias: Word existe,superada,
+Word 38R,03_diccionario_variables_categorias: ZIP íntegro,superada,
+Word 38R,03_diccionario_variables_categorias: documento XML válido,superada,
+Word 38R,03_diccionario_variables_categorias: imágenes de la fuente existen,superada,
+Word 38R,03_diccionario_variables_categorias: imágenes insertadas,superada,"(0, 0)"
+Word 38R,03_diccionario_variables_categorias: sin valores vacíos,superada,[]
+Word 38R,03_diccionario_variables_categorias: filas de tablas iguales en fuente y Word,superada,"(102, 102)"
+Word 38R,03_diccionario_variables_categorias: sin cifra antigua 12\.201,superada,[]
+Word 38R,03_diccionario_variables_categorias: sin cifra antigua 1\.119,superada,[]
+Word 38R,"03_diccionario_variables_categorias: sin cifra antigua 649,98",superada,[]
+Word 38R,"03_diccionario_variables_categorias: sin cifra antigua (?<![,\d])650\b",superada,[]
+Word 38R,03_diccionario_variables_categorias: sin cifra antigua 6\.275,superada,[]
+Word 38R,03_diccionario_variables_categorias: sin cifra antigua 5\.926,superada,[]
+Word 38R,03_diccionario_variables_categorias: sin cifra antigua 52\.685,superada,[]
+Word 38R,03_diccionario_variables_categorias: sin cifra antigua 12\.325,superada,[]
+Word 38R,03_diccionario_variables_categorias: sin cifra antigua 11\.082,superada,[]
+Word 38R,03_diccionario_variables_categorias: sin cifra antigua 94 ítems,superada,[]
+Word 38R,03_diccionario_variables_categorias: sin cifra antigua 31 variables,superada,[]
+Word 38R,03_diccionario_variables_categorias: sin cifra antigua 13 sensibilidades,superada,[]
+Word 38R,"03_diccionario_variables_categorias: sin cifra antigua 970,05",superada,[]
+Word 38R,03_diccionario_variables_categorias: sin cifra antigua 1\.595,superada,[]
+Word 38R,03_diccionario_variables_categorias: sin cifra antigua 16\.126,superada,[]
+Word 38R,03_diccionario_variables_categorias: sin cifra antigua 27\.767,superada,[]
+Word 38R,03_diccionario_variables_categorias: sin cifra antigua 5\.389,superada,[]
+Word 38R,03_diccionario_variables_categorias: contiene «sintético»,superada,
+Word 38R,03_diccionario_variables_categorias: contiene «validación externa»,superada,
+Word 38R,03_diccionario_variables_categorias: contiene «exploratorio»,superada,
+Word 38R,03_diccionario_variables_categorias: contiene «Versión correctiva»,superada,
+Word 38R,03_diccionario_variables_categorias: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 38R,03_diccionario_variables_categorias: referencias a informes existen,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: Word existe,superada,
+Word 38R,04_agrupacion_categorias_escasas: ZIP íntegro,superada,
+Word 38R,04_agrupacion_categorias_escasas: documento XML válido,superada,
+Word 38R,04_agrupacion_categorias_escasas: imágenes de la fuente existen,superada,
+Word 38R,04_agrupacion_categorias_escasas: imágenes insertadas,superada,"(0, 0)"
+Word 38R,04_agrupacion_categorias_escasas: sin valores vacíos,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: filas de tablas iguales en fuente y Word,superada,"(64, 64)"
+Word 38R,04_agrupacion_categorias_escasas: sin cifra antigua 12\.201,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: sin cifra antigua 1\.119,superada,[]
+Word 38R,"04_agrupacion_categorias_escasas: sin cifra antigua 649,98",superada,[]
+Word 38R,"04_agrupacion_categorias_escasas: sin cifra antigua (?<![,\d])650\b",superada,[]
+Word 38R,04_agrupacion_categorias_escasas: sin cifra antigua 6\.275,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: sin cifra antigua 5\.926,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: sin cifra antigua 52\.685,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: sin cifra antigua 12\.325,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: sin cifra antigua 11\.082,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: sin cifra antigua 94 ítems,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: sin cifra antigua 31 variables,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: sin cifra antigua 13 sensibilidades,superada,[]
+Word 38R,"04_agrupacion_categorias_escasas: sin cifra antigua 970,05",superada,[]
+Word 38R,04_agrupacion_categorias_escasas: sin cifra antigua 1\.595,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: sin cifra antigua 16\.126,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: sin cifra antigua 27\.767,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: sin cifra antigua 5\.389,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: contiene «sintético»,superada,
+Word 38R,04_agrupacion_categorias_escasas: contiene «validación externa»,superada,
+Word 38R,04_agrupacion_categorias_escasas: contiene «exploratorio»,superada,
+Word 38R,04_agrupacion_categorias_escasas: contiene «Versión correctiva»,superada,
+Word 38R,04_agrupacion_categorias_escasas: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: referencias a informes existen,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: Word existe,superada,
+Word 38R,05_matriz_transaccional_trazabilidad: ZIP íntegro,superada,
+Word 38R,05_matriz_transaccional_trazabilidad: documento XML válido,superada,
+Word 38R,05_matriz_transaccional_trazabilidad: imágenes de la fuente existen,superada,
+Word 38R,05_matriz_transaccional_trazabilidad: imágenes insertadas,superada,"(0, 0)"
+Word 38R,05_matriz_transaccional_trazabilidad: sin valores vacíos,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: filas de tablas iguales en fuente y Word,superada,"(17, 17)"
+Word 38R,05_matriz_transaccional_trazabilidad: sin cifra antigua 12\.201,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: sin cifra antigua 1\.119,superada,[]
+Word 38R,"05_matriz_transaccional_trazabilidad: sin cifra antigua 649,98",superada,[]
+Word 38R,"05_matriz_transaccional_trazabilidad: sin cifra antigua (?<![,\d])650\b",superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: sin cifra antigua 6\.275,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: sin cifra antigua 5\.926,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: sin cifra antigua 52\.685,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: sin cifra antigua 12\.325,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: sin cifra antigua 11\.082,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: sin cifra antigua 94 ítems,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: sin cifra antigua 31 variables,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: sin cifra antigua 13 sensibilidades,superada,[]
+Word 38R,"05_matriz_transaccional_trazabilidad: sin cifra antigua 970,05",superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: sin cifra antigua 1\.595,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: sin cifra antigua 16\.126,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: sin cifra antigua 27\.767,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: sin cifra antigua 5\.389,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: contiene «sintético»,superada,
+Word 38R,05_matriz_transaccional_trazabilidad: contiene «validación externa»,superada,
+Word 38R,05_matriz_transaccional_trazabilidad: contiene «exploratorio»,superada,
+Word 38R,05_matriz_transaccional_trazabilidad: contiene «Versión correctiva»,superada,
+Word 38R,05_matriz_transaccional_trazabilidad: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: referencias a informes existen,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: Word existe,superada,
+Word 38R,06_equivalencia_apriori_fpgrowth: ZIP íntegro,superada,
+Word 38R,06_equivalencia_apriori_fpgrowth: documento XML válido,superada,
+Word 38R,06_equivalencia_apriori_fpgrowth: imágenes de la fuente existen,superada,
+Word 38R,06_equivalencia_apriori_fpgrowth: imágenes insertadas,superada,"(0, 0)"
+Word 38R,06_equivalencia_apriori_fpgrowth: sin valores vacíos,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: filas de tablas iguales en fuente y Word,superada,"(8, 8)"
+Word 38R,06_equivalencia_apriori_fpgrowth: sin cifra antigua 12\.201,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: sin cifra antigua 1\.119,superada,[]
+Word 38R,"06_equivalencia_apriori_fpgrowth: sin cifra antigua 649,98",superada,[]
+Word 38R,"06_equivalencia_apriori_fpgrowth: sin cifra antigua (?<![,\d])650\b",superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: sin cifra antigua 6\.275,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: sin cifra antigua 5\.926,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: sin cifra antigua 52\.685,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: sin cifra antigua 12\.325,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: sin cifra antigua 11\.082,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: sin cifra antigua 94 ítems,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: sin cifra antigua 31 variables,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: sin cifra antigua 13 sensibilidades,superada,[]
+Word 38R,"06_equivalencia_apriori_fpgrowth: sin cifra antigua 970,05",superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: sin cifra antigua 1\.595,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: sin cifra antigua 16\.126,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: sin cifra antigua 27\.767,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: sin cifra antigua 5\.389,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: contiene «sintético»,superada,
+Word 38R,06_equivalencia_apriori_fpgrowth: contiene «validación externa»,superada,
+Word 38R,06_equivalencia_apriori_fpgrowth: contiene «exploratorio»,superada,
+Word 38R,06_equivalencia_apriori_fpgrowth: contiene «Versión correctiva»,superada,
+Word 38R,06_equivalencia_apriori_fpgrowth: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: referencias a informes existen,superada,[]
+Word 38R,07_reglas_generales: Word existe,superada,
+Word 38R,07_reglas_generales: ZIP íntegro,superada,
+Word 38R,07_reglas_generales: documento XML válido,superada,
+Word 38R,07_reglas_generales: imágenes de la fuente existen,superada,
+Word 38R,07_reglas_generales: imágenes insertadas,superada,"(1, 1)"
+Word 38R,07_reglas_generales: sin valores vacíos,superada,[]
+Word 38R,07_reglas_generales: filas de tablas iguales en fuente y Word,superada,"(28, 28)"
+Word 38R,07_reglas_generales: sin cifra antigua 12\.201,superada,[]
+Word 38R,07_reglas_generales: sin cifra antigua 1\.119,superada,[]
+Word 38R,"07_reglas_generales: sin cifra antigua 649,98",superada,[]
+Word 38R,"07_reglas_generales: sin cifra antigua (?<![,\d])650\b",superada,[]
+Word 38R,07_reglas_generales: sin cifra antigua 6\.275,superada,[]
+Word 38R,07_reglas_generales: sin cifra antigua 5\.926,superada,[]
+Word 38R,07_reglas_generales: sin cifra antigua 52\.685,superada,[]
+Word 38R,07_reglas_generales: sin cifra antigua 12\.325,superada,[]
+Word 38R,07_reglas_generales: sin cifra antigua 11\.082,superada,[]
+Word 38R,07_reglas_generales: sin cifra antigua 94 ítems,superada,[]
+Word 38R,07_reglas_generales: sin cifra antigua 31 variables,superada,[]
+Word 38R,07_reglas_generales: sin cifra antigua 13 sensibilidades,superada,[]
+Word 38R,"07_reglas_generales: sin cifra antigua 970,05",superada,[]
+Word 38R,07_reglas_generales: sin cifra antigua 1\.595,superada,[]
+Word 38R,07_reglas_generales: sin cifra antigua 16\.126,superada,[]
+Word 38R,07_reglas_generales: sin cifra antigua 27\.767,superada,[]
+Word 38R,07_reglas_generales: sin cifra antigua 5\.389,superada,[]
+Word 38R,07_reglas_generales: contiene «sintético»,superada,
+Word 38R,07_reglas_generales: contiene «validación externa»,superada,
+Word 38R,07_reglas_generales: contiene «exploratorio»,superada,
+Word 38R,07_reglas_generales: contiene «Versión correctiva»,superada,
+Word 38R,07_reglas_generales: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 38R,07_reglas_generales: referencias a informes existen,superada,['12']
+Word 38R,07_reglas_generales: figura 7 corresponde a f07,superada,
+Word 38R,08_soporte_confianza_lift_cobertura: Word existe,superada,
+Word 38R,08_soporte_confianza_lift_cobertura: ZIP íntegro,superada,
+Word 38R,08_soporte_confianza_lift_cobertura: documento XML válido,superada,
+Word 38R,08_soporte_confianza_lift_cobertura: imágenes de la fuente existen,superada,
+Word 38R,08_soporte_confianza_lift_cobertura: imágenes insertadas,superada,"(2, 2)"
+Word 38R,08_soporte_confianza_lift_cobertura: sin valores vacíos,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: filas de tablas iguales en fuente y Word,superada,"(33, 33)"
+Word 38R,08_soporte_confianza_lift_cobertura: sin cifra antigua 12\.201,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: sin cifra antigua 1\.119,superada,[]
+Word 38R,"08_soporte_confianza_lift_cobertura: sin cifra antigua 649,98",superada,[]
+Word 38R,"08_soporte_confianza_lift_cobertura: sin cifra antigua (?<![,\d])650\b",superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: sin cifra antigua 6\.275,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: sin cifra antigua 5\.926,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: sin cifra antigua 52\.685,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: sin cifra antigua 12\.325,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: sin cifra antigua 11\.082,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: sin cifra antigua 94 ítems,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: sin cifra antigua 31 variables,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: sin cifra antigua 13 sensibilidades,superada,[]
+Word 38R,"08_soporte_confianza_lift_cobertura: sin cifra antigua 970,05",superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: sin cifra antigua 1\.595,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: sin cifra antigua 16\.126,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: sin cifra antigua 27\.767,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: sin cifra antigua 5\.389,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: contiene «sintético»,superada,
+Word 38R,08_soporte_confianza_lift_cobertura: contiene «validación externa»,superada,
+Word 38R,08_soporte_confianza_lift_cobertura: contiene «exploratorio»,superada,
+Word 38R,08_soporte_confianza_lift_cobertura: contiene «Versión correctiva»,superada,
+Word 38R,08_soporte_confianza_lift_cobertura: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: referencias a informes existen,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: figura 2 corresponde a f02,superada,
+Word 38R,08_soporte_confianza_lift_cobertura: figura 8 corresponde a f08,superada,
+Word 38R,09_redundancia: Word existe,superada,
+Word 38R,09_redundancia: ZIP íntegro,superada,
+Word 38R,09_redundancia: documento XML válido,superada,
+Word 38R,09_redundancia: imágenes de la fuente existen,superada,
+Word 38R,09_redundancia: imágenes insertadas,superada,"(0, 0)"
+Word 38R,09_redundancia: sin valores vacíos,superada,[]
+Word 38R,09_redundancia: filas de tablas iguales en fuente y Word,superada,"(24, 24)"
+Word 38R,09_redundancia: sin cifra antigua 12\.201,superada,[]
+Word 38R,09_redundancia: sin cifra antigua 1\.119,superada,[]
+Word 38R,"09_redundancia: sin cifra antigua 649,98",superada,[]
+Word 38R,"09_redundancia: sin cifra antigua (?<![,\d])650\b",superada,[]
+Word 38R,09_redundancia: sin cifra antigua 6\.275,superada,[]
+Word 38R,09_redundancia: sin cifra antigua 5\.926,superada,[]
+Word 38R,09_redundancia: sin cifra antigua 52\.685,superada,[]
+Word 38R,09_redundancia: sin cifra antigua 12\.325,superada,[]
+Word 38R,09_redundancia: sin cifra antigua 11\.082,superada,[]
+Word 38R,09_redundancia: sin cifra antigua 94 ítems,superada,[]
+Word 38R,09_redundancia: sin cifra antigua 31 variables,superada,[]
+Word 38R,09_redundancia: sin cifra antigua 13 sensibilidades,superada,[]
+Word 38R,"09_redundancia: sin cifra antigua 970,05",superada,[]
+Word 38R,09_redundancia: sin cifra antigua 1\.595,superada,[]
+Word 38R,09_redundancia: sin cifra antigua 16\.126,superada,[]
+Word 38R,09_redundancia: sin cifra antigua 27\.767,superada,[]
+Word 38R,09_redundancia: sin cifra antigua 5\.389,superada,[]
+Word 38R,09_redundancia: contiene «sintético»,superada,
+Word 38R,09_redundancia: contiene «validación externa»,superada,
+Word 38R,09_redundancia: contiene «exploratorio»,superada,
+Word 38R,09_redundancia: contiene «Versión correctiva»,superada,
+Word 38R,09_redundancia: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 38R,09_redundancia: referencias a informes existen,superada,[]
+Word 38R,10_estabilidad: Word existe,superada,
+Word 38R,10_estabilidad: ZIP íntegro,superada,
+Word 38R,10_estabilidad: documento XML válido,superada,
+Word 38R,10_estabilidad: imágenes de la fuente existen,superada,
+Word 38R,10_estabilidad: imágenes insertadas,superada,"(1, 1)"
+Word 38R,10_estabilidad: sin valores vacíos,superada,[]
+Word 38R,10_estabilidad: filas de tablas iguales en fuente y Word,superada,"(0, 0)"
+Word 38R,10_estabilidad: sin cifra antigua 12\.201,superada,[]
+Word 38R,10_estabilidad: sin cifra antigua 1\.119,superada,[]
+Word 38R,"10_estabilidad: sin cifra antigua 649,98",superada,[]
+Word 38R,"10_estabilidad: sin cifra antigua (?<![,\d])650\b",superada,[]
+Word 38R,10_estabilidad: sin cifra antigua 6\.275,superada,[]
+Word 38R,10_estabilidad: sin cifra antigua 5\.926,superada,[]
+Word 38R,10_estabilidad: sin cifra antigua 52\.685,superada,[]
+Word 38R,10_estabilidad: sin cifra antigua 12\.325,superada,[]
+Word 38R,10_estabilidad: sin cifra antigua 11\.082,superada,[]
+Word 38R,10_estabilidad: sin cifra antigua 94 ítems,superada,[]
+Word 38R,10_estabilidad: sin cifra antigua 31 variables,superada,[]
+Word 38R,10_estabilidad: sin cifra antigua 13 sensibilidades,superada,[]
+Word 38R,"10_estabilidad: sin cifra antigua 970,05",superada,[]
+Word 38R,10_estabilidad: sin cifra antigua 1\.595,superada,[]
+Word 38R,10_estabilidad: sin cifra antigua 16\.126,superada,[]
+Word 38R,10_estabilidad: sin cifra antigua 27\.767,superada,[]
+Word 38R,10_estabilidad: sin cifra antigua 5\.389,superada,[]
+Word 38R,10_estabilidad: contiene «sintético»,superada,
+Word 38R,10_estabilidad: contiene «validación externa»,superada,
+Word 38R,10_estabilidad: contiene «exploratorio»,superada,
+Word 38R,10_estabilidad: contiene «Versión correctiva»,superada,
+Word 38R,10_estabilidad: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 38R,10_estabilidad: referencias a informes existen,superada,['11']
+Word 38R,10_estabilidad: figura 4 corresponde a f04,superada,
+Word 38R,11_referencia_nula: Word existe,superada,
+Word 38R,11_referencia_nula: ZIP íntegro,superada,
+Word 38R,11_referencia_nula: documento XML válido,superada,
+Word 38R,11_referencia_nula: imágenes de la fuente existen,superada,
+Word 38R,11_referencia_nula: imágenes insertadas,superada,"(1, 1)"
+Word 38R,11_referencia_nula: sin valores vacíos,superada,[]
+Word 38R,11_referencia_nula: filas de tablas iguales en fuente y Word,superada,"(4, 4)"
+Word 38R,11_referencia_nula: sin cifra antigua 12\.201,superada,[]
+Word 38R,11_referencia_nula: sin cifra antigua 1\.119,superada,[]
+Word 38R,"11_referencia_nula: sin cifra antigua 649,98",superada,[]
+Word 38R,"11_referencia_nula: sin cifra antigua (?<![,\d])650\b",superada,[]
+Word 38R,11_referencia_nula: sin cifra antigua 6\.275,superada,[]
+Word 38R,11_referencia_nula: sin cifra antigua 5\.926,superada,[]
+Word 38R,11_referencia_nula: sin cifra antigua 52\.685,superada,[]
+Word 38R,11_referencia_nula: sin cifra antigua 12\.325,superada,[]
+Word 38R,11_referencia_nula: sin cifra antigua 11\.082,superada,[]
+Word 38R,11_referencia_nula: sin cifra antigua 94 ítems,superada,[]
+Word 38R,11_referencia_nula: sin cifra antigua 31 variables,superada,[]
+Word 38R,11_referencia_nula: sin cifra antigua 13 sensibilidades,superada,[]
+Word 38R,"11_referencia_nula: sin cifra antigua 970,05",superada,[]
+Word 38R,11_referencia_nula: sin cifra antigua 1\.595,superada,[]
+Word 38R,11_referencia_nula: sin cifra antigua 16\.126,superada,[]
+Word 38R,11_referencia_nula: sin cifra antigua 27\.767,superada,[]
+Word 38R,11_referencia_nula: sin cifra antigua 5\.389,superada,[]
+Word 38R,11_referencia_nula: contiene «sintético»,superada,
+Word 38R,11_referencia_nula: contiene «validación externa»,superada,
+Word 38R,11_referencia_nula: contiene «exploratorio»,superada,
+Word 38R,11_referencia_nula: contiene «Versión correctiva»,superada,
+Word 38R,11_referencia_nula: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 38R,11_referencia_nula: referencias a informes existen,superada,[]
+Word 38R,11_referencia_nula: figura 3 corresponde a f03,superada,
+Word 38R,12_sensibilidades: Word existe,superada,
+Word 38R,12_sensibilidades: ZIP íntegro,superada,
+Word 38R,12_sensibilidades: documento XML válido,superada,
+Word 38R,12_sensibilidades: imágenes de la fuente existen,superada,
+Word 38R,12_sensibilidades: imágenes insertadas,superada,"(2, 2)"
+Word 38R,12_sensibilidades: sin valores vacíos,superada,[]
+Word 38R,12_sensibilidades: filas de tablas iguales en fuente y Word,superada,"(63, 63)"
+Word 38R,12_sensibilidades: sin cifra antigua 12\.201,superada,[]
+Word 38R,12_sensibilidades: sin cifra antigua 1\.119,superada,[]
+Word 38R,"12_sensibilidades: sin cifra antigua 649,98",superada,[]
+Word 38R,"12_sensibilidades: sin cifra antigua (?<![,\d])650\b",superada,[]
+Word 38R,12_sensibilidades: sin cifra antigua 6\.275,superada,[]
+Word 38R,12_sensibilidades: sin cifra antigua 5\.926,superada,[]
+Word 38R,12_sensibilidades: sin cifra antigua 52\.685,superada,[]
+Word 38R,12_sensibilidades: sin cifra antigua 12\.325,superada,[]
+Word 38R,12_sensibilidades: sin cifra antigua 11\.082,superada,[]
+Word 38R,12_sensibilidades: sin cifra antigua 94 ítems,superada,[]
+Word 38R,12_sensibilidades: sin cifra antigua 31 variables,superada,[]
+Word 38R,12_sensibilidades: sin cifra antigua 13 sensibilidades,superada,[]
+Word 38R,"12_sensibilidades: sin cifra antigua 970,05",superada,[]
+Word 38R,12_sensibilidades: sin cifra antigua 1\.595,superada,[]
+Word 38R,12_sensibilidades: sin cifra antigua 16\.126,superada,[]
+Word 38R,12_sensibilidades: sin cifra antigua 27\.767,superada,[]
+Word 38R,12_sensibilidades: sin cifra antigua 5\.389,superada,[]
+Word 38R,12_sensibilidades: contiene «sintético»,superada,
+Word 38R,12_sensibilidades: contiene «validación externa»,superada,
+Word 38R,12_sensibilidades: contiene «exploratorio»,superada,
+Word 38R,12_sensibilidades: contiene «Versión correctiva»,superada,
+Word 38R,12_sensibilidades: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 38R,12_sensibilidades: referencias a informes existen,superada,[]
+Word 38R,12_sensibilidades: figura 5 corresponde a f05,superada,
+Word 38R,12_sensibilidades: figura 6 corresponde a f06,superada,
+Word 38R,13_figuras_tablas: Word existe,superada,
+Word 38R,13_figuras_tablas: ZIP íntegro,superada,
+Word 38R,13_figuras_tablas: documento XML válido,superada,
+Word 38R,13_figuras_tablas: imágenes de la fuente existen,superada,
+Word 38R,13_figuras_tablas: imágenes insertadas,superada,"(8, 8)"
+Word 38R,13_figuras_tablas: sin valores vacíos,superada,[]
+Word 38R,13_figuras_tablas: filas de tablas iguales en fuente y Word,superada,"(69, 69)"
+Word 38R,13_figuras_tablas: sin cifra antigua 12\.201,superada,[]
+Word 38R,13_figuras_tablas: sin cifra antigua 1\.119,superada,[]
+Word 38R,"13_figuras_tablas: sin cifra antigua 649,98",superada,[]
+Word 38R,"13_figuras_tablas: sin cifra antigua (?<![,\d])650\b",superada,[]
+Word 38R,13_figuras_tablas: sin cifra antigua 6\.275,superada,[]
+Word 38R,13_figuras_tablas: sin cifra antigua 5\.926,superada,[]
+Word 38R,13_figuras_tablas: sin cifra antigua 52\.685,superada,[]
+Word 38R,13_figuras_tablas: sin cifra antigua 12\.325,superada,[]
+Word 38R,13_figuras_tablas: sin cifra antigua 11\.082,superada,[]
+Word 38R,13_figuras_tablas: sin cifra antigua 94 ítems,superada,[]
+Word 38R,13_figuras_tablas: sin cifra antigua 31 variables,superada,[]
+Word 38R,13_figuras_tablas: sin cifra antigua 13 sensibilidades,superada,[]
+Word 38R,"13_figuras_tablas: sin cifra antigua 970,05",superada,[]
+Word 38R,13_figuras_tablas: sin cifra antigua 1\.595,superada,[]
+Word 38R,13_figuras_tablas: sin cifra antigua 16\.126,superada,[]
+Word 38R,13_figuras_tablas: sin cifra antigua 27\.767,superada,[]
+Word 38R,13_figuras_tablas: sin cifra antigua 5\.389,superada,[]
+Word 38R,13_figuras_tablas: contiene «sintético»,superada,
+Word 38R,13_figuras_tablas: contiene «validación externa»,superada,
+Word 38R,13_figuras_tablas: contiene «exploratorio»,superada,
+Word 38R,13_figuras_tablas: contiene «Versión correctiva»,superada,
+Word 38R,13_figuras_tablas: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 38R,13_figuras_tablas: referencias a informes existen,superada,[]
+Word 38R,13_figuras_tablas: figura 1 corresponde a f01,superada,
+Word 38R,13_figuras_tablas: figura 2 corresponde a f02,superada,
+Word 38R,13_figuras_tablas: figura 3 corresponde a f03,superada,
+Word 38R,13_figuras_tablas: figura 4 corresponde a f04,superada,
+Word 38R,13_figuras_tablas: figura 5 corresponde a f05,superada,
+Word 38R,13_figuras_tablas: figura 6 corresponde a f06,superada,
+Word 38R,13_figuras_tablas: figura 7 corresponde a f07,superada,
+Word 38R,13_figuras_tablas: figura 8 corresponde a f08,superada,
+Word 38R,16_informe_cierre_38R: Word existe,superada,
+Word 38R,16_informe_cierre_38R: ZIP íntegro,superada,
+Word 38R,16_informe_cierre_38R: documento XML válido,superada,
+Word 38R,16_informe_cierre_38R: imágenes de la fuente existen,superada,
+Word 38R,16_informe_cierre_38R: imágenes insertadas,superada,"(0, 0)"
+Word 38R,16_informe_cierre_38R: sin valores vacíos,superada,[]
+Word 38R,16_informe_cierre_38R: filas de tablas iguales en fuente y Word,superada,"(0, 0)"
+Word 38R,16_informe_cierre_38R: sin cifra antigua 12\.201,superada,[]
+Word 38R,16_informe_cierre_38R: sin cifra antigua 1\.119,superada,[]
+Word 38R,"16_informe_cierre_38R: sin cifra antigua 649,98",superada,[]
+Word 38R,"16_informe_cierre_38R: sin cifra antigua (?<![,\d])650\b",superada,[]
+Word 38R,16_informe_cierre_38R: sin cifra antigua 6\.275,superada,[]
+Word 38R,16_informe_cierre_38R: sin cifra antigua 5\.926,superada,[]
+Word 38R,16_informe_cierre_38R: sin cifra antigua 52\.685,superada,[]
+Word 38R,16_informe_cierre_38R: sin cifra antigua 12\.325,superada,[]
+Word 38R,16_informe_cierre_38R: sin cifra antigua 11\.082,superada,[]
+Word 38R,16_informe_cierre_38R: sin cifra antigua 94 ítems,superada,[]
+Word 38R,16_informe_cierre_38R: sin cifra antigua 31 variables,superada,[]
+Word 38R,16_informe_cierre_38R: sin cifra antigua 13 sensibilidades,superada,[]
+Word 38R,"16_informe_cierre_38R: sin cifra antigua 970,05",superada,[]
+Word 38R,16_informe_cierre_38R: sin cifra antigua 1\.595,superada,[]
+Word 38R,16_informe_cierre_38R: sin cifra antigua 16\.126,superada,[]
+Word 38R,16_informe_cierre_38R: sin cifra antigua 27\.767,superada,[]
+Word 38R,16_informe_cierre_38R: sin cifra antigua 5\.389,superada,[]
+Word 38R,16_informe_cierre_38R: contiene «sintético»,superada,
+Word 38R,16_informe_cierre_38R: contiene «validación externa»,superada,
+Word 38R,16_informe_cierre_38R: contiene «exploratorio»,superada,
+Word 38R,16_informe_cierre_38R: contiene «Versión correctiva»,superada,
+Word 38R,16_informe_cierre_38R: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 38R,16_informe_cierre_38R: referencias a informes existen,superada,"['04', '07', '12']"
+Word 38R,17_nota_fase_39R: Word existe,superada,
+Word 38R,17_nota_fase_39R: ZIP íntegro,superada,
+Word 38R,17_nota_fase_39R: documento XML válido,superada,
+Word 38R,17_nota_fase_39R: imágenes de la fuente existen,superada,
+Word 38R,17_nota_fase_39R: imágenes insertadas,superada,"(0, 0)"
+Word 38R,17_nota_fase_39R: sin valores vacíos,superada,[]
+Word 38R,17_nota_fase_39R: filas de tablas iguales en fuente y Word,superada,"(13, 13)"
+Word 38R,17_nota_fase_39R: sin cifra antigua 12\.201,superada,[]
+Word 38R,17_nota_fase_39R: sin cifra antigua 1\.119,superada,[]
+Word 38R,"17_nota_fase_39R: sin cifra antigua 649,98",superada,[]
+Word 38R,"17_nota_fase_39R: sin cifra antigua (?<![,\d])650\b",superada,[]
+Word 38R,17_nota_fase_39R: sin cifra antigua 6\.275,superada,[]
+Word 38R,17_nota_fase_39R: sin cifra antigua 5\.926,superada,[]
+Word 38R,17_nota_fase_39R: sin cifra antigua 52\.685,superada,[]
+Word 38R,17_nota_fase_39R: sin cifra antigua 12\.325,superada,[]
+Word 38R,17_nota_fase_39R: sin cifra antigua 11\.082,superada,[]
+Word 38R,17_nota_fase_39R: sin cifra antigua 94 ítems,superada,[]
+Word 38R,17_nota_fase_39R: sin cifra antigua 31 variables,superada,[]
+Word 38R,17_nota_fase_39R: sin cifra antigua 13 sensibilidades,superada,[]
+Word 38R,"17_nota_fase_39R: sin cifra antigua 970,05",superada,[]
+Word 38R,17_nota_fase_39R: sin cifra antigua 1\.595,superada,[]
+Word 38R,17_nota_fase_39R: sin cifra antigua 16\.126,superada,[]
+Word 38R,17_nota_fase_39R: sin cifra antigua 27\.767,superada,[]
+Word 38R,17_nota_fase_39R: sin cifra antigua 5\.389,superada,[]
+Word 38R,17_nota_fase_39R: contiene «sintético»,superada,
+Word 38R,17_nota_fase_39R: contiene «validación externa»,superada,
+Word 38R,17_nota_fase_39R: contiene «exploratorio»,superada,
+Word 38R,17_nota_fase_39R: contiene «Versión correctiva»,superada,
+Word 38R,17_nota_fase_39R: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 38R,17_nota_fase_39R: referencias a informes existen,superada,[]
+Word 38R,01_protocolo_38R: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 38R,01_protocolo_38R: tantas tablas en Word como en la fuente,superada,"(2, 2)"
+Word 38R,"01_protocolo_38R: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 38R,01_protocolo_38R: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 38R,01_protocolo_38R: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 38R,01_protocolo_38R: porcentajes con espacio indivisible,superada,[]
+Word 38R,01_protocolo_38R: sin |z| mal representado,superada,
+Word 38R,01_protocolo_38R: sin expresión ambigua «6 supera»,superada,
+Word 38R,01_protocolo_38R: sin «informe 17» inexistente,superada,
+Word 38R,01_protocolo_38R: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 38R,03_diccionario_variables_categorias: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 38R,03_diccionario_variables_categorias: tantas tablas en Word como en la fuente,superada,"(5, 5)"
+Word 38R,"03_diccionario_variables_categorias: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 38R,03_diccionario_variables_categorias: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 38R,03_diccionario_variables_categorias: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 38R,03_diccionario_variables_categorias: porcentajes con espacio indivisible,superada,[]
+Word 38R,03_diccionario_variables_categorias: sin |z| mal representado,superada,
+Word 38R,03_diccionario_variables_categorias: sin expresión ambigua «6 supera»,superada,
+Word 38R,03_diccionario_variables_categorias: sin «informe 17» inexistente,superada,
+Word 38R,03_diccionario_variables_categorias: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 38R,04_agrupacion_categorias_escasas: tantas tablas en Word como en la fuente,superada,"(3, 3)"
+Word 38R,"04_agrupacion_categorias_escasas: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 38R,04_agrupacion_categorias_escasas: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 38R,04_agrupacion_categorias_escasas: porcentajes con espacio indivisible,superada,[]
+Word 38R,04_agrupacion_categorias_escasas: sin |z| mal representado,superada,
+Word 38R,04_agrupacion_categorias_escasas: sin expresión ambigua «6 supera»,superada,
+Word 38R,04_agrupacion_categorias_escasas: sin «informe 17» inexistente,superada,
+Word 38R,04_agrupacion_categorias_escasas: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: tantas tablas en Word como en la fuente,superada,"(1, 1)"
+Word 38R,"05_matriz_transaccional_trazabilidad: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 38R,05_matriz_transaccional_trazabilidad: porcentajes con espacio indivisible,superada,[]
+Word 38R,05_matriz_transaccional_trazabilidad: sin |z| mal representado,superada,
+Word 38R,05_matriz_transaccional_trazabilidad: sin expresión ambigua «6 supera»,superada,
+Word 38R,05_matriz_transaccional_trazabilidad: sin «informe 17» inexistente,superada,
+Word 38R,05_matriz_transaccional_trazabilidad: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: tantas tablas en Word como en la fuente,superada,"(2, 2)"
+Word 38R,"06_equivalencia_apriori_fpgrowth: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 38R,06_equivalencia_apriori_fpgrowth: porcentajes con espacio indivisible,superada,[]
+Word 38R,06_equivalencia_apriori_fpgrowth: sin |z| mal representado,superada,
+Word 38R,06_equivalencia_apriori_fpgrowth: sin expresión ambigua «6 supera»,superada,
+Word 38R,06_equivalencia_apriori_fpgrowth: sin «informe 17» inexistente,superada,
+Word 38R,06_equivalencia_apriori_fpgrowth: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 38R,07_reglas_generales: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 38R,07_reglas_generales: tantas tablas en Word como en la fuente,superada,"(3, 3)"
+Word 38R,"07_reglas_generales: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 38R,07_reglas_generales: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 38R,07_reglas_generales: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 38R,07_reglas_generales: porcentajes con espacio indivisible,superada,[]
+Word 38R,07_reglas_generales: sin |z| mal representado,superada,
+Word 38R,07_reglas_generales: sin expresión ambigua «6 supera»,superada,
+Word 38R,07_reglas_generales: sin «informe 17» inexistente,superada,
+Word 38R,07_reglas_generales: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 38R,07_reglas_generales: pie de figura descriptivo: Figura 7. Reglas más fuertes de la búsqueda p,superada,
+Word 38R,08_soporte_confianza_lift_cobertura: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: tantas tablas en Word como en la fuente,superada,"(4, 4)"
+Word 38R,"08_soporte_confianza_lift_cobertura: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 38R,08_soporte_confianza_lift_cobertura: porcentajes con espacio indivisible,superada,[]
+Word 38R,08_soporte_confianza_lift_cobertura: sin |z| mal representado,superada,
+Word 38R,08_soporte_confianza_lift_cobertura: sin expresión ambigua «6 supera»,superada,
+Word 38R,08_soporte_confianza_lift_cobertura: sin «informe 17» inexistente,superada,
+Word 38R,08_soporte_confianza_lift_cobertura: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 38R,"08_soporte_confianza_lift_cobertura: pie de figura descriptivo: Figura 2. Confianza de cada regla según n_A, ",superada,
+Word 38R,08_soporte_confianza_lift_cobertura: pie de figura descriptivo: Figura 8. Compromiso entre umbral de soporte ,superada,
+Word 38R,09_redundancia: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 38R,09_redundancia: tantas tablas en Word como en la fuente,superada,"(2, 2)"
+Word 38R,"09_redundancia: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 38R,09_redundancia: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 38R,09_redundancia: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 38R,09_redundancia: porcentajes con espacio indivisible,superada,[]
+Word 38R,09_redundancia: sin |z| mal representado,superada,
+Word 38R,09_redundancia: sin expresión ambigua «6 supera»,superada,
+Word 38R,09_redundancia: sin «informe 17» inexistente,superada,
+Word 38R,09_redundancia: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 38R,10_estabilidad: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 38R,10_estabilidad: tantas tablas en Word como en la fuente,superada,"(0, 0)"
+Word 38R,"10_estabilidad: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 38R,10_estabilidad: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 38R,10_estabilidad: viñetas anidadas conservan su nivel,superada,"(4, 4)"
+Word 38R,10_estabilidad: porcentajes con espacio indivisible,superada,[]
+Word 38R,10_estabilidad: sin |z| mal representado,superada,
+Word 38R,10_estabilidad: sin expresión ambigua «6 supera»,superada,
+Word 38R,10_estabilidad: sin «informe 17» inexistente,superada,
+Word 38R,10_estabilidad: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 38R,10_estabilidad: pie de figura descriptivo: Figura 4. Estabilidad en 200 submuestras.,superada,
+Word 38R,11_referencia_nula: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 38R,11_referencia_nula: tantas tablas en Word como en la fuente,superada,"(1, 1)"
+Word 38R,"11_referencia_nula: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 38R,11_referencia_nula: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 38R,11_referencia_nula: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 38R,11_referencia_nula: porcentajes con espacio indivisible,superada,[]
+Word 38R,11_referencia_nula: sin |z| mal representado,superada,
+Word 38R,11_referencia_nula: sin expresión ambigua «6 supera»,superada,
+Word 38R,11_referencia_nula: sin «informe 17» inexistente,superada,
+Word 38R,11_referencia_nula: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 38R,11_referencia_nula: pie de figura descriptivo: Figura 3. Referencia nula.,superada,
+Word 38R,12_sensibilidades: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 38R,12_sensibilidades: tantas tablas en Word como en la fuente,superada,"(6, 6)"
+Word 38R,"12_sensibilidades: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 38R,12_sensibilidades: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 38R,12_sensibilidades: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 38R,12_sensibilidades: porcentajes con espacio indivisible,superada,[]
+Word 38R,12_sensibilidades: sin |z| mal representado,superada,
+Word 38R,12_sensibilidades: sin expresión ambigua «6 supera»,superada,
+Word 38R,12_sensibilidades: sin «informe 17» inexistente,superada,
+Word 38R,12_sensibilidades: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 38R,12_sensibilidades: pie de figura descriptivo: Figura 5. Exceso de reglas marcadas sobre la ,superada,
+Word 38R,12_sensibilidades: pie de figura descriptivo: Figura 6. Reglas de la principal en cada sens,superada,
+Word 38R,13_figuras_tablas: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 38R,13_figuras_tablas: tantas tablas en Word como en la fuente,superada,"(1, 1)"
+Word 38R,"13_figuras_tablas: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 38R,13_figuras_tablas: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 38R,13_figuras_tablas: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 38R,13_figuras_tablas: porcentajes con espacio indivisible,superada,[]
+Word 38R,13_figuras_tablas: sin |z| mal representado,superada,
+Word 38R,13_figuras_tablas: sin expresión ambigua «6 supera»,superada,
+Word 38R,13_figuras_tablas: sin «informe 17» inexistente,superada,
+Word 38R,13_figuras_tablas: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 38R,"13_figuras_tablas: pie de figura descriptivo: Figura 1. Ítems del análisis principal, con l",superada,
+Word 38R,"13_figuras_tablas: pie de figura descriptivo: Figura 2. Confianza de cada regla según n_A, ",superada,
+Word 38R,13_figuras_tablas: pie de figura descriptivo: Figura 3. Referencia nula.,superada,
+Word 38R,13_figuras_tablas: pie de figura descriptivo: Figura 4. Estabilidad en 200 submuestras.,superada,
+Word 38R,13_figuras_tablas: pie de figura descriptivo: Figura 5. Exceso de reglas marcadas sobre la ,superada,
+Word 38R,13_figuras_tablas: pie de figura descriptivo: Figura 6. Reglas de la principal en cada sens,superada,
+Word 38R,13_figuras_tablas: pie de figura descriptivo: Figura 7. Reglas más fuertes de la búsqueda p,superada,
+Word 38R,13_figuras_tablas: pie de figura descriptivo: Figura 8. Compromiso entre umbral de soporte ,superada,
+Word 38R,16_informe_cierre_38R: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 38R,16_informe_cierre_38R: tantas tablas en Word como en la fuente,superada,"(0, 0)"
+Word 38R,"16_informe_cierre_38R: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 38R,16_informe_cierre_38R: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 38R,16_informe_cierre_38R: viñetas anidadas conservan su nivel,superada,"(29, 29)"
+Word 38R,16_informe_cierre_38R: porcentajes con espacio indivisible,superada,[]
+Word 38R,16_informe_cierre_38R: sin |z| mal representado,superada,
+Word 38R,16_informe_cierre_38R: sin expresión ambigua «6 supera»,superada,
+Word 38R,16_informe_cierre_38R: sin «informe 17» inexistente,superada,
+Word 38R,16_informe_cierre_38R: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 38R,17_nota_fase_39R: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 38R,17_nota_fase_39R: tantas tablas en Word como en la fuente,superada,"(1, 1)"
+Word 38R,"17_nota_fase_39R: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 38R,17_nota_fase_39R: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 38R,17_nota_fase_39R: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 38R,17_nota_fase_39R: porcentajes con espacio indivisible,superada,[]
+Word 38R,17_nota_fase_39R: sin |z| mal representado,superada,
+Word 38R,17_nota_fase_39R: sin expresión ambigua «6 supera»,superada,
+Word 38R,17_nota_fase_39R: sin «informe 17» inexistente,superada,
+Word 38R,17_nota_fase_39R: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 38R,Variables retiradas: solo en el motivo de la corrección,superada,"[('03_diccionario_variables_categorias', '| prevision | Exclusión definitiva (decisiones de las Fases 35 y 36). No es predictora autorizada: motivo de esta corrección. |'), ('03_diccionario_variables_categorias', '| usa_medicamentos_diabetes | Exclusión definitiva (decisiones de las Fases 35 y 36). No es predictora autorizada: motivo de esta corrección. |')]"
+Word 38R,Todas las figuras están insertadas en algún documento,superada,set()
+Word 39R,02_protocolo_39R: Word existe,superada,
+Word 39R,02_protocolo_39R: ZIP íntegro,superada,
+Word 39R,02_protocolo_39R: documento XML válido,superada,
+Word 39R,02_protocolo_39R: imágenes de la fuente existen,superada,
+Word 39R,02_protocolo_39R: imágenes insertadas,superada,"(0, 0)"
+Word 39R,02_protocolo_39R: sin valores vacíos,superada,[]
+Word 39R,02_protocolo_39R: filas de tablas iguales en fuente y Word,superada,"(12, 12)"
+Word 39R,04_diccionario_estratos: Word existe,superada,
+Word 39R,04_diccionario_estratos: ZIP íntegro,superada,
+Word 39R,04_diccionario_estratos: documento XML válido,superada,
+Word 39R,04_diccionario_estratos: imágenes de la fuente existen,superada,
+Word 39R,04_diccionario_estratos: imágenes insertadas,superada,"(0, 0)"
+Word 39R,04_diccionario_estratos: sin valores vacíos,superada,[]
+Word 39R,04_diccionario_estratos: filas de tablas iguales en fuente y Word,superada,"(49, 49)"
+Word 39R,04_diccionario_estratos: sin cifra antigua 59\.672,superada,[]
+Word 39R,04_diccionario_estratos: sin cifra antigua 10\.739,superada,[]
+Word 39R,04_diccionario_estratos: sin cifra antigua 4\.873,superada,[]
+Word 39R,04_diccionario_estratos: sin cifra antigua 30\.600,superada,[]
+Word 39R,04_diccionario_estratos: sin cifra antigua 29\.072,superada,[]
+Word 39R,04_diccionario_estratos: sin cifra antigua 2\.129,superada,[]
+Word 39R,04_diccionario_estratos: sin cifra antigua 5\.525,superada,[]
+Word 39R,04_diccionario_estratos: sin cifra antigua 94 ítems,superada,[]
+Word 39R,04_diccionario_estratos: sin cifra antigua 31 variables,superada,[]
+Word 39R,04_diccionario_estratos: sin cifra antigua 12\.201,superada,[]
+Word 39R,04_diccionario_estratos: sin cifra antigua 1\.119,superada,[]
+Word 39R,04_diccionario_estratos: contiene «sintético»,superada,
+Word 39R,04_diccionario_estratos: contiene «validación externa»,superada,
+Word 39R,04_diccionario_estratos: contiene «exploratorio»,superada,
+Word 39R,04_diccionario_estratos: contiene «Versión correctiva»,superada,
+Word 39R,04_diccionario_estratos: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 39R,04_diccionario_estratos: referencias a informes existen,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: Word existe,superada,
+Word 39R,05_tamanos_frecuencias_basales: ZIP íntegro,superada,
+Word 39R,05_tamanos_frecuencias_basales: documento XML válido,superada,
+Word 39R,05_tamanos_frecuencias_basales: imágenes de la fuente existen,superada,
+Word 39R,05_tamanos_frecuencias_basales: imágenes insertadas,superada,"(1, 1)"
+Word 39R,05_tamanos_frecuencias_basales: sin valores vacíos,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: filas de tablas iguales en fuente y Word,superada,"(37, 37)"
+Word 39R,05_tamanos_frecuencias_basales: sin cifra antigua 59\.672,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: sin cifra antigua 10\.739,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: sin cifra antigua 4\.873,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: sin cifra antigua 30\.600,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: sin cifra antigua 29\.072,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: sin cifra antigua 2\.129,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: sin cifra antigua 5\.525,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: sin cifra antigua 94 ítems,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: sin cifra antigua 31 variables,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: sin cifra antigua 12\.201,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: sin cifra antigua 1\.119,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: contiene «sintético»,superada,
+Word 39R,05_tamanos_frecuencias_basales: contiene «validación externa»,superada,
+Word 39R,05_tamanos_frecuencias_basales: contiene «exploratorio»,superada,
+Word 39R,05_tamanos_frecuencias_basales: contiene «Versión correctiva»,superada,
+Word 39R,05_tamanos_frecuencias_basales: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: referencias a informes existen,superada,['12']
+Word 39R,05_tamanos_frecuencias_basales: figura 1 corresponde a f01,superada,
+Word 39R,06_preparacion_matrices_condicionadas: Word existe,superada,
+Word 39R,06_preparacion_matrices_condicionadas: ZIP íntegro,superada,
+Word 39R,06_preparacion_matrices_condicionadas: documento XML válido,superada,
+Word 39R,06_preparacion_matrices_condicionadas: imágenes de la fuente existen,superada,
+Word 39R,06_preparacion_matrices_condicionadas: imágenes insertadas,superada,"(0, 0)"
+Word 39R,06_preparacion_matrices_condicionadas: sin valores vacíos,superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: filas de tablas iguales en fuente y Word,superada,"(18, 18)"
+Word 39R,06_preparacion_matrices_condicionadas: sin cifra antigua 59\.672,superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: sin cifra antigua 10\.739,superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: sin cifra antigua 4\.873,superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: sin cifra antigua 30\.600,superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: sin cifra antigua 29\.072,superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: sin cifra antigua 2\.129,superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: sin cifra antigua 5\.525,superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: sin cifra antigua 94 ítems,superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: sin cifra antigua 31 variables,superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: sin cifra antigua 12\.201,superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: sin cifra antigua 1\.119,superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: contiene «sintético»,superada,
+Word 39R,06_preparacion_matrices_condicionadas: contiene «validación externa»,superada,
+Word 39R,06_preparacion_matrices_condicionadas: contiene «exploratorio»,superada,
+Word 39R,06_preparacion_matrices_condicionadas: contiene «Versión correctiva»,superada,
+Word 39R,06_preparacion_matrices_condicionadas: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: referencias a informes existen,superada,[]
+Word 39R,07_reglas_por_trabajo: Word existe,superada,
+Word 39R,07_reglas_por_trabajo: ZIP íntegro,superada,
+Word 39R,07_reglas_por_trabajo: documento XML válido,superada,
+Word 39R,07_reglas_por_trabajo: imágenes de la fuente existen,superada,
+Word 39R,07_reglas_por_trabajo: imágenes insertadas,superada,"(0, 0)"
+Word 39R,07_reglas_por_trabajo: sin valores vacíos,superada,[]
+Word 39R,07_reglas_por_trabajo: filas de tablas iguales en fuente y Word,superada,"(28, 28)"
+Word 39R,07_reglas_por_trabajo: sin cifra antigua 59\.672,superada,[]
+Word 39R,07_reglas_por_trabajo: sin cifra antigua 10\.739,superada,[]
+Word 39R,07_reglas_por_trabajo: sin cifra antigua 4\.873,superada,[]
+Word 39R,07_reglas_por_trabajo: sin cifra antigua 30\.600,superada,[]
+Word 39R,07_reglas_por_trabajo: sin cifra antigua 29\.072,superada,[]
+Word 39R,07_reglas_por_trabajo: sin cifra antigua 2\.129,superada,[]
+Word 39R,07_reglas_por_trabajo: sin cifra antigua 5\.525,superada,[]
+Word 39R,07_reglas_por_trabajo: sin cifra antigua 94 ítems,superada,[]
+Word 39R,07_reglas_por_trabajo: sin cifra antigua 31 variables,superada,[]
+Word 39R,07_reglas_por_trabajo: sin cifra antigua 12\.201,superada,[]
+Word 39R,07_reglas_por_trabajo: sin cifra antigua 1\.119,superada,[]
+Word 39R,07_reglas_por_trabajo: contiene «sintético»,superada,
+Word 39R,07_reglas_por_trabajo: contiene «validación externa»,superada,
+Word 39R,07_reglas_por_trabajo: contiene «exploratorio»,superada,
+Word 39R,07_reglas_por_trabajo: contiene «Versión correctiva»,superada,
+Word 39R,07_reglas_por_trabajo: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 39R,07_reglas_por_trabajo: referencias a informes existen,superada,[]
+Word 39R,08_reglas_por_pareja: Word existe,superada,
+Word 39R,08_reglas_por_pareja: ZIP íntegro,superada,
+Word 39R,08_reglas_por_pareja: documento XML válido,superada,
+Word 39R,08_reglas_por_pareja: imágenes de la fuente existen,superada,
+Word 39R,08_reglas_por_pareja: imágenes insertadas,superada,"(0, 0)"
+Word 39R,08_reglas_por_pareja: sin valores vacíos,superada,[]
+Word 39R,08_reglas_por_pareja: filas de tablas iguales en fuente y Word,superada,"(28, 28)"
+Word 39R,08_reglas_por_pareja: sin cifra antigua 59\.672,superada,[]
+Word 39R,08_reglas_por_pareja: sin cifra antigua 10\.739,superada,[]
+Word 39R,08_reglas_por_pareja: sin cifra antigua 4\.873,superada,[]
+Word 39R,08_reglas_por_pareja: sin cifra antigua 30\.600,superada,[]
+Word 39R,08_reglas_por_pareja: sin cifra antigua 29\.072,superada,[]
+Word 39R,08_reglas_por_pareja: sin cifra antigua 2\.129,superada,[]
+Word 39R,08_reglas_por_pareja: sin cifra antigua 5\.525,superada,[]
+Word 39R,08_reglas_por_pareja: sin cifra antigua 94 ítems,superada,[]
+Word 39R,08_reglas_por_pareja: sin cifra antigua 31 variables,superada,[]
+Word 39R,08_reglas_por_pareja: sin cifra antigua 12\.201,superada,[]
+Word 39R,08_reglas_por_pareja: sin cifra antigua 1\.119,superada,[]
+Word 39R,08_reglas_por_pareja: contiene «sintético»,superada,
+Word 39R,08_reglas_por_pareja: contiene «validación externa»,superada,
+Word 39R,08_reglas_por_pareja: contiene «exploratorio»,superada,
+Word 39R,08_reglas_por_pareja: contiene «Versión correctiva»,superada,
+Word 39R,08_reglas_por_pareja: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 39R,08_reglas_por_pareja: referencias a informes existen,superada,[]
+Word 39R,09_reglas_por_ejercicio: Word existe,superada,
+Word 39R,09_reglas_por_ejercicio: ZIP íntegro,superada,
+Word 39R,09_reglas_por_ejercicio: documento XML válido,superada,
+Word 39R,09_reglas_por_ejercicio: imágenes de la fuente existen,superada,
+Word 39R,09_reglas_por_ejercicio: imágenes insertadas,superada,"(0, 0)"
+Word 39R,09_reglas_por_ejercicio: sin valores vacíos,superada,[]
+Word 39R,09_reglas_por_ejercicio: filas de tablas iguales en fuente y Word,superada,"(36, 36)"
+Word 39R,09_reglas_por_ejercicio: sin cifra antigua 59\.672,superada,[]
+Word 39R,09_reglas_por_ejercicio: sin cifra antigua 10\.739,superada,[]
+Word 39R,09_reglas_por_ejercicio: sin cifra antigua 4\.873,superada,[]
+Word 39R,09_reglas_por_ejercicio: sin cifra antigua 30\.600,superada,[]
+Word 39R,09_reglas_por_ejercicio: sin cifra antigua 29\.072,superada,[]
+Word 39R,09_reglas_por_ejercicio: sin cifra antigua 2\.129,superada,[]
+Word 39R,09_reglas_por_ejercicio: sin cifra antigua 5\.525,superada,[]
+Word 39R,09_reglas_por_ejercicio: sin cifra antigua 94 ítems,superada,[]
+Word 39R,09_reglas_por_ejercicio: sin cifra antigua 31 variables,superada,[]
+Word 39R,09_reglas_por_ejercicio: sin cifra antigua 12\.201,superada,[]
+Word 39R,09_reglas_por_ejercicio: sin cifra antigua 1\.119,superada,[]
+Word 39R,09_reglas_por_ejercicio: contiene «sintético»,superada,
+Word 39R,09_reglas_por_ejercicio: contiene «validación externa»,superada,
+Word 39R,09_reglas_por_ejercicio: contiene «exploratorio»,superada,
+Word 39R,09_reglas_por_ejercicio: contiene «Versión correctiva»,superada,
+Word 39R,09_reglas_por_ejercicio: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 39R,09_reglas_por_ejercicio: referencias a informes existen,superada,[]
+Word 39R,10_reglas_por_cuidado: Word existe,superada,
+Word 39R,10_reglas_por_cuidado: ZIP íntegro,superada,
+Word 39R,10_reglas_por_cuidado: documento XML válido,superada,
+Word 39R,10_reglas_por_cuidado: imágenes de la fuente existen,superada,
+Word 39R,10_reglas_por_cuidado: imágenes insertadas,superada,"(0, 0)"
+Word 39R,10_reglas_por_cuidado: sin valores vacíos,superada,[]
+Word 39R,10_reglas_por_cuidado: filas de tablas iguales en fuente y Word,superada,"(28, 28)"
+Word 39R,10_reglas_por_cuidado: sin cifra antigua 59\.672,superada,[]
+Word 39R,10_reglas_por_cuidado: sin cifra antigua 10\.739,superada,[]
+Word 39R,10_reglas_por_cuidado: sin cifra antigua 4\.873,superada,[]
+Word 39R,10_reglas_por_cuidado: sin cifra antigua 30\.600,superada,[]
+Word 39R,10_reglas_por_cuidado: sin cifra antigua 29\.072,superada,[]
+Word 39R,10_reglas_por_cuidado: sin cifra antigua 2\.129,superada,[]
+Word 39R,10_reglas_por_cuidado: sin cifra antigua 5\.525,superada,[]
+Word 39R,10_reglas_por_cuidado: sin cifra antigua 94 ítems,superada,[]
+Word 39R,10_reglas_por_cuidado: sin cifra antigua 31 variables,superada,[]
+Word 39R,10_reglas_por_cuidado: sin cifra antigua 12\.201,superada,[]
+Word 39R,10_reglas_por_cuidado: sin cifra antigua 1\.119,superada,[]
+Word 39R,10_reglas_por_cuidado: contiene «sintético»,superada,
+Word 39R,10_reglas_por_cuidado: contiene «validación externa»,superada,
+Word 39R,10_reglas_por_cuidado: contiene «exploratorio»,superada,
+Word 39R,10_reglas_por_cuidado: contiene «Versión correctiva»,superada,
+Word 39R,10_reglas_por_cuidado: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 39R,10_reglas_por_cuidado: referencias a informes existen,superada,[]
+Word 39R,11_referencias_nulas_estrato: Word existe,superada,
+Word 39R,11_referencias_nulas_estrato: ZIP íntegro,superada,
+Word 39R,11_referencias_nulas_estrato: documento XML válido,superada,
+Word 39R,11_referencias_nulas_estrato: imágenes de la fuente existen,superada,
+Word 39R,11_referencias_nulas_estrato: imágenes insertadas,superada,"(2, 2)"
+Word 39R,11_referencias_nulas_estrato: sin valores vacíos,superada,[]
+Word 39R,11_referencias_nulas_estrato: filas de tablas iguales en fuente y Word,superada,"(15, 15)"
+Word 39R,11_referencias_nulas_estrato: sin cifra antigua 59\.672,superada,[]
+Word 39R,11_referencias_nulas_estrato: sin cifra antigua 10\.739,superada,[]
+Word 39R,11_referencias_nulas_estrato: sin cifra antigua 4\.873,superada,[]
+Word 39R,11_referencias_nulas_estrato: sin cifra antigua 30\.600,superada,[]
+Word 39R,11_referencias_nulas_estrato: sin cifra antigua 29\.072,superada,[]
+Word 39R,11_referencias_nulas_estrato: sin cifra antigua 2\.129,superada,[]
+Word 39R,11_referencias_nulas_estrato: sin cifra antigua 5\.525,superada,[]
+Word 39R,11_referencias_nulas_estrato: sin cifra antigua 94 ítems,superada,[]
+Word 39R,11_referencias_nulas_estrato: sin cifra antigua 31 variables,superada,[]
+Word 39R,11_referencias_nulas_estrato: sin cifra antigua 12\.201,superada,[]
+Word 39R,11_referencias_nulas_estrato: sin cifra antigua 1\.119,superada,[]
+Word 39R,11_referencias_nulas_estrato: contiene «sintético»,superada,
+Word 39R,11_referencias_nulas_estrato: contiene «validación externa»,superada,
+Word 39R,11_referencias_nulas_estrato: contiene «exploratorio»,superada,
+Word 39R,11_referencias_nulas_estrato: contiene «Versión correctiva»,superada,
+Word 39R,11_referencias_nulas_estrato: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 39R,11_referencias_nulas_estrato: referencias a informes existen,superada,[]
+Word 39R,11_referencias_nulas_estrato: figura 2 corresponde a f02,superada,
+Word 39R,11_referencias_nulas_estrato: figura 3 corresponde a f03,superada,
+Word 39R,12_comparacion_formal_estratos: Word existe,superada,
+Word 39R,12_comparacion_formal_estratos: ZIP íntegro,superada,
+Word 39R,12_comparacion_formal_estratos: documento XML válido,superada,
+Word 39R,12_comparacion_formal_estratos: imágenes de la fuente existen,superada,
+Word 39R,12_comparacion_formal_estratos: imágenes insertadas,superada,"(2, 2)"
+Word 39R,12_comparacion_formal_estratos: sin valores vacíos,superada,[]
+Word 39R,12_comparacion_formal_estratos: filas de tablas iguales en fuente y Word,superada,"(9, 9)"
+Word 39R,12_comparacion_formal_estratos: sin cifra antigua 59\.672,superada,[]
+Word 39R,12_comparacion_formal_estratos: sin cifra antigua 10\.739,superada,[]
+Word 39R,12_comparacion_formal_estratos: sin cifra antigua 4\.873,superada,[]
+Word 39R,12_comparacion_formal_estratos: sin cifra antigua 30\.600,superada,[]
+Word 39R,12_comparacion_formal_estratos: sin cifra antigua 29\.072,superada,[]
+Word 39R,12_comparacion_formal_estratos: sin cifra antigua 2\.129,superada,[]
+Word 39R,12_comparacion_formal_estratos: sin cifra antigua 5\.525,superada,[]
+Word 39R,12_comparacion_formal_estratos: sin cifra antigua 94 ítems,superada,[]
+Word 39R,12_comparacion_formal_estratos: sin cifra antigua 31 variables,superada,[]
+Word 39R,12_comparacion_formal_estratos: sin cifra antigua 12\.201,superada,[]
+Word 39R,12_comparacion_formal_estratos: sin cifra antigua 1\.119,superada,[]
+Word 39R,12_comparacion_formal_estratos: contiene «sintético»,superada,
+Word 39R,12_comparacion_formal_estratos: contiene «validación externa»,superada,
+Word 39R,12_comparacion_formal_estratos: contiene «exploratorio»,superada,
+Word 39R,12_comparacion_formal_estratos: contiene «Versión correctiva»,superada,
+Word 39R,12_comparacion_formal_estratos: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 39R,12_comparacion_formal_estratos: referencias a informes existen,superada,['07']
+Word 39R,12_comparacion_formal_estratos: figura 4 corresponde a f04,superada,
+Word 39R,12_comparacion_formal_estratos: figura 6 corresponde a f06,superada,
+Word 39R,13_redundancia: Word existe,superada,
+Word 39R,13_redundancia: ZIP íntegro,superada,
+Word 39R,13_redundancia: documento XML válido,superada,
+Word 39R,13_redundancia: imágenes de la fuente existen,superada,
+Word 39R,13_redundancia: imágenes insertadas,superada,"(0, 0)"
+Word 39R,13_redundancia: sin valores vacíos,superada,[]
+Word 39R,13_redundancia: filas de tablas iguales en fuente y Word,superada,"(26, 26)"
+Word 39R,13_redundancia: sin cifra antigua 59\.672,superada,[]
+Word 39R,13_redundancia: sin cifra antigua 10\.739,superada,[]
+Word 39R,13_redundancia: sin cifra antigua 4\.873,superada,[]
+Word 39R,13_redundancia: sin cifra antigua 30\.600,superada,[]
+Word 39R,13_redundancia: sin cifra antigua 29\.072,superada,[]
+Word 39R,13_redundancia: sin cifra antigua 2\.129,superada,[]
+Word 39R,13_redundancia: sin cifra antigua 5\.525,superada,[]
+Word 39R,13_redundancia: sin cifra antigua 94 ítems,superada,[]
+Word 39R,13_redundancia: sin cifra antigua 31 variables,superada,[]
+Word 39R,13_redundancia: sin cifra antigua 12\.201,superada,[]
+Word 39R,13_redundancia: sin cifra antigua 1\.119,superada,[]
+Word 39R,13_redundancia: contiene «sintético»,superada,
+Word 39R,13_redundancia: contiene «validación externa»,superada,
+Word 39R,13_redundancia: contiene «exploratorio»,superada,
+Word 39R,13_redundancia: contiene «Versión correctiva»,superada,
+Word 39R,13_redundancia: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 39R,13_redundancia: referencias a informes existen,superada,[]
+Word 39R,14_sensibilidades: Word existe,superada,
+Word 39R,14_sensibilidades: ZIP íntegro,superada,
+Word 39R,14_sensibilidades: documento XML válido,superada,
+Word 39R,14_sensibilidades: imágenes de la fuente existen,superada,
+Word 39R,14_sensibilidades: imágenes insertadas,superada,"(1, 1)"
+Word 39R,14_sensibilidades: sin valores vacíos,superada,[]
+Word 39R,14_sensibilidades: filas de tablas iguales en fuente y Word,superada,"(104, 104)"
+Word 39R,14_sensibilidades: sin cifra antigua 59\.672,superada,[]
+Word 39R,14_sensibilidades: sin cifra antigua 10\.739,superada,[]
+Word 39R,14_sensibilidades: sin cifra antigua 4\.873,superada,[]
+Word 39R,14_sensibilidades: sin cifra antigua 30\.600,superada,[]
+Word 39R,14_sensibilidades: sin cifra antigua 29\.072,superada,[]
+Word 39R,14_sensibilidades: sin cifra antigua 2\.129,superada,[]
+Word 39R,14_sensibilidades: sin cifra antigua 5\.525,superada,[]
+Word 39R,14_sensibilidades: sin cifra antigua 94 ítems,superada,[]
+Word 39R,14_sensibilidades: sin cifra antigua 31 variables,superada,[]
+Word 39R,14_sensibilidades: sin cifra antigua 12\.201,superada,[]
+Word 39R,14_sensibilidades: sin cifra antigua 1\.119,superada,[]
+Word 39R,14_sensibilidades: contiene «sintético»,superada,
+Word 39R,14_sensibilidades: contiene «validación externa»,superada,
+Word 39R,14_sensibilidades: contiene «exploratorio»,superada,
+Word 39R,14_sensibilidades: contiene «Versión correctiva»,superada,
+Word 39R,14_sensibilidades: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 39R,14_sensibilidades: referencias a informes existen,superada,[]
+Word 39R,14_sensibilidades: figura 5 corresponde a f05,superada,
+Word 39R,15_comparacion_exploratoria_A_B1: Word existe,superada,
+Word 39R,15_comparacion_exploratoria_A_B1: ZIP íntegro,superada,
+Word 39R,15_comparacion_exploratoria_A_B1: documento XML válido,superada,
+Word 39R,15_comparacion_exploratoria_A_B1: imágenes de la fuente existen,superada,
+Word 39R,15_comparacion_exploratoria_A_B1: imágenes insertadas,superada,"(0, 0)"
+Word 39R,15_comparacion_exploratoria_A_B1: sin valores vacíos,superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: filas de tablas iguales en fuente y Word,superada,"(21, 21)"
+Word 39R,15_comparacion_exploratoria_A_B1: sin cifra antigua 59\.672,superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: sin cifra antigua 10\.739,superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: sin cifra antigua 4\.873,superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: sin cifra antigua 30\.600,superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: sin cifra antigua 29\.072,superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: sin cifra antigua 2\.129,superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: sin cifra antigua 5\.525,superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: sin cifra antigua 94 ítems,superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: sin cifra antigua 31 variables,superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: sin cifra antigua 12\.201,superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: sin cifra antigua 1\.119,superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: contiene «sintético»,superada,
+Word 39R,15_comparacion_exploratoria_A_B1: contiene «validación externa»,superada,
+Word 39R,15_comparacion_exploratoria_A_B1: contiene «exploratorio»,superada,
+Word 39R,15_comparacion_exploratoria_A_B1: contiene «Versión correctiva»,superada,
+Word 39R,15_comparacion_exploratoria_A_B1: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: referencias a informes existen,superada,[]
+Word 39R,16_figuras_tablas: Word existe,superada,
+Word 39R,16_figuras_tablas: ZIP íntegro,superada,
+Word 39R,16_figuras_tablas: documento XML válido,superada,
+Word 39R,16_figuras_tablas: imágenes de la fuente existen,superada,
+Word 39R,16_figuras_tablas: imágenes insertadas,superada,"(6, 6)"
+Word 39R,16_figuras_tablas: sin valores vacíos,superada,[]
+Word 39R,16_figuras_tablas: filas de tablas iguales en fuente y Word,superada,"(76, 76)"
+Word 39R,16_figuras_tablas: sin cifra antigua 59\.672,superada,[]
+Word 39R,16_figuras_tablas: sin cifra antigua 10\.739,superada,[]
+Word 39R,16_figuras_tablas: sin cifra antigua 4\.873,superada,[]
+Word 39R,16_figuras_tablas: sin cifra antigua 30\.600,superada,[]
+Word 39R,16_figuras_tablas: sin cifra antigua 29\.072,superada,[]
+Word 39R,16_figuras_tablas: sin cifra antigua 2\.129,superada,[]
+Word 39R,16_figuras_tablas: sin cifra antigua 5\.525,superada,[]
+Word 39R,16_figuras_tablas: sin cifra antigua 94 ítems,superada,[]
+Word 39R,16_figuras_tablas: sin cifra antigua 31 variables,superada,[]
+Word 39R,16_figuras_tablas: sin cifra antigua 12\.201,superada,[]
+Word 39R,16_figuras_tablas: sin cifra antigua 1\.119,superada,[]
+Word 39R,16_figuras_tablas: contiene «sintético»,superada,
+Word 39R,16_figuras_tablas: contiene «validación externa»,superada,
+Word 39R,16_figuras_tablas: contiene «exploratorio»,superada,
+Word 39R,16_figuras_tablas: contiene «Versión correctiva»,superada,
+Word 39R,16_figuras_tablas: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 39R,16_figuras_tablas: referencias a informes existen,superada,[]
+Word 39R,16_figuras_tablas: figura 1 corresponde a f01,superada,
+Word 39R,16_figuras_tablas: figura 2 corresponde a f02,superada,
+Word 39R,16_figuras_tablas: figura 3 corresponde a f03,superada,
+Word 39R,16_figuras_tablas: figura 4 corresponde a f04,superada,
+Word 39R,16_figuras_tablas: figura 5 corresponde a f05,superada,
+Word 39R,16_figuras_tablas: figura 6 corresponde a f06,superada,
+Word 39R,19_informe_cierre_39R: Word existe,superada,
+Word 39R,19_informe_cierre_39R: ZIP íntegro,superada,
+Word 39R,19_informe_cierre_39R: documento XML válido,superada,
+Word 39R,19_informe_cierre_39R: imágenes de la fuente existen,superada,
+Word 39R,19_informe_cierre_39R: imágenes insertadas,superada,"(0, 0)"
+Word 39R,19_informe_cierre_39R: sin valores vacíos,superada,[]
+Word 39R,19_informe_cierre_39R: filas de tablas iguales en fuente y Word,superada,"(12, 12)"
+Word 39R,19_informe_cierre_39R: sin cifra antigua 59\.672,superada,[]
+Word 39R,19_informe_cierre_39R: sin cifra antigua 10\.739,superada,[]
+Word 39R,19_informe_cierre_39R: sin cifra antigua 4\.873,superada,[]
+Word 39R,19_informe_cierre_39R: sin cifra antigua 30\.600,superada,[]
+Word 39R,19_informe_cierre_39R: sin cifra antigua 29\.072,superada,[]
+Word 39R,19_informe_cierre_39R: sin cifra antigua 2\.129,superada,[]
+Word 39R,19_informe_cierre_39R: sin cifra antigua 5\.525,superada,[]
+Word 39R,19_informe_cierre_39R: sin cifra antigua 94 ítems,superada,[]
+Word 39R,19_informe_cierre_39R: sin cifra antigua 31 variables,superada,[]
+Word 39R,19_informe_cierre_39R: sin cifra antigua 12\.201,superada,[]
+Word 39R,19_informe_cierre_39R: sin cifra antigua 1\.119,superada,[]
+Word 39R,19_informe_cierre_39R: contiene «sintético»,superada,
+Word 39R,19_informe_cierre_39R: contiene «validación externa»,superada,
+Word 39R,19_informe_cierre_39R: contiene «exploratorio»,superada,
+Word 39R,19_informe_cierre_39R: contiene «Versión correctiva»,superada,
+Word 39R,19_informe_cierre_39R: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 39R,19_informe_cierre_39R: referencias a informes existen,superada,['20']
+Word 39R,20_nota_logica_tablero: Word existe,superada,
+Word 39R,20_nota_logica_tablero: ZIP íntegro,superada,
+Word 39R,20_nota_logica_tablero: documento XML válido,superada,
+Word 39R,20_nota_logica_tablero: imágenes de la fuente existen,superada,
+Word 39R,20_nota_logica_tablero: imágenes insertadas,superada,"(0, 0)"
+Word 39R,20_nota_logica_tablero: sin valores vacíos,superada,[]
+Word 39R,20_nota_logica_tablero: filas de tablas iguales en fuente y Word,superada,"(14, 14)"
+Word 39R,20_nota_logica_tablero: sin cifra antigua 59\.672,superada,[]
+Word 39R,20_nota_logica_tablero: sin cifra antigua 10\.739,superada,[]
+Word 39R,20_nota_logica_tablero: sin cifra antigua 4\.873,superada,[]
+Word 39R,20_nota_logica_tablero: sin cifra antigua 30\.600,superada,[]
+Word 39R,20_nota_logica_tablero: sin cifra antigua 29\.072,superada,[]
+Word 39R,20_nota_logica_tablero: sin cifra antigua 2\.129,superada,[]
+Word 39R,20_nota_logica_tablero: sin cifra antigua 5\.525,superada,[]
+Word 39R,20_nota_logica_tablero: sin cifra antigua 94 ítems,superada,[]
+Word 39R,20_nota_logica_tablero: sin cifra antigua 31 variables,superada,[]
+Word 39R,20_nota_logica_tablero: sin cifra antigua 12\.201,superada,[]
+Word 39R,20_nota_logica_tablero: sin cifra antigua 1\.119,superada,[]
+Word 39R,20_nota_logica_tablero: contiene «sintético»,superada,
+Word 39R,20_nota_logica_tablero: contiene «validación externa»,superada,
+Word 39R,20_nota_logica_tablero: contiene «exploratorio»,superada,
+Word 39R,20_nota_logica_tablero: contiene «Versión correctiva»,superada,
+Word 39R,20_nota_logica_tablero: sin lenguaje causal ni clínico afirmativo,superada,[]
+Word 39R,20_nota_logica_tablero: referencias a informes existen,superada,['05']
+Word 39R,02_protocolo_39R: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,02_protocolo_39R: tantas tablas en Word como en la fuente,superada,"(2, 2)"
+Word 39R,"02_protocolo_39R: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,02_protocolo_39R: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,02_protocolo_39R: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 39R,02_protocolo_39R: porcentajes con espacio indivisible,superada,[]
+Word 39R,02_protocolo_39R: sin |z| mal representado,superada,
+Word 39R,02_protocolo_39R: sin expresión ambigua «6 supera»,superada,
+Word 39R,02_protocolo_39R: sin «informe 17» inexistente,superada,
+Word 39R,02_protocolo_39R: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,04_diccionario_estratos: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,04_diccionario_estratos: tantas tablas en Word como en la fuente,superada,"(2, 2)"
+Word 39R,"04_diccionario_estratos: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,04_diccionario_estratos: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,04_diccionario_estratos: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 39R,04_diccionario_estratos: porcentajes con espacio indivisible,superada,[]
+Word 39R,04_diccionario_estratos: sin |z| mal representado,superada,
+Word 39R,04_diccionario_estratos: sin expresión ambigua «6 supera»,superada,
+Word 39R,04_diccionario_estratos: sin «informe 17» inexistente,superada,
+Word 39R,04_diccionario_estratos: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,05_tamanos_frecuencias_basales: tantas tablas en Word como en la fuente,superada,"(2, 2)"
+Word 39R,"05_tamanos_frecuencias_basales: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,05_tamanos_frecuencias_basales: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 39R,05_tamanos_frecuencias_basales: porcentajes con espacio indivisible,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: sin |z| mal representado,superada,
+Word 39R,05_tamanos_frecuencias_basales: sin expresión ambigua «6 supera»,superada,
+Word 39R,05_tamanos_frecuencias_basales: sin «informe 17» inexistente,superada,
+Word 39R,05_tamanos_frecuencias_basales: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,05_tamanos_frecuencias_basales: pie de figura descriptivo: Figura 1. Frecuencia basal de MRS severo por ,superada,
+Word 39R,06_preparacion_matrices_condicionadas: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: tantas tablas en Word como en la fuente,superada,"(1, 1)"
+Word 39R,"06_preparacion_matrices_condicionadas: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 39R,06_preparacion_matrices_condicionadas: porcentajes con espacio indivisible,superada,[]
+Word 39R,06_preparacion_matrices_condicionadas: sin |z| mal representado,superada,
+Word 39R,06_preparacion_matrices_condicionadas: sin expresión ambigua «6 supera»,superada,
+Word 39R,06_preparacion_matrices_condicionadas: sin «informe 17» inexistente,superada,
+Word 39R,06_preparacion_matrices_condicionadas: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,07_reglas_por_trabajo: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,07_reglas_por_trabajo: tantas tablas en Word como en la fuente,superada,"(4, 4)"
+Word 39R,"07_reglas_por_trabajo: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,07_reglas_por_trabajo: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,07_reglas_por_trabajo: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 39R,07_reglas_por_trabajo: porcentajes con espacio indivisible,superada,[]
+Word 39R,07_reglas_por_trabajo: sin |z| mal representado,superada,
+Word 39R,07_reglas_por_trabajo: sin expresión ambigua «6 supera»,superada,
+Word 39R,07_reglas_por_trabajo: sin «informe 17» inexistente,superada,
+Word 39R,07_reglas_por_trabajo: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,08_reglas_por_pareja: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,08_reglas_por_pareja: tantas tablas en Word como en la fuente,superada,"(4, 4)"
+Word 39R,"08_reglas_por_pareja: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,08_reglas_por_pareja: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,08_reglas_por_pareja: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 39R,08_reglas_por_pareja: porcentajes con espacio indivisible,superada,[]
+Word 39R,08_reglas_por_pareja: sin |z| mal representado,superada,
+Word 39R,08_reglas_por_pareja: sin expresión ambigua «6 supera»,superada,
+Word 39R,08_reglas_por_pareja: sin «informe 17» inexistente,superada,
+Word 39R,08_reglas_por_pareja: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,09_reglas_por_ejercicio: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,09_reglas_por_ejercicio: tantas tablas en Word como en la fuente,superada,"(4, 4)"
+Word 39R,"09_reglas_por_ejercicio: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,09_reglas_por_ejercicio: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,09_reglas_por_ejercicio: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 39R,09_reglas_por_ejercicio: porcentajes con espacio indivisible,superada,[]
+Word 39R,09_reglas_por_ejercicio: sin |z| mal representado,superada,
+Word 39R,09_reglas_por_ejercicio: sin expresión ambigua «6 supera»,superada,
+Word 39R,09_reglas_por_ejercicio: sin «informe 17» inexistente,superada,
+Word 39R,09_reglas_por_ejercicio: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,10_reglas_por_cuidado: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,10_reglas_por_cuidado: tantas tablas en Word como en la fuente,superada,"(4, 4)"
+Word 39R,"10_reglas_por_cuidado: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,10_reglas_por_cuidado: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,10_reglas_por_cuidado: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 39R,10_reglas_por_cuidado: porcentajes con espacio indivisible,superada,[]
+Word 39R,10_reglas_por_cuidado: sin |z| mal representado,superada,
+Word 39R,10_reglas_por_cuidado: sin expresión ambigua «6 supera»,superada,
+Word 39R,10_reglas_por_cuidado: sin «informe 17» inexistente,superada,
+Word 39R,10_reglas_por_cuidado: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,11_referencias_nulas_estrato: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,11_referencias_nulas_estrato: tantas tablas en Word como en la fuente,superada,"(2, 2)"
+Word 39R,"11_referencias_nulas_estrato: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,11_referencias_nulas_estrato: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,11_referencias_nulas_estrato: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 39R,11_referencias_nulas_estrato: porcentajes con espacio indivisible,superada,[]
+Word 39R,11_referencias_nulas_estrato: sin |z| mal representado,superada,
+Word 39R,11_referencias_nulas_estrato: sin expresión ambigua «6 supera»,superada,
+Word 39R,11_referencias_nulas_estrato: sin «informe 17» inexistente,superada,
+Word 39R,11_referencias_nulas_estrato: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,11_referencias_nulas_estrato: pie de figura descriptivo: Figura 2. Reglas marcadas observadas y bajo l,superada,
+Word 39R,11_referencias_nulas_estrato: pie de figura descriptivo: Figura 3. Máximo Q observado frente a la refe,superada,
+Word 39R,12_comparacion_formal_estratos: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,12_comparacion_formal_estratos: tantas tablas en Word como en la fuente,superada,"(2, 2)"
+Word 39R,"12_comparacion_formal_estratos: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,12_comparacion_formal_estratos: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,12_comparacion_formal_estratos: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 39R,12_comparacion_formal_estratos: porcentajes con espacio indivisible,superada,[]
+Word 39R,12_comparacion_formal_estratos: sin |z| mal representado,superada,
+Word 39R,12_comparacion_formal_estratos: sin expresión ambigua «6 supera»,superada,
+Word 39R,12_comparacion_formal_estratos: sin «informe 17» inexistente,superada,
+Word 39R,12_comparacion_formal_estratos: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,12_comparacion_formal_estratos: pie de figura descriptivo: Figura 4. Diferencias de riesgo por estrato e,superada,
+Word 39R,12_comparacion_formal_estratos: pie de figura descriptivo: Figura 6. Estabilidad de las comparaciones fr,superada,
+Word 39R,13_redundancia: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,13_redundancia: tantas tablas en Word como en la fuente,superada,"(3, 3)"
+Word 39R,"13_redundancia: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,13_redundancia: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,13_redundancia: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 39R,13_redundancia: porcentajes con espacio indivisible,superada,[]
+Word 39R,13_redundancia: sin |z| mal representado,superada,
+Word 39R,13_redundancia: sin expresión ambigua «6 supera»,superada,
+Word 39R,13_redundancia: sin «informe 17» inexistente,superada,
+Word 39R,13_redundancia: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,14_sensibilidades: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,14_sensibilidades: tantas tablas en Word como en la fuente,superada,"(7, 7)"
+Word 39R,"14_sensibilidades: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,14_sensibilidades: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,14_sensibilidades: viñetas anidadas conservan su nivel,superada,"(3, 3)"
+Word 39R,14_sensibilidades: porcentajes con espacio indivisible,superada,[]
+Word 39R,14_sensibilidades: sin |z| mal representado,superada,
+Word 39R,14_sensibilidades: sin expresión ambigua «6 supera»,superada,
+Word 39R,14_sensibilidades: sin «informe 17» inexistente,superada,
+Word 39R,14_sensibilidades: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,14_sensibilidades: pie de figura descriptivo: Figura 5. Diferencias marcadas de la principa,superada,
+Word 39R,15_comparacion_exploratoria_A_B1: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: tantas tablas en Word como en la fuente,superada,"(3, 3)"
+Word 39R,"15_comparacion_exploratoria_A_B1: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 39R,15_comparacion_exploratoria_A_B1: porcentajes con espacio indivisible,superada,[]
+Word 39R,15_comparacion_exploratoria_A_B1: sin |z| mal representado,superada,
+Word 39R,15_comparacion_exploratoria_A_B1: sin expresión ambigua «6 supera»,superada,
+Word 39R,15_comparacion_exploratoria_A_B1: sin «informe 17» inexistente,superada,
+Word 39R,15_comparacion_exploratoria_A_B1: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,16_figuras_tablas: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,16_figuras_tablas: tantas tablas en Word como en la fuente,superada,"(1, 1)"
+Word 39R,"16_figuras_tablas: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,16_figuras_tablas: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,16_figuras_tablas: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 39R,16_figuras_tablas: porcentajes con espacio indivisible,superada,[]
+Word 39R,16_figuras_tablas: sin |z| mal representado,superada,
+Word 39R,16_figuras_tablas: sin expresión ambigua «6 supera»,superada,
+Word 39R,16_figuras_tablas: sin «informe 17» inexistente,superada,
+Word 39R,16_figuras_tablas: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,16_figuras_tablas: pie de figura descriptivo: Figura 1. Frecuencia basal de MRS severo por ,superada,
+Word 39R,16_figuras_tablas: pie de figura descriptivo: Figura 2. Reglas marcadas observadas y bajo l,superada,
+Word 39R,16_figuras_tablas: pie de figura descriptivo: Figura 3. Máximo Q observado frente a la refe,superada,
+Word 39R,16_figuras_tablas: pie de figura descriptivo: Figura 4. Diferencias de riesgo por estrato e,superada,
+Word 39R,16_figuras_tablas: pie de figura descriptivo: Figura 5. Diferencias marcadas de la principa,superada,
+Word 39R,16_figuras_tablas: pie de figura descriptivo: Figura 6. Estabilidad de las comparaciones fr,superada,
+Word 39R,19_informe_cierre_39R: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,19_informe_cierre_39R: tantas tablas en Word como en la fuente,superada,"(2, 2)"
+Word 39R,"19_informe_cierre_39R: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,19_informe_cierre_39R: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,19_informe_cierre_39R: viñetas anidadas conservan su nivel,superada,"(19, 19)"
+Word 39R,19_informe_cierre_39R: porcentajes con espacio indivisible,superada,[]
+Word 39R,19_informe_cierre_39R: sin |z| mal representado,superada,
+Word 39R,19_informe_cierre_39R: sin expresión ambigua «6 supera»,superada,
+Word 39R,19_informe_cierre_39R: sin «informe 17» inexistente,superada,
+Word 39R,19_informe_cierre_39R: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,20_nota_logica_tablero: misma cantidad de columnas en cada fila de cada tabla (fuente),superada,[]
+Word 39R,20_nota_logica_tablero: tantas tablas en Word como en la fuente,superada,"(2, 2)"
+Word 39R,"20_nota_logica_tablero: columnas iguales en filas, cuadrícula y fuente (Word)",superada,[]
+Word 39R,20_nota_logica_tablero: el texto de cada celda del Word es el de su columna en la fuente,superada,[]
+Word 39R,20_nota_logica_tablero: viñetas anidadas conservan su nivel,superada,"(0, 0)"
+Word 39R,20_nota_logica_tablero: porcentajes con espacio indivisible,superada,[]
+Word 39R,20_nota_logica_tablero: sin |z| mal representado,superada,
+Word 39R,20_nota_logica_tablero: sin expresión ambigua «6 supera»,superada,
+Word 39R,20_nota_logica_tablero: sin «informe 17» inexistente,superada,
+Word 39R,20_nota_logica_tablero: sin referencias ambiguas a una tabla numerada,superada,[]
+Word 39R,Variables retiradas: solo en el motivo de la corrección,superada,[]
+Word 39R,Todas las figuras están insertadas en algún documento,superada,set()
+Explicaciones,38R 12: «dos reglas superan su referencia nula»,superada,
+Explicaciones,38R 12: «no cumple los criterios de robustez»,superada,
+Explicaciones,38R 12: «S7a (287)»,superada,
+Explicaciones,38R 12: «S7b (239)»,superada,
+Explicaciones,38R 12: «S7a-309»,superada,
+Explicaciones,38R 12: «S7b-251»,superada,
+Explicaciones,38R 12: «no son evidencia confirmatoria»,superada,
+Explicaciones,"39R 14: «0,04995»",superada,
+Explicaciones,39R 14: «no supera la referencia nula conjunta»,superada,
+Explicaciones,39R 14: «no cumple la comparabilidad mínima»,superada,
+Explicaciones,"39R 14: «0,048»",superada,
+Explicaciones,39R 14: «no es un hallazgo robusto ni una recomendación clínica»,superada,
+Explicaciones,39R 14: «Estratos pequeños»,superada,
+Explicaciones,39R 14: «no son evidencia confirmatoria»,superada,
+Tabla 39R-11,"Diez encabezados, en orden, con Máximo |z| en una sola columna",superada,"['Dimensión', 'Estrato', 'Antecedentes evaluados', 'Marcadas', 'Nula: media', 'Nula: p95', 'p de exceso', 'Máximo |z|: p95 nulo', 'Menor p ajustado', 'Superan la nula del estrato']"
+Tabla 39R-11,trabaja: valores bajo su encabezado,superada,"['Trabajo', 'Trabaja', '8.958', '1.842', '1.168', '1.531', '0,006', '4,02', '0,187', '0']"
+Tabla 39R-11,no_trabaja: valores bajo su encabezado,superada,"['Trabajo', 'No trabaja', '1.302', '243', '201', '265', '0,148', '3,59', '0,468', '0']"
+Tabla 39R-11,con_pareja: valores bajo su encabezado,superada,"['Pareja', 'Tiene pareja', '8.709', '1.617', '947', '1.305', '0,002', '4,01', '0,107', '0']"
+Tabla 39R-11,sin_pareja: valores bajo su encabezado,superada,"['Pareja', 'No tiene pareja', '1.133', '164', '195', '256', '0,809', '3,55', '0,163', '0']"
+Tabla 39R-11,0_dias: valores bajo su encabezado,superada,"['Ejercicio', '0 días de ejercicio', '9.500', '1.574', '1.168', '1.557', '0,047', '3,95', '0,273', '0']"
+Tabla 39R-11,1-2_dias: valores bajo su encabezado,superada,"['Ejercicio', '1-2 días de ejercicio', '1.035', '167', '191', '252', '0,747', '3,41', '0,646', '0']"
+Tabla 39R-11,3_o_mas_dias: valores bajo su encabezado,superada,"['Ejercicio', '3 días o más de ejercicio', '47', '7', '5', '9', '0,212', '2,46', '0,427', '0']"
+Tabla 39R-11,cuida: valores bajo su encabezado,superada,"['Cuidado', 'Cuida a una o más personas', '9.023', '2.169', '1.494', '1.903', '0,006', '3,97', '0,055', '0']"
+Tabla 39R-11,no_cuida: valores bajo su encabezado,superada,"['Cuidado', 'No cuida', '9.190', '1.302', '1.390', '1.809', '0,595', '3,99', '0,933', '0']"
+Tablas 38R-03 y 38R-04,03: 29 variables observadas/imputadas,superada,29
+Tablas 38R-03 y 38R-04,03: columnas de ítem y pérdida en S1 iguales a las matrices; pérdida = imputadas + deducidas + heredadas,superada,[]
+Tablas 38R-03 y 38R-04,03: variables con imputaciones heredadas,superada,
+Tablas 38R-03 y 38R-04,03: cuatro reservadas con sus cifras,superada,"['267 / 262 / 0', '271 / 16 / 22', '277 / 10 / 22', '239 / 12 / 21']"
+Tablas 38R-03 y 38R-04,03: ítems de imc iguales a la matriz S8b,superada,"[63, 101, 103]"
+Tablas 38R-03 y 38R-04,03: ítems de lugar_comprensivo iguales a la matriz S7a,superada,"[72, 108, 107]"
+Tablas 38R-03 y 38R-04,03: ítems de estres_laboral iguales a la matriz S7a,superada,"[91, 107, 89]"
+Tablas 38R-03 y 38R-04,03: ítems de sobrecarga iguales a la matriz S7b,superada,"[44, 94, 101]"
+Tablas 38R-03 y 38R-04,"03: distribución de 29 variables, cada una suma como máximo 529",superada,[]
+Tablas 38R-03 y 38R-04,03: advertencias presentes,superada,6
+Tablas 38R-03 y 38R-04,03: «Imputaciones heredadas de preguntas madre»,superada,
+Tablas 38R-03 y 38R-04,03: «# Advertencias metodológicas»,superada,
+Tablas 38R-03 y 38R-04,04: 27 categorías escasas y 10 con n = 0,superada,"(27, 10)"
+Tablas 38R-03 y 38R-04,04: n = 0 todas con cero,superada,
+Tablas 38R-03 y 38R-04,04: n entre 1 y 26 y porcentaje sobre 529,superada,
+Tablas 38R-03 y 38R-04,04: filas R3 con nombres legibles,superada,
+Tablas 38R-03 y 38R-04,03 y 04: variables retiradas nunca como vigentes,superada,
+Textos corregidos,38R-16: precisa S3-bajo,superada,
+Textos corregidos,38R-12: clase sin ambigüedad,superada,
+Textos corregidos,38R-17: en pasado,superada,
+Textos corregidos,39R-20: «Clasificación de severidad utilizada en el análisis estadístico»,superada,
+Textos corregidos,39R-20: «Información MRS que presenta actualmente la plataforma»,superada,
+Textos corregidos,39R-20: «Aspectos de visualización pendientes de validación clínica»,superada,
+Textos corregidos,39R-20: «Resultado histórico no verificable»,superada,
+Textos corregidos,39R-20: «Puntaje MRS: X de 44»,superada,
+Textos corregidos,39R-20: «Sin categoría de severidad»,superada,
+Textos corregidos,39R-19: sin afirmar que la plataforma muestra una categoría,superada,
+Textos corregidos,39R-20: sin afirmar que la plataforma muestra una categoría,superada,
+Textos corregidos,39R-19: distingue los tres planos,superada,
+Textos corregidos,39R-14: población 38R S7a = 287,superada,
+Textos corregidos,39R-14: población 38R S7a-309 = 309,superada,
+Textos corregidos,39R-14: población 38R S7b = 239,superada,
+Textos corregidos,39R-14: población 38R S7b-251 = 251,superada,
+Textos corregidos,39R-14: población 39R S7a = 309,superada,
+Textos corregidos,39R-14: población 39R S7b = 251,superada,
+Textos corregidos,39R-19: población 38R S7a = 287,superada,
+Textos corregidos,39R-19: población 38R S7a-309 = 309,superada,
+Textos corregidos,39R-19: población 38R S7b = 239,superada,
+Textos corregidos,39R-19: población 38R S7b-251 = 251,superada,
+Textos corregidos,39R-19: población 39R S7a = 309,superada,
+Textos corregidos,39R-19: población 39R S7b = 251,superada,
+Protocolos,01_protocolo_38R: contiene íntegro el texto sellado,superada,
+Protocolos,01_protocolo_38R: la huella del archivo coincide con el sello,superada,32a64ec8d5cdd4ceec8a13f54e44abccfbda689517cf430299eaf6a4b601e867
+Protocolos,01_protocolo_38R: nota de versión fuera del texto sellado,superada,
+Protocolos,02_protocolo_39R: contiene íntegro el texto sellado,superada,
+Protocolos,02_protocolo_39R: la huella del archivo coincide con el sello,superada,c17c5bf05cc8f8ce9346a91638a19381399011647571ce15fa722581d2d8bb4e
+Protocolos,02_protocolo_39R: nota de versión fuera del texto sellado,superada,
+Fuente efectiva de las figuras,38R f01_items_principal.png: texto efectivo ≥ 5 pt,superada,5.36
+Fuente efectiva de las figuras,38R f02_confianza_frente_a_casos.png: texto efectivo ≥ 5 pt,superada,5.38
+Fuente efectiva de las figuras,38R f03_referencia_nula.png: texto efectivo ≥ 5 pt,superada,5.68
+Fuente efectiva de las figuras,38R f04_estabilidad.png: texto efectivo ≥ 5 pt,superada,5.35
+Fuente efectiva de las figuras,38R f05_exceso_frente_a_nula.png: texto efectivo ≥ 5 pt,superada,5.5
+Fuente efectiva de las figuras,38R f06_lectura_sensibilidades.png: texto efectivo ≥ 5 pt,superada,5.76
+Fuente efectiva de las figuras,38R f07_reglas_mayor_z.png: texto efectivo ≥ 5 pt,superada,5.71
+Fuente efectiva de las figuras,38R f08_umbrales.png: texto efectivo ≥ 5 pt,superada,5.61
+Fuente efectiva de las figuras,39R f01_tamanos_basales.png: texto efectivo ≥ 5 pt,superada,6.07
+Fuente efectiva de las figuras,39R f02_marcadas_frente_a_nula.png: texto efectivo ≥ 5 pt,superada,7.44
+Fuente efectiva de las figuras,39R f03_heterogeneidad_frente_a_nula.png: texto efectivo ≥ 5 pt,superada,7.71
+Fuente efectiva de las figuras,39R f04_comparaciones_mayor_Q.png: texto efectivo ≥ 5 pt,superada,5.64
+Fuente efectiva de las figuras,39R f05_sensibilidades_comparaciones.png: texto efectivo ≥ 5 pt,superada,7.46
+Fuente efectiva de las figuras,39R f06_estabilidad_comparaciones.png: texto efectivo ≥ 5 pt,superada,8.0
+Maquetación,38R: un registro por Word,superada,14
+Maquetación,38R: sin páginas con solo unas líneas (ocupación menor que 20 %),superada,[]
+Maquetación,38R: unidos_separados = 0,superada,[]
+Maquetación,38R: filas_finales_aisladas = 0,superada,[]
+Maquetación,38R: cabeceras_separadas = 0,superada,[]
+Maquetación,38R: imagenes_fuera_de_margen = 0,superada,[]
+Maquetación,39R: un registro por Word,superada,16
+Maquetación,39R: sin páginas con solo unas líneas (ocupación menor que 20 %),superada,[]
+Maquetación,39R: unidos_separados = 0,superada,[]
+Maquetación,39R: filas_finales_aisladas = 0,superada,[]
+Maquetación,39R: cabeceras_separadas = 0,superada,[]
+Maquetación,39R: imagenes_fuera_de_margen = 0,superada,[]

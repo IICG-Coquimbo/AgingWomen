@@ -1,0 +1,5 @@
+grupo,estratos,comparabilidad_minima,largo_maximo,candidatos,comparables,marcadas,nula_media_marcadas,p_exceso_marcadas,nula_p95_max_Q,supera_nula_dimension,clases,supera_nula_conjunta
+trabajo,trabaja / no_trabaja,20,2,3815,1348,569,520.851,0.17782217782217782,19.77165791454641,0,"{'H1 sin diferencia apreciable': 779, 'H2 redundante': 362, 'H3 diferencia compatible con la nula': 207}",0
+pareja,con_pareja / sin_pareja,20,2,3815,1129,435,436.087,0.5094905094905094,19.156391190538184,0,"{'H1 sin diferencia apreciable': 694, 'H2 redundante': 295, 'H3 diferencia compatible con la nula': 140}",0
+ejercicio,0_dias / 1-2_dias / 3_o_mas_dias,20,2,3645,363,234,256.58,0.8981018981018981,20.4549987994571,0,"{'H2 redundante': 158, 'H1 sin diferencia apreciable': 129, 'H3 diferencia compatible con la nula': 76}",0
+cuidado,cuida / no_cuida,20,2,3645,1496,582,579.741,0.4825174825174825,19.616797558902057,0,"{'H1 sin diferencia apreciable': 914, 'H2 redundante': 356, 'H3 diferencia compatible con la nula': 226}",0

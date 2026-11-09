@@ -1,0 +1,12 @@
+{
+ "participantes": 529,
+ "ids_unicos": 529,
+ "severos": 281,
+ "no_severos": 248,
+ "variables": 29,
+ "items": 90,
+ "matriz_identica_38R": true,
+ "B1_igual_a_regla": true,
+ "sello_39R": "c17c5bf05cc8f8ce9346a91638a19381399011647571ce15fa722581d2d8bb4e",
+ "modo_humo": false
+}

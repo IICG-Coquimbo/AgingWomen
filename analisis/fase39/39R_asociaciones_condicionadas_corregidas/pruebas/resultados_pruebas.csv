@@ -1,0 +1,28 @@
+n,prueba,resultado,detalle
+p01,Exactamente 529 identificadores originales,superada,529 identificadores únicos; cada dimensión los reparte sin repetir
+p02,MRS severo correcto,superada,"281 severas y 248 no severas, recalculadas desde los 11 ítems de la limpieza"
+p03,"Tamaños de estratos, frecuencias basales y umbrales",superada,"17 estratos y grupos: tamaños, severas, basales y umbrales coinciden con el recuento y la fórmula del protocolo"
+p04,Pertenencia correcta a los estratos,superada,"pertenencia recalculada desde las respuestas crudas de la limpieza; discrepancias: {'trabajo': 0, 'pareja': 0, 'ejercicio': 0, 'cuidado': 0}"
+p05,Codificación idéntica a la Fase 38R,superada,90 ítems idénticos a la matriz principal de la Fase 38R
+p06,"Sin ítems del MRS, etiquetas ni variables excluidas entre los antecedentes",superada,"ningún ítem del MRS, de los segmentos, de A/B1 ni de las variables excluidas en los antecedentes; problemas: []"
+p07,Sin reglas contradictorias,superada,53054 reglas sin dos estados de una misma variable y con un solo consecuente
+p08,Sin la variable del estrato ni condiciones constantes,superada,sin la variable del estrato ni ítems constantes dentro del estrato; problemas: []
+p09,"Soporte, confianza, lift y diferencias de riesgo",superada,300 reglas recalculadas desde las matrices de los estratos; error máximo 4.44e-16
+p10,Referencia nula dentro del estrato,superada,primeras 100 permutaciones del estrato «3 días o más» recalculadas: máximo |z| igual; severas constantes (26)
+p11,Comparación entre estratos,superada,"diferencias de riesgo, Q, Δ y z recalculados de forma independiente en hasta 150 antecedentes por dimensión; error máximo 4.44e-15; Q = z² con dos estratos"
+p12,Referencia nula de la comparación,superada,"1.000 permutaciones solo dentro de los estratos, con las severas de cada estrato constantes; máximo Q de las primeras 100 recalculado"
+p13,Calibración del estadístico de interacción,superada,"simulación con asociación común no nula sin interacción: rechazo 0.055 (esperado ≈ 0,05); con interacción: potencia 0.971"
+p14,Control de la búsqueda múltiple,superada,p ajustados por máximo Q recalculados para todas las comparaciones; BH sobre todas las filas evaluadas; ajuste conjunto ≥ ajuste por dimensión o estrato
+p15,Tratamiento de imputaciones,superada,en S1 ninguna celda imputada o deducida genera ítem (0 casos)
+p16,Reproducibilidad de reglas y nula,superada,búsqueda y nula del estrato «3 días o más» repetidas desde cero: 41 reglas idénticas
+p17,Etiquetas A y B1 intactas,superada,"etiquetas A y B1 iguales a los archivos históricos, con las mismas huellas y tamaños (150/76/132/171 y 150/79/126/174)"
+p18,Fases anteriores sin cambios (control correctivo),superada,6462 archivos de las Fases 34 a 39 por manifiesto; diferencias no documentadas: []
+p19,src/ sin cambios desde la medición inicial (control correctivo),superada,archivos de src/ iguales a la medición inicial; distintos: 0
+p20,Sello del protocolo previo a los resultados,superada,"protocolo íntegro (sha c17c5bf05cc8…), sellado antes de todos los resultados; sin modo de humo"
+p21,Clasificación,superada,clases de reglas y comparaciones recalculadas con las reglas excluyentes del protocolo
+p22,Conclusión mecánica,superada,"conclusión mecánica recalculada: 0 comparaciones H5, 0 consistentes, 0 reglas de clase 5 con nula conjunta → resultado C"
+p23,Exclusiones en todas las entradas y salidas de modelado,superada,"sin prevision, usa_medicamentos_diabetes ni doble_carga en la matriz, las reglas, A/B1 y las comparaciones; problemas: []"
+p24,Construcción independiente de la lista histórica,superada,7 configuraciones iguales a la histórica sin las variables retiradas; la construcción no consulta N38.PRINCIPAL
+p25,Módulos de S7a y S7b,superada,"[('S7a', 309, 287, 22), ('S7b', 251, 251, 0)]: S7a sobre 309 (22 sin respuestas laborales) y S7b sobre 251; no se usa 263"
+p26,Reproducibilidad de la comparación,superada,"comparación de trabajo, nula y estabilidad repetidas desde cero: 1348 comparaciones idénticas"
+p27,Salidas coinciden con el protocolo sellado,superada,"9 estratos, 11 sensibilidades, 8 grupos, 1.000 permutaciones por referencia; problemas: []"

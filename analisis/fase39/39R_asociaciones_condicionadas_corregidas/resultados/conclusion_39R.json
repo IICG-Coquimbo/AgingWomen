@@ -1,0 +1,16 @@
+{
+ "diferencias_H5": 0,
+ "diferencias_consistentes": 0,
+ "diferencias_consistentes_lectura_estricta_S9": 0,
+ "reglas_clase5": 0,
+ "reglas_clase5_que_superan_nula_conjunta": 0,
+ "reglas_superan_nula_estrato": 0,
+ "reglas_superan_nula_conjunta": 0,
+ "comparaciones_superan_nula_dimension": 0,
+ "comparaciones_superan_nula_conjunta": 0,
+ "resultado": "C",
+ "resultado_lectura_estricta_S9": "C",
+ "la_lectura_de_S9_cambia_el_resultado": false,
+ "texto": "Las asociaciones son débiles o compatibles con el azar y no se identifican diferencias suficientemente consistentes.",
+ "detalle_H5": []
+}
