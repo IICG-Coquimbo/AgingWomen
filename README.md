@@ -13,6 +13,13 @@ menstruación; se valida también en el servidor).
 
 Requiere Docker y Docker Compose.
 
+**Antes del primer arranque** crea el archivo privado `.env.desarrollo` (en la
+raíz, junto a `docker-compose.yml`) con `SECRET_KEY`, `RUT_HASH_PEPPER`,
+`DB_PASSWORD` y `POSTGRES_PASSWORD`; la plantilla está en `.env.example`. No se
+sube a GitHub (`.gitignore`) y sin él Django no arranca. Si vas a usar una base
+local ya creada, pide los valores de desarrollo a la responsable por un canal
+privado: con otro `RUT_HASH_PEPPER` las cuentas no pueden entrar con su RUT.
+
 ```bash
 docker compose up -d db          # base de datos PostgreSQL
 docker compose build web         # instala dependencias (Django, bcrypt, ...)
@@ -72,12 +79,18 @@ docker compose run --rm web python manage.py test
 
 ## Configuración
 
-Variables de entorno relevantes (ver `docker-compose.yml`):
+Variables de entorno relevantes (ver `docker-compose.yml` y `.env.example`). El
+código no tiene valores por defecto para los secretos: si falta uno, no arranca.
 
 | Variable | Uso |
 |---|---|
-| `RUT_HASH_PEPPER` | secreto para el hash HMAC-SHA256 del RUT. **En producción debe ser un valor secreto y estable** (si cambia, los RUT dejan de coincidir). |
-| `SECRET_KEY`, `DB_*`, `DEBUG` | estándar de Django |
+| `RUT_HASH_PEPPER` | obligatoria. Secreto para el hash HMAC-SHA256 del RUT. **Debe ser secreto y estable** (si cambia, los RUT dejan de coincidir). En producción, mínimo 32 caracteres. |
+| `SECRET_KEY`, `DB_PASSWORD` | obligatorias. En producción, `SECRET_KEY` de al menos 50 caracteres y distinta a la de desarrollo |
+| `DEBUG` | desactivado por defecto; `DEBUG=1` solo en desarrollo (docker-compose lo fija). Sin `DEBUG` se exige el perfil de producción: cookies seguras, `ALLOWED_HOSTS` sin `*` y correo real |
+| `ALLOWED_HOSTS`, `CSRF_TRUSTED_ORIGINS` | listas separadas por comas |
+| `SECURE_SSL_REDIRECT`, `DETRAS_DE_PROXY_HTTPS`, `SECURE_HSTS_SECONDS` | apagadas por defecto; activarlas solo al confirmar el despliegue con HTTPS |
+
+Antes de desplegar: `python manage.py check --deploy` con las variables del servidor.
 
 ## Personalización visual
 

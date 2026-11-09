@@ -1,0 +1,42 @@
+LOG Fase 34D / 35A — EDA univariado y preprocesamiento
+Fecha de ejecución: 2026-11-01 23:29
+Conjunto: datos\limpio_usuaria\dataset_usuaria_limpio.csv (sha256 4ecfd5169997bab0)
+Semilla: 42
+Filas: 546 tras la limpieza → 529 con MRS completo (sin cambio de filas en los filtros)
+Objetivo severo_mrs: 1 = 281, 0 = 248 (razón de desbalance 1.13:1)
+
+Variables candidatas: 52
+Eliminadas por decisión de la profesora: peso_kg, talla_actual_cm, cuida_otras_personas, sobrecarga_fisica_emocional, a_quien_cuida
+Eliminadas por baja variabilidad (> 85 %): genero, origen_procedencia, tiene_ovario, usa_terapia_hormonal, bebidas_energeticas_dia, pueblo_originario_afro, marihuana_frecuencia, tiene_utero, tipo_metodo_anticonceptivo
+Conservadas pese a la dominancia: usa_medicamentos_diabetes, prevision
+Eliminadas por redundancia (> 0.8): realiza_fuerza (queda frecuencia_fuerza), realiza_aerobico (queda frecuencia_aerobico), realiza_bajo_impacto (queda frecuencia_bajo_impacto)
+Predictoras finales (35): edad, imc, prevision, usa_medicamentos_diabetes, trabaja_actualmente, tiene_pareja, tiene_actividad_sexual, operada_no_mas_hijos, usa_medicamentos_presion, evacuacion_intestinal, distension_abdominal, lugar_trabajo_comprensivo, estres_entorno_laboral, cantidad_personas_cuida, doble_carga, dias_ejercicio_semana, frecuencia_aerobico, frecuencia_bajo_impacto, frecuencia_fuerza, horas_sedentarismo, quien_prepara_comidas, frecuencia_comida_fuera, falta_tiempo_influye, vasos_agua_dia, platos_verduras_dia, frutas_dia, panes_dia, lacteos_dia, jugos_gaseosas_dia, pescado_semana, legumbres_semana, carnes_semana, golosinas_semana, tabaco_frecuencia, alcohol_frecuencia
+Solo descriptivas, fuera del modelado (no son candidatas): etapa_menopausica, menstruacion_llega, tipo_sangrado, usa_metodo_anticonceptivo
+
+Imputaciones de esta fase:
+  - imc: 262 valores (49.5 %) con la media 29.23
+  - lugar_trabajo_comprensivo: 22 trabajadoras sin respuesta → mediana
+  - estres_entorno_laboral: 22 trabajadoras sin respuesta → mediana
+  - cantidad_personas_cuida = 0 para quienes no cuidan; frecuencias de ejercicio = 0 si no lo realiza
+  - preguntas laborales y tipo de método anticonceptivo: categoría "no aplica" (no es imputación)
+
+Verificaciones:
+  [OK] variables solo descriptivas fuera de las predictoras y de dataset_fase35.csv
+  [OK] variables solo descriptivas presentes en el conjunto limpio
+  [OK] ninguna predictora con el "no aplica" de las preguntas menstruales
+  [OK] edad se mantiene como candidata
+  [OK] 35 predictoras
+  [OK] sin fuga de información (objetivo, ítems MRS, consecuencias, auditoría)
+  [OK] sin variables del personal de salud
+  [OK] no se leyeron dataset_usuaria_verdad.csv ni bitacora_suciedad.csv
+  [OK] predictoras sin vacíos
+  [OK] IMC numérico tras imputar
+  [OK] ordinales con su orden (códigos numéricos)
+
+Advertencias y limitaciones:
+  - La imputación por la media deja a 49.5 % de las participantes con el mismo IMC; reduce la variabilidad y acerca a 0 la asociación del IMC (ver imc_imputacion.csv).
+  - La Fase 34B ya había imputado por moda/mediana hasta un 7 % de varias preguntas; eso eleva un poco la dominancia (ver pct_dominante_sin_imputados_34B en eda_univariado_resumen.csv).
+  - "No aplica" se codifica 0 en las ordinales de trabajo: no es un punto de la escala; la Fase 36 debe codificarlo como indicador aparte antes de escalar.
+  - Edad: Se mantiene como candidata: es una característica demográfica y no equivale a la etapa menopáusica, aunque aporta información indirecta sobre la etapa reproductiva. No se usa la clasificación derivada. La Fase 37 comparará la segmentación con y sin edad (métricas de calidad, tamaño de los grupos e interpretabilidad), priorizando los patrones de hábitos, estilos de vida y contexto laboral.
+  - La V de Cramér y la rho de Spearman no están en la misma escala; el umbral 0,80 se aplica a ambas.
+  - El conjunto es sintético: las asociaciones esperadas fueron puestas por la simulación y se verifican, no se descubren.

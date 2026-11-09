@@ -1,0 +1,15 @@
+error_introducido,prueba,detectado
+Se pierde una fila de coordenadas,p01,True
+Coordenadas en otro orden,p02,True
+Coordenadas reescaladas,p04,True
+Un candidato no coincide con los primeros ejes,p17,True
+Valores propios sin el factor 528/529,p07,True
+Valores propios sin el factor 528/529,p08,True
+Componentes no ortogonales,p07,True
+Componentes no ortogonales,p09,True
+Entra una variable del MRS,p05,True
+Valor propio negativo,p06,True
+IMC estandarizado otra vez,p03,True
+IMC estandarizado otra vez,p08,True
+Contribuciones alteradas,p18,True
+Baricentros alterados,p19,True

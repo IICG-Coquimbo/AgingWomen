@@ -1,0 +1,16 @@
+﻿punto,comprobacion,resultado,detalle
+1,Permanecen 529 participantes analíticas,OK,529 filas en dataset_fase35.csv
+2,Permanecen 33 variables elegibles,OK,33 filas en relevancia_33.csv
+3,No cambiaron los datasets,OK,511 archivos revisados; 0 con cambios
+4,No cambiaron los resultados de Shannon ni de FCBF de la revisión de 33 variables,OK,99 archivos revisados; 0 con cambios
+5,No cambiaron los resultados de Shannon y FCBF previos,OK,58 archivos revisados; 0 con cambios
+6,No cambiaron los resultados de Random Forest,OK,44 archivos revisados; 0 con cambios
+7,No se sobrescribieron informes históricos,OK,35 archivos revisados; 0 con cambios
+8,No se sobrescribieron figuras históricas,OK,200 archivos revisados; 0 con cambios
+8b,Se conservaron los entregables de la corrección controlada,OK,132 archivos revisados; 0 con cambios
+9,Los cambios de código del cierre se limitan a H11 y H13,OK,"Cambiaron: analisis/eda/univariado.py, analisis/eda_usuaria.py"
+9b,"Respecto de la línea base de la corrección, solo difieren los 8 scripts autorizados",OK,8 modificados; 0 eliminados; 0 fuera de lo autorizado; línea base de 998 archivos
+10,No se ejecutaron procesos destructivos,OK,"0 archivos eliminados esperados, 0 detectados; figuras: 200 antes y 200 después"
+11,No se inició ninguna fase posterior,OK,0 archivos nuevos de fases posteriores
+12,No se realizó commit ni push,OK,HEAD 745d689; área de preparación vacía: True; rama remota: no existe
+12b,Los archivos versionados modificados siguen siendo los 8 autorizados,OK,8 archivos modificados frente a HEAD

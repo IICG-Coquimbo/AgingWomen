@@ -1,0 +1,71 @@
+{
+ "variables": [
+  "trabaja_actualmente",
+  "tiene_pareja",
+  "dias_ejercicio_semana"
+ ],
+ "celdas_posibles": 20,
+ "celdas_observadas": 20,
+ "B1": {
+  "tipo": "Mayoría por celda; aproximación a A, no validación independiente",
+  "mapa": [
+   0,
+   0,
+   1,
+   1,
+   1,
+   2,
+   2,
+   1,
+   1,
+   1,
+   0,
+   0,
+   1,
+   1,
+   1,
+   3,
+   3,
+   1,
+   1,
+   1
+  ],
+  "segmentos": 4
+ },
+ "B2": {
+  "tipo": "K-means k = 4 sobre tres columnas z de P2; sin etiquetas de A, pero el trío se eligió antes por reproducir a A",
+  "centros_z": [
+   [
+    0.8437855829725721,
+    0.6971047670040519,
+    -0.3056048728627622
+   ],
+   [
+    0.027268680425333022,
+    -1.4345046072453382,
+    -0.202863262941092
+   ],
+   [
+    -1.1851352051751107,
+    0.6971047670040526,
+    -0.18624959961271478
+   ],
+   [
+    0.34690702260987405,
+    0.30558467785620624,
+    2.303923798887043
+   ]
+  ],
+  "columnas": [
+   "trabaja_actualmente",
+   "tiene_pareja",
+   "dias_ejercicio_semana"
+  ],
+  "n_init": 50,
+  "random_state": 42
+ },
+ "B2_C": {
+  "tipo": "Pareja × trabajo × ejercicio bajo o alto",
+  "corte_en_codigo": 2.411279887482418
+ }
+}

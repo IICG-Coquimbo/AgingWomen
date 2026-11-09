@@ -1,0 +1,35 @@
+variable,en_antigua,en_33,comparable_solo_descriptivamente,pct_antigua_adaptado,pct_33_adaptado,diferencia_descriptiva_adaptado_pp,pct_antigua_estandar,pct_33_estandar,diferencia_descriptiva_estandar_pp,nota
+imc,False,True,False,,39.0,,,29.2,,solo en las 33 (antes era control o no existía)
+frecuencia_fuerza,True,True,True,38.6,35.2,-3.4,36.4,32.6,-3.8,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+trabaja_actualmente,False,True,False,,32.6,,,33.6,,solo en las 33 (antes era control o no existía)
+lugar_trabajo_comprensivo,True,True,True,34.0,31.4,-2.6,22.0,20.4,-1.6,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+tabaco_frecuencia,True,True,True,28.8,28.8,0.0,17.6,16.4,-1.2,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+dias_ejercicio_semana,True,True,True,24.6,22.0,-2.6,22.2,19.0,-3.2,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+frecuencia_bajo_impacto,True,True,True,19.4,21.8,2.4,17.2,18.6,1.4,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+sobrecarga_fisica_emocional,False,True,False,,20.4,,,11.8,,solo en las 33 (antes era control o no existía)
+quien_prepara_comidas,True,True,True,23.4,17.0,-6.4,15.6,12.6,-3.0,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+usa_medicamentos_presion,True,True,True,12.0,15.6,3.6,11.2,14.8,3.6,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+tiene_pareja,True,True,True,10.8,14.2,3.4,10.4,12.0,1.6,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+estres_entorno_laboral,True,True,True,15.0,9.8,-5.2,10.2,9.6,-0.6,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+falta_tiempo_influye,True,True,True,11.8,9.4,-2.4,5.6,5.2,-0.4,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+pescado_semana,True,True,True,9.4,9.2,-0.2,4.4,3.4,-1.0,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+frutas_dia,True,True,True,7.2,7.6,0.4,3.8,2.6,-1.2,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+distension_abdominal,True,True,True,5.6,5.8,0.2,2.0,2.0,0.0,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+cantidad_personas_cuida,True,True,True,4.6,5.6,1.0,3.2,3.8,0.6,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+frecuencia_aerobico,True,True,True,5.8,5.2,-0.6,5.8,4.8,-1.0,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+alcohol_frecuencia,True,True,True,6.6,5.0,-1.6,2.2,1.6,-0.6,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+vasos_agua_dia,True,True,True,6.6,4.4,-2.2,1.8,1.2,-0.6,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+frecuencia_comida_fuera,True,True,True,6.4,4.0,-2.4,2.2,0.8,-1.4,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+operada_no_mas_hijos,True,True,True,2.2,3.8,1.6,1.8,2.8,1.0,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+horas_sedentarismo,True,True,True,2.6,3.2,0.6,0.0,0.6,0.6,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+legumbres_semana,True,True,True,1.8,3.2,1.4,1.0,1.2,0.2,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+tiene_actividad_sexual,True,True,True,1.8,3.2,1.4,1.4,2.4,1.0,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+platos_verduras_dia,True,True,True,2.2,1.8,-0.4,0.6,0.2,-0.4,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+lacteos_dia,True,True,True,1.4,1.6,0.2,0.8,1.0,0.2,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+evacuacion_intestinal,True,True,True,0.6,1.2,0.6,0.0,0.0,0.0,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+panes_dia,True,True,True,1.8,1.0,-0.8,0.2,0.2,0.0,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+jugos_gaseosas_dia,True,True,True,1.8,1.0,-0.8,0.8,0.6,-0.2,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+carnes_semana,True,True,True,0.2,0.8,0.6,0.2,0.2,0.0,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+golosinas_semana,True,True,True,0.2,0.4,0.2,0.0,0.0,0.0,"en ambas; cambió el umbral (0,05 -> 0,10), la familia y la competencia"
+edad,False,True,False,,0.2,,,0.0,,solo en las 33 (antes era control o no existía)
+doble_carga,True,False,False,26.8,,,29.4,,,solo en la antigua

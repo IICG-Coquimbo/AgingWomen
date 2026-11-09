@@ -11,6 +11,11 @@
         <p class="ayuda">Ingresa con tu RUT y tu contraseña.</p>
     </div>
 
+    {% if request.GET.inactividad %}
+        <p class="aviso-evolucion" role="status" data-aviso-inactividad>Tu sesión se cerró por inactividad.
+            Las respuestas que no alcanzaste a enviar siguen protegidas en este dispositivo y se enviarán
+            cuando vuelvas a ingresar con tu cuenta.</p>
+    {% endif %}
     {% if form.non_field_errors %}
         {# Fase 28: el mismo mensaje exista o no el RUT (no revela quién está registrada). #}
         <div class="acceso-error" role="alert">

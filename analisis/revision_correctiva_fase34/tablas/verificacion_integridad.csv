@@ -1,0 +1,22 @@
+﻿comprobacion,resultado,detalle
+Archivos fuera de la carpeta de revisión: ninguno nuevo ni eliminado,OK,faltan 0; nuevos 0
+Solo cambió código autorizado,OK,8 modificados; no autorizados: []
+Git: versionados modificados = código autorizado,OK,"analisis/eda/informe_multivariado.py, analisis/eda/informe_usuaria.py, analisis/eda/multivariado.py, analisis/eda/univariado.py, analisis/eda/variables.py, analisis/eda_univariado.py, analisis/eda_usuaria.py, analisis/limpieza/informe.py"
+HEAD sin cambios: sin commit,OK,745d689
+SHA-256 idéntico: Conjuntos sintéticos verdadero y sucio,OK,3 archivos
+SHA-256 idéntico: Conjunto limpio de 546 registros,OK,3 archivos
+"SHA-256 idéntico: Conjuntos analíticos, incluido el de 529 y 33 variables",OK,505 archivos
+SHA-256 idéntico: Shannon y FCBF: revisión del 03-11,OK,99 archivos
+SHA-256 idéntico: Shannon y FCBF: complementarios,OK,23 archivos
+SHA-256 idéntico: Resultados del EDA y de la Fase 35,OK,46 archivos
+SHA-256 idéntico: Random Forest,OK,45 archivos
+SHA-256 idéntico: Figuras históricas,OK,200 archivos
+SHA-256 idéntico: Informes Word de la Fase 35B,OK,1 archivos
+SHA-256 idéntico: informes históricos .md,OK,19 archivos
+SHA-256 idéntico: todo lo protegido,OK,990 archivos
+Conjunto analítico: 529 registros,OK,529
+Conjunto limpio: 546 registros,OK,546
+"Shannon 10000: 33 variables, 30 generales, 2 laborales y 1 de cuidadoras",OK,"{'general': 30, 'laboral': 2, 'cuidadoras': 1}"
+"Shannon 10000: siguen excluidas diabetes, doble carga y previsión",OK,[]
+"Shannon 50000: 33 variables, 30 generales, 2 laborales y 1 de cuidadoras",OK,"{'general': 30, 'laboral': 2, 'cuidadoras': 1}"
+"Shannon 50000: siguen excluidas diabetes, doble carga y previsión",OK,[]

@@ -1,0 +1,9 @@
+lectura,siguen,conclusion,es_el_protocolo
+Regla del protocolo (regla V: S-SOLAPE no bloquea B),P2_c12_km_k4 | P2_c08_km_k4,B,True
+"S-SOLAPE bajo 0,40 bloquea la selección",Ninguna,C,False
+"Ridit como codificación: E3 entre ≥ 0,65 y p05 ≥ 0,50",Ninguna,C,False
+"Puntuaciones normales: E3 entre ≥ 0,65 y p05 ≥ 0,50",P2_c12_km_k4 | P2_c08_km_k4,B,False
+Exigir que la silueta supere a la referencia correlacionada,Ninguna,C,False
+Exigir estabilidad E1 sobre la referencia,P2_c12_km_k4 | P2_c08_km_k4,B,False
+"Reconstrucción con 2 variables bajo 0,50, no 0,65",Ninguna,C,False
+"S-ORD completa ≥ 0,70, no 0,40",Ninguna,C,False

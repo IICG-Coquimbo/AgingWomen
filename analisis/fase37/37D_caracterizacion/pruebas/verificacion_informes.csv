@@ -1,0 +1,70 @@
+verificacion,resultado,detalle
+01_protocolo_37D: fuente y Word existen,superada,
+01_protocolo_37D: imágenes referidas existen,superada,
+01_protocolo_37D: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+01b_nota_posterior: fuente y Word existen,superada,
+01b_nota_posterior: imágenes referidas existen,superada,
+01b_nota_posterior: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+03_diccionario_variables: fuente y Word existen,superada,
+03_diccionario_variables: imágenes referidas existen,superada,
+03_diccionario_variables: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+03_diccionario_variables: sin valores vacíos ni campos sin sustituir,superada,
+04_caracterizacion_general: fuente y Word existen,superada,
+04_caracterizacion_general: imágenes referidas existen,superada,
+04_caracterizacion_general: Word contiene las imágenes,superada,"4 en Word, 4 referidas"
+04_caracterizacion_general: sin valores vacíos ni campos sin sustituir,superada,
+05_caracterizacion_segmentos_A: fuente y Word existen,superada,
+05_caracterizacion_segmentos_A: imágenes referidas existen,superada,
+05_caracterizacion_segmentos_A: Word contiene las imágenes,superada,"1 en Word, 1 referidas"
+05_caracterizacion_segmentos_A: sin valores vacíos ni campos sin sustituir,superada,
+06_caracterizacion_segmentos_B1: fuente y Word existen,superada,
+06_caracterizacion_segmentos_B1: imágenes referidas existen,superada,
+06_caracterizacion_segmentos_B1: Word contiene las imágenes,superada,"1 en Word, 1 referidas"
+06_caracterizacion_segmentos_B1: sin valores vacíos ni campos sin sustituir,superada,
+07_individual_frente_a_MRS: fuente y Word existen,superada,
+07_individual_frente_a_MRS: imágenes referidas existen,superada,
+07_individual_frente_a_MRS: Word contiene las imágenes,superada,"3 en Word, 3 referidas"
+07_individual_frente_a_MRS: sin valores vacíos ni campos sin sustituir,superada,
+08_mrs_por_segmento_A: fuente y Word existen,superada,
+08_mrs_por_segmento_A: imágenes referidas existen,superada,
+08_mrs_por_segmento_A: Word contiene las imágenes,superada,"3 en Word, 3 referidas"
+08_mrs_por_segmento_A: sin valores vacíos ni campos sin sustituir,superada,
+09_mrs_por_segmento_B1: fuente y Word existen,superada,
+09_mrs_por_segmento_B1: imágenes referidas existen,superada,
+09_mrs_por_segmento_B1: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+09_mrs_por_segmento_B1: sin valores vacíos ni campos sin sustituir,superada,
+10_comparacion_tres_perspectivas: fuente y Word existen,superada,
+10_comparacion_tres_perspectivas: imágenes referidas existen,superada,
+10_comparacion_tres_perspectivas: Word contiene las imágenes,superada,"3 en Word, 3 referidas"
+10_comparacion_tres_perspectivas: sin valores vacíos ni campos sin sustituir,superada,
+11_sensibilidades_limitaciones: fuente y Word existen,superada,
+11_sensibilidades_limitaciones: imágenes referidas existen,superada,
+11_sensibilidades_limitaciones: Word contiene las imágenes,superada,"1 en Word, 1 referidas"
+11_sensibilidades_limitaciones: sin valores vacíos ni campos sin sustituir,superada,
+12_figuras_tablas: fuente y Word existen,superada,
+12_figuras_tablas: imágenes referidas existen,superada,
+12_figuras_tablas: Word contiene las imágenes,superada,"16 en Word, 16 referidas"
+12_figuras_tablas: sin valores vacíos ni campos sin sustituir,superada,
+15_informe_final_37D: fuente y Word existen,superada,
+15_informe_final_37D: imágenes referidas existen,superada,
+15_informe_final_37D: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+15_informe_final_37D: sin valores vacíos ni campos sin sustituir,superada,
+16_nota_fases_38_39: fuente y Word existen,superada,
+16_nota_fases_38_39: imágenes referidas existen,superada,
+16_nota_fases_38_39: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+16_nota_fases_38_39: sin valores vacíos ni campos sin sustituir,superada,
+00_indice_entregables: existe y sin valores vacíos,superada,
+02_integridad_inicial: existe y sin valores vacíos,superada,
+13_informe_pruebas: existe y sin valores vacíos,superada,
+14_informe_integridad_final: existe y sin valores vacíos,superada,
+Advertencia «sintético»,superada,
+Advertencia «no constituye una validación independiente»,superada,
+Advertencia «no es un modelo clínico»,superada,
+Advertencia «El ARI no es un porcentaje»,superada,
+Advertencia «No se usa para elegir»,superada,
+Advertencia «No ejecuta Apriori»,superada,
+Advertencia «no por haber resultado asociadas»,superada,
+Advertencia «No se elige ningún modelo»,superada,
+Sin nombres clínicos para los grupos,superada,
+Índice enlaza los 16 entregables,superada,
+Resumen JSON existe,superada,

@@ -1,0 +1,125 @@
+﻿escenario,variable,grupo,n,su,p,q_familia_31,q_familia_30,relevante
+C3,alcohol_frecuencia,no laboral,529,0.005103,0.318514,0.548551,0.562083,False
+C3,cantidad_personas_cuida,no laboral,529,0.007843,0.053679,0.193622,0.208196,False
+C3,carnes_semana,no laboral,529,0.000648,0.956121,0.964941,0.964941,False
+C3,dias_ejercicio_semana,no laboral,529,0.018255,0.002440,0.037819,0.036599,True
+C3,distension_abdominal,no laboral,529,0.003208,0.370813,0.605010,0.618021,False
+C3,doble_carga,no laboral,529,0.009384,0.014660,0.092254,0.089278,False
+C3,estres_entorno_laboral,laboral,287,0.015609,0.047139,0.193622,0.208196,False
+C3,evacuacion_intestinal,no laboral,529,0.000771,0.866643,0.964941,0.964941,False
+C3,falta_tiempo_influye,no laboral,529,0.007014,0.108098,0.257772,0.270245,False
+C3,frecuencia_aerobico,no laboral,529,0.008625,0.163137,0.337149,0.349579,False
+C3,frecuencia_bajo_impacto,no laboral,529,0.016664,0.002400,0.037819,0.036599,True
+C3,frecuencia_comida_fuera,no laboral,529,0.004670,0.209376,0.405666,0.418752,False
+C3,frecuencia_fuerza,no laboral,529,0.019287,0.011400,0.092254,0.089278,False
+C3,frutas_dia,no laboral,529,0.003578,0.408992,0.633937,0.645777,False
+C3,golosinas_semana,no laboral,529,0.000547,0.964941,0.964941,0.964941,False
+C3,horas_sedentarismo,no laboral,529,0.002039,0.530229,0.742179,0.750885,False
+C3,jugos_gaseosas_dia,no laboral,529,0.001079,0.785944,0.937087,0.943133,False
+C3,lacteos_dia,no laboral,529,0.000362,0.959741,0.964941,0.964941,False
+C3,legumbres_semana,no laboral,529,0.001500,0.550649,0.742179,0.750885,False
+C3,lugar_trabajo_comprensivo,laboral,287,0.020521,0.014880,0.092254,0.089278,False
+C3,operada_no_mas_hijos,no laboral,529,0.000583,0.583528,0.753724,0.761124,False
+C3,panes_dia,no laboral,529,0.000604,0.916842,0.964941,0.964941,False
+C3,pescado_semana,no laboral,529,0.003037,0.270535,0.493328,0.507252,False
+C3,platos_verduras_dia,no laboral,529,0.002031,0.702086,0.870587,0.877607,False
+C3,quien_prepara_comidas,no laboral,529,0.010750,0.062459,0.193622,0.208196,False
+C3,sobrecarga_fisica_emocional,cuidadoras,239,0.020333,0.041779,0.193622,,False
+C3,tabaco_frecuencia,no laboral,529,0.011628,0.062119,0.193622,0.208196,False
+C3,tiene_actividad_sexual,no laboral,529,0.000561,0.543889,0.742179,0.750885,False
+C3,tiene_pareja,no laboral,529,0.003246,0.135837,0.300783,0.313471,False
+C3,usa_medicamentos_presion,no laboral,529,0.005401,0.081338,0.218856,0.231050,False
+C3,vasos_agua_dia,no laboral,529,0.007348,0.084718,0.218856,0.231050,False
+C4,alcohol_frecuencia,no laboral,529,0.005103,0.318514,0.548551,0.562083,False
+C4,cantidad_personas_cuida,no laboral,529,0.007843,0.053679,0.193622,0.208196,False
+C4,carnes_semana,no laboral,529,0.000648,0.956121,0.964941,0.964941,False
+C4,dias_ejercicio_semana,no laboral,529,0.018255,0.002440,0.037819,0.036599,True
+C4,distension_abdominal,no laboral,529,0.003208,0.370813,0.605010,0.618021,False
+C4,doble_carga,no laboral,529,0.009384,0.014660,0.092254,0.089278,True
+C4,estres_entorno_laboral,laboral,287,0.015609,0.047139,0.193622,0.208196,False
+C4,evacuacion_intestinal,no laboral,529,0.000771,0.866643,0.964941,0.964941,False
+C4,falta_tiempo_influye,no laboral,529,0.007014,0.108098,0.257772,0.270245,False
+C4,frecuencia_aerobico,no laboral,529,0.008625,0.163137,0.337149,0.349579,False
+C4,frecuencia_bajo_impacto,no laboral,529,0.016664,0.002400,0.037819,0.036599,True
+C4,frecuencia_comida_fuera,no laboral,529,0.004670,0.209376,0.405666,0.418752,False
+C4,frecuencia_fuerza,no laboral,529,0.019287,0.011400,0.092254,0.089278,True
+C4,frutas_dia,no laboral,529,0.003578,0.408992,0.633937,0.645777,False
+C4,golosinas_semana,no laboral,529,0.000547,0.964941,0.964941,0.964941,False
+C4,horas_sedentarismo,no laboral,529,0.002039,0.530229,0.742179,0.750885,False
+C4,jugos_gaseosas_dia,no laboral,529,0.001079,0.785944,0.937087,0.943133,False
+C4,lacteos_dia,no laboral,529,0.000362,0.959741,0.964941,0.964941,False
+C4,legumbres_semana,no laboral,529,0.001500,0.550649,0.742179,0.750885,False
+C4,lugar_trabajo_comprensivo,laboral,287,0.020521,0.014880,0.092254,0.089278,True
+C4,operada_no_mas_hijos,no laboral,529,0.000583,0.583528,0.753724,0.761124,False
+C4,panes_dia,no laboral,529,0.000604,0.916842,0.964941,0.964941,False
+C4,pescado_semana,no laboral,529,0.003037,0.270535,0.493328,0.507252,False
+C4,platos_verduras_dia,no laboral,529,0.002031,0.702086,0.870587,0.877607,False
+C4,quien_prepara_comidas,no laboral,529,0.010750,0.062459,0.193622,0.208196,False
+C4,sobrecarga_fisica_emocional,cuidadoras,239,0.020333,0.041779,0.193622,,False
+C4,tabaco_frecuencia,no laboral,529,0.011628,0.062119,0.193622,0.208196,False
+C4,tiene_actividad_sexual,no laboral,529,0.000561,0.543889,0.742179,0.750885,False
+C4,tiene_pareja,no laboral,529,0.003246,0.135837,0.300783,0.313471,False
+C4,usa_medicamentos_presion,no laboral,529,0.005401,0.081338,0.218856,0.231050,False
+C4,vasos_agua_dia,no laboral,529,0.007348,0.084718,0.218856,0.231050,False
+S3,alcohol_frecuencia,no laboral,529,0.005103,0.318514,0.548551,0.562083,False
+S3,cantidad_personas_cuida,no laboral,529,0.007843,0.053679,0.193622,0.208196,False
+S3,carnes_semana,no laboral,529,0.000648,0.956121,0.964941,0.964941,False
+S3,dias_ejercicio_semana,no laboral,529,0.018255,0.002440,0.037819,0.036599,True
+S3,distension_abdominal,no laboral,529,0.003208,0.370813,0.605010,0.618021,False
+S3,doble_carga,no laboral,529,0.009384,0.014660,0.092254,0.089278,False
+S3,estres_entorno_laboral,laboral,287,0.015609,0.047139,0.193622,0.208196,False
+S3,evacuacion_intestinal,no laboral,529,0.000771,0.866643,0.964941,0.964941,False
+S3,falta_tiempo_influye,no laboral,529,0.007014,0.108098,0.257772,0.270245,False
+S3,frecuencia_aerobico,no laboral,529,0.008625,0.163137,0.337149,0.349579,False
+S3,frecuencia_bajo_impacto,no laboral,529,0.016664,0.002400,0.037819,0.036599,True
+S3,frecuencia_comida_fuera,no laboral,529,0.004670,0.209376,0.405666,0.418752,False
+S3,frecuencia_fuerza,no laboral,529,0.019287,0.011400,0.092254,0.089278,False
+S3,frutas_dia,no laboral,529,0.003578,0.408992,0.633937,0.645777,False
+S3,golosinas_semana,no laboral,529,0.000547,0.964941,0.964941,0.964941,False
+S3,horas_sedentarismo,no laboral,529,0.002039,0.530229,0.742179,0.750885,False
+S3,jugos_gaseosas_dia,no laboral,529,0.001079,0.785944,0.937087,0.943133,False
+S3,lacteos_dia,no laboral,529,0.000362,0.959741,0.964941,0.964941,False
+S3,legumbres_semana,no laboral,529,0.001500,0.550649,0.742179,0.750885,False
+S3,lugar_trabajo_comprensivo,laboral,287,0.020521,0.014880,0.092254,0.089278,False
+S3,operada_no_mas_hijos,no laboral,529,0.000583,0.583528,0.753724,0.761124,False
+S3,panes_dia,no laboral,529,0.000604,0.916842,0.964941,0.964941,False
+S3,pescado_semana,no laboral,529,0.003037,0.270535,0.493328,0.507252,False
+S3,platos_verduras_dia,no laboral,529,0.002031,0.702086,0.870587,0.877607,False
+S3,quien_prepara_comidas,no laboral,529,0.010750,0.062459,0.193622,0.208196,False
+S3,sobrecarga_fisica_emocional,cuidadoras,251,0.021310,0.029739,0.153654,,False
+S3,tabaco_frecuencia,no laboral,529,0.011628,0.062119,0.193622,0.208196,False
+S3,tiene_actividad_sexual,no laboral,529,0.000561,0.543889,0.742179,0.750885,False
+S3,tiene_pareja,no laboral,529,0.003246,0.135837,0.300783,0.313471,False
+S3,usa_medicamentos_presion,no laboral,529,0.005401,0.081338,0.218856,0.231050,False
+S3,vasos_agua_dia,no laboral,529,0.007348,0.084718,0.218856,0.231050,False
+S4,alcohol_frecuencia,no laboral,529,0.005103,0.318514,0.548551,0.562083,False
+S4,cantidad_personas_cuida,no laboral,529,0.007843,0.053679,0.193622,0.208196,False
+S4,carnes_semana,no laboral,529,0.000648,0.956121,0.964941,0.964941,False
+S4,dias_ejercicio_semana,no laboral,529,0.018255,0.002440,0.037819,0.036599,True
+S4,distension_abdominal,no laboral,529,0.003208,0.370813,0.605010,0.618021,False
+S4,doble_carga,no laboral,529,0.009384,0.014660,0.092254,0.089278,True
+S4,estres_entorno_laboral,laboral,287,0.015609,0.047139,0.193622,0.208196,False
+S4,evacuacion_intestinal,no laboral,529,0.000771,0.866643,0.964941,0.964941,False
+S4,falta_tiempo_influye,no laboral,529,0.007014,0.108098,0.257772,0.270245,False
+S4,frecuencia_aerobico,no laboral,529,0.008625,0.163137,0.337149,0.349579,False
+S4,frecuencia_bajo_impacto,no laboral,529,0.016664,0.002400,0.037819,0.036599,True
+S4,frecuencia_comida_fuera,no laboral,529,0.004670,0.209376,0.405666,0.418752,False
+S4,frecuencia_fuerza,no laboral,529,0.019287,0.011400,0.092254,0.089278,True
+S4,frutas_dia,no laboral,529,0.003578,0.408992,0.633937,0.645777,False
+S4,golosinas_semana,no laboral,529,0.000547,0.964941,0.964941,0.964941,False
+S4,horas_sedentarismo,no laboral,529,0.002039,0.530229,0.742179,0.750885,False
+S4,jugos_gaseosas_dia,no laboral,529,0.001079,0.785944,0.937087,0.943133,False
+S4,lacteos_dia,no laboral,529,0.000362,0.959741,0.964941,0.964941,False
+S4,legumbres_semana,no laboral,529,0.001500,0.550649,0.742179,0.750885,False
+S4,lugar_trabajo_comprensivo,laboral,287,0.020521,0.014880,0.092254,0.089278,True
+S4,operada_no_mas_hijos,no laboral,529,0.000583,0.583528,0.753724,0.761124,False
+S4,panes_dia,no laboral,529,0.000604,0.916842,0.964941,0.964941,False
+S4,pescado_semana,no laboral,529,0.003037,0.270535,0.493328,0.507252,False
+S4,platos_verduras_dia,no laboral,529,0.002031,0.702086,0.870587,0.877607,False
+S4,quien_prepara_comidas,no laboral,529,0.010750,0.062459,0.193622,0.208196,False
+S4,sobrecarga_fisica_emocional,cuidadoras,251,0.021310,0.029739,0.153654,,False
+S4,tabaco_frecuencia,no laboral,529,0.011628,0.062119,0.193622,0.208196,False
+S4,tiene_actividad_sexual,no laboral,529,0.000561,0.543889,0.742179,0.750885,False
+S4,tiene_pareja,no laboral,529,0.003246,0.135837,0.300783,0.313471,False
+S4,usa_medicamentos_presion,no laboral,529,0.005401,0.081338,0.218856,0.231050,False
+S4,vasos_agua_dia,no laboral,529,0.007348,0.084718,0.218856,0.231050,False

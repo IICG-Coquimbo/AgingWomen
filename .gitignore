@@ -31,3 +31,23 @@ ENV/
 *~
 .DS_Store
 Thumbs.db
+
+# Datos y fuentes de la simulación: PDF y docx públicos, se descargan aparte
+# (ver analisis/supuestos_simulacion.md §11). Solo se versiona el Excel de referencia.
+/datos/*
+!/datos/referencia/
+/datos/referencia/*
+!/datos/referencia/data_set_menopause.xlsx
+!/datos/dataset_menopausia_sucio.csv
+# Entradas sintéticas de los análisis (Fases 34-39). La verdad del simulador y la
+# bitácora de suciedad siguen ignoradas a propósito.
+!/datos/sintetico/
+/datos/sintetico/*
+!/datos/sintetico/dataset_usuaria_sucio.csv
+!/datos/limpio_usuaria/
+!/datos/analitico/
+
+# Registros de validación de 38R con huellas de archivos .env: solo en el respaldo privado.
+/analisis/fase38/38R_reglas_asociacion_corregidas/documentos_definitivos/validacion/huellas_final.csv
+/analisis/fase38/38R_reglas_asociacion_corregidas/documentos_definitivos/validacion/huellas_inicial.csv
+/analisis/fase38/38R_reglas_asociacion_corregidas/integridad/manifiesto_pendientes_inicial.csv

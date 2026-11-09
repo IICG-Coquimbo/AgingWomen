@@ -1,0 +1,9 @@
+{
+  "name": "agingwomen-documentos-38r-39r",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dependencia exacta para generar los Word correctivos de 38R y 39R.",
+  "dependencies": {
+    "docx": "9.15.2"
+  }
+}

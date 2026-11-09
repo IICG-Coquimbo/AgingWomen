@@ -1,0 +1,20 @@
+atributo,antigua,complemento_33
+Fecha,2026-11-02 21:13,2026-11-05
+Candidatas,30,33
+Excluidas respecto de la otra,"edad, imc, trabaja_actualmente, usa_medicamentos_diabetes (control), sobrecarga (no existía)","doble_carga, usa_medicamentos_diabetes, prevision"
+Método de remuestreo,"bootstrap estratificado por severo_mrs, con reemplazo",igual; mismas 500 muestras (misma semilla)
+Remuestreos,500,500
+Permutaciones por remuestreo,5.000,5.000
+Umbral de relevancia y de pares,"q < 0,05","q < 0,10"
+Familia BH,30,33
+Etapas FCBF,"no laboral, laboral","no laboral, laboral, cuidadoras"
+Semilla,"SeedSequence(42, (1, i, tipo, índice de 30))","SeedSequence(42, (1, i, tipo, índice de 34))"
+Procesos,11,1
+Nogueira (adaptado),0.121,0.129
+Jaccard promedio (adaptado),0.133,0.140
+Tamaño medio (adaptado),3.140,3.654
+Nogueira (estandar),0.126,0.128
+Jaccard promedio (estandar),0.135,0.133
+Tamaño medio (estandar),2.300,2.652
+Jaccard pareado medio entre corridas (adaptado),,0.486
+Jaccard pareado medio entre corridas (estandar),,0.599

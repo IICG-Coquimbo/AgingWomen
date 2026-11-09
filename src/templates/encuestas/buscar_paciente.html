@@ -9,17 +9,30 @@
         Busca a la paciente por su RUT para ver su historial o completar su
         encuesta. Si todavía no está registrada, puedes registrarla tú.
     </p>
-    <p><a href="{% url 'estadisticas' %}">Ver estadísticas agrupadas →</a></p>
+    <p><a href="{% url 'estadisticas' %}">Ver estadísticas generales →</a></p>
+    <p><a href="{% url 'retiro_presencial' %}" data-enlace-retiro-presencial>Registrar el retiro presencial de una participante sin cuenta →</a></p>
 
-    <form method="get">
+    <form method="post" autocomplete="off">
+        {% csrf_token %}
         <label for="rut">RUT de la paciente</label>
-        <input id="rut" name="rut" type="text" value="{{ rut }}"
+        <input id="rut" name="rut" type="text" value="{{ rut }}" autocomplete="off"
                placeholder="12.345.678-9" data-rut="true" maxlength="12" autofocus>
         <button type="submit" class="boton">Buscar</button>
     </form>
 
     {% if error %}
         <p class="errores">{{ error }}</p>
+    {% endif %}
+    {% if sin_consentimiento %}
+        <div class="aviso-evolucion" role="note" data-sin-consentimiento>
+            <p>Esta persona no tiene un consentimiento vigente: no se pueden registrar respuestas. Si lo aceptó en
+                persona y firmó el documento, registra su consentimiento presencial.</p>
+            <form method="post" action="{% url 'consentimiento_presencial' %}">
+                {% csrf_token %}
+                <input type="hidden" name="rut" value="{{ rut }}">
+                <button type="submit">Registrar consentimiento presencial</button>
+            </form>
+        </div>
     {% endif %}
     {% if puede_registrar %}
         <form method="post" action="{% url 'nueva_paciente' %}">

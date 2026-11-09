@@ -1,0 +1,14 @@
+﻿termino,variable,OR,IC95_inf,IC95_sup,p,OR_corte_leve_o_mas,OR_corte_moderada_o_mas,OR_corte_severa,triada
+"Sobrepeso (25-29,9)",A,1.1876,0.6637,2.1253,0.5625,0.3131,1.2669,1.4692,imc_ejercicio
+Obesidad (≥ 30),A,2.3276,1.2758,4.2465,0.0059,0.6610,2.2743,2.9421,imc_ejercicio
+1-2 días,B,0.7249,0.4269,1.2309,0.2336,1.2876,0.6687,0.7064,imc_ejercicio
+3 o más días,B,0.3506,0.1828,0.6725,0.0016,0.1682,0.4464,0.3565,imc_ejercicio
+Con doble carga,A,1.4072,0.8821,2.2448,0.1517,1.3893,1.1840,1.4181,doble_carga_estres
+Moderado,B,1.5114,0.8791,2.5985,0.1352,3.2622,1.9495,1.1923,doble_carga_estres
+Alto (alto o extremo),B,2.8978,1.5801,5.3146,0.0006,3.1415,3.7175,2.4505,doble_carga_estres
+Con medicamentos,A,2.2108,1.0471,4.6681,0.0375,3.8688,2.1498,2.2003,diabetes_imc
+"Sobrepeso (25-29,9)",B,1.3933,0.7854,2.4717,0.2567,0.4468,1.4432,1.7015,diabetes_imc
+Obesidad (≥ 30),B,2.4503,1.3500,4.4474,0.0032,0.7609,2.2894,2.9504,diabetes_imc
+Fuma,A,1.7031,1.1490,2.5245,0.0080,2.0774,1.5917,1.7152,tabaco_agua
+3-4 vasos,B,0.7275,0.4738,1.1172,0.1460,0.7448,0.9300,0.6826,tabaco_agua
+5 o más vasos,B,0.5899,0.3830,0.9086,0.0166,0.6544,0.6991,0.5538,tabaco_agua

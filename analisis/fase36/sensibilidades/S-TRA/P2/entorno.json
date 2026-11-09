@@ -1,0 +1,12 @@
+{
+ "version_parametros": "36B-1",
+ "fecha_version": "2026-11-05",
+ "commit": "745d689",
+ "semilla_validacion": 42,
+ "python": "3.12.5",
+ "numpy": "2.2.4",
+ "pandas": "2.2.3",
+ "scipy": "1.15.2",
+ "scikit_learn": "1.6.1",
+ "nota": "La construcción no usa azar. scikit-learn solo interviene en la validación con datos de prueba."
+}

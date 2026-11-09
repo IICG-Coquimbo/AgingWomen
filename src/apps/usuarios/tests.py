@@ -379,11 +379,11 @@ class AdministracionSistemaTest(TestCase):
         self.assertEqual(resp.status_code, 403)
 
     def test_buscar_por_rut_lleva_a_la_cuenta(self):
-        resp = self.client.get(reverse('admin_panel'), {'rut': '7.654.321-6'})
+        resp = self.client.post(reverse('admin_panel'), {'rut': '7.654.321-6'})
         self.assertRedirects(resp, reverse('admin_cuenta', args=[self.usuaria.pk]))
 
     def test_buscar_rut_inexistente(self):
-        resp = self.client.get(reverse('admin_panel'), {'rut': '22.222.222-2'})
+        resp = self.client.post(reverse('admin_panel'), {'rut': '22.222.222-2'})
         self.assertContains(resp, 'No hay ninguna cuenta con ese RUT.')
 
     def test_promover_y_revocar(self):

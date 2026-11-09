@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block titulo %}Consentimiento presencial{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta" data-consentimiento-presencial>
+    <h1>Registrar consentimiento presencial</h1>
+
+    {% if ya_vigente %}
+        <p class="aviso-evolucion" role="status" data-ya-vigente>Esta persona ya tiene un consentimiento vigente. No hay nada que registrar.</p>
+    {% elif registrado %}
+        <p class="aviso-evolucion" role="status" data-registrado>Consentimiento presencial registrado (versión {{ version }}).
+            {% if cuenta %}Su cuenta quedó con una participación nueva: no se recupera nada de una participación anterior.{% endif %}</p>
+    {% else %}
+        <p class="ayuda">
+            Úsalo solo si la participante aceptó el consentimiento <strong>en persona y por escrito</strong>.
+            Se registran la fecha y hora, la versión del consentimiento ({{ version }}), la modalidad presencial,
+            tu cuenta como responsable y la referencia al documento firmado. No se guardan fotografías,
+            documentos de identidad ni datos clínicos.
+        </p>
+        {% if cuenta %}
+            <p class="aviso-evolucion" role="note" data-requiere-clave>Esta persona tiene cuenta en la plataforma. Para confirmar
+                que es ella quien acepta (por ejemplo, después de haberse retirado), debe escribir <strong>ella misma</strong>
+                la contraseña de su cuenta. La contraseña no se guarda.</p>
+        {% endif %}
+        <form method="post" autocomplete="off" novalidate>
+            {% csrf_token %}
+            <input type="hidden" name="rut" value="{{ rut }}">
+            {% for campo in form %}
+                <div class="campo">
+                    {% if campo.field.widget.input_type == 'checkbox' %}
+                        <label>{{ campo }} {{ campo.label }}</label>
+                    {% else %}
+                        <label for="{{ campo.id_for_label }}">{{ campo.label }}</label>
+                        {{ campo }}
+                    {% endif %}
+                    {% if campo.help_text %}<p class="ayuda">{{ campo.help_text }}</p>{% endif %}
+                    {% for e in campo.errors %}<p class="errores">{{ e }}</p>{% endfor %}
+                </div>
+            {% endfor %}
+            <button type="submit" name="registrar" value="1" class="boton">Registrar consentimiento presencial</button>
+        </form>
+    {% endif %}
+
+    {% if ya_vigente or registrado %}
+        <form method="post" action="{% url 'nueva_paciente' %}">
+            {% csrf_token %}
+            <input type="hidden" name="rut" value="{{ rut }}">
+            <button type="submit" class="boton">Continuar con la encuesta de esta persona</button>
+        </form>
+    {% endif %}
+    <div class="enlaces"><a href="{% url 'buscar_paciente' %}">← Volver a buscar paciente</a></div>
+</div>
+{% endblock %}

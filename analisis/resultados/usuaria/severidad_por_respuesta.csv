@@ -1,0 +1,33 @@
+﻿respuesta,Sin síntomas o muy leves,Leve,Moderada,Severa,n,mrs_medio,variable,etiqueta
+Muy en desacuerdo,0.00000,0.00000,26.31579,73.68421,19,21.78947,lugar_trabajo_comprensivo,Lugar de trabajo comprensivo
+En desacuerdo,5.66038,9.43396,20.75472,64.15094,53,19.03774,lugar_trabajo_comprensivo,Lugar de trabajo comprensivo
+Neutral,5.55556,12.03704,17.59259,64.81481,108,19.21296,lugar_trabajo_comprensivo,Lugar de trabajo comprensivo
+De acuerdo,18.30986,14.08451,21.12676,46.47887,71,13.67606,lugar_trabajo_comprensivo,Lugar de trabajo comprensivo
+Muy de acuerdo,8.33333,33.33333,16.66667,41.66667,36,13.91667,lugar_trabajo_comprensivo,Lugar de trabajo comprensivo
+Nada de estrés,8.33333,25.00000,16.66667,50.00000,24,14.45833,estres_entorno_laboral,Estrés del entorno laboral
+Estrés leve,17.91045,16.41791,14.92537,50.74627,67,15.37313,estres_entorno_laboral,Estrés del entorno laboral
+Estrés moderado,5.60748,15.88785,25.23364,53.27103,107,17.08411,estres_entorno_laboral,Estrés del entorno laboral
+Estrés alto,8.77193,8.77193,14.03509,68.42105,57,19.71930,estres_entorno_laboral,Estrés del entorno laboral
+Estrés extremo,0.00000,3.12500,21.87500,75.00000,32,20.03125,estres_entorno_laboral,Estrés del entorno laboral
+No lo realiza,6.55738,13.11475,20.98361,59.34426,305,17.70492,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto
+Rara vez,15.18987,16.45570,20.25316,48.10127,79,14.87342,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto
+A veces,15.73034,15.73034,21.34831,47.19101,89,14.98876,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto
+Frecuentemente,15.00000,12.50000,30.00000,42.50000,40,14.22500,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto
+Siempre,25.00000,12.50000,43.75000,18.75000,16,12.18750,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto
+0 días,8.94040,12.25166,20.19868,58.60927,302,17.48344,dias_ejercicio_semana,Días de ejercicio a la semana
+1-2 días,8.10811,18.91892,20.27027,52.70270,148,15.71622,dias_ejercicio_semana,Días de ejercicio a la semana
+3-4 días,25.00000,15.38462,25.00000,34.61538,52,12.88462,dias_ejercicio_semana,Días de ejercicio a la semana
+5-6 días,13.33333,0.00000,53.33333,33.33333,15,15.93333,dias_ejercicio_semana,Días de ejercicio a la semana
+Todos los días,16.66667,8.33333,50.00000,25.00000,12,13.16667,dias_ejercicio_semana,Días de ejercicio a la semana
+Sí,1.51515,7.57576,24.24242,66.66667,66,20.54545,usa_medicamentos_diabetes,Medicamentos para la diabetes
+No,11.87905,14.90281,22.03024,51.18790,463,15.80346,usa_medicamentos_diabetes,Medicamentos para la diabetes
+Nunca,12.03008,14.53634,23.55890,49.87469,399,15.56391,tabaco_frecuencia,Tabaco
+1-2 veces por semana,14.28571,9.52381,19.04762,57.14286,21,19.14286,tabaco_frecuencia,Tabaco
+3-4 veces por semana,0.00000,11.11111,22.22222,66.66667,9,18.77778,tabaco_frecuencia,Tabaco
+5-6 veces por semana,0.00000,11.11111,11.11111,77.77778,18,22.00000,tabaco_frecuencia,Tabaco
+Diariamente,6.09756,13.41463,19.51220,60.97561,82,18.24390,tabaco_frecuencia,Tabaco
+No consumo,0.00000,12.50000,16.66667,70.83333,24,18.70833,vasos_agua_dia,Vasos de agua al día
+1-2 porciones,10.00000,13.63636,16.36364,60.00000,110,17.75455,vasos_agua_dia,Vasos de agua al día
+3-4 porciones,10.73171,12.19512,24.39024,52.68293,205,16.51707,vasos_agua_dia,Vasos de agua al día
+5-6 porciones,12.09677,12.90323,25.80645,49.19355,124,15.48387,vasos_agua_dia,Vasos de agua al día
+7 o más porciones,12.12121,22.72727,21.21212,43.93939,66,14.62121,vasos_agua_dia,Vasos de agua al día

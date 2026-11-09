@@ -1,0 +1,48 @@
+{
+ "tipos_33": {
+  "ordinal": 24,
+  "binaria": 5,
+  "cuantitativa": 3,
+  "nominal": 1
+ },
+ "tipos_general": {
+  "ordinal": 21,
+  "binaria": 5,
+  "cuantitativa": 3,
+  "nominal": 1
+ },
+ "rol_famd": {
+  "cuantitativa": 19,
+  "categórica": 11
+ },
+ "seccion_general": {
+  "Alimentación": 13,
+  "Actividad física": 5,
+  "Etapa reproductiva y salud ginecológica": 3,
+  "Medicamentos y digestión": 3,
+  "Identificación": 2,
+  "Sustancias": 2,
+  "Cuidado de otras personas": 1,
+  "Medidas autodeclaradas": 1
+ },
+ "celdas_imputadas_general": 665,
+ "previas_general": 100,
+ "marca_general": 15,
+ "marca_33": 16,
+ "nominal_suma_pq": 0.487,
+ "nominal_distancia2_entre_categorias": 4.1068,
+ "pares_general": 435,
+ "pares_abs_menor_0_2": 424,
+ "pares_abs_mayor_0_4": 4,
+ "iqr_cero": [
+  "frecuencia_aerobico",
+  "frecuencia_fuerza",
+  "frutas_dia",
+  "lacteos_dia",
+  "operada_no_mas_hijos",
+  "panes_dia",
+  "platos_verduras_dia",
+  "tabaco_frecuencia",
+  "usa_medicamentos_presion"
+ ]
+}

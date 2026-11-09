@@ -1,0 +1,146 @@
+{
+ "sello_protocolo": "c17c5bf05cc8f8ce9346a91638a19381399011647571ce15fa722581d2d8bb4e",
+ "totales_reglas": {
+  "reglas": {
+   "fase_39": 59672,
+   "fase_39R": 47912
+  },
+  "hacia_severo": {
+   "fase_39": 30600,
+   "fase_39R": 25807
+  },
+  "hacia_no_severo": {
+   "fase_39": 29072,
+   "fase_39R": 22105
+  },
+  "marcadas": {
+   "fase_39": 10739,
+   "fase_39R": 9085
+  },
+  "marcadas_no_redundantes": {
+   "fase_39": 2129,
+   "fase_39R": 1998
+  },
+  "supera_nula_estrato": {
+   "fase_39": 0,
+   "fase_39R": 0
+  },
+  "supera_nula_conjunta": {
+   "fase_39": 0,
+   "fase_39R": 0
+  },
+  "estables": {
+   "fase_39": 5525,
+   "fase_39R": 4739
+  },
+  "clase_1": {
+   "fase_39": 48933,
+   "fase_39R": 38827
+  },
+  "clase_2": {
+   "fase_39": 8610,
+   "fase_39R": 7087
+  },
+  "clase_3": {
+   "fase_39": 2129,
+   "fase_39R": 1998
+  },
+  "clase_4": {
+   "fase_39": 0,
+   "fase_39R": 0
+  },
+  "clase_5": {
+   "fase_39": 0,
+   "fase_39R": 0
+  }
+ },
+ "filas_conservadas": 47912,
+ "reglas_retiradas": 11760,
+ "reglas_perdidas_sin_variable_excluida": 0,
+ "reglas_nuevas": 0,
+ "metricas_comparadas": 29,
+ "filas_con_diferencia_en_metricas": 0,
+ "reglas_cambian_de_clase": 0,
+ "ajustes": {
+  "conservadas": 47912,
+  "p_estrato_iguales": 47493,
+  "p_estrato_bajan": 419,
+  "p_estrato_suben": 0,
+  "p_estrato_baja_maxima": 0.040959040959041015,
+  "p_conjunto_iguales": 47871,
+  "p_conjunto_bajan": 41,
+  "p_conjunto_suben": 0,
+  "p_conjunto_baja_maxima": 0.03296703296703296,
+  "min_p_estrato_39": 0.0579420579420579,
+  "min_p_estrato_39R": 0.0549450549450549,
+  "min_p_conjunto_39": 0.2807192807192807,
+  "min_p_conjunto_39R": 0.2527472527472527,
+  "nula_conjunta_p95_39": 4.303750624211167,
+  "nula_conjunta_p95_39R": 4.279019117761967,
+  "nula_conjunta_nunca_sube": true
+ },
+ "A_B1": {
+  "fase_39": {
+   "A": {
+    "supera_nula_grupo": 0,
+    "clases": {
+     "1 asociación débil": 2397,
+     "3 compatible con la nula del estrato": 281,
+     "2 redundante": 279
+    }
+   },
+   "B1": {
+    "supera_nula_grupo": 0,
+    "clases": {
+     "1 asociación débil": 2334,
+     "2 redundante": 289,
+     "3 compatible con la nula del estrato": 275
+    }
+   }
+  },
+  "fase_39R": {
+   "A": {
+    "supera_nula_grupo": 0,
+    "clases": {
+     "1 asociación débil": 2095,
+     "3 compatible con la nula del estrato": 261,
+     "2 redundante": 242
+    }
+   },
+   "B1": {
+    "supera_nula_grupo": 0,
+    "clases": {
+     "1 asociación débil": 2032,
+     "3 compatible con la nula del estrato": 256,
+     "2 redundante": 256
+    }
+   }
+  }
+ },
+ "tablas_reglas_verificadas": 85,
+ "tablas_comparacion_verificadas": 35,
+ "archivos_barridos": 195,
+ "apariciones_en_resultados": 0,
+ "S1_identica_a_historica": true,
+ "conclusion_39": {
+  "resultado": "C",
+  "diferencias_H5": 0,
+  "diferencias_consistentes": 0,
+  "reglas_clase5": 0,
+  "reglas_superan_nula_estrato": 0,
+  "comparaciones_superan_nula_dimension": 0
+ },
+ "conclusion_39R": {
+  "resultado": "C",
+  "resultado_lectura_estricta_S9": "C",
+  "la_lectura_de_S9_cambia_el_resultado": false,
+  "diferencias_H5": 0,
+  "diferencias_consistentes": 0,
+  "reglas_clase5": 0,
+  "reglas_clase5_que_superan_nula_conjunta": 0,
+  "reglas_superan_nula_estrato": 0,
+  "reglas_superan_nula_conjunta": 0,
+  "comparaciones_superan_nula_dimension": 0,
+  "comparaciones_superan_nula_conjunta": 0
+ }
+}

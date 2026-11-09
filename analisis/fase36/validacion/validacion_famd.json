@@ -1,0 +1,12 @@
+{
+ "datos": "sintéticos (n = 400, semilla 42); ningún dato del estudio",
+ "comprobaciones": 32,
+ "cumplen": 32,
+ "referencia_externa": {
+  "disponible": true,
+  "version": "0.23.1",
+  "instalada_en_el_proyecto": false,
+  "diferencia_fila_sola_sin_congelar": 1.2795625653925802
+ },
+ "veredicto": "SATISFACTORIA"
+}

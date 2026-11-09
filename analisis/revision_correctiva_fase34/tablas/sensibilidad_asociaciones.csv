@@ -1,0 +1,24 @@
+﻿variable,escenario,n,rho,p_sin_ajustar,q_familia_41,nota
+trabaja_actualmente,Actual,529,0.10186864506626772,0.01910192974708982,0.0731045254954014,
+trabaja_actualmente,Solo respondidas (sin las imputadas),507,0.10409585835616689,0.019053728799065122,0.0731045254954014,
+trabaja_actualmente,Hipótesis: las imputadas valen «No»,529,0.09743744398162059,0.02501993175023087,0.0932561092508605,cota; no es una corrección
+trabaja_actualmente,Diagnóstico: valor del simulador,529,0.10287584321610718,0.01794117355460007,0.0731045254954014,solo diagnóstico de la simulación
+cuida_otras_personas,Actual,529,0.034723046054502577,0.42546193100564333,,
+cuida_otras_personas,Solo respondidas o deducidas,508,0.03853737233110613,0.38606772975120496,,
+cuida_otras_personas,Diagnóstico: valor del simulador,529,0.055728390035453074,0.2006451752078656,,solo diagnóstico de la simulación
+doble_carga,Actual,529,0.09201925417199523,0.034350986681989513,0.11736587116346417,
+doble_carga,Sin filas que dependen de una imputada,486,0.10156253706683152,0.025154986432436403,0.08594620364415771,
+doble_carga,Diagnóstico: valor del simulador,529,0.09333445739524708,0.03184893802369285,0.10881720491428389,solo diagnóstico de la simulación
+cantidad_personas_cuida,Actual (0 si no cuida),529,0.015750818584648697,0.7177748149554031,0.7953720922478791,
+cantidad_personas_cuida,Sin las 21 «No» imputadas,508,0.017832631344346997,0.688443044738144,0.7628693198449704,
+cantidad_personas_cuida,Sin «No» imputadas ni cantidades imputadas,501,0.01771895528923152,0.6923674598076629,0.7672179960030859,
+cantidad_personas_cuida,Solo cuidadoras (251),251,-0.07609709842257308,0.2296233577129334,,
+cantidad_personas_cuida,Solo cuidadoras con cantidad observada,244,-0.07983173980722706,0.21401810425520734,,
+sobrecarga_fisica_emocional,Actual (0 si no cuida),529,0.06915837763405543,0.11210946432444152,0.2872805023313814,
+sobrecarga_fisica_emocional,Sin «No» imputadas ni sobrecarga imputada,496,0.0784319004161258,0.08097736749541908,0.2075045042070114,
+sobrecarga_fisica_emocional,Solo cuidadoras (251),251,0.15635914480531599,0.013134448354855933,,
+sobrecarga_fisica_emocional,Solo cuidadoras con respuesta observada,239,0.15620510018584657,0.015646122946479702,,
+lugar_trabajo_comprensivo,Actual (287),287,-0.22941395940269857,8.781971118636744e-05,0.0018003040793205325,
+lugar_trabajo_comprensivo,Solo observadas,271,-0.23495107485576064,9.434134441242371e-05,0.001933997560454686,
+estres_entorno_laboral,Actual (287),287,0.19657832193575678,0.0008126650747453544,0.006663853612911905,
+estres_entorno_laboral,Solo observadas,277,0.19940705415213997,0.0008457633620172113,0.006935259568541132,

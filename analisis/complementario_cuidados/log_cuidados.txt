@@ -1,0 +1,16 @@
+LOG módulo de cuidados — versión complementaria EXPLORATORIA (no sustituye el resultado oficial)
+Fecha de ejecución: 2026-11-03 00:38
+Commit original: 745d689937a18c35b62fd25eccc401b169b20e11
+HEAD: 745d689937a18c35b62fd25eccc401b169b20e11
+Semilla: 42; tolerancia: 1e-12; índice de la sobrecarga: 30; un solo proceso
+Versiones: Python 3.12.5, numpy 2.2.4, pandas 2.2.3
+Poblaciones: todas=529, laboral=287, cuidadoras=251, sobrecarga_observada=239, sobrecarga_imputada=12, sobrecarga_y_laboral=130, cuidadoras_y_laboral=137, cuida_imputada_no=21, cuida_deducida=4, cuida_imputada_en_observadas=0, cuida_deducida_en_observadas=3, sobrecarga_borrada_por_condicional=2, trabaja_imputada=22, doble_con_trabaja_imputada=10, trabaja_imputada_en_observadas=10, trabaja_imputada_en_sobrecarga_y_laboral=0, laborales_observadas_en_287=263, laborales_observadas_en_sobrecarga_y_laboral=122
+SHA-256 complementario_cuidados.py: 551a7117874eac22ca33c9948258b2542a437e60141a80ad5df9c0edcad09b5f
+SHA-256 protocolo_cuidados_35b.md: 649495d9b3d00ac2549c946092e28c5645aabf296ecbb434532be341e1cc606d
+SHA-256 test_complementario_cuidados.py: d980fda5b0182d64e1bec3142b2405d08a5ea86377101a5c481b4f6ae040eaf1
+C3 (observadas, 50000 permutaciones, q < 0.05): relevantes 2, pares 1, adaptado [dias_ejercicio_semana], estandar [dias_ejercicio_semana]
+C4 (observadas, 50000 permutaciones, q < 0.1): relevantes 5, pares 10, adaptado [doble_carga;frecuencia_fuerza;lugar_trabajo_comprensivo], estandar [doble_carga;frecuencia_fuerza;lugar_trabajo_comprensivo]
+S3 (cuidadoras, 50000 permutaciones, q < 0.05): relevantes 2, pares 1, adaptado [dias_ejercicio_semana], estandar [dias_ejercicio_semana]
+S4 (cuidadoras, 50000 permutaciones, q < 0.1): relevantes 5, pares 10, adaptado [doble_carga;frecuencia_fuerza;lugar_trabajo_comprensivo], estandar [doble_carga;frecuencia_fuerza;lugar_trabajo_comprensivo]
+Comprobaciones: las 30 candidatas reproducen SU y p de E3, E4; dos corridas del último escenario coinciden exactamente.
+Tiempo real (s): C3 66.2, C4 77.3, S3 66.9, S4 65.9, repeticion_ultimo_escenario 38.6, total 315.5

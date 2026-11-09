@@ -1,0 +1,22 @@
+{
+ "entradas": {
+  "dataset_usuaria_sucio.csv": "04e961414339d4d6a86041600fce71f998508564c837bbab668e9a08d9736a57",
+  "dataset_usuaria_limpio.csv": "4ecfd5169997bab0082264fe87499b7f29a67dc34141b8a491c60025f4065fd1",
+  "dataset_fase35.csv": "df47276f200cb977a02295ead9eb03cc49a4437ba257f271044e795e4959d43d",
+  "diccionario_codificacion_fase36.csv": "8d908f085148b5c6385eef2bb7c388ce46622f5be70c5531f6d5ba09f4ee9d72",
+  "matriz_decisiones_variables.csv": "60cae2188f05f5244c4469d7fcc8b31a0c4b008931224b06534dc0ba868acb34",
+  "relevancia_33.csv": "667ae1f58cb4d8094b9a18a6255e418a6077304354a42c073cdff5ede3260680",
+  "origen_respuestas_34D.csv": "f482dd03fc867db9c37ed48af93a856cf58890967195b4993fd5104deb03261a",
+  "auditoria_figuras_34D.csv": "738fae0caf83c18cf19bc5d3927bb558c353bb6cedcf6cd97a52d70f60139028"
+ },
+ "matriz": "adcff51d0de98a067c16cf92db2e1a1d8de3f6105cdc5dc916f71f69d37d85ab",
+ "artefactos": {
+  "codificadores.json": "d7b10bb8ad1b27b4a4c3a2652f6bf1a07e284b66959b2b41e4e31e2b793c0ed9",
+  "entorno.json": "894d8a9c9d0d1eafca278a186aa1242eff2b689bfac35fb2746ac652a9d71cf2",
+  "escaladores.json": "ae56fb562fbde909805cf12b20a5b601f0cbbe4de202288301d92af031601aa6",
+  "esquema_variables.json": "f899a22546cfd3d384b106cdf5ee7add7404887511bc8a4e92a510f615e2f216",
+  "orden_columnas.json": "2366934aceab27860939b9362f889da251a7afe12dd9908107814de9695dea09",
+  "procedencia.json": "ee112c1a1c05e801dca8361b6b3707dcb71c071534eaf1d11b1a171a52fcc893",
+  "valores_desconocidos.json": "446eaa95f17e2ca81d2824be88d566cae2a7516189c29dceffcb1a1c951eb9e3"
+ }
+}

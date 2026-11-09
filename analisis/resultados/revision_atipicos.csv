@@ -1,0 +1,14 @@
+﻿variable,n,q1,q3,limite_inferior,limite_superior,atipicos_bajos,atipicos_altos,valores_bajos,valores_altos,rango_plausible,altos_en_categoria_clinica,criterio_clinico,decision
+imc,487,25.80000,32.15000,16.27500,41.67500,0,8,,"41.7, 41.8, 42.1, 42.5, 42.7, 44.3, 46.4",,8,IMC ≥ 40: obesidad grado III (OMS),se conserva
+peso_kg,487,61.50000,79.45000,34.57500,106.37500,0,7,,"106.5, 106.7, 109, 109.9, 110.5, 121.8, 127.9",30-200,0,acompaña al IMC; se juzga con él,se conserva
+talla_actual_cm,495,152.00000,161.00000,138.50000,174.50000,0,2,,175,120-200,0,estatura adulta dentro del rango poblacional,se conserva
+circunferencia_cintura_cm,420,83.62500,100.72500,57.97500,126.37500,3,3,"53, 56, 57.5","127.6, 130.2, 132",50-170,3,"cintura ≥ 88 cm: obesidad abdominal (ATP III, mujer)",se conserva
+edad,495,47.00000,55.00000,35.00000,67.00000,2,0,34,,40-65,0,"criterio de inclusión de la encuesta (40-65, excepción quirúrgica)",se conserva
+horas_sedentarismo,495,5.00000,9.00000,-1.00000,15.00000,0,0,,,0-24,0,horas sentada al día (0-24),se conserva
+presion_sistolica,244,114.00000,127.25000,94.12500,147.12500,1,5,90,"148, 152, 153, 155",70-250,5,sistólica ≥ 140: hipertensión (MINSAL),se conserva
+presion_diastolica,246,70.00000,81.00000,53.50000,97.50000,0,2,,"99, 126",40-150,2,diastólica ≥ 90: hipertensión (MINSAL),se conserva
+colesterol_total_mg_dl,220,179.00000,226.00000,108.50000,296.50000,0,2,,"298, 310",80-500,2,colesterol ≥ 240: alto (ATP III),se conserva
+colesterol_hdl_mg_dl,220,46.00000,61.00000,23.50000,83.50000,1,0,22,,15-150,0,HDL < 50: bajo en mujer (ATP III),se conserva
+trigliceridos_mg_dl,220,106.00000,186.00000,-14.00000,306.00000,0,14,,"308, 320, 322, 327, 341, 353, 355, 362, 364, 368, 372, 406, 488, 569",20-1500,14,triglicéridos ≥ 200: altos (ATP III),se conserva
+glicemia_mg_dl,219,89.50000,102.00000,70.75000,120.75000,0,22,,"122, 124, 126, 131, 132, 133, 139, 140, 146, 149, 150, 159, 163, 166, 171, 178, 183, 189, 201",40-600,20,glicemia ≥ 126: rango de diabetes (ADA/MINSAL),se conserva
+mrs_total,492,7.00000,21.00000,-14.00000,42.00000,0,2,,44,0-44,2,MRS ≥ 16: síntomas severos,se conserva

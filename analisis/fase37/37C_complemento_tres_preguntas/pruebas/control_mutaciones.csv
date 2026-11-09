@@ -1,0 +1,26 @@
+mutacion,prueba,detectada,detalle
+Un archivo protegido cambia,1,True,AssertionError: fase36: artefactos/agrupaciones_categorias.csv cambió
+Etiquetas desordenadas,3,True,AssertionError: orden distinto
+Etiquetas oficiales alteradas,4,True,AssertionError: artefacto distinto de la Fase 37B
+Lote de A cambiado,5,True,AssertionError: r0
+"El 0,677 no se reproduce",6,True,"AssertionError: {'n_combinaciones': 4060, 'trio_guardado': 'trabaja_actualmente + tiene_pareja + dias_ejercicio_semana', 'ari_guardado': 0.6767549378538654, 'tr"
+Otra variable entra en las celdas,7,True,AssertionError: las celdas dependen de otra variable
+Una pregunta se ignora,7,True,AssertionError: las celdas ignoran tiene_pareja
+Variable no autorizada en el trío,7,True,AssertionError: 
+B1 elige la minoría,8,True,AssertionError: B1 no se reproduce
+Coincidencia en vez de ARI,13,True,AssertionError: fórmula distinta
+Sin alinear,12,True,AssertionError: no alinea una permutación
+Alineación ignorada,12,True,AssertionError: [3 3 2 2 0 0 0 0]
+Estabilidad con todas las filas,14,True,AssertionError: usa participantes no compartidas
+Fuera de muestra con filas usadas,14,True,AssertionError: usa participantes ya usadas
+R² ajustado también con evaluación,15,True,AssertionError: no equivale a medias por segmento
+R² con celdas imputadas,15,True,AssertionError: ignora la máscara de observadas
+Bloques con solapamiento,17,True,AssertionError: solapamiento
+Lectura de datos de origen,19,True,AssertionError: ['datos/original.csv']
+Lectura de MRS,19,True,AssertionError: ['mrs_total']
+Sensibilidad de A recalculada,20,True,AssertionError: S-ORD
+La conclusión de 37C cambia,21,True,AssertionError: A. Modelo respaldado
+HEAD cambia (commit),23,True,AssertionError: abc1234
+Rama publicada (push),23,True,AssertionError: rama en el remoto
+Cambio en Django,23,True,AssertionError: cambios fuera de analisis
+Escritura fuera de la carpeta,23,True,AssertionError: ['C:/otra/ruta.csv']

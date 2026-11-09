@@ -11,11 +11,11 @@
     <link rel="icon" href="{% static 'icons/icono.svg' %}">
     {% block extra_head %}{% endblock %}
 </head>
-<body>
+<body{% if cuenta_local %} data-cuenta="{{ cuenta_local }}"{% endif %}{% if sesion_inactividad %} data-inactividad="{{ sesion_inactividad }}" data-aviso="{{ sesion_aviso }}"{% endif %}>
     <header>
         <a href="{% url 'home' %}"><strong>Observatorio Mujer</strong></a>
         {% if user.is_authenticated %}
-        <form method="post" action="{% url 'logout' %}" data-csrf-form>
+        <form method="post" action="{% url 'logout' %}" data-csrf-form data-salir>
             {% csrf_token %}
             <button type="submit" class="salir">Salir</button>
         </form>
@@ -129,6 +129,7 @@
             }
         })();
     </script>
+    <script src="{% static 'js/sesion.js' %}"></script>
     {% block extra_scripts %}{% endblock %}
 </body>
 </html>

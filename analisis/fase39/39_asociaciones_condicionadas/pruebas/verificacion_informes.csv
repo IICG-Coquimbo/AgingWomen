@@ -1,0 +1,87 @@
+verificacion,resultado,detalle
+02_protocolo_39: fuente y Word existen,superada,
+02_protocolo_39: imágenes referidas existen,superada,
+02_protocolo_39: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+04_diccionario_estratos: fuente y Word existen,superada,
+04_diccionario_estratos: imágenes referidas existen,superada,
+04_diccionario_estratos: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+04_diccionario_estratos: sin valores vacíos ni campos sin sustituir,superada,
+05_tamanos_frecuencias_basales: fuente y Word existen,superada,
+05_tamanos_frecuencias_basales: imágenes referidas existen,superada,
+05_tamanos_frecuencias_basales: Word contiene las imágenes,superada,"1 en Word, 1 referidas"
+05_tamanos_frecuencias_basales: sin valores vacíos ni campos sin sustituir,superada,
+06_preparacion_matrices_condicionadas: fuente y Word existen,superada,
+06_preparacion_matrices_condicionadas: imágenes referidas existen,superada,
+06_preparacion_matrices_condicionadas: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+06_preparacion_matrices_condicionadas: sin valores vacíos ni campos sin sustituir,superada,
+07_reglas_por_trabajo: fuente y Word existen,superada,
+07_reglas_por_trabajo: imágenes referidas existen,superada,
+07_reglas_por_trabajo: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+07_reglas_por_trabajo: sin valores vacíos ni campos sin sustituir,superada,
+08_reglas_por_pareja: fuente y Word existen,superada,
+08_reglas_por_pareja: imágenes referidas existen,superada,
+08_reglas_por_pareja: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+08_reglas_por_pareja: sin valores vacíos ni campos sin sustituir,superada,
+09_reglas_por_ejercicio: fuente y Word existen,superada,
+09_reglas_por_ejercicio: imágenes referidas existen,superada,
+09_reglas_por_ejercicio: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+09_reglas_por_ejercicio: sin valores vacíos ni campos sin sustituir,superada,
+10_reglas_por_cuidado: fuente y Word existen,superada,
+10_reglas_por_cuidado: imágenes referidas existen,superada,
+10_reglas_por_cuidado: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+10_reglas_por_cuidado: sin valores vacíos ni campos sin sustituir,superada,
+11_referencias_nulas_estrato: fuente y Word existen,superada,
+11_referencias_nulas_estrato: imágenes referidas existen,superada,
+11_referencias_nulas_estrato: Word contiene las imágenes,superada,"2 en Word, 2 referidas"
+11_referencias_nulas_estrato: sin valores vacíos ni campos sin sustituir,superada,
+12_comparacion_formal_estratos: fuente y Word existen,superada,
+12_comparacion_formal_estratos: imágenes referidas existen,superada,
+12_comparacion_formal_estratos: Word contiene las imágenes,superada,"2 en Word, 2 referidas"
+12_comparacion_formal_estratos: sin valores vacíos ni campos sin sustituir,superada,
+13_redundancia: fuente y Word existen,superada,
+13_redundancia: imágenes referidas existen,superada,
+13_redundancia: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+13_redundancia: sin valores vacíos ni campos sin sustituir,superada,
+14_sensibilidades: fuente y Word existen,superada,
+14_sensibilidades: imágenes referidas existen,superada,
+14_sensibilidades: Word contiene las imágenes,superada,"1 en Word, 1 referidas"
+14_sensibilidades: sin valores vacíos ni campos sin sustituir,superada,
+15_comparacion_exploratoria_A_B1: fuente y Word existen,superada,
+15_comparacion_exploratoria_A_B1: imágenes referidas existen,superada,
+15_comparacion_exploratoria_A_B1: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+15_comparacion_exploratoria_A_B1: sin valores vacíos ni campos sin sustituir,superada,
+16_figuras_tablas: fuente y Word existen,superada,
+16_figuras_tablas: imágenes referidas existen,superada,
+16_figuras_tablas: Word contiene las imágenes,superada,"6 en Word, 6 referidas"
+16_figuras_tablas: sin valores vacíos ni campos sin sustituir,superada,
+19_informe_cierre_39: fuente y Word existen,superada,
+19_informe_cierre_39: imágenes referidas existen,superada,
+19_informe_cierre_39: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+19_informe_cierre_39: sin valores vacíos ni campos sin sustituir,superada,
+20_nota_logica_tablero: fuente y Word existen,superada,
+20_nota_logica_tablero: imágenes referidas existen,superada,
+20_nota_logica_tablero: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+20_nota_logica_tablero: sin valores vacíos ni campos sin sustituir,superada,
+01_indice_entregables: existe y sin valores vacíos,superada,
+03_integridad_inicial: existe y sin valores vacíos,superada,
+17_informe_pruebas: existe y sin valores vacíos,superada,
+18_informe_integridad_final: existe y sin valores vacíos,superada,
+Advertencia «sintético»,superada,
+Advertencia «ninguna asociación indica causa»,superada,
+Advertencia «exploratorio»,superada,
+Advertencia «no permiten recomendaciones de salud»,superada,
+Advertencia «no** responde B»,superada,
+Advertencia «Westfall-Young»,superada,
+Advertencia «no solo a las seleccionadas»,superada,
+Advertencia «No demuestra validez»,superada,
+Advertencia «No implementa nada ni modifica Django»,superada,
+Advertencia «no** en asociaciones estadísticas»,superada,
+Advertencia «revisión obligatoria»,superada,
+Advertencia «solo como comparación exploratoria secundaria»,superada,
+Advertencia «no aporta evidencia»,superada,
+Cierre responde las 20 preguntas,superada,
+Cierre informa el resultado mecánico,superada,
+Sin lenguaje causal ni clínico afirmativo,superada,
+Índice enlaza los 20 entregables,superada,
+Archivos del índice existen,superada,
+Resumen JSON existe,superada,

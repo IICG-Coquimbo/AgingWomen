@@ -1,0 +1,5 @@
+{
+ "alfa_elegido": 0.05,
+ "regla": "Menor alfa de la grilla que cumple todos los criterios de la sección 5.4 (enmienda 1)",
+ "valida": true
+}

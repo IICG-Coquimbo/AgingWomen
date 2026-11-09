@@ -1,0 +1,16 @@
+configuracion,antecedente,consecuente_principal,diferencia_principal,n_antecedente,confianza,diferencia_basal,supera_nula,clase,lectura,lectura_h,n_antecedente_h,confianza_h,supera_nula_h,clase_h
+S1,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,0.2758266175836567,52.0,0.8076923076923077,0.2765013814163153,,,desaparece por falta de casos,desaparece por falta de casos,52.0,0.8076923076923077,,
+S2a,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,0.2758266175836567,57.0,0.8070175438596491,0.2758266175836567,True,5-6 supera la nula (estabilidad no evaluada),se mantiene,se mantiene,57.0,0.8070175438596491,True,5-6 supera la nula (estabilidad no evaluada)
+S2b,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,0.2758266175836567,,,,,,no evaluable,no evaluable,,,,
+S3-bajo,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,0.2758266175836567,57.0,0.8070175438596491,0.2758266175836567,False,4 compatible con la referencia nula,se mantiene,se mantiene,57.0,0.8070175438596491,False,4 compatible con la referencia nula
+S3-alto,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,0.2758266175836567,57.0,0.8070175438596491,0.2758266175836567,,,desaparece por falta de casos,desaparece por falta de casos,57.0,0.8070175438596491,,
+S4-1,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,0.2758266175836567,,,,,,no evaluable,no evaluable,,,,
+S4-2,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,0.2758266175836567,,,,,,no evaluable,no evaluable,,,,
+S5,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,0.2758266175836567,,,,,,no evaluable,no evaluable,,,,
+S6,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,0.2758266175836567,,,,,,no evaluable,no evaluable,,,,
+S7a,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,0.2758266175836567,,,,,,no evaluable,no evaluable,,,,
+S7a-309,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,0.2758266175836567,,,,,,no evaluable,,,,,
+S7b,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,0.2758266175836567,26.0,0.8846153846153846,0.3155777277116188,False,4 compatible con la referencia nula,se mantiene,se mantiene,26.0,0.8846153846153846,False,4 compatible con la referencia nula
+S7b-251,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,0.2758266175836567,26.0,0.8846153846153846,0.3228623965675758,False,4 compatible con la referencia nula,se mantiene,,,,,
+S8a,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,0.2758266175836567,23.0,0.8260869565217391,0.2979970688812897,,,desaparece por falta de casos,desaparece por falta de casos,23.0,0.8260869565217391,,
+S8b,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,0.2758266175836567,23.0,0.8260869565217391,0.2979970688812897,,,desaparece por falta de casos,desaparece por falta de casos,23.0,0.8260869565217391,,

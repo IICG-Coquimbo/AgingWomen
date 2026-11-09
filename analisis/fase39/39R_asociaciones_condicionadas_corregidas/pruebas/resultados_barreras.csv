@@ -1,0 +1,107 @@
+control,esperado,resultado,correcto,detalle
+Lista de 29 autorizada,pasa,pasó,True,
+Lista con prevision,detiene,detuvo,True,La matriz principal no tiene 29 variables únicas: 30
+Lista con usa_medicamentos_diabetes,detiene,detuvo,True,La matriz principal no tiene 29 variables únicas: 30
+Lista con doble_carga,detiene,detuvo,True,La matriz principal no tiene 29 variables únicas: 30
+Lista con imc,detiene,detuvo,True,La matriz principal no tiene 29 variables únicas: 30
+Lista con una variable menos,detiene,detuvo,True,La matriz principal no tiene 29 variables únicas: 28
+Matriz principal correcta,pasa,pasó,True,
+Ítem prevision=FONASA,detiene,detuvo,True,Ítem derivado de una variable excluida: prevision=FONASA
+Ítem prevision=ISAPRE,detiene,detuvo,True,Ítem derivado de una variable excluida: prevision=ISAPRE
+Ítem med_diabetes=SI,detiene,detuvo,True,Ítem derivado de una variable excluida: med_diabetes=SI
+Ítem med_diabetes=NO,detiene,detuvo,True,Ítem derivado de una variable excluida: med_diabetes=NO
+Ítem doble_carga=SI,detiene,detuvo,True,Ítem derivado de una variable excluida: doble_carga=SI
+Ítem tiene_prevision=1,detiene,detuvo,True,Ítem derivado de una variable excluida: tiene_prevision=1
+Ítem mrs_total=alto,detiene,detuvo,True,Ítem o variable del MRS como antecedente: mrs_total=alto
+Ítem severo_mrs=SI,detiene,detuvo,True,Ítem o variable del MRS como antecedente: severo_mrs=SI
+Ítem pregunta_3=2,detiene,detuvo,True,Ítem o variable del MRS como antecedente: pregunta_3=2
+Ítem severidad=alta,detiene,detuvo,True,Ítem o variable del MRS como antecedente: severidad=alta
+Ítem B1=2,detiene,detuvo,True,Etiqueta de segmentación o etapa como antecedente: B1=2
+Ítem A_complemento=1,detiene,detuvo,True,Etiqueta de segmentación o etapa como antecedente: A_complemento=1
+Ítem cluster=3,detiene,detuvo,True,Etiqueta de segmentación o etapa como antecedente: cluster=3
+Ítem etapa_menopausica=post,detiene,detuvo,True,Etiqueta de segmentación o etapa como antecedente: etapa_menopausica=post
+Ítem con otro nombre que copia prevision=FONASA,detiene,detuvo,True,El ítem dias_ejercicio=3-4_dias reproduce exactamente prevision=FONASA
+Ítem con otro nombre que copia el complemento de prevision=FONASA,detiene,detuvo,True,El ítem dias_ejercicio=3-4_dias reproduce exactamente prevision=FONASA (complemento)
+Ítem con otro nombre que copia usa_medicamentos_diabetes=0.0,detiene,detuvo,True,El ítem dias_ejercicio=3-4_dias reproduce exactamente usa_medicamentos_diabetes=0.0
+Ítem con otro nombre que copia el complemento de usa_medicamentos_diabetes=0.0,detiene,detuvo,True,El ítem dias_ejercicio=3-4_dias reproduce exactamente usa_medicamentos_diabetes=0.0 (complemento)
+Ítem con otro nombre que copia la severidad,detiene,detuvo,True,El ítem dias_ejercicio=3-4_dias reproduce exactamente severo_mrs=1
+Ítem con otro nombre que copia la etiqueta A = 1,detiene,detuvo,True,El ítem dias_ejercicio=3-4_dias reproduce exactamente A=1
+Matriz con filas de menos,detiene,detuvo,True,principal: la matriz no tiene 529 filas: 528
+Matriz idéntica a la de la 38R,pasa,pasó,True,90
+Una celda distinta de la 38R,detiene,detuvo,True,La matriz no es idéntica a la matriz validada de la 38R
+Un ítem menos que la 38R,detiene,detuvo,True,"La matriz principal no tiene 90 ítems: 90 en la 38R, 89 aquí"
+Ítems en otro orden,detiene,detuvo,True,Los ítems no coinciden con los de la matriz validada de la 38R
+Consecuente distinto de la 38R,detiene,detuvo,True,El consecuente no coincide con el de la 38R
+Identificadores en otro orden,detiene,detuvo,True,Los identificadores no coinciden con los de la 38R
+Estrato con otro tamaño,detiene,detuvo,True,"('trabajo', 'trabaja'): 300 participantes y 178 severas; se esperaban 309 y 178"
+Estrato con otras severas,detiene,detuvo,True,"('trabajo', 'trabaja'): 309 participantes y 170 severas; se esperaban 309 y 178"
+Estrato no autorizado,detiene,detuvo,True,"Estrato no autorizado: ('trabajo', 'otro')"
+Grupo A con otro tamaño,detiene,detuvo,True,"('A', 'A_1'): 75 participantes; se esperaban 76"
+Estrato trabaja conserva su variable,detiene,detuvo,True,Ítem trabaja=SI de la variable no autorizada trabaja_actualmente
+Estrato con_pareja conserva su variable,detiene,detuvo,True,Ítem pareja=SI de la variable no autorizada tiene_pareja
+Estrato 0_dias conserva su variable,detiene,detuvo,True,Ítem dias_ejercicio=0_dias de la variable no autorizada dias_ejercicio_semana
+Estrato cuida conserva su variable,detiene,detuvo,True,Ítem cuida=no_cuida de la variable no autorizada cantidad_personas_cuida
+A_0 conserva trabaja=SI,detiene,detuvo,True,Ítem trabaja=SI de la variable no autorizada trabaja_actualmente
+A_0 conserva pareja=SI,detiene,detuvo,True,Ítem pareja=SI de la variable no autorizada tiene_pareja
+A_0 conserva dias_ejercicio=0_dias,detiene,detuvo,True,Ítem dias_ejercicio=0_dias de la variable no autorizada dias_ejercicio_semana
+B1_3 conserva trabaja=SI,detiene,detuvo,True,Ítem trabaja=SI de la variable no autorizada trabaja_actualmente
+B1_3 conserva pareja=SI,detiene,detuvo,True,Ítem pareja=SI de la variable no autorizada tiene_pareja
+B1_3 conserva dias_ejercicio=0_dias,detiene,detuvo,True,Ítem dias_ejercicio=0_dias de la variable no autorizada dias_ejercicio_semana
+Estrato con variables excluidas alteradas,detiene,detuvo,True,"('trabajo', 'trabaja'): variables excluidas [], se esperaban ['trabaja_actualmente']"
+Estrato con prevision,detiene,detuvo,True,Ítem derivado de una variable excluida: prevision=FONASA
+Estrato con med_diabetes,detiene,detuvo,True,Ítem derivado de una variable excluida: med_diabetes=SI
+Estrato con ítem constante,detiene,detuvo,True,"('trabajo', 'trabaja'): quedan ítems constantes o vacíos"
+Estrato con ítem vacío,detiene,detuvo,True,"('trabajo', 'trabaja'): quedan ítems constantes o vacíos"
+Umbral min_ant alterado,detiene,detuvo,True,"('trabajo', 'trabaja'): umbrales (10, 16, 3, 20) distintos de los del protocolo (31, 16, 3, 20)"
+Umbral min_conj alterado,detiene,detuvo,True,"('trabajo', 'trabaja'): umbrales (31, 5, 3, 20) distintos de los del protocolo (31, 16, 3, 20)"
+Umbral largo alterado,detiene,detuvo,True,"('trabajo', 'trabaja'): umbrales (31, 16, 1, 20) distintos de los del protocolo (31, 16, 3, 20)"
+Umbral comp alterado,detiene,detuvo,True,"('trabajo', 'trabaja'): umbrales (31, 16, 3, 10) distintos de los del protocolo (31, 16, 3, 20)"
+Identificadores repetidos en el estrato,detiene,detuvo,True,"('trabajo', 'trabaja'): filas o identificadores inconsistentes"
+S7a en el estrato trabaja,pasa,pasó,True,"{'configuracion': 'S7a', 'participantes': 309, 'con_items_del_modulo': 287, 'sin_items_del_modulo': 22, 'items': 'lugar_comprensivo=desacuerdo, lugar_comprensivo=neutral, lugar_comprensivo=acuerdo, estres_laboral=nada_o_leve, estres_laboral=moderado, estres_laboral=alto_o_extremo'}"
+S7b en el estrato cuida,pasa,pasó,True,"{'configuracion': 'S7b', 'participantes': 251, 'con_items_del_modulo': 251, 'sin_items_del_modulo': 0, 'items': 'sobrecarga=nunca_o_rara_vez, sobrecarga=a_veces, sobrecarga=frecuente_o_siempre'}"
+S7a en otro estrato,detiene,detuvo,True,"S7a solo puede ejecutarse en ('trabajo', 'trabaja'), no en ('cuidado', 'cuida')"
+S7b en otro estrato,detiene,detuvo,True,"S7b solo puede ejecutarse en ('cuidado', 'cuida'), no en ('trabajo', 'trabaja')"
+S7a con ítem del módulo fuera del estrato,detiene,detuvo,True,S7a: hay ítems del módulo fuera del estrato
+S7b con ítem del módulo fuera del estrato,detiene,detuvo,True,S7b: hay ítems del módulo fuera del estrato
+S7a con la población de 287,detiene,detuvo,True,"S7a: población 287, se esperaban 309"
+S7b con la población de 239,detiene,detuvo,True,S7b: hay ítems del módulo fuera del estrato
+S7a sin ítems del módulo,detiene,detuvo,True,S7a: no hay ítems del módulo
+Autorizadas en S7a incluyen el módulo,pasa,pasó,True,"['estres_entorno_laboral', 'lugar_trabajo_comprensivo']"
+Módulo laboral en la configuración principal,detiene,detuvo,True,Ítem lugar_comprensivo=desacuerdo de la variable no autorizada lugar_trabajo_comprensivo
+Sobrecarga en S7a,detiene,detuvo,True,Ítem sobrecarga=nunca_o_rara_vez de la variable no autorizada sobrecarga_fisica_emocional
+Regla con prevision=FONASA,detiene,detuvo,True,Ítem derivado de una variable excluida: prevision=FONASA
+Comparación con prevision=FONASA,detiene,detuvo,True,Ítem derivado de una variable excluida: prevision=FONASA
+Regla con med_diabetes=SI,detiene,detuvo,True,Ítem derivado de una variable excluida: med_diabetes=SI
+Comparación con med_diabetes=SI,detiene,detuvo,True,Ítem derivado de una variable excluida: med_diabetes=SI
+Regla con doble_carga=SI,detiene,detuvo,True,Ítem derivado de una variable excluida: doble_carga=SI
+Comparación con doble_carga=SI,detiene,detuvo,True,Ítem derivado de una variable excluida: doble_carga=SI
+Regla con trabaja=SI,detiene,detuvo,True,Ítem trabaja=SI de la variable no autorizada trabaja_actualmente
+Comparación con trabaja=SI,detiene,detuvo,True,Ítem trabaja=SI de la variable no autorizada trabaja_actualmente
+Regla con mrs_total=alto,detiene,detuvo,True,Ítem o variable del MRS como antecedente: mrs_total=alto
+Comparación con mrs_total=alto,detiene,detuvo,True,Ítem o variable del MRS como antecedente: mrs_total=alto
+Regla con B1=1,detiene,detuvo,True,Etiqueta de segmentación o etapa como antecedente: B1=1
+Comparación con B1=1,detiene,detuvo,True,Etiqueta de segmentación o etapa como antecedente: B1=1
+Regla con un antecedente correcto pero variable no autorizada,detiene,detuvo,True,Regla con la variable no autorizada prevision
+Comparación con un antecedente correcto pero variable no autorizada,detiene,detuvo,True,Comparación con la variable no autorizada doble_carga
+Regla con consecuente no autorizado,detiene,detuvo,True,Consecuente no autorizado
+Regla en A con pareja,detiene,detuvo,True,Ítem pareja=SI de la variable no autorizada tiene_pareja
+Comparación en B1 con días de ejercicio,detiene,detuvo,True,Ítem dias_ejercicio=0_dias de la variable no autorizada dias_ejercicio_semana
+Regla correcta,pasa,pasó,True,
+Comparación correcta,pasa,pasó,True,
+Todas las configuraciones por estrato pasan,pasa,pasó,True,74 configuraciones
+Grupo A_0,pasa,pasó,True,150
+Grupo A_1,pasa,pasó,True,76
+Grupo A_2,pasa,pasó,True,132
+Grupo A_3,pasa,pasó,True,171
+Grupo B1_0,pasa,pasó,True,150
+Grupo B1_1,pasa,pasó,True,79
+Grupo B1_2,pasa,pasó,True,126
+Grupo B1_3,pasa,pasó,True,174
+Reglas reales de trabajo,pasa,pasó,True,
+Comparaciones reales de trabajo,pasa,pasó,True,
+Reglas reales de pareja,pasa,pasó,True,
+Comparaciones reales de pareja,pasa,pasó,True,
+Reglas reales de ejercicio,pasa,pasó,True,
+Comparaciones reales de ejercicio,pasa,pasó,True,
+Reglas reales de cuidado,pasa,pasó,True,
+Comparaciones reales de cuidado,pasa,pasó,True,

@@ -1,0 +1,1501 @@
+config,variable,bloque,efecto,medida,efecto_moderado,parte_ssb
+F1_c03_km_k3,edad,Identificación,0.0009526206776345103,η²,False,0.0003250365079114415
+F1_c03_km_k3,imc,Medidas autodeclaradas,0.006265338522943933,η²,False,0.000576337182646829
+F1_c03_km_k3,horas_sedentarismo,Actividad física,0.01379475013796773,η²,False,0.004706802526573145
+F1_c03_km_k3,trabaja_actualmente,Identificación,0.009778200420909327,η²,False,0.003336345927701955
+F1_c03_km_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.37189831087479486,η²,True,0.1268926143457969
+F1_c03_km_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.4409113792999168,η²,True,0.1504400422862195
+F1_c03_km_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.0070427056659174885,η²,False,0.00240298841883445
+F1_c03_km_k3,usa_medicamentos_presion,Medicamentos y digestión,0.005130496418486472,η²,False,0.0017505379411434656
+F1_c03_km_k3,quien_prepara_comidas,Alimentación,0.012271815317357434,V²,False,0.006735266350852046
+F1_c03_km_k3,alcohol_frecuencia,Sustancias,0.0032652281882409834,η²,False,0.0011141038534616535
+F1_c03_km_k3,cantidad_personas_cuida,Cuidado de otras personas,0.002174515036625712,η²,False,0.021528295304616498
+F1_c03_km_k3,carnes_semana,Alimentación,0.009557217249848232,η²,False,0.003260945928609718
+F1_c03_km_k3,dias_ejercicio_semana,Actividad física,0.5736864930277882,η²,True,0.19574323621941883
+F1_c03_km_k3,distension_abdominal,Medicamentos y digestión,0.006476129225113862,η²,False,0.0022096711498444583
+F1_c03_km_k3,evacuacion_intestinal,Medicamentos y digestión,0.015528924151568348,η²,False,0.005298506946522524
+F1_c03_km_k3,falta_tiempo_influye,Alimentación,0.009218096250673047,η²,False,0.003145237013278315
+F1_c03_km_k3,frecuencia_aerobico,Actividad física,0.4253355673467933,η²,True,0.1542004652446254
+F1_c03_km_k3,frecuencia_bajo_impacto,Actividad física,0.2643446890840852,η²,True,0.11796560177485796
+F1_c03_km_k3,frecuencia_comida_fuera,Alimentación,0.032309682740115316,η²,False,0.011024142868335819
+F1_c03_km_k3,frecuencia_fuerza,Actividad física,0.39639481309368985,η²,True,0.1411063252487572
+F1_c03_km_k3,frutas_dia,Alimentación,0.03980973070351913,η²,False,0.01358317759897644
+F1_c03_km_k3,golosinas_semana,Alimentación,0.0017107369656021443,η²,False,0.0005837076417815058
+F1_c03_km_k3,jugos_gaseosas_dia,Alimentación,0.003497571908703562,η²,False,0.0011933800998285037
+F1_c03_km_k3,lacteos_dia,Alimentación,0.0072008347169303065,η²,False,0.0024569424382540044
+F1_c03_km_k3,legumbres_semana,Alimentación,2.7537618082349124e-05,η²,False,9.395902721649641e-06
+F1_c03_km_k3,panes_dia,Alimentación,0.007212571262617644,η²,False,0.0024609469763820576
+F1_c03_km_k3,pescado_semana,Alimentación,0.02434351903718347,η²,False,0.008306068305980682
+F1_c03_km_k3,platos_verduras_dia,Alimentación,0.020423421494729102,η²,False,0.0069685214252688775
+F1_c03_km_k3,tabaco_frecuencia,Sustancias,0.0054205672158839195,η²,False,0.0023842043626938563
+F1_c03_km_k3,vasos_agua_dia,Alimentación,0.024299802768639005,η²,False,0.008291152208104367
+F1_c05_km_k3,edad,Identificación,0.0002693000049887957,η²,False,9.098473676622356e-05
+F1_c05_km_k3,imc,Medidas autodeclaradas,0.007519730548838734,η²,False,0.0006795856793784848
+F1_c05_km_k3,horas_sedentarismo,Actividad física,0.016741898754216937,η²,False,0.005656358050132718
+F1_c05_km_k3,trabaja_actualmente,Identificación,0.002146986508636987,η²,False,0.0007253731849618532
+F1_c05_km_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.42479995053811603,η²,True,0.14352139235802255
+F1_c05_km_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.46947607845912886,η²,True,0.15861550919176154
+F1_c05_km_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.003105630713823993,η²,False,0.0010492572883618197
+F1_c05_km_k3,usa_medicamentos_presion,Medicamentos y digestión,0.007042926976715101,η²,False,0.0023794981253966313
+F1_c05_km_k3,quien_prepara_comidas,Alimentación,0.007997555267522724,V²,False,0.004922350885599277
+F1_c05_km_k3,alcohol_frecuencia,Sustancias,0.004757788426698504,η²,False,0.0016074493857159392
+F1_c05_km_k3,cantidad_personas_cuida,Cuidado de otras personas,0.002026666135204082,η²,False,0.020073958938429285
+F1_c05_km_k3,carnes_semana,Alimentación,0.012640482158753456,η²,False,0.0042706681043698895
+F1_c05_km_k3,dias_ejercicio_semana,Actividad física,0.5741105219380329,η²,True,0.19396692813066674
+F1_c05_km_k3,distension_abdominal,Medicamentos y digestión,0.008345307204451676,η²,False,0.002819515652299673
+F1_c05_km_k3,evacuacion_intestinal,Medicamentos y digestión,0.017815973950555793,η²,False,0.006019241255463851
+F1_c05_km_k3,falta_tiempo_influye,Alimentación,0.0048140372797940405,η²,False,0.001626453422097259
+F1_c05_km_k3,frecuencia_aerobico,Actividad física,0.42559938708097916,η²,True,0.1531591889780204
+F1_c05_km_k3,frecuencia_bajo_impacto,Actividad física,0.25050064380631115,η²,True,0.1092959955511339
+F1_c05_km_k3,frecuencia_comida_fuera,Alimentación,0.01744822133763025,η²,False,0.0058949936726109915
+F1_c05_km_k3,frecuencia_fuerza,Actividad física,0.41685889021963096,η²,True,0.14834778345606062
+F1_c05_km_k3,frutas_dia,Alimentación,0.022959664010931496,η²,False,0.007757069987289445
+F1_c05_km_k3,golosinas_semana,Alimentación,0.0021618289160816417,η²,False,0.0007303877876700317
+F1_c05_km_k3,jugos_gaseosas_dia,Alimentación,0.0014393640029403422,η²,False,0.00048629837538900224
+F1_c05_km_k3,lacteos_dia,Alimentación,0.0045563759909084695,η²,False,0.0015394009003378355
+F1_c05_km_k3,legumbres_semana,Alimentación,3.8475320768479805e-05,η²,False,1.2999134301024993e-05
+F1_c05_km_k3,panes_dia,Alimentación,0.00608471458997122,η²,False,0.0020557599146318367
+F1_c05_km_k3,pescado_semana,Alimentación,0.024005602990754625,η²,False,0.00811044719111348
+F1_c05_km_k3,platos_verduras_dia,Alimentación,0.013370727884755343,η²,False,0.004517386314262603
+F1_c05_km_k3,tabaco_frecuencia,Sustancias,0.005504913316483149,η²,False,0.0027942501932975965
+F1_c05_km_k3,vasos_agua_dia,Alimentación,0.02152841748736707,η²,False,0.007273514154457245
+F1_c08_km_k3,edad,Identificación,0.0009750389354532769,η²,False,0.0003279967968115925
+F1_c08_km_k3,imc,Medidas autodeclaradas,0.0062918334319066,η²,False,0.0005805510656920043
+F1_c08_km_k3,horas_sedentarismo,Actividad física,0.02765772166853588,η²,False,0.009303878834509442
+F1_c08_km_k3,trabaja_actualmente,Identificación,0.006971217095439388,η²,False,0.002345072380232049
+F1_c08_km_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.4420744068137169,η²,True,0.14871097359807184
+F1_c08_km_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.4381647474509559,η²,True,0.14739578945415469
+F1_c08_km_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.000169765635041839,η²,False,5.710806253754744e-05
+F1_c08_km_k3,usa_medicamentos_presion,Medicamentos y digestión,0.00866260479866967,η²,False,0.002914044273203839
+F1_c08_km_k3,quien_prepara_comidas,Alimentación,0.008269192181200782,V²,False,0.005087724355023832
+F1_c08_km_k3,alcohol_frecuencia,Sustancias,0.007605015119933087,η²,False,0.0025582779398262484
+F1_c08_km_k3,cantidad_personas_cuida,Cuidado de otras personas,0.001589167005195795,η²,False,0.02291883598746309
+F1_c08_km_k3,carnes_semana,Alimentación,0.02034314259530871,η²,False,0.0068433017038861356
+F1_c08_km_k3,dias_ejercicio_semana,Actividad física,0.5597842594325176,η²,True,0.1883078073329042
+F1_c08_km_k3,distension_abdominal,Medicamentos y digestión,0.01086227119038351,η²,False,0.0036539978322900207
+F1_c08_km_k3,evacuacion_intestinal,Medicamentos y digestión,0.017090760790853,η²,False,0.005749221483003605
+F1_c08_km_k3,falta_tiempo_influye,Alimentación,0.008005828385925314,η²,False,0.002693108932297267
+F1_c08_km_k3,frecuencia_aerobico,Actividad física,0.42290101415558334,η²,True,0.1517487312005362
+F1_c08_km_k3,frecuencia_bajo_impacto,Actividad física,0.23449666683979034,η²,True,0.10617247787223541
+F1_c08_km_k3,frecuencia_comida_fuera,Alimentación,0.021961581036023203,η²,False,0.007387733936373685
+F1_c08_km_k3,frecuencia_fuerza,Actividad física,0.4229668974675557,η²,True,0.15310462647279074
+F1_c08_km_k3,frutas_dia,Alimentación,0.022702041262564854,η²,False,0.007636819971444835
+F1_c08_km_k3,golosinas_semana,Alimentación,0.002154392945721351,η²,False,0.0007247238644286483
+F1_c08_km_k3,jugos_gaseosas_dia,Alimentación,0.003002325059671105,η²,False,0.0010099627478993968
+F1_c08_km_k3,lacteos_dia,Alimentación,0.004473350949970774,η²,False,0.0015048063510637374
+F1_c08_km_k3,legumbres_semana,Alimentación,9.997848234149403e-05,η²,False,3.3632115360450365e-05
+F1_c08_km_k3,panes_dia,Alimentación,0.005052506456641796,η²,False,0.001699630520783263
+F1_c08_km_k3,pescado_semana,Alimentación,0.025186595877455722,η²,False,0.008472608087750995
+F1_c08_km_k3,platos_verduras_dia,Alimentación,0.011764644507094376,η²,False,0.003957550384549705
+F1_c08_km_k3,tabaco_frecuencia,Sustancias,0.003191540460974301,η²,False,0.001780032230944723
+F1_c08_km_k3,vasos_agua_dia,Alimentación,0.015811760979737622,η²,False,0.005318974211930844
+F2_c03_km_k3,edad,Identificación,0.0011648399912457194,η²,False,0.0003964054905607861
+F2_c03_km_k3,imc,Medidas autodeclaradas,0.00524697724638958,η²,False,0.0
+F2_c03_km_k3,horas_sedentarismo,Actividad física,0.01497562445056834,η²,False,0.005096339240922766
+F2_c03_km_k3,trabaja_actualmente,Identificación,0.006735410624973735,η²,False,0.0022921206114032227
+F2_c03_km_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.39048581480799754,η²,True,0.13288582306523938
+F2_c03_km_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.45240921967471387,η²,True,0.15395891281822247
+F2_c03_km_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.006646594676709291,η²,False,0.0022618957480692176
+F2_c03_km_k3,usa_medicamentos_presion,Medicamentos y digestión,0.005363824070656522,η²,False,0.001825357412168244
+F2_c03_km_k3,quien_prepara_comidas,Alimentación,0.012466542075388802,V²,False,0.00684364003616888
+F2_c03_km_k3,alcohol_frecuencia,Sustancias,0.004777024788409996,η²,False,0.0016256643563942112
+F2_c03_km_k3,cantidad_personas_cuida,Cuidado de otras personas,0.0019156718677054135,η²,False,0.019197243394183397
+F2_c03_km_k3,carnes_semana,Alimentación,0.011217080173355008,η²,False,0.003817272932073052
+F2_c03_km_k3,dias_ejercicio_semana,Actividad física,0.579617573921854,η²,True,0.19724905605484064
+F2_c03_km_k3,distension_abdominal,Medicamentos y digestión,0.0071274501957139975,η²,False,0.0024255351915399696
+F2_c03_km_k3,evacuacion_intestinal,Medicamentos y digestión,0.017156302307508402,η²,False,0.005838443463075122
+F2_c03_km_k3,falta_tiempo_influye,Alimentación,0.00798760065226346,η²,False,0.00271825210222907
+F2_c03_km_k3,frecuencia_aerobico,Actividad física,0.4308123703516329,η²,True,0.15324363536236973
+F2_c03_km_k3,frecuencia_bajo_impacto,Actividad física,0.2582068410594758,η²,True,0.11504348755374932
+F2_c03_km_k3,frecuencia_comida_fuera,Alimentación,0.027246561609354077,η²,False,0.00927224915183426
+F2_c03_km_k3,frecuencia_fuerza,Actividad física,0.3900586132895234,η²,True,0.13858847376854186
+F2_c03_km_k3,frutas_dia,Alimentación,0.0387893942349243,η²,False,0.013200378563417128
+F2_c03_km_k3,golosinas_semana,Alimentación,0.0011771324625609746,η²,False,0.0004005887287381777
+F2_c03_km_k3,jugos_gaseosas_dia,Alimentación,0.0025854625045416803,η²,False,0.0008798560661909625
+F2_c03_km_k3,lacteos_dia,Alimentación,0.0060400054689919635,η²,False,0.002055468003262036
+F2_c03_km_k3,legumbres_semana,Alimentación,0.00017561864312070326,η²,False,5.976459848655273e-05
+F2_c03_km_k3,panes_dia,Alimentación,0.00763617181490639,η²,False,0.0025986577186942615
+F2_c03_km_k3,pescado_semana,Alimentación,0.02499862653569513,η²,False,0.00850725669594372
+F2_c03_km_k3,platos_verduras_dia,Alimentación,0.02105819123339505,η²,False,0.007166291240799264
+F2_c03_km_k3,tabaco_frecuencia,Sustancias,0.005541202734330075,η²,False,0.002455866343923978
+F2_c03_km_k3,vasos_agua_dia,Alimentación,0.023790335092998344,η²,False,0.008096064286958546
+F2_c05_km_k3,edad,Identificación,0.0002623567183276071,η²,False,8.87077470667705e-05
+F2_c05_km_k3,imc,Medidas autodeclaradas,0.0062628744483304,η²,False,0.0
+F2_c05_km_k3,horas_sedentarismo,Actividad física,0.01736881314733863,η²,False,0.005872722807883776
+F2_c05_km_k3,trabaja_actualmente,Identificación,0.0024411924269487372,η²,False,0.0008254131311425664
+F2_c05_km_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.44134305520373374,η²,True,0.1492263981660269
+F2_c05_km_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.4505997174515101,η²,True,0.1523562499898818
+F2_c05_km_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.001792269467612961,η²,False,0.0006060000583250644
+F2_c05_km_k3,usa_medicamentos_presion,Medicamentos y digestión,0.007028600395295292,η²,False,0.00237650215353237
+F2_c05_km_k3,quien_prepara_comidas,Alimentación,0.008146423936921908,V²,False,0.005027371896875422
+F2_c05_km_k3,alcohol_frecuencia,Sustancias,0.005160302892600071,η²,False,0.0017447955848154592
+F2_c05_km_k3,cantidad_personas_cuida,Cuidado de otras personas,0.0009284472105049906,η²,False,0.022500102630298863
+F2_c05_km_k3,carnes_semana,Alimentación,0.014385384791089376,η²,False,0.004863969497867499
+F2_c05_km_k3,dias_ejercicio_semana,Actividad física,0.569018445363923,η²,True,0.19239585191273226
+F2_c05_km_k3,distension_abdominal,Medicamentos y digestión,0.008438665103255671,η²,False,0.0028532715850867543
+F2_c05_km_k3,evacuacion_intestinal,Medicamentos y digestión,0.016551016296581247,η²,False,0.005596210292208857
+F2_c05_km_k3,falta_tiempo_influye,Alimentación,0.003742429656498723,η²,False,0.0012653859428494393
+F2_c05_km_k3,frecuencia_aerobico,Actividad física,0.43295540832117446,η²,True,0.15606417905467768
+F2_c05_km_k3,frecuencia_bajo_impacto,Actividad física,0.2431493064469416,η²,True,0.10561233958618611
+F2_c05_km_k3,frecuencia_comida_fuera,Alimentación,0.01507349235157648,η²,False,0.005096631622243515
+F2_c05_km_k3,frecuencia_fuerza,Actividad física,0.42357521924620106,η²,True,0.15073232244026555
+F2_c05_km_k3,frutas_dia,Alimentación,0.023560211318245674,η²,False,0.00796615112348212
+F2_c05_km_k3,golosinas_semana,Alimentación,0.0014573944728518108,η²,False,0.0004927725163599922
+F2_c05_km_k3,jugos_gaseosas_dia,Alimentación,0.0015021348850103252,η²,False,0.0005079000922449161
+F2_c05_km_k3,lacteos_dia,Alimentación,0.004674195062037053,η²,False,0.001580433373107522
+F2_c05_km_k3,legumbres_semana,Alimentación,0.00014682216804042151,η²,False,4.964333991272499e-05
+F2_c05_km_k3,panes_dia,Alimentación,0.004809173363032212,η²,False,0.0016260720785331256
+F2_c05_km_k3,pescado_semana,Alimentación,0.02455944607472212,η²,False,0.00830401121184912
+F2_c05_km_k3,platos_verduras_dia,Alimentación,0.012465137651866895,η²,False,0.004214697778745266
+F2_c05_km_k3,tabaco_frecuencia,Sustancias,0.00606870021468941,η²,False,0.0030109337480101433
+F2_c05_km_k3,vasos_agua_dia,Alimentación,0.021125586539239415,η²,False,0.007142958637788325
+F2_c08_km_k3,edad,Identificación,0.0008308239978371384,η²,False,0.00028004521550542224
+F2_c08_km_k3,imc,Medidas autodeclaradas,0.006433912607005416,η²,False,0.0
+F2_c08_km_k3,horas_sedentarismo,Actividad física,0.02691938648718325,η²,False,0.00907369720867743
+F2_c08_km_k3,trabaja_actualmente,Identificación,0.0079798493908039,η²,False,0.002689761788496833
+F2_c08_km_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.4420016918183265,η²,True,0.1489851753936574
+F2_c08_km_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.4300747308742983,η²,True,0.14496496370431008
+F2_c08_km_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,5.914137566085658e-06,η²,False,1.9934738687553655e-06
+F2_c08_km_k3,usa_medicamentos_presion,Medicamentos y digestión,0.00953445388880061,η²,False,0.003213771148843373
+F2_c08_km_k3,quien_prepara_comidas,Alimentación,0.008286445086521804,V²,False,0.005107046686994361
+F2_c08_km_k3,alcohol_frecuencia,Sustancias,0.007511094725375303,η²,False,0.002531759008556844
+F2_c08_km_k3,cantidad_personas_cuida,Cuidado de otras personas,0.0010176388664778452,η²,False,0.022721217988242202
+F2_c08_km_k3,carnes_semana,Alimentación,0.01772029613885525,η²,False,0.00597296679434437
+F2_c08_km_k3,dias_ejercicio_semana,Actividad física,0.562853869350532,η²,True,0.18972072731489675
+F2_c08_km_k3,distension_abdominal,Medicamentos y digestión,0.010462505463840987,η²,False,0.0035265887901355275
+F2_c08_km_k3,evacuacion_intestinal,Medicamentos y digestión,0.019087661639162427,η²,False,0.00643386364759495
+F2_c08_km_k3,falta_tiempo_influye,Alimentación,0.008714525460823519,η²,False,0.0029373984948160084
+F2_c08_km_k3,frecuencia_aerobico,Actividad física,0.44005402430312046,η²,True,0.15729814040916498
+F2_c08_km_k3,frecuencia_bajo_impacto,Actividad física,0.24020989817843166,η²,True,0.10505333951349348
+F2_c08_km_k3,frecuencia_comida_fuera,Alimentación,0.023680423629479974,η²,False,0.007981942452121422
+F2_c08_km_k3,frecuencia_fuerza,Actividad física,0.4232541752301668,η²,True,0.15054586515369617
+F2_c08_km_k3,frutas_dia,Alimentación,0.021402748633098077,η²,False,0.007214208266693944
+F2_c08_km_k3,golosinas_semana,Alimentación,0.00116403551469839,η²,False,0.00039236056904747507
+F2_c08_km_k3,jugos_gaseosas_dia,Alimentación,0.002907225862084022,η²,False,0.0009799364187718835
+F2_c08_km_k3,lacteos_dia,Alimentación,0.003713664150579585,η²,False,0.0012517619617045486
+F2_c08_km_k3,legumbres_semana,Alimentación,9.292488284954688e-05,η²,False,3.132211986072217e-05
+F2_c08_km_k3,panes_dia,Alimentación,0.0046886284246770715,η²,False,0.0015803924309260751
+F2_c08_km_k3,pescado_semana,Alimentación,0.025960328508503824,η²,False,0.008750428262401595
+F2_c08_km_k3,platos_verduras_dia,Alimentación,0.009639927307778644,η²,False,0.003249322994269952
+F2_c08_km_k3,tabaco_frecuencia,Sustancias,0.0032876688026377966,η²,False,0.0018978855450600776
+F2_c08_km_k3,vasos_agua_dia,Alimentación,0.0166497459220965,η²,False,0.005612117243847455
+P1_c03_km_k3,edad,Identificación,0.0018530876863511625,η²,False,0.0006557936236855377
+P1_c03_km_k3,imc,Medidas autodeclaradas,0.0026260798805369766,η²,False,0.00025464157456461334
+P1_c03_km_k3,horas_sedentarismo,Actividad física,0.012711875440551287,η²,False,0.004498635936334516
+P1_c03_km_k3,trabaja_actualmente,Identificación,0.009507924676225443,η²,False,0.0033647821541724133
+P1_c03_km_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.45698632586916094,η²,True,0.16172398145204991
+P1_c03_km_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.4383798955271673,η²,True,0.1551393074143873
+P1_c03_km_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.007967488259743657,η²,False,0.0028196334345179657
+P1_c03_km_k3,usa_medicamentos_presion,Medicamentos y digestión,0.0038381322387466377,η²,False,0.0013582857776083504
+P1_c03_km_k3,quien_prepara_comidas,Alimentación,0.005533857321650208,V²,False,0.0005779012362986947
+P1_c03_km_k3,alcohol_frecuencia,Sustancias,0.004722784276741282,η²,False,0.0016713573985415444
+P1_c03_km_k3,cantidad_personas_cuida,Cuidado de otras personas,0.0014559507674379163,η²,False,0.0005152498916907241
+P1_c03_km_k3,carnes_semana,Alimentación,0.009238503429008874,η²,False,0.003269436026025644
+P1_c03_km_k3,dias_ejercicio_semana,Actividad física,0.5793153957203301,η²,True,0.20501530791795644
+P1_c03_km_k3,distension_abdominal,Medicamentos y digestión,0.009344100368022254,η²,False,0.003306805978778418
+P1_c03_km_k3,evacuacion_intestinal,Medicamentos y digestión,0.020726524744283745,η²,False,0.007334959305258715
+P1_c03_km_k3,falta_tiempo_influye,Alimentación,0.01137950315321471,η²,False,0.004027119527884838
+P1_c03_km_k3,frecuencia_aerobico,Actividad física,0.500090101257512,η²,True,0.1769780793906714
+P1_c03_km_k3,frecuencia_bajo_impacto,Actividad física,0.2401771346040944,η²,True,0.08499685934375187
+P1_c03_km_k3,frecuencia_comida_fuera,Alimentación,0.02787968432205256,η²,False,0.009866408019130862
+P1_c03_km_k3,frecuencia_fuerza,Actividad física,0.3749872187959259,η²,True,0.13270512176040716
+P1_c03_km_k3,frutas_dia,Alimentación,0.02772937723588419,η²,False,0.009813215485701365
+P1_c03_km_k3,golosinas_semana,Alimentación,0.0017078034009811646,η²,False,0.0006043786212174381
+P1_c03_km_k3,jugos_gaseosas_dia,Alimentación,0.001732539856009873,η²,False,0.0006131326643206812
+P1_c03_km_k3,lacteos_dia,Alimentación,0.004406301238562059,η²,False,0.0015593564608788358
+P1_c03_km_k3,legumbres_semana,Alimentación,0.0018721632237502402,η²,False,0.000662544311139149
+P1_c03_km_k3,panes_dia,Alimentación,0.007251197279848768,η²,False,0.0025661435102265298
+P1_c03_km_k3,pescado_semana,Alimentación,0.023096505327087645,η²,False,0.008173677389626165
+P1_c03_km_k3,platos_verduras_dia,Alimentación,0.016228176462065615,η²,False,0.005743028096431719
+P1_c03_km_k3,tabaco_frecuencia,Sustancias,0.008447000425319763,η²,False,0.002989329139141445
+P1_c03_km_k3,vasos_agua_dia,Alimentación,0.02033252884896496,η²,False,0.00719552715759975
+P1_c05_km_k3,edad,Identificación,0.005637779388894755,η²,False,0.00199016194421954
+P1_c05_km_k3,imc,Medidas autodeclaradas,0.0023390121250849694,η²,False,0.00022583450909873033
+P1_c05_km_k3,horas_sedentarismo,Actividad física,0.01703850150668802,η²,False,0.006014669064903853
+P1_c05_km_k3,trabaja_actualmente,Identificación,0.0037915700751223317,η²,False,0.0013384416011761326
+P1_c05_km_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.4414587786360456,η²,True,0.1558369706543864
+P1_c05_km_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.49555236456320223,η²,True,0.1749322542248386
+P1_c05_km_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.006308166554706347,η²,False,0.002226811683994651
+P1_c05_km_k3,usa_medicamentos_presion,Medicamentos y digestión,0.013708525630204412,η²,False,0.004839172329859382
+P1_c05_km_k3,quien_prepara_comidas,Alimentación,0.0035965992953245116,V²,False,0.00039553131965010745
+P1_c05_km_k3,alcohol_frecuencia,Sustancias,0.003276141164142573,η²,False,0.0011564928350355106
+P1_c05_km_k3,cantidad_personas_cuida,Cuidado de otras personas,0.0012849965620306074,η²,False,0.00045360967143264055
+P1_c05_km_k3,carnes_semana,Alimentación,0.010647796480906187,η²,False,0.0037587209226093107
+P1_c05_km_k3,dias_ejercicio_semana,Actividad física,0.5903377964058227,η²,True,0.2083919457642375
+P1_c05_km_k3,distension_abdominal,Medicamentos y digestión,0.013405539879584165,η²,False,0.004732216972274271
+P1_c05_km_k3,evacuacion_intestinal,Medicamentos y digestión,0.017965718454225087,η²,False,0.006341980893858804
+P1_c05_km_k3,falta_tiempo_influye,Alimentación,0.005743126392091962,η²,False,0.002027349918817067
+P1_c05_km_k3,frecuencia_aerobico,Actividad física,0.48385625724214293,η²,True,0.17080347477459432
+P1_c05_km_k3,frecuencia_bajo_impacto,Actividad física,0.25537597071370904,η²,True,0.09014888723451531
+P1_c05_km_k3,frecuencia_comida_fuera,Alimentación,0.017155288865266127,η²,False,0.006055895537345437
+P1_c05_km_k3,frecuencia_fuerza,Actividad física,0.3628403635867685,η²,True,0.1280843100848494
+P1_c05_km_k3,frutas_dia,Alimentación,0.015736430161984408,η²,False,0.005555031916988429
+P1_c05_km_k3,golosinas_semana,Alimentación,0.0018053314372519051,η²,False,0.0006372902654188922
+P1_c05_km_k3,jugos_gaseosas_dia,Alimentación,0.0017010050689024296,η²,False,0.0006004625795969314
+P1_c05_km_k3,lacteos_dia,Alimentación,0.005472225670936512,η²,False,0.0019317207235762558
+P1_c05_km_k3,legumbres_semana,Alimentación,0.001746961711544371,η²,False,0.0006166854849220735
+P1_c05_km_k3,panes_dia,Alimentación,0.005047390313795994,η²,False,0.001781751896841844
+P1_c05_km_k3,pescado_semana,Alimentación,0.014442400914107159,η²,False,0.005098233666083984
+P1_c05_km_k3,platos_verduras_dia,Alimentación,0.010180983373911249,η²,False,0.0035939337579263173
+P1_c05_km_k3,tabaco_frecuencia,Sustancias,0.009083608300720865,η²,False,0.0032065553313244182
+P1_c05_km_k3,vasos_agua_dia,Alimentación,0.020463197501799247,η²,False,0.007223602435623699
+P2_c03_km_k3,edad,Identificación,0.0022095516947585082,η²,False,0.0007822151063752809
+P2_c03_km_k3,imc,Medidas autodeclaradas,0.0018888657894094165,η²,False,0.0
+P2_c03_km_k3,horas_sedentarismo,Actividad física,0.012138956938148399,η²,False,0.004297376483738024
+P2_c03_km_k3,trabaja_actualmente,Identificación,0.011423361436977338,η²,False,0.004044044727618434
+P2_c03_km_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.4479332897905687,η²,True,0.158575238023953
+P2_c03_km_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.44753277871594216,η²,True,0.1584334509756632
+P2_c03_km_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.008696836049087452,η²,False,0.0030788130241093245
+P2_c03_km_k3,usa_medicamentos_presion,Medicamentos y digestión,0.003599929348079526,η²,False,0.0012744300686114009
+P2_c03_km_k3,quien_prepara_comidas,Alimentación,0.007908064843712504,V²,False,0.0006517933070656841
+P2_c03_km_k3,alcohol_frecuencia,Sustancias,0.004929884113423894,η²,False,0.0017452544040256772
+P2_c03_km_k3,cantidad_personas_cuida,Cuidado de otras personas,0.001011923956378987,η²,False,0.00035823656312743363
+P2_c03_km_k3,carnes_semana,Alimentación,0.008963544090222526,η²,False,0.0031732317513391488
+P2_c03_km_k3,dias_ejercicio_semana,Actividad física,0.5792515850322859,η²,True,0.2050639237266639
+P2_c03_km_k3,distension_abdominal,Medicamentos y digestión,0.00918699105339519,η²,False,0.003252335395070119
+P2_c03_km_k3,evacuacion_intestinal,Medicamentos y digestión,0.0191872333826528,η²,False,0.006792574184646732
+P2_c03_km_k3,falta_tiempo_influye,Alimentación,0.011769064770780895,η²,False,0.004166428997091239
+P2_c03_km_k3,frecuencia_aerobico,Actividad física,0.5000828271871895,η²,True,0.17703697215711972
+P2_c03_km_k3,frecuencia_bajo_impacto,Actividad física,0.24018909570649294,η²,True,0.08503061480476973
+P2_c03_km_k3,frecuencia_comida_fuera,Alimentación,0.029446284300053388,η²,False,0.01042443517423132
+P2_c03_km_k3,frecuencia_fuerza,Actividad física,0.3749994360643701,η²,True,0.13275553790734962
+P2_c03_km_k3,frutas_dia,Alimentación,0.027010635793269948,η²,False,0.009562178337088324
+P2_c03_km_k3,golosinas_semana,Alimentación,0.0017373713251921776,η²,False,0.0006150560311272052
+P2_c03_km_k3,jugos_gaseosas_dia,Alimentación,0.0020883899962786377,η²,False,0.0007393220113235293
+P2_c03_km_k3,lacteos_dia,Alimentación,0.004494618548757987,η²,False,0.0015911637345137034
+P2_c03_km_k3,legumbres_semana,Alimentación,0.002079313127448956,η²,False,0.00073610866088053
+P2_c03_km_k3,panes_dia,Alimentación,0.006786982844483673,η²,False,0.002402695768675034
+P2_c03_km_k3,pescado_semana,Alimentación,0.022308242040538277,η²,False,0.007897459001380074
+P2_c03_km_k3,platos_verduras_dia,Alimentación,0.01576741161365461,η²,False,0.00558190495469973
+P2_c03_km_k3,tabaco_frecuencia,Sustancias,0.00791529000615727,η²,False,0.0028021337671550626
+P2_c03_km_k3,vasos_agua_dia,Alimentación,0.020154696556742048,η²,False,0.0071350709505878076
+P2_c05_km_k3,edad,Identificación,0.006112955643305741,η²,False,0.0021593432007325193
+P2_c05_km_k3,imc,Medidas autodeclaradas,0.00233901212508497,η²,False,0.0
+P2_c05_km_k3,horas_sedentarismo,Actividad física,0.015867282925842028,η²,False,0.005604966157007398
+P2_c05_km_k3,trabaja_actualmente,Identificación,0.0032487850392765357,η²,False,0.0011476022884094785
+P2_c05_km_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.4456900483758131,η²,True,0.15743575313659813
+P2_c05_km_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.49050593613046484,η²,True,0.17326653748291906
+P2_c05_km_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.005996142184629214,η²,False,0.0021180799620529687
+P2_c05_km_k3,usa_medicamentos_presion,Medicamentos y digestión,0.014120237056759412,η²,False,0.004987838888481814
+P2_c05_km_k3,quien_prepara_comidas,Alimentación,0.0036366087847325415,V²,False,0.0004089946647283435
+P2_c05_km_k3,alcohol_frecuencia,Sustancias,0.003624098596758663,η²,False,0.0012801782182510892
+P2_c05_km_k3,cantidad_personas_cuida,Cuidado de otras personas,0.0012233700046618977,η²,False,0.00043214377065530515
+P2_c05_km_k3,carnes_semana,Alimentación,0.010540107677895963,η²,False,0.00372319237653511
+P2_c05_km_k3,dias_ejercicio_semana,Actividad física,0.5903575707685367,η²,True,0.20853817381057113
+P2_c05_km_k3,distension_abdominal,Medicamentos y digestión,0.013503906077720375,η²,False,0.00477012585625228
+P2_c05_km_k3,evacuacion_intestinal,Medicamentos y digestión,0.017610213853706837,η²,False,0.006220639861846533
+P2_c05_km_k3,falta_tiempo_influye,Alimentación,0.005359187582331337,η²,False,0.0018930818318680434
+P2_c05_km_k3,frecuencia_aerobico,Actividad física,0.4838639201980037,η²,True,0.17092030878770134
+P2_c05_km_k3,frecuencia_bajo_impacto,Actividad física,0.25545885215995606,η²,True,0.09023839982915842
+P2_c05_km_k3,frecuencia_comida_fuera,Alimentación,0.01592693653420636,η²,False,0.005626038224455124
+P2_c05_km_k3,frecuencia_fuerza,Actividad física,0.3628310803798403,η²,True,0.12816661401602378
+P2_c05_km_k3,frutas_dia,Alimentación,0.01760893504955364,η²,False,0.006220188136492313
+P2_c05_km_k3,golosinas_semana,Alimentación,0.0016179012852186347,η²,False,0.000571508177638927
+P2_c05_km_k3,jugos_gaseosas_dia,Alimentación,0.0016923524269836533,η²,False,0.0005978073324402746
+P2_c05_km_k3,lacteos_dia,Alimentación,0.0054182635386880364,η²,False,0.0019139498492607885
+P2_c05_km_k3,legumbres_semana,Alimentación,0.0016459469924187677,η²,False,0.0005814150558638086
+P2_c05_km_k3,panes_dia,Alimentación,0.005026304649619864,η²,False,0.0017754941150035144
+P2_c05_km_k3,pescado_semana,Alimentación,0.014745963601646454,η²,False,0.005208870814617129
+P2_c05_km_k3,platos_verduras_dia,Alimentación,0.010334860801695198,η²,False,0.003650690877676542
+P2_c05_km_k3,tabaco_frecuencia,Sustancias,0.009403372983991489,η²,False,0.0033216517020158392
+P2_c05_km_k3,vasos_agua_dia,Alimentación,0.020440500457659525,η²,False,0.007220411574743277
+F1_c03_km_k4,edad,Identificación,0.008794355321337181,η²,False,0.0024336231527876417
+F1_c03_km_k4,imc,Medidas autodeclaradas,0.016815289924084854,η²,False,0.0011816151709331496
+F1_c03_km_k4,horas_sedentarismo,Actividad física,0.03789698356091485,η²,False,0.010487065082632089
+F1_c03_km_k4,trabaja_actualmente,Identificación,0.17530713616611546,η²,True,0.04851197044400112
+F1_c03_km_k4,tiene_pareja,Etapa reproductiva y salud ginecológica,0.3855550676272162,η²,True,0.10669295303268789
+F1_c03_km_k4,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.31311733446537576,η²,True,0.08664757868553181
+F1_c03_km_k4,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.008413048511849396,η²,False,0.0023281058014891737
+F1_c03_km_k4,usa_medicamentos_presion,Medicamentos y digestión,0.0031302594982353716,η²,False,0.0008662229021672862
+F1_c03_km_k4,quien_prepara_comidas,Alimentación,0.00949344996780546,V²,False,0.006288669570170975
+F1_c03_km_k4,alcohol_frecuencia,Sustancias,0.013143055711184008,η²,False,0.0036370198278788467
+F1_c03_km_k4,cantidad_personas_cuida,Cuidado de otras personas,0.09227563087211187,η²,True,0.06398120813083177
+F1_c03_km_k4,carnes_semana,Alimentación,0.007110901836424153,η²,False,0.0019677684962688883
+F1_c03_km_k4,dias_ejercicio_semana,Actividad física,0.5603340665939547,η²,True,0.15505877439932192
+F1_c03_km_k4,distension_abdominal,Medicamentos y digestión,0.0061947144014404265,η²,False,0.0017142359890412319
+F1_c03_km_k4,evacuacion_intestinal,Medicamentos y digestión,0.019076845793497218,η²,False,0.005279051381125594
+F1_c03_km_k4,falta_tiempo_influye,Alimentación,0.21162433133808622,η²,True,0.05856186765481536
+F1_c03_km_k4,frecuencia_aerobico,Actividad física,0.46176365182355694,η²,True,0.14156989745113022
+F1_c03_km_k4,frecuencia_bajo_impacto,Actividad física,0.26565051023168185,η²,True,0.10116832857041594
+F1_c03_km_k4,frecuencia_comida_fuera,Alimentación,0.0775833988886158,η²,True,0.021469311724214686
+F1_c03_km_k4,frecuencia_fuerza,Actividad física,0.40878319832300686,η²,True,0.11624955906345175
+F1_c03_km_k4,frutas_dia,Alimentación,0.0473962386152036,η²,False,0.013115752028935392
+F1_c03_km_k4,golosinas_semana,Alimentación,0.010179227511441583,η²,False,0.0028168527247509935
+F1_c03_km_k4,jugos_gaseosas_dia,Alimentación,0.0032056482592235673,η²,False,0.0008870849014267077
+F1_c03_km_k4,lacteos_dia,Alimentación,0.006035988769124338,η²,False,0.0016703125450102474
+F1_c03_km_k4,legumbres_semana,Alimentación,0.0011347655346280073,η²,False,0.0003140186605100996
+F1_c03_km_k4,panes_dia,Alimentación,0.011686220276134977,η²,False,0.0032338761845995233
+F1_c03_km_k4,pescado_semana,Alimentación,0.025768237886763523,η²,False,0.007130730796789349
+F1_c03_km_k4,platos_verduras_dia,Alimentación,0.05976631308194343,η²,False,0.016538868166956967
+F1_c03_km_k4,tabaco_frecuencia,Sustancias,0.009535100151593564,η²,False,0.011972519277188393
+F1_c03_km_k4,vasos_agua_dia,Alimentación,0.022495780798909522,η²,False,0.006225158182935192
+F2_c03_km_k4,edad,Identificación,0.007229982124714267,η²,False,0.001997694640497856
+F2_c03_km_k4,imc,Medidas autodeclaradas,0.0191924578944736,η²,False,0.0
+F2_c03_km_k4,horas_sedentarismo,Actividad física,0.03526356976979126,η²,False,0.009743571023935006
+F2_c03_km_k4,trabaja_actualmente,Identificación,0.1728297181004873,η²,True,0.04775406019164157
+F2_c03_km_k4,tiene_pareja,Etapa reproductiva y salud ginecológica,0.39429579597435255,η²,True,0.10894668683844458
+F2_c03_km_k4,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.3263141231585842,η²,True,0.09016287505391601
+F2_c03_km_k4,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.009285335218429011,η²,False,0.0025656030791106057
+F2_c03_km_k4,usa_medicamentos_presion,Medicamentos y digestión,0.00303457807332246,η²,False,0.000838475150931047
+F2_c03_km_k4,quien_prepara_comidas,Alimentación,0.009801183751647638,V²,False,0.006550788699815892
+F2_c03_km_k4,alcohol_frecuencia,Sustancias,0.011557789826981978,η²,False,0.003193498185069853
+F2_c03_km_k4,cantidad_personas_cuida,Cuidado de otras personas,0.09364834210889054,η²,True,0.06190889926043188
+F2_c03_km_k4,carnes_semana,Alimentación,0.00786730910824013,η²,False,0.0021737925446520165
+F2_c03_km_k4,dias_ejercicio_semana,Actividad física,0.5562507297205602,η²,True,0.15369596803528707
+F2_c03_km_k4,distension_abdominal,Medicamentos y digestión,0.005854737843907236,η²,False,0.001617705024790177
+F2_c03_km_k4,evacuacion_intestinal,Medicamentos y digestión,0.01569555314686742,η²,False,0.0043367911372789655
+F2_c03_km_k4,falta_tiempo_influye,Alimentación,0.21656380181010254,η²,True,0.05983809347508976
+F2_c03_km_k4,frecuencia_aerobico,Actividad física,0.4599889077995665,η²,True,0.13996754400867506
+F2_c03_km_k4,frecuencia_bajo_impacto,Actividad física,0.2658241522050213,η²,True,0.10070791401287112
+F2_c03_km_k4,frecuencia_comida_fuera,Alimentación,0.08420264142369561,η²,True,0.023265778889394798
+F2_c03_km_k4,frecuencia_fuerza,Actividad física,0.4089156163177467,η²,True,0.11627042660676551
+F2_c03_km_k4,frutas_dia,Alimentación,0.04671387997477111,η²,False,0.01290737183754078
+F2_c03_km_k4,golosinas_semana,Alimentación,0.011364489428609808,η²,False,0.003140087932710557
+F2_c03_km_k4,jugos_gaseosas_dia,Alimentación,0.002201601899861003,η²,False,0.0006083180068769564
+F2_c03_km_k4,lacteos_dia,Alimentación,0.006630961929127129,η²,False,0.0018321811698374074
+F2_c03_km_k4,legumbres_semana,Alimentación,0.001133500838494055,η²,False,0.00031319421141015553
+F2_c03_km_k4,panes_dia,Alimentación,0.010796417549854935,η²,False,0.002983125698498799
+F2_c03_km_k4,pescado_semana,Alimentación,0.026621929716595882,η²,False,0.0073558254221348825
+F2_c03_km_k4,platos_verduras_dia,Alimentación,0.058765501102673444,η²,False,0.016237319065795175
+F2_c03_km_k4,tabaco_frecuencia,Sustancias,0.013137385534620157,η²,False,0.013493314282971257
+F2_c03_km_k4,vasos_agua_dia,Alimentación,0.02024232682790496,η²,False,0.005593096513625161
+P1_c12_km_k4,edad,Identificación,0.0005279667709327631,η²,False,0.0001466969281431466
+P1_c12_km_k4,imc,Medidas autodeclaradas,0.010286443005409098,η²,False,0.0007349043409887648
+P1_c12_km_k4,horas_sedentarismo,Actividad física,0.01012500759268192,η²,False,0.002813259456932036
+P1_c12_km_k4,trabaja_actualmente,Identificación,0.42290916078681295,η²,True,0.11750640037708364
+P1_c12_km_k4,tiene_pareja,Etapa reproductiva y salud ginecológica,0.6391768344764335,η²,True,0.1775969309437732
+P1_c12_km_k4,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.30874516058468465,η²,True,0.08578563866210341
+P1_c12_km_k4,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.0037858143734125355,η²,False,0.0010518982816259744
+P1_c12_km_k4,usa_medicamentos_presion,Medicamentos y digestión,0.009387864121493353,η²,False,0.0026084422434678417
+P1_c12_km_k4,quien_prepara_comidas,Alimentación,0.0019736949232430994,V²,False,0.0002975582056123323
+P1_c12_km_k4,alcohol_frecuencia,Sustancias,0.008313492641769714,η²,False,0.0023099253586237093
+P1_c12_km_k4,cantidad_personas_cuida,Cuidado de otras personas,0.009748312481963766,η²,False,0.0027085937494836956
+P1_c12_km_k4,carnes_semana,Alimentación,0.01409602451520113,η²,False,0.003916616744188673
+P1_c12_km_k4,dias_ejercicio_semana,Actividad física,0.5661241443434804,η²,True,0.15729905269631414
+P1_c12_km_k4,distension_abdominal,Medicamentos y digestión,0.0025808192859641224,η²,False,0.0007170872906918956
+P1_c12_km_k4,evacuacion_intestinal,Medicamentos y digestión,0.027798362499387122,η²,False,0.007723846671003933
+P1_c12_km_k4,falta_tiempo_influye,Alimentación,0.10303234655493503,η²,True,0.0286278030571622
+P1_c12_km_k4,frecuencia_aerobico,Actividad física,0.506577356187814,η²,True,0.14075382412483764
+P1_c12_km_k4,frecuencia_bajo_impacto,Actividad física,0.2580137665694861,η²,True,0.07168979007431991
+P1_c12_km_k4,frecuencia_comida_fuera,Alimentación,0.1669256530747038,η²,True,0.046380722959297835
+P1_c12_km_k4,frecuencia_fuerza,Actividad física,0.3741308018951732,η²,True,0.10395320763234794
+P1_c12_km_k4,frutas_dia,Alimentación,0.030476158687763103,η²,False,0.008467879243989852
+P1_c12_km_k4,golosinas_semana,Alimentación,0.012234959982781832,η²,False,0.0033995151669440776
+P1_c12_km_k4,jugos_gaseosas_dia,Alimentación,0.002187607717814024,η²,False,0.0006078324429747564
+P1_c12_km_k4,lacteos_dia,Alimentación,0.001602586011024906,η²,False,0.00044528265384427313
+P1_c12_km_k4,legumbres_semana,Alimentación,0.0016951384405329687,η²,False,0.0004709985849378717
+P1_c12_km_k4,panes_dia,Alimentación,0.006291203174966471,η²,False,0.001748027017801693
+P1_c12_km_k4,pescado_semana,Alimentación,0.02208747153271547,η²,False,0.006137060896037306
+P1_c12_km_k4,platos_verduras_dia,Alimentación,0.029495095317130276,η²,False,0.00819528825775916
+P1_c12_km_k4,tabaco_frecuencia,Sustancias,0.012462072096607593,η²,False,0.0034626188531542345
+P1_c12_km_k4,vasos_agua_dia,Alimentación,0.0447838101632138,η²,False,0.012443297084554418
+P2_c08_km_k4,edad,Identificación,0.006477324790600936,η²,False,0.0018060659207498864
+P2_c08_km_k4,imc,Medidas autodeclaradas,0.0030982806667386605,η²,False,0.0
+P2_c08_km_k4,horas_sedentarismo,Actividad física,0.013852897773230637,η²,False,0.0038625894764716226
+P2_c08_km_k4,trabaja_actualmente,Identificación,0.41872582905012434,η²,True,0.11675289945048649
+P2_c08_km_k4,tiene_pareja,Etapa reproductiva y salud ginecológica,0.6389004799633873,η²,True,0.17814397469878454
+P2_c08_km_k4,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.3173486216838622,η²,True,0.08848599524480523
+P2_c08_km_k4,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.0032658825404034324,η²,False,0.0009106227259058745
+P2_c08_km_k4,usa_medicamentos_presion,Medicamentos y digestión,0.007934544713333092,η²,False,0.002212381078097462
+P2_c08_km_k4,quien_prepara_comidas,Alimentación,0.0028694981050396153,V²,False,0.00045104241118145165
+P2_c08_km_k4,alcohol_frecuencia,Sustancias,0.008250965358330437,η²,False,0.0023006083265412424
+P2_c08_km_k4,cantidad_personas_cuida,Cuidado de otras personas,0.008170848334915829,η²,False,0.0022782693779260657
+P2_c08_km_k4,carnes_semana,Alimentación,0.014541509136825186,η²,False,0.004054594286579944
+P2_c08_km_k4,dias_ejercicio_semana,Actividad física,0.5662472576582631,η²,True,0.15788615019871385
+P2_c08_km_k4,distension_abdominal,Medicamentos y digestión,0.004411179589173756,η²,False,0.0012299647437588354
+P2_c08_km_k4,evacuacion_intestinal,Medicamentos y digestión,0.029736414584521365,η²,False,0.008291374405730783
+P2_c08_km_k4,falta_tiempo_influye,Alimentación,0.09524596663324524,η²,True,0.026557336552707648
+P2_c08_km_k4,frecuencia_aerobico,Actividad física,0.5064266334463678,η²,True,0.1412064260471839
+P2_c08_km_k4,frecuencia_bajo_impacto,Actividad física,0.25808637632051434,η²,True,0.07196196330291907
+P2_c08_km_k4,frecuencia_comida_fuera,Alimentación,0.18116378488518692,η²,True,0.05051371492594937
+P2_c08_km_k4,frecuencia_fuerza,Actividad física,0.37416883217421026,η²,True,0.10432911707271846
+P2_c08_km_k4,frutas_dia,Alimentación,0.017899583174538825,η²,False,0.004990922674446211
+P2_c08_km_k4,golosinas_semana,Alimentación,0.017011630984830384,η²,False,0.004743335863388853
+P2_c08_km_k4,jugos_gaseosas_dia,Alimentación,0.0025306904466184475,η²,False,0.0007056298579063329
+P2_c08_km_k4,lacteos_dia,Alimentación,0.0024621775891322025,η²,False,0.0006865264871414944
+P2_c08_km_k4,legumbres_semana,Alimentación,0.005213133290010763,η²,False,0.0014535726831357049
+P2_c08_km_k4,panes_dia,Alimentación,0.006766638178954265,η²,False,0.0018867348802375896
+P2_c08_km_k4,pescado_semana,Alimentación,0.017017161227348303,η²,False,0.004744877855317299
+P2_c08_km_k4,platos_verduras_dia,Alimentación,0.021663814209557642,η²,False,0.006040499407118553
+P2_c08_km_k4,tabaco_frecuencia,Sustancias,0.009766522299359943,η²,False,0.002723189535703584
+P2_c08_km_k4,vasos_agua_dia,Alimentación,0.031523338193185896,η²,False,0.008789620508392718
+P2_c12_km_k4,edad,Identificación,0.002405421735588409,η²,False,0.0006683767326119245
+P2_c12_km_k4,imc,Medidas autodeclaradas,0.00416304188110203,η²,False,0.0
+P2_c12_km_k4,horas_sedentarismo,Actividad física,0.009939997186546675,η²,False,0.0027619534418527425
+P2_c12_km_k4,trabaja_actualmente,Identificación,0.4314601082752707,η²,True,0.11988662659642553
+P2_c12_km_k4,tiene_pareja,Etapa reproductiva y salud ginecológica,0.6536959350394382,η²,True,0.18163765077830743
+P2_c12_km_k4,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.3035433609306916,η²,True,0.0843433468581632
+P2_c12_km_k4,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.003000603197971619,η²,False,0.0008337554000003982
+P2_c12_km_k4,usa_medicamentos_presion,Medicamentos y digestión,0.007690258859765874,η²,False,0.002136835305669548
+P2_c12_km_k4,quien_prepara_comidas,Alimentación,0.0024157712716298212,V²,False,0.0004066153745807858
+P2_c12_km_k4,alcohol_frecuencia,Sustancias,0.007328764567537419,η²,False,0.0020363895624874646
+P2_c12_km_k4,cantidad_personas_cuida,Cuidado de otras personas,0.008727685988171183,η²,False,0.002425097502750302
+P2_c12_km_k4,carnes_semana,Alimentación,0.013368485940010227,η²,False,0.003714602233926684
+P2_c12_km_k4,dias_ejercicio_semana,Actividad física,0.5638765731319169,η²,True,0.1566802095326242
+P2_c12_km_k4,distension_abdominal,Medicamentos y digestión,0.0025491387255103092,η²,False,0.000708310308800936
+P2_c12_km_k4,evacuacion_intestinal,Medicamentos y digestión,0.02528163535223866,η²,False,0.007024820879354858
+P2_c12_km_k4,falta_tiempo_influye,Alimentación,0.10071370432439228,η²,True,0.027984571532573506
+P2_c12_km_k4,frecuencia_aerobico,Actividad física,0.5100312318744317,η²,True,0.14171860312340603
+P2_c12_km_k4,frecuencia_bajo_impacto,Actividad física,0.26167327548596897,η²,True,0.0727092161401749
+P2_c12_km_k4,frecuencia_comida_fuera,Alimentación,0.17406330734827907,η²,True,0.048365682787267855
+P2_c12_km_k4,frecuencia_fuerza,Actividad física,0.36650391442190605,η²,True,0.1018377298194956
+P2_c12_km_k4,frutas_dia,Alimentación,0.024747356866913463,η²,False,0.006876364871394502
+P2_c12_km_k4,golosinas_semana,Alimentación,0.01183818865291801,η²,False,0.003289389854101995
+P2_c12_km_k4,jugos_gaseosas_dia,Alimentación,0.0022866707599599545,η²,False,0.0006353802780149104
+P2_c12_km_k4,lacteos_dia,Alimentación,0.001414537848156373,η²,False,0.00039304716138493845
+P2_c12_km_k4,legumbres_semana,Alimentación,0.001670540233697866,η²,False,0.00046418064931246883
+P2_c12_km_k4,panes_dia,Alimentación,0.0052087697788073175,η²,False,0.0014473223028540361
+P2_c12_km_k4,pescado_semana,Alimentación,0.023246881373248613,η²,False,0.006459438852567023
+P2_c12_km_k4,platos_verduras_dia,Alimentación,0.02580961617448749,η²,False,0.007171527002291797
+P2_c12_km_k4,tabaco_frecuencia,Sustancias,0.014677534467715445,η²,False,0.004078337858675267
+P2_c12_km_k4,vasos_agua_dia,Alimentación,0.04068419910560249,η²,False,0.011304617258928978
+P1_c02_km_k3,edad,Identificación,0.008466263566112395,η²,False,0.0030320098198804357
+P1_c02_km_k3,imc,Medidas autodeclaradas,0.0026582530401906674,η²,False,0.0002680993621501026
+P1_c02_km_k3,horas_sedentarismo,Actividad física,0.006906950789768374,η²,False,0.0024735755574433263
+P1_c02_km_k3,trabaja_actualmente,Identificación,0.05484164198822023,η²,False,0.019640352057100536
+P1_c02_km_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.35846995856585545,η²,True,0.1283782894326888
+P1_c02_km_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.3835620088321338,η²,True,0.13736446641787145
+P1_c02_km_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.0037911911385037954,η²,False,0.001357733393394168
+P1_c02_km_k3,usa_medicamentos_presion,Medicamentos y digestión,0.0030993328783819342,η²,False,0.0011099592693931916
+P1_c02_km_k3,quien_prepara_comidas,Alimentación,0.0035676461586923286,V²,False,0.00034417706207334883
+P1_c02_km_k3,alcohol_frecuencia,Sustancias,0.00455403221394109,η²,False,0.0016309284827830644
+P1_c02_km_k3,cantidad_personas_cuida,Cuidado de otras personas,0.008343125423441742,η²,False,0.002987910548122145
+P1_c02_km_k3,carnes_semana,Alimentación,0.008233064691728815,η²,False,0.0029484946692363823
+P1_c02_km_k3,dias_ejercicio_semana,Actividad física,0.5787663836737221,η²,True,0.20727270595961453
+P1_c02_km_k3,distension_abdominal,Medicamentos y digestión,0.010820243336152655,η²,False,0.003875036938375787
+P1_c02_km_k3,evacuacion_intestinal,Medicamentos y digestión,0.0301345516470442,η²,False,0.010792040171918165
+P1_c02_km_k3,falta_tiempo_influye,Alimentación,0.04733587344697791,η²,False,0.016952322828494022
+P1_c02_km_k3,frecuencia_aerobico,Actividad física,0.5139566431118275,η²,True,0.1840624942442474
+P1_c02_km_k3,frecuencia_bajo_impacto,Actividad física,0.232351725507259,η²,True,0.0832117625328863
+P1_c02_km_k3,frecuencia_comida_fuera,Alimentación,0.08429301246562156,η²,True,0.030187725617952396
+P1_c02_km_k3,frecuencia_fuerza,Actividad física,0.36176126889767946,η²,True,0.12955700128927555
+P1_c02_km_k3,frutas_dia,Alimentación,0.019161559417729745,η²,False,0.006862299509706498
+P1_c02_km_k3,golosinas_semana,Alimentación,0.006548914579451768,η²,False,0.0023453526055973875
+P1_c02_km_k3,jugos_gaseosas_dia,Alimentación,0.0045998663859690295,η²,False,0.0016473430036150155
+P1_c02_km_k3,lacteos_dia,Alimentación,0.0012365947648204205,η²,False,0.00044285976226344565
+P1_c02_km_k3,legumbres_semana,Alimentación,0.0010235962563368989,η²,False,0.0003665789372809942
+P1_c02_km_k3,panes_dia,Alimentación,0.0072245511313285705,η²,False,0.0025873172744225155
+P1_c02_km_k3,pescado_semana,Alimentación,0.009397657145587041,η²,False,0.0033655683557195742
+P1_c02_km_k3,platos_verduras_dia,Alimentación,0.008060680164164226,η²,False,0.0028867588661528024
+P1_c02_km_k3,tabaco_frecuencia,Sustancias,0.01251470272251469,η²,False,0.004481871046328962
+P1_c02_km_k3,vasos_agua_dia,Alimentación,0.021129192765183536,η²,False,0.007566964984011296
+P1_c02_km_k5,edad,Identificación,0.015575179414899125,η²,False,0.004443514334848545
+P1_c02_km_k5,imc,Medidas autodeclaradas,0.0032739274196006197,η²,False,0.00025430493518981584
+P1_c02_km_k5,horas_sedentarismo,Actividad física,0.020816525876587468,η²,False,0.005938842094228365
+P1_c02_km_k5,trabaja_actualmente,Identificación,0.06141200705169586,η²,True,0.01752051301604848
+P1_c02_km_k5,tiene_pareja,Etapa reproductiva y salud ginecológica,0.38441883903182383,η²,True,0.10967261283614617
+P1_c02_km_k5,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.396410577762157,η²,True,0.11309379095092409
+P1_c02_km_k5,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.008237725140346906,η²,False,0.002350178368581624
+P1_c02_km_k5,usa_medicamentos_presion,Medicamentos y digestión,0.003839598349237754,η²,False,0.0010954166144999924
+P1_c02_km_k5,quien_prepara_comidas,Alimentación,0.006494500815204059,V²,False,0.0018352594882421857
+P1_c02_km_k5,alcohol_frecuencia,Sustancias,0.0033586234858613466,η²,False,0.0009581970908474788
+P1_c02_km_k5,cantidad_personas_cuida,Cuidado de otras personas,0.019846568797138423,η²,False,0.005662118592565415
+P1_c02_km_k5,carnes_semana,Alimentación,0.014462616621448045,η²,False,0.004126106195306353
+P1_c02_km_k5,dias_ejercicio_semana,Actividad física,0.7191090830640995,η²,True,0.20515792683957437
+P1_c02_km_k5,distension_abdominal,Medicamentos y digestión,0.009985925790840195,η²,False,0.002848930546243699
+P1_c02_km_k5,evacuacion_intestinal,Medicamentos y digestión,0.04168268119689026,η²,False,0.011891843199965052
+P1_c02_km_k5,falta_tiempo_influye,Alimentación,0.0586776766549939,η²,False,0.016740423362485025
+P1_c02_km_k5,frecuencia_aerobico,Actividad física,0.5459717474578716,η²,True,0.15576278267013938
+P1_c02_km_k5,frecuencia_bajo_impacto,Actividad física,0.5326876330702996,η²,True,0.15197289677961298
+P1_c02_km_k5,frecuencia_comida_fuera,Alimentación,0.08916245088237605,η²,True,0.025437564349792965
+P1_c02_km_k5,frecuencia_fuerza,Actividad física,0.3628013957248147,η²,True,0.1035052733366356
+P1_c02_km_k5,frutas_dia,Alimentación,0.016880288367506727,η²,False,0.004815854850804556
+P1_c02_km_k5,golosinas_semana,Alimentación,0.017068723632448938,η²,False,0.0048696144113628635
+P1_c02_km_k5,jugos_gaseosas_dia,Alimentación,0.005846213018967326,η²,False,0.00166789291232879
+P1_c02_km_k5,lacteos_dia,Alimentación,0.0027211900929398204,η²,False,0.0007763407960655123
+P1_c02_km_k5,legumbres_semana,Alimentación,0.004279971175104404,η²,False,0.0012210525967439147
+P1_c02_km_k5,panes_dia,Alimentación,0.013111741707699444,η²,False,0.0037407088984965893
+P1_c02_km_k5,pescado_semana,Alimentación,0.020347662072859745,η²,False,0.005805077790302416
+P1_c02_km_k5,platos_verduras_dia,Alimentación,0.008400172005902793,η²,False,0.002396523579543263
+P1_c02_km_k5,tabaco_frecuencia,Sustancias,0.030069313315945808,η²,False,0.008578612239332772
+P1_c02_km_k5,vasos_agua_dia,Alimentación,0.09064254197681047,η²,True,0.025859826323142033
+P1_c02_km_k6,edad,Identificación,0.01737265264627768,η²,False,0.0047185201598344126
+P1_c02_km_k6,imc,Medidas autodeclaradas,0.008838847771552182,η²,False,0.0006039367448428549
+P1_c02_km_k6,horas_sedentarismo,Actividad física,0.0217082406199842,η²,False,0.005896092731807375
+P1_c02_km_k6,trabaja_actualmente,Identificación,0.12625595844262683,η²,True,0.03429190103207398
+P1_c02_km_k6,tiene_pareja,Etapa reproductiva y salud ginecológica,0.36077062353972056,η²,True,0.09798753793727338
+P1_c02_km_k6,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.4284654121538694,η²,True,0.11637386219616717
+P1_c02_km_k6,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.013299176894029492,η²,False,0.0036121388921643953
+P1_c02_km_k6,usa_medicamentos_presion,Medicamentos y digestión,0.002728137230576639,η²,False,0.0007409789848085681
+P1_c02_km_k6,quien_prepara_comidas,Alimentación,0.010088867835632707,V²,False,0.0035427830862745633
+P1_c02_km_k6,alcohol_frecuencia,Sustancias,0.003907502150186419,η²,False,0.0010613018084029591
+P1_c02_km_k6,cantidad_personas_cuida,Cuidado de otras personas,0.023039202696380733,η²,False,0.006257590283005912
+P1_c02_km_k6,carnes_semana,Alimentación,0.013214165932005402,η²,False,0.0035890493878564
+P1_c02_km_k6,dias_ejercicio_semana,Actividad física,0.7164636708791358,η²,True,0.19459597470030154
+P1_c02_km_k6,distension_abdominal,Medicamentos y digestión,0.008802232644015945,η²,False,0.0023907409552243043
+P1_c02_km_k6,evacuacion_intestinal,Medicamentos y digestión,0.053350683476480885,η²,False,0.014490376377763951
+P1_c02_km_k6,falta_tiempo_influye,Alimentación,0.08047594507283697,η²,True,0.02185776558937132
+P1_c02_km_k6,frecuencia_aerobico,Actividad física,0.538469050776327,η²,True,0.14625153240943886
+P1_c02_km_k6,frecuencia_bajo_impacto,Actividad física,0.5276248519672069,η²,True,0.14330618078468002
+P1_c02_km_k6,frecuencia_comida_fuera,Alimentación,0.11144180419929203,η²,True,0.030268284899793253
+P1_c02_km_k6,frecuencia_fuerza,Actividad física,0.36505473688886336,η²,True,0.09915112968209985
+P1_c02_km_k6,frutas_dia,Alimentación,0.032534958736649314,η²,False,0.008836696492124579
+P1_c02_km_k6,golosinas_semana,Alimentación,0.02305742559492601,η²,False,0.006262539735222977
+P1_c02_km_k6,jugos_gaseosas_dia,Alimentación,0.006371895266240918,η²,False,0.001730646256635617
+P1_c02_km_k6,lacteos_dia,Alimentación,0.0015194472373688652,η²,False,0.00041269128942527137
+P1_c02_km_k6,legumbres_semana,Alimentación,0.002698748778264492,η²,False,0.0007329968989679865
+P1_c02_km_k6,panes_dia,Alimentación,0.010755175917855674,η²,False,0.002921172455597399
+P1_c02_km_k6,pescado_semana,Alimentación,0.0301276815781097,η²,False,0.0081828650920412
+P1_c02_km_k6,platos_verduras_dia,Alimentación,0.010298397233573196,η²,False,0.0027971085331640467
+P1_c02_km_k6,tabaco_frecuencia,Sustancias,0.030602346997488747,η²,False,0.00831178716261493
+P1_c02_km_k6,vasos_agua_dia,Alimentación,0.10612356234166116,η²,True,0.028823817441020732
+P1_c02_ward_k5,edad,Identificación,0.013021778442098376,η²,False,0.003869159566461458
+P1_c02_ward_k5,imc,Medidas autodeclaradas,0.004423705330986202,η²,False,0.0003939877215312123
+P1_c02_ward_k5,horas_sedentarismo,Actividad física,0.009788045798578011,η²,False,0.0029083209491643142
+P1_c02_ward_k5,trabaja_actualmente,Identificación,0.06448285726985083,η²,True,0.019159784140683596
+P1_c02_ward_k5,tiene_pareja,Etapa reproductiva y salud ginecológica,0.31602316205348563,η²,True,0.09389992665898914
+P1_c02_ward_k5,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.35219129688753836,η²,True,0.10464656050140089
+P1_c02_ward_k5,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.007769556126448912,η²,False,0.002308567339513478
+P1_c02_ward_k5,usa_medicamentos_presion,Medicamentos y digestión,0.011459664184935365,η²,False,0.0034050087326192766
+P1_c02_ward_k5,quien_prepara_comidas,Alimentación,0.0054898453491708426,V²,False,0.001756291837988317
+P1_c02_ward_k5,alcohol_frecuencia,Sustancias,0.00596942168942298,η²,False,0.0017736935963526934
+P1_c02_ward_k5,cantidad_personas_cuida,Cuidado de otras personas,0.013466050670296822,η²,False,0.004001166123744747
+P1_c02_ward_k5,carnes_semana,Alimentación,0.010727776463038262,η²,False,0.003187543015985752
+P1_c02_ward_k5,dias_ejercicio_semana,Actividad física,0.6976918675355803,η²,True,0.2073051062664714
+P1_c02_ward_k5,distension_abdominal,Medicamentos y digestión,0.01310887433050234,η²,False,0.003895038358004103
+P1_c02_ward_k5,evacuacion_intestinal,Medicamentos y digestión,0.02767324007416486,η²,False,0.008222546716183068
+P1_c02_ward_k5,falta_tiempo_influye,Alimentación,0.06752970215220108,η²,True,0.020065092818487344
+P1_c02_ward_k5,frecuencia_aerobico,Actividad física,0.5238488447014668,η²,True,0.155651148410251
+P1_c02_ward_k5,frecuencia_bajo_impacto,Actividad física,0.4945743419676597,η²,True,0.14695281869979254
+P1_c02_ward_k5,frecuencia_comida_fuera,Alimentación,0.0903986770352895,η²,True,0.026860148757851796
+P1_c02_ward_k5,frecuencia_fuerza,Actividad física,0.39999134335713626,η²,True,0.1188493829420924
+P1_c02_ward_k5,frutas_dia,Alimentación,0.017726158447496518,η²,False,0.005266971469274269
+P1_c02_ward_k5,golosinas_semana,Alimentación,0.013163604903271658,η²,False,0.003911300446946101
+P1_c02_ward_k5,jugos_gaseosas_dia,Alimentación,0.007638958994009912,η²,False,0.002269763028214861
+P1_c02_ward_k5,lacteos_dia,Alimentación,0.0049309564007775355,η²,False,0.0014651345217326828
+P1_c02_ward_k5,legumbres_semana,Alimentación,0.006540231272526162,η²,False,0.0019432981836916584
+P1_c02_ward_k5,panes_dia,Alimentación,0.013834238639232907,η²,False,0.004110565773615876
+P1_c02_ward_k5,pescado_semana,Alimentación,0.03162745999890772,η²,False,0.009397463638456088
+P1_c02_ward_k5,platos_verduras_dia,Alimentación,0.0047806740712377565,η²,False,0.0014204811500296917
+P1_c02_ward_k5,tabaco_frecuencia,Sustancias,0.023068067052994943,η²,False,0.006854212173455396
+P1_c02_ward_k5,vasos_agua_dia,Alimentación,0.11526782688681345,η²,True,0.03424951646101491
+P1_c08_km_k2,edad,Identificación,5.11222953564462e-05,η²,False,2.8621858278417053e-05
+P1_c08_km_k2,imc,Medidas autodeclaradas,0.0007095691976805672,η²,False,0.0001054131676578579
+P1_c08_km_k2,horas_sedentarismo,Actividad física,2.3590365691458683e-07,η²,False,1.3207546704411638e-07
+P1_c08_km_k2,trabaja_actualmente,Identificación,0.00044085621833878455,η²,False,0.00024682233288767435
+P1_c08_km_k2,tiene_pareja,Etapa reproductiva y salud ginecológica,0.00155517181498436,η²,False,0.000870694615269374
+P1_c08_km_k2,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.004015889164364545,η²,False,0.002248377341487503
+P1_c08_km_k2,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.00035766193152581325,η²,False,0.00020024431697246263
+P1_c08_km_k2,usa_medicamentos_presion,Medicamentos y digestión,0.005908984742193049,η²,False,0.0033082654579797066
+P1_c08_km_k2,quien_prepara_comidas,Alimentación,0.0015241393119876615,V²,False,0.00014901378837406536
+P1_c08_km_k2,alcohol_frecuencia,Sustancias,0.0047243683016621124,η²,False,0.0026450338163104365
+P1_c08_km_k2,cantidad_personas_cuida,Cuidado de otras personas,4.776534605037875e-06,η²,False,2.6742401837420728e-06
+P1_c08_km_k2,carnes_semana,Alimentación,0.007046084834965971,η²,False,0.003944894104576961
+P1_c08_km_k2,dias_ejercicio_semana,Actividad física,0.5751678002864219,η²,True,0.32201940760529646
+P1_c08_km_k2,distension_abdominal,Medicamentos y digestión,0.0032271954806480023,η²,False,0.0018068111190981965
+P1_c08_km_k2,evacuacion_intestinal,Medicamentos y digestión,0.009133666171584702,η²,False,0.00511366903427759
+P1_c08_km_k2,falta_tiempo_influye,Alimentación,0.0028576510019287706,η²,False,0.0015999141160641063
+P1_c08_km_k2,frecuencia_aerobico,Actividad física,0.48718953666061987,η²,True,0.27276298483473205
+P1_c08_km_k2,frecuencia_bajo_impacto,Actividad física,0.24879310820417158,η²,True,0.13929188887189342
+P1_c08_km_k2,frecuencia_comida_fuera,Alimentación,0.0026378637215656777,η²,False,0.0014768617306794246
+P1_c08_km_k2,frecuencia_fuerza,Actividad física,0.3953784196554621,η²,True,0.2213606610348626
+P1_c08_km_k2,frutas_dia,Alimentación,0.00264335632750065,η²,False,0.001479936877981659
+P1_c08_km_k2,golosinas_semana,Alimentación,0.0005055726704941089,η²,False,0.00028305515672620894
+P1_c08_km_k2,jugos_gaseosas_dia,Alimentación,0.00154491256687363,η²,False,0.0008649507662614002
+P1_c08_km_k2,lacteos_dia,Alimentación,0.00014164233435838924,η²,False,7.93013457624151e-05
+P1_c08_km_k2,legumbres_semana,Alimentación,0.0001097868906657241,η²,False,6.146642680170586e-05
+P1_c08_km_k2,panes_dia,Alimentación,0.004849716052757623,η²,False,0.0027152123077564608
+P1_c08_km_k2,pescado_semana,Alimentación,0.0004083957494966946,η²,False,0.00022864867827433185
+P1_c08_km_k2,platos_verduras_dia,Alimentación,0.004354476047238351,η²,False,0.0024379421039649224
+P1_c08_km_k2,tabaco_frecuencia,Sustancias,0.0016076764099046284,η²,False,0.0009000903821123023
+P1_c08_km_k2,vasos_agua_dia,Alimentación,0.021017383986159672,η²,False,0.011767010492009218
+P2_c02_km_k7,edad,Identificación,0.01934497492579096,η²,False,0.0049862581526497795
+P2_c02_km_k7,imc,Medidas autodeclaradas,0.021037698409923488,η²,False,0.0
+P2_c02_km_k7,horas_sedentarismo,Actividad física,0.01988785020746614,η²,False,0.005126186806447942
+P2_c02_km_k7,trabaja_actualmente,Identificación,0.13357343181519857,η²,True,0.034429179459828735
+P2_c02_km_k7,tiene_pareja,Etapa reproductiva y salud ginecológica,0.3865908516622028,η²,True,0.09964560787672701
+P2_c02_km_k7,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.46629826693366244,η²,True,0.12019056855765728
+P2_c02_km_k7,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.01473029215785248,η²,False,0.003796801993528663
+P2_c02_km_k7,usa_medicamentos_presion,Medicamentos y digestión,0.005184049278850928,η²,False,0.001336213051687467
+P2_c02_km_k7,quien_prepara_comidas,Alimentación,0.014145809877580441,V²,False,0.00429577774294141
+P2_c02_km_k7,alcohol_frecuencia,Sustancias,0.02413548591306496,η²,False,0.006221034861189592
+P2_c02_km_k7,cantidad_personas_cuida,Cuidado de otras personas,0.046259661022329084,η²,False,0.011923644915346034
+P2_c02_km_k7,carnes_semana,Alimentación,0.029901350717679853,η²,False,0.0077072135974958185
+P2_c02_km_k7,dias_ejercicio_semana,Actividad física,0.7324435132560065,η²,True,0.18879075591145472
+P2_c02_km_k7,distension_abdominal,Medicamentos y digestión,0.009972233009684223,η²,False,0.002570389898948303
+P2_c02_km_k7,evacuacion_intestinal,Medicamentos y digestión,0.04933659862767618,η²,False,0.01271674003584691
+P2_c02_km_k7,falta_tiempo_influye,Alimentación,0.09168019255254344,η²,True,0.023631000262613718
+P2_c02_km_k7,frecuencia_aerobico,Actividad física,0.5334669355577899,η²,True,0.13750360839433173
+P2_c02_km_k7,frecuencia_bajo_impacto,Actividad física,0.5295319854757247,η²,True,0.1364893565277755
+P2_c02_km_k7,frecuencia_comida_fuera,Alimentación,0.10775044859698447,η²,True,0.027773184241871945
+P2_c02_km_k7,frecuencia_fuerza,Actividad física,0.3855789343258628,η²,True,0.09938478143019565
+P2_c02_km_k7,frutas_dia,Alimentación,0.032742329501397265,η²,False,0.008439489223396468
+P2_c02_km_k7,golosinas_semana,Alimentación,0.028200422154233726,η²,False,0.007268791270814437
+P2_c02_km_k7,jugos_gaseosas_dia,Alimentación,0.009409546776904042,η²,False,0.0024253548794485715
+P2_c02_km_k7,lacteos_dia,Alimentación,0.002269546170112047,η²,False,0.0005849861856604931
+P2_c02_km_k7,legumbres_semana,Alimentación,0.003315708941935141,η²,False,0.0008546395540423238
+P2_c02_km_k7,panes_dia,Alimentación,0.00995328887959507,η²,False,0.002565506960435108
+P2_c02_km_k7,pescado_semana,Alimentación,0.03286929993913877,η²,False,0.008472216450118796
+P2_c02_km_k7,platos_verduras_dia,Alimentación,0.015380136999024643,η²,False,0.0039643025537352316
+P2_c02_km_k7,tabaco_frecuencia,Sustancias,0.03640311028738631,η²,False,0.009383072666085021
+P2_c02_km_k7,vasos_agua_dia,Alimentación,0.10678112502327185,η²,True,0.02752333653772547
+P2_c02_km_k8,edad,Identificación,0.024287512558330317,η²,False,0.0060510002019007894
+P2_c02_km_k8,imc,Medidas autodeclaradas,0.024323133003471248,η²,False,0.0
+P2_c02_km_k8,horas_sedentarismo,Actividad física,0.02180061462305591,η²,False,0.0054314134956742295
+P2_c02_km_k8,trabaja_actualmente,Identificación,0.16084392564268482,η²,True,0.040072717376921446
+P2_c02_km_k8,tiene_pareja,Etapa reproductiva y salud ginecológica,0.38464920426752747,η²,True,0.09583165040445765
+P2_c02_km_k8,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.4711453397102624,η²,True,0.11738133079147241
+P2_c02_km_k8,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.015182520655046609,η²,False,0.0037825790240318285
+P2_c02_km_k8,usa_medicamentos_presion,Medicamentos y digestión,0.006286447859857101,η²,False,0.001566208032950129
+P2_c02_km_k8,quien_prepara_comidas,Alimentación,0.015716872971887275,V²,False,0.004284291739473253
+P2_c02_km_k8,alcohol_frecuencia,Sustancias,0.024508138191495513,η²,False,0.006105966956837952
+P2_c02_km_k8,cantidad_personas_cuida,Cuidado de otras personas,0.049334580822612314,η²,False,0.012291236403948986
+P2_c02_km_k8,carnes_semana,Alimentación,0.03230720217580009,η²,False,0.008049028751672847
+P2_c02_km_k8,dias_ejercicio_semana,Actividad física,0.7473522500945077,η²,True,0.18619562647068216
+P2_c02_km_k8,distension_abdominal,Medicamentos y digestión,0.021507558444995946,η²,False,0.005358401366978453
+P2_c02_km_k8,evacuacion_intestinal,Medicamentos y digestión,0.05711185023191452,η²,False,0.014228868290001601
+P2_c02_km_k8,falta_tiempo_influye,Alimentación,0.09922414418823704,η²,True,0.024720741371702284
+P2_c02_km_k8,frecuencia_aerobico,Actividad física,0.5152820883522315,η²,True,0.12837757729067178
+P2_c02_km_k8,frecuencia_bajo_impacto,Actividad física,0.5388665542277855,η²,True,0.13425342017215086
+P2_c02_km_k8,frecuencia_comida_fuera,Alimentación,0.12815358465757154,η²,True,0.03192823327522285
+P2_c02_km_k8,frecuencia_fuerza,Actividad física,0.40297148405141986,η²,True,0.10039647022309278
+P2_c02_km_k8,frutas_dia,Alimentación,0.029895618856037354,η²,False,0.0074482059576654654
+P2_c02_km_k8,golosinas_semana,Alimentación,0.017894321601034303,η²,False,0.004458198152679823
+P2_c02_km_k8,jugos_gaseosas_dia,Alimentación,0.018884263328696617,η²,False,0.004704832614713274
+P2_c02_km_k8,lacteos_dia,Alimentación,0.009642986363425187,η²,False,0.002402457324185681
+P2_c02_km_k8,legumbres_semana,Alimentación,0.004030502532673481,η²,False,0.0010041609481578567
+P2_c02_km_k8,panes_dia,Alimentación,0.01797140627434047,η²,False,0.004477403057777396
+P2_c02_km_k8,pescado_semana,Alimentación,0.038305764923929,η²,False,0.009543512977378078
+P2_c02_km_k8,platos_verduras_dia,Alimentación,0.01342101941297252,η²,False,0.003343717928403371
+P2_c02_km_k8,tabaco_frecuencia,Sustancias,0.0333855872418246,η²,False,0.00831769802097613
+P2_c02_km_k8,vasos_agua_dia,Alimentación,0.11235854639054553,η²,True,0.027993051378218604
+P2_c02_ward_k2,edad,Identificación,0.000531995267574311,η²,False,0.0003260635377627923
+P2_c02_ward_k2,imc,Medidas autodeclaradas,0.006302657398664493,η²,False,0.0
+P2_c02_ward_k2,horas_sedentarismo,Actividad física,0.0008230107157370337,η²,False,0.0005044288961694967
+P2_c02_ward_k2,trabaja_actualmente,Identificación,5.62994437739218e-06,η²,False,3.450631411573278e-06
+P2_c02_ward_k2,tiene_pareja,Etapa reproductiva y salud ginecológica,0.00030204128520059254,η²,False,0.00018512316933189522
+P2_c02_ward_k2,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.0011427148680463526,η²,False,0.0007003777575470462
+P2_c02_ward_k2,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.00041405612536640107,η²,False,0.0002537778309286646
+P2_c02_ward_k2,usa_medicamentos_presion,Medicamentos y digestión,0.0031532959921830063,η²,False,0.0019326766787090054
+P2_c02_ward_k2,quien_prepara_comidas,Alimentación,0.007923267351812438,V²,False,0.0010690582434155407
+P2_c02_ward_k2,alcohol_frecuencia,Sustancias,0.004657891940796355,η²,False,0.0028548538254068536
+P2_c02_ward_k2,cantidad_personas_cuida,Cuidado de otras personas,0.000480663809694121,η²,False,0.0002946021361769253
+P2_c02_ward_k2,carnes_semana,Alimentación,0.0038414344403513057,η²,False,0.0023544414397066366
+P2_c02_ward_k2,dias_ejercicio_semana,Actividad física,0.5195201325840231,η²,True,0.31841744221095
+P2_c02_ward_k2,distension_abdominal,Medicamentos y digestión,0.0001099846129457848,η²,False,6.741032144908077e-05
+P2_c02_ward_k2,evacuacion_intestinal,Medicamentos y digestión,0.005882387150051752,η²,False,0.0036053553133691247
+P2_c02_ward_k2,falta_tiempo_influye,Alimentación,0.0005443698046913951,η²,False,0.0003336479761901677
+P2_c02_ward_k2,frecuencia_aerobico,Actividad física,0.42946412870035666,η²,True,0.263221501545958
+P2_c02_ward_k2,frecuencia_bajo_impacto,Actividad física,0.2662193011904727,η²,True,0.1631676303488527
+P2_c02_ward_k2,frecuencia_comida_fuera,Alimentación,0.0001275250303355542,η²,False,7.816096322456491e-05
+P2_c02_ward_k2,frecuencia_fuerza,Actividad física,0.3596419870063103,η²,True,0.22042703339449904
+P2_c02_ward_k2,frutas_dia,Alimentación,2.2667547682427393e-07,η²,False,1.389309499581976e-07
+P2_c02_ward_k2,golosinas_semana,Alimentación,0.002525535504041026,η²,False,0.0015479179823307922
+P2_c02_ward_k2,jugos_gaseosas_dia,Alimentación,0.00037949072067074586,η²,False,0.00023259245800108402
+P2_c02_ward_k2,lacteos_dia,Alimentación,0.00047245564400488744,η²,False,0.0002895712952911041
+P2_c02_ward_k2,legumbres_semana,Alimentación,0.005221037941507409,η²,False,0.0032000098605461445
+P2_c02_ward_k2,panes_dia,Alimentación,0.0041987155964231014,η²,False,0.0025734215036758686
+P2_c02_ward_k2,pescado_semana,Alimentación,9.202337551304919e-06,η²,False,5.640175619131262e-06
+P2_c02_ward_k2,platos_verduras_dia,Alimentación,0.003025612531770336,η²,False,0.0018544186126066853
+P2_c02_ward_k2,tabaco_frecuencia,Sustancias,0.0028951288676199926,η²,False,0.0017744442824832174
+P2_c02_ward_k2,vasos_agua_dia,Alimentación,0.014235130240978403,η²,False,0.008724808677436576
+F1_c02_km_k2,edad,Identificación,7.007876859935e-06,η²,False,3.737603168579388e-06
+F1_c02_km_k2,imc,Medidas autodeclaradas,0.006544162414168897,η²,False,0.0009419357284578099
+F1_c02_km_k2,horas_sedentarismo,Actividad física,0.0006062243868731404,η²,False,0.0003233256283655664
+F1_c02_km_k2,trabaja_actualmente,Identificación,0.001088749012867559,η²,False,0.0005806768357398024
+F1_c02_km_k2,tiene_pareja,Etapa reproductiva y salud ginecológica,0.0010769784271030273,η²,False,0.0005743990743680116
+F1_c02_km_k2,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.0005498641556454987,η²,False,0.00029326628471148457
+F1_c02_km_k2,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.0006858775899023574,η²,False,0.00036580811913699537
+F1_c02_km_k2,usa_medicamentos_presion,Medicamentos y digestión,0.003564660502123542,η²,False,0.0019011872859548966
+F1_c02_km_k2,quien_prepara_comidas,Alimentación,0.002294449700416832,V²,False,0.00039248205182826606
+F1_c02_km_k2,alcohol_frecuencia,Sustancias,0.00455173003777261,η²,False,0.0024276340683094763
+F1_c02_km_k2,cantidad_personas_cuida,Cuidado de otras personas,0.0037006578947368393,η²,False,0.011014541908070151
+F1_c02_km_k2,carnes_semana,Alimentación,0.004367154398137825,η²,False,0.0023291919139552053
+F1_c02_km_k2,dias_ejercicio_semana,Actividad física,0.555073546311193,η²,True,0.2960446775753466
+F1_c02_km_k2,distension_abdominal,Medicamentos y digestión,0.004650720692415849,η²,False,0.002480430056573709
+F1_c02_km_k2,evacuacion_intestinal,Medicamentos y digestión,0.006779525032092424,η²,False,0.0036158132838032555
+F1_c02_km_k2,falta_tiempo_influye,Alimentación,0.00011194908784552271,η²,False,5.970727993854205e-05
+F1_c02_km_k2,frecuencia_aerobico,Actividad física,0.4198648921905645,η²,True,0.24035806080748162
+F1_c02_km_k2,frecuencia_bajo_impacto,Actividad física,0.2927473428549215,η²,True,0.20764764137577077
+F1_c02_km_k2,frecuencia_comida_fuera,Alimentación,0.0007053304889018432,η²,False,0.0003761831897028318
+F1_c02_km_k2,frecuencia_fuerza,Actividad física,0.3681769654897464,η²,True,0.20830183463371774
+F1_c02_km_k2,frutas_dia,Alimentación,0.0006577385899891174,η²,False,0.00035080037608750203
+F1_c02_km_k2,golosinas_semana,Alimentación,0.0001694322923055055,η²,False,9.036555368162725e-05
+F1_c02_km_k2,jugos_gaseosas_dia,Alimentación,0.000805417666589955,η²,False,0.0004295640010295779
+F1_c02_km_k2,lacteos_dia,Alimentación,0.000843332373582169,η²,False,0.0004497855505547968
+F1_c02_km_k2,legumbres_semana,Alimentación,0.0003854008909235306,η²,False,0.00020555092788864833
+F1_c02_km_k2,panes_dia,Alimentación,0.005841094078909084,η²,False,0.0031153075565745845
+F1_c02_km_k2,pescado_semana,Alimentación,0.00023775932791484817,η²,False,0.00012680731056424806
+F1_c02_km_k2,platos_verduras_dia,Alimentación,0.004835369877352262,η²,False,0.002578911435811346
+F1_c02_km_k2,tabaco_frecuencia,Sustancias,0.0012791479091305833,η²,False,0.0009417437201998292
+F1_c02_km_k2,vasos_agua_dia,Alimentación,0.021897025787611178,η²,False,0.01167862886320669
+F1_c03_km_k6,edad,Identificación,0.03987188436001358,η²,False,0.009442795658481298
+F1_c03_km_k6,imc,Medidas autodeclaradas,0.023362252522631435,η²,False,0.001483945218221799
+F1_c03_km_k6,horas_sedentarismo,Actividad física,0.058972035870569636,η²,False,0.013966254498091388
+F1_c03_km_k6,trabaja_actualmente,Identificación,0.17726277469106877,η²,True,0.04198086411340621
+F1_c03_km_k6,tiene_pareja,Etapa reproductiva y salud ginecológica,0.4117614263990829,η²,True,0.09751681095440486
+F1_c03_km_k6,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.4260116242501865,η²,True,0.10089166289734057
+F1_c03_km_k6,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.012152528826242848,η²,False,0.002878064287202301
+F1_c03_km_k6,usa_medicamentos_presion,Medicamentos y digestión,0.010716676883820886,η²,False,0.002538013730130524
+F1_c03_km_k6,quien_prepara_comidas,Alimentación,0.011223821050317393,V²,False,0.008652633084930719
+F1_c03_km_k6,alcohol_frecuencia,Sustancias,0.028531325125839658,η²,False,0.006757028852621454
+F1_c03_km_k6,cantidad_personas_cuida,Cuidado de otras personas,0.16140696737266505,η²,True,0.06704085226016612
+F1_c03_km_k6,carnes_semana,Alimentación,0.01513000773070121,η²,False,0.0035832159328675756
+F1_c03_km_k6,dias_ejercicio_semana,Actividad física,0.5869493373586737,η²,True,0.13900628835383902
+F1_c03_km_k6,distension_abdominal,Medicamentos y digestión,0.012603665245211362,η²,False,0.0029849062157139817
+F1_c03_km_k6,evacuacion_intestinal,Medicamentos y digestión,0.03897200905355195,η²,False,0.009229679605066186
+F1_c03_km_k6,falta_tiempo_influye,Alimentación,0.3265952144056222,η²,True,0.07734703092595785
+F1_c03_km_k6,frecuencia_aerobico,Actividad física,0.4778560152453258,η²,True,0.12200489260968099
+F1_c03_km_k6,frecuencia_bajo_impacto,Actividad física,0.27126082858275746,η²,True,0.09487731491054854
+F1_c03_km_k6,frecuencia_comida_fuera,Alimentación,0.07028113935369618,η²,True,0.016644571687907485
+F1_c03_km_k6,frecuencia_fuerza,Actividad física,0.39645756671073357,η²,True,0.10787953181454736
+F1_c03_km_k6,frutas_dia,Alimentación,0.05551146428736441,η²,False,0.013146692773175133
+F1_c03_km_k6,golosinas_semana,Alimentación,0.022819731427715727,η²,False,0.005404361100862455
+F1_c03_km_k6,jugos_gaseosas_dia,Alimentación,0.007091169457507823,η²,False,0.0016793905089186867
+F1_c03_km_k6,lacteos_dia,Alimentación,0.0075103502137591985,η²,False,0.0017786644280921439
+F1_c03_km_k6,legumbres_semana,Alimentación,0.004799830166064311,η²,False,0.0011367362285744837
+F1_c03_km_k6,panes_dia,Alimentación,0.018374104631630566,η²,False,0.004351510299273528
+F1_c03_km_k6,pescado_semana,Alimentación,0.027154282948043545,η²,False,0.006430906119604116
+F1_c03_km_k6,platos_verduras_dia,Alimentación,0.07366569355778584,η²,True,0.017446130336495537
+F1_c03_km_k6,tabaco_frecuencia,Sustancias,0.016271359621070923,η²,False,0.016123528494784857
+F1_c03_km_k6,vasos_agua_dia,Alimentación,0.02447223996743536,η²,False,0.0057957220990930095
+F2_c02_km_k3,edad,Identificación,0.001959174906540296,η²,False,0.0006851553013548921
+F2_c02_km_k3,imc,Medidas autodeclaradas,0.004903501277430072,η²,False,0.0
+F2_c02_km_k3,horas_sedentarismo,Actividad física,0.003168707159656846,η²,False,0.0011081483851352232
+F2_c02_km_k3,trabaja_actualmente,Identificación,0.1179218578662205,η²,True,0.0412391899227283
+F2_c02_km_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.18824945062694412,η²,True,0.06583389193257996
+F2_c02_km_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.23479426693188898,η²,True,0.08211137054638976
+F2_c02_km_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.0027969334549639404,η²,False,0.0009781330792917522
+F2_c02_km_k3,usa_medicamentos_presion,Medicamentos y digestión,0.0035102462262307137,η²,False,0.001227590146716439
+F2_c02_km_k3,quien_prepara_comidas,Alimentación,0.006546524209322202,V²,False,0.0036524812873587344
+F2_c02_km_k3,alcohol_frecuencia,Sustancias,0.002490764003631964,η²,False,0.0008710606469158913
+F2_c02_km_k3,cantidad_personas_cuida,Cuidado de otras personas,0.025048695022352144,η²,False,0.04832828833128331
+F2_c02_km_k3,carnes_semana,Alimentación,0.006223593003585563,η²,False,0.0021764916065671034
+F2_c02_km_k3,dias_ejercicio_semana,Actividad física,0.559978629929506,η²,True,0.19583362652351186
+F2_c02_km_k3,distension_abdominal,Medicamentos y digestión,0.008616572545226043,η²,False,0.0030133554381297843
+F2_c02_km_k3,evacuacion_intestinal,Medicamentos y digestión,0.023871671372416803,η²,False,0.008348311392930095
+F2_c02_km_k3,falta_tiempo_influye,Alimentación,0.1464459733515438,η²,True,0.05121453662402924
+F2_c02_km_k3,frecuencia_aerobico,Actividad física,0.43979619387893926,η²,True,0.17003502375670462
+F2_c02_km_k3,frecuencia_bajo_impacto,Actividad física,0.26296100253032356,η²,True,0.11516387794418576
+F2_c02_km_k3,frecuencia_comida_fuera,Alimentación,0.08397492391941638,η²,True,0.02936739548479831
+F2_c02_km_k3,frecuencia_fuerza,Actividad física,0.4026749760598619,η²,True,0.1467722599619449
+F2_c02_km_k3,frutas_dia,Alimentación,0.014063636593483494,η²,False,0.004918282250444719
+F2_c02_km_k3,golosinas_semana,Alimentación,0.004816466307078883,η²,False,0.0016843965350290277
+F2_c02_km_k3,jugos_gaseosas_dia,Alimentación,0.010934293869440335,η²,False,0.003823900248114592
+F2_c02_km_k3,lacteos_dia,Alimentación,0.0021712161794990546,η²,False,0.0007593095801733529
+F2_c02_km_k3,legumbres_semana,Alimentación,0.004049201088360837,η²,False,0.0014160714200048604
+F2_c02_km_k3,panes_dia,Alimentación,0.0038484544996882793,η²,False,0.0013458670758195897
+F2_c02_km_k3,pescado_semana,Alimentación,0.0060964179557915004,η²,False,0.002132016425762529
+F2_c02_km_k3,platos_verduras_dia,Alimentación,0.0033855487063456794,η²,False,0.001183981397681405
+F2_c02_km_k3,tabaco_frecuencia,Sustancias,0.01404207345002289,η²,False,0.00762563855446789
+F2_c02_km_k3,vasos_agua_dia,Alimentación,0.020446142266808756,η²,False,0.007150348199946266
+F2_c03_ward_k2,edad,Identificación,7.764206810885704e-05,η²,False,4.434165754328819e-05
+F2_c03_ward_k2,imc,Medidas autodeclaradas,0.0005394951440675612,η²,False,0.0
+F2_c03_ward_k2,horas_sedentarismo,Actividad física,0.004547589130803035,η²,False,0.0025971441101097156
+F2_c03_ward_k2,trabaja_actualmente,Identificación,0.002728784713299889,η²,False,0.0015584185250818298
+F2_c03_ward_k2,tiene_pareja,Etapa reproductiva y salud ginecológica,0.004352487703095205,η²,False,0.002485721000134095
+F2_c03_ward_k2,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.0063728636839381235,η²,False,0.003639564812300722
+F2_c03_ward_k2,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.0004175496878400828,η²,False,0.00023846409190896324
+F2_c03_ward_k2,usa_medicamentos_presion,Medicamentos y digestión,0.005627603728940664,η²,False,0.0032139442368815697
+F2_c03_ward_k2,quien_prepara_comidas,Alimentación,0.005300675291377343,V²,False,0.0025400961093801893
+F2_c03_ward_k2,alcohol_frecuencia,Sustancias,0.0002258355024761821,η²,False,0.00012897544792181106
+F2_c03_ward_k2,cantidad_personas_cuida,Cuidado de otras personas,0.0058388273558368535,η²,False,0.007184725181662952
+F2_c03_ward_k2,carnes_semana,Alimentación,0.015502019774385206,η²,False,0.008853257889799583
+F2_c03_ward_k2,dias_ejercicio_semana,Actividad física,0.47945485477739097,η²,True,0.27381834997233395
+F2_c03_ward_k2,distension_abdominal,Medicamentos y digestión,0.002298919634965549,η²,False,0.0013129210704468392
+F2_c03_ward_k2,evacuacion_intestinal,Medicamentos y digestión,0.011740592089465197,η²,False,0.006705093340077264
+F2_c03_ward_k2,falta_tiempo_influye,Alimentación,0.00170757522162513,η²,False,0.0009752022009582646
+F2_c03_ward_k2,frecuencia_aerobico,Actividad física,0.43035630794614055,η²,True,0.261517416691491
+F2_c03_ward_k2,frecuencia_bajo_impacto,Actividad física,0.245323158777526,η²,True,0.19793043355503673
+F2_c03_ward_k2,frecuencia_comida_fuera,Alimentación,0.001550969491643781,η²,False,0.0008857641190357978
+F2_c03_ward_k2,frecuencia_fuerza,Actividad física,0.32154426535582875,η²,True,0.20126705804319941
+F2_c03_ward_k2,frutas_dia,Alimentación,0.00013090622354588056,η²,False,7.476100361750396e-05
+F2_c03_ward_k2,golosinas_semana,Alimentación,0.00021100178492058233,η²,False,0.00012050385977423517
+F2_c03_ward_k2,jugos_gaseosas_dia,Alimentación,0.0015303541002854274,η²,False,0.0008739905966915448
+F2_c03_ward_k2,lacteos_dia,Alimentación,0.00013756013324274272,η²,False,7.85610747939763e-05
+F2_c03_ward_k2,legumbres_semana,Alimentación,0.0005357560233066208,η²,False,0.0003059721448803927
+F2_c03_ward_k2,panes_dia,Alimentación,0.007189878271284209,η²,False,0.004106164710041472
+F2_c03_ward_k2,pescado_semana,Alimentación,0.000795291844169689,η²,False,0.0004541939628875085
+F2_c03_ward_k2,platos_verduras_dia,Alimentación,0.005563904379514551,η²,False,0.003177565314903051
+F2_c03_ward_k2,tabaco_frecuencia,Sustancias,5.637261378409889e-05,η²,False,0.00030424199458315077
+F2_c03_ward_k2,vasos_agua_dia,Alimentación,0.023826071925658113,η²,False,0.013607153282523205
+R0P1_cTodas_km_k2,edad,Identificación,1.0851339437503855e-05,η²,False,6.0651543024012814e-06
+R0P1_cTodas_km_k2,imc,Medidas autodeclaradas,0.001606833139264723,η²,False,0.00024281461837511213
+R0P1_cTodas_km_k2,horas_sedentarismo,Actividad física,2.413945923827192e-05,η²,False,1.349230165546363e-05
+R0P1_cTodas_km_k2,trabaja_actualmente,Identificación,0.00021279205125988423,η²,False,0.00011893615831009535
+R0P1_cTodas_km_k2,tiene_pareja,Etapa reproductiva y salud ginecológica,0.000680697198208743,η²,False,0.0003804630353815114
+R0P1_cTodas_km_k2,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.0028478080598077697,η²,False,0.0015917293349665446
+R0P1_cTodas_km_k2,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,1.5027984209278685e-05,η²,False,8.399612196103353e-06
+R0P1_cTodas_km_k2,usa_medicamentos_presion,Medicamentos y digestión,0.006822596857469269,η²,False,0.0038133635872276608
+R0P1_cTodas_km_k2,quien_prepara_comidas,Alimentación,0.002246203756856662,V²,False,0.00023969198067681522
+R0P1_cTodas_km_k2,alcohol_frecuencia,Sustancias,0.006098396403707361,η²,False,0.003408585216480748
+R0P1_cTodas_km_k2,cantidad_personas_cuida,Cuidado de otras personas,8.35429321690706e-06,η²,False,4.669476771956516e-06
+R0P1_cTodas_km_k2,carnes_semana,Alimentación,0.01096559314206358,η²,False,0.006129014285010775
+R0P1_cTodas_km_k2,dias_ejercicio_semana,Actividad física,0.5672996389173492,η²,True,0.31708157924155395
+R0P1_cTodas_km_k2,distension_abdominal,Medicamentos y digestión,0.0025163582806741656,η²,False,0.001406471647146552
+R0P1_cTodas_km_k2,evacuacion_intestinal,Medicamentos y digestión,0.005667058663752914,η²,False,0.0031674970112559936
+R0P1_cTodas_km_k2,falta_tiempo_influye,Alimentación,0.001971411025890789,η²,False,0.0011018835171773005
+R0P1_cTodas_km_k2,frecuencia_aerobico,Actividad física,0.5038282037789584,η²,True,0.2816054013810901
+R0P1_cTodas_km_k2,frecuencia_bajo_impacto,Actividad física,0.22420007892605837,η²,True,0.12531246314139258
+R0P1_cTodas_km_k2,frecuencia_comida_fuera,Alimentación,0.0026657947087960314,η²,False,0.001489996358559237
+R0P1_cTodas_km_k2,frecuencia_fuerza,Actividad física,0.41937442714287076,η²,True,0.23440153409185752
+R0P1_cTodas_km_k2,frutas_dia,Alimentación,0.0005550854484330061,η²,False,0.00031025468470073593
+R0P1_cTodas_km_k2,golosinas_semana,Alimentación,0.00035128367483735194,η²,False,0.00019634347483769588
+R0P1_cTodas_km_k2,jugos_gaseosas_dia,Alimentación,0.001218505633936086,η²,False,0.0006810610552485699
+R0P1_cTodas_km_k2,lacteos_dia,Alimentación,0.0009147920855985401,η²,False,0.0005113060176326339
+R0P1_cTodas_km_k2,legumbres_semana,Alimentación,0.00018226840517209867,η²,False,0.00010187553418525451
+R0P1_cTodas_km_k2,panes_dia,Alimentación,0.005633870185945417,η²,False,0.0031489469290174217
+R0P1_cTodas_km_k2,pescado_semana,Alimentación,0.0006995913565289169,η²,False,0.0003910235736713517
+R0P1_cTodas_km_k2,platos_verduras_dia,Alimentación,0.005352206527881138,η²,False,0.0029915162673578907
+R0P1_cTodas_km_k2,tabaco_frecuencia,Sustancias,0.000785111644432867,η²,False,0.0004388235475925909
+R0P1_cTodas_km_k2,vasos_agua_dia,Alimentación,0.017363128695967067,η²,False,0.009704797764367503
+R0P1_cTodas_ward_k2,edad,Identificación,0.00017636115817072992,η²,False,0.00011376415543472057
+R0P1_cTodas_ward_k2,imc,Medidas autodeclaradas,0.00015754924662985864,η²,False,2.8851137554790477e-05
+R0P1_cTodas_ward_k2,horas_sedentarismo,Actividad física,0.006093241520226263,η²,False,0.003930528028950964
+R0P1_cTodas_ward_k2,trabaja_actualmente,Identificación,0.0006882723257381141,η²,False,0.00044397939239481635
+R0P1_cTodas_ward_k2,tiene_pareja,Etapa reproductiva y salud ginecológica,0.00017326415129356122,η²,False,0.0001117663891725158
+R0P1_cTodas_ward_k2,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.0034650735019977398,η²,False,0.0022351926272358978
+R0P1_cTodas_ward_k2,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,7.996100941624489e-05,η²,False,5.157993289622501e-05
+R0P1_cTodas_ward_k2,usa_medicamentos_presion,Medicamentos y digestión,0.008470914468191554,η²,False,0.005464278190442837
+R0P1_cTodas_ward_k2,quien_prepara_comidas,Alimentación,0.0021362480846765994,V²,False,0.0004942131961140924
+R0P1_cTodas_ward_k2,alcohol_frecuencia,Sustancias,0.008783335583956085,η²,False,0.005665809665647349
+R0P1_cTodas_ward_k2,cantidad_personas_cuida,Cuidado de otras personas,2.3469418409036193e-05,η²,False,1.513926644359719e-05
+R0P1_cTodas_ward_k2,carnes_semana,Alimentación,0.03422157945552531,η²,False,0.022075093658837898
+R0P1_cTodas_ward_k2,dias_ejercicio_semana,Actividad física,0.4228362581844935,η²,True,0.27275625936278036
+R0P1_cTodas_ward_k2,distension_abdominal,Medicamentos y digestión,0.0021871301402487816,η²,False,0.001410837940802984
+R0P1_cTodas_ward_k2,evacuacion_intestinal,Medicamentos y digestión,0.007491529944138655,η²,False,0.004832512928860405
+R0P1_cTodas_ward_k2,falta_tiempo_influye,Alimentación,0.00048530038690498546,η²,False,0.0003130495922177003
+R0P1_cTodas_ward_k2,frecuencia_aerobico,Actividad física,0.43846592610308277,η²,True,0.2828383884944235
+R0P1_cTodas_ward_k2,frecuencia_bajo_impacto,Actividad física,0.16464957534862584,η²,True,0.10620944019934665
+R0P1_cTodas_ward_k2,frecuencia_comida_fuera,Alimentación,0.00015100760519196795,η²,False,9.740950244981503e-05
+R0P1_cTodas_ward_k2,frecuencia_fuerza,Actividad física,0.42314122631400936,η²,True,0.27295298318818945
+R0P1_cTodas_ward_k2,frutas_dia,Alimentación,0.0055285145258344125,η²,False,0.003566243227044736
+R0P1_cTodas_ward_k2,golosinas_semana,Alimentación,2.9933173881766254e-05,η²,False,1.930879951946747e-05
+R0P1_cTodas_ward_k2,jugos_gaseosas_dia,Alimentación,0.0002531055836812491,η²,False,0.00016326918728575395
+R0P1_cTodas_ward_k2,lacteos_dia,Alimentación,0.00012772087019478323,η²,False,8.23880784170806e-05
+R0P1_cTodas_ward_k2,legumbres_semana,Alimentación,3.062969181061098e-05,η²,False,1.9758097849906054e-05
+R0P1_cTodas_ward_k2,panes_dia,Alimentación,0.0007482721624613761,η²,False,0.00048268310029650214
+R0P1_cTodas_ward_k2,pescado_semana,Alimentación,1.70231336150913e-05,η²,False,1.0981003065869868e-05
+R0P1_cTodas_ward_k2,platos_verduras_dia,Alimentación,0.00027082074621408966,η²,False,0.0001746965929846091
+R0P1_cTodas_ward_k2,tabaco_frecuencia,Sustancias,1.23504745566842e-07,η²,False,7.96684100815004e-08
+R0P1_cTodas_ward_k2,vasos_agua_dia,Alimentación,0.020834405101026625,η²,False,0.013439515394929429
+F1_c05_km_k2,edad,Identificación,5.229856523432391e-05,η²,False,2.7875233717795405e-05
+F1_c05_km_k2,imc,Medidas autodeclaradas,0.004504827253862393,η²,False,0.0006549630128185759
+F1_c05_km_k2,horas_sedentarismo,Actividad física,0.00025927807611097906,η²,False,0.0001381957026375656
+F1_c05_km_k2,trabaja_actualmente,Identificación,0.0016930747972801008,η²,False,0.0009024120540293133
+F1_c05_km_k2,tiene_pareja,Etapa reproductiva y salud ginecológica,0.001956054079224135,η²,False,0.0010425805063431276
+F1_c05_km_k2,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.0014565473235401112,η²,False,0.0007763424652816887
+F1_c05_km_k2,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,3.9961938260021556e-05,η²,False,2.1299788317770708e-05
+F1_c05_km_k2,usa_medicamentos_presion,Medicamentos y digestión,0.004513945694101149,η²,False,0.002405941552100661
+F1_c05_km_k2,quien_prepara_comidas,Alimentación,0.0015650150952704676,V²,False,0.0008325437765898739
+F1_c05_km_k2,alcohol_frecuencia,Sustancias,0.0035483131508106747,η²,False,0.001891257588800169
+F1_c05_km_k2,cantidad_personas_cuida,Cuidado de otras personas,0.0018386108273748725,η²,False,0.010367995009554376
+F1_c05_km_k2,carnes_semana,Alimentación,0.005747462192609304,η²,False,0.0030634081678024756
+F1_c05_km_k2,dias_ejercicio_semana,Actividad física,0.5613477458952414,η²,True,0.2991994052547722
+F1_c05_km_k2,distension_abdominal,Medicamentos y digestión,0.003126127147174533,η²,False,0.0016662316541304356
+F1_c05_km_k2,evacuacion_intestinal,Medicamentos y digestión,0.007147739729440197,η²,False,0.0038097587308447453
+F1_c05_km_k2,falta_tiempo_influye,Alimentación,1.645289661034028e-05,η²,False,8.76942486458435e-06
+F1_c05_km_k2,frecuencia_aerobico,Actividad física,0.43389421761399605,η²,True,0.248354014095201
+F1_c05_km_k2,frecuencia_bajo_impacto,Actividad física,0.2743420437393327,η²,True,0.18533704530007047
+F1_c05_km_k2,frecuencia_comida_fuera,Alimentación,0.001526874793635504,η²,False,0.0008138271392284181
+F1_c05_km_k2,frecuencia_fuerza,Actividad física,0.38535817151792817,η²,True,0.21729998633618772
+F1_c05_km_k2,frutas_dia,Alimentación,0.0014944734202171996,η²,False,0.0007965571462034474
+F1_c05_km_k2,golosinas_semana,Alimentación,0.0017817334406889675,η²,False,0.000949667277859108
+F1_c05_km_k2,jugos_gaseosas_dia,Alimentación,0.0012435271369033902,η²,False,0.0006628023048107128
+F1_c05_km_k2,lacteos_dia,Alimentación,0.0009522295244152434,η²,False,0.000507540129009875
+F1_c05_km_k2,legumbres_semana,Alimentación,0.0002391215143086836,η²,False,0.00012745221725381345
+F1_c05_km_k2,panes_dia,Alimentación,0.00436236933811712,η²,False,0.002325151069030691
+F1_c05_km_k2,pescado_semana,Alimentación,0.00040246990195676527,η²,False,0.00021451721536062252
+F1_c05_km_k2,platos_verduras_dia,Alimentación,0.004285816404040821,η²,False,0.0022843482110632097
+F1_c05_km_k2,tabaco_frecuencia,Sustancias,0.0003019277107282161,η²,False,0.0003011634475318938
+F1_c05_km_k2,vasos_agua_dia,Alimentación,0.02479718857381402,η²,False,0.013216948188583596
+P1_c05_km_k2,edad,Identificación,0.0007376482690495297,η²,False,0.000415033778418114
+P1_c05_km_k2,imc,Medidas autodeclaradas,0.0007095691976805672,η²,False,0.00010682900204883872
+P1_c05_km_k2,horas_sedentarismo,Actividad física,2.724462417297831e-05,η²,False,1.532903930848076e-05
+P1_c05_km_k2,trabaja_actualmente,Identificación,4.649598528985002e-05,η²,False,2.6160712721503455e-05
+P1_c05_km_k2,tiene_pareja,Etapa reproductiva y salud ginecológica,0.0021832739395206153,η²,False,0.0012284071832888567
+P1_c05_km_k2,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.003411886310007817,η²,False,0.0019196792376401446
+P1_c05_km_k2,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.0004600234703119298,η²,False,0.00025882969845585394
+P1_c05_km_k2,usa_medicamentos_presion,Medicamentos y digestión,0.005618990841810403,η²,False,0.0031614945738003873
+P1_c05_km_k2,quien_prepara_comidas,Alimentación,0.0020528919088077897,V²,False,0.00022150304852640347
+P1_c05_km_k2,alcohol_frecuencia,Sustancias,0.00254786802649168,η²,False,0.0014335440592954686
+P1_c05_km_k2,cantidad_personas_cuida,Cuidado de otras personas,0.00026376917480516965,η²,False,0.0001484082886694416
+P1_c05_km_k2,carnes_semana,Alimentación,0.006965087673222364,η²,False,0.003918868619803943
+P1_c05_km_k2,dias_ejercicio_semana,Actividad física,0.5853329581243514,η²,True,0.3293343988402798
+P1_c05_km_k2,distension_abdominal,Medicamentos y digestión,0.002578372428464028,η²,False,0.0014507071948170682
+P1_c05_km_k2,evacuacion_intestinal,Medicamentos y digestión,0.009690487275544554,η²,False,0.005452299852698269
+P1_c05_km_k2,falta_tiempo_influye,Alimentación,0.0024929737734201724,η²,False,0.0014026581069769399
+P1_c05_km_k2,frecuencia_aerobico,Actividad física,0.48796584712094654,η²,True,0.2745513244822681
+P1_c05_km_k2,frecuencia_bajo_impacto,Actividad física,0.2589818771485087,η²,True,0.1457147417335612
+P1_c05_km_k2,frecuencia_comida_fuera,Alimentación,0.0007074368863827057,η²,False,0.00039803550861181985
+P1_c05_km_k2,frecuencia_fuerza,Actividad física,0.3626975139353113,η²,True,0.20406977952431196
+P1_c05_km_k2,frutas_dia,Alimentación,0.0025492015571289945,η²,False,0.0014342943630408429
+P1_c05_km_k2,golosinas_semana,Alimentación,0.0006425962026740543,η²,False,0.00036155325130307375
+P1_c05_km_k2,jugos_gaseosas_dia,Alimentación,0.00206765621128731,η²,False,0.0011633554986118042
+P1_c05_km_k2,lacteos_dia,Alimentación,0.0001542817110325956,η²,False,8.68057638814456e-05
+P1_c05_km_k2,legumbres_semana,Alimentación,0.0003228247583973622,η²,False,0.0001816355909262947
+P1_c05_km_k2,panes_dia,Alimentación,0.004751064618789983,η²,False,0.002673160614591783
+P1_c05_km_k2,pescado_semana,Alimentación,0.00047296023913077846,η²,False,0.00026610850092674576
+P1_c05_km_k2,platos_verduras_dia,Alimentación,0.005947744869625494,η²,False,0.0033464662358502397
+P1_c05_km_k2,tabaco_frecuencia,Sustancias,0.002788009307435922,η²,False,0.0015686582422554255
+P1_c05_km_k2,vasos_agua_dia,Alimentación,0.024331399730850994,η²,False,0.01368992945310964
+F1_c03_ward_k3,edad,Identificación,0.020279167876697136,η²,False,0.00800410726883759
+F1_c03_ward_k3,imc,Medidas autodeclaradas,0.006218817793346108,η²,False,0.000620628182650742
+F1_c03_ward_k3,horas_sedentarismo,Actividad física,0.014221976127028874,η²,False,0.005613357667717397
+F1_c03_ward_k3,trabaja_actualmente,Identificación,0.0010298118380348952,η²,False,0.0004064626550984782
+F1_c03_ward_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.37222763500777467,η²,True,0.14691677376227696
+F1_c03_ward_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.2611368943370692,η²,True,0.10306969826542169
+F1_c03_ward_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.004442193037505225,η²,False,0.0017533160037563726
+F1_c03_ward_k3,usa_medicamentos_presion,Medicamentos y digestión,0.004260114851376264,η²,False,0.0016814504646004854
+F1_c03_ward_k3,quien_prepara_comidas,Alimentación,0.017747872276625595,V²,False,0.012347433101666867
+F1_c03_ward_k3,alcohol_frecuencia,Sustancias,0.01525960341957451,η²,False,0.006022905051767238
+F1_c03_ward_k3,cantidad_personas_cuida,Cuidado de otras personas,0.014279343031692777,η²,False,0.029785445379759076
+F1_c03_ward_k3,carnes_semana,Alimentación,0.008805152456698138,η²,False,0.0034753588120776135
+F1_c03_ward_k3,dias_ejercicio_semana,Actividad física,0.44318545380478114,η²,True,0.1749235438954153
+F1_c03_ward_k3,distension_abdominal,Medicamentos y digestión,0.006538198655487921,η²,False,0.0025806011223779234
+F1_c03_ward_k3,evacuacion_intestinal,Medicamentos y digestión,0.012446376747160271,η²,False,0.004912535622682655
+F1_c03_ward_k3,falta_tiempo_influye,Alimentación,0.002062582745291657,η²,False,0.0008140932431028694
+F1_c03_ward_k3,frecuencia_aerobico,Actividad física,0.3732256122164774,η²,True,0.17426655742118766
+F1_c03_ward_k3,frecuencia_bajo_impacto,Actividad física,0.25874121230862257,η²,True,0.11535293196396729
+F1_c03_ward_k3,frecuencia_comida_fuera,Alimentación,0.017469662017094885,η²,False,0.006895206429837931
+F1_c03_ward_k3,frecuencia_fuerza,Actividad física,0.33176606762577,η²,True,0.130931037167572
+F1_c03_ward_k3,frutas_dia,Alimentación,0.05225449309126594,η²,False,0.020624641529884365
+F1_c03_ward_k3,golosinas_semana,Alimentación,0.0011694670059569567,η²,False,0.00046158399693519943
+F1_c03_ward_k3,jugos_gaseosas_dia,Alimentación,0.0024114782629420847,η²,False,0.0009518009225239613
+F1_c03_ward_k3,lacteos_dia,Alimentación,0.0033203304431577104,η²,False,0.001310521279601428
+F1_c03_ward_k3,legumbres_semana,Alimentación,0.00663835420491663,η²,False,0.002620132121187693
+F1_c03_ward_k3,panes_dia,Alimentación,0.01076953163556007,η²,False,0.004250691496331867
+F1_c03_ward_k3,pescado_semana,Alimentación,0.026380092248617804,η²,False,0.010412117962808503
+F1_c03_ward_k3,platos_verduras_dia,Alimentación,0.034897756965075855,η²,False,0.013774006502074682
+F1_c03_ward_k3,tabaco_frecuencia,Sustancias,0.010400192654309276,η²,False,0.005818533299307013
+F1_c03_ward_k3,vasos_agua_dia,Alimentación,0.023822198448755733,η²,False,0.00940252740757093
+F1_c05_ward_k3,edad,Identificación,0.0008612966546131836,η²,False,0.0003251423441176942
+F1_c05_ward_k3,imc,Medidas autodeclaradas,0.0015571671585835286,η²,False,0.00014965010786112672
+F1_c05_ward_k3,horas_sedentarismo,Actividad física,0.007575283622283793,η²,False,0.0028596946953334036
+F1_c05_ward_k3,trabaja_actualmente,Identificación,0.003009148630148436,η²,False,0.0011359635895072866
+F1_c05_ward_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.4264521661608642,η²,True,0.1609871073072776
+F1_c05_ward_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.3438471665634251,η²,True,0.12980344595076762
+F1_c05_ward_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.0020887119343723226,η²,False,0.000788495683677563
+F1_c05_ward_k3,usa_medicamentos_presion,Medicamentos y digestión,0.009807813245566956,η²,False,0.003702482033631481
+F1_c05_ward_k3,quien_prepara_comidas,Alimentación,0.008215907350327489,V²,False,0.003977153891885666
+F1_c05_ward_k3,alcohol_frecuencia,Sustancias,0.007134806300445173,η²,False,0.0026934130452350275
+F1_c05_ward_k3,cantidad_personas_cuida,Cuidado de otras personas,0.0004084066212879286,η²,False,0.013074241717880823
+F1_c05_ward_k3,carnes_semana,Alimentación,0.013366077897100164,η²,False,0.005045738742680504
+F1_c05_ward_k3,dias_ejercicio_semana,Actividad física,0.5197664179725072,η²,True,0.19621354689823667
+F1_c05_ward_k3,distension_abdominal,Medicamentos y digestión,0.002518756367223088,η²,False,0.0009508388835761641
+F1_c05_ward_k3,evacuacion_intestinal,Medicamentos y digestión,0.007290374810527752,η²,False,0.002752140673826444
+F1_c05_ward_k3,falta_tiempo_influye,Alimentación,0.0016824055929725672,η²,False,0.0006351136920431819
+F1_c05_ward_k3,frecuencia_aerobico,Actividad física,0.46786371515268005,η²,True,0.2074223047261763
+F1_c05_ward_k3,frecuencia_bajo_impacto,Actividad física,0.26590224961208797,η²,True,0.12465310063691079
+F1_c05_ward_k3,frecuencia_comida_fuera,Alimentación,0.0006061191418522717,η²,False,0.00022881198660287445
+F1_c05_ward_k3,frecuencia_fuerza,Actividad física,0.3080845210553333,η²,True,0.11722924190410393
+F1_c05_ward_k3,frutas_dia,Alimentación,0.011268175799060191,η²,False,0.004253773741733793
+F1_c05_ward_k3,golosinas_semana,Alimentación,0.0014224572099568985,η²,False,0.00053698231518177
+F1_c05_ward_k3,jugos_gaseosas_dia,Alimentación,0.0016373482749314973,η²,False,0.0006181044050233576
+F1_c05_ward_k3,lacteos_dia,Alimentación,0.0038509780537231467,η²,False,0.0014537569893333289
+F1_c05_ward_k3,legumbres_semana,Alimentación,0.0005838793013805164,η²,False,0.00022041637305316694
+F1_c05_ward_k3,panes_dia,Alimentación,0.002721911164805882,η²,False,0.0010275304935470529
+F1_c05_ward_k3,pescado_semana,Alimentación,0.01610101326222955,η²,False,0.00607818591505217
+F1_c05_ward_k3,platos_verduras_dia,Alimentación,0.0053890784772070936,η²,False,0.0020343950012208785
+F1_c05_ward_k3,tabaco_frecuencia,Sustancias,0.009009974279094814,η²,False,0.004278917879100974
+F1_c05_ward_k3,vasos_agua_dia,Alimentación,0.012901365775866988,η²,False,0.004870308375421592
+F1_c08_ward_k3,edad,Identificación,0.01589563113641875,η²,False,0.006551745020981065
+F1_c08_ward_k3,imc,Medidas autodeclaradas,0.002488490901517094,η²,False,0.0002774935313758576
+F1_c08_ward_k3,horas_sedentarismo,Actividad física,0.0033819127887558336,η²,False,0.001393932086430842
+F1_c08_ward_k3,trabaja_actualmente,Identificación,0.01370393171891144,η²,False,0.005648386379672282
+F1_c08_ward_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.022441123994331694,η²,False,0.009249618409817119
+F1_c08_ward_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.013382952596968973,η²,False,0.005516087552027294
+F1_c08_ward_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.0042477345415778255,η²,False,0.0017508001660575653
+F1_c08_ward_k3,usa_medicamentos_presion,Medicamentos y digestión,0.013950511242488856,η²,False,0.005750019724835464
+F1_c08_ward_k3,quien_prepara_comidas,Alimentación,0.010730779385723385,V²,False,0.008638417737315714
+F1_c08_ward_k3,alcohol_frecuencia,Sustancias,0.00839960019322527,η²,False,0.0034620857940085444
+F1_c08_ward_k3,cantidad_personas_cuida,Cuidado de otras personas,0.0012849292877132176,η²,False,0.02124200382372645
+F1_c08_ward_k3,carnes_semana,Alimentación,0.014828497983799937,η²,False,0.006111901880473367
+F1_c08_ward_k3,dias_ejercicio_semana,Actividad física,0.544463086935876,η²,True,0.22441281433407612
+F1_c08_ward_k3,distension_abdominal,Medicamentos y digestión,0.01396648667306569,η²,False,0.005756604361006344
+F1_c08_ward_k3,evacuacion_intestinal,Medicamentos y digestión,0.005446461074418854,η²,False,0.0022448825038808924
+F1_c08_ward_k3,falta_tiempo_influye,Alimentación,0.030419539081199317,η²,False,0.012538103206179972
+F1_c08_ward_k3,frecuencia_aerobico,Actividad física,0.46329638427693354,η²,True,0.2431495318433082
+F1_c08_ward_k3,frecuencia_bajo_impacto,Actividad física,0.30810285561215006,η²,True,0.20241983028783905
+F1_c08_ward_k3,frecuencia_comida_fuera,Alimentación,0.02314775056530059,η²,False,0.009540870583342425
+F1_c08_ward_k3,frecuencia_fuerza,Actividad física,0.3643363379183336,η²,True,0.16431108243705028
+F1_c08_ward_k3,frutas_dia,Alimentación,0.0011453005284030036,η²,False,0.00047206159793802854
+F1_c08_ward_k3,golosinas_semana,Alimentación,0.00133267211432414,η²,False,0.0005492910482565864
+F1_c08_ward_k3,jugos_gaseosas_dia,Alimentación,0.04719872553501339,η²,False,0.019454025597774743
+F1_c08_ward_k3,lacteos_dia,Alimentación,0.0010707828661601169,η²,False,0.0004413474527502743
+F1_c08_ward_k3,legumbres_semana,Alimentación,0.00727451179972423,η²,False,0.0029983550860534828
+F1_c08_ward_k3,panes_dia,Alimentación,0.0012798163746762388,η²,False,0.0005275053559429893
+F1_c08_ward_k3,pescado_semana,Alimentación,0.015923162207527944,η²,False,0.006563092576577555
+F1_c08_ward_k3,platos_verduras_dia,Alimentación,0.01003756951219226,η²,False,0.0041372120118958276
+F1_c08_ward_k3,tabaco_frecuencia,Sustancias,0.00046421112459356096,η²,False,0.0006098842705005155
+F1_c08_ward_k3,vasos_agua_dia,Alimentación,0.05890980653516139,η²,False,0.024281013338905245
+F2_c03_ward_k3,edad,Identificación,0.006664898984638984,η²,False,0.002457115602223458
+F2_c03_ward_k3,imc,Medidas autodeclaradas,0.00526074098930868,η²,False,0.0
+F2_c03_ward_k3,horas_sedentarismo,Actividad física,0.006148191387950487,η²,False,0.0022666235481748017
+F2_c03_ward_k3,trabaja_actualmente,Identificación,0.13317862701558333,η²,True,0.04909831087866279
+F2_c03_ward_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.11953169087856229,η²,True,0.04406716190219591
+F2_c03_ward_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.1400745766830645,η²,True,0.05164060680230213
+F2_c03_ward_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.0007622442794275676,η²,False,0.00028101285795984317
+F2_c03_ward_k3,usa_medicamentos_presion,Medicamentos y digestión,0.005683128512027717,η²,False,0.002095171099896377
+F2_c03_ward_k3,quien_prepara_comidas,Alimentación,0.008606221139399914,V²,False,0.006024402247704239
+F2_c03_ward_k3,alcohol_frecuencia,Sustancias,0.0022764186716917284,η²,False,0.0008392361006968077
+F2_c03_ward_k3,cantidad_personas_cuida,Cuidado de otras personas,0.04297427831673376,η²,False,0.05279557504968134
+F2_c03_ward_k3,carnes_semana,Alimentación,0.015502838496752672,η²,False,0.0057153553920194665
+F2_c03_ward_k3,dias_ejercicio_semana,Actividad física,0.5023982910948661,η²,True,0.18521671257504677
+F2_c03_ward_k3,distension_abdominal,Medicamentos y digestión,0.005165731013352252,η²,False,0.0019044247030677135
+F2_c03_ward_k3,evacuacion_intestinal,Medicamentos y digestión,0.02689156218323692,η²,False,0.00991398026599993
+F2_c03_ward_k3,falta_tiempo_influye,Alimentación,0.18025412626068965,η²,True,0.06645340417328006
+F2_c03_ward_k3,frecuencia_aerobico,Actividad física,0.4346760494802884,η²,True,0.172200355924709
+F2_c03_ward_k3,frecuencia_bajo_impacto,Actividad física,0.2706184240724859,η²,True,0.14349829971243427
+F2_c03_ward_k3,frecuencia_comida_fuera,Alimentación,0.07399610429972192,η²,True,0.02727978065348725
+F2_c03_ward_k3,frecuencia_fuerza,Actividad física,0.3232536500181402,η²,True,0.1311386406653383
+F2_c03_ward_k3,frutas_dia,Alimentación,0.008721505184645916,η²,False,0.0032153145176628873
+F2_c03_ward_k3,golosinas_semana,Alimentación,0.007491052378164948,η²,False,0.002761689519658833
+F2_c03_ward_k3,jugos_gaseosas_dia,Alimentación,0.007028956780867987,η²,False,0.0025913310034301478
+F2_c03_ward_k3,lacteos_dia,Alimentación,0.000690633627734474,η²,False,0.0002546125104127877
+F2_c03_ward_k3,legumbres_semana,Alimentación,0.0021028515903043212,η²,False,0.0007752479765418373
+F2_c03_ward_k3,panes_dia,Alimentación,0.00770311868000571,η²,False,0.002839870962492363
+F2_c03_ward_k3,pescado_semana,Alimentación,0.010461457580998035,η²,False,0.0038567742292138557
+F2_c03_ward_k3,platos_verduras_dia,Alimentación,0.005607899727820626,η²,False,0.00206743687319053
+F2_c03_ward_k3,tabaco_frecuencia,Sustancias,0.02319154530762931,η²,False,0.01479331931525567
+F2_c03_ward_k3,vasos_agua_dia,Alimentación,0.032436575018897365,η²,False,0.011958232937260579
+F2_c05_ward_k3,edad,Identificación,0.00012645191000243257,η²,False,4.899127231634005e-05
+F2_c05_ward_k3,imc,Medidas autodeclaradas,0.00999775550972704,η²,False,0.0
+F2_c05_ward_k3,horas_sedentarismo,Actividad física,0.014410488558580455,η²,False,0.005583056587847179
+F2_c05_ward_k3,trabaja_actualmente,Identificación,0.001953786627930136,η²,False,0.0007569556895986052
+F2_c05_ward_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.42190697011497286,η²,True,0.16345944687326255
+F2_c05_ward_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.36160025827814607,η²,True,0.14009481329798262
+F2_c05_ward_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.00019433687080745886,η²,False,7.529194741819839e-05
+F2_c05_ward_k3,usa_medicamentos_presion,Medicamentos y digestión,0.007177921114379854,η²,False,0.0027809424782356887
+F2_c05_ward_k3,quien_prepara_comidas,Alimentación,0.00924052861414859,V²,False,0.00461290081477576
+F2_c05_ward_k3,alcohol_frecuencia,Sustancias,0.010331687526486222,η²,False,0.004002806419354987
+F2_c05_ward_k3,cantidad_personas_cuida,Cuidado de otras personas,0.0030917568969831897,η²,False,0.014865459322834949
+F2_c05_ward_k3,carnes_semana,Alimentación,0.017628689431221412,η²,False,0.006829884376507755
+F2_c05_ward_k3,dias_ejercicio_semana,Actividad física,0.4486160531861481,η²,True,0.17380734879134802
+F2_c05_ward_k3,distension_abdominal,Medicamentos y digestión,0.0009374781886060628,η²,False,0.0003632072400309856
+F2_c05_ward_k3,evacuacion_intestinal,Medicamentos y digestión,0.016391159873077415,η²,False,0.006350428213438448
+F2_c05_ward_k3,falta_tiempo_influye,Alimentación,0.0015804976231364235,η²,False,0.0006123323044224292
+F2_c05_ward_k3,frecuencia_aerobico,Actividad física,0.4245723001068178,η²,True,0.20400404548099976
+F2_c05_ward_k3,frecuencia_bajo_impacto,Actividad física,0.26461879942063266,η²,True,0.13727769869454667
+F2_c05_ward_k3,frecuencia_comida_fuera,Alimentación,0.0011555762527431738,η²,False,0.0004477049882390029
+F2_c05_ward_k3,frecuencia_fuerza,Actividad física,0.27102781551045296,η²,True,0.10252173672384608
+F2_c05_ward_k3,frutas_dia,Alimentación,0.00983971625371208,η²,False,0.0038122019548132327
+F2_c05_ward_k3,golosinas_semana,Alimentación,0.00725450136567073,η²,False,0.002810611970337253
+F2_c05_ward_k3,jugos_gaseosas_dia,Alimentación,0.003192972865281658,η²,False,0.0012370537000089116
+F2_c05_ward_k3,lacteos_dia,Alimentación,0.001083911283183924,η²,False,0.0004199398240817189
+F2_c05_ward_k3,legumbres_semana,Alimentación,0.00884370586694592,η²,False,0.0034263175811645777
+F2_c05_ward_k3,panes_dia,Alimentación,0.002466589237981286,η²,False,0.0009556308405952362
+F2_c05_ward_k3,pescado_semana,Alimentación,0.012803095392357753,η²,False,0.0049603041412899975
+F2_c05_ward_k3,platos_verduras_dia,Alimentación,0.00630952891945307,η²,False,0.0024445012295568423
+F2_c05_ward_k3,tabaco_frecuencia,Sustancias,0.012766196376718197,η²,False,0.006157829509219551
+F2_c05_ward_k3,vasos_agua_dia,Alimentación,0.013629705445667755,η²,False,0.005280557731926602
+F2_c08_ward_k3,edad,Identificación,0.0016264295186920591,η²,False,0.000656026091020135
+F2_c08_ward_k3,imc,Medidas autodeclaradas,0.0026809128169488004,η²,False,0.0
+F2_c08_ward_k3,horas_sedentarismo,Actividad física,0.00833571541895588,η²,False,0.003362240256529243
+F2_c08_ward_k3,trabaja_actualmente,Identificación,0.039946379570326145,η²,False,0.016112513292922792
+F2_c08_ward_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.001037177919081689,η²,False,0.0004183493770420115
+F2_c08_ward_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.011721362572703922,η²,False,0.004727852994321249
+F2_c08_ward_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.027845956405952287,η²,False,0.011231764870084614
+F2_c08_ward_k3,usa_medicamentos_presion,Medicamentos y digestión,0.052440474366857476,η²,False,0.021152050559065688
+F2_c08_ward_k3,quien_prepara_comidas,Alimentación,0.007438261303452678,V²,False,0.004784390880468116
+F2_c08_ward_k3,alcohol_frecuencia,Sustancias,0.017958272602469086,η²,False,0.007243532684002177
+F2_c08_ward_k3,cantidad_personas_cuida,Cuidado de otras personas,0.029190469036599984,η²,False,0.031759569465511506
+F2_c08_ward_k3,carnes_semana,Alimentación,0.0219704204474899,η²,False,0.008861846688460576
+F2_c08_ward_k3,dias_ejercicio_semana,Actividad física,0.5355369647215293,η²,True,0.2160107262721009
+F2_c08_ward_k3,distension_abdominal,Medicamentos y digestión,0.04046353791980519,η²,False,0.01632111093982235
+F2_c08_ward_k3,evacuacion_intestinal,Medicamentos y digestión,0.007036571584423643,η²,False,0.0028382260022094615
+F2_c08_ward_k3,falta_tiempo_influye,Alimentación,0.0007968776227586531,η²,False,0.00032142340376371543
+F2_c08_ward_k3,frecuencia_aerobico,Actividad física,0.4109792122175071,η²,True,0.23295440991400934
+F2_c08_ward_k3,frecuencia_bajo_impacto,Actividad física,0.320409042516601,η²,True,0.2230890435323628
+F2_c08_ward_k3,frecuencia_comida_fuera,Alimentación,0.0008273230541913937,η²,False,0.0003337036760673698
+F2_c08_ward_k3,frecuencia_fuerza,Actividad física,0.2735829055761813,η²,True,0.11639445671301632
+F2_c08_ward_k3,frutas_dia,Alimentación,0.006033935010841189,η²,False,0.002433808998876861
+F2_c08_ward_k3,golosinas_semana,Alimentación,0.018040133442610653,η²,False,0.007276551543011133
+F2_c08_ward_k3,jugos_gaseosas_dia,Alimentación,0.03819229328643168,η²,False,0.015404996394766206
+F2_c08_ward_k3,lacteos_dia,Alimentación,0.00649577121285297,η²,False,0.0026200922621940634
+F2_c08_ward_k3,legumbres_semana,Alimentación,0.010422434768098333,η²,False,0.004203925876435403
+F2_c08_ward_k3,panes_dia,Alimentación,4.042265678991584e-05,η²,False,1.630462139168683e-05
+F2_c08_ward_k3,pescado_semana,Alimentación,0.002152735668561591,η²,False,0.0008683135355178439
+F2_c08_ward_k3,platos_verduras_dia,Alimentación,0.0200203491145302,η²,False,0.008075278528531458
+F2_c08_ward_k3,tabaco_frecuencia,Sustancias,0.009021860522148331,η²,False,0.00551769661065024
+F2_c08_ward_k3,vasos_agua_dia,Alimentación,0.08679679544780586,η²,True,0.0350097940158449
+P1_c03_ward_k3,edad,Identificación,1.256162380346656e-06,η²,False,4.735538196697288e-07
+P1_c03_ward_k3,imc,Medidas autodeclaradas,0.007718600455765805,η²,False,0.0008175156854907152
+P1_c03_ward_k3,horas_sedentarismo,Actividad física,0.01357011929219938,η²,False,0.0051157254227141655
+P1_c03_ward_k3,trabaja_actualmente,Identificación,0.021226511824206002,η²,False,0.008002067176893187
+P1_c03_ward_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.3643570297509143,η²,True,0.13735697379704292
+P1_c03_ward_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.4359932803411714,η²,True,0.16436273405908883
+P1_c03_ward_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.0021388016745159614,η²,False,0.0008062952038125818
+P1_c03_ward_k3,usa_medicamentos_presion,Medicamentos y digestión,0.004272268662316816,η²,False,0.001610579313112062
+P1_c03_ward_k3,quien_prepara_comidas,Alimentación,0.0050165278534156825,V²,False,0.00048014529848988853
+P1_c03_ward_k3,alcohol_frecuencia,Sustancias,0.005422195897613855,η²,False,0.002044084123586508
+P1_c03_ward_k3,cantidad_personas_cuida,Cuidado de otras personas,0.004545001594387754,η²,False,0.0017133954169475459
+P1_c03_ward_k3,carnes_semana,Alimentación,0.00431120846185881,η²,False,0.0016252590162291036
+P1_c03_ward_k3,dias_ejercicio_semana,Actividad física,0.5166659240115261,η²,True,0.19477507497190832
+P1_c03_ward_k3,distension_abdominal,Medicamentos y digestión,0.005141909311173049,η²,False,0.0019384204086974834
+P1_c03_ward_k3,evacuacion_intestinal,Medicamentos y digestión,0.030683279409324728,η²,False,0.011567122524615935
+P1_c03_ward_k3,falta_tiempo_influye,Alimentación,0.020755959894145058,η²,False,0.007824676365546106
+P1_c03_ward_k3,frecuencia_aerobico,Actividad física,0.452387344839648,η²,True,0.17054304321706978
+P1_c03_ward_k3,frecuencia_bajo_impacto,Actividad física,0.2591022982908648,η²,True,0.09767756538530899
+P1_c03_ward_k3,frecuencia_comida_fuera,Alimentación,0.044833735631424496,η²,False,0.01690162600831136
+P1_c03_ward_k3,frecuencia_fuerza,Actividad física,0.3699311654789596,η²,True,0.13945833689043985
+P1_c03_ward_k3,frutas_dia,Alimentación,0.022154334320586683,η²,False,0.008351841930548406
+P1_c03_ward_k3,golosinas_semana,Alimentación,0.0029634290830229935,η²,False,0.001117167002883008
+P1_c03_ward_k3,jugos_gaseosas_dia,Alimentación,0.004919856371655485,η²,False,0.0018547098794516924
+P1_c03_ward_k3,lacteos_dia,Alimentación,0.003222672344588182,η²,False,0.00121489770924597
+P1_c03_ward_k3,legumbres_semana,Alimentación,0.006090456615676537,η²,False,0.0022960080949814875
+P1_c03_ward_k3,panes_dia,Alimentación,0.004984885159158579,η²,False,0.0018792247281626464
+P1_c03_ward_k3,pescado_semana,Alimentación,0.022660921934851082,η²,False,0.00854281763837538
+P1_c03_ward_k3,platos_verduras_dia,Alimentación,0.005650597895881203,η²,False,0.0021301881499384873
+P1_c03_ward_k3,tabaco_frecuencia,Sustancias,0.0072468526347848105,η²,False,0.002731951537061488
+P1_c03_ward_k3,vasos_agua_dia,Alimentación,0.013953037012482105,η²,False,0.005260079490226624
+P1_c05_ward_k3,edad,Identificación,0.0014341563141305413,η²,False,0.0005576151366345238
+P1_c05_ward_k3,imc,Medidas autodeclaradas,0.0038805314243725007,η²,False,0.00043415442433422267
+P1_c05_ward_k3,horas_sedentarismo,Actividad física,0.008350851843801927,η²,False,0.003246899480911408
+P1_c05_ward_k3,trabaja_actualmente,Identificación,0.0009158734855171287,η²,False,0.000356101293655836
+P1_c05_ward_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.5110438476156534,η²,True,0.19869925063726074
+P1_c05_ward_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.30602067015348244,η²,True,0.11898407176352592
+P1_c05_ward_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.010651268767996706,η²,False,0.004141325900725275
+P1_c05_ward_k3,usa_medicamentos_presion,Medicamentos y digestión,0.010704640946836427,η²,False,0.004162077568101391
+P1_c05_ward_k3,quien_prepara_comidas,Alimentación,0.0052138894020226706,V²,False,0.0007730872127945293
+P1_c05_ward_k3,alcohol_frecuencia,Sustancias,0.010875385513044936,η²,False,0.004228464860531
+P1_c05_ward_k3,cantidad_personas_cuida,Cuidado de otras personas,0.0019989116424663275,η²,False,0.000777197978806056
+P1_c05_ward_k3,carnes_semana,Alimentación,0.007939940507183448,η²,False,0.0030871328091367878
+P1_c05_ward_k3,dias_ejercicio_semana,Actividad física,0.4637517138267685,η²,True,0.18031156905429852
+P1_c05_ward_k3,distension_abdominal,Medicamentos y digestión,0.001324192324517072,η²,False,0.0005148599749488431
+P1_c05_ward_k3,evacuacion_intestinal,Medicamentos y digestión,0.014294879691221132,η²,False,0.005558000347421537
+P1_c05_ward_k3,falta_tiempo_influye,Alimentación,0.002266694596426061,η²,False,0.0008813148222696497
+P1_c05_ward_k3,frecuencia_aerobico,Actividad física,0.4273952938229238,η²,True,0.16617580860180112
+P1_c05_ward_k3,frecuencia_bajo_impacto,Actividad física,0.28055181006375585,η²,True,0.10908150970740288
+P1_c05_ward_k3,frecuencia_comida_fuera,Alimentación,0.004013567541547799,η²,False,0.001560517491030165
+P1_c05_ward_k3,frecuencia_fuerza,Actividad física,0.38897116217851213,η²,True,0.15123610000389218
+P1_c05_ward_k3,frutas_dia,Alimentación,0.032278705112948274,η²,False,0.012550301793883648
+P1_c05_ward_k3,golosinas_semana,Alimentación,0.003026396469410566,η²,False,0.0011766949419482876
+P1_c05_ward_k3,jugos_gaseosas_dia,Alimentación,0.0025080117241144425,η²,False,0.0009751414726859182
+P1_c05_ward_k3,lacteos_dia,Alimentación,0.0018629712736510189,η²,False,0.000724342926268034
+P1_c05_ward_k3,legumbres_semana,Alimentación,0.007882106898057042,η²,False,0.0030646464904995805
+P1_c05_ward_k3,panes_dia,Alimentación,0.011840559831462464,η²,False,0.0046037348392200545
+P1_c05_ward_k3,pescado_semana,Alimentación,0.026910086703506454,η²,False,0.010462926200007465
+P1_c05_ward_k3,platos_verduras_dia,Alimentación,0.010066665126421669,η²,False,0.003914025824532723
+P1_c05_ward_k3,tabaco_frecuencia,Sustancias,0.0048189123393064534,η²,False,0.0018736440623916297
+P1_c05_ward_k3,vasos_agua_dia,Alimentación,0.015142289858290357,η²,False,0.005887482379080159
+P2_c03_ward_k3,edad,Identificación,0.006182339265916191,η²,False,0.0024742089875224023
+P2_c03_ward_k3,imc,Medidas autodeclaradas,0.016817879235036942,η²,False,0.0
+P2_c03_ward_k3,horas_sedentarismo,Actividad física,0.03512690150845841,η²,False,0.014057995150022248
+P2_c03_ward_k3,trabaja_actualmente,Identificación,0.016260939452284292,η²,False,0.006507724796050479
+P2_c03_ward_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.41332433452115475,η²,True,0.16541485985279428
+P2_c03_ward_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.3376460327938192,η²,True,0.1351279528681682
+P2_c03_ward_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.012494553796844913,η²,False,0.005000394829456913
+P2_c03_ward_k3,usa_medicamentos_presion,Medicamentos y digestión,0.0019035013827346937,η²,False,0.0007617925879429301
+P2_c03_ward_k3,quien_prepara_comidas,Alimentación,0.001735119400106486,V²,False,0.0006255170999597854
+P2_c03_ward_k3,alcohol_frecuencia,Sustancias,0.015876562631846426,η²,False,0.0063538949037044235
+P2_c03_ward_k3,cantidad_personas_cuida,Cuidado de otras personas,0.01166804387342657,η²,False,0.004669620636576205
+P2_c03_ward_k3,carnes_semana,Alimentación,0.008625130570059387,η²,False,0.003451828613263996
+P2_c03_ward_k3,dias_ejercicio_semana,Actividad física,0.46326295831725206,η²,True,0.18540059446008017
+P2_c03_ward_k3,distension_abdominal,Medicamentos y digestión,0.006645231186496553,η²,False,0.0026594610904707933
+P2_c03_ward_k3,evacuacion_intestinal,Medicamentos y digestión,0.00609287118223413,η²,False,0.0024384033276869687
+P2_c03_ward_k3,falta_tiempo_influye,Alimentación,0.008993423187699051,η²,False,0.0035992215118753642
+P2_c03_ward_k3,frecuencia_aerobico,Actividad física,0.39490435060442913,η²,True,0.15804307260584735
+P2_c03_ward_k3,frecuencia_bajo_impacto,Actividad física,0.26290454066204144,η²,True,0.10521596266200252
+P2_c03_ward_k3,frecuencia_comida_fuera,Alimentación,0.007304183974646838,η²,False,0.0029231779200829906
+P2_c03_ward_k3,frecuencia_fuerza,Actividad física,0.37085055477139495,η²,True,0.14841660028294706
+P2_c03_ward_k3,frutas_dia,Alimentación,0.027185727931824857,η²,False,0.010879890198211511
+P2_c03_ward_k3,golosinas_semana,Alimentación,0.00082491883353838,η²,False,0.00033013742923645355
+P2_c03_ward_k3,jugos_gaseosas_dia,Alimentación,0.0023569163351120966,η²,False,0.000943251951785034
+P2_c03_ward_k3,lacteos_dia,Alimentación,0.003491705147047695,η²,False,0.0013974011915250876
+P2_c03_ward_k3,legumbres_semana,Alimentación,0.00428937871590237,η²,False,0.0017166349036007184
+P2_c03_ward_k3,panes_dia,Alimentación,0.00630790021650236,η²,False,0.002524459227611106
+P2_c03_ward_k3,pescado_semana,Alimentación,0.034989477690767434,η²,False,0.014002997319879657
+P2_c03_ward_k3,platos_verduras_dia,Alimentación,0.023967413300610495,η²,False,0.009591901519051697
+P2_c03_ward_k3,tabaco_frecuencia,Sustancias,0.0043603845249378685,η²,False,0.001745051851187274
+P2_c03_ward_k3,vasos_agua_dia,Alimentación,0.009310181866891398,η²,False,0.0037259902214565655
+P2_c05_ward_k3,edad,Identificación,0.0003891443914012684,η²,False,0.00015364628827984947
+P2_c05_ward_k3,imc,Medidas autodeclaradas,0.002887698342399392,η²,False,0.0
+P2_c05_ward_k3,horas_sedentarismo,Actividad física,0.035942085837422796,η²,False,0.01419105145540037
+P2_c05_ward_k3,trabaja_actualmente,Identificación,0.005368957534637122,η²,False,0.0021198311355810334
+P2_c05_ward_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.41105372893832004,η²,True,0.1622967750030885
+P2_c05_ward_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.3940785436681461,η²,True,0.15559444479544168
+P2_c05_ward_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.002753192928340185,η²,False,0.0010870460520696805
+P2_c05_ward_k3,usa_medicamentos_presion,Medicamentos y digestión,0.012015268338960107,η²,False,0.004744001002609933
+P2_c05_ward_k3,quien_prepara_comidas,Alimentación,0.0046400370531141585,V²,False,0.0005846929536763831
+P2_c05_ward_k3,alcohol_frecuencia,Sustancias,0.01103722475661131,η²,False,0.004357839028997244
+P2_c05_ward_k3,cantidad_personas_cuida,Cuidado de otras personas,0.005407300438304154,η²,False,0.0021349701044586205
+P2_c05_ward_k3,carnes_semana,Alimentación,0.015194839069044919,η²,False,0.005999394249424161
+P2_c05_ward_k3,dias_ejercicio_semana,Actividad física,0.4661342776647388,η²,True,0.18404428583771135
+P2_c05_ward_k3,distension_abdominal,Medicamentos y digestión,0.001005260482417966,η²,False,0.0003969080508182568
+P2_c05_ward_k3,evacuacion_intestinal,Medicamentos y digestión,0.008566161073534726,η²,False,0.0033821863627961257
+P2_c05_ward_k3,falta_tiempo_influye,Alimentación,0.008285442812885659,η²,False,0.0032713500774630803
+P2_c05_ward_k3,frecuencia_aerobico,Actividad física,0.42749028893209345,η²,True,0.16878643922782172
+P2_c05_ward_k3,frecuencia_bajo_impacto,Actividad física,0.2510515544293366,η²,True,0.09912294859513987
+P2_c05_ward_k3,frecuencia_comida_fuera,Alimentación,0.0020283444133891975,η²,False,0.0008008533525260726
+P2_c05_ward_k3,frecuencia_fuerza,Actividad física,0.3759066445273174,η²,True,0.14841961479485943
+P2_c05_ward_k3,frutas_dia,Alimentación,0.018876637433405813,η²,False,0.0074530825599298575
+P2_c05_ward_k3,golosinas_semana,Alimentación,0.0035709878125623194,η²,False,0.001409936864095845
+P2_c05_ward_k3,jugos_gaseosas_dia,Alimentación,0.0008771371851704643,η²,False,0.0003463209949612555
+P2_c05_ward_k3,lacteos_dia,Alimentación,0.00279976003698777,η²,False,0.0011054321924271534
+P2_c05_ward_k3,legumbres_semana,Alimentación,0.00508582508046117,η²,False,0.002008041651685214
+P2_c05_ward_k3,panes_dia,Alimentación,0.010399794761440003,η²,False,0.0041061618753226265
+P2_c05_ward_k3,pescado_semana,Alimentación,0.014915126618520722,η²,False,0.005888955089157855
+P2_c05_ward_k3,platos_verduras_dia,Alimentación,0.02858144362521729,η²,False,0.011284841369244436
+P2_c05_ward_k3,tabaco_frecuencia,Sustancias,0.003327481301403234,η²,False,0.00131379293285005
+P2_c05_ward_k3,vasos_agua_dia,Alimentación,0.009105555682674831,η²,False,0.003595156102162302
+F1_c03_ward_k4,edad,Identificación,0.031453202205307736,η²,False,0.00974938000709079
+F1_c03_ward_k4,imc,Medidas autodeclaradas,0.0067772003568505905,η²,False,0.000529871393868592
+F1_c03_ward_k4,horas_sedentarismo,Actividad física,0.019874159603611292,η²,False,0.006160286416385354
+F1_c03_ward_k4,trabaja_actualmente,Identificación,0.09447052365912192,η²,True,0.029282520380904693
+F1_c03_ward_k4,tiene_pareja,Etapa reproductiva y salud ginecológica,0.37305196481448993,η²,True,0.11563291214764056
+F1_c03_ward_k4,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.27949790090627624,η²,True,0.08663446186918476
+F1_c03_ward_k4,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.004604986492593757,η²,False,0.0014273829084480475
+F1_c03_ward_k4,usa_medicamentos_presion,Medicamentos y digestión,0.008155214739689151,η²,False,0.002527828073519345
+F1_c03_ward_k4,quien_prepara_comidas,Alimentación,0.013278649779294553,V²,False,0.010983148409924882
+F1_c03_ward_k4,alcohol_frecuencia,Sustancias,0.02368594241503551,η²,False,0.007341804243743502
+F1_c03_ward_k4,cantidad_personas_cuida,Cuidado de otras personas,0.06570387920981086,η²,True,0.06225369928871982
+F1_c03_ward_k4,carnes_semana,Alimentación,0.012920683642435017,η²,False,0.0040049548519496565
+F1_c03_ward_k4,dias_ejercicio_semana,Actividad física,0.46835985901091115,η²,True,0.1451749877726054
+F1_c03_ward_k4,distension_abdominal,Medicamentos y digestión,0.008713725631557428,η²,False,0.0027009466923289833
+F1_c03_ward_k4,evacuacion_intestinal,Medicamentos y digestión,0.015011339904745374,η²,False,0.0046529843350026825
+F1_c03_ward_k4,falta_tiempo_influye,Alimentación,0.15897979156128647,η²,True,0.04927811137517542
+F1_c03_ward_k4,frecuencia_aerobico,Actividad física,0.3766105810812979,η²,True,0.14407836494933052
+F1_c03_ward_k4,frecuencia_bajo_impacto,Actividad física,0.28916182619425246,η²,True,0.11373615574559792
+F1_c03_ward_k4,frecuencia_comida_fuera,Alimentación,0.058541826729209934,η²,False,0.018145895332590922
+F1_c03_ward_k4,frecuencia_fuerza,Actividad física,0.33201717183986973,η²,True,0.1067889985727079
+F1_c03_ward_k4,frutas_dia,Alimentación,0.0535137312724418,η²,False,0.016587363612991117
+F1_c03_ward_k4,golosinas_semana,Alimentación,0.01922051898674669,η²,False,0.005957680948099943
+F1_c03_ward_k4,jugos_gaseosas_dia,Alimentación,0.002611856157663596,η²,False,0.0008095830128426604
+F1_c03_ward_k4,lacteos_dia,Alimentación,0.0035743435560325657,η²,False,0.0011079200577477938
+F1_c03_ward_k4,legumbres_semana,Alimentación,0.010443948356983873,η²,False,0.0032372545295081255
+F1_c03_ward_k4,panes_dia,Alimentación,0.010901401285434853,η²,False,0.0033790487546465986
+F1_c03_ward_k4,pescado_semana,Alimentación,0.026701141822884317,η²,False,0.008276409395625694
+F1_c03_ward_k4,platos_verduras_dia,Alimentación,0.04202020049680896,η²,False,0.013024775663331453
+F1_c03_ward_k4,tabaco_frecuencia,Sustancias,0.013922104187926988,η²,False,0.011939061816738034
+F1_c03_ward_k4,vasos_agua_dia,Alimentación,0.04708991379575208,η²,False,0.014596207441748514
+F2_c03_ward_k4,edad,Identificación,0.009221102674273507,η²,False,0.002719447189538078
+F2_c03_ward_k4,imc,Medidas autodeclaradas,0.005882295730848675,η²,False,0.0
+F2_c03_ward_k4,horas_sedentarismo,Actividad física,0.02695714198825066,η²,False,0.007950082176446752
+F2_c03_ward_k4,trabaja_actualmente,Identificación,0.1717188883319369,η²,True,0.050642581994856786
+F2_c03_ward_k4,tiene_pareja,Etapa reproductiva y salud ginecológica,0.3072725821545374,η²,True,0.09061948331771508
+F2_c03_ward_k4,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.20224932749141042,η²,True,0.059646485313191215
+F2_c03_ward_k4,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.004641264156609209,η²,False,0.0013687812848900043
+F2_c03_ward_k4,usa_medicamentos_presion,Medicamentos y digestión,0.005783639541260658,η²,False,0.0017056856269114008
+F2_c03_ward_k4,quien_prepara_comidas,Alimentación,0.00887267352109544,V²,False,0.0069349289378504535
+F2_c03_ward_k4,alcohol_frecuencia,Sustancias,0.022182658624537076,η²,False,0.006542012466826018
+F2_c03_ward_k4,cantidad_personas_cuida,Cuidado de otras personas,0.0892005617988766,η²,True,0.057567328130550544
+F2_c03_ward_k4,carnes_semana,Alimentación,0.015514307376197621,η²,False,0.0045754115404809245
+F2_c03_ward_k4,dias_ejercicio_semana,Actividad física,0.5207389024485779,η²,True,0.15357403499018085
+F2_c03_ward_k4,distension_abdominal,Medicamentos y digestión,0.005185245976289604,η²,False,0.0015292100191689223
+F2_c03_ward_k4,evacuacion_intestinal,Medicamentos y digestión,0.0297370906385215,η²,False,0.008769932449357278
+F2_c03_ward_k4,falta_tiempo_influye,Alimentación,0.2348295780780281,η²,True,0.06925491003439238
+F2_c03_ward_k4,frecuencia_aerobico,Actividad física,0.4412612728742328,η²,True,0.1438409450750782
+F2_c03_ward_k4,frecuencia_bajo_impacto,Actividad física,0.2936575589791138,η²,True,0.13099459698799248
+F2_c03_ward_k4,frecuencia_comida_fuera,Alimentación,0.07748390444707459,η²,True,0.022851213529040924
+F2_c03_ward_k4,frecuencia_fuerza,Actividad física,0.32652958730141324,η²,True,0.10607341051517269
+F2_c03_ward_k4,frutas_dia,Alimentación,0.04325044682081883,η²,False,0.012755232232831459
+F2_c03_ward_k4,golosinas_semana,Alimentación,0.012970863869587254,η²,False,0.0038253103280632486
+F2_c03_ward_k4,jugos_gaseosas_dia,Alimentación,0.008726069971377646,η²,False,0.002573454314263466
+F2_c03_ward_k4,lacteos_dia,Alimentación,0.005284185536235578,η²,False,0.0015583888405890456
+F2_c03_ward_k4,legumbres_semana,Alimentación,0.003991724113725525,η²,False,0.001177221782029174
+F2_c03_ward_k4,panes_dia,Alimentación,0.013760399946363472,η²,False,0.004058156847711968
+F2_c03_ward_k4,pescado_semana,Alimentación,0.018363967517744512,η²,False,0.005415820820890431
+F2_c03_ward_k4,platos_verduras_dia,Alimentación,0.04886889576047496,η²,False,0.014412200571459678
+F2_c03_ward_k4,tabaco_frecuencia,Sustancias,0.023301290620262663,η²,False,0.016750803309719002
+F2_c03_ward_k4,vasos_agua_dia,Alimentación,0.03496908525562791,η²,False,0.010312929372801623
+P1_c12_ward_k4,edad,Identificación,0.021400130043316753,η²,False,0.007240376902020055
+P1_c12_ward_k4,imc,Medidas autodeclaradas,0.02874262270209001,η²,False,0.002490759738303311
+P1_c12_ward_k4,horas_sedentarismo,Actividad física,0.01657405220101733,η²,False,0.005607553995523363
+P1_c12_ward_k4,trabaja_actualmente,Identificación,0.22191788836191156,η²,True,0.07508221444394637
+P1_c12_ward_k4,tiene_pareja,Etapa reproductiva y salud ginecológica,0.3385857275992444,η²,True,0.11455483104546915
+P1_c12_ward_k4,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.28778099917822303,η²,True,0.09736589894886996
+P1_c12_ward_k4,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.011114749211813435,η²,False,0.003760489927026951
+P1_c12_ward_k4,usa_medicamentos_presion,Medicamentos y digestión,0.05458847834276398,η²,False,0.01846910074421737
+P1_c12_ward_k4,quien_prepara_comidas,Alimentación,0.0033696794562226855,V²,False,0.0008322218292647875
+P1_c12_ward_k4,alcohol_frecuencia,Sustancias,0.015791239087828222,η²,False,0.005342702241264835
+P1_c12_ward_k4,cantidad_personas_cuida,Cuidado de otras personas,0.03412697897059339,η²,False,0.011546293867105487
+P1_c12_ward_k4,carnes_semana,Alimentación,0.025739738566424333,η²,False,0.008708611031949087
+P1_c12_ward_k4,dias_ejercicio_semana,Actividad física,0.5299265563102902,η²,True,0.179291807587604
+P1_c12_ward_k4,distension_abdominal,Medicamentos y digestión,0.005515143719769509,η²,False,0.001865956847884238
+P1_c12_ward_k4,evacuacion_intestinal,Medicamentos y digestión,0.0161666017677854,η²,False,0.005469699940453635
+P1_c12_ward_k4,falta_tiempo_influye,Alimentación,0.06510055786703264,η²,True,0.02202568743904833
+P1_c12_ward_k4,frecuencia_aerobico,Actividad física,0.4626525113859263,η²,True,0.15653075707109362
+P1_c12_ward_k4,frecuencia_bajo_impacto,Actividad física,0.22554055226810596,η²,True,0.0763078823262022
+P1_c12_ward_k4,frecuencia_comida_fuera,Alimentación,0.08426876049097995,η²,True,0.028510928942289147
+P1_c12_ward_k4,frecuencia_fuerza,Actividad física,0.35347724536458947,η²,True,0.1195931275906763
+P1_c12_ward_k4,frutas_dia,Alimentación,0.01682396108343846,η²,False,0.005692106495729147
+P1_c12_ward_k4,golosinas_semana,Alimentación,0.0031459383273887732,η²,False,0.0010643757376567339
+P1_c12_ward_k4,jugos_gaseosas_dia,Alimentación,0.014827341454313834,η²,False,0.005016583561262294
+P1_c12_ward_k4,lacteos_dia,Alimentación,0.02409004036174662,η²,False,0.008150463172460603
+P1_c12_ward_k4,legumbres_semana,Alimentación,0.00471841773222855,η²,False,0.0015963979047491196
+P1_c12_ward_k4,panes_dia,Alimentación,0.013228034912421088,η²,False,0.004475484880005181
+P1_c12_ward_k4,pescado_semana,Alimentación,0.016439119434177193,η²,False,0.005561901745449298
+P1_c12_ward_k4,platos_verduras_dia,Alimentación,0.030701812198268015,η²,False,0.010387445844513383
+P1_c12_ward_k4,tabaco_frecuencia,Sustancias,0.02230073448353311,η²,False,0.007545081386226469
+P1_c12_ward_k4,vasos_agua_dia,Alimentación,0.029300268175920782,η²,False,0.009913256811735245
+P2_c08_ward_k4,edad,Identificación,0.02493872357325043,η²,False,0.008926248533713248
+P2_c08_ward_k4,imc,Medidas autodeclaradas,0.004444452153636553,η²,False,0.0
+P2_c08_ward_k4,horas_sedentarismo,Actividad física,0.01982365375592843,η²,False,0.00709542570420462
+P2_c08_ward_k4,trabaja_actualmente,Identificación,0.1333655689505275,η²,True,0.047735170198099974
+P2_c08_ward_k4,tiene_pareja,Etapa reproductiva y salud ginecológica,0.3662577284869364,η²,True,0.13109361841495176
+P2_c08_ward_k4,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.23160324770099583,η²,True,0.08289711155913758
+P2_c08_ward_k4,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.037204072643809115,η²,False,0.013316351091888614
+P2_c08_ward_k4,usa_medicamentos_presion,Medicamentos y digestión,0.0513483311082965,η²,False,0.018378966506356505
+P2_c08_ward_k4,quien_prepara_comidas,Alimentación,0.005864475705551417,V²,False,0.001324044124222678
+P2_c08_ward_k4,alcohol_frecuencia,Sustancias,0.07565976770956413,η²,True,0.027080691944594032
+P2_c08_ward_k4,cantidad_personas_cuida,Cuidado de otras personas,0.08252317896500116,η²,True,0.029537293802149773
+P2_c08_ward_k4,carnes_semana,Alimentación,0.033606598990594795,η²,False,0.012028717271025374
+P2_c08_ward_k4,dias_ejercicio_semana,Actividad física,0.37970371830136773,η²,True,0.1359063044577181
+P2_c08_ward_k4,distension_abdominal,Medicamentos y digestión,0.0070641151152776825,η²,False,0.00252843923645569
+P2_c08_ward_k4,evacuacion_intestinal,Medicamentos y digestión,0.013171496781969367,η²,False,0.004714437508861587
+P2_c08_ward_k4,falta_tiempo_influye,Alimentación,0.07884497849171683,η²,True,0.028220765653268327
+P2_c08_ward_k4,frecuencia_aerobico,Actividad física,0.41548396675442983,η²,True,0.14871303008471107
+P2_c08_ward_k4,frecuencia_bajo_impacto,Actividad física,0.19711926493628368,η²,True,0.07055435473415446
+P2_c08_ward_k4,frecuencia_comida_fuera,Alimentación,0.012442731023210082,η²,False,0.004453592391169883
+P2_c08_ward_k4,frecuencia_fuerza,Actividad física,0.32022999269775454,η²,True,0.11461903791400692
+P2_c08_ward_k4,frutas_dia,Alimentación,0.06866694253183867,η²,True,0.024577769318829167
+P2_c08_ward_k4,golosinas_semana,Alimentación,0.0015583424749116058,η²,False,0.0005577732232704538
+P2_c08_ward_k4,jugos_gaseosas_dia,Alimentación,0.0005193669818130962,η²,False,0.00018589559109756564
+P2_c08_ward_k4,lacteos_dia,Alimentación,0.006680519559359905,η²,False,0.0023911399372957896
+P2_c08_ward_k4,legumbres_semana,Alimentación,0.004363952106036314,η²,False,0.001561977339108244
+P2_c08_ward_k4,panes_dia,Alimentación,0.015588458652037934,η²,False,0.005579534003691088
+P2_c08_ward_k4,pescado_semana,Alimentación,0.02063067319658111,η²,False,0.007384279946389298
+P2_c08_ward_k4,platos_verduras_dia,Alimentación,0.14652143388913505,η²,True,0.05244401264438831
+P2_c08_ward_k4,tabaco_frecuencia,Sustancias,0.011036409018839765,η²,False,0.003950231435563321
+P2_c08_ward_k4,vasos_agua_dia,Alimentación,0.034207470155872784,η²,False,0.012243785429676692
+P2_c12_ward_k4,edad,Identificación,0.03898669263553248,η²,False,0.0132770756041379
+P2_c12_ward_k4,imc,Medidas autodeclaradas,0.012681604443278042,η²,False,0.0
+P2_c12_ward_k4,horas_sedentarismo,Actividad física,0.003310673028315518,η²,False,0.0011274630681922411
+P2_c12_ward_k4,trabaja_actualmente,Identificación,0.29261673202522975,η²,True,0.09965180966886797
+P2_c12_ward_k4,tiene_pareja,Etapa reproductiva y salud ginecológica,0.16543656414684768,η²,True,0.056340089948143116
+P2_c12_ward_k4,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.15996630187292843,η²,True,0.054477170042003274
+P2_c12_ward_k4,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.018958863361162454,η²,False,0.006456517472971228
+P2_c12_ward_k4,usa_medicamentos_presion,Medicamentos y digestión,0.016902313908990205,η²,False,0.0057561512527483415
+P2_c12_ward_k4,quien_prepara_comidas,Alimentación,0.007616082626846195,V²,False,0.0011394349377247528
+P2_c12_ward_k4,alcohol_frecuencia,Sustancias,0.012520384497532833,η²,False,0.004263867497575672
+P2_c12_ward_k4,cantidad_personas_cuida,Cuidado de otras personas,0.05877342259939849,η²,False,0.020015526391560606
+P2_c12_ward_k4,carnes_semana,Alimentación,0.010698813416416026,η²,False,0.003643524110451403
+P2_c12_ward_k4,dias_ejercicio_semana,Actividad física,0.524917840375587,η²,True,0.17876289014256053
+P2_c12_ward_k4,distension_abdominal,Medicamentos y digestión,0.019218097625892494,η²,False,0.006544800748605301
+P2_c12_ward_k4,evacuacion_intestinal,Medicamentos y digestión,0.015057433012710394,η²,False,0.005127869613945973
+P2_c12_ward_k4,falta_tiempo_influye,Alimentación,0.0640299491111015,η²,True,0.021805657720819053
+P2_c12_ward_k4,frecuencia_aerobico,Actividad física,0.46318814130634073,η²,True,0.15774059186183673
+P2_c12_ward_k4,frecuencia_bajo_impacto,Actividad física,0.22168049709273124,η²,True,0.07549418842419513
+P2_c12_ward_k4,frecuencia_comida_fuera,Alimentación,0.18003196951923234,η²,True,0.06131061418352227
+P2_c12_ward_k4,frecuencia_fuerza,Actividad física,0.3733974037894149,η²,True,0.12716199362811545
+P2_c12_ward_k4,frutas_dia,Alimentación,0.049136514478150484,η²,False,0.01673363841732073
+P2_c12_ward_k4,golosinas_semana,Alimentación,0.010016897003731665,η²,False,0.003411294722553511
+P2_c12_ward_k4,jugos_gaseosas_dia,Alimentación,0.049836577207100594,η²,False,0.016972047606497204
+P2_c12_ward_k4,lacteos_dia,Alimentación,0.0059910519436630096,η²,False,0.002040276931104313
+P2_c12_ward_k4,legumbres_semana,Alimentación,0.004096534560881743,η²,False,0.001395091386393195
+P2_c12_ward_k4,panes_dia,Alimentación,0.027614062106201844,η²,False,0.00940408035502997
+P2_c12_ward_k4,pescado_semana,Alimentación,0.031628945324514914,η²,False,0.010771365047005696
+P2_c12_ward_k4,platos_verduras_dia,Alimentación,0.06239350231774755,η²,True,0.021248359157418784
+P2_c12_ward_k4,tabaco_frecuencia,Sustancias,0.016777526051797234,η²,False,0.0057136542440916135
+P2_c12_ward_k4,vasos_agua_dia,Alimentación,0.0358620202755401,η²,False,0.01221295581460831
+R0P1_cTodas_km_k3,edad,Identificación,0.0013799008045461865,η²,False,0.00047886955257874696
+R0P1_cTodas_km_k3,imc,Medidas autodeclaradas,0.00396243558801416,η²,False,0.000377588235614577
+R0P1_cTodas_km_k3,horas_sedentarismo,Actividad física,0.00296965852780529,η²,False,0.001030566143476862
+R0P1_cTodas_km_k3,trabaja_actualmente,Identificación,0.0013376569368592332,η²,False,0.00046420958430291214
+R0P1_cTodas_km_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.8538257214841011,η²,True,0.2963047342825383
+R0P1_cTodas_km_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.22711257438736518,η²,True,0.07881530072565811
+R0P1_cTodas_km_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.0003196729415769668,η²,False,0.00011093669776853201
+R0P1_cTodas_km_k3,usa_medicamentos_presion,Medicamentos y digestión,0.006546555437128079,η²,False,0.0022718633562508117
+R0P1_cTodas_km_k3,quien_prepara_comidas,Alimentación,0.003335446280431193,V²,False,0.0002825545966118827
+R0P1_cTodas_km_k3,alcohol_frecuencia,Sustancias,0.005225064552933791,η²,False,0.0018132639073874383
+R0P1_cTodas_km_k3,cantidad_personas_cuida,Cuidado de otras personas,0.0038438117736706015,η²,False,0.001333925176498407
+R0P1_cTodas_km_k3,carnes_semana,Alimentación,0.014787581971310162,η²,False,0.005131762181015405
+R0P1_cTodas_km_k3,dias_ejercicio_semana,Actividad física,0.5645020595175733,η²,True,0.19590020368157146
+R0P1_cTodas_km_k3,distension_abdominal,Medicamentos y digestión,0.0014104079205427044,η²,False,0.0004894564940020679
+R0P1_cTodas_km_k3,evacuacion_intestinal,Medicamentos y digestión,0.010881067203275146,η²,False,0.0037760770673115917
+R0P1_cTodas_km_k3,falta_tiempo_influye,Alimentación,0.0007378650629443346,η²,False,0.00025606269044233806
+R0P1_cTodas_km_k3,frecuencia_aerobico,Actividad física,0.5085110732747175,η²,True,0.1764695471863916
+R0P1_cTodas_km_k3,frecuencia_bajo_impacto,Actividad física,0.21539297528920454,η²,True,0.0747482263692632
+R0P1_cTodas_km_k3,frecuencia_comida_fuera,Alimentación,0.0023860109847172076,η²,False,0.0008280218468857799
+R0P1_cTodas_km_k3,frecuencia_fuerza,Actividad física,0.3951092710175807,η²,True,0.13711550801952693
+R0P1_cTodas_km_k3,frutas_dia,Alimentación,0.004764454608003498,η²,False,0.0016534175782053552
+R0P1_cTodas_km_k3,golosinas_semana,Alimentación,0.0002094292927994568,η²,False,7.267863850020834e-05
+R0P1_cTodas_km_k3,jugos_gaseosas_dia,Alimentación,0.0012994128452394746,η²,False,0.0004509376657835511
+R0P1_cTodas_km_k3,lacteos_dia,Alimentación,0.0005333114254425731,η²,False,0.00018507605970329922
+R0P1_cTodas_km_k3,legumbres_semana,Alimentación,0.0003777398619223849,η²,False,0.0001310877695512497
+R0P1_cTodas_km_k3,panes_dia,Alimentación,0.005015843069503004,η²,False,0.0017406573853604324
+R0P1_cTodas_km_k3,pescado_semana,Alimentación,0.00886264862640704,η²,False,0.003075621500043952
+R0P1_cTodas_km_k3,platos_verduras_dia,Alimentación,0.014696759115197454,η²,False,0.005100243755685602
+R0P1_cTodas_km_k3,tabaco_frecuencia,Sustancias,0.005665946509945098,η²,False,0.0019662639960883604
+R0P1_cTodas_km_k3,vasos_agua_dia,Alimentación,0.021973019135882017,η²,False,0.00762533785598058
+R0P1_cTodas_km_k4,edad,Identificación,0.03147872826609301,η²,False,0.008544187253927206
+R0P1_cTodas_km_k4,imc,Medidas autodeclaradas,0.005485066094252833,η²,False,0.0003820361281676721
+R0P1_cTodas_km_k4,horas_sedentarismo,Actividad física,0.01167044519970582,η²,False,0.0031676778134137307
+R0P1_cTodas_km_k4,trabaja_actualmente,Identificación,0.000704384422089941,η²,False,0.00019118918496997857
+R0P1_cTodas_km_k4,tiene_pareja,Etapa reproductiva y salud ginecológica,0.5508199690235672,η²,True,0.14950759505774236
+R0P1_cTodas_km_k4,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.2670052080021233,η²,True,0.07247251145788025
+R0P1_cTodas_km_k4,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.0003473079900895831,η²,False,9.426888141815011e-05
+R0P1_cTodas_km_k4,usa_medicamentos_presion,Medicamentos y digestión,0.9253467555507768,η²,True,0.251164401795611
+R0P1_cTodas_km_k4,quien_prepara_comidas,Alimentación,0.004091693042344121,V²,False,0.0007578229162882288
+R0P1_cTodas_km_k4,alcohol_frecuencia,Sustancias,0.006728814648420894,η²,False,0.0018263842130815603
+R0P1_cTodas_km_k4,cantidad_personas_cuida,Cuidado de otras personas,0.0017661696412420934,η²,False,0.0004793867150353861
+R0P1_cTodas_km_k4,carnes_semana,Alimentación,0.02984809690132135,η²,False,0.00810158933176962
+R0P1_cTodas_km_k4,dias_ejercicio_semana,Actividad física,0.5317484322133754,η²,True,0.14433105868851537
+R0P1_cTodas_km_k4,distension_abdominal,Medicamentos y digestión,0.0038162314907278262,η²,False,0.001035829534963592
+R0P1_cTodas_km_k4,evacuacion_intestinal,Medicamentos y digestión,0.022852541299789832,η²,False,0.0062028043332305795
+R0P1_cTodas_km_k4,falta_tiempo_influye,Alimentación,0.003354542160249368,η²,False,0.0009105144313989602
+R0P1_cTodas_km_k4,frecuencia_aerobico,Actividad física,0.5248678271980997,η²,True,0.14246347442101012
+R0P1_cTodas_km_k4,frecuencia_bajo_impacto,Actividad física,0.2236119606159539,η²,True,0.06069439805732145
+R0P1_cTodas_km_k4,frecuencia_comida_fuera,Alimentación,0.007826744337843935,η²,False,0.002124392340308894
+R0P1_cTodas_km_k4,frecuencia_fuerza,Actividad física,0.41546726924267,η²,True,0.11276917276581434
+R0P1_cTodas_km_k4,frutas_dia,Alimentación,0.030637392080639352,η²,False,0.008315825617101988
+R0P1_cTodas_km_k4,golosinas_semana,Alimentación,0.004246456009751439,η²,False,0.00115260422867725
+R0P1_cTodas_km_k4,jugos_gaseosas_dia,Alimentación,0.007529529472318567,η²,False,0.002043720102083982
+R0P1_cTodas_km_k4,lacteos_dia,Alimentación,0.0030575318913378885,η²,False,0.000829897726287263
+R0P1_cTodas_km_k4,legumbres_semana,Alimentación,0.0022082813094279354,η²,False,0.000599387905941019
+R0P1_cTodas_km_k4,panes_dia,Alimentación,0.004971652889383048,η²,False,0.001349442483487258
+R0P1_cTodas_km_k4,pescado_semana,Alimentación,0.005784109377762935,η²,False,0.0015699653811629894
+R0P1_cTodas_km_k4,platos_verduras_dia,Alimentación,0.031966512043706034,η²,False,0.008676585103679066
+R0P1_cTodas_km_k4,tabaco_frecuencia,Sustancias,0.010934856543604933,η²,False,0.0029680189464333716
+R0P1_cTodas_km_k4,vasos_agua_dia,Alimentación,0.019430088813920474,η²,False,0.005273857183277432
+R0P2_cTodas_km_k3,edad,Identificación,0.001181196653056481,η²,False,0.0004097221666876771
+R0P2_cTodas_km_k3,imc,Medidas autodeclaradas,0.00396243558801416,η²,False,0.0
+R0P2_cTodas_km_k3,horas_sedentarismo,Actividad física,0.003932509764498829,η²,False,0.0013640712721811853
+R0P2_cTodas_km_k3,trabaja_actualmente,Identificación,0.0006231479995750337,η²,False,0.00021615160176107121
+R0P2_cTodas_km_k3,tiene_pareja,Etapa reproductiva y salud ginecológica,0.8514287596690714,η²,True,0.29533544248464305
+R0P2_cTodas_km_k3,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.22370984939406283,η²,True,0.07759832705750724
+R0P2_cTodas_km_k3,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.0005893248127182009,η²,False,0.0002044193390871098
+R0P2_cTodas_km_k3,usa_medicamentos_presion,Medicamentos y digestión,0.006073588616885521,η²,False,0.002106748170375122
+R0P2_cTodas_km_k3,quien_prepara_comidas,Alimentación,0.0023686790729727787,V²,False,0.00026457660253036917
+R0P2_cTodas_km_k3,alcohol_frecuencia,Sustancias,0.005905102474216665,η²,False,0.0020483053130807834
+R0P2_cTodas_km_k3,cantidad_personas_cuida,Cuidado de otras personas,0.0021972922515210557,η²,False,0.0007621756629682952
+R0P2_cTodas_km_k3,carnes_semana,Alimentación,0.015212433215436633,η²,False,0.005276742938182269
+R0P2_cTodas_km_k3,dias_ejercicio_semana,Actividad física,0.5531401385847802,η²,True,0.1918679463546045
+R0P2_cTodas_km_k3,distension_abdominal,Medicamentos y digestión,0.001834570328625588,η²,False,0.0006363581610567434
+R0P2_cTodas_km_k3,evacuacion_intestinal,Medicamentos y digestión,0.010626484796718943,η²,False,0.003686013132461169
+R0P2_cTodas_km_k3,falta_tiempo_influye,Alimentación,0.0017103192064090163,η²,False,0.0005932591234187521
+R0P2_cTodas_km_k3,frecuencia_aerobico,Actividad física,0.5190626070109947,η²,True,0.180047459024531
+R0P2_cTodas_km_k3,frecuencia_bajo_impacto,Actividad física,0.22276771148286809,η²,True,0.077271527294492
+R0P2_cTodas_km_k3,frecuencia_comida_fuera,Alimentación,0.0036058418818676195,η²,False,0.0012507598499784537
+R0P2_cTodas_km_k3,frecuencia_fuerza,Actividad física,0.40847547597693684,η²,True,0.14168805560275236
+R0P2_cTodas_km_k3,frutas_dia,Alimentación,0.004028590768330525,η²,False,0.0013973989293207428
+R0P2_cTodas_km_k3,golosinas_semana,Alimentación,0.0005696908951292431,η²,False,0.00019760891405390296
+R0P2_cTodas_km_k3,jugos_gaseosas_dia,Alimentación,0.0013389222000884148,η²,False,0.00046443249176750457
+R0P2_cTodas_km_k3,lacteos_dia,Alimentación,0.0005974310655323426,η²,False,0.00020723115831986307
+R0P2_cTodas_km_k3,legumbres_semana,Alimentación,0.00011712666418095756,η²,False,4.062777396206138e-05
+R0P2_cTodas_km_k3,panes_dia,Alimentación,0.003598891833532817,η²,False,0.0012483490838668624
+R0P2_cTodas_km_k3,pescado_semana,Alimentación,0.0069535030711632435,η²,False,0.002411964457412155
+R0P2_cTodas_km_k3,platos_verduras_dia,Alimentación,0.011298553621454021,η²,False,0.003919133920876171
+R0P2_cTodas_km_k3,tabaco_frecuencia,Sustancias,0.005186338633814094,η²,False,0.0017989874054618732
+R0P2_cTodas_km_k3,vasos_agua_dia,Alimentación,0.016392879178311916,η²,False,0.005686204712659424
+R0P2_cTodas_km_k4,edad,Identificación,0.035108050749810917,η²,False,0.009521251311796031
+R0P2_cTodas_km_k4,imc,Medidas autodeclaradas,0.007210751631291862,η²,False,0.0
+R0P2_cTodas_km_k4,horas_sedentarismo,Actividad física,0.011949859565430513,η²,False,0.0032407841971615688
+R0P2_cTodas_km_k4,trabaja_actualmente,Identificación,0.0005971661312870818,η²,False,0.00016195056944048408
+R0P2_cTodas_km_k4,tiene_pareja,Etapa reproductiva y salud ginecológica,0.6261208644348623,η²,True,0.16980305014158062
+R0P2_cTodas_km_k4,tiene_actividad_sexual,Etapa reproductiva y salud ginecológica,0.23711738318953912,η²,True,0.06430588276836187
+R0P2_cTodas_km_k4,operada_no_mas_hijos,Etapa reproductiva y salud ginecológica,0.00011538850943528516,η²,False,3.129319268267293e-05
+R0P2_cTodas_km_k4,usa_medicamentos_presion,Medicamentos y digestión,0.9258952283671383,η²,True,0.2511014131914966
+R0P2_cTodas_km_k4,quien_prepara_comidas,Alimentación,0.004083863623201724,V²,False,0.0008267097900318944
+R0P2_cTodas_km_k4,alcohol_frecuencia,Sustancias,0.006308315151076921,η²,False,0.0017108057161999367
+R0P2_cTodas_km_k4,cantidad_personas_cuida,Cuidado de otras personas,0.002957747657295852,η²,False,0.000802136779471911
+R0P2_cTodas_km_k4,carnes_semana,Alimentación,0.026404067702381503,η²,False,0.0071607440139468655
+R0P2_cTodas_km_k4,dias_ejercicio_semana,Actividad física,0.5242694863463003,η²,True,0.14218110740985032
+R0P2_cTodas_km_k4,distension_abdominal,Medicamentos y digestión,0.003794077662356834,η²,False,0.0010289482368930909
+R0P2_cTodas_km_k4,evacuacion_intestinal,Medicamentos y digestión,0.018077245101194562,η²,False,0.004902522069936736
+R0P2_cTodas_km_k4,falta_tiempo_influye,Alimentación,0.001947265271738062,η²,False,0.0005280954546600891
+R0P2_cTodas_km_k4,frecuencia_aerobico,Actividad física,0.4658512483295112,η²,True,0.12633816787117022
+R0P2_cTodas_km_k4,frecuencia_bajo_impacto,Actividad física,0.254206327121709,η²,True,0.06894037902652451
+R0P2_cTodas_km_k4,frecuencia_comida_fuera,Alimentación,0.004614458520878819,η²,False,0.0012514343094192552
+R0P2_cTodas_km_k4,frecuencia_fuerza,Actividad física,0.4394786555986493,η²,True,0.11918595982283442
+R0P2_cTodas_km_k4,frutas_dia,Alimentación,0.018723753734868346,η²,False,0.0050778542528688115
+R0P2_cTodas_km_k4,golosinas_semana,Alimentación,0.003898259595128616,η²,False,0.0010572022225996034
+R0P2_cTodas_km_k4,jugos_gaseosas_dia,Alimentación,0.004781931781884984,η²,False,0.00129685280950657
+R0P2_cTodas_km_k4,lacteos_dia,Alimentación,0.002930422146327864,η²,False,0.0007947261414104728
+R0P2_cTodas_km_k4,legumbres_semana,Alimentación,0.003005191823625953,η²,False,0.0008150035670394265
+R0P2_cTodas_km_k4,panes_dia,Alimentación,0.004041140580623814,η²,False,0.0010959513340291003
+R0P2_cTodas_km_k4,pescado_semana,Alimentación,0.0071712764938736085,η²,False,0.0019448395529311434
+R0P2_cTodas_km_k4,platos_verduras_dia,Alimentación,0.020107297663942203,η²,False,0.005453069315177341
+R0P2_cTodas_km_k4,tabaco_frecuencia,Sustancias,0.009450867812791907,η²,False,0.002563061338876537
+R0P2_cTodas_km_k4,vasos_agua_dia,Alimentación,0.025364458693606175,η²,False,0.006878803592101873

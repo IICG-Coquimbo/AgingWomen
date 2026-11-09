@@ -1,0 +1,52 @@
+﻿variable,rol,n,prueba,efecto,medida,p,p_ajustado,familia,etiqueta
+frecuencia_bajo_impacto,predictor,529,Spearman,-0.17197,rho,0.00007,0.00180,principal,Frecuencia de ejercicio de bajo impacto
+lugar_trabajo_comprensivo,predictor (trabajo),287,Spearman,-0.22941,rho,0.00009,0.00180,principal,Lugar de trabajo comprensivo
+imc,control,267,Spearman,0.21861,rho,0.00032,0.00437,principal,IMC
+dias_ejercicio_semana,predictor,529,Spearman,-0.15208,rho,0.00045,0.00459,principal,Días de ejercicio a la semana
+estres_entorno_laboral,predictor (trabajo),287,Spearman,0.19658,rho,0.00081,0.00666,principal,Estrés del entorno laboral
+usa_medicamentos_diabetes,control,529,Spearman,0.12929,rho,0.00289,0.01975,principal,Medicamentos para la diabetes
+vasos_agua_dia,predictor,529,Spearman,-0.11460,rho,0.00833,0.04271,principal,Vasos de agua al día
+tabaco_frecuencia,predictor,529,Spearman,0.11472,rho,0.00827,0.04271,principal,Tabaco
+alcohol_frecuencia,predictor,529,Spearman,0.10508,rho,0.01561,0.07113,principal,Alcohol
+imc_categoria,control,527,Kruskal-Wallis,0.01316,ε²,0.01961,0.07310,principal,IMC (categoría)
+trabaja_actualmente,control,529,Spearman,0.10187,rho,0.01910,0.07310,principal,Trabaja actualmente
+doble_carga,predictor,529,Spearman,0.09202,rho,0.03435,0.11737,principal,Doble carga (trabaja y cuida)
+falta_tiempo_influye,predictor,529,Spearman,0.08853,rho,0.04181,0.13187,principal,Falta de tiempo influye en lo que come
+frecuencia_fuerza,predictor,529,Spearman,-0.08432,rho,0.05260,0.15403,principal,Frecuencia de ejercicio de fuerza
+marihuana_frecuencia,predictor,529,Spearman,0.08149,rho,0.06107,0.16692,principal,Marihuana
+sobrecarga_fisica_emocional,predictor,529,Spearman,0.06916,rho,0.11211,0.28728,principal,Sobrecarga por trabajo y cuidado
+etapa_menopausica,descriptiva,527,Kruskal-Wallis,0.00603,ε²,0.12841,0.30969,principal,Etapa menopáusica
+tiene_pareja,otra,529,Spearman,-0.06256,rho,0.15077,0.32534,principal,Tiene pareja
+bebidas_energeticas_dia,predictor,529,Spearman,-0.06318,rho,0.14677,0.32534,principal,Bebidas energéticas al día
+quien_prepara_comidas,predictor,529,Kruskal-Wallis,0.00411,ε²,0.18792,0.38525,principal,Quién prepara las comidas
+prevision,control,527,Kruskal-Wallis,0.00229,ε²,0.24091,0.42944,principal,Previsión de salud
+frutas_dia,predictor,529,Spearman,-0.05291,rho,0.22440,0.42944,principal,Frutas al día
+comuna,otra,521,Kruskal-Wallis,0.00562,ε²,0.24086,0.42944,principal,Comuna
+edad,control,529,Spearman,0.04988,rho,0.25207,0.43062,principal,Edad
+frecuencia_aerobico,predictor,529,Spearman,-0.04764,rho,0.27406,0.44945,principal,Frecuencia de ejercicio aeróbico
+pescado_semana,predictor,529,Spearman,-0.04292,rho,0.32448,0.51168,principal,Pescado a la semana
+frecuencia_comida_fuera,predictor,529,Spearman,0.04129,rho,0.34316,0.52110,principal,Comidas fuera del hogar
+tiene_actividad_sexual,otra,529,Spearman,0.03928,rho,0.36724,0.53774,principal,Tiene actividad sexual
+cuida_otras_personas,predictor,529,Spearman,0.03472,rho,0.42546,0.60152,principal,Cuida a otras personas
+origen_procedencia,otra,523,Kruskal-Wallis,-0.00108,ε²,0.48776,0.66660,principal,Origen
+usa_terapia_hormonal,control,529,Spearman,-0.02523,rho,0.56260,0.70227,principal,Usa terapia hormonal
+horas_sedentarismo,predictor,529,Spearman,-0.02586,rho,0.55290,0.70227,principal,Horas sentada al día
+pueblo_originario_afro,otra,521,Kruskal-Wallis,-0.00166,ε²,0.56524,0.70227,principal,Pueblo originario / afro
+platos_verduras_dia,predictor,529,Spearman,-0.02032,rho,0.64102,0.76879,principal,Platos de verduras al día
+lacteos_dia,predictor,529,Spearman,-0.01827,rho,0.67503,0.76879,principal,Lácteos al día
+legumbres_semana,predictor,529,Spearman,0.01890,rho,0.66449,0.76879,principal,Legumbres a la semana
+cantidad_personas_cuida,predictor,529,Spearman,0.01575,rho,0.71777,0.79537,principal,Cantidad de personas que cuida
+usa_metodo_anticonceptivo,ginecológica,175,Spearman,-0.03705,rho,0.62642,0.80147,secundaria,Usa método anticonceptivo
+tipo_sangrado,ginecológica,175,Spearman,-0.02086,rho,0.78404,0.80147,secundaria,Tipo de sangrado
+menstruacion_llega,ginecológica,175,Kruskal-Wallis,-0.00905,ε²,0.80147,0.80147,secundaria,Regularidad de la menstruación
+tiene_utero,ginecológica,529,Spearman,0.01520,rho,0.72718,0.80147,secundaria,Tiene útero
+operada_no_mas_hijos,ginecológica,529,Spearman,0.03262,rho,0.45406,0.80147,secundaria,Operada para no tener más hijos
+tiene_ovario,ginecológica,529,Spearman,0.01532,rho,0.72512,0.80147,secundaria,Tiene ovarios
+tipo_metodo_anticonceptivo,ginecológica,68,Kruskal-Wallis,-0.00460,ε²,0.44667,0.80147,secundaria,Método anticonceptivo
+evacuacion_intestinal,salud,529,Spearman,-0.03313,rho,0.44703,0.80147,secundaria,Frecuencia de evacuación intestinal
+distension_abdominal,salud,529,Spearman,-0.04968,rho,0.25405,0.80147,secundaria,Distensión abdominal
+usa_medicamentos_presion,salud,529,Spearman,0.06790,rho,0.11883,0.80147,secundaria,Medicamentos para la presión
+jugos_gaseosas_dia,predictor,529,Spearman,-0.01179,rho,0.78677,0.84888,principal,Jugos y gaseosas al día
+golosinas_semana,predictor,529,Spearman,0.00668,rho,0.87821,0.92324,principal,Dulces y snacks a la semana
+panes_dia,predictor,529,Spearman,0.00404,rho,0.92620,0.93846,principal,Panes al día
+carnes_semana,predictor,529,Spearman,-0.00336,rho,0.93846,0.93846,principal,Carnes a la semana

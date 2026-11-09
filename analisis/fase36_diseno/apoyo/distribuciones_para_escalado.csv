@@ -1,0 +1,30 @@
+﻿variable,tipo,minimo,maximo,media_referencia,de_referencia,n_forma,asimetria,curtosis_exceso,q1,q3,iqr,atipicos_tukey,dominancia_pct,iqr_cero,z_max_abs,varianza_z
+alcohol_frecuencia,ordinal,1.0,5.0,1.8431,0.8453,529,1.397,2.867,1.0,2.0,1.0,no corresponde,50.7,False,3.73,1.0
+cantidad_personas_cuida,ordinal,0.0,3.0,0.7826,0.9838,529,1.02,-0.14,0.0,1.0,1.0,no corresponde,52.6,False,2.25,1.0
+carnes_semana,ordinal,1.0,5.0,2.8507,0.8859,529,0.297,-0.03,2.0,3.0,1.0,no corresponde,44.2,False,2.43,1.0
+dias_ejercicio_semana,ordinal,1.0,5.0,1.6522,0.9305,529,1.634,2.562,1.0,2.0,1.0,no corresponde,57.1,False,3.6,1.0
+distension_abdominal,ordinal,1.0,4.0,1.9282,0.849,529,0.639,-0.242,1.0,2.0,1.0,no corresponde,42.7,False,2.44,1.0
+edad,cuantitativa,36.0,65.0,50.9773,7.6997,529,0.113,-1.004,45.0,58.0,13.0,0,6.4,False,1.95,1.0
+evacuacion_intestinal,ordinal,1.0,4.0,2.3913,0.7874,529,0.583,-0.138,2.0,3.0,1.0,no corresponde,56.7,False,2.04,1.0
+falta_tiempo_influye,ordinal,1.0,5.0,2.7278,0.9632,529,0.02,-0.314,2.0,3.0,1.0,no corresponde,42.3,False,2.36,1.0
+frecuencia_aerobico,ordinal,0.0,4.0,0.4858,1.0722,529,2.113,3.227,0.0,0.0,0.0,no corresponde,80.2,True,3.28,1.0
+frecuencia_bajo_impacto,ordinal,0.0,4.0,0.8336,1.1366,529,1.136,0.186,0.0,2.0,2.0,no corresponde,57.7,False,2.79,1.0
+frecuencia_comida_fuera,ordinal,1.0,4.0,1.9754,0.8001,529,0.466,-0.325,1.0,2.0,1.0,no corresponde,46.7,False,2.53,1.0
+frecuencia_fuerza,ordinal,0.0,4.0,0.3762,0.9567,529,2.487,5.006,0.0,0.0,0.0,no corresponde,84.7,True,3.79,1.0
+frutas_dia,ordinal,1.0,4.0,2.1437,0.6257,529,0.953,1.931,2.0,2.0,0.0,no corresponde,71.8,True,2.97,1.0
+golosinas_semana,ordinal,1.0,5.0,2.4518,0.9829,529,0.626,0.28,2.0,3.0,1.0,no corresponde,42.0,False,2.59,1.0
+horas_sedentarismo,cuantitativa,1.0,14.0,6.2741,2.3867,529,0.051,0.0,5.0,8.0,3.0,2,22.3,False,3.24,1.0
+imc,cuantitativa,18.2,45.7,29.2296,6.2636,267,0.347,-0.521,25.15,33.7,8.550000000000004,0,49.5,False,2.63,0.505
+jugos_gaseosas_dia,ordinal,1.0,4.0,2.034,0.8557,529,0.643,-0.083,1.0,2.0,1.0,no corresponde,48.8,False,2.3,1.0
+lacteos_dia,ordinal,1.0,4.0,2.0586,0.6197,529,0.392,0.828,2.0,2.0,0.0,no corresponde,66.4,True,3.13,1.0
+legumbres_semana,ordinal,1.0,3.0,2.172,0.5523,529,0.057,-0.054,2.0,3.0,1.0,no corresponde,66.5,False,2.12,1.0
+operada_no_mas_hijos,binaria,0.0,1.0,0.1966,0.3974,529,1.531,0.346,0.0,0.0,0.0,no corresponde,80.3,True,2.02,1.0
+panes_dia,ordinal,1.0,4.0,2.1229,0.6072,529,0.442,0.909,2.0,2.0,0.0,no corresponde,67.3,True,3.09,1.0
+pescado_semana,ordinal,1.0,3.0,1.8147,0.6328,529,0.173,-0.603,1.0,2.0,1.0,no corresponde,56.5,False,1.87,1.0
+platos_verduras_dia,ordinal,1.0,4.0,2.1588,0.5301,529,1.668,4.134,2.0,2.0,0.0,no corresponde,80.7,True,3.47,1.0
+tabaco_frecuencia,ordinal,1.0,5.0,1.7958,1.5036,529,1.509,0.435,1.0,1.0,0.0,no corresponde,75.4,True,2.13,1.0
+tiene_actividad_sexual,binaria,0.0,1.0,0.4745,0.4993,529,0.103,-1.997,0.0,1.0,1.0,no corresponde,52.6,False,1.05,1.0
+tiene_pareja,binaria,0.0,1.0,0.673,0.4691,529,-0.739,-1.459,0.0,1.0,1.0,no corresponde,67.3,False,1.43,1.0
+trabaja_actualmente,binaria,0.0,1.0,0.5841,0.4929,529,-0.342,-1.89,0.0,1.0,1.0,no corresponde,58.4,False,1.19,1.0
+usa_medicamentos_presion,binaria,0.0,1.0,0.1682,0.3741,529,1.779,1.168,0.0,0.0,0.0,no corresponde,83.2,True,2.22,1.0
+vasos_agua_dia,ordinal,1.0,5.0,3.1853,1.0433,529,0.044,-0.545,2.0,4.0,2.0,no corresponde,38.8,False,2.09,1.0

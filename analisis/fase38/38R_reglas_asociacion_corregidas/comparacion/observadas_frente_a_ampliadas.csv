@@ -1,0 +1,3 @@
+comparacion,reglas_a,reglas_b,marcadas_a,marcadas_b,marcadas_en_ambas,superan_nula_a,superan_nula_b,superan_nula_no_redundantes_a,superan_nula_no_redundantes_b
+S7a frente a S7a-309,10435,10178,2700,2568,2225,0,0,0,0
+S7b frente a S7b-251,11315,10747,3249,2942,2568,1,1,1,1

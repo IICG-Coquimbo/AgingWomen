@@ -1,0 +1,56 @@
+{
+ "tablero_A": [
+  [
+   "parcial",
+   "Suma parcial: 3 (2 de 11 preguntas respondidas; la ronda no está cerrada)"
+  ],
+  [
+   "definitivo",
+   "Puntaje MRS: 44 de 44"
+  ]
+ ],
+ "tablero_A_severidad": [],
+ "sw": {
+  "controla": true,
+  "caches": [
+   "aging-women-v13"
+  ]
+ },
+ "burbuja_parcial": [
+  "parcial",
+  "Suma parcial: 3 / 44\n2 de 11 pregunta  re pondida ."
+ ],
+ "burbuja_completa": [
+  "provisional",
+  "Suma provi ional: 39 / 44\nSe confirma al finalizar la encue ta."
+ ],
+ "encuesta_severidad": [
+  "Moderada"
+ ],
+ "ficha_A": [
+  [
+   "parcial",
+   "Suma parcial: 3 (2 de 11 preguntas respondidas; la ronda no está cerrada)"
+  ],
+  [
+   "definitivo",
+   "Puntaje MRS: 44 de 44"
+  ]
+ ],
+ "ficha_A_severidad": [],
+ "ficha_B": [
+  [
+   "no_verificable",
+   "Resultado histórico no verificable"
+  ]
+ ],
+ "ficha_B_severidad": [],
+ "tablero_B": [
+  [
+   "no_verificable",
+   "Resultado histórico no verificable"
+  ]
+ ],
+ "coinciden_A": true,
+ "coinciden_B": true
+}

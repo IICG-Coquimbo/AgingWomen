@@ -1,0 +1,29 @@
+﻿variable,imputadas_34B,identificadas,identificacion_exacta,valor_global,particiones,particiones_con_otro_valor,tratamiento,usa_la_severidad
+alcohol_frecuencia,29,29,True,2,45,0,Sin cambio al usar entrenamiento,False
+cantidad_personas_cuida,7,6,False,1,45,2,Reimputada en sensibilidad,False
+carnes_semana,31,31,True,3,45,0,Sin cambio al usar entrenamiento,False
+dias_ejercicio_semana,36,36,True,1,45,1,Reimputada en sensibilidad,False
+distension_abdominal,18,14,False,2,45,0,Sin cambio al usar entrenamiento,False
+evacuacion_intestinal,32,32,True,2,45,0,Sin cambio al usar entrenamiento,False
+falta_tiempo_influye,29,29,True,3,45,0,Sin cambio al usar entrenamiento,False
+frecuencia_aerobico,7,7,True,3,45,14,Reimputada en sensibilidad,False
+frecuencia_bajo_impacto,15,15,True,3,45,0,Sin cambio al usar entrenamiento,False
+frecuencia_comida_fuera,34,34,True,2,45,0,Sin cambio al usar entrenamiento,False
+frecuencia_fuerza,2,2,False,3,45,17,Reimputada en sensibilidad,False
+frutas_dia,24,15,False,2,45,0,Sin cambio al usar entrenamiento,False
+golosinas_semana,17,15,False,2,45,0,Sin cambio al usar entrenamiento,False
+horas_sedentarismo,27,22,False,6,45,0,Sin cambio al usar entrenamiento,False
+jugos_gaseosas_dia,30,30,True,2,45,0,Sin cambio al usar entrenamiento,False
+lacteos_dia,29,29,True,2,45,0,Sin cambio al usar entrenamiento,False
+legumbres_semana,27,23,False,2,45,0,Sin cambio al usar entrenamiento,False
+operada_no_mas_hijos,18,18,False,0,45,0,Sin cambio al usar entrenamiento,False
+panes_dia,30,30,True,2,45,0,Sin cambio al usar entrenamiento,False
+pescado_semana,19,17,False,2,45,0,Sin cambio al usar entrenamiento,False
+platos_verduras_dia,33,33,True,2,45,0,Sin cambio al usar entrenamiento,False
+quien_prepara_comidas,24,23,False,YO_MAYORIA,45,0,Sin cambio al usar entrenamiento,False
+tabaco_frecuencia,18,15,False,1,45,0,Sin cambio al usar entrenamiento,False
+tiene_actividad_sexual,30,30,True,0,45,27,Reimputada en sensibilidad,False
+tiene_pareja,28,28,True,1,45,0,Sin cambio al usar entrenamiento,False
+trabaja_actualmente,22,22,False,1,45,0,Sin cambio al usar entrenamiento,False
+usa_medicamentos_presion,30,30,True,0,45,0,Sin cambio al usar entrenamiento,False
+vasos_agua_dia,25,22,False,3,45,0,Sin cambio al usar entrenamiento,False

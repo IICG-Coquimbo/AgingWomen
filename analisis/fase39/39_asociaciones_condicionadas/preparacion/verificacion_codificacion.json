@@ -1,0 +1,12 @@
+{
+ "ids_iguales_y_en_orden": true,
+ "mismos_items": true,
+ "misma_matriz": true,
+ "items": 94,
+ "consecuente_igual": true,
+ "severos": 281,
+ "no_severos": 248,
+ "participantes": 529,
+ "ids_unicos": 529,
+ "B1_igual_a_regla": true
+}

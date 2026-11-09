@@ -1,0 +1,113 @@
+{
+ "tablero_grupo_mrs_orientaciones_evolucion": {
+  "ok": true,
+  "det": "Grupo 4 — Entre múltiples actividades"
+ },
+ "encuesta_carga_online": {
+  "ok": true
+ },
+ "idb_cifrado_sin_texto_plano": {
+  "ok": true,
+  "det": {
+   "registros": 7,
+   "llaves": 1
+  }
+ },
+ "salir_online_sin_pendientes_va_al_ingreso": {
+  "ok": true
+ },
+ "otra_pestana_deja_de_mostrar_datos": {
+  "ok": true
+ },
+ "salir_borra_clave_y_copia_offline": {
+  "ok": true,
+  "det": {
+   "llaves": 0
+  }
+ },
+ "sesion_cerrada_en_servidor": {
+  "ok": true
+ },
+ "dialogo_pendientes_ofrece_enviar_conservar_descartar": {
+  "ok": true,
+  "det": [
+   "enviar",
+   "conservar",
+   "descartar",
+   "cancelar"
+  ]
+ },
+ "enviar_sin_conexion_avisa_y_no_borra": {
+  "ok": true
+ },
+ "salida_offline_mensaje": {
+  "ok": true
+ },
+ "offline_pendientes_conservados_cifrados_sin_clave": {
+  "ok": true
+ },
+ "sin_sesion_offline_encuesta_no_muestra_datos": {
+  "ok": true,
+  "det": "Sin conexión a internet. Inicia sesión cuando vuelva la conexión."
+ },
+ "al_volver_la_red_se_cierra_en_servidor": {
+  "ok": true
+ },
+ "pendiente_conservado_se_envia_al_volver": {
+  "ok": true,
+  "det": "4"
+ },
+ "cambio_de_cuenta_sin_datos_ajenos": {
+  "ok": true,
+  "det": {
+   "llaves": 1
+  }
+ },
+ "descartar_borra_solo_lo_de_esa_cuenta": {
+  "ok": true,
+  "det": {
+   "deB": 0,
+   "deA": 10
+  }
+ },
+ "movil_tablero_sin_desborde": {
+  "ok": true
+ },
+ "movil_dialogo_cabe": {
+  "ok": true
+ },
+ "retiro_limpia_este_dispositivo": {
+  "ok": true
+ },
+ "retiro_elimina_respuestas_y_rondas": {
+  "ok": true,
+  "det": "0,0"
+ },
+ "consentimiento_nuevo_aceptado": {
+  "ok": true
+ },
+ "dispositivo_desactualizado_no_recrea_datos_retirados": {
+  "ok": true,
+  "det": {
+   "servidor": "0",
+   "local": "{}",
+   "cargo": "/encuesta/|encuesta",
+   "registros_locales": 4
+  }
+ },
+ "reingreso_parte_de_ronda_1": {
+  "ok": true,
+  "det": "sin ficha"
+ },
+ "busqueda_sin_rut_en_url": {
+  "ok": true,
+  "det": "http://127.0.0.1:8010/profesional/buscar/"
+ },
+ "profesional_no_registra_cuenta_sin_consentimiento": {
+  "ok": true
+ },
+ "consola_sin_errores": {
+  "ok": true,
+  "det": []
+ }
+}

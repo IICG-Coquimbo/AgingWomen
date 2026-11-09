@@ -1,0 +1,7 @@
+﻿poblacion,par,n,rho_spearman,su
+población de la sobrecarga,sobrecarga y cantidad,239,0.251854,0.055987
+población de la sobrecarga,sobrecarga y doble carga,239,0.293846,0.052906
+población de la sobrecarga,cantidad y doble carga,239,0.029994,0.010983
+"todas, con 0 si no aplica (solo referencia)",sobrecarga y cantidad,529,0.886818,0.505002
+"todas, con 0 si no aplica (solo referencia)",sobrecarga y doble carga,529,0.660649,0.258077
+"todas, con 0 si no aplica (solo referencia)",cantidad y doble carga,529,0.626747,0.311864

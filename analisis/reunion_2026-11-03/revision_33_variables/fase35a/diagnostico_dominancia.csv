@@ -1,0 +1,35 @@
+﻿variable,etiqueta,tipo,poblacion_propia,n_propia,n_dominante,pct_dominante_propia,pct_dominante_fase35a,decision_fase35a,pct_dominante_general,pct_dominante_laboral,pct_dominante_cuidadoras,pct_dominante_sin_imputados_34B,supera_85_regla,supera_85_subpoblacion,decision_corregida
+usa_medicamentos_diabetes,Medicamentos para la diabetes,binaria,general,529,463,87.523629,87.523600,conservar (excepción),87.523629,88.501742,88.284519,86.930700,True,True,excluir por dominancia
+frecuencia_fuerza,Frecuencia de ejercicio de fuerza,ordinal,general,529,448,84.688091,84.688100,revisar → conservar,84.688091,83.275261,86.610879,83.832300,False,True,conservar
+usa_medicamentos_presion,Medicamentos para la presión,binaria,general,529,440,83.175803,83.175800,revisar → conservar,83.175803,82.229965,82.426778,82.164300,False,False,conservar
+platos_verduras_dia,Platos de verduras al día,ordinal,general,529,427,80.718336,80.718300,revisar → conservar,80.718336,80.487805,81.589958,79.435500,False,False,conservar
+operada_no_mas_hijos,Operada para no tener más hijos,binaria,general,529,425,80.340265,80.340300,revisar → conservar,80.340265,83.275261,80.753138,79.647700,False,False,conservar
+frecuencia_aerobico,Frecuencia de ejercicio aeróbico,ordinal,general,529,424,80.151229,80.151200,revisar → conservar,80.151229,82.229965,78.661088,79.000000,False,False,conservar
+tabaco_frecuencia,Tabaco,ordinal,general,529,399,75.425331,75.425300,conservar,75.425331,78.745645,77.824268,74.559700,False,False,conservar
+frutas_dia,Frutas al día,ordinal,general,529,380,71.833648,71.833600,conservar,71.833648,72.822300,71.966527,70.495000,False,False,conservar
+quien_prepara_comidas,Quién prepara las comidas,nominal,general,529,365,68.998110,68.998100,conservar,68.998110,69.337979,66.108787,67.524800,False,False,conservar
+imc,IMC,continua,general,529,363,68.620038,,"no registrada: continua, se mide por tramos de SU",68.620038,69.686411,66.108787,,False,False,conservar
+panes_dia,Panes al día,ordinal,general,529,356,67.296786,67.296800,conservar,67.296786,64.111498,67.782427,65.330700,False,False,conservar
+tiene_pareja,Tiene pareja,binaria,general,529,356,67.296786,67.296800,conservar,67.296786,66.202091,68.619247,65.469100,False,False,conservar
+legumbres_semana,Legumbres a la semana,ordinal,general,529,352,66.540643,66.540600,conservar,66.540643,64.459930,64.853556,64.741000,False,False,conservar
+lacteos_dia,Lácteos al día,ordinal,general,529,351,66.351607,66.351600,conservar,66.351607,67.247387,69.456067,64.400000,False,False,conservar
+trabaja_actualmente,Trabaja actualmente,binaria,general,529,309,58.412098,58.412100,conservar,58.412098,100.000000,58.577406,56.607500,False,True,conservar
+frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,ordinal,general,529,305,57.655955,57.656000,conservar,57.655955,55.400697,56.903766,55.643600,False,False,conservar
+dias_ejercicio_semana,Días de ejercicio a la semana,ordinal,general,529,302,57.088847,57.088800,conservar,57.088847,56.445993,55.230126,53.955400,False,False,conservar
+evacuacion_intestinal,Frecuencia de evacuación intestinal,ordinal,general,529,300,56.710775,56.710800,conservar,56.710775,49.825784,52.301255,53.923500,False,False,conservar
+pescado_semana,Pescado a la semana,ordinal,general,529,299,56.521739,56.521700,conservar,56.521739,57.142857,51.464435,54.902000,False,False,conservar
+cantidad_personas_cuida,Cantidad de personas que cuida,ordinal,general,529,278,52.551985,52.552000,conservar,52.551985,52.264808,53.556485,52.868900,False,False,conservar
+tiene_actividad_sexual,Tiene actividad sexual,binaria,general,529,278,52.551985,52.552000,conservar,52.551985,52.961672,51.882845,49.699400,False,False,conservar
+alcohol_frecuencia,Alcohol,ordinal,general,529,268,50.661626,50.661600,conservar,50.661626,49.477352,53.138075,47.800000,False,False,conservar
+jugos_gaseosas_dia,Jugos y gaseosas al día,ordinal,general,529,258,48.771267,48.771300,conservar,48.771267,54.355401,50.627615,45.691400,False,False,conservar
+frecuencia_comida_fuera,Comidas fuera del hogar,ordinal,general,529,247,46.691871,46.691900,conservar,46.691871,48.432056,47.280335,43.030300,False,False,conservar
+carnes_semana,Carnes a la semana,ordinal,general,529,234,44.234405,44.234400,conservar,44.234405,40.069686,43.933054,40.763100,False,False,conservar
+distension_abdominal,Distensión abdominal,ordinal,general,529,226,42.722117,42.722100,conservar,42.722117,43.902439,41.422594,40.704500,False,False,conservar
+falta_tiempo_influye,Falta de tiempo influye en lo que come,ordinal,general,529,224,42.344045,42.344000,conservar,42.344045,44.947735,48.535565,39.000000,False,False,conservar
+golosinas_semana,Dulces y snacks a la semana,ordinal,general,529,222,41.965974,41.966000,conservar,41.965974,43.554007,43.933054,40.039100,False,False,conservar
+sobrecarga_fisica_emocional,Sobrecarga por trabajo y cuidado,ordinal,cuidadoras,239,94,39.330544,,"no registrada: continua, se mide por tramos de SU",,,39.330544,39.330500,False,False,conservar
+vasos_agua_dia,Vasos de agua al día,ordinal,general,529,205,38.752363,38.752400,conservar,38.752363,41.463415,38.075314,35.714300,False,False,conservar
+lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,ordinal,laboral,287,108,37.630662,41.587900,conservar,,37.630662,,33.948300,False,False,conservar
+estres_entorno_laboral,Estrés del entorno laboral,ordinal,laboral,287,107,37.282230,41.587900,conservar,,37.282230,,35.018100,False,False,conservar
+horas_sedentarismo,Horas sentada al día,continua,general,529,185,34.971645,,"no registrada: continua, se mide por tramos de SU",34.971645,33.797909,33.472803,43.027900,False,False,conservar
+edad,Edad,continua,general,529,120,22.684310,,"no registrada: continua, se mide por tramos de SU",22.684310,24.390244,24.686192,,False,False,conservar

@@ -1,0 +1,21 @@
+n,prueba,resultado,detalle,segundos
+1,529 participantes e identificadores,superada,"529 únicas, en el orden de la Fase 36",0.0
+2,Correspondencia con las fuentes,superada,ítems coinciden con la limpieza y con la matriz guardada,0.0
+3,MRS severo correcto,superada,281 severas y 248 no severas,0.0
+4,"29 variables y 90 ítems, sin contenido vetado",superada,"29 variables autorizadas y 90 ítems, sin contenido vetado",0.0
+5,Sin condiciones contradictorias,superada,ninguna transacción contradictoria,0.0
+6,Categorías agrupadas,superada,todos los ítems ≥ 27 y R3 aplicada,0.0
+7,Imputaciones (S1),superada,S1 quita 28 celdas de pareja imputadas,0.0
+8,Módulos y poblaciones (S7),superada,"S7a 287, S7a-309 309, S7b 239, S7b-251 251; módulos fuera de la principal",0.1
+9,"Soporte, confianza, lift, leverage",superada,"60 reglas: recuentos, confianza, lift, leverage y Wilson correctos",0.1
+10,Equivalencia Apriori / FP-Growth / exhaustiva,superada,"Apriori = FP-Growth = exhaustiva, también en 2 permutaciones",9.7
+11,Evaluador matricial,superada,evaluador matricial = FP-Growth en 2 permutaciones,7.1
+12,Reproducibilidad,superada,"reglas, q y primer lote nulo se reproducen",0.1
+13,Estabilidad sin fuga,superada,las agrupaciones no dependen del consecuente; submuestras con umbrales 43 y 22,0.0
+14,Referencia nula,superada,p ajustado verificado; una permutación nueva da 275 marcadas (nula: media 544),8.2
+15,Comparaciones múltiples,superada,BH sobre las 9761 reglas evaluadas,0.0
+16,Sin reglas triviales,superada,antecedentes válidos; en S2a se excluyen 8 pares determinados,7.9
+17,Protocolo sellado antes de resultados,superada,protocolo y código íntegros; resultados posteriores al sello,0.0
+18,Clasificación y redundancia,superada,clasificación reproducida; 1 en clase 6; redundancia verificada en 80 reglas,0.2
+19,Barreras en todas las tablas,superada,16 tablas de reglas sin variables no autorizadas,1.8
+20,Nula coherente con la histórica,superada,"en las 1.000 permutaciones la nula corregida es ≤ a la histórica, como exige un subconjunto de reglas",0.0

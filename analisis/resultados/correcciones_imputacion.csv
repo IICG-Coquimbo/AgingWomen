@@ -1,0 +1,11 @@
+﻿participante_id,variable,valor_imputado,contexto
+44,peso_kg,90.9,"talla 167 cm, cintura 101.5 cm → IMC 32.6"
+125,peso_kg,71,sin cintura medida: mediana; la cintura se imputa después desde el IMC (24.9)
+127,peso_kg,62.1,"talla 159 cm, cintura 78.8 cm → IMC 24.6"
+145,peso_kg,89.3,"talla 164 cm, cintura 103.3 cm → IMC 33.2"
+331,peso_kg,78.1,"talla 152 cm, cintura 105 cm → IMC 33.8"
+340,peso_kg,74.8,"talla 159 cm, cintura 93 cm → IMC 29.6"
+441,peso_kg,47.4,"talla 175 cm, cintura 53 cm → IMC 15.5"
+457,peso_kg,88.7,"talla 152 cm, cintura 118 cm → IMC 38.4"
+103,presion_sistolica,171,presión diastólica medida = 126
+130,presion_sistolica,121,presión diastólica medida = 76

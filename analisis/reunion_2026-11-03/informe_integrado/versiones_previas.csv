@@ -1,0 +1,9 @@
+﻿version_previa,estado,composicion,familia,permutaciones,umbral_q,n_relevantes,relevantes,seleccionadas_adaptado,poblacion_sobrecarga
+E1,Oficial anterior,"30 candidatas: con doble_carga, sin sobrecarga, sin las 4 de control",30,5000,0.050000,0,,,
+E2,Exploratoria anterior,"30 candidatas: con doble_carga, sin sobrecarga, sin las 4 de control",30,5000,0.100000,5,dias_ejercicio_semana;doble_carga;frecuencia_bajo_impacto;frecuencia_fuerza;lugar_trabajo_comprensivo,doble_carga;frecuencia_fuerza;lugar_trabajo_comprensivo,
+E3,Exploratoria anterior,"30 candidatas: con doble_carga, sin sobrecarga, sin las 4 de control",30,50000,0.050000,2,dias_ejercicio_semana;frecuencia_bajo_impacto,dias_ejercicio_semana,
+E4,Exploratoria anterior,"30 candidatas: con doble_carga, sin sobrecarga, sin las 4 de control",30,50000,0.100000,5,dias_ejercicio_semana;doble_carga;frecuencia_bajo_impacto;frecuencia_fuerza;lugar_trabajo_comprensivo,doble_carga;frecuencia_fuerza;lugar_trabajo_comprensivo,
+C3,Exploratoria anterior,"31 candidatas: con doble_carga y sobrecarga, sin las 4 de control",31,50000,0.050000,2,dias_ejercicio_semana;frecuencia_bajo_impacto,dias_ejercicio_semana,observadas
+C4,Exploratoria anterior,"31 candidatas: con doble_carga y sobrecarga, sin las 4 de control",31,50000,0.100000,5,dias_ejercicio_semana;doble_carga;frecuencia_bajo_impacto;frecuencia_fuerza;lugar_trabajo_comprensivo,doble_carga;frecuencia_fuerza;lugar_trabajo_comprensivo,observadas
+S3,Exploratoria anterior,"31 candidatas: con doble_carga y sobrecarga, sin las 4 de control",31,50000,0.050000,2,dias_ejercicio_semana;frecuencia_bajo_impacto,dias_ejercicio_semana,cuidadoras
+S4,Exploratoria anterior,"31 candidatas: con doble_carga y sobrecarga, sin las 4 de control",31,50000,0.100000,5,dias_ejercicio_semana;doble_carga;frecuencia_bajo_impacto;frecuencia_fuerza;lugar_trabajo_comprensivo,doble_carga;frecuencia_fuerza;lugar_trabajo_comprensivo,cuidadoras

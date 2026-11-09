@@ -14,11 +14,16 @@
     'use strict';
 
     var DB_NOMBRE = 'encuesta_agingwomen';
-    var DB_VERSION = 1;
+    // Fase 40 (privacidad): versión 2 = todo lo guardado va cifrado con la clave de la cuenta.
+    var DB_VERSION = 2;
+    var URL_CLAVE = '/api/clave-local/';
     var URL_ESQUEMA = '/api/esquema/';
     var URL_SYNC = '/api/sincronizar/';
     var URL_EVALUACION = '/mi-evaluacion/';
     var URL_RONDA = '/api/ronda-actual/';
+    // Fase 40B-2: protocolo de sincronización (ver sync.py). El 2 envía la ronda local,
+    // un id_cierre al finalizar y los ítems MRS confirmados.
+    var PROTOCOLO = 2;
 
     var cont = document.getElementById('encuesta');
 
@@ -28,6 +33,10 @@
     var pacienteId = cont.dataset.paciente ? parseInt(cont.dataset.paciente, 10) : null;
     var rutNueva = cont.dataset.rut || '';
     var urlFicha = cont.dataset.urlFicha || '';
+    // Fase 40 (retiro presencial): participación vigente de la paciente según el servidor, y la
+    // participación a la que pertenecen las respuestas guardadas en este dispositivo.
+    var participacionPagina = cont.dataset.participacionPaciente || null;
+    var participacionDatos = participacionPagina;
     var identBloqueada = false;  // la paciente se registró ella: su Identificación es solo lectura
 
     // El CSRF se lee de la cookie en cada envío (no al cargar el script): si
@@ -54,6 +63,29 @@
     // Fase 31: fecha (AAAA-MM-DD) desde la que la usuaria puede responder otra
     // ronda. Se guarda localmente para respetar el plazo también sin conexión.
     var disponibleDesde = null;
+    // Fase 40B-2: identificador del cierre en curso. Se genera al pulsar Finalizar y se
+    // reutiliza en cada reintento, así el servidor no cierra dos veces la misma ronda.
+    var idCierre = null;
+    // Ítems MRS que la persona eligió en esta ronda ({ pregunta_n: true }).
+    var confirmadosMrs = {};
+    // Ítems MRS en 0 de un registro anterior a la 40B-2 que el servidor pide confirmar.
+    var mrsPorConfirmar = [];
+    // Respuestas locales que no pudieron enviarse porque su ronda ya estaba cerrada.
+    // Nunca se borran solas: quedan en IndexedDB ('conflictos').
+    var conflictos = [];
+    // Etapa 5B-3: huella de lo que el servidor tenía cuando esta página leyó o guardó cada sección
+    // (null = no tenía nada). Si ya no coincide, el servidor rechaza el envío sin escribir.
+    var versiones = {};
+    // Lo enviado sin recibir respuesta: si llegó a guardarse, el servidor lo reconoce como propio.
+    var sinConfirmar = {};
+    var MAX_SIN_CONFIRMAR = 5;
+    var conflictoVersion = null;   // respuesta 409 a la espera de que la persona decida
+    var generacion = 0;            // sube con cada respuesta; distingue lo cambiado durante un envío
+    var envioEnCurso = null;       // solo un envío a la vez: cada uno parte de la versión del anterior
+    var otroEnvio = null;          // envío pedido mientras había otro en curso
+    var firmaVisible = '';         // secciones y preguntas visibles en el último dibujo completo
+    var punteroPresionado = false;
+    var trasPuntero = null;        // redibujo aplazado hasta soltar el ratón o el dedo
 
     function hoyISO() {
         var d = new Date();
@@ -87,40 +119,193 @@
         return { clase: 'alto', msg: '¡Completaste todas las secciones! Ya puedes presionar Finalizar.' };
     }
 
-    // ---------- IndexedDB ----------
+    // ---------- IndexedDB (cifrado, Fase 40) ----------
+    // 'estado': {clave: '<cuenta>|[<contexto>|]<nombre>', iv, datos} — datos cifrados con AES-GCM.
+    // 'llaves': {cuenta, llave (CryptoKey no exportable), participacion, expira, pendientes}.
+    // La clave la entrega el servidor solo con sesión iniciada (/api/clave-local/) y se borra al
+    // cerrar sesión (static/js/sesion.js): sin ella lo guardado es ilegible, aun sin conexión.
+    // La versión 1 guardaba todo en claro: al actualizar se vacía (solo hubo datos de prueba).
     function abrirDB() {
         return new Promise(function (resolve, reject) {
             var req = indexedDB.open(DB_NOMBRE, DB_VERSION);
-            req.onupgradeneeded = function () {
-                req.result.createObjectStore('estado', { keyPath: 'clave' });
+            req.onupgradeneeded = function (e) {
+                var db = req.result;
+                if (!db.objectStoreNames.contains('estado')) {
+                    db.createObjectStore('estado', { keyPath: 'clave' });
+                } else if (e && e.oldVersion < 2) {
+                    req.transaction.objectStore('estado').clear();
+                }
+                if (!db.objectStoreNames.contains('llaves')) {
+                    db.createObjectStore('llaves', { keyPath: 'cuenta' });
+                }
             };
-            req.onsuccess = function () { resolve(req.result); };
+            req.onsuccess = function () {
+                req.result.onversionchange = function () { req.result.close(); };
+                resolve(req.result);
+            };
             req.onerror = function () { reject(req.error); };
         });
     }
-    // En modo profesional cada paciente tiene su propio estado local (no se
-    // mezclan si el profesional atiende a varias, aunque esté sin conexión).
-    function claveIdb(clave) { return MODO_PROF ? usuarioActual + '|' + clave : clave; }
 
-    function idbGet(clave) {
-        clave = claveIdb(clave);
+    var cuentaActual = cont.dataset.cuenta || '';
+    var llave = null;          // CryptoKey de la cuenta (null = no se puede leer ni escribir)
+    var participacion = null;  // participación vigente (cambia tras un retiro y un consentimiento nuevo)
+    var sesionCerrada = false;
+
+    function errorConCodigo(codigo) { var e = new Error(codigo); e.codigo = codigo; return e; }
+
+    function llavesGet(cuenta) {
         return abrirDB().then(function (db) {
             return new Promise(function (resolve, reject) {
-                var r = db.transaction('estado', 'readonly').objectStore('estado').get(clave);
-                r.onsuccess = function () { resolve(r.result ? r.result.valor : null); };
+                var r = db.transaction('llaves', 'readonly').objectStore('llaves').get(cuenta);
+                r.onsuccess = function () { resolve(r.result || null); };
                 r.onerror = function () { reject(r.error); };
             });
         });
     }
-    function idbSet(clave, valor) {
+    function llavesPut(registro) {
+        return abrirDB().then(function (db) {
+            return new Promise(function (resolve, reject) {
+                var tx = db.transaction('llaves', 'readwrite');
+                tx.objectStore('llaves').put(registro);
+                tx.oncomplete = function () { resolve(true); };
+                tx.onerror = function () { reject(tx.error); };
+            });
+        });
+    }
+    // Borra todo lo guardado por una cuenta (solo cuando pertenece a una participación retirada).
+    function borrarEspacio(cuenta) {
+        return abrirDB().then(function (db) {
+            return new Promise(function (resolve, reject) {
+                var tx = db.transaction(['estado', 'llaves'], 'readwrite');
+                tx.objectStore('estado').delete(IDBKeyRange.bound(cuenta + '|', cuenta + '|￿'));
+                tx.objectStore('llaves').delete(cuenta);
+                tx.oncomplete = function () { resolve(true); };
+                tx.onerror = function () { reject(tx.error); };
+            });
+        });
+    }
+    function importarLlave(base64) {
+        var bytes = Uint8Array.from(atob(base64), function (c) { return c.charCodeAt(0); });
+        return crypto.subtle.importKey('raw', bytes, { name: 'AES-GCM' }, false, ['encrypt', 'decrypt']);
+    }
+    function vigente(reg) { return !!(reg && reg.llave && (!reg.expira || Date.parse(reg.expira) > Date.now())); }
+    function borrarLlave() {
+        return abrirDB().then(function (db) {
+            return new Promise(function (resolve) {
+                var tx = db.transaction('llaves', 'readwrite');
+                tx.objectStore('llaves').delete(cuentaActual);
+                tx.oncomplete = tx.onerror = function () { resolve(true); };
+            });
+        }).catch(function () { return true; });
+    }
+
+    // Obtiene la clave: del servidor si hay conexión; si no, la guardada en este dispositivo
+    // mientras la sesión no haya terminado. Si la participación cambió (retiro y consentimiento
+    // nuevo), lo guardado con la clave anterior pertenece a la participación retirada y se borra.
+    // Fase 40 E2: avisa a sesion.js que el servidor cerró la sesión (sin fallar si no está disponible).
+    function avisarSesionVencida() {
+        try { window.dispatchEvent(new Event('aw:sesion-vencida')); } catch (e) { /* sin eventos de ventana */ }
+    }
+
+    function obtenerLlave() {
+        if (!cuentaActual) { return Promise.reject(errorConCodigo('sin-sesion')); }
+        return fetch(URL_CLAVE, { credentials: 'same-origin', headers: { 'Accept': 'application/json', 'X-Segundo-Plano': '1' } })
+            .then(function (r) {
+                return r.json().then(function (j) { return { status: r.status, cuerpo: j }; },
+                    function () { return { status: 0, cuerpo: null }; });
+            }, function () { return null; })   // sin conexión
+            .then(function (res) {
+                if (res && res.status === 401) {
+                    avisarSesionVencida();   // Fase 40 E2 (sesion.js)
+                    return borrarLlave().then(function () { throw errorConCodigo('sin-sesion'); });
+                }
+                if (res && res.status === 403) { throw errorConCodigo('sin-consentimiento'); }
+                if (res && res.status === 200 && res.cuerpo && res.cuerpo.cuenta === cuentaActual) {
+                    return llavesGet(cuentaActual).then(function (previo) {
+                        var cambio = !!(previo && previo.participacion && previo.participacion !== res.cuerpo.participacion);
+                        return (cambio ? borrarEspacio(cuentaActual) : Promise.resolve()).then(function () {
+                            return importarLlave(res.cuerpo.clave);
+                        }).then(function (k) {
+                            return llavesPut({ cuenta: cuentaActual, llave: k, participacion: res.cuerpo.participacion,
+                                expira: res.cuerpo.expira, pendientes: (!cambio && previo && previo.pendientes) || {} })
+                                .then(function () { return { llave: k, participacion: res.cuerpo.participacion }; });
+                        });
+                    });
+                }
+                return llavesGet(cuentaActual).then(function (reg) {
+                    if (!vigente(reg)) { throw errorConCodigo('sin-sesion'); }
+                    return { llave: reg.llave, participacion: reg.participacion };
+                });
+            })
+            .then(function (r) { llave = r.llave; participacion = r.participacion; });
+    }
+
+    // Indica (sin datos de salud) si esta cuenta tiene algo sin enviar: lo usa «Salir».
+    function marcarPendiente() {
+        var hay = !!(sucio || envioFinalPendiente || (conflictos && conflictos.length));
+        var ctx = usuarioActual || 'propia';
+        return llavesGet(cuentaActual).then(function (reg) {
+            if (!reg) { return; }
+            reg.pendientes = reg.pendientes || {};
+            if (hay) { reg.pendientes[ctx] = true; } else { delete reg.pendientes[ctx]; }
+            return llavesPut(reg);
+        }).catch(function () { /* el aviso de «Salir» es complementario */ });
+    }
+
+    var codificador = new TextEncoder();
+    var decodificador = new TextDecoder();
+    function cifrar(valor) {
+        var iv = crypto.getRandomValues(new Uint8Array(12));
+        return crypto.subtle.encrypt({ name: 'AES-GCM', iv: iv }, llave, codificador.encode(JSON.stringify(valor)))
+            .then(function (datos) { return { iv: iv, datos: datos }; });
+    }
+    function descifrar(registro) {
+        if (!registro || !registro.iv) { return Promise.resolve(null); }
+        return crypto.subtle.decrypt({ name: 'AES-GCM', iv: registro.iv }, llave, registro.datos)
+            .then(function (b) { return JSON.parse(decodificador.decode(b)); },
+                function () { return null; });   // cifrado con otra clave: ilegible
+    }
+
+    // Cada cuenta tiene su propio espacio; en modo profesional, además, cada paciente.
+    function claveIdb(clave) { return cuentaActual + '|' + (MODO_PROF ? usuarioActual + '|' : '') + clave; }
+
+    function idbGet(clave) {
+        if (!llave || sesionCerrada) { return Promise.resolve(null); }
         clave = claveIdb(clave);
         return abrirDB().then(function (db) {
             return new Promise(function (resolve, reject) {
+                var r = db.transaction('estado', 'readonly').objectStore('estado').get(clave);
+                r.onsuccess = function () { resolve(r.result); };
+                r.onerror = function () { reject(r.error); };
+            });
+        }).then(descifrar);
+    }
+    // Fase 40B-2: si el dispositivo no puede guardar (almacenamiento lleno, modo privado),
+    // se avisa en vez de fallar en silencio. Devuelve false en ese caso.
+    var CLAVES_PENDIENTE = { sucio: 1, envio_final: 1, pendiente_envio: 1, conflictos: 1 };
+    function idbSet(clave, valor) {
+        if (sesionCerrada || !llave) { return Promise.resolve(false); }   // tras «Salir» no se escribe nada
+        var nombre = clave;
+        clave = claveIdb(clave);
+        return Promise.all([abrirDB(), cifrar(valor)]).then(function (r) {
+            var db = r[0], cifrado = r[1];
+            // Cifrar toma tiempo: lo local pudo borrarse mientras tanto (retiro, «Salir»).
+            if (sesionCerrada || !llave) { return false; }
+            return new Promise(function (resolve, reject) {
                 var tx = db.transaction('estado', 'readwrite');
-                tx.objectStore('estado').put({ clave: clave, valor: valor });
-                tx.oncomplete = function () { resolve(); };
+                tx.objectStore('estado').put({ clave: clave, iv: cifrado.iv, datos: cifrado.datos });
+                tx.oncomplete = function () { resolve(true); };
                 tx.onerror = function () { reject(tx.error); };
             });
+        }).then(function (ok) {
+            if (CLAVES_PENDIENTE[nombre]) { marcarPendiente(); }
+            return ok;
+        }).catch(function (err) {
+            console.error(err);
+            avisoSync('No se pudo guardar en este dispositivo. No cierres esta página hasta que tus ' +
+                'respuestas se envíen con conexión a internet.', 'error');
+            return false;
         });
     }
 
@@ -132,25 +317,121 @@
     // se mezclan respuestas de otra persona).
     var usuarioActual = cont.dataset.usuario || '';
 
-    function limpiarEstadoLocal() {
-        respuestas = {};
-        uuids = {};
-        bienvenidaOk = false;
-        envioFinalPendiente = false;
-        return Promise.all([
-            idbSet('respuestas', respuestas),
-            idbSet('uuids', uuids),
-            idbSet('bienvenida', false),
-            idbSet('envio_final', false),
-        ]);
+    // Fase 40B-2: si la persona anterior dejó respuestas sin enviar, no se borran: se
+    // apartan con su identificador y se le devuelven cuando vuelva a entrar en este
+    // dispositivo. Ya estaban guardadas aquí; solo cambian de clave.
+    function limpiarEstadoLocal(usuarioAnterior) {
+        var apartar = Promise.resolve();
+        if (usuarioAnterior && (sucio || envioFinalPendiente)) {
+            apartar = idbSet('respaldo_de|' + usuarioAnterior, {
+                respuestas: respuestas, uuids: uuids, ronda: ronda, envio_final: envioFinalPendiente,
+                id_cierre: idCierre, mrs_confirmados: confirmadosMrs, fecha: new Date().toISOString(),
+            });
+        }
+        return apartar.then(function () {
+            respuestas = {};
+            uuids = {};
+            bienvenidaOk = false;
+            envioFinalPendiente = false;
+            sucio = false;
+            ronda = null;
+            idCierre = null;
+            confirmadosMrs = {};
+            versiones = {};
+            sinConfirmar = {};
+            return Promise.all([
+                idbSet('versiones', versiones),
+                idbSet('sin_confirmar', sinConfirmar),
+                idbSet('respuestas', respuestas),
+                idbSet('uuids', uuids),
+                idbSet('bienvenida', false),
+                idbSet('envio_final', false),
+                idbSet('sucio', false),
+                idbSet('pendiente_envio', false),
+                idbSet('ronda', null),
+                idbSet('id_cierre', null),
+                idbSet('mrs_confirmados', {}),
+            ]);
+        });
     }
 
+    // Devuelve a esta persona lo que había dejado sin enviar en este dispositivo.
+    function recuperarRespaldoPropio() {
+        var clave = 'respaldo_de|' + usuarioActual;
+        return idbGet(clave).then(function (r) {
+            if (!r || Object.keys(respuestas).length) { return; }
+            respuestas = r.respuestas || {};
+            uuids = r.uuids || {};
+            ronda = r.ronda || null;
+            envioFinalPendiente = !!r.envio_final;
+            idCierre = r.id_cierre || null;
+            confirmadosMrs = r.mrs_confirmados || {};
+            sucio = true;
+            bienvenidaOk = true;
+            return Promise.all([
+                idbSet('respuestas', respuestas), idbSet('uuids', uuids), idbSet('ronda', ronda),
+                idbSet('envio_final', envioFinalPendiente), idbSet('id_cierre', idCierre),
+                idbSet('mrs_confirmados', confirmadosMrs), idbSet('sucio', true), idbSet('bienvenida', true),
+            ]).then(function () { return idbSet(clave, null); });
+        });
+    }
+
+    // Aparta las respuestas locales sin enviar (copia inmediata) antes de empezar otra ronda.
+    function archivarPendientes(motivo) {
+        conflictos.push({
+            motivo: motivo, ronda: ronda, fecha: new Date().toISOString(),
+            respuestas: JSON.parse(JSON.stringify(respuestas)), uuids: JSON.parse(JSON.stringify(uuids)),
+        });
+        return idbSet('conflictos', conflictos);
+    }
+
+    // Otra pestaña cerró sesión (o se retiró): esta deja de mostrar y de guardar datos.
+    function alCerrarseSesion() {
+        sesionCerrada = true;
+        llave = null;
+        respuestas = {};
+        uuids = {};
+        cont.innerHTML = '<div class="tarjeta"><p class="errores">La sesión se cerró en este dispositivo. ' +
+            'Para ver o enviar tus respuestas, vuelve a iniciar sesión.</p>' +
+            '<p class="enlaces"><a href="/cuenta/ingresar/">Iniciar sesión</a></p></div>';
+    }
+    if (window.BroadcastChannel) {
+        try {
+            new BroadcastChannel('aw-sesion').onmessage = function (e) {
+                if (e.data && (e.data.tipo === 'salida' || e.data.tipo === 'retiro') && e.data.cuenta === cuentaActual) {
+                    alCerrarseSesion();
+                }
+            };
+        } catch (err) { /* sin BroadcastChannel: la clave borrada impide igual leer y escribir */ }
+    }
+
+    // Fase 40: lo pendiente se envía con la participación para la que se preparó; si la
+    // paciente se retiró después, el servidor lo rechaza (409 participacion_anterior).
+    function fijarParticipacionPaciente() {
+        return idbGet('participacion_paciente').then(function (guardada) {
+            if (guardada && guardada !== participacionPagina && (sucio || envioFinalPendiente)) {
+                participacionDatos = guardada;
+                return;
+            }
+            participacionDatos = participacionPagina;
+            return idbSet('participacion_paciente', participacionPagina);
+        });
+    }
+
+    // «Salir» (sesion.js) ofrece enviar lo pendiente antes de cerrar la sesión.
+    window.awEncuesta = {
+        hayPendiente: function () { return !!(sucio || envioFinalPendiente); },
+        enviarAhora: function () { return intentarSync(envioFinalPendiente); },
+    };
+
     function iniciar() {
-        Promise.all([
+        obtenerLlave().then(function () { return Promise.all([
             idbGet('esquema'), idbGet('respuestas'), idbGet('uuids'), idbGet('bienvenida'),
             idbGet('envio_final'), idbGet('usuario'), idbGet('sucio'), idbGet('pendiente_envio'),
             idbGet('ronda'), idbGet('disponible_desde'),
-        ])
+            idbGet('id_cierre'), idbGet('mrs_confirmados'), idbGet('conflictos'),
+            idbGet('versiones'), idbGet('sin_confirmar'),
+        ]); })
             .then(function (vals) {
                 esquema = vals[0];
                 respuestas = vals[1] || {};
@@ -161,11 +442,20 @@
                 sucio = !!vals[6] || !!vals[7];
                 ronda = vals[8] || null;
                 disponibleDesde = vals[9] || null;
+                idCierre = vals[10] || null;
+                confirmadosMrs = vals[11] || {};
+                conflictos = vals[12] || [];
+                versiones = vals[13] || {};
+                sinConfirmar = vals[14] || {};
 
                 var cambioDeUsuario = usuarioGuardado && usuarioGuardado !== usuarioActual;
-                var promesa = cambioDeUsuario ? limpiarEstadoLocal() : Promise.resolve();
+                var promesa = cambioDeUsuario ? limpiarEstadoLocal(usuarioGuardado) : Promise.resolve();
                 return promesa.then(function () {
                     return idbSet('usuario', usuarioActual);
+                }).then(function () {
+                    return cambioDeUsuario ? recuperarRespaldoPropio() : null;
+                }).then(function () {
+                    return MODO_PROF ? fijarParticipacionPaciente() : null;
                 });
             })
             .then(function () {
@@ -199,6 +489,14 @@
                     render();
                     window.scrollTo(0, 0);
                 });
+                // Etapa 5B-3: un redibujo entre presionar y soltar haría perder ese clic.
+                // En pantallas táctiles el navegador simula mousedown y clic después de soltar el dedo.
+                var alPresionar = function () { punteroPresionado = true; };
+                cont.addEventListener('pointerdown', alPresionar, true);
+                cont.addEventListener('mousedown', alPresionar, true);
+                window.addEventListener('pointerup', alSoltarPuntero, true);
+                window.addEventListener('pointercancel', alSoltarPuntero, true);
+                window.addEventListener('mouseup', alSoltarPuntero, true);
                 render();
                 mostrarConexion();
                 window.addEventListener('online', alRecuperarConexion);
@@ -209,6 +507,14 @@
             })
             .catch(function (err) {
                 console.error(err);
+                if (err && (err.codigo === 'sin-sesion' || err.codigo === 'sin-consentimiento')) {
+                    cont.innerHTML = '<div class="tarjeta"><p class="errores" data-sin-llave>' + (err.codigo === 'sin-sesion'
+                        ? 'Tu sesión no está iniciada en este dispositivo. Inicia sesión con conexión a internet ' +
+                          'para ver y enviar tus respuestas; las que hayas dejado guardadas siguen protegidas aquí.'
+                        : 'Necesitas aceptar el consentimiento informado para continuar.') +
+                        '</p><p class="enlaces"><a href="/">Ir al inicio</a></p></div>';
+                    return;
+                }
                 cont.innerHTML = '<div class="tarjeta"><p class="errores">' +
                     (err && err.message === 'sin-datos-paciente'
                         ? 'No se pudieron cargar las respuestas de la paciente. Necesitas conexión ' +
@@ -224,7 +530,7 @@
     function traerRondaActual() {
         if (!navigator.onLine || (MODO_PROF && !pacienteId)) { return Promise.resolve(); }
         var url = URL_RONDA + (MODO_PROF ? '?paciente=' + pacienteId : '');
-        return fetch(url, { credentials: 'same-origin' })
+        return fetch(url, { credentials: 'same-origin', headers: { 'X-Segundo-Plano': '1' } })
             .then(function (r) { return r.ok ? r.json() : null; })
             .then(function (srv) { if (srv) { return reconciliar(srv); } })
             .catch(function () { /* sin conexión: se sigue con lo local */ });
@@ -242,6 +548,8 @@
         // profesional): lo local pertenece a la ronda anterior.
         var cambioDeRonda = ronda !== null && srv.ronda_actual > ronda;
         if (cambioDeRonda) {
+            // Fase 40B-2: lo que no se alcanzó a enviar no se descarta: se aparta antes.
+            if (sucio || envioFinalPendiente) { archivarPendientes('ronda_cerrada_en_otro_lugar'); }
             iniciarRondaNueva();
             sucio = false;
             envioFinalPendiente = false;  // esa ronda ya quedó cerrada en el servidor
@@ -249,7 +557,18 @@
             idbSet('pendiente_envio', false);
             idbSet('envio_final', false);
         }
+        // Fase 40B-2: ceros de un MRS anterior a la 40B-2 que hay que confirmar. Si el
+        // dispositivo los tenía guardados como respuesta y la persona no los eligió en
+        // esta ronda, se quitan: pudieron ser el valor por defecto antiguo.
+        mrsPorConfirmar = srv.mrs_por_confirmar || [];
+        if (respuestas.mrs) {
+            mrsPorConfirmar.forEach(function (item) {
+                if (!confirmadosMrs[item] && String(respuestas.mrs[item]) === '0') { delete respuestas.mrs[item]; }
+            });
+        }
         var reemplazar = !sucio;  // sin cambios pendientes, manda el servidor
+        if (reemplazar) { sinConfirmar = {}; idbSet('sin_confirmar', sinConfirmar); }
+        adoptarVersion('identificacion', srv.identificacion, reemplazar);
 
         if (reemplazar || identBloqueada) {
             respuestas.identificacion = Object.assign({}, srv.identificacion.datos);
@@ -270,17 +589,26 @@
                 respuestas[s.tipo] = datos;
             }
             if (bloque) { uuids[claveSync(s)] = bloque.uuid_local; }
+            adoptarVersion(claveSync(s), bloque, reemplazar);
         });
         asegurarUuids();
         ronda = srv.ronda_actual;
         return Promise.all([
+            idbSet('versiones', versiones),
             idbSet('respuestas', respuestas), idbSet('uuids', uuids),
             idbSet('bienvenida', true), idbSet('ronda', ronda),
         ]);
     }
 
+    // Con cambios pendientes se conserva la versión sobre la que se hicieron: así se detecta
+    // si el servidor cambió entretanto. Si no se conoce, se asume que no había nada.
+    function adoptarVersion(clave, bloque, reemplazar) {
+        if (reemplazar) { versiones[clave] = (bloque && bloque.version) || null; }
+        else if (versiones[clave] === undefined) { versiones[clave] = null; }
+    }
+
     function traerEsquema() {
-        return fetch(URL_ESQUEMA, { headers: { 'Accept': 'application/json' } })
+        return fetch(URL_ESQUEMA, { headers: { 'Accept': 'application/json', 'X-Segundo-Plano': '1' } })
             .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
             .then(function (data) { esquema = data; return idbSet('esquema', data); })
             .catch(function () { /* sin conexión: se usa el esquema de IndexedDB si existe */ });
@@ -523,6 +851,7 @@
         var seccion = secs[indice];
         aplicarValoresIniciales(seccion);
 
+        firmaVisible = firmaDeVisibles();
         var html = barraProgreso(secs);
         html += '<div class="tarjeta seccion">';
         html += '<p class="paso">Sección ' + (indice + 1) + ' de ' + secs.length + '</p>';
@@ -549,6 +878,7 @@
             return;
         }
         if (seccion.tipo === 'mrs') {
+            html += avisoMrsPorConfirmar();
             html += burbujaPuntajeMrs(seccion);
         }
         if (seccion.tipo === 'identificacion' && identBloqueada) {
@@ -810,8 +1140,14 @@
             valor = marcados.join(', ');
         }
         respuestas[seccion.tipo][campo] = valor;
+        generacion++;
         sucio = true;
         idbSet('sucio', true);  // hay datos locales sin enviar al servidor
+        if (esEscalaCalor(seccion, campo)) {
+            // Fase 40B-2: la persona eligió este ítem MRS (incluido un 0 = «Ninguna»).
+            confirmadosMrs[campo] = true;
+            idbSet('mrs_confirmados', confirmadosMrs);
+        }
 
         // Si de este campo depende otro (ej. comuna ← región), limpia el
         // dependiente cuando deja de ser válido para el nuevo valor.
@@ -835,17 +1171,40 @@
             return;
         }
 
-        if (afectaCondicionales(seccion, campo) || afectaDependencias(seccion, campo) ||
-            esEscalaCalor(seccion, campo) || esEscalaHorizontal(seccion, campo)) {
-            render();
-        } else {
-            actualizarProgreso();
-        }
+        // Etapa 5B-3: una condición solo obliga a redibujar si cambia lo que se ve.
+        var cambiaLoVisible = afectaCondicionales(seccion, campo) && firmaDeVisibles() !== firmaVisible;
+        redibujar(cambiaLoVisible || afectaDependencias(seccion, campo) ||
+            esEscalaCalor(seccion, campo) || esEscalaHorizontal(seccion, campo));
     }
 
-    // Burbuja con el puntaje total del MRS (suma de los 11 ítems, 0 a 44). Se
-    // redibuja con cada respuesta porque las preguntas MRS ya llaman a render().
-    // La severidad solo se muestra con los 11 ítems respondidos.
+    function firmaDeVisibles() {
+        return seccionesAplicables().map(function (s) {
+            return s.tipo + ':' + preguntasVisibles(s).map(function (p) { return p.nombre; }).join(',');
+        }).join(';');
+    }
+
+    function redibujar(completo) {
+        if (punteroPresionado) {
+            trasPuntero = (completo || trasPuntero === 'completo') ? 'completo' : 'progreso';
+            return;
+        }
+        if (completo) { render(); } else { actualizarProgreso(); }
+    }
+
+    function alSoltarPuntero() {
+        punteroPresionado = false;
+        if (!trasPuntero) { return; }
+        var completo = trasPuntero === 'completo';
+        trasPuntero = null;
+        // El clic llega justo después de soltar: se redibuja cuando ya se haya registrado.
+        setTimeout(function () { if (!conflictoVersion) { redibujar(completo); } }, 0);
+    }
+
+    // Burbuja con la suma del MRS (11 ítems, 0 a 44). Se redibuja con cada
+    // respuesta porque las preguntas MRS ya llaman a render().
+    // Fase 40B-3: mientras se responde la ronda está abierta, así que la suma nunca es un
+    // resultado definitivo: es parcial (faltan ítems) o provisional (los 11 respondidos).
+    // No se muestra categoría de severidad: los cortes no están validados para la plataforma.
     function burbujaPuntajeMrs(seccion) {
         var datos = respuestas[seccion.tipo] || {};
         var items = seccion.preguntas.filter(function (p) { return p.escala === 'mrs'; });
@@ -857,18 +1216,27 @@
                 respondidas++;
             }
         });
-        var detalle;
-        if (respondidas < items.length) {
-            detalle = respondidas + ' de ' + items.length + ' respondidas';
-        } else {
-            var nivel = (esquema.mrs_severidad || []).filter(function (s) {
-                return total <= s.hasta;
-            })[0];
-            detalle = nivel ? 'Severidad: ' + nivel.texto : '';
-        }
-        return '<div class="burbuja-mrs" role="status" aria-live="polite">' +
-            '<strong>Puntaje MRS: ' + total + ' / ' + (items.length * 4) + '</strong>' +
-            (detalle ? '<span>' + esc(detalle) + '</span>' : '') + '</div>';
+        var completa = respondidas === items.length;
+        var titulo = (completa ? 'Suma provisional: ' : 'Suma parcial: ') + total + ' / ' + (items.length * 4);
+        var detalle = completa
+            ? 'Se confirma al finalizar la encuesta.'
+            : respondidas + ' de ' + items.length + ' preguntas respondidas.';
+        return '<div class="burbuja-mrs" role="status" aria-live="polite"' +
+            ' data-estado="' + (completa ? 'provisional' : 'parcial') + '">' +
+            '<strong>' + esc(titulo) + '</strong><span>' + esc(detalle) + '</span></div>';
+    }
+
+    // Fase 40B-2: aviso para los ceros de un MRS guardado antes de la corrección.
+    function avisoMrsPorConfirmar() {
+        var pendientes = mrsPorConfirmar.filter(function (item) {
+            var v = (respuestas.mrs || {})[item];
+            return !confirmadosMrs[item] && (v === undefined || v === null || v === '');
+        });
+        if (!pendientes.length) { return ''; }
+        return '<p class="seccion-aviso">Antes de una actualización de la encuesta, algunas preguntas sin ' +
+            'responder pudieron guardarse como «Ninguna». Por favor, vuelve a elegir tu respuesta en las ' +
+            pendientes.length + (pendientes.length === 1 ? ' pregunta' : ' preguntas') +
+            ' que aparecen sin marcar.</p>';
     }
 
     function esEscalaCalor(seccion, campo) {
@@ -957,12 +1325,25 @@
         }
         envioFinalPendiente = true;
         idbSet('envio_final', true);
+        if (!idCierre) {
+            idCierre = crearUuid();
+            idbSet('id_cierre', idCierre);
+        }
+        // Etapa 5B-3: lo que se cambiara durante el cierre ya no alcanzaría a la ronda que se cierra.
+        cont.querySelectorAll('input, select, textarea, button').forEach(function (c) { c.disabled = true; });
         intentarSync(true);
     }
 
     function construirPayload(esFinal) {
-        var payload = { secciones: [] };
-        if (esFinal) { payload.finalizar = true; }
+        // Fase 40B-2: protocolo 2 (la ronda local; al finalizar, el id del cierre).
+        var payload = { protocolo: PROTOCOLO, ronda: ronda, secciones: [] };
+        // Fase 40 (P6): participación a la que pertenecen estas respuestas.
+        if (!MODO_PROF && participacion) { payload.participacion = participacion; }
+        if (esFinal) {
+            payload.finalizar = true;
+            if (!idCierre) { idCierre = crearUuid(); idbSet('id_cierre', idCierre); }
+            payload.id_cierre = idCierre;
+        }
         var bloques = {};   // clave de sync -> bloque (para fusionar grupos, p. ej. MRS)
         seccionesAplicables().forEach(function (s) {
             var datos = respuestas[s.tipo] || {};
@@ -970,16 +1351,20 @@
                 payload.identificacion = {
                     uuid_local: uuids['identificacion'],
                     datos: identBloqueada ? {} : datos,
+                    version_base: versionBase('identificacion'),
                 };
+                agregarSinConfirmar(payload.identificacion, 'identificacion');
                 if (MODO_PROF) {
                     if (pacienteId) { payload.identificacion.paciente_id = pacienteId; }
                     else { payload.identificacion.rut = rutNueva; }
+                    if (participacionDatos) { payload.identificacion.participacion_paciente = participacionDatos; }
                 }
                 return;
             }
             var k = claveSync(s);
             if (!bloques[k]) {
-                bloques[k] = { tipo: k, uuid_local: uuids[k], datos: {}, parcial: false };
+                bloques[k] = { tipo: k, uuid_local: uuids[k], datos: {}, parcial: false, version_base: versionBase(k) };
+                agregarSinConfirmar(bloques[k], k);
                 payload.secciones.push(bloques[k]);
             }
             // Solo las preguntas visibles: las ocultas no se envían y el
@@ -990,7 +1375,34 @@
             });
             if (!seccionCompleta(s)) { bloques[k].parcial = true; }
         });
+        if (bloques.mrs) {
+            bloques.mrs.confirmados = Object.keys(confirmadosMrs).filter(function (c) {
+                return bloques.mrs.datos[c] !== undefined;
+            });
+        }
         return payload;
+    }
+
+    function versionBase(clave) { return versiones[clave] === undefined ? null : versiones[clave]; }
+
+    function agregarSinConfirmar(bloque, clave) {
+        if (sinConfirmar[clave] && sinConfirmar[clave].length) { bloque.sin_confirmar = sinConfirmar[clave].slice(); }
+    }
+
+    // Antes de enviar se anota qué se envía: si la respuesta se pierde o la página se recarga,
+    // el reintento le muestra al servidor que ese guardado era de este mismo dispositivo.
+    function anotarEnvio(payload) {
+        var bloques = payload.secciones.slice();
+        if (payload.identificacion && Object.keys(payload.identificacion.datos || {}).length) {
+            bloques.push({ tipo: 'identificacion', datos: payload.identificacion.datos });
+        }
+        bloques.forEach(function (b) {
+            var lista = sinConfirmar[b.tipo] || [];
+            var texto = JSON.stringify(b.datos);
+            if (!lista.some(function (x) { return JSON.stringify(x) === texto; })) { lista = lista.concat([b.datos]); }
+            sinConfirmar[b.tipo] = lista.slice(-MAX_SIN_CONFIRMAR);
+        });
+        return idbSet('sin_confirmar', sinConfirmar);
     }
 
     // Tras un "Finalizar" exitoso, la ronda queda sellada en el servidor
@@ -1009,13 +1421,49 @@
         });
         asegurarUuids();
 
+        // Fase 40B-2: lo confirmado y el id del cierre pertenecían a la ronda anterior.
+        confirmadosMrs = {};
+        mrsPorConfirmar = [];
+        idCierre = null;
+        idbSet('mrs_confirmados', confirmadosMrs);
+        idbSet('id_cierre', null);
+
+        // Etapa 5B-3: en la ronda nueva aún no hay nada guardado (la identificación continúa).
+        var versionIdentificacion = versiones.identificacion;
+        versiones = versionIdentificacion === undefined ? {} : { identificacion: versionIdentificacion };
+        sinConfirmar = {};
+        idbSet('versiones', versiones);
+        idbSet('sin_confirmar', sinConfirmar);
+
         indice = 0;
     }
 
     // Sube al servidor lo que haya guardado localmente. `esFinal` = la usuaria
     // pulsó "Finalizar". Se puede llamar en cualquier momento (al recuperar
     // conexión, al cargar): si no hay identificación completa, no hace nada.
+    // Etapa 5B-3: los envíos van de uno en uno; lo pedido durante uno sale al terminar este.
     function intentarSync(esFinal) {
+        if (conflictoVersion) { return Promise.resolve(); }  // espera la decisión de la persona
+        if (envioEnCurso) {
+            otroEnvio = { final: !!esFinal || !!(otroEnvio && otroEnvio.final) };
+            return envioEnCurso;
+        }
+        var alTerminar = function () {
+            envioEnCurso = null;
+            var siguiente = otroEnvio;
+            otroEnvio = null;
+            if (siguiente && (sucio || (siguiente.final && envioFinalPendiente))) {
+                return intentarSync(siguiente.final && envioFinalPendiente);
+            }
+        };
+        envioEnCurso = enviarAlServidor(esFinal).then(alTerminar, function (err) {
+            console.error(err);
+            return alTerminar();
+        });
+        return envioEnCurso;
+    }
+
+    function enviarAlServidor(esFinal) {
         var secs = seccionesAplicables();
         var ident = null;
         secs.forEach(function (s) { if (s.tipo === 'identificacion') { ident = s; } });
@@ -1031,21 +1479,69 @@
             return Promise.resolve();  // aún no hay lo mínimo para sincronizar
         }
 
-        return fetch(URL_SYNC, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken() },
-            body: JSON.stringify(construirPayload(esFinal))
+        var generacionEnviada = generacion;
+        var payload = construirPayload(esFinal);
+        return anotarEnvio(payload).then(function () {
+            return fetch(URL_SYNC, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken(), 'X-Segundo-Plano': '1' },
+                body: JSON.stringify(payload)
+            });
         })
             .then(function (r) {
-                return r.json().then(function (j) { return { ok: r.ok, cuerpo: j }; });
+                // Si la respuesta no es JSON (p. ej. una página de error o de inicio de sesión),
+                // r.json() falla y se cae al catch: todo queda pendiente en este dispositivo.
+                return r.json().then(function (j) { return { ok: r.ok, status: r.status, cuerpo: j }; });
             })
             .then(function (res) {
+                // Fase 40B-2: la ronda local ya no está abierta en el servidor (se cerró en otro
+                // dispositivo o llegó tarde). No se escribió nada: se aparta lo local y se sigue.
+                if (res.status === 409) {
+                    otroEnvio = null;
+                    if ((res.cuerpo || {}).codigo === 'version_desactualizada') {
+                        idbSet('pendiente_envio', true);
+                        mostrarConflictoVersion(res.cuerpo);
+                        return;
+                    }
+                    return resolverConflicto(res.cuerpo || {});
+                }
+                if (res.status === 401) {
+                    // Fase 40 E2: la sesión venció por inactividad. Nada se guardó; lo pendiente queda
+                    // cifrado en este dispositivo y sesion.js cierra la sesión local.
+                    idbSet('pendiente_envio', true);
+                    avisarSesionVencida();
+                    return;
+                }
+                if (res.status === 403) {
+                    // Sin consentimiento vigente (40S-1): nada se guardó; todo sigue pendiente aquí.
+                    idbSet('pendiente_envio', true);
+                    var aviso = ((res.cuerpo && res.cuerpo.error) || 'No se pudieron enviar tus respuestas.') +
+                        ' Tus respuestas siguen guardadas en este dispositivo.';
+                    if (esFinal) { mensajeFinal(aviso, true); } else { avisoSync(aviso, 'error'); }
+                    return;
+                }
                 adoptarRespuesta(res.cuerpo);
+                var huboCambios = generacion !== generacionEnviada;  // se respondió durante el envío
+                var cierre = res.cuerpo && res.cuerpo.cierre;
+                if (res.ok && cierre && cierre.estado === 'rechazado') {
+                    // Lo enviado quedó guardado como borrador; falta completar algo obligatorio.
+                    sucio = !res.cuerpo.guardado || huboCambios;
+                    idbSet('sucio', sucio);
+                    idbSet('pendiente_envio', sucio);
+                    envioFinalPendiente = false;
+                    idbSet('envio_final', false);
+                    idCierre = null;
+                    idbSet('id_cierre', null);
+                    mostrarFaltantes(cierre.faltantes || []);
+                    return;
+                }
                 if (res.ok && res.cuerpo.ok) {
-                    sucio = false;
-                    idbSet('sucio', false);
-                    idbSet('pendiente_envio', false);
+                    // Etapa 5B-3: lo respondido durante el envío sigue pendiente; no iba en este envío.
+                    sucio = huboCambios && !esFinal;
+                    idbSet('sucio', sucio);
+                    idbSet('pendiente_envio', sucio);
                     if (esFinal) {
+                        if (huboCambios) { archivarPendientes('cambios_durante_el_cierre'); }
                         envioFinalPendiente = false;
                         idbSet('envio_final', false);
                         iniciarRondaNueva();
@@ -1063,6 +1559,9 @@
                                 (disponibleDesde ? ' ' + textoEspera() : ''),
                                 false, true);
                         }
+                    } else if (huboCambios) {
+                        otroEnvio = otroEnvio || { final: false };
+                        avisoSync('Guardando tus últimos cambios…');
                     } else {
                         avisoSync('Respuestas sincronizadas.', 'ok');
                     }
@@ -1083,8 +1582,152 @@
                 idbSet('pendiente_envio', true);
                 if (esFinal) {
                     mensajeFinal('Sin conexión al enviar. Se reintentará automáticamente.', true);
+                } else {
+                    avisoSync('No se pudo enviar. Tus respuestas siguen guardadas en este dispositivo ' +
+                        'y se enviarán cuando vuelva la conexión.', 'error');
                 }
             });
+    }
+
+    // Etapa 5B-3: esta página tiene una copia antigua. El servidor no escribió nada y aquí no se
+    // borra nada; no se fusiona: decide la persona.
+    function mostrarConflictoVersion(cuerpo) {
+        conflictoVersion = cuerpo;
+        var titulos = (cuerpo.secciones || []).map(function (clave) {
+            var s = esquema.secciones.filter(function (x) { return claveSync(x) === clave; })[0];
+            return esc(s ? tituloCorto(s) : clave);
+        });
+        cont.innerHTML = '<div class="tarjeta" data-conflicto-version>' +
+            '<h2>Tus respuestas cambiaron en otro lugar</h2>' +
+            '<p>Esta página tiene una copia anterior de tus respuestas, quizá porque usaste «Atrás» o ' +
+            'tienes la encuesta abierta en otra pestaña o dispositivo. Para no borrar nada, ' +
+            '<strong>no se guardó ningún cambio desde esta página</strong>.</p>' +
+            (titulos.length ? '<p>Secciones afectadas: ' + titulos.join(', ') + '.</p>' : '') +
+            '<p><button type="button" class="boton" data-conflicto="guardado">Ver lo último guardado</button></p>' +
+            '<p class="ayuda">Recomendado. Los cambios hechos en esta página que no se guardaron se descartan.</p>' +
+            '<p><button type="button" class="boton-secundario" data-conflicto="pagina">Guardar lo de esta página</button></p>' +
+            '<p class="ayuda">Reemplaza lo guardado por lo que ves aquí. Las respuestas que esta página no tenga ' +
+            'quedarán en blanco.</p></div>';
+        cont.querySelectorAll('[data-conflicto]').forEach(function (b) {
+            b.addEventListener('click', function () { decidirConflictoVersion(b.getAttribute('data-conflicto')); });
+        });
+    }
+
+    function decidirConflictoVersion(decision) {
+        var cuerpo = conflictoVersion;
+        if (!cuerpo) { return Promise.resolve(); }
+        conflictoVersion = null;
+        sinConfirmar = {};
+        if (decision === 'pagina') {
+            Object.assign(versiones, cuerpo.versiones || {});
+            sucio = true;
+            render();
+            return Promise.all([idbSet('versiones', versiones), idbSet('sin_confirmar', sinConfirmar)])
+                .then(function () { return intentarSync(envioFinalPendiente); });
+        }
+        sucio = false;
+        envioFinalPendiente = false;
+        idCierre = null;
+        versiones = {};
+        return Promise.all([
+            idbSet('sucio', false), idbSet('pendiente_envio', false), idbSet('envio_final', false),
+            idbSet('id_cierre', null), idbSet('versiones', versiones), idbSet('sin_confirmar', sinConfirmar),
+        ]).then(function () { window.location.reload(); });
+    }
+
+    // Fase 40B-2: respuesta 409. Lo local se aparta (no se borra), la encuesta pasa a la
+    // ronda abierta del servidor y se cargan sus respuestas.
+    function resolverConflicto(cuerpo) {
+        if (cuerpo.codigo === 'participacion_anterior' && MODO_PROF) {
+            // Fase 40 (retiro presencial): respuestas de una participación de la paciente que fue
+            // retirada. No se envían ni se conservan: se borran solo los datos de esta paciente.
+            conflictos = [];
+            return Promise.all([limpiarEstadoLocal(null), idbSet('conflictos', [])]).then(function () {
+                participacionDatos = participacionPagina;
+                return idbSet('participacion_paciente', participacionPagina);
+            }).then(function () {
+                mensajeFinal('Estas respuestas eran de una participación de la paciente que fue retirada del ' +
+                    'estudio. No se enviaron y se eliminaron de este dispositivo.', true, false, urlFicha || null);
+            });
+        }
+        if (cuerpo.codigo === 'participacion_anterior') {
+            // Fase 40 (P6): respuestas de una participación retirada. Por la decisión de retiro no
+            // se envían ni se conservan: se borran de este dispositivo. Se cierra antes de borrar
+            // para que una escritura aún en curso no deje nada después del borrado.
+            sesionCerrada = true;
+            return borrarEspacio(cuentaActual).then(function () {
+                respuestas = {};
+                mensajeFinal('Estas respuestas eran de una participación que retiraste del estudio. ' +
+                    'No se enviaron y se eliminaron de este dispositivo. Recarga la página para empezar ' +
+                    'tu participación actual.', true);
+            });
+        }
+        if (cuerpo.codigo === 'consentimiento_paciente') {
+            // Fase 40 (P7): la paciente no tiene consentimiento vigente. Nada se guardó; lo local se conserva.
+            idbSet('pendiente_envio', true);
+            mensajeFinal(cuerpo.error || 'La paciente no tiene un consentimiento vigente.', true, false,
+                urlFicha || null);
+            return Promise.resolve();
+        }
+        var habiaPendientes = sucio || envioFinalPendiente;
+        var guardado = habiaPendientes ? archivarPendientes(cuerpo.codigo || 'conflicto') : Promise.resolve();
+        return guardado.then(function () {
+            if (cuerpo.codigo === 'cliente_desactualizado') {
+                mensajeFinal(cuerpo.error || 'Recarga la página para continuar.', true);
+                return;
+            }
+            iniciarRondaNueva();
+            ronda = cuerpo.ronda_actual || null;
+            sucio = false;
+            envioFinalPendiente = false;
+            return Promise.all([
+                idbSet('ronda', ronda), idbSet('sucio', false), idbSet('pendiente_envio', false),
+                idbSet('envio_final', false),
+            ]).then(traerRondaActual).then(function () {
+                mensajeFinal('Esta ronda ya estaba cerrada (por ejemplo, la finalizó otro dispositivo o el ' +
+                    'personal de salud). ' + (habiaPendientes
+                        ? 'Las respuestas que no alcanzaron a enviarse quedaron guardadas en este dispositivo.'
+                        : ''), true, false, MODO_PROF ? (urlFicha || null) : null);
+            });
+        });
+    }
+
+    // Fase 40B-2: cierre rechazado por faltar respuestas obligatorias. Se vuelve a la
+    // encuesta en la primera sección con pendientes y se dice cuáles son.
+    function mostrarFaltantes(faltantes) {
+        var secs = seccionesAplicables();
+        var lineas = [];
+        var primera = null;
+        faltantes.forEach(function (f) {
+            var tipoSeccion = f.seccion;
+            var idx = -1;
+            secs.forEach(function (s, i) { if (idx === -1 && s.tipo === tipoSeccion) { idx = i; } });
+            var seccion = idx >= 0 ? secs[idx] : null;
+            if (primera === null && idx >= 0) { primera = idx; }
+            var textos = (f.preguntas || []).map(function (nombre) {
+                var p = seccion && seccion.preguntas.filter(function (q) { return q.nombre === nombre; })[0];
+                return p ? p.texto : nombre;
+            });
+            var titulo = seccion ? seccion.titulo : tipoSeccion;
+            var motivo = f.motivo === 'por_confirmar' ? ' (confirma tu respuesta)' : '';
+            lineas.push('• ' + titulo + motivo + (textos.length ? ': ' + textos.join('; ') : ''));
+        });
+        // Ceros por confirmar: se muestran sin marcar para que la persona elija de nuevo.
+        faltantes.forEach(function (f) {
+            if (f.motivo !== 'por_confirmar') { return; }
+            (f.preguntas || []).forEach(function (n) {
+                if (mrsPorConfirmar.indexOf(n) === -1) { mrsPorConfirmar.push(n); }
+                if (respuestas.mrs && String(respuestas.mrs[n]) === '0' && !confirmadosMrs[n]) {
+                    delete respuestas.mrs[n];
+                }
+            });
+            idbSet('respuestas', respuestas);
+        });
+        indice = primera === null ? 0 : primera;
+        render();
+        window.scrollTo(0, 0);
+        avisoSync('Tus respuestas quedaron guardadas, pero aún falta completar algunas preguntas.', 'error');
+        alert('Para finalizar falta responder:\n' + lineas.join('\n'));
     }
 
     // Fase 29: el servidor puede devolver otro uuid_local para una sección (si
@@ -1093,14 +1736,21 @@
     function adoptarRespuesta(cuerpo) {
         if (!cuerpo) { return; }
         var cambio = false;
+        var versionNueva = false;
         (cuerpo.resultados || []).forEach(function (r) {
             if (r.uuid_local && r.seccion && r.seccion !== 'identificacion' &&
                 uuids[r.seccion] !== r.uuid_local) {
                 uuids[r.seccion] = r.uuid_local;
                 cambio = true;
             }
+            if (r.version && r.seccion) {   // Etapa 5B-3: guardado confirmado de esta sección
+                versiones[r.seccion] = r.version;
+                delete sinConfirmar[r.seccion];
+                versionNueva = true;
+            }
         });
         if (cambio) { idbSet('uuids', uuids); }
+        if (versionNueva) { idbSet('versiones', versiones); idbSet('sin_confirmar', sinConfirmar); }
         if (ronda === null && cuerpo.ronda_actual) { ronda = cuerpo.ronda_actual; idbSet('ronda', ronda); }
         if (MODO_PROF && !pacienteId && cuerpo.paciente_id) { pacienteId = cuerpo.paciente_id; }
     }
@@ -1123,6 +1773,44 @@
             return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
         });
     }
+
+    // Fase 40B-2: acceso para las pruebas automáticas del cliente (apps/encuestas/pruebas_js).
+    // Solo existe si el entorno de prueba define window.__PRUEBAS_ENCUESTA__ antes de cargar
+    // este archivo; en el navegador real no hace nada.
+    if (window.__PRUEBAS_ENCUESTA__) {
+        window.__PRUEBAS_ENCUESTA__.interno = {
+            estado: function () {
+                return { respuestas: respuestas, uuids: uuids, ronda: ronda, sucio: sucio,
+                    envioFinalPendiente: envioFinalPendiente, idCierre: idCierre, confirmadosMrs: confirmadosMrs,
+                    mrsPorConfirmar: mrsPorConfirmar, conflictos: conflictos, indice: indice,
+                    versiones: versiones, sinConfirmar: sinConfirmar, conflictoVersion: conflictoVersion };
+            },
+            decidirConflictoVersion: decidirConflictoVersion,
+            capturar: function (tipo, campo, el, evento) {
+                capturar(esquema.secciones.filter(function (s) { return s.tipo === tipo; })[0], campo, el, evento);
+            },
+            render: render,
+            firmaVisible: function () { return firmaVisible; },
+            responder: function (tipo, campo, valor) {
+                var seccion = esquema.secciones.filter(function (s) { return s.tipo === tipo; })[0];
+                capturar(seccion, campo, { value: String(valor), type: 'radio', tagName: 'INPUT' }, 'change');
+            },
+            finalizar: finalizar,
+            guardarCambios: guardarCambios,
+            intentarSync: intentarSync,
+            construirPayload: construirPayload,
+            // Fase 40B-3: HTML de la burbuja de suma del MRS con las respuestas actuales.
+            burbujaMrs: function () {
+                return burbujaPuntajeMrs(esquema.secciones.filter(function (s) { return s.tipo === 'mrs'; })[0]);
+            },
+        };
+    }
+
+    // Etapa 5B-3: al volver con «Atrás» el navegador puede restaurar esta página con sus datos
+    // antiguos en memoria; se recarga para partir de lo último guardado.
+    window.addEventListener('pageshow', function (e) {
+        if (e.persisted) { window.location.reload(); }
+    });
 
     iniciar();
 })();

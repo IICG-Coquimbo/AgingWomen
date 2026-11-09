@@ -1,0 +1,24 @@
+{
+ "fase": "38",
+ "participantes": 529,
+ "frecuencia_basal_si": 0.5311909262759924,
+ "variables_principal": 31,
+ "items_principal": 94,
+ "reglas_principal": 12201,
+ "marcadas": 1119,
+ "nula_media_marcadas": 649.98,
+ "p_exceso_global": 0.014985014985014986,
+ "clases": {
+  "2 asociación débil": 11082,
+  "3 redundante": 926,
+  "4 compatible con la referencia nula": 192,
+  "6 asociación relativamente más marcada": 1
+ },
+ "estables": 535,
+ "regla_clase_6": "bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI -> severo_mrs=SI",
+ "superan_nula_sensibilidades": 12,
+ "pruebas": "20/20",
+ "controles_negativos": "18/18",
+ "conclusion": "evidencia débil: señal difusa sin reglas puntuales robustas",
+ "protocolo_sha256": "9f9614115801805f9cde6c1586a8d7571ee44116c18ac7638025a645ee7f5a82"
+}

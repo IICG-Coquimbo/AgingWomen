@@ -1,0 +1,72 @@
+﻿variable,etiqueta,seccion_encuesta,denominador,n_aplica,n_no_aplica,n_valido,n_faltante,porcentaje_faltante,imputados_34B,tratamiento_34B
+imc,IMC,Medidas autodeclaradas,todas las participantes con MRS completo,529,0,267,262,49.5274,0,
+peso_kg,Peso (kg),Medidas autodeclaradas,todas las participantes con MRS completo,529,0,280,249,47.0699,0,> 30 %: no se modela
+talla_actual_cm,Talla (cm),Medidas autodeclaradas,todas las participantes con MRS completo,529,0,320,209,39.5085,0,> 30 %: no se modela
+menstruacion_llega,Regularidad de la menstruación,Etapa reproductiva y salud ginecológica,quienes aún menstrúan (última menstruación hace menos de 12 meses),197,332,175,22,11.1675,5,imputada (moda = REGULAR) + marca menstruacion_llega_imputado; 22 sin fecha de última menstruación quedan sin dato
+usa_metodo_anticonceptivo,Usa método anticonceptivo,Etapa reproductiva y salud ginecológica,quienes aún menstrúan (última menstruación hace menos de 12 meses),197,332,175,22,11.1675,3,imputada (moda = NO) + marca usa_metodo_anticonceptivo_imputado; 22 sin fecha de última menstruación quedan sin dato
+tipo_sangrado,Tipo de sangrado,Etapa reproductiva y salud ginecológica,quienes aún menstrúan (última menstruación hace menos de 12 meses),197,332,175,22,11.1675,11,imputada (moda = MODERADO) + marca tipo_sangrado_imputado; 22 sin fecha de última menstruación quedan sin dato
+lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,Trabajo (solo quienes trabajan),quienes trabajan,309,220,287,22,7.1197,16,imputada (mediana = 3) + marca lugar_trabajo_comprensivo_imputado
+estres_entorno_laboral,Estrés del entorno laboral,Trabajo (solo quienes trabajan),quienes trabajan,309,220,287,22,7.1197,10,imputada (mediana = 3)
+a_quien_cuida,A quién cuida,Cuidado de otras personas,quienes cuidan a otras personas,251,278,235,16,6.3745,0,no se imputa (selección múltiple)
+genero,Género,Identificación,todas las participantes con MRS completo,529,0,529,0,0.0000,0,sin faltantes
+trabaja_actualmente,Trabaja actualmente,Identificación,todas las participantes con MRS completo,529,0,529,0,0.0000,22,imputada (moda = True)
+origen_procedencia,Origen,Identificación,todas las participantes con MRS completo,529,0,529,0,0.0000,0,sin faltantes
+comuna,Comuna de residencia,Identificación,todas las participantes con MRS completo,529,0,529,0,0.0000,0,
+edad,Edad,Identificación,todas las participantes con MRS completo,529,0,529,0,0.0000,0,
+pueblo_originario_afro,Pueblo originario / afro,Identificación,todas las participantes con MRS completo,529,0,529,0,0.0000,0,sin faltantes
+etapa_menopausica,Etapa menopáusica,Etapa reproductiva y salud ginecológica,todas las participantes con MRS completo,529,0,529,0,0.0000,0,
+tiene_utero,Tiene útero,Etapa reproductiva y salud ginecológica,todas las participantes con MRS completo,529,0,529,0,0.0000,26,imputada (moda = SI)
+tiene_pareja,Tiene pareja,Etapa reproductiva y salud ginecológica,todas las participantes con MRS completo,529,0,529,0,0.0000,28,imputada (moda = SI) + marca tiene_pareja_imputado
+tiene_actividad_sexual,Tiene actividad sexual,Etapa reproductiva y salud ginecológica,todas las participantes con MRS completo,529,0,529,0,0.0000,30,imputada (moda = NO) + marca tiene_actividad_sexual_imputado
+tiene_ovario,Tiene ovarios,Etapa reproductiva y salud ginecológica,todas las participantes con MRS completo,529,0,529,0,0.0000,23,imputada (moda = SI)
+operada_no_mas_hijos,Operada para no tener más hijos,Etapa reproductiva y salud ginecológica,todas las participantes con MRS completo,529,0,529,0,0.0000,18,imputada (moda = NO)
+usa_terapia_hormonal,Usa terapia hormonal,Etapa reproductiva y salud ginecológica,todas las participantes con MRS completo,529,0,529,0,0.0000,25,imputada (moda = NO)
+tipo_metodo_anticonceptivo,Método anticonceptivo,Etapa reproductiva y salud ginecológica,quienes usan método anticonceptivo,72,457,72,0,0.0000,6,imputada (moda = DIU) + marca tipo_metodo_anticonceptivo_imputado
+evacuacion_intestinal,Frecuencia de evacuación intestinal,Medicamentos y digestión,todas las participantes con MRS completo,529,0,529,0,0.0000,32,imputada (mediana = 2) + marca evacuacion_intestinal_imputado
+distension_abdominal,Distensión abdominal,Medicamentos y digestión,todas las participantes con MRS completo,529,0,529,0,0.0000,18,imputada (mediana = 2)
+usa_medicamentos_diabetes,Medicamentos para la diabetes,Medicamentos y digestión,todas las participantes con MRS completo,529,0,529,0,0.0000,24,imputada (moda = NO)
+usa_medicamentos_presion,Medicamentos para la presión,Medicamentos y digestión,todas las participantes con MRS completo,529,0,529,0,0.0000,30,imputada (moda = NO) + marca usa_medicamentos_presion_imputado
+prevision,Previsión de salud,Previsión de salud,todas las participantes con MRS completo,529,0,529,0,0.0000,19,imputada (moda = FONASA)
+cuida_otras_personas,Cuida a otras personas,Cuidado de otras personas,todas las participantes con MRS completo,529,0,529,0,0.0000,21,imputada (moda = NO)
+cantidad_personas_cuida,Cantidad de personas que cuida,Cuidado de otras personas,quienes cuidan a otras personas,251,278,251,0,0.0000,7,imputada (mediana = 1)
+sobrecarga_fisica_emocional,Sobrecarga por trabajo y cuidado,Cuidado de otras personas,quienes cuidan a otras personas,251,278,251,0,0.0000,12,imputada (mediana = 3)
+doble_carga,Doble carga (trabaja y cuida),Cuidado de otras personas,todas las participantes con MRS completo,529,0,529,0,0.0000,0,
+dias_ejercicio_semana,Días de ejercicio a la semana,Actividad física,todas las participantes con MRS completo,529,0,529,0,0.0000,36,imputada (mediana = 1) + marca dias_ejercicio_semana_imputado
+realiza_aerobico,Realiza ejercicio aeróbico,Actividad física,todas las participantes con MRS completo,529,0,529,0,0.0000,29,imputada (moda = NO) + marca realiza_aerobico_imputado
+frecuencia_aerobico,Frecuencia de ejercicio aeróbico,Actividad física,quienes realizan ejercicio aeróbico,105,424,105,0,0.0000,7,imputada (mediana = 3) + marca frecuencia_aerobico_imputado
+realiza_bajo_impacto,Realiza ejercicio de bajo impacto,Actividad física,todas las participantes con MRS completo,529,0,529,0,0.0000,24,imputada (moda = NO)
+frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,Actividad física,quienes realizan ejercicio de bajo impacto,224,305,224,0,0.0000,15,imputada (mediana = 3) + marca frecuencia_bajo_impacto_imputado
+realiza_fuerza,Realiza ejercicio de fuerza,Actividad física,todas las participantes con MRS completo,529,0,529,0,0.0000,28,imputada (moda = NO) + marca realiza_fuerza_imputado
+frecuencia_fuerza,Frecuencia de ejercicio de fuerza,Actividad física,quienes realizan ejercicio de fuerza,81,448,81,0,0.0000,2,imputada (mediana = 3)
+horas_sedentarismo,Horas sentada al día,Actividad física,todas las participantes con MRS completo,529,0,529,0,0.0000,27,imputada (mediana = 6)
+quien_prepara_comidas,Quién prepara las comidas,Alimentación,todas las participantes con MRS completo,529,0,529,0,0.0000,24,imputada (moda = YO_MAYORIA)
+frecuencia_comida_fuera,Comidas fuera del hogar,Alimentación,todas las participantes con MRS completo,529,0,529,0,0.0000,34,imputada (mediana = 2) + marca frecuencia_comida_fuera_imputado
+falta_tiempo_influye,Falta de tiempo influye en lo que come,Alimentación,todas las participantes con MRS completo,529,0,529,0,0.0000,29,imputada (mediana = 3) + marca falta_tiempo_influye_imputado
+vasos_agua_dia,Vasos de agua al día,Alimentación,todas las participantes con MRS completo,529,0,529,0,0.0000,25,imputada (mediana = 3)
+platos_verduras_dia,Platos de verduras al día,Alimentación,todas las participantes con MRS completo,529,0,529,0,0.0000,33,imputada (mediana = 2) + marca platos_verduras_dia_imputado
+frutas_dia,Frutas al día,Alimentación,todas las participantes con MRS completo,529,0,529,0,0.0000,24,imputada (mediana = 2)
+panes_dia,Panes al día,Alimentación,todas las participantes con MRS completo,529,0,529,0,0.0000,30,imputada (mediana = 2) + marca panes_dia_imputado
+lacteos_dia,Lácteos al día,Alimentación,todas las participantes con MRS completo,529,0,529,0,0.0000,29,imputada (mediana = 2) + marca lacteos_dia_imputado
+jugos_gaseosas_dia,Jugos y gaseosas al día,Alimentación,todas las participantes con MRS completo,529,0,529,0,0.0000,30,imputada (mediana = 2) + marca jugos_gaseosas_dia_imputado
+bebidas_energeticas_dia,Bebidas energéticas al día,Alimentación,todas las participantes con MRS completo,529,0,529,0,0.0000,22,imputada (mediana = 1)
+pescado_semana,Pescado a la semana,Alimentación,todas las participantes con MRS completo,529,0,529,0,0.0000,19,imputada (mediana = 2)
+legumbres_semana,Legumbres a la semana,Alimentación,todas las participantes con MRS completo,529,0,529,0,0.0000,27,imputada (mediana = 2)
+carnes_semana,Carnes a la semana,Alimentación,todas las participantes con MRS completo,529,0,529,0,0.0000,31,imputada (mediana = 3) + marca carnes_semana_imputado
+golosinas_semana,Dulces y snacks a la semana,Alimentación,todas las participantes con MRS completo,529,0,529,0,0.0000,17,imputada (mediana = 2)
+tabaco_frecuencia,Tabaco,Sustancias,todas las participantes con MRS completo,529,0,529,0,0.0000,18,imputada (mediana = 1)
+alcohol_frecuencia,Alcohol,Sustancias,todas las participantes con MRS completo,529,0,529,0,0.0000,29,imputada (mediana = 2) + marca alcohol_frecuencia_imputado
+marihuana_frecuencia,Marihuana,Sustancias,todas las participantes con MRS completo,529,0,529,0,0.0000,18,imputada (mediana = 1)
+pregunta_1,Bochornos y sudoración,Síntomas (MRS) y variable objetivo,todas las participantes con MRS completo,529,0,529,0,0.0000,0,no se imputa (variable resultado)
+pregunta_2,Molestias al corazón,Síntomas (MRS) y variable objetivo,todas las participantes con MRS completo,529,0,529,0,0.0000,0,no se imputa (variable resultado)
+pregunta_3,Dolor muscular y articular,Síntomas (MRS) y variable objetivo,todas las participantes con MRS completo,529,0,529,0,0.0000,0,no se imputa (variable resultado)
+pregunta_4,Problemas de sueño,Síntomas (MRS) y variable objetivo,todas las participantes con MRS completo,529,0,529,0,0.0000,0,no se imputa (variable resultado)
+pregunta_5,Ánimo depresivo,Síntomas (MRS) y variable objetivo,todas las participantes con MRS completo,529,0,529,0,0.0000,0,no se imputa (variable resultado)
+pregunta_6,Irritabilidad,Síntomas (MRS) y variable objetivo,todas las participantes con MRS completo,529,0,529,0,0.0000,0,no se imputa (variable resultado)
+pregunta_7,Ansiedad,Síntomas (MRS) y variable objetivo,todas las participantes con MRS completo,529,0,529,0,0.0000,0,no se imputa (variable resultado)
+pregunta_8,Cansancio físico y mental,Síntomas (MRS) y variable objetivo,todas las participantes con MRS completo,529,0,529,0,0.0000,0,no se imputa (variable resultado)
+pregunta_9,Problemas sexuales,Síntomas (MRS) y variable objetivo,todas las participantes con MRS completo,529,0,529,0,0.0000,0,no se imputa (variable resultado)
+pregunta_10,Problemas urinarios,Síntomas (MRS) y variable objetivo,todas las participantes con MRS completo,529,0,529,0,0.0000,0,no se imputa (variable resultado)
+pregunta_11,Sequedad vaginal,Síntomas (MRS) y variable objetivo,todas las participantes con MRS completo,529,0,529,0,0.0000,0,no se imputa (variable resultado)
+mrs_total,MRS total,Síntomas (MRS) y variable objetivo,todas las participantes con MRS completo,529,0,529,0,0.0000,0,
+severidad_mrs_4,Severidad MRS (4 clases),Síntomas (MRS) y variable objetivo,todas las participantes con MRS completo,529,0,529,0,0.0000,0,
+severo_mrs,MRS severo (16 puntos o más),Síntomas (MRS) y variable objetivo,todas las participantes con MRS completo,529,0,529,0,0.0000,0,

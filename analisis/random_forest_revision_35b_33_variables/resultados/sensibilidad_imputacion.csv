@@ -1,0 +1,7 @@
+﻿modelo,referencia,tipo,metrica,media_modelo,media_referencia,diferencia,de,minimo,maximo,particiones_positivas,particiones,ic95_inferior,ic95_superior,lectura
+B,B_imp_particion,imputación en partición,roc_auc,0.622443,0.623781,-0.001337,0.003934,-0.010357,0.003938,3,15,-0.006085,0.003411,Sin diferencia clara
+B,B_imp_particion,imputación en partición,balanced_accuracy,0.592910,0.591342,0.001569,0.011292,-0.017857,0.030000,5,15,-0.012060,0.015197,Sin diferencia clara
+C1,C1_imp_particion,imputación en partición,roc_auc,0.659274,0.662093,-0.002818,0.004545,-0.013889,0.003788,2,15,-0.008304,0.002667,Sin diferencia clara
+C1,C1_imp_particion,imputación en partición,balanced_accuracy,0.604514,0.600755,0.003758,0.007894,0.000000,0.020833,3,15,-0.005770,0.013286,Sin diferencia clara
+D1,D1_imp_particion,imputación en partición,roc_auc,0.653704,0.656177,-0.002474,0.004401,-0.014109,0.003704,4,15,-0.007785,0.002838,Sin diferencia clara
+D1,D1_imp_particion,imputación en partición,balanced_accuracy,0.597099,0.595591,0.001508,0.013122,-0.025000,0.023810,3,15,-0.014329,0.017345,Sin diferencia clara

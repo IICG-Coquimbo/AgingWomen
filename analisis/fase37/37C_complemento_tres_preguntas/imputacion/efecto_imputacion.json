@@ -1,0 +1,24 @@
+{
+ "participantes_con_alguna_imputada": 82,
+ "pct": 15.500945179584122,
+ "con_dos_o_mas": 4,
+ "modelo_A_con_alguna_imputada": 410,
+ "modelo_A_pct": 77.50472589792061,
+ "modelo_A_variables": 29,
+ "B1_cv_discrepan_imputadas_pct": 18.29268292682927,
+ "B1_cv_discrepan_observadas_pct": 12.080536912751679,
+ "B2_discrepan_imputadas_pct": 17.073170731707318,
+ "B2_discrepan_observadas_pct": 15.436241610738255,
+ "sexual_imputadas": 30,
+ "sexual_observadas": {
+  "SI": 251,
+  "NO": 248
+ },
+ "sexual_valor_imputado": "NO",
+ "sexual_ari_A_con_moda_529": 0.9105453203170205,
+ "sexual_A_cambian_entre_imputadas_pct": 16.666666666666664,
+ "sexual_A_cambian_entre_no_imputadas_pct": 2.404809619238477,
+ "sexual_B_cambian_celda": 0,
+ "sexual_ari_B1_con_moda_529": 1.0,
+ "sexual_celdas_B1_cambian_de_segmento_alineado": 0
+}

@@ -1,0 +1,77 @@
+verificacion,resultado,detalle
+01_protocolo_38: fuente y Word existen,superada,
+01_protocolo_38: imágenes referidas existen,superada,
+01_protocolo_38: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+03_diccionario_variables_categorias: fuente y Word existen,superada,
+03_diccionario_variables_categorias: imágenes referidas existen,superada,
+03_diccionario_variables_categorias: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+03_diccionario_variables_categorias: sin valores vacíos ni campos sin sustituir,superada,
+04_agrupacion_categorias_escasas: fuente y Word existen,superada,
+04_agrupacion_categorias_escasas: imágenes referidas existen,superada,
+04_agrupacion_categorias_escasas: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+04_agrupacion_categorias_escasas: sin valores vacíos ni campos sin sustituir,superada,
+05_matriz_transaccional_trazabilidad: fuente y Word existen,superada,
+05_matriz_transaccional_trazabilidad: imágenes referidas existen,superada,
+05_matriz_transaccional_trazabilidad: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+05_matriz_transaccional_trazabilidad: sin valores vacíos ni campos sin sustituir,superada,
+06_equivalencia_apriori_fpgrowth: fuente y Word existen,superada,
+06_equivalencia_apriori_fpgrowth: imágenes referidas existen,superada,
+06_equivalencia_apriori_fpgrowth: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+06_equivalencia_apriori_fpgrowth: sin valores vacíos ni campos sin sustituir,superada,
+07_reglas_generales: fuente y Word existen,superada,
+07_reglas_generales: imágenes referidas existen,superada,
+07_reglas_generales: Word contiene las imágenes,superada,"1 en Word, 1 referidas"
+07_reglas_generales: sin valores vacíos ni campos sin sustituir,superada,
+08_soporte_confianza_lift_cobertura: fuente y Word existen,superada,
+08_soporte_confianza_lift_cobertura: imágenes referidas existen,superada,
+08_soporte_confianza_lift_cobertura: Word contiene las imágenes,superada,"2 en Word, 2 referidas"
+08_soporte_confianza_lift_cobertura: sin valores vacíos ni campos sin sustituir,superada,
+09_redundancia: fuente y Word existen,superada,
+09_redundancia: imágenes referidas existen,superada,
+09_redundancia: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+09_redundancia: sin valores vacíos ni campos sin sustituir,superada,
+10_estabilidad: fuente y Word existen,superada,
+10_estabilidad: imágenes referidas existen,superada,
+10_estabilidad: Word contiene las imágenes,superada,"1 en Word, 1 referidas"
+10_estabilidad: sin valores vacíos ni campos sin sustituir,superada,
+11_referencia_nula: fuente y Word existen,superada,
+11_referencia_nula: imágenes referidas existen,superada,
+11_referencia_nula: Word contiene las imágenes,superada,"1 en Word, 1 referidas"
+11_referencia_nula: sin valores vacíos ni campos sin sustituir,superada,
+12_sensibilidades: fuente y Word existen,superada,
+12_sensibilidades: imágenes referidas existen,superada,
+12_sensibilidades: Word contiene las imágenes,superada,"2 en Word, 2 referidas"
+12_sensibilidades: sin valores vacíos ni campos sin sustituir,superada,
+13_figuras_tablas: fuente y Word existen,superada,
+13_figuras_tablas: imágenes referidas existen,superada,
+13_figuras_tablas: Word contiene las imágenes,superada,"8 en Word, 8 referidas"
+13_figuras_tablas: sin valores vacíos ni campos sin sustituir,superada,
+16_informe_cierre_38: fuente y Word existen,superada,
+16_informe_cierre_38: imágenes referidas existen,superada,
+16_informe_cierre_38: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+16_informe_cierre_38: sin valores vacíos ni campos sin sustituir,superada,
+17_nota_fase_39: fuente y Word existen,superada,
+17_nota_fase_39: imágenes referidas existen,superada,
+17_nota_fase_39: Word contiene las imágenes,superada,"0 en Word, 0 referidas"
+17_nota_fase_39: sin valores vacíos ni campos sin sustituir,superada,
+00_indice_entregables: existe y sin valores vacíos,superada,
+02_integridad_inicial: existe y sin valores vacíos,superada,
+14_informe_pruebas: existe y sin valores vacíos,superada,
+15_informe_integridad_final: existe y sin valores vacíos,superada,
+Advertencia «sintético»,superada,
+Advertencia «ninguna asociación indica causa»,superada,
+Advertencia «no permiten recomendaciones de salud»,superada,
+Advertencia «no confirma nada»,superada,
+Advertencia «Westfall-Young»,superada,
+Advertencia «no solo a las seleccionadas»,superada,
+Advertencia «No demuestra validez»,superada,
+Advertencia «no las confirma de forma independiente»,superada,
+Advertencia «No ejecuta ninguna comparación»,superada,
+Advertencia «siempre con su denominador»,superada,
+Advertencia «nunca como base obligatoria»,superada,
+Advertencia «no hay reglas suficientemente sólidas»,superada,
+Cierre responde las 20 preguntas,superada,
+Sin lenguaje causal ni clínico afirmativo,superada,
+Índice enlaza los 18 entregables,superada,
+Archivos del índice existen,superada,
+Resumen JSON existe,superada,

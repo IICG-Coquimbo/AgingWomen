@@ -1,0 +1,45 @@
+comprobacion,resultado,detalle
+"01_protocolo_complemento: abre, con texto e imágenes",superada,"11517 caracteres, 0 imágenes"
+01_protocolo_complemento: sin campos sin resolver,superada,
+"02_reproduccion_ari: abre, con texto e imágenes",superada,"2638 caracteres, 1 imágenes"
+02_reproduccion_ari: sin campos sin resolver,superada,
+"03_definicion_B1_B2: abre, con texto e imágenes",superada,"3392 caracteres, 1 imágenes"
+03_definicion_B1_B2: sin campos sin resolver,superada,
+"04_correspondencia_segmentos: abre, con texto e imágenes",superada,"2138 caracteres, 1 imágenes"
+04_correspondencia_segmentos: sin campos sin resolver,superada,
+"05_fuera_de_muestra: abre, con texto e imágenes",superada,"2921 caracteres, 1 imágenes"
+05_fuera_de_muestra: sin campos sin resolver,superada,
+"06_estabilidad: abre, con texto e imágenes",superada,"2174 caracteres, 1 imágenes"
+06_estabilidad: sin campos sin resolver,superada,
+"07_informacion_por_bloques: abre, con texto e imágenes",superada,"6104 caracteres, 2 imágenes"
+07_informacion_por_bloques: sin campos sin resolver,superada,
+"08_complejidad_interpretabilidad: abre, con texto e imágenes",superada,"3730 caracteres, 0 imágenes"
+08_complejidad_interpretabilidad: sin campos sin resolver,superada,
+"09_sin_segmentacion: abre, con texto e imágenes",superada,"2507 caracteres, 1 imágenes"
+09_sin_segmentacion: sin campos sin resolver,superada,
+"10_limitaciones_imputaciones: abre, con texto e imágenes",superada,"3354 caracteres, 0 imágenes"
+10_limitaciones_imputaciones: sin campos sin resolver,superada,
+"11_ventajas_desventajas: abre, con texto e imágenes",superada,"3186 caracteres, 0 imágenes"
+11_ventajas_desventajas: sin campos sin resolver,superada,
+"12_informe_metodologico_final: abre, con texto e imágenes",superada,"7911 caracteres, 1 imágenes"
+12_informe_metodologico_final: sin campos sin resolver,superada,
+"15_preparacion_decision_37D: abre, con texto e imágenes",superada,"2382 caracteres, 0 imágenes"
+15_preparacion_decision_37D: sin campos sin resolver,superada,
+00_indice_entregables: existe,superada,
+13_informe_pruebas: existe,superada,
+14_informe_integridad: existe,superada,
+Final: 15 preguntas,superada,Faltan: []
+Final: lenguaje sencillo,superada,
+Final: recomendación no vinculante,superada,
+Final: Fase 37D no iniciada,superada,
+Sintético declarado,superada,
+ARI no es porcentaje,superada,
+B1 no es validación independiente,superada,
+B2 no es del todo independiente,superada,
+Estabilidad con advertencia estructural,superada,
+Circularidad declarada,superada,
+Comprobación posterior rotulada,superada,
+Moda sin afirmar corrección,superada,
+Sin afirmaciones prohibidas,superada,[]
+Figuras,superada,
+Tabla final y recomendación guardadas,superada,

@@ -1,0 +1,15 @@
+LOG revisión Fase 35B, reunión 03-11-2026: entropía de Shannon, 10.000 permutaciones, EXPLORATORIO
+Fecha de ejecución: 2026-11-03 12:13
+HEAD: 745d689937a18c35b62fd25eccc401b169b20e11
+Semilla: SeedSequence(42, spawn_key=(1103, 0, tipo, indice)); tolerancia: 1e-12; un solo proceso
+Versiones: Python 3.12.5, numpy 2.2.4, pandas 2.2.3
+Variables: 34; relevantes q<0,10: 6; pares: 15
+Relevantes: dias_ejercicio_semana;frecuencia_bajo_impacto;frecuencia_fuerza;imc;lugar_trabajo_comprensivo;trabaja_actualmente
+FCBF adaptado: frecuencia_fuerza;imc;lugar_trabajo_comprensivo;trabaja_actualmente
+FCBF estandar: frecuencia_fuerza;lugar_trabajo_comprensivo
+Recomendar 50.000: True; motivos: ['variables cuyo intervalo de Monte Carlo de q contiene 0,10: lugar_trabajo_comprensivo']
+Comprobaciones: dos corridas idénticas; SU igual a la guardada y a la implementación independiente.
+Tiempo real (s): permutaciones 7.2, repeticion 7.3, total 18.6
+SHA-256 revision_35b_reunion_1103.py: 1111ee54236bb7e8701ffe1ca736abdb40a10ff3255273233ede26129b953978
+SHA-256 protocolo_revision_35b.md: fffcd27cd863a1a486c5e4fd40210f1f529e45f09d82ac5fea0e577463f77b9a
+SHA-256 test_revision_35b.py: 42ac131607bf2687564455c9957f07687c2524dd6c137a5ccdfe13c65b0a284f

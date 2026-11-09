@@ -1,0 +1,30 @@
+metrica,tipo,reglas_comparadas,diferencias,dif_max_absoluta
+consecuente,exacta,9761,0,
+largo,exacta,9761,0,
+variables,exacta,9761,0,
+n_antecedente,exacta,9761,0,
+n_conjunto,exacta,9761,0,
+n,exacta,9761,0,
+marcada,exacta,9761,0,
+subregla_mas_cercana,exacta,9761,0,
+redundante,exacta,9761,0,
+familia,exacta,9761,0,
+frecuencia_basal,numérica (tolerancia 1e-9),9761,0,0.0
+soporte_antecedente,numérica (tolerancia 1e-9),9761,0,9.71445146547012e-17
+soporte,numérica (tolerancia 1e-9),9761,0,9.71445146547012e-17
+confianza,numérica (tolerancia 1e-9),9761,0,5.551115123125783e-17
+ic_confianza_inf,numérica (tolerancia 1e-9),9761,0,5.551115123125783e-17
+ic_confianza_sup,numérica (tolerancia 1e-9),9761,0,0.0
+lift,numérica (tolerancia 1e-9),9761,0,2.220446049250313e-16
+diferencia_basal,numérica (tolerancia 1e-9),9761,0,9.974659986866641e-17
+leverage,numérica (tolerancia 1e-9),9761,0,9.996344030316351e-17
+confianza_sin_antecedente,numérica (tolerancia 1e-9),9761,0,5.551115123125783e-17
+diferencia_riesgo,numérica (tolerancia 1e-9),9761,0,9.8879238130678e-17
+ic_dr_inf,numérica (tolerancia 1e-9),9761,0,9.8879238130678e-17
+ic_dr_sup,numérica (tolerancia 1e-9),9761,0,9.71445146547012e-17
+razon_riesgos,numérica (tolerancia 1e-9),9761,0,2.220446049250313e-16
+ic_rr_inf,numérica (tolerancia 1e-9),9761,0,2.220446049250313e-16
+ic_rr_sup,numérica (tolerancia 1e-9),9761,0,2.220446049250313e-16
+z,numérica (tolerancia 1e-9),9761,0,4.440892098500626e-16
+p_fisher,numérica (tolerancia 1e-9),9761,0,1.1102230246251565e-16
+mejora_sobre_subreglas,numérica (tolerancia 1e-9),9761,0,9.980080997729068e-17

@@ -1,0 +1,12 @@
+variante,grupo,ari_con_B2,por_construccion,filas_ajuste
+Días como ridit,Codificación,0.6922620931623757,False,529
+Días como normal,Codificación,0.7406824619294988,False,529
+Peso de ejercicio × 0.5,Ponderación,0.7436637956120592,False,529
+Peso de ejercicio × 2,Ponderación,0.3274784007750534,False,529
+Ajuste sin imputadas de trabaja_actualmente,Población,0.9501892305014871,False,507
+Ajuste sin imputadas de tiene_pareja,Población,0.9300116366629195,False,501
+Ajuste sin imputadas de dias_ejercicio_semana,Población,0.9501892305014871,False,493
+Ajuste sin imputadas en ninguna de las tres,Población,0.9300116366629195,False,447
+S-IMPMODA: no cambia las tres preguntas,Por construcción,1.0,True,529
+S-SOLAPE: quita variables que B2 no usa,Por construcción,1.0,True,529
+S-EDAD: quita variables que B2 no usa,Por construcción,1.0,True,529

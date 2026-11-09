@@ -1,0 +1,338 @@
+﻿variable,categoria,n,pct
+edad,Menos de 40,22,4.1588
+edad,40-44,104,19.6597
+edad,45-49,120,22.6843
+edad,50-54,110,20.7940
+edad,55-59,79,14.9338
+edad,60 o más,94,17.7694
+comuna,La Serena,169,31.9471
+comuna,Coquimbo,166,31.3800
+comuna,Ovalle,78,14.7448
+comuna,Illapel,18,3.4026
+comuna,Monte Patria,18,3.4026
+comuna,Vicuña,18,3.4026
+comuna,Salamanca,17,3.2136
+comuna,Los Vilos,12,2.2684
+comuna,Canela,8,1.5123
+comuna,Paihuano,6,1.1342
+comuna,Punitaqui,6,1.1342
+comuna,Andacollo,5,0.9452
+comuna,Río Hurtado,4,0.7561
+comuna,Combarbalá,2,0.3781
+comuna,La Higuera,2,0.3781
+origen_procedencia,Chileno/a,510,96.4083
+origen_procedencia,Venezolano/a,7,1.3233
+origen_procedencia,Peruano/a,6,1.1342
+origen_procedencia,Otra nacionalidad u origen,3,0.5671
+origen_procedencia,Colombiano/a,1,0.1890
+origen_procedencia,Haitiano/a,1,0.1890
+origen_procedencia,Argentino/a,1,0.1890
+origen_procedencia,Boliviano/a,0,0.0000
+origen_procedencia,Ecuatoriano/a,0,0.0000
+pueblo_originario_afro,Ninguno,488,92.2495
+pueblo_originario_afro,Diaguita,20,3.7807
+pueblo_originario_afro,Mapuche,13,2.4575
+pueblo_originario_afro,Chango,4,0.7561
+pueblo_originario_afro,Aymara,2,0.3781
+pueblo_originario_afro,Otro pueblo originario,2,0.3781
+pueblo_originario_afro,Rapa Nui,0,0.0000
+pueblo_originario_afro,Lickanantay,0,0.0000
+pueblo_originario_afro,Quechua,0,0.0000
+pueblo_originario_afro,Colla,0,0.0000
+pueblo_originario_afro,Kawésqar,0,0.0000
+pueblo_originario_afro,Yagán,0,0.0000
+pueblo_originario_afro,Afrodescendiente,0,0.0000
+pueblo_originario_afro,Asiático,0,0.0000
+genero,Femenino,523,98.8658
+genero,Prefiero no decirlo,6,1.1342
+genero,Masculino,0,0.0000
+genero,No binario,0,0.0000
+genero,Otro,0,0.0000
+trabaja_actualmente,Sí,309,58.4121
+trabaja_actualmente,No,220,41.5879
+etapa_menopausica,Premenopausia,96,18.1474
+etapa_menopausica,Perimenopausia,79,14.9338
+etapa_menopausica,Posmenopausia,313,59.1682
+etapa_menopausica,Quirúrgica,19,3.5917
+etapa_menopausica,Indeterminada,20,3.7807
+etapa_menopausica,Indeterminada (histerectomía),2,0.3781
+menstruacion_llega,Regular (cada 21-35 días),96,54.8571
+menstruacion_llega,Irregular (<21 o >35 días),70,40.0000
+menstruacion_llega,No estoy segura / No sé,9,5.1429
+tipo_sangrado,Muy leve,17,9.7143
+tipo_sangrado,Leve,37,21.1429
+tipo_sangrado,Moderado,78,44.5714
+tipo_sangrado,Abundante,25,14.2857
+tipo_sangrado,Muy abundante,18,10.2857
+usa_metodo_anticonceptivo,Sí,72,41.1429
+usa_metodo_anticonceptivo,No,103,58.8571
+tipo_metodo_anticonceptivo,DIU,29,40.2778
+tipo_metodo_anticonceptivo,Oral,12,16.6667
+tipo_metodo_anticonceptivo,Preservativo,11,15.2778
+tipo_metodo_anticonceptivo,Inyectable,9,12.5000
+tipo_metodo_anticonceptivo,Implante,7,9.7222
+tipo_metodo_anticonceptivo,No sé,2,2.7778
+tipo_metodo_anticonceptivo,Otro,2,2.7778
+usa_terapia_hormonal,Sí,32,6.0491
+usa_terapia_hormonal,No,497,93.9509
+operada_no_mas_hijos,Sí,104,19.6597
+operada_no_mas_hijos,No,425,80.3403
+tiene_utero,Sí,476,89.9811
+tiene_utero,No,53,10.0189
+tiene_ovario,Sí,510,96.4083
+tiene_ovario,No,19,3.5917
+tiene_pareja,Sí,356,67.2968
+tiene_pareja,No,173,32.7032
+tiene_actividad_sexual,Sí,251,47.4480
+tiene_actividad_sexual,No,278,52.5520
+usa_medicamentos_diabetes,Sí,66,12.4764
+usa_medicamentos_diabetes,No,463,87.5236
+usa_medicamentos_presion,Sí,89,16.8242
+usa_medicamentos_presion,No,440,83.1758
+evacuacion_intestinal,Más de una vez al día,41,7.7505
+evacuacion_intestinal,1 vez al día,300,56.7108
+evacuacion_intestinal,Cada 2 días,128,24.1966
+evacuacion_intestinal,3 o más días entre evacuaciones,60,11.3422
+distension_abdominal,Nunca o casi nunca,184,34.7826
+distension_abdominal,A veces,226,42.7221
+distension_abdominal,Frecuentemente,92,17.3913
+distension_abdominal,Siempre,27,5.1040
+peso_kg,Menos de 50,25,8.9286
+peso_kg,50-59,44,15.7143
+peso_kg,60-69,74,26.4286
+peso_kg,70-79,59,21.0714
+peso_kg,80-89,43,15.3571
+peso_kg,90-99,22,7.8571
+peso_kg,100 o más,13,4.6429
+talla_actual_cm,Menos de 145,8,2.5000
+talla_actual_cm,145-149,40,12.5000
+talla_actual_cm,150-154,88,27.5000
+talla_actual_cm,155-159,109,34.0625
+talla_actual_cm,160-164,54,16.8750
+talla_actual_cm,165-169,18,5.6250
+talla_actual_cm,170 o más,3,0.9375
+imc,"Menor a 18,5",2,0.7491
+imc,"18,5-24,9",61,22.8464
+imc,"25-29,9",101,37.8277
+imc,"30-34,9",47,17.6030
+imc,"35-39,9",44,16.4794
+imc,40 o más,12,4.4944
+prevision,Fonasa,435,82.2306
+prevision,Isapre,70,13.2325
+prevision,Ninguna (particular),15,2.8355
+prevision,FF.AA. y de Orden,7,1.3233
+prevision,No sé,2,0.3781
+lugar_trabajo_comprensivo,Muy en desacuerdo,19,6.6202
+lugar_trabajo_comprensivo,En desacuerdo,53,18.4669
+lugar_trabajo_comprensivo,Neutral,108,37.6307
+lugar_trabajo_comprensivo,De acuerdo,71,24.7387
+lugar_trabajo_comprensivo,Muy de acuerdo,36,12.5436
+estres_entorno_laboral,Nada de estrés,24,8.3624
+estres_entorno_laboral,Estrés leve,67,23.3449
+estres_entorno_laboral,Estrés moderado,107,37.2822
+estres_entorno_laboral,Estrés alto,57,19.8606
+estres_entorno_laboral,Estrés extremo,32,11.1498
+cuida_otras_personas,Sí,251,47.4480
+cuida_otras_personas,No,278,52.5520
+cantidad_personas_cuida,1 persona,136,54.1833
+cantidad_personas_cuida,2 personas,67,26.6932
+cantidad_personas_cuida,3 o más personas,48,19.1235
+a_quien_cuida,Hijos/as menores de edad,132,56.1702
+a_quien_cuida,Padres o suegros,109,46.3830
+a_quien_cuida,Hijos/as adultos que dependen de usted,40,17.0213
+a_quien_cuida,Cónyuge/pareja con dependencia,18,7.6596
+a_quien_cuida,Abuelos u otros adultos mayores,15,6.3830
+a_quien_cuida,Otro familiar o persona dependiente,7,2.9787
+a_quien_cuida,Otro,6,2.5532
+sobrecarga_fisica_emocional,Nunca o casi nunca,10,3.9841
+sobrecarga_fisica_emocional,Rara vez,34,13.5458
+sobrecarga_fisica_emocional,A veces,106,42.2311
+sobrecarga_fisica_emocional,Frecuentemente,69,27.4900
+sobrecarga_fisica_emocional,Siempre,32,12.7490
+doble_carga,Sí,147,27.7883
+doble_carga,No,382,72.2117
+dias_ejercicio_semana,0 días,302,57.0888
+dias_ejercicio_semana,1-2 días,148,27.9773
+dias_ejercicio_semana,3-4 días,52,9.8299
+dias_ejercicio_semana,5-6 días,15,2.8355
+dias_ejercicio_semana,Todos los días,12,2.2684
+realiza_aerobico,Sí,105,19.8488
+realiza_aerobico,No,424,80.1512
+frecuencia_aerobico,Nunca,0,0.0000
+frecuencia_aerobico,Rara vez,19,18.0952
+frecuencia_aerobico,A veces,40,38.0952
+frecuencia_aerobico,Frecuentemente,26,24.7619
+frecuencia_aerobico,Siempre,20,19.0476
+realiza_bajo_impacto,Sí,224,42.3440
+realiza_bajo_impacto,No,305,57.6560
+frecuencia_bajo_impacto,Nunca,0,0.0000
+frecuencia_bajo_impacto,Rara vez,79,35.2679
+frecuencia_bajo_impacto,A veces,89,39.7321
+frecuencia_bajo_impacto,Frecuentemente,40,17.8571
+frecuencia_bajo_impacto,Siempre,16,7.1429
+realiza_fuerza,Sí,81,15.3119
+realiza_fuerza,No,448,84.6881
+frecuencia_fuerza,Nunca,0,0.0000
+frecuencia_fuerza,Rara vez,13,16.0494
+frecuencia_fuerza,A veces,30,37.0370
+frecuencia_fuerza,Frecuentemente,26,32.0988
+frecuencia_fuerza,Siempre,12,14.8148
+horas_sedentarismo,0-3 h,60,11.3422
+horas_sedentarismo,4-6 h,243,45.9357
+horas_sedentarismo,7-9 h,183,34.5936
+horas_sedentarismo,10 h o más,43,8.1285
+quien_prepara_comidas,Yo preparo la mayoría,365,68.9981
+quien_prepara_comidas,Compartido,86,16.2571
+quien_prepara_comidas,Otra persona del hogar,49,9.2628
+quien_prepara_comidas,Compra comida preparada,22,4.1588
+quien_prepara_comidas,Otro,7,1.3233
+frecuencia_comida_fuera,Nunca,157,29.6786
+frecuencia_comida_fuera,1-2 veces por semana,247,46.6919
+frecuencia_comida_fuera,3-4 veces por semana,106,20.0378
+frecuencia_comida_fuera,5-6 veces por semana,19,3.5917
+frecuencia_comida_fuera,Diariamente,0,0.0000
+falta_tiempo_influye,Nunca o casi nunca,59,11.1531
+falta_tiempo_influye,Rara vez,144,27.2212
+falta_tiempo_influye,A veces,224,42.3440
+falta_tiempo_influye,Frecuentemente,86,16.2571
+falta_tiempo_influye,Siempre,16,3.0246
+vasos_agua_dia,No consumo,24,4.5369
+vasos_agua_dia,1-2 porciones,110,20.7940
+vasos_agua_dia,3-4 porciones,205,38.7524
+vasos_agua_dia,5-6 porciones,124,23.4405
+vasos_agua_dia,7 o más porciones,66,12.4764
+platos_verduras_dia,No consumo,19,3.5917
+platos_verduras_dia,1-2 porciones,427,80.7183
+platos_verduras_dia,3-4 porciones,63,11.9093
+platos_verduras_dia,5-6 porciones,20,3.7807
+platos_verduras_dia,7 o más porciones,0,0.0000
+frutas_dia,No consumo,48,9.0737
+frutas_dia,1-2 porciones,380,71.8336
+frutas_dia,3-4 porciones,78,14.7448
+frutas_dia,5-6 porciones,23,4.3478
+frutas_dia,7 o más porciones,0,0.0000
+panes_dia,No consumo,59,11.1531
+panes_dia,1-2 porciones,356,67.2968
+panes_dia,3-4 porciones,104,19.6597
+panes_dia,5-6 porciones,10,1.8904
+panes_dia,7 o más porciones,0,0.0000
+lacteos_dia,No consumo,78,14.7448
+lacteos_dia,1-2 porciones,351,66.3516
+lacteos_dia,3-4 porciones,91,17.2023
+lacteos_dia,5-6 porciones,9,1.7013
+lacteos_dia,7 o más porciones,0,0.0000
+jugos_gaseosas_dia,No consumo,146,27.5992
+jugos_gaseosas_dia,1-2 porciones,258,48.7713
+jugos_gaseosas_dia,3-4 porciones,86,16.2571
+jugos_gaseosas_dia,5-6 porciones,39,7.3724
+jugos_gaseosas_dia,7 o más porciones,0,0.0000
+bebidas_energeticas_dia,No consumo,492,93.0057
+bebidas_energeticas_dia,1-2 porciones,37,6.9943
+bebidas_energeticas_dia,3-4 porciones,0,0.0000
+bebidas_energeticas_dia,5-6 porciones,0,0.0000
+bebidas_energeticas_dia,7 o más porciones,0,0.0000
+pescado_semana,Nunca,164,31.0019
+pescado_semana,1-2 veces por semana,299,56.5217
+pescado_semana,3-4 veces por semana,66,12.4764
+pescado_semana,5-6 veces por semana,0,0.0000
+pescado_semana,Diariamente,0,0.0000
+legumbres_semana,Nunca,43,8.1285
+legumbres_semana,1-2 veces por semana,352,66.5406
+legumbres_semana,3-4 veces por semana,134,25.3308
+legumbres_semana,5-6 veces por semana,0,0.0000
+legumbres_semana,Diariamente,0,0.0000
+carnes_semana,Nunca,22,4.1588
+carnes_semana,1-2 veces por semana,165,31.1909
+carnes_semana,3-4 veces por semana,234,44.2344
+carnes_semana,5-6 veces por semana,86,16.2571
+carnes_semana,Diariamente,22,4.1588
+golosinas_semana,Nunca,78,14.7448
+golosinas_semana,1-2 veces por semana,222,41.9660
+golosinas_semana,3-4 veces por semana,165,31.1909
+golosinas_semana,5-6 veces por semana,40,7.5614
+golosinas_semana,Diariamente,24,4.5369
+tabaco_frecuencia,Nunca,399,75.4253
+tabaco_frecuencia,1-2 veces por semana,21,3.9698
+tabaco_frecuencia,3-4 veces por semana,9,1.7013
+tabaco_frecuencia,5-6 veces por semana,18,3.4026
+tabaco_frecuencia,Diariamente,82,15.5009
+alcohol_frecuencia,Nunca,190,35.9168
+alcohol_frecuencia,1-2 veces por semana,268,50.6616
+alcohol_frecuencia,3-4 veces por semana,46,8.6957
+alcohol_frecuencia,5-6 veces por semana,14,2.6465
+alcohol_frecuencia,Diariamente,11,2.0794
+marihuana_frecuencia,Nunca,479,90.5482
+marihuana_frecuencia,1-2 veces por semana,34,6.4272
+marihuana_frecuencia,3-4 veces por semana,5,0.9452
+marihuana_frecuencia,5-6 veces por semana,5,0.9452
+marihuana_frecuencia,Diariamente,6,1.1342
+pregunta_1,Ninguna,165,31.1909
+pregunta_1,Leve,148,27.9773
+pregunta_1,Moderada,134,25.3308
+pregunta_1,Intensa,60,11.3422
+pregunta_1,Muy intensa,22,4.1588
+pregunta_2,Ninguna,185,34.9716
+pregunta_2,Leve,175,33.0813
+pregunta_2,Moderada,110,20.7940
+pregunta_2,Intensa,47,8.8847
+pregunta_2,Muy intensa,12,2.2684
+pregunta_3,Ninguna,62,11.7202
+pregunta_3,Leve,119,22.4953
+pregunta_3,Moderada,165,31.1909
+pregunta_3,Intensa,128,24.1966
+pregunta_3,Muy intensa,55,10.3970
+pregunta_4,Ninguna,114,21.5501
+pregunta_4,Leve,149,28.1664
+pregunta_4,Moderada,156,29.4896
+pregunta_4,Intensa,77,14.5558
+pregunta_4,Muy intensa,33,6.2382
+pregunta_5,Ninguna,80,15.1229
+pregunta_5,Leve,149,28.1664
+pregunta_5,Moderada,153,28.9225
+pregunta_5,Intensa,103,19.4707
+pregunta_5,Muy intensa,44,8.3176
+pregunta_6,Ninguna,72,13.6106
+pregunta_6,Leve,132,24.9527
+pregunta_6,Moderada,152,28.7335
+pregunta_6,Intensa,117,22.1172
+pregunta_6,Muy intensa,56,10.5860
+pregunta_7,Ninguna,79,14.9338
+pregunta_7,Leve,136,25.7089
+pregunta_7,Moderada,163,30.8129
+pregunta_7,Intensa,112,21.1720
+pregunta_7,Muy intensa,39,7.3724
+pregunta_8,Ninguna,45,8.5066
+pregunta_8,Leve,97,18.3365
+pregunta_8,Moderada,160,30.2457
+pregunta_8,Intensa,137,25.8979
+pregunta_8,Muy intensa,90,17.0132
+pregunta_9,Ninguna,179,33.8374
+pregunta_9,Leve,190,35.9168
+pregunta_9,Moderada,117,22.1172
+pregunta_9,Intensa,38,7.1834
+pregunta_9,Muy intensa,5,0.9452
+pregunta_10,Ninguna,266,50.2836
+pregunta_10,Leve,170,32.1361
+pregunta_10,Moderada,76,14.3667
+pregunta_10,Intensa,15,2.8355
+pregunta_10,Muy intensa,2,0.3781
+pregunta_11,Ninguna,213,40.2647
+pregunta_11,Leve,177,33.4594
+pregunta_11,Moderada,98,18.5255
+pregunta_11,Intensa,35,6.6163
+pregunta_11,Muy intensa,6,1.1342
+mrs_total,0-4,56,10.5860
+mrs_total,5-9,92,17.3913
+mrs_total,10-14,81,15.3119
+mrs_total,15-19,106,20.0378
+mrs_total,20-24,87,16.4461
+mrs_total,25-29,59,11.1531
+mrs_total,30-34,29,5.4820
+mrs_total,35-39,17,3.2136
+mrs_total,40-44,2,0.3781
+severidad_mrs_4,Sin síntomas o muy leves,56,10.5860
+severidad_mrs_4,Leve,74,13.9887
+severidad_mrs_4,Moderada,118,22.3062
+severidad_mrs_4,Severa,281,53.1191
+severo_mrs,Sí,281,53.1191
+severo_mrs,No,248,46.8809

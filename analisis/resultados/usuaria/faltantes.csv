@@ -1,0 +1,74 @@
+﻿variable,seccion,tipo,ambito,filas_aplica,faltantes,pct_faltante,tratamiento
+circunferencia_cintura_cm,SegmentoEMPA,continua,general,546,286,52.40000,> 30 %: no se modela
+peso_kg,SegmentoEMPA,continua,general,546,256,46.90000,> 30 %: no se modela
+talla_actual_cm,SegmentoEMPA,continua,general,546,215,39.40000,> 30 %: no se modela
+tipo_sangrado,MRS,categorica,general,204,33,16.20000,imputada (moda = MODERADO) + marca tipo_sangrado_imputado; 22 sin fecha de última menstruación quedan sin dato
+menstruacion_llega,MRS,categorica,general,204,27,13.20000,imputada (moda = REGULAR) + marca menstruacion_llega_imputado; 22 sin fecha de última menstruación quedan sin dato
+usa_metodo_anticonceptivo,MRS,categorica,general,204,25,12.30000,imputada (moda = NO) + marca usa_metodo_anticonceptivo_imputado; 22 sin fecha de última menstruación quedan sin dato
+evaluacion_atencion_recibida,ConocimientoSistema,ordinal,general,127,11,8.70000,imputada (mediana = 3) + marca evaluacion_atencion_recibida_imputado
+tipo_metodo_anticonceptivo,MRS,categorica,general,73,6,8.20000,imputada (moda = DIU) + marca tipo_metodo_anticonceptivo_imputado
+cambio_relacion_pareja_menopausia,MRS,ordinal,general,339,23,6.80000,imputada (mediana = 2) + marca cambio_relacion_pareja_menopausia_imputado
+dias_ejercicio_semana,ActividadFisica,ordinal,general,546,37,6.80000,imputada (mediana = 1) + marca dias_ejercicio_semana_imputado
+frecuencia_aerobico,ActividadFisica,ordinal,general,106,7,6.60000,imputada (mediana = 3) + marca frecuencia_aerobico_imputado
+frecuencia_bajo_impacto,ActividadFisica,ordinal,general,231,15,6.50000,imputada (mediana = 3) + marca frecuencia_bajo_impacto_imputado
+frecuencia_comida_fuera,HabitosDeVida,ordinal,general,546,35,6.40000,imputada (mediana = 2) + marca frecuencia_comida_fuera_imputado
+a_quien_cuida,TareasCuidado,multiseleccion,general,257,16,6.20000,no se imputa (selección múltiple)
+nivel_informacion_servicios,ConocimientoSistema,ordinal,general,428,26,6.10000,imputada (mediana = 2) + marca nivel_informacion_servicios_imputado
+en_control_programa_consultorio,ConocimientoSistema,categorica,general,428,26,6.10000,imputada (moda = NO) + marca en_control_programa_consultorio_imputado
+platos_verduras_dia,HabitosDeVida,ordinal,general,546,33,6.00000,imputada (mediana = 2) + marca platos_verduras_dia_imputado
+evacuacion_intestinal,MRS,ordinal,general,546,33,6.00000,imputada (mediana = 2) + marca evacuacion_intestinal_imputado
+panes_dia,HabitosDeVida,ordinal,general,546,33,6.00000,imputada (mediana = 2) + marca panes_dia_imputado
+lacteos_dia,HabitosDeVida,ordinal,general,546,32,5.90000,imputada (mediana = 2) + marca lacteos_dia_imputado
+conoce_sistema_publico_climaterio,ConocimientoSistema,categorica,general,428,25,5.80000,imputada (moda = NO) + marca conoce_sistema_publico_climaterio_imputado
+jugos_gaseosas_dia,HabitosDeVida,ordinal,general,546,31,5.70000,imputada (mediana = 2) + marca jugos_gaseosas_dia_imputado
+sintomas_tomados_en_serio,ConocimientoSistema,ordinal,general,546,31,5.70000,imputada (mediana = 2) + marca sintomas_tomados_en_serio_imputado
+desea_mas_informacion_apoyo,ConocimientoSistema,categorica,general,546,31,5.70000,imputada (moda = SI) + marca desea_mas_informacion_apoyo_imputado
+frecuencia_ausencias,EvaluacionTrabajo,ordinal,general,298,17,5.70000,imputada (mediana = 2) + marca frecuencia_ausencias_imputado
+carnes_semana,HabitosDeVida,ordinal,general,546,31,5.70000,imputada (mediana = 3) + marca carnes_semana_imputado
+tiene_actividad_sexual,MRS,categorica,general,546,30,5.50000,imputada (moda = NO) + marca tiene_actividad_sexual_imputado
+usa_medicamentos_presion,MRS,categorica,general,546,30,5.50000,imputada (moda = NO) + marca usa_medicamentos_presion_imputado
+falta_tiempo_influye,HabitosDeVida,ordinal,general,546,30,5.50000,imputada (mediana = 3) + marca falta_tiempo_influye_imputado
+bienestar_trabajo_afectado,EvaluacionTrabajo,ordinal,general,298,16,5.40000,imputada (mediana = 2) + marca bienestar_trabajo_afectado_imputado
+lugar_trabajo_comprensivo,EvaluacionTrabajo,ordinal,general,298,16,5.40000,imputada (mediana = 3) + marca lugar_trabajo_comprensivo_imputado
+realiza_aerobico,ActividadFisica,categorica,general,546,29,5.30000,imputada (moda = NO) + marca realiza_aerobico_imputado
+alcohol_frecuencia,HabitosDeVida,ordinal,general,546,29,5.30000,imputada (mediana = 2) + marca alcohol_frecuencia_imputado
+realiza_fuerza,ActividadFisica,categorica,general,546,28,5.10000,imputada (moda = NO) + marca realiza_fuerza_imputado
+tiene_pareja,MRS,categorica,general,546,28,5.10000,imputada (moda = SI) + marca tiene_pareja_imputado
+legumbres_semana,HabitosDeVida,ordinal,general,546,27,4.90000,imputada (mediana = 2)
+ha_consultado_por_sintomas,ConocimientoSistema,categorica,general,428,21,4.90000,imputada (moda = NO)
+horas_sedentarismo,ActividadFisica,continua,general,546,27,4.90000,imputada (mediana = 6)
+sabe_donde_acudir,ConocimientoSistema,categorica,general,428,21,4.90000,imputada (moda = SI)
+tiene_utero,MRS,categorica,general,546,26,4.80000,imputada (moda = SI)
+tipo_informacion_apoyo_deseado,ConocimientoSistema,multiseleccion,general,417,20,4.80000,no se imputa (selección múltiple)
+usa_antidepresivos,MRS,categorica,general,546,26,4.80000,imputada (moda = NO)
+sobrecarga_fisica_emocional,TareasCuidado,ordinal,general,257,12,4.70000,imputada (mediana = 3)
+ha_tenido_dificultades_acceso,ConocimientoSistema,categorica,general,428,20,4.70000,imputada (moda = NO)
+conoce_recursos_disponibles,ConocimientoSistema,categorica,general,428,20,4.70000,imputada (moda = NO)
+principales_dificultades,ConocimientoSistema,multiseleccion,general,151,7,4.60000,no se imputa (selección múltiple)
+vasos_agua_dia,HabitosDeVida,ordinal,general,546,25,4.60000,imputada (mediana = 3)
+usa_terapia_hormonal,MRS,categorica,general,546,25,4.60000,imputada (moda = NO)
+realiza_bajo_impacto,ActividadFisica,categorica,general,546,24,4.40000,imputada (moda = NO)
+frutas_dia,HabitosDeVida,ordinal,general,546,24,4.40000,imputada (mediana = 2)
+usa_medicamentos_diabetes,MRS,categorica,general,546,24,4.40000,imputada (moda = NO)
+quien_prepara_comidas,HabitosDeVida,categorica,general,546,24,4.40000,imputada (moda = YO_MAYORIA)
+tiene_ovario,MRS,categorica,general,546,23,4.20000,imputada (moda = SI)
+bebidas_energeticas_dia,HabitosDeVida,ordinal,general,546,22,4.00000,imputada (mediana = 1)
+trabaja_actualmente,Identificacion,categorica,general,546,22,4.00000,imputada (moda = True)
+cuida_otras_personas,TareasCuidado,categorica,general,546,21,3.80000,imputada (moda = NO)
+ha_escuchado_programa_climaterio,ConocimientoSistema,categorica,general,428,15,3.50000,imputada (moda = NO)
+pescado_semana,HabitosDeVida,ordinal,general,546,19,3.50000,imputada (mediana = 2)
+prevision,ConocimientoSistema,categorica,general,546,19,3.50000,imputada (moda = FONASA)
+rendimiento_afectado,EvaluacionTrabajo,ordinal,general,298,10,3.40000,imputada (mediana = 2)
+estres_entorno_laboral,EvaluacionTrabajo,ordinal,general,298,10,3.40000,imputada (mediana = 3)
+operada_no_mas_hijos,MRS,categorica,general,546,18,3.30000,imputada (moda = NO)
+distension_abdominal,MRS,ordinal,general,546,18,3.30000,imputada (mediana = 2)
+marihuana_frecuencia,HabitosDeVida,ordinal,general,546,18,3.30000,imputada (mediana = 1)
+tabaco_frecuencia,HabitosDeVida,ordinal,general,546,18,3.30000,imputada (mediana = 1)
+golosinas_semana,HabitosDeVida,ordinal,general,546,17,3.10000,imputada (mediana = 2)
+considera_informacion_suficiente,ConocimientoSistema,ordinal,general,428,13,3.00000,imputada (mediana = 2)
+cantidad_personas_cuida,TareasCuidado,ordinal,general,257,7,2.70000,imputada (mediana = 1)
+frecuencia_fuerza,ActividadFisica,ordinal,general,83,2,2.40000,imputada (mediana = 3)
+facilidad_uso,EvaluacionSatisfaccion,ordinal,satisfacción,264,3,1.10000,"no se imputa (encuesta voluntaria, Fase 39)"
+recomendaria,EvaluacionSatisfaccion,categorica,satisfacción,264,3,1.10000,"no se imputa (encuesta voluntaria, Fase 39)"
+fatiga_mental,EvaluacionSatisfaccion,ordinal,satisfacción,264,1,0.40000,"no se imputa (encuesta voluntaria, Fase 39)"
+comodidad_diseno,EvaluacionSatisfaccion,ordinal,satisfacción,264,1,0.40000,"no se imputa (encuesta voluntaria, Fase 39)"

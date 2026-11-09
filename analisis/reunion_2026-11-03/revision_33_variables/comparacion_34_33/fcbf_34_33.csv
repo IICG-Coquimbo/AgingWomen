@@ -1,0 +1,69 @@
+﻿variable,permutaciones,fcbf_adaptado_34,redundante_con_adaptado_34,fcbf_adaptado_33,redundante_con_adaptado_33,fcbf_estandar_34,redundante_con_estandar_34,fcbf_estandar_33,redundante_con_estandar_33,cambia_fcbf
+alcohol_frecuencia,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+cantidad_personas_cuida,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+carnes_semana,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+dias_ejercicio_semana,10000,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,False
+distension_abdominal,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+edad,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+estres_entorno_laboral,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+evacuacion_intestinal,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+falta_tiempo_influye,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+frecuencia_aerobico,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+frecuencia_bajo_impacto,10000,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,False
+frecuencia_comida_fuera,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+frecuencia_fuerza,10000,seleccionada,,seleccionada,,seleccionada,,seleccionada,,False
+frutas_dia,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+golosinas_semana,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+horas_sedentarismo,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+imc,10000,seleccionada,,seleccionada,,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,False
+jugos_gaseosas_dia,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+lacteos_dia,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+legumbres_semana,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+lugar_trabajo_comprensivo,10000,seleccionada,,seleccionada,,seleccionada,,seleccionada,,False
+operada_no_mas_hijos,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+panes_dia,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+pescado_semana,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+platos_verduras_dia,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+quien_prepara_comidas,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+sobrecarga_fisica_emocional,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+tabaco_frecuencia,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+tiene_actividad_sexual,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+tiene_pareja,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+trabaja_actualmente,10000,seleccionada,,seleccionada,,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,False
+usa_medicamentos_diabetes,10000,no relevante,,,,no relevante,,,,False
+usa_medicamentos_presion,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+vasos_agua_dia,10000,no relevante,,no relevante,,no relevante,,no relevante,,False
+alcohol_frecuencia,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+cantidad_personas_cuida,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+carnes_semana,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+dias_ejercicio_semana,50000,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,False
+distension_abdominal,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+edad,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+estres_entorno_laboral,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+evacuacion_intestinal,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+falta_tiempo_influye,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+frecuencia_aerobico,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+frecuencia_bajo_impacto,50000,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,False
+frecuencia_comida_fuera,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+frecuencia_fuerza,50000,seleccionada,,seleccionada,,seleccionada,,seleccionada,,False
+frutas_dia,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+golosinas_semana,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+horas_sedentarismo,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+imc,50000,seleccionada,,seleccionada,,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,False
+jugos_gaseosas_dia,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+lacteos_dia,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+legumbres_semana,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+lugar_trabajo_comprensivo,50000,seleccionada,,seleccionada,,seleccionada,,seleccionada,,False
+operada_no_mas_hijos,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+panes_dia,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+pescado_semana,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+platos_verduras_dia,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+quien_prepara_comidas,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+sobrecarga_fisica_emocional,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+tabaco_frecuencia,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+tiene_actividad_sexual,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+tiene_pareja,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+trabaja_actualmente,50000,seleccionada,,seleccionada,,redundante,frecuencia_fuerza,redundante,frecuencia_fuerza,False
+usa_medicamentos_diabetes,50000,no relevante,,,,no relevante,,,,False
+usa_medicamentos_presion,50000,no relevante,,no relevante,,no relevante,,no relevante,,False
+vasos_agua_dia,50000,no relevante,,no relevante,,no relevante,,no relevante,,False

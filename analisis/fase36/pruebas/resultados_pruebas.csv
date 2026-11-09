@@ -1,0 +1,33 @@
+numero,grupo,prueba,critica,resultado,detalle
+1,Plan,Conservación de las 529,True,OK,529 identificadores iguales y en el mismo orden; 24 matrices con 529 filas
+2,Plan,Las 30 generales,True,OK,30 en P1 y F1; 29 sin IMC en P2 y F2; conjunto exacto de relevancia_33.csv
+3,Plan,Sin variables excluidas,True,OK,"Ninguna excluida en esquemas ni en columnas, por nombre, prefijo o sufijo; 37 tablas sin identificadores personales"
+4,Plan,Códigos y significados,True,OK,120 niveles iguales al diccionario y al catálogo; códigos ascendentes y consecutivos
+5,Plan,Sin NaN ni códigos espurios,True,OK,Todo finito; sin columnas laborales ni de sobrecarga; columnas y orden exactos
+6,Plan,Trazabilidad de imputaciones,True,OK,"210 recuentos iguales a las auditorías; 665 + 262 imputadas, 100 heredadas; 16 variables iguales celda a celda con la marca histórica"
+7,Plan,Sin fuga del MRS,True,OK,Agregar y permutar el MRS no cambia matriz ni parámetros; el transformador no lo nombra en su código
+8,Plan,Determinismo,True,OK,Dos procesos distintos y la versión oficial: 234 archivos con el mismo SHA-256
+9,Plan,Escalado reproducible,True,OK,Recalculado a mano con el CSV de parámetros: diferencia máxima 8.9e-16; media 0 y varianza 1 salvo IMC
+10,Plan,Nueva participante: caso de referencia,True,OK,24 filas transformadas de una en una en 4 escenarios: diferencia máxima 4.4e-16; artefactos con el mismo SHA-256
+11,Plan,Compatibilidad con PCA y FAMD,True,OK,"P1 34 col., 29.5047; P2 33 col., 29.0000; F1 50 col., 38.5047; F2 49 col., 38.0000. Centradas. No se ajustó ningún modelo"
+12,Plan,Separación de módulos,True,OK,"Fuera de las matrices generales; 287, 263, 239 y 251; laboral y sobrecarga observada a la vez: 130; las tres observadas: 122"
+13,Plan,Datos históricos,True,OK,511 archivos de datos iguales al manifiesto del cierre
+14,Adicional,Valores laborales falsos,True,OK,287 con valores 1 a 5 iguales al limpio; fuera las 22 con relleno 3 y las 220 con 0 de no aplica
+15,Adicional,Confusión de ceros,True,OK,278 con cantidad 0 sin fila en el módulo de sobrecarga; ninguna sobrecarga 0
+16,Adicional,Salto en frecuencias,True,OK,"Mapa 0, 1, 2, 3, 4, 5 → 0, 0, 1, 2, 3, 4 solo en las tres frecuencias de ejercicio; «Nunca» conserva su código en las otras 9 variables"
+17,Adicional,Agrupación de FAMD,True,OK,"La regla determinista reproduce la tabla fija; 31 grupos, todos con al menos 5 % (mínimo 5.5%)"
+18,Adicional,IMC,True,OK,"Media 29.2296, DE 6.2636 en 267; varianza en 529 = 0.5047; 262 imputadas con z = 0"
+19,Adicional,Nominal,True,OK,Distancia² igual en las 10 parejas (4.1067); varianza total 1
+20,Adicional,Nivel inválido,True,OK,"5 valores no admitidos × 4 escenarios: error, sin matriz"
+21,Adicional,Variable constante,True,OK,DE = 0 detiene la calibración con error; la variable no se elimina en silencio
+22,Adicional,Fuga de ajuste,True,OK,Parámetros intactos en memoria y en disco (SHA-256); el transformador no tiene método de ajuste
+23,Adicional,Verdad del simulador,True,OK,8 archivos leídos según el gancho de auditoría: ni la verdad ni la bitácora; sin escrituras fuera de la salida
+24,Adicional,Sensibilidades,True,OK,"507 + 22; 508 + 21; 454 + 75. Centradas en las filas de ajuste. 32 preparadas, ninguna ejecutada"
+25,Adicional,Etiquetas,True,OK,"22 trabajo imputado; 21 cuidado; 29, 22 y 28 ceros de ejercicio"
+26,Encargo,Equivalencia matemática de FAMD,True,OK,"32 comprobaciones con datos sintéticos, incluido un control negativo; referencia externa: prince 0.23.1"
+27,Encargo,Ausencia de doble escalado del IMC,True,OK,Varianza en 529 = 267/529 = 0.5047 en P1 y F1; DE 1 solo entre las 267; misma columna en ambas rutas
+28,Encargo,Conservación del cero válido de cuidados,True,OK,"278 ceros como nivel válido, no como ausencia; valor original vacío preservado; 21 marcados como heredados"
+29,Encargo,Trazabilidad del ejercicio con ceros heredados,True,OK,"29, 22 y 28 ceros trazables por participante; unión 75; todos con la madre en NO"
+30,Encargo,Codificación de categorías válidas no observadas,True,OK,"13 niveles válidos sin observaciones en 4 escenarios: finitos, sin error ni cambio de parámetros, con marca; «Nunca» igual a «No lo realiza», sin columna propia"
+31,Encargo,Reutilización de parámetros con una nueva participante,True,OK,"Caso inventado en 4 escenarios: columnas exactas, valores iguales al cálculo manual, IMC ausente en z = 0 con marca, otra ausente con valor congelado y aviso; parámetros intactos"
+32,Encargo,Integridad frente al manifiesto del cierre 34-35,True,OK,1130 archivos iguales al manifiesto; HEAD 745d689; nada preparado; 14 archivos del diseño 36A sin modificar desde antes de la 36B

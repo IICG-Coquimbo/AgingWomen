@@ -1,0 +1,10 @@
+dimension,estrato,reglas_39,retiradas_por_variable_excluida,conservadas,perdidas_sin_variable_excluida,nuevas
+cuidado,cuida,11161,2283,8878,0,0
+cuidado,no_cuida,11528,2338,9190,0,0
+ejercicio,0_dias,11232,2202,9030,0,0
+ejercicio,1-2_dias,1167,132,1035,0,0
+ejercicio,3_o_mas_dias,43,2,41,0,0
+pareja,con_pareja,10985,2276,8709,0,0
+pareja,sin_pareja,1254,138,1116,0,0
+trabajo,no_trabaja,1453,151,1302,0,0
+trabajo,trabaja,10849,2238,8611,0,0

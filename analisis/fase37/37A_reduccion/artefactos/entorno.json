@@ -1,0 +1,11 @@
+{
+ "python": "3.12.5",
+ "numpy": "2.2.4",
+ "pandas": "2.2.3",
+ "scipy": "1.15.2",
+ "scikit_learn": "1.6.1",
+ "semilla_paralelo": 42,
+ "permutaciones_paralelo": 200,
+ "commit": "745d689",
+ "protocolo_sha256": "3c4d2de951c2769eb69e9680c7eb07bf0d0f69e2b3e26c6b7a62b574221eb39b"
+}

@@ -43,11 +43,9 @@ OPCIONALES_USUARIA = {
 }
 
 # Campos obligatorios cuando la encuesta la aplica el personal de salud.
-REQUERIDOS_PROFESIONAL = {
-    'SegmentoEMPA': [
-        'peso_kg',
-        'talla_actual_cm',
-        'presion_sistolica',
-        'presion_diastolica',
-    ],
-}
+# Fase 40B-2 (revisión correctiva): las mediciones del EMPA son
+# complementarias y NO obligatorias, tampoco para la profesional. Antes se
+# exigían peso_kg, talla_actual_cm, presion_sistolica y presion_diastolica;
+# ahora no bloquean el cierre de la ronda. Lo que no se registre queda nulo
+# (dato no registrado), sin imputar ceros ni otros valores.
+REQUERIDOS_PROFESIONAL = {}

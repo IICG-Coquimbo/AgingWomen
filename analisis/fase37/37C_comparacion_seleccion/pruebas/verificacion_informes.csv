@@ -1,0 +1,44 @@
+comprobacion,resultado,detalle
+"01_protocolo_37C: abre, con texto e imágenes",superada,"21710 caracteres, 0 imágenes"
+01_protocolo_37C: sin campos sin resolver,superada,
+"01b_enmienda_referencia_nula: abre, con texto e imágenes",superada,"2463 caracteres, 0 imágenes"
+01b_enmienda_referencia_nula: sin campos sin resolver,superada,
+"02_registro_lista_A: abre, con texto e imágenes",superada,"1885 caracteres, 0 imágenes"
+02_registro_lista_A: sin campos sin resolver,superada,
+"03_registro_lista_B: abre, con texto e imágenes",superada,"2186 caracteres, 0 imágenes"
+03_registro_lista_B: sin campos sin resolver,superada,
+"04_estabilidad_procedimiento_completo: abre, con texto e imágenes",superada,"3217 caracteres, 2 imágenes"
+04_estabilidad_procedimiento_completo: sin campos sin resolver,superada,
+"05_referencia_correlacionada: abre, con texto e imágenes",superada,"4153 caracteres, 1 imágenes"
+05_referencia_correlacionada: sin campos sin resolver,superada,
+"06_s_ord: abre, con texto e imágenes",superada,"2942 caracteres, 1 imágenes"
+06_s_ord: sin campos sin resolver,superada,
+"07_sensibilidades: abre, con texto e imágenes",superada,"2705 caracteres, 1 imágenes"
+07_sensibilidades: sin campos sin resolver,superada,
+"08_interpretabilidad: abre, con texto e imágenes",superada,"3648 caracteres, 1 imágenes"
+08_interpretabilidad: sin campos sin resolver,superada,
+"09_asignacion: abre, con texto e imágenes",superada,"2445 caracteres, 1 imágenes"
+09_asignacion: sin campos sin resolver,superada,
+"10_comparacion_finalistas: abre, con texto e imágenes",superada,"2990 caracteres, 3 imágenes"
+10_comparacion_finalistas: sin campos sin resolver,superada,
+"11_decision_metodologica: abre, con texto e imágenes",superada,"6728 caracteres, 1 imágenes"
+11_decision_metodologica: sin campos sin resolver,superada,
+"14_informe_cierre_37C: abre, con texto e imágenes",superada,"7579 caracteres, 0 imágenes"
+14_informe_cierre_37C: sin campos sin resolver,superada,
+"15_nota_metodologica_37D: abre, con texto e imágenes",superada,"2510 caracteres, 0 imágenes"
+15_nota_metodologica_37D: sin campos sin resolver,superada,
+00_indice_entregables: existe,superada,
+12_informe_pruebas: existe,superada,
+13_informe_integridad: existe,superada,
+Cierre: 17 preguntas,superada,Faltan: []
+Cierre: réplicas recuperadas y estado,superada,
+Decisión: lenguaje sencillo,superada,
+Decisión: provisional y responsable,superada,
+Sintético declarado,superada,
+Lista B rotulada,superada,
+Enmienda exploratoria,superada,
+Sin afirmaciones prohibidas,superada,[]
+Sin Fase 37D iniciada,superada,
+Lecturas alternativas rotuladas como posteriores,superada,
+Figuras,superada,
+Decisión guardada,superada,

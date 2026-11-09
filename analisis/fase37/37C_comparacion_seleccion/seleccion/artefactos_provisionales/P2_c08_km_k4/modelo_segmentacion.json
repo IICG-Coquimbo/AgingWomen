@@ -1,0 +1,83 @@
+{
+ "configuracion": "P2_c08_km_k4",
+ "estado": "PROVISIONAL: sujeto a la Fase 37D y a fases posteriores. No es un modelo clínico.",
+ "reduccion": "PCA",
+ "con_imc": false,
+ "componentes": 8,
+ "algoritmo": "K-means",
+ "k": 4,
+ "parametros": {
+  "n_init": 50,
+  "random_state": 42,
+  "algorithm": "lloyd"
+ },
+ "centroides": [
+  [
+   -0.6627311466098023,
+   -1.1817096555425648,
+   0.807381163961221,
+   0.29820992665171886,
+   0.1283282394709244,
+   -0.13087321539406493,
+   0.10441086768397165,
+   -0.2517864221872371
+  ],
+  [
+   3.120723549905026,
+   -0.08674105069825609,
+   -0.1908642995044736,
+   0.05539903601152223,
+   0.09494826112078956,
+   -0.08464732935860807,
+   0.04069883795569979,
+   -0.34280617939678976
+  ],
+  [
+   -0.5989912239068428,
+   -0.04696063286988035,
+   -1.1602382192896528,
+   -0.7022778558375585,
+   0.09567925585003267,
+   -0.21121602690721453,
+   0.09101789416765016,
+   0.4440275905914352
+  ],
+  [
+   -0.3720064215115012,
+   1.2120231986231234,
+   0.30026778841436985,
+   0.28114493714686045,
+   -0.24957075802203976,
+   0.3446108479505503,
+   -0.19647339497314656,
+   0.0318399918593103
+  ]
+ ],
+ "inercia": 4530.179126602486,
+ "tamanos": [
+  154,
+  78,
+  136,
+  161
+ ],
+ "transformador": {
+  "carpeta": "analisis/fase36/artefactos/P2",
+  "codificadores.json": "4568d7e30a4d3c24b2fb3350d9a061c51e9692ebc8916d7fe46119c7c0b8fd49",
+  "entorno.json": "894d8a9c9d0d1eafca278a186aa1242eff2b689bfac35fb2746ac652a9d71cf2",
+  "escaladores.json": "c29d9fa9fc2a6779095581d350c3ee5f68ebbb6bf4f8384cc6a09659c1ba4003",
+  "esquema_variables.json": "cb414a0ca59694770e7eab2d31e0ebf0b81330a50ab498251a29f2845f2aa2f4",
+  "orden_columnas.json": "1ac84d5969001204c917d73d0f45ca3bb3ae99f6ea84e71c5e92ec4dc7aa1f57",
+  "procedencia.json": "ee112c1a1c05e801dca8361b6b3707dcb71c071534eaf1d11b1a171a52fcc893",
+  "valores_desconocidos.json": "446eaa95f17e2ca81d2824be88d566cae2a7516189c29dceffcb1a1c951eb9e3"
+ },
+ "reduccion_modelo": {
+  "archivo": "analisis/fase37/37A_reduccion/artefactos/P2/modelo.json",
+  "sha256": "83106488199eaf7336ca0626efc349efd52c0a30cc222c7e87672f5b8c1b4381"
+ },
+ "flujo": [
+  "Transformador congelado de la Fase 36",
+  "proyectar de la Fase 37A",
+  "centroide más cercano",
+  "señal de incertidumbre (provisional)"
+ ]
+}

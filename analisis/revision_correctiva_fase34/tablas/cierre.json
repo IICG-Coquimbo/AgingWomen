@@ -1,0 +1,302 @@
+{
+ "hallazgos": [
+  {
+   "id": "H01",
+   "clase": "Verificado sin error",
+   "hallazgo": "Diabetes: asociación rho +0,13 con 87,5 % de «No». La codificación y el q son correctos.",
+   "estado_antes": "Asociación verificada; sin nota de contexto",
+   "accion": "Nota en 34C con cifras, dominancia, exclusión y alcance no clínico",
+   "estado_despues": "Verificado; nota agregada"
+  },
+  {
+   "id": "H02",
+   "clase": "Metodológica discutible",
+   "hallazgo": "22 respuestas de trabajo imputadas como «Sí», sin marca; 12 distintas del simulador. Rho casi igual: 0,102 frente a 0,104.",
+   "estado_antes": "22 imputaciones sin documentar",
+   "accion": "Documentadas en 34B; indicadores solo de auditoría",
+   "estado_despues": "Conservado y documentado"
+  },
+  {
+   "id": "H03",
+   "clase": "Metodológica discutible",
+   "hallazgo": "21 respuestas de cuidado imputadas como «No», sin marca; 14 distintas del simulador. Fijan cantidad = 0. Rho casi igual: 0,016 frente a 0,018.",
+   "estado_antes": "21 imputaciones sin documentar",
+   "accion": "Documentadas en 34B, con su efecto sobre cantidad",
+   "estado_despues": "Conservado y documentado"
+  },
+  {
+   "id": "H04",
+   "clase": "Metodológica discutible",
+   "hallazgo": "doble_carga depende de una imputada en 43 filas y difiere del simulador en 9. Sigue fuera de las 33.",
+   "estado_antes": "Dependencia de doble carga sin documentar",
+   "accion": "Documentada; sigue excluida",
+   "estado_despues": "Conservado y documentado"
+  },
+  {
+   "id": "H05",
+   "clase": "Error comprobado",
+   "hallazgo": "«Quienes trabajan» cuenta 309 e incluye las 22 imputadas; las figuras de lugar y estrés dicen «faltante = 22». Solo 287 tienen respuestas laborales.",
+   "estado_antes": "«Quienes trabajan» = 309 sin aclarar",
+   "accion": "Denominadores aclarados en 34B, 34C, 34D y 34E; rótulos nuevos",
+   "estado_despues": "Corregido en versiones revisadas; texto de 35A sin tocar"
+  },
+  {
+   "id": "H06",
+   "clase": "Metodológica discutible",
+   "hallazgo": "Las 22 tienen lugar = 3 y estrés = 3 en el conjunto de la Fase 35; quienes no trabajan tienen 0. Hoy no se usan: Shannon y Random Forest laboral trabajan con 287.",
+   "estado_antes": "Valor 3 en las 22, sin tratamiento definido",
+   "accion": "Propuesta en la nota para la Fase 36; datos intactos",
+   "estado_despues": "Limitación pendiente: requiere decisión"
+  },
+  {
+   "id": "H07",
+   "clase": "Error comprobado",
+   "hallazgo": "imc_categoria se probó con «no informado» como categoría: q 0,073. Sin mezclar con faltantes, solo observado: p 0,007 y q 0,038.",
+   "estado_antes": "Solo q = 0,073, con «no informado»",
+   "accion": "Cuadro complementario; q histórico conservado",
+   "estado_despues": "Corregido con resultado complementario"
+  },
+  {
+   "id": "H08",
+   "clase": "Metodológica discutible",
+   "hallazgo": "Bajo peso (n = 2) salió sin aviso por la regla de mínimo 5 por grupo; por eso n = 527.",
+   "estado_antes": "Bajo peso excluido sin aviso",
+   "accion": "Exclusión y alternativas documentadas",
+   "estado_despues": "Conservado y documentado"
+  },
+  {
+   "id": "H09",
+   "clase": "Metodológica discutible",
+   "hallazgo": "En 34C, sobrecarga y cantidad valen 0 si no cuida. En sobrecarga rho 0,069 con las 529 y 0,156 entre cuidadoras.",
+   "estado_antes": "Diferencia 529 / cuidadoras sin explicar",
+   "accion": "Explicación agregada en 34C",
+   "estado_despues": "Conservado y documentado"
+  },
+  {
+   "id": "H10",
+   "clase": "Error comprobado",
+   "hallazgo": "46 de 65 figuras 34D muestran imputados como «n válido», sin indicarlo; 41 dicen «faltante = 0». Porcentajes aritméticamente correctos.",
+   "estado_antes": "41 figuras con «faltante = 0», sin separar imputadas",
+   "accion": "73 figuras nuevas y código actualizado; históricas intactas",
+   "estado_despues": "Corregido"
+  },
+  {
+   "id": "H11",
+   "clase": "Error comprobado",
+   "hallazgo": "imputados_34B es una cota contada sobre 546 cuando no hay marca: difiere en 9 variables, por 1 a 3 celdas (diabetes 24 frente a 23).",
+   "estado_antes": "imputados_34B es una cota",
+   "accion": "Tabla exacta publicada; columna histórica y su código sin cambios",
+   "estado_despues": "Corregido por anexo; el código aún calcula la cota"
+  },
+  {
+   "id": "H12",
+   "clase": "Documental",
+   "hallazgo": "El informe 34E dice «Sin imputaciones», pero carga dataset_fase35.csv, con las imputaciones de 34B, salvo IMC y laborales.",
+   "estado_antes": "«Sin imputaciones» en 34E",
+   "accion": "Frase corregida en la versión revisada y en el generador",
+   "estado_despues": "Corregido"
+  },
+  {
+   "id": "H13",
+   "clase": "Documental",
+   "hallazgo": "Texto y CSV de 34C dicen etapa «descriptiva»; el script aún la trata como control, y volver a ejecutarlo reintroduce el texto antiguo.",
+   "estado_antes": "Etapa como control en script y textos",
+   "accion": "Textos y comentarios alineados; rótulo del script sin cambiar",
+   "estado_despues": "Corrección parcial: rótulo pendiente de autorización"
+  },
+  {
+   "id": "H14",
+   "clase": "Documental",
+   "hallazgo": "La figura de 34E dice «38 predictoras»; el texto habla de 35 predictoras y hoy el conjunto inicial es de 33. El código adaptado de 34E no se ha ejecutado completo.",
+   "estado_antes": "38, 35 y 33 sin distinguir",
+   "accion": "Distinción agregada; figura histórica sin regenerar",
+   "estado_despues": "Corregido en texto; figura histórica conservada"
+  },
+  {
+   "id": "H15",
+   "clase": "Documental",
+   "hallazgo": "34C dice que el IMC entra como categoría con «no informado» y no se imputa; la Fase 35 lo imputa por la media desde el 27-10.",
+   "estado_antes": "34C decía que el IMC no se imputa",
+   "accion": "Nota sobre la decisión del 27-10 en 34B y 34C",
+   "estado_despues": "Corregido"
+  },
+  {
+   "id": "H16",
+   "clase": "Documental",
+   "hallazgo": "La sección 6.3 dice «cambió por error 1» y su tabla lista 197: 1 celda de cintura y 196 por la regla de pareja.",
+   "estado_antes": "Tabla 6.3 sumaba error y regla",
+   "accion": "1 error y 196 por regla, separados",
+   "estado_despues": "Corregido"
+  },
+  {
+   "id": "H17",
+   "clase": "Metodológica discutible",
+   "hallazgo": "Random Forest identificó imputadas con celdas vacías del conjunto sucio: en 10 variables encontró menos. En la sensibilidad, afecta a cantidad (6 de 7).",
+   "estado_antes": "Identificación incompleta sin alcance claro",
+   "accion": "Versión documental de Random Forest; sin reejecutar",
+   "estado_despues": "Documentado; efecto sin medir"
+  },
+  {
+   "id": "A1",
+   "clase": "Adicional (fuera de los 17)",
+   "hallazgo": "La figura e informe de horas sentada decían «valores observados» e incluían 27 imputadas.",
+   "estado_antes": "Sin detectar en el diagnóstico",
+   "accion": "Título y texto corregidos; cifras históricas sin recalcular",
+   "estado_despues": "Corregido"
+  }
+ ],
+ "integridad": [
+  {
+   "comprobacion": "Archivos fuera de la carpeta de revisión: ninguno nuevo ni eliminado",
+   "resultado": "OK",
+   "detalle": "faltan 0; nuevos 0"
+  },
+  {
+   "comprobacion": "Solo cambió código autorizado",
+   "resultado": "OK",
+   "detalle": "8 modificados; no autorizados: []"
+  },
+  {
+   "comprobacion": "Git: versionados modificados = código autorizado",
+   "resultado": "OK",
+   "detalle": "analisis/eda/informe_multivariado.py, analisis/eda/informe_usuaria.py, analisis/eda/multivariado.py, analisis/eda/univariado.py, analisis/eda/variables.py, analisis/eda_univariado.py, analisis/eda_usuaria.py, analisis/limpieza/informe.py"
+  },
+  {
+   "comprobacion": "HEAD sin cambios: sin commit",
+   "resultado": "OK",
+   "detalle": "745d689"
+  },
+  {
+   "comprobacion": "SHA-256 idéntico: Conjuntos sintéticos verdadero y sucio",
+   "resultado": "OK",
+   "detalle": "3 archivos"
+  },
+  {
+   "comprobacion": "SHA-256 idéntico: Conjunto limpio de 546 registros",
+   "resultado": "OK",
+   "detalle": "3 archivos"
+  },
+  {
+   "comprobacion": "SHA-256 idéntico: Conjuntos analíticos, incluido el de 529 y 33 variables",
+   "resultado": "OK",
+   "detalle": "505 archivos"
+  },
+  {
+   "comprobacion": "SHA-256 idéntico: Shannon y FCBF: revisión del 03-11",
+   "resultado": "OK",
+   "detalle": "99 archivos"
+  },
+  {
+   "comprobacion": "SHA-256 idéntico: Shannon y FCBF: complementarios",
+   "resultado": "OK",
+   "detalle": "23 archivos"
+  },
+  {
+   "comprobacion": "SHA-256 idéntico: Resultados del EDA y de la Fase 35",
+   "resultado": "OK",
+   "detalle": "46 archivos"
+  },
+  {
+   "comprobacion": "SHA-256 idéntico: Random Forest",
+   "resultado": "OK",
+   "detalle": "45 archivos"
+  },
+  {
+   "comprobacion": "SHA-256 idéntico: Figuras históricas",
+   "resultado": "OK",
+   "detalle": "200 archivos"
+  },
+  {
+   "comprobacion": "SHA-256 idéntico: Informes Word de la Fase 35B",
+   "resultado": "OK",
+   "detalle": "1 archivos"
+  },
+  {
+   "comprobacion": "SHA-256 idéntico: informes históricos .md",
+   "resultado": "OK",
+   "detalle": "19 archivos"
+  },
+  {
+   "comprobacion": "SHA-256 idéntico: todo lo protegido",
+   "resultado": "OK",
+   "detalle": "990 archivos"
+  },
+  {
+   "comprobacion": "Conjunto analítico: 529 registros",
+   "resultado": "OK",
+   "detalle": "529"
+  },
+  {
+   "comprobacion": "Conjunto limpio: 546 registros",
+   "resultado": "OK",
+   "detalle": "546"
+  },
+  {
+   "comprobacion": "Shannon 10000: 33 variables, 30 generales, 2 laborales y 1 de cuidadoras",
+   "resultado": "OK",
+   "detalle": "{'general': 30, 'laboral': 2, 'cuidadoras': 1}"
+  },
+  {
+   "comprobacion": "Shannon 10000: siguen excluidas diabetes, doble carga y previsión",
+   "resultado": "OK",
+   "detalle": "[]"
+  },
+  {
+   "comprobacion": "Shannon 50000: 33 variables, 30 generales, 2 laborales y 1 de cuidadoras",
+   "resultado": "OK",
+   "detalle": "{'general': 30, 'laboral': 2, 'cuidadoras': 1}"
+  },
+  {
+   "comprobacion": "Shannon 50000: siguen excluidas diabetes, doble carga y previsión",
+   "resultado": "OK",
+   "detalle": "[]"
+  }
+ ],
+ "codigo": [
+  {
+   "ruta": "analisis/eda/informe_multivariado.py",
+   "motivo": "Textos del informe (H05, H12, H14)"
+  },
+  {
+   "ruta": "analisis/eda/informe_usuaria.py",
+   "motivo": "Textos del informe (H13, H15)"
+  },
+  {
+   "ruta": "analisis/eda/multivariado.py",
+   "motivo": "Comentarios (H05, H14)"
+  },
+  {
+   "ruta": "analisis/eda/univariado.py",
+   "motivo": "Rótulos reproducibles de las figuras (H10)"
+  },
+  {
+   "ruta": "analisis/eda/variables.py",
+   "motivo": "Comentarios (H13, H15)"
+  },
+  {
+   "ruta": "analisis/eda_univariado.py",
+   "motivo": "Textos del informe y docstring (H10, A1)"
+  },
+  {
+   "ruta": "analisis/eda_usuaria.py",
+   "motivo": "Comentarios (H13)"
+  },
+  {
+   "ruta": "analisis/limpieza/informe.py",
+   "motivo": "Texto de la sección 6.3 (H16)"
+  }
+ ],
+ "creados": {
+  "Figura revisada": 73,
+  "Tabla": 9,
+  "Script de la corrección": 7,
+  "Informe revisado": 5,
+  "Manifiesto": 4,
+  "Entregable Word": 2
+ },
+ "protegidos": 990,
+ "linea_base": 998,
+ "head": "745d689",
+ "hash33": "b611e8fd0424970ce2df1943985dfdf5fb2f662caf9e27c217d59a26ca3270f6",
+ "hash_limpio": "4ecfd5169997bab0082264fe87499b7f29a67dc34141b8a491c60025f4065fd1"
+}

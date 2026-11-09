@@ -1,0 +1,4 @@
+algoritmo,conjuntos_frecuentes,reglas,segundos,memoria_pico_mb,minsup_absoluto,largo_maximo_antecedente
+apriori,42937,9761,0.61,22.2,27,3
+fpgrowth,42937,9761,3.21,19.1,27,3
+exhaustiva,42937,9761,0.23,10.1,27,3

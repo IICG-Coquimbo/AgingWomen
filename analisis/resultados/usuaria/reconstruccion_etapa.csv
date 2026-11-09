@@ -1,0 +1,8 @@
+﻿escenario,n_variables,acierto
+Línea base: siempre la categoría más frecuente,0,0.5917
+Solo regularidad de la menstruación,1,0.9225
+Solo tipo de sangrado y método anticonceptivo,2,0.7864
+Solo edad,1,0.6994
+Predictoras finales más sangrado y método anticonceptivo,37,0.7996
+Predictoras finales,35,0.6635
+Predictoras finales sin edad,34,0.5822

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block titulo %}Retiro presencial{% endblock %}
+
+{% block volver %}<a href="{% url 'buscar_paciente' %}">← Volver a la búsqueda</a>{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta" data-retiro-presencial>
+    <h1>Registrar retiro presencial</h1>
+    {% if comprobante %}
+        <p role="status" data-retiro-registrado>Se eliminaron la ficha, todas las respuestas, rondas y resultados,
+            y el consentimiento presencial de esta persona.</p>
+        <section class="aviso-evolucion" data-constancia-retiro>
+            <h2>Comprobante del retiro</h2>
+            <p>Retiro <strong>{{ constancia.codigo }}</strong>, registrado el {{ constancia.fecha|slice:":10" }} a las
+                {{ constancia.fecha|slice:"11:16" }}, con el documento de revocación <strong>{{ constancia.folio_revocacion }}</strong>.
+                No contiene respuestas ni datos de salud. <strong>Entrégalo a la participante</strong> (impreso o copiado)
+                y adjunta una copia al documento de revocación: la plataforma no conserva una copia.</p>
+            <textarea readonly rows="3" class="comprobante-retiro" aria-label="Comprobante firmado del retiro" data-comprobante>{{ comprobante }}</textarea>
+        </section>
+    {% else %}
+        <p class="ayuda">
+            Úsalo solo cuando una participante <strong>sin cuenta</strong> en la plataforma pide retirarse del estudio
+            y firma un documento de revocación en tu presencia. Si tiene cuenta, se retira ella misma desde su cuenta.
+            Se eliminan su ficha, todas sus respuestas, rondas y resultados y su consentimiento presencial. Lo que
+            quede pendiente de envío en algún dispositivo para ella ya no se podrá guardar.
+        </p>
+        <form method="post" autocomplete="off" novalidate>
+            {% csrf_token %}
+            {% for e in form.non_field_errors %}<p class="errores">{{ e }}</p>{% endfor %}
+            {% for campo in form %}
+                <div class="campo">
+                    {% if campo.field.widget.input_type == 'checkbox' %}
+                        <label>{{ campo }} {{ campo.label }}</label>
+                    {% else %}
+                        <label for="{{ campo.id_for_label }}">{{ campo.label }}</label>
+                        {{ campo }}
+                    {% endif %}
+                    {% if campo.help_text %}<p class="ayuda">{{ campo.help_text }}</p>{% endif %}
+                    {% for e in campo.errors %}<p class="errores">{{ e }}</p>{% endfor %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="boton">Registrar retiro y eliminar sus datos</button>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}

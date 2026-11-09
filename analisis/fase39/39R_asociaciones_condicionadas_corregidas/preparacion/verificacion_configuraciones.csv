@@ -1,0 +1,8 @@
+configuracion,items_fase39,items_retirados,items_39R,identica_a_historica_sin_retiradas,retirados
+principal,94,4,90,True,"med_diabetes=NO, med_diabetes=SI, prevision=FONASA, prevision=ISAPRE"
+S1,90,0,90,True,
+S2a,120,7,113,True,"med_diabetes=NO, med_diabetes=SI, prevision=FONASA, prevision=ISAPRE, prevision=NINGUNA, prevision=FFAA, prevision=NS"
+S5,84,4,80,True,"med_diabetes=NO, med_diabetes=SI, prevision=FONASA, prevision=ISAPRE"
+S6,84,4,80,True,"med_diabetes=NO, med_diabetes=SI, prevision=FONASA, prevision=ISAPRE"
+S7a,100,4,96,True,"med_diabetes=NO, med_diabetes=SI, prevision=FONASA, prevision=ISAPRE"
+S7b,97,4,93,True,"med_diabetes=NO, med_diabetes=SI, prevision=FONASA, prevision=ISAPRE"

@@ -1,0 +1,31 @@
+{
+ "archivos_linea_base": 998,
+ "modificados_autorizados": [
+  "analisis/eda/informe_multivariado.py",
+  "analisis/eda/informe_usuaria.py",
+  "analisis/eda/multivariado.py",
+  "analisis/eda/univariado.py",
+  "analisis/eda/variables.py",
+  "analisis/eda_univariado.py",
+  "analisis/eda_usuaria.py",
+  "analisis/limpieza/informe.py"
+ ],
+ "no_autorizados": [],
+ "nuevos_fuera_de_revision": [],
+ "faltan": [],
+ "protegidos_identicos": 990,
+ "head": "745d689937a18c35b62fd25eccc401b169b20e11",
+ "clases": {
+  "Metodológica discutible": 7,
+  "Documental": 5,
+  "Error comprobado": 4,
+  "Verificado sin error": 1
+ },
+ "archivos_creados": 100,
+ "claves": {
+  "datos/analitico/dataset_fase35_33_variables.csv": "b611e8fd0424970ce2df1943985dfdf5fb2f662caf9e27c217d59a26ca3270f6",
+  "datos/limpio_usuaria/dataset_usuaria_limpio.csv": "4ecfd5169997bab0082264fe87499b7f29a67dc34141b8a491c60025f4065fd1",
+  "datos/sintetico/dataset_usuaria_verdad.csv": "ea6c28350e2caba65110152f7ea62c6e07437cc313752b40060b829d53e4229c",
+  "datos/sintetico/dataset_usuaria_sucio.csv": "04e961414339d4d6a86041600fce71f998508564c837bbab668e9a08d9736a57"
+ }
+}

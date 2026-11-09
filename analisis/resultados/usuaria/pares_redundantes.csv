@@ -1,0 +1,9 @@
+﻿variable_1,variable_2,metrica,valor,n_par,variable_conservada,variables_eliminadas,justificacion
+imc,peso_kg,rho de Spearman,0.9337,267,imc,peso_kg,Decisión de la profesora (27-10). Redundante con el IMC (el IMC se calcula con peso y talla).
+imc,talla_actual_cm,rho de Spearman,-0.0377,267,imc,talla_actual_cm,"Decisión de la profesora (27-10). El IMC ya incorpora la talla en su cálculo. Ojo: medida sola, la talla casi no se asocia con el IMC (ver valor), así que sale por decisión y no por redundancia estadística."
+cantidad_personas_cuida,cuida_otras_personas,rho de Spearman,0.9464,529,cantidad_personas_cuida,cuida_otras_personas,Decisión de la profesora (27-10). El módulo de cuidado queda representado por la cantidad de personas que cuida (0 = no cuida).
+cantidad_personas_cuida,sobrecarga_fisica_emocional,rho de Spearman,0.9181,529,cantidad_personas_cuida,sobrecarga_fisica_emocional,"Decisión de la profesora (27-10). El módulo de cuidado queda representado por la cantidad de personas que cuida. Ojo: la cantidad mide intensidad de cuidado, no sobrecarga percibida."
+cantidad_personas_cuida,a_quien_cuida,no calculable (selección múltiple),,0,cantidad_personas_cuida,a_quien_cuida,Decisión de la profesora (27-10). Selección múltiple del mismo módulo de cuidado; queda representado por la cantidad.
+realiza_fuerza,frecuencia_fuerza,rho de Spearman,0.9958,529,frecuencia_fuerza,realiza_fuerza,frecuencia_fuerza representa mejor el constructo (lista de preferencia de configuracion.py).
+realiza_aerobico,frecuencia_aerobico,rho de Spearman,0.9926,529,frecuencia_aerobico,realiza_aerobico,frecuencia_aerobico representa mejor el constructo (lista de preferencia de configuracion.py).
+realiza_bajo_impacto,frecuencia_bajo_impacto,rho de Spearman,0.9570,529,frecuencia_bajo_impacto,realiza_bajo_impacto,frecuencia_bajo_impacto representa mejor el constructo (lista de preferencia de configuracion.py).

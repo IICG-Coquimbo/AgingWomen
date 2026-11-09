@@ -1,0 +1,10 @@
+{
+ "fin": "2026-11-05T22:42:00",
+ "segundos_esta_sesion": 3697.2,
+ "memoria_libre_minima_mb": 1224,
+ "procesos": 1,
+ "remuestreos": 500,
+ "permutaciones": 5000,
+ "alfa": 0.1,
+ "id_analisis": 1
+}

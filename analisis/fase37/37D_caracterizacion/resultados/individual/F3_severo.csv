@@ -1,0 +1,37 @@
+familia,resultado,variable,etiqueta,bloque,usada_por_A,tipo,prueba,medida,efecto,p,n,aviso,q,banda,destacada
+F3,severo_mrs,trabaja_actualmente,Trabaja actualmente,Las tres preguntas,True,binaria,χ²,V,0.10653985576759509,0.014269098143581346,529,,0.05707639257432538,pequeña,False
+F3,severo_mrs,tiene_pareja,Tiene pareja,Las tres preguntas,True,binaria,χ²,V,0.06543745985574792,0.1323082463228846,529,,0.25068930882230767,despreciable,False
+F3,severo_mrs,dias_ejercicio_semana,Días de ejercicio a la semana,Las tres preguntas,True,ordinal,Mann-Whitney,r_rb,-0.16028584548272296,0.0003450016393047987,529,,0.004140019671657585,pequeña,True
+F3,severo_mrs,frecuencia_aerobico,Frecuencia de ejercicio aeróbico,Actividad física adicional,True,ordinal,Mann-Whitney,r_rb,-0.05307943978877283,0.12996909821455815,529,,0.25068930882230767,despreciable,False
+F3,severo_mrs,frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,Actividad física adicional,True,ordinal,Mann-Whitney,r_rb,-0.16329927677648948,0.00028754709644308293,529,,0.004140019671657585,pequeña,True
+F3,severo_mrs,frecuencia_fuerza,Frecuencia de ejercicio de fuerza,Actividad física adicional,True,ordinal,Mann-Whitney,r_rb,-0.06917977270118236,0.028288663601274116,529,,0.0925810808768971,despreciable,False
+F3,severo_mrs,horas_sedentarismo,Horas sentada al día,Sedentarismo,True,cuantitativa,Mann-Whitney,r_rb,-0.012857306853403694,0.7966991829012993,529,,0.8435638407190228,despreciable,False
+F3,severo_mrs,cantidad_personas_cuida,Personas a su cuidado,Cuidados,True,ordinal,Mann-Whitney,r_rb,0.04207324073011143,0.36066771231676187,529,,0.519361505736137,despreciable,False
+F3,severo_mrs,quien_prepara_comidas,Quién prepara las comidas,Alimentación,True,nominal,χ²,V,0.13022746207374097,0.061818017867443606,529,,0.1589606173734264,pequeña,False
+F3,severo_mrs,carnes_semana,Carnes a la semana,Alimentación,True,ordinal,Mann-Whitney,r_rb,-0.018511077947422794,0.6951256674435426,529,,0.7583189099384102,despreciable,False
+F3,severo_mrs,falta_tiempo_influye,La falta de tiempo influye en su alimentación,Alimentación,True,ordinal,Mann-Whitney,r_rb,0.09449259556882095,0.04771251022803575,529,,0.13212695140071437,despreciable,False
+F3,severo_mrs,frecuencia_comida_fuera,Comidas fuera de casa,Alimentación,True,ordinal,Mann-Whitney,r_rb,0.07100218115026968,0.12931135372592298,529,,0.25068930882230767,despreciable,False
+F3,severo_mrs,frutas_dia,Frutas al día,Alimentación,True,ordinal,Mann-Whitney,r_rb,-0.06272241992882566,0.11525627829940416,529,,0.25068930882230767,despreciable,False
+F3,severo_mrs,golosinas_semana,Golosinas a la semana,Alimentación,True,ordinal,Mann-Whitney,r_rb,0.019831247847549083,0.6768790145744865,529,,0.7583189099384102,despreciable,False
+F3,severo_mrs,jugos_gaseosas_dia,Jugos o gaseosas al día,Alimentación,True,ordinal,Mann-Whitney,r_rb,-0.019788198829066683,0.6716269454449101,529,,0.7583189099384102,despreciable,False
+F3,severo_mrs,lacteos_dia,Lácteos al día,Alimentación,True,ordinal,Mann-Whitney,r_rb,-0.005366777637469844,0.898864407306733,529,,0.9245462475154967,despreciable,False
+F3,severo_mrs,legumbres_semana,Legumbres a la semana,Alimentación,True,ordinal,Mann-Whitney,r_rb,0.04274767535300206,0.3064063658572036,529,,0.4596095487858054,despreciable,False
+F3,severo_mrs,panes_dia,Panes al día,Alimentación,True,ordinal,Mann-Whitney,r_rb,0.000774882332682747,0.9854521098409709,529,,0.985452109840971,despreciable,False
+F3,severo_mrs,pescado_semana,Pescado a la semana,Alimentación,True,ordinal,Mann-Whitney,r_rb,-0.0474543680404087,0.28840966399050627,529,,0.45142382189818375,despreciable,False
+F3,severo_mrs,platos_verduras_dia,Platos de verduras al día,Alimentación,True,ordinal,Mann-Whitney,r_rb,-0.027709218229824306,0.42349315685597755,529,,0.5863751402621228,despreciable,False
+F3,severo_mrs,vasos_agua_dia,Vasos de agua al día,Alimentación,True,ordinal,Mann-Whitney,r_rb,-0.12970669268740675,0.007176313270346227,529,,0.04305787962207736,pequeña,True
+F3,severo_mrs,tabaco_frecuencia,Frecuencia de tabaco,Tabaco y alcohol,True,ordinal,Mann-Whitney,r_rb,0.09668809551142243,0.010781564319298645,529,,0.048517039436843906,despreciable,False
+F3,severo_mrs,alcohol_frecuencia,Frecuencia de alcohol,Tabaco y alcohol,True,ordinal,Mann-Whitney,r_rb,0.0971616347147286,0.03342966362219776,529,,0.10028899086659326,despreciable,False
+F3,severo_mrs,edad,Edad,Otras generales,True,cuantitativa,Mann-Whitney,r_rb,0.02871369532774648,0.5683747242302555,529,,0.6921782150483206,despreciable,False
+F3,severo_mrs,operada_no_mas_hijos,Operada para no tener más hijos,Otras generales,True,binaria,χ²,V,0.026270442550013616,0.5456972669391408,529,,0.6921782150483206,despreciable,False
+F3,severo_mrs,usa_medicamentos_presion,Usa medicamentos para la presión,Otras generales,True,binaria,χ²,V,0.07821643551452906,0.07202215818125363,529,,0.1728531796350087,despreciable,False
+F3,severo_mrs,tiene_actividad_sexual,Tiene actividad sexual,Actividad sexual,True,binaria,χ²,V,0.027849087295248185,0.5218287366746529,529,,0.6921782150483206,despreciable,False
+F3,severo_mrs,distension_abdominal,Distensión abdominal,Digestión,True,ordinal,Mann-Whitney,r_rb,-0.063454253243026,0.17787692736166183,529,,0.3049318754771346,despreciable,False
+F3,severo_mrs,evacuacion_intestinal,Evacuación intestinal,Digestión,True,ordinal,Mann-Whitney,r_rb,-0.025169326139364068,0.5768151792069338,529,,0.6921782150483206,despreciable,False
+F3,severo_mrs,imc,IMC (solo observado),Externa: salud,False,cuantitativa,Mann-Whitney,r_rb,0.26477541371158386,0.00018900185302519768,267,,0.004140019671657585,pequeña,True
+F3,severo_mrs,etapa_menopausica,Etapa menopáusica,Externa: etapa,False,nominal,χ²,V,0.10222931673663509,0.23723644659425724,529,,0.38820509442696643,pequeña,False
+F3,severo_mrs,usa_medicamentos_diabetes,Usa medicamentos para la diabetes,Externa: salud,False,binaria,χ²,V,0.10249901150337229,0.01839958196446775,529,,0.0662384950720839,pequeña,False
+F3,severo_mrs,prevision,Previsión de salud,Externa: acceso a salud,False,nominal,χ²,V,0.08363919526763133,0.15718784662256943,529,,0.28293812392062495,despreciable,False
+F3,severo_mrs,lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,Externa: módulo laboral,False,ordinal,Mann-Whitney,r_rb,-0.21651896843572638,0.0011175605427791772,287,,0.010058044885012595,pequeña,True
+F3,severo_mrs,estres_entorno_laboral,Estrés en el entorno laboral,Externa: módulo laboral,False,ordinal,Mann-Whitney,r_rb,0.1844070496863488,0.005576576991205679,287,,0.04015135433668089,pequeña,True
+F3,severo_mrs,sobrecarga_fisica_emocional,Sobrecarga física o emocional por cuidar,Externa: módulo de cuidados,False,ordinal,Mann-Whitney,r_rb,0.18149580915538355,0.009330094891835934,251,,0.04798334515801338,pequeña,True

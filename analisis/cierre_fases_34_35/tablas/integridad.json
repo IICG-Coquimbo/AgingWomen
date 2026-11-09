@@ -1,0 +1,129 @@
+{
+ "n_antes": 1130,
+ "n_despues": 1130,
+ "n_base": 998,
+ "nuevo": {
+  "agregados": [],
+  "eliminados": [],
+  "modificados": [
+   "analisis/eda/univariado.py",
+   "analisis/eda_usuaria.py"
+  ]
+ },
+ "previo_modificados": [
+  "analisis/eda/informe_multivariado.py",
+  "analisis/eda/informe_usuaria.py",
+  "analisis/eda/multivariado.py",
+  "analisis/eda/univariado.py",
+  "analisis/eda/variables.py",
+  "analisis/eda_univariado.py",
+  "analisis/eda_usuaria.py",
+  "analisis/limpieza/informe.py"
+ ],
+ "previo_eliminados": [],
+ "n_previo_agregados": 132,
+ "conteos": {
+  "Datasets": 511,
+  "Shannon y FCBF, revisión de 33 variables": 99,
+  "Shannon y FCBF, resultados de la Fase 35B": 58,
+  "Random Forest": 44,
+  "Informes históricos": 35,
+  "Figuras históricas": 200,
+  "Entregables de la corrección controlada": 132
+ },
+ "filas": [
+  {
+   "punto": 1,
+   "comprobacion": "Permanecen 529 participantes analíticas",
+   "resultado": "OK",
+   "detalle": "529 filas en dataset_fase35.csv"
+  },
+  {
+   "punto": 2,
+   "comprobacion": "Permanecen 33 variables elegibles",
+   "resultado": "OK",
+   "detalle": "33 filas en relevancia_33.csv"
+  },
+  {
+   "punto": 3,
+   "comprobacion": "No cambiaron los datasets",
+   "resultado": "OK",
+   "detalle": "511 archivos revisados; 0 con cambios"
+  },
+  {
+   "punto": 4,
+   "comprobacion": "No cambiaron los resultados de Shannon ni de FCBF de la revisión de 33 variables",
+   "resultado": "OK",
+   "detalle": "99 archivos revisados; 0 con cambios"
+  },
+  {
+   "punto": 5,
+   "comprobacion": "No cambiaron los resultados de Shannon y FCBF previos",
+   "resultado": "OK",
+   "detalle": "58 archivos revisados; 0 con cambios"
+  },
+  {
+   "punto": 6,
+   "comprobacion": "No cambiaron los resultados de Random Forest",
+   "resultado": "OK",
+   "detalle": "44 archivos revisados; 0 con cambios"
+  },
+  {
+   "punto": 7,
+   "comprobacion": "No se sobrescribieron informes históricos",
+   "resultado": "OK",
+   "detalle": "35 archivos revisados; 0 con cambios"
+  },
+  {
+   "punto": 8,
+   "comprobacion": "No se sobrescribieron figuras históricas",
+   "resultado": "OK",
+   "detalle": "200 archivos revisados; 0 con cambios"
+  },
+  {
+   "punto": "8b",
+   "comprobacion": "Se conservaron los entregables de la corrección controlada",
+   "resultado": "OK",
+   "detalle": "132 archivos revisados; 0 con cambios"
+  },
+  {
+   "punto": 9,
+   "comprobacion": "Los cambios de código del cierre se limitan a H11 y H13",
+   "resultado": "OK",
+   "detalle": "Cambiaron: analisis/eda/univariado.py, analisis/eda_usuaria.py"
+  },
+  {
+   "punto": "9b",
+   "comprobacion": "Respecto de la línea base de la corrección, solo difieren los 8 scripts autorizados",
+   "resultado": "OK",
+   "detalle": "8 modificados; 0 eliminados; 0 fuera de lo autorizado; línea base de 998 archivos"
+  },
+  {
+   "punto": 10,
+   "comprobacion": "No se ejecutaron procesos destructivos",
+   "resultado": "OK",
+   "detalle": "0 archivos eliminados esperados, 0 detectados; figuras: 200 antes y 200 después"
+  },
+  {
+   "punto": 11,
+   "comprobacion": "No se inició ninguna fase posterior",
+   "resultado": "OK",
+   "detalle": "0 archivos nuevos de fases posteriores"
+  },
+  {
+   "punto": 12,
+   "comprobacion": "No se realizó commit ni push",
+   "resultado": "OK",
+   "detalle": "HEAD 745d689; área de preparación vacía: True; rama remota: no existe"
+  },
+  {
+   "punto": "12b",
+   "comprobacion": "Los archivos versionados modificados siguen siendo los 8 autorizados",
+   "resultado": "OK",
+   "detalle": "8 archivos modificados frente a HEAD"
+  }
+ ],
+ "cumple": true,
+ "protegidos_sin_cambio": 1128,
+ "base_sin_cambio": 990
+}

@@ -1,0 +1,1067 @@
+escenario,componente,bloque,contribucion_pct
+P1,1,Identificación,0.11458246543604891
+P1,1,Medidas autodeclaradas,0.060282512287183065
+P1,1,Actividad física,92.06122648400934
+P1,1,Etapa reproductiva y salud ginecológica,0.353387127962732
+P1,1,Medicamentos y digestión,0.847173782152929
+P1,1,Alimentación,5.913077873137262
+P1,1,Sustancias,0.3555298792867957
+P1,1,Cuidado de otras personas,0.2947398757276188
+P1,2,Identificación,10.478585401185013
+P1,2,Medidas autodeclaradas,0.03436028423498553
+P1,2,Actividad física,0.7493761801879774
+P1,2,Etapa reproductiva y salud ginecológica,59.09726635203265
+P1,2,Medicamentos y digestión,3.4864054542091463
+P1,2,Alimentación,22.472713754636807
+P1,2,Sustancias,2.2069362034980324
+P1,2,Cuidado de otras personas,1.4743563700154605
+P1,3,Identificación,19.185339867367365
+P1,3,Medidas autodeclaradas,0.3520186876546146
+P1,3,Actividad física,5.377409590297651
+P1,3,Etapa reproductiva y salud ginecológica,17.83345832768819
+P1,3,Medicamentos y digestión,1.0797657758555974
+P1,3,Alimentación,40.51373705597853
+P1,3,Sustancias,3.737389793419477
+P1,3,Cuidado de otras personas,11.920880901738668
+P1,4,Identificación,13.59318097327981
+P1,4,Medidas autodeclaradas,0.26621728374653825
+P1,4,Actividad física,0.9179387724304795
+P1,4,Etapa reproductiva y salud ginecológica,11.3367097488038
+P1,4,Medicamentos y digestión,13.020733564193407
+P1,4,Alimentación,51.62891161541111
+P1,4,Sustancias,3.088415303701731
+P1,4,Cuidado de otras personas,6.147892738433195
+P1,5,Identificación,5.902813331704728
+P1,5,Medidas autodeclaradas,0.11694746607669348
+P1,5,Actividad física,16.02706266815501
+P1,5,Etapa reproductiva y salud ginecológica,15.934393014769515
+P1,5,Medicamentos y digestión,3.717596428127134
+P1,5,Alimentación,53.17126912200491
+P1,5,Sustancias,3.336780243734514
+P1,5,Cuidado de otras personas,1.7931377254275689
+P1,6,Identificación,15.429920807247642
+P1,6,Medidas autodeclaradas,0.07945711584731885
+P1,6,Actividad física,4.203114254224616
+P1,6,Etapa reproductiva y salud ginecológica,2.9354468524980986
+P1,6,Medicamentos y digestión,7.288942391781141
+P1,6,Alimentación,63.22611617073526
+P1,6,Sustancias,5.107858257611159
+P1,6,Cuidado de otras personas,1.7291441500547549
+P1,7,Identificación,0.19884763933974858
+P1,7,Medidas autodeclaradas,0.008310267573636999
+P1,7,Actividad física,0.9411416907450455
+P1,7,Etapa reproductiva y salud ginecológica,4.696858151106537
+P1,7,Medicamentos y digestión,9.448863681127618
+P1,7,Alimentación,49.506637203047404
+P1,7,Sustancias,30.632410062087462
+P1,7,Cuidado de otras personas,4.566931304972412
+P1,8,Identificación,19.933424272995204
+P1,8,Medidas autodeclaradas,0.2477198468529862
+P1,8,Actividad física,6.596391689501849
+P1,8,Etapa reproductiva y salud ginecológica,3.685021434402529
+P1,8,Medicamentos y digestión,35.827430010483596
+P1,8,Alimentación,25.945644197585146
+P1,8,Sustancias,2.13513744138791
+P1,8,Cuidado de otras personas,5.629231106790833
+P1,9,Identificación,4.016116469555138
+P1,9,Medidas autodeclaradas,0.0031239482400576874
+P1,9,Actividad física,8.355909282045893
+P1,9,Etapa reproductiva y salud ginecológica,12.124855135968952
+P1,9,Medicamentos y digestión,13.251455525772577
+P1,9,Alimentación,52.036471083439054
+P1,9,Sustancias,8.291812892560182
+P1,9,Cuidado de otras personas,1.9202556624181657
+P1,10,Identificación,6.96364343399099
+P1,10,Medidas autodeclaradas,0.6710308562820244
+P1,10,Actividad física,5.087924272450149
+P1,10,Etapa reproductiva y salud ginecológica,2.7967666476205637
+P1,10,Medicamentos y digestión,2.66686995897973
+P1,10,Alimentación,40.038050658966775
+P1,10,Sustancias,29.856197668488043
+P1,10,Cuidado de otras personas,11.919516503221764
+P1,11,Identificación,1.5248672281296902
+P1,11,Medidas autodeclaradas,0.0007323326295770602
+P1,11,Actividad física,5.856322449241539
+P1,11,Etapa reproductiva y salud ginecológica,0.9322995709731947
+P1,11,Medicamentos y digestión,11.118050140941369
+P1,11,Alimentación,77.47317076070527
+P1,11,Sustancias,0.9942695611829241
+P1,11,Cuidado de otras personas,2.1002879561964725
+P1,12,Identificación,0.029327941524973897
+P1,12,Medidas autodeclaradas,0.15005952454535765
+P1,12,Actividad física,2.514623986204003
+P1,12,Etapa reproductiva y salud ginecológica,0.6221531711829458
+P1,12,Medicamentos y digestión,22.691595194678282
+P1,12,Alimentación,68.6266353249514
+P1,12,Sustancias,4.422445125944787
+P1,12,Cuidado de otras personas,0.9431597309682775
+P1,13,Identificación,2.300107773457981
+P1,13,Medidas autodeclaradas,0.2139630832596071
+P1,13,Actividad física,10.065111555080595
+P1,13,Etapa reproductiva y salud ginecológica,1.5233503090150025
+P1,13,Medicamentos y digestión,28.87367675692109
+P1,13,Alimentación,52.263767023224474
+P1,13,Sustancias,2.6062244249998656
+P1,13,Cuidado de otras personas,2.153799074041519
+P1,14,Identificación,1.0720876462898006
+P1,14,Medidas autodeclaradas,1.4176455885568284
+P1,14,Actividad física,3.5012077921084335
+P1,14,Etapa reproductiva y salud ginecológica,4.498742933265398
+P1,14,Medicamentos y digestión,33.27651530220339
+P1,14,Alimentación,43.51976267655025
+P1,14,Sustancias,12.28975814315142
+P1,14,Cuidado de otras personas,0.42427991787459096
+P1,15,Identificación,1.6489914721872077
+P1,15,Medidas autodeclaradas,2.0174447519472065
+P1,15,Actividad física,14.633925103018061
+P1,15,Etapa reproductiva y salud ginecológica,31.986451520188428
+P1,15,Medicamentos y digestión,10.367713403539895
+P1,15,Alimentación,38.71674763912627
+P1,15,Sustancias,0.6097698575592717
+P1,15,Cuidado de otras personas,0.018956252433738854
+P1,16,Identificación,5.417931196836502
+P1,16,Medidas autodeclaradas,0.0138604985013726
+P1,16,Actividad física,5.702045955423114
+P1,16,Etapa reproductiva y salud ginecológica,3.536127790521023
+P1,16,Medicamentos y digestión,14.069280599219525
+P1,16,Alimentación,50.30460339700503
+P1,16,Sustancias,17.696332683395973
+P1,16,Cuidado de otras personas,3.259817879097551
+P1,17,Identificación,3.93795151898664
+P1,17,Medidas autodeclaradas,0.00235958471557771
+P1,17,Actividad física,9.800236646894009
+P1,17,Etapa reproductiva y salud ginecológica,2.070475778989469
+P1,17,Medicamentos y digestión,7.322873243996058
+P1,17,Alimentación,70.71053563075294
+P1,17,Sustancias,5.447115741525699
+P1,17,Cuidado de otras personas,0.708451854139677
+P1,18,Identificación,1.6103214575470912
+P1,18,Medidas autodeclaradas,1.3190763356221324
+P1,18,Actividad física,8.940770712395189
+P1,18,Etapa reproductiva y salud ginecológica,0.3542229605964045
+P1,18,Medicamentos y digestión,17.351280343175862
+P1,18,Alimentación,68.40453414095136
+P1,18,Sustancias,1.0845289136799827
+P1,18,Cuidado de otras personas,0.9352651360321165
+P1,19,Identificación,10.299700783003729
+P1,19,Medidas autodeclaradas,0.000684951595097244
+P1,19,Actividad física,8.10762634546522
+P1,19,Etapa reproductiva y salud ginecológica,13.229801921719098
+P1,19,Medicamentos y digestión,11.080138435154876
+P1,19,Alimentación,55.460953585851456
+P1,19,Sustancias,1.7481385961968865
+P1,19,Cuidado de otras personas,0.07295538101364593
+P1,20,Identificación,0.8244293989547613
+P1,20,Medidas autodeclaradas,0.8067005029106542
+P1,20,Actividad física,7.742017107270903
+P1,20,Etapa reproductiva y salud ginecológica,3.118375346279352
+P1,20,Medicamentos y digestión,13.734794010424416
+P1,20,Alimentación,31.640410264188
+P1,20,Sustancias,42.081930583670655
+P1,20,Cuidado de otras personas,0.0513427863013249
+P1,21,Identificación,18.339414310660192
+P1,21,Medidas autodeclaradas,0.1165706642801014
+P1,21,Actividad física,2.486149948334618
+P1,21,Etapa reproductiva y salud ginecológica,0.6395169290533093
+P1,21,Medicamentos y digestión,19.55702105654077
+P1,21,Alimentación,51.2134644546384
+P1,21,Sustancias,6.100818824333186
+P1,21,Cuidado de otras personas,1.5470438121594872
+P1,22,Identificación,4.395145368009091
+P1,22,Medidas autodeclaradas,0.006426327491870464
+P1,22,Actividad física,9.088915470277772
+P1,22,Etapa reproductiva y salud ginecológica,7.314219983389615
+P1,22,Medicamentos y digestión,2.139878598901709
+P1,22,Alimentación,59.0357458468617
+P1,22,Sustancias,3.1653541701452235
+P1,22,Cuidado de otras personas,14.854314234923033
+P1,23,Identificación,3.3754992237553223
+P1,23,Medidas autodeclaradas,0.7322868938916155
+P1,23,Actividad física,50.59676065359
+P1,23,Etapa reproductiva y salud ginecológica,0.1325437244802495
+P1,23,Medicamentos y digestión,1.7908154797361473
+P1,23,Alimentación,38.90417234700733
+P1,23,Sustancias,1.3247713861695107
+P1,23,Cuidado de otras personas,3.1431502913699614
+P1,24,Identificación,3.645687921067159
+P1,24,Medidas autodeclaradas,3.117365647464193
+P1,24,Actividad física,17.1398966090122
+P1,24,Etapa reproductiva y salud ginecológica,2.644448634456659
+P1,24,Medicamentos y digestión,9.12386661303608
+P1,24,Alimentación,56.68696642320491
+P1,24,Sustancias,0.04261121287912336
+P1,24,Cuidado de otras personas,7.599156938879761
+P1,25,Identificación,5.7346132240294745
+P1,25,Medidas autodeclaradas,1.7196660834153419
+P1,25,Actividad física,71.59283752347392
+P1,25,Etapa reproductiva y salud ginecológica,0.5708360528902755
+P1,25,Medicamentos y digestión,0.993028605304056
+P1,25,Alimentación,14.6401607826698
+P1,25,Sustancias,3.819840018125882
+P1,25,Cuidado de otras personas,0.9290177100914134
+P1,26,Identificación,8.60954609855252
+P1,26,Medidas autodeclaradas,13.4309604052378
+P1,26,Actividad física,6.8250648869727675
+P1,26,Etapa reproductiva y salud ginecológica,2.225307730309059
+P1,26,Medicamentos y digestión,1.8491602755408683
+P1,26,Alimentación,55.45532270930284
+P1,26,Sustancias,2.9279162436639417
+P1,26,Cuidado de otras personas,8.67672165042029
+P1,27,Identificación,20.11667506063467
+P1,27,Medidas autodeclaradas,8.608004828659755
+P1,27,Actividad física,17.214231409838277
+P1,27,Etapa reproductiva y salud ginecológica,2.5568125582949923
+P1,27,Medicamentos y digestión,0.4553062400987994
+P1,27,Alimentación,47.284980825036705
+P1,27,Sustancias,0.70074981460562
+P1,27,Cuidado de otras personas,3.0632392628312246
+P1,28,Identificación,6.927430123111728
+P1,28,Medidas autodeclaradas,11.362192063832726
+P1,28,Actividad física,3.590542179446928
+P1,28,Etapa reproductiva y salud ginecológica,68.285348357553
+P1,28,Medicamentos y digestión,1.4081430226103002
+P1,28,Alimentación,6.126988998364477
+P1,28,Sustancias,1.562765785090584
+P1,28,Cuidado de otras personas,0.7365894699902826
+P1,29,Identificación,4.036922197446916
+P1,29,Medidas autodeclaradas,52.76415648339532
+P1,29,Actividad física,6.834338292381083
+P1,29,Etapa reproductiva y salud ginecológica,21.702359785166262
+P1,29,Medicamentos y digestión,1.0642644391682192
+P1,29,Alimentación,10.6332386229111
+P1,29,Sustancias,1.640382077514023
+P1,29,Cuidado de otras personas,1.3243381020170475
+P1,30,Identificación,0.22760168190294097
+P1,30,Medidas autodeclaradas,0.03750225137380727
+P1,30,Actividad física,91.78096277117665
+P1,30,Etapa reproductiva y salud ginecológica,0.7122781286367283
+P1,30,Medicamentos y digestión,0.042498642827482544
+P1,30,Alimentación,6.354076764306245
+P1,30,Sustancias,0.8286838295576855
+P1,30,Cuidado de otras personas,0.01639593021853382
+P1,31,Identificación,0.06446169462033836
+P1,31,Medidas autodeclaradas,0.30978162200503573
+P1,31,Actividad física,4.926627910643718
+P1,31,Etapa reproductiva y salud ginecológica,0.3910612899393617
+P1,31,Medicamentos y digestión,0.9308845353025631
+P1,31,Alimentación,93.36775776320978
+P1,31,Sustancias,0.007612951372296691
+P1,31,Cuidado de otras personas,0.0018122329069138255
+P1,32,Identificación,0.022340607396509112
+P1,32,Medidas autodeclaradas,0.0016758428059402972
+P1,32,Actividad física,0.464022646888054
+P1,32,Etapa reproductiva y salud ginecológica,0.010677956827209255
+P1,32,Medicamentos y digestión,0.08728538474236625
+P1,32,Alimentación,99.23502350744205
+P1,32,Sustancias,0.14366191779288806
+P1,32,Cuidado de otras personas,0.035312136104995125
+P1,33,Identificación,0.022491409793205762
+P1,33,Medidas autodeclaradas,0.011415463067077115
+P1,33,Actividad física,0.2782671608151456
+P1,33,Etapa reproductiva y salud ginecológica,0.14842477341944865
+P1,33,Medicamentos y digestión,0.03669310325315176
+P1,33,Alimentación,99.48835177679696
+P1,33,Sustancias,0.005850391667332849
+P1,33,Cuidado de otras personas,0.008505921187790562
+P2,1,Identificación,0.11580730873249101
+P2,1,Actividad física,92.16497579282722
+P2,1,Etapa reproductiva y salud ginecológica,0.355269233608448
+P2,1,Medicamentos y digestión,0.8546787155885311
+P2,1,Alimentación,5.872344004848675
+P2,1,Sustancias,0.351792127660851
+P2,1,Cuidado de otras personas,0.2851328167339127
+P2,2,Identificación,10.994410816931724
+P2,2,Actividad física,0.7259626151226792
+P2,2,Etapa reproductiva y salud ginecológica,58.06915705010658
+P2,2,Medicamentos y digestión,3.5150265302844153
+P2,2,Alimentación,22.789911370934984
+P2,2,Sustancias,2.2127352277119696
+P2,2,Cuidado de otras personas,1.6927963889076252
+P2,3,Identificación,19.108799083561973
+P2,3,Actividad física,5.24847726703838
+P2,3,Etapa reproductiva y salud ginecológica,20.066102755548766
+P2,3,Medicamentos y digestión,1.1026954976278445
+P2,3,Alimentación,39.500056355157724
+P2,3,Sustancias,3.628673630462526
+P2,3,Cuidado de otras personas,11.345195410602706
+P2,4,Identificación,13.345726441981075
+P2,4,Actividad física,0.9037591458448677
+P2,4,Etapa reproductiva y salud ginecológica,10.27078669954081
+P2,4,Medicamentos y digestión,13.449433254954625
+P2,4,Alimentación,52.2690463126981
+P2,4,Sustancias,3.260389975511932
+P2,4,Cuidado de otras personas,6.500858169468569
+P2,5,Identificación,5.593537493004236
+P2,5,Actividad física,16.54432333488534
+P2,5,Etapa reproductiva y salud ginecológica,16.30749648154982
+P2,5,Medicamentos y digestión,3.647768922576804
+P2,5,Alimentación,53.21093848046169
+P2,5,Sustancias,3.01326306638058
+P2,5,Cuidado de otras personas,1.6826722211415217
+P2,6,Identificación,15.326290409787642
+P2,6,Actividad física,3.8345645588548463
+P2,6,Etapa reproductiva y salud ginecológica,2.535136895050407
+P2,6,Medicamentos y digestión,7.149034316480037
+P2,6,Alimentación,64.03646637694287
+P2,6,Sustancias,5.352498623023589
+P2,6,Cuidado de otras personas,1.7660088198605726
+P2,7,Identificación,0.24648017904694022
+P2,7,Actividad física,0.9253682194629425
+P2,7,Etapa reproductiva y salud ginecológica,4.670795294193197
+P2,7,Medicamentos y digestión,9.44826500797864
+P2,7,Alimentación,49.73989818255535
+P2,7,Sustancias,30.245199227443464
+P2,7,Cuidado de otras personas,4.723993889319373
+P2,8,Identificación,21.262500989472926
+P2,8,Actividad física,6.4851717229553785
+P2,8,Etapa reproductiva y salud ginecológica,3.609231780357119
+P2,8,Medicamentos y digestión,35.560001959897534
+P2,8,Alimentación,25.822393804994814
+P2,8,Sustancias,2.1105846504204284
+P2,8,Cuidado de otras personas,5.150115091901823
+P2,9,Identificación,3.835863473847188
+P2,9,Actividad física,8.48735060024969
+P2,9,Etapa reproductiva y salud ginecológica,12.233517478593491
+P2,9,Medicamentos y digestión,13.249959600114657
+P2,9,Alimentación,52.09146922525097
+P2,9,Sustancias,8.114835033057865
+P2,9,Cuidado de otras personas,1.9870045888862395
+P2,10,Identificación,6.116055264048259
+P2,10,Actividad física,4.924983725113537
+P2,10,Etapa reproductiva y salud ginecológica,3.006079002716883
+P2,10,Medicamentos y digestión,2.215925027865031
+P2,10,Alimentación,40.460244001784964
+P2,10,Sustancias,30.15449504294324
+P2,10,Cuidado de otras personas,13.122217935528118
+P2,11,Identificación,1.5337922702374267
+P2,11,Actividad física,5.893999623792634
+P2,11,Etapa reproductiva y salud ginecológica,0.9187083949184645
+P2,11,Medicamentos y digestión,11.161939041111143
+P2,11,Alimentación,77.37046681230338
+P2,11,Sustancias,0.9804794589314009
+P2,11,Cuidado de otras personas,2.14061439870561
+P2,12,Identificación,0.01051621974430605
+P2,12,Actividad física,2.296673256635169
+P2,12,Etapa reproductiva y salud ginecológica,0.7538013356123525
+P2,12,Medicamentos y digestión,22.67112743902655
+P2,12,Alimentación,69.51789451270203
+P2,12,Sustancias,4.06007498497306
+P2,12,Cuidado de otras personas,0.6899122513065575
+P2,13,Identificación,1.9667772929350527
+P2,13,Actividad física,11.07932137163776
+P2,13,Etapa reproductiva y salud ginecológica,2.6349488211749827
+P2,13,Medicamentos y digestión,32.37195325843465
+P2,13,Alimentación,48.26133980404183
+P2,13,Sustancias,2.0725958142276113
+P2,13,Cuidado de otras personas,1.6130636375480605
+P2,14,Identificación,1.0712547311713392
+P2,14,Actividad física,2.3223740271596744
+P2,14,Etapa reproductiva y salud ginecológica,4.107585764700881
+P2,14,Medicamentos y digestión,37.32296181252022
+P2,14,Alimentación,41.04023518359813
+P2,14,Sustancias,13.577060985544732
+P2,14,Cuidado de otras personas,0.5585274953049479
+P2,15,Identificación,1.9569077171034372
+P2,15,Actividad física,16.580907090785846
+P2,15,Etapa reproductiva y salud ginecológica,30.740561640726522
+P2,15,Medicamentos y digestión,3.533738650573687
+P2,15,Alimentación,46.795898950068086
+P2,15,Sustancias,0.3132701063556168
+P2,15,Cuidado de otras personas,0.07871584438677766
+P2,16,Identificación,5.4780540150629475
+P2,16,Actividad física,6.215295717961169
+P2,16,Etapa reproductiva y salud ginecológica,4.06023801151781
+P2,16,Medicamentos y digestión,13.705248386987464
+P2,16,Alimentación,49.71774157870068
+P2,16,Sustancias,17.65145186394569
+P2,16,Cuidado de otras personas,3.1719704258242727
+P2,17,Identificación,3.9730375855990667
+P2,17,Actividad física,10.085246230434176
+P2,17,Etapa reproductiva y salud ginecológica,2.009878822843867
+P2,17,Medicamentos y digestión,7.201289119188356
+P2,17,Alimentación,70.543684069397
+P2,17,Sustancias,5.45773932688486
+P2,17,Cuidado de otras personas,0.7291248456526978
+P2,18,Identificación,2.0897279089175935
+P2,18,Actividad física,6.621728679928621
+P2,18,Etapa reproductiva y salud ginecológica,1.1351323070062427
+P2,18,Medicamentos y digestión,16.88934236564508
+P2,18,Alimentación,71.1408655611391
+P2,18,Sustancias,1.371516017287249
+P2,18,Cuidado de otras personas,0.7516871600761718
+P2,19,Identificación,10.250067546725875
+P2,19,Actividad física,8.132771922620973
+P2,19,Etapa reproductiva y salud ginecológica,13.34788546534814
+P2,19,Medicamentos y digestión,11.103041382452172
+P2,19,Alimentación,55.39045077180258
+P2,19,Sustancias,1.7029776077851684
+P2,19,Cuidado de otras personas,0.07280530326513397
+P2,20,Identificación,1.087964315708752
+P2,20,Actividad física,8.954365725641916
+P2,20,Etapa reproductiva y salud ginecológica,2.1440736395542803
+P2,20,Medicamentos y digestión,15.258636619354018
+P2,20,Alimentación,29.896375276394007
+P2,20,Sustancias,42.614615208741725
+P2,20,Cuidado de otras personas,0.04396921460537179
+P2,21,Identificación,17.679393100034318
+P2,21,Actividad física,2.283591546951355
+P2,21,Etapa reproductiva y salud ginecológica,0.6402500773138882
+P2,21,Medicamentos y digestión,18.925684193388115
+P2,21,Alimentación,51.876006420958745
+P2,21,Sustancias,6.975158567902388
+P2,21,Cuidado de otras personas,1.619916093451231
+P2,22,Identificación,4.449525798127581
+P2,22,Actividad física,8.973096929917588
+P2,22,Etapa reproductiva y salud ginecológica,7.386475446069141
+P2,22,Medicamentos y digestión,2.1410831287538015
+P2,22,Alimentación,58.86338929643783
+P2,22,Sustancias,3.4016474134435466
+P2,22,Cuidado de otras personas,14.784781987250565
+P2,23,Identificación,2.7187144767252946
+P2,23,Actividad física,53.746943433131435
+P2,23,Etapa reproductiva y salud ginecológica,0.13194030080548663
+P2,23,Medicamentos y digestión,2.258467043443876
+P2,23,Alimentación,37.40651972955256
+P2,23,Sustancias,1.0839226113553913
+P2,23,Cuidado de otras personas,2.653492404985817
+P2,24,Identificación,4.397568058370654
+P2,24,Actividad física,11.68325341898878
+P2,24,Etapa reproductiva y salud ginecológica,4.405528680337845
+P2,24,Medicamentos y digestión,9.650869788775125
+P2,24,Alimentación,60.068547948585405
+P2,24,Sustancias,0.18841747835324438
+P2,24,Cuidado de otras personas,9.605814626588975
+P2,25,Identificación,6.6832427876280915
+P2,25,Actividad física,67.73959746610366
+P2,25,Etapa reproductiva y salud ginecológica,0.5656647780444404
+P2,25,Medicamentos y digestión,1.5820949132456532
+P2,25,Alimentación,15.072069901190693
+P2,25,Sustancias,5.2521629664074885
+P2,25,Cuidado de otras personas,3.105167187379801
+P2,26,Identificación,4.256156411995786
+P2,26,Actividad física,17.393329048399867
+P2,26,Etapa reproductiva y salud ginecológica,2.877774513441881
+P2,26,Medicamentos y digestión,0.7653858108964182
+P2,26,Alimentación,69.45730713956688
+P2,26,Sustancias,1.2613819894734188
+P2,26,Cuidado de otras personas,3.9886650862258075
+P2,27,Identificación,29.92904903663345
+P2,27,Actividad física,15.736580599818224
+P2,27,Etapa reproductiva y salud ginecológica,9.910060803076947
+P2,27,Medicamentos y digestión,0.9660399206301675
+P2,27,Alimentación,36.39170748240421
+P2,27,Sustancias,2.318634410467557
+P2,27,Cuidado de otras personas,4.747927746969542
+P2,28,Identificación,4.1902794082415635
+P2,28,Actividad física,6.712254447770931
+P2,28,Etapa reproductiva y salud ginecológica,79.795757287745
+P2,28,Medicamentos y digestión,1.2678041838753744
+P2,28,Alimentación,6.415499463180577
+P2,28,Sustancias,0.294508087823416
+P2,28,Cuidado de otras personas,1.323897121363325
+P2,29,Identificación,0.2418347790075726
+P2,29,Actividad física,91.53701994117057
+P2,29,Etapa reproductiva y salud ginecológica,0.7761683131791223
+P2,29,Medicamentos y digestión,0.04588967356341879
+P2,29,Alimentación,6.563092732862439
+P2,29,Sustancias,0.8229732792387057
+P2,29,Cuidado de otras personas,0.013021280978279062
+P2,30,Identificación,0.04586295592618245
+P2,30,Actividad física,5.024895762021146
+P2,30,Etapa reproductiva y salud ginecológica,0.38117175569069983
+P2,30,Medicamentos y digestión,0.860484752618883
+P2,30,Alimentación,93.67909009831624
+P2,30,Sustancias,0.002863507782369582
+P2,30,Cuidado de otras personas,0.0056311676444596465
+P2,31,Identificación,0.02300671561748328
+P2,31,Actividad física,0.4625947230603912
+P2,31,Etapa reproductiva y salud ginecológica,0.011070739957191916
+P2,31,Medicamentos y digestión,0.08661954056075703
+P2,31,Alimentación,99.23529693829954
+P2,31,Sustancias,0.14541156313764403
+P2,31,Cuidado de otras personas,0.03599977936697966
+P2,32,Identificación,0.021795408071782502
+P2,32,Actividad física,0.27922205371333675
+P2,32,Etapa reproductiva y salud ginecológica,0.14175042966951643
+P2,32,Medicamentos y digestión,0.03751014158691984
+P2,32,Alimentación,99.50375221286788
+P2,32,Sustancias,0.0066701453213048
+P2,32,Cuidado de otras personas,0.009299608769166221
+F1,1,Identificación,0.04206820559671968
+F1,1,Medidas autodeclaradas,0.07420581559132243
+F1,1,Actividad física,90.57168540776144
+F1,1,Etapa reproductiva y salud ginecológica,0.26950979565509353
+F1,1,Medicamentos y digestión,0.8577905268856489
+F1,1,Alimentación,6.035743671800688
+F1,1,Sustancias,0.38755703112382645
+F1,1,Cuidado de otras personas,1.761439545585135
+F1,2,Identificación,11.495999938804486
+F1,2,Medidas autodeclaradas,0.019482359340900805
+F1,2,Actividad física,0.800483020591862
+F1,2,Etapa reproductiva y salud ginecológica,40.35236946939431
+F1,2,Medicamentos y digestión,3.2818682628915856
+F1,2,Alimentación,27.882885082756484
+F1,2,Sustancias,4.127003106680479
+F1,2,Cuidado de otras personas,12.039908759540092
+F1,3,Identificación,9.525415087420898
+F1,3,Medidas autodeclaradas,0.36266496445561275
+F1,3,Actividad física,12.13164502846239
+F1,3,Etapa reproductiva y salud ginecológica,23.21789895168855
+F1,3,Medicamentos y digestión,0.1629259224132925
+F1,3,Alimentación,38.40452364336705
+F1,3,Sustancias,4.460442858405243
+F1,3,Cuidado de otras personas,11.734483543787062
+F1,4,Identificación,16.431401844489756
+F1,4,Medidas autodeclaradas,0.15635937127121827
+F1,4,Actividad física,13.432881255698167
+F1,4,Etapa reproductiva y salud ginecológica,17.98338893055899
+F1,4,Medicamentos y digestión,5.24305656822953
+F1,4,Alimentación,36.539573458389924
+F1,4,Sustancias,0.8069780400243476
+F1,4,Cuidado de otras personas,9.406360531338088
+F1,5,Identificación,2.6300879984496914
+F1,5,Medidas autodeclaradas,0.01068290522656509
+F1,5,Actividad física,31.265603274119584
+F1,5,Etapa reproductiva y salud ginecológica,6.780064924171578
+F1,5,Medicamentos y digestión,6.035131910439193
+F1,5,Alimentación,31.368630382460612
+F1,5,Sustancias,9.823908272874865
+F1,5,Cuidado de otras personas,12.085890332257797
+F1,6,Identificación,4.95502449085909
+F1,6,Medidas autodeclaradas,0.18006307140820885
+F1,6,Actividad física,26.402144175964352
+F1,6,Etapa reproductiva y salud ginecológica,0.7425124370429166
+F1,6,Medicamentos y digestión,14.809109499868535
+F1,6,Alimentación,36.91355878262469
+F1,6,Sustancias,2.1422878883731307
+F1,6,Cuidado de otras personas,13.855299653858951
+F1,7,Identificación,12.480028626888748
+F1,7,Medidas autodeclaradas,0.30676427595478417
+F1,7,Actividad física,5.77763124864523
+F1,7,Etapa reproductiva y salud ginecológica,0.7592414743737264
+F1,7,Medicamentos y digestión,2.6167263332240553
+F1,7,Alimentación,63.14627031190994
+F1,7,Sustancias,7.265489447005171
+F1,7,Cuidado de otras personas,7.647848281998242
+F1,8,Identificación,0.40899201482613323
+F1,8,Medidas autodeclaradas,0.0042063224732367
+F1,8,Actividad física,5.867564265162662
+F1,8,Etapa reproductiva y salud ginecológica,18.810892890128443
+F1,8,Medicamentos y digestión,4.725272918912076
+F1,8,Alimentación,55.12819689138134
+F1,8,Sustancias,11.82810550926387
+F1,8,Cuidado de otras personas,3.2267691878521703
+F1,9,Identificación,3.488816988269309
+F1,9,Medidas autodeclaradas,0.011701351521190128
+F1,9,Actividad física,21.316918019187476
+F1,9,Etapa reproductiva y salud ginecológica,1.0157401986503647
+F1,9,Medicamentos y digestión,13.091783927745992
+F1,9,Alimentación,34.72857081457849
+F1,9,Sustancias,21.180964786810936
+F1,9,Cuidado de otras personas,5.165503913236149
+F1,10,Identificación,5.1569231635648745
+F1,10,Medidas autodeclaradas,0.005676094217629243
+F1,10,Actividad física,16.70604868703506
+F1,10,Etapa reproductiva y salud ginecológica,6.11292817114589
+F1,10,Medicamentos y digestión,4.354851734964944
+F1,10,Alimentación,46.69127357300028
+F1,10,Sustancias,4.112664584483146
+F1,10,Cuidado de otras personas,16.85963399158811
+F1,11,Identificación,10.95068313997903
+F1,11,Medidas autodeclaradas,0.17120608594800782
+F1,11,Actividad física,6.641410258073409
+F1,11,Etapa reproductiva y salud ginecológica,1.6947192319909887
+F1,11,Medicamentos y digestión,23.527862536709755
+F1,11,Alimentación,38.698099949053876
+F1,11,Sustancias,16.996981771461613
+F1,11,Cuidado de otras personas,1.3190370267834481
+F1,12,Identificación,0.5491809143764325
+F1,12,Medidas autodeclaradas,0.26633605450946785
+F1,12,Actividad física,20.514451565673
+F1,12,Etapa reproductiva y salud ginecológica,7.114730330293294
+F1,12,Medicamentos y digestión,6.2316931646036196
+F1,12,Alimentación,48.806543452293184
+F1,12,Sustancias,13.202179800131383
+F1,12,Cuidado de otras personas,3.314884718119557
+F1,13,Identificación,6.999737122482181
+F1,13,Medidas autodeclaradas,0.02406506759090092
+F1,13,Actividad física,9.776657772515552
+F1,13,Etapa reproductiva y salud ginecológica,0.5384533186012521
+F1,13,Medicamentos y digestión,12.669155859565633
+F1,13,Alimentación,67.1919253691235
+F1,13,Sustancias,2.5538011500695177
+F1,13,Cuidado de otras personas,0.24620434005149672
+F1,14,Identificación,5.824185978726928
+F1,14,Medidas autodeclaradas,0.3023994874221684
+F1,14,Actividad física,10.311253750130804
+F1,14,Etapa reproductiva y salud ginecológica,1.1950823864479316
+F1,14,Medicamentos y digestión,0.9825660327189141
+F1,14,Alimentación,49.61190351511294
+F1,14,Sustancias,23.22242621017016
+F1,14,Cuidado de otras personas,8.55018263927014
+F1,15,Identificación,1.014034984649309
+F1,15,Medidas autodeclaradas,0.2712586457065223
+F1,15,Actividad física,17.00925661483194
+F1,15,Etapa reproductiva y salud ginecológica,3.1401876631344927
+F1,15,Medicamentos y digestión,18.806181167982494
+F1,15,Alimentación,45.481024912278755
+F1,15,Sustancias,4.53377481806313
+F1,15,Cuidado de otras personas,9.744281193353338
+F1,16,Identificación,0.501472979504841
+F1,16,Medidas autodeclaradas,0.33437042039610615
+F1,16,Actividad física,7.278128147711996
+F1,16,Etapa reproductiva y salud ginecológica,5.921526592569602
+F1,16,Medicamentos y digestión,24.52746539360399
+F1,16,Alimentación,41.349154882139345
+F1,16,Sustancias,18.736350169259
+F1,16,Cuidado de otras personas,1.3515314148149842
+F1,17,Identificación,1.870417617085387
+F1,17,Medidas autodeclaradas,0.01382833975244563
+F1,17,Actividad física,48.37811515896021
+F1,17,Etapa reproductiva y salud ginecológica,1.3383959423016363
+F1,17,Medicamentos y digestión,8.148206862266848
+F1,17,Alimentación,35.158223676141766
+F1,17,Sustancias,2.6110534173919304
+F1,17,Cuidado de otras personas,2.48175898609975
+F1,18,Identificación,4.726888690111567
+F1,18,Medidas autodeclaradas,1.1230284875172982
+F1,18,Actividad física,11.440027097342218
+F1,18,Etapa reproductiva y salud ginecológica,9.333907637835372
+F1,18,Medicamentos y digestión,4.954800158636445
+F1,18,Alimentación,50.82077622914407
+F1,18,Sustancias,5.492881962952389
+F1,18,Cuidado de otras personas,12.107689736460618
+F1,19,Identificación,7.91785318028022
+F1,19,Medidas autodeclaradas,0.5448683348265531
+F1,19,Actividad física,42.96024798440464
+F1,19,Etapa reproductiva y salud ginecológica,5.228864489128885
+F1,19,Medicamentos y digestión,0.875298380515133
+F1,19,Alimentación,31.276198481530695
+F1,19,Sustancias,5.618655569878559
+F1,19,Cuidado de otras personas,5.57801357943526
+F1,20,Identificación,0.8262152393630326
+F1,20,Medidas autodeclaradas,0.16272883573532115
+F1,20,Actividad física,13.555549890682787
+F1,20,Etapa reproductiva y salud ginecológica,6.131652499505441
+F1,20,Medicamentos y digestión,13.045194003592304
+F1,20,Alimentación,42.409295224260134
+F1,20,Sustancias,1.8383498046770868
+F1,20,Cuidado de otras personas,22.031014502183794
+F1,21,Identificación,9.117445980060904
+F1,21,Medidas autodeclaradas,1.2373501406861742
+F1,21,Actividad física,2.9913446404073447
+F1,21,Etapa reproductiva y salud ginecológica,1.2592816563797309
+F1,21,Medicamentos y digestión,23.125961757056086
+F1,21,Alimentación,36.6040299889565
+F1,21,Sustancias,21.74830800720442
+F1,21,Cuidado de otras personas,3.916277829248786
+F1,22,Identificación,0.7866542543619381
+F1,22,Medidas autodeclaradas,0.5331095708914073
+F1,22,Actividad física,14.138701368585302
+F1,22,Etapa reproductiva y salud ginecológica,3.1611376091652943
+F1,22,Medicamentos y digestión,6.5402893324961395
+F1,22,Alimentación,60.48265938098555
+F1,22,Sustancias,2.852473198667807
+F1,22,Cuidado de otras personas,11.50497528484652
+F1,23,Identificación,3.4595104625708406
+F1,23,Medidas autodeclaradas,0.15479213018248195
+F1,23,Actividad física,35.50880518480552
+F1,23,Etapa reproductiva y salud ginecológica,3.569132515706894
+F1,23,Medicamentos y digestión,3.7920083915565215
+F1,23,Alimentación,30.00366172357343
+F1,23,Sustancias,18.32505069713046
+F1,23,Cuidado de otras personas,5.18703889447383
+F1,24,Identificación,0.6311713685371652
+F1,24,Medidas autodeclaradas,0.002574338541827718
+F1,24,Actividad física,28.89686759466982
+F1,24,Etapa reproductiva y salud ginecológica,2.2905242259557634
+F1,24,Medicamentos y digestión,31.41239570792535
+F1,24,Alimentación,27.275827557269
+F1,24,Sustancias,5.711344180175776
+F1,24,Cuidado de otras personas,3.7792950269252517
+F1,25,Identificación,0.1088938690162376
+F1,25,Medidas autodeclaradas,0.17208517630849549
+F1,25,Actividad física,23.808286721196847
+F1,25,Etapa reproductiva y salud ginecológica,1.8085806969446254
+F1,25,Medicamentos y digestión,6.3534664144887065
+F1,25,Alimentación,45.87528433835352
+F1,25,Sustancias,19.507405283695483
+F1,25,Cuidado de otras personas,2.3659974999961517
+F1,26,Identificación,0.3052822714746968
+F1,26,Medidas autodeclaradas,2.017367821162209
+F1,26,Actividad física,27.392936438280554
+F1,26,Etapa reproductiva y salud ginecológica,7.307109448608144
+F1,26,Medicamentos y digestión,0.9220808325524129
+F1,26,Alimentación,37.55015722796837
+F1,26,Sustancias,1.798316968185377
+F1,26,Cuidado de otras personas,22.706748991768208
+F1,27,Identificación,0.39936049840429844
+F1,27,Medidas autodeclaradas,0.2270387212567922
+F1,27,Actividad física,15.777271137240147
+F1,27,Etapa reproductiva y salud ginecológica,1.2247766594684917
+F1,27,Medicamentos y digestión,3.4173081700261894
+F1,27,Alimentación,62.524777860717194
+F1,27,Sustancias,9.87902359636018
+F1,27,Cuidado de otras personas,6.550443356526676
+F1,28,Identificación,3.0945361509316758
+F1,28,Medidas autodeclaradas,0.07555591177253178
+F1,28,Actividad física,12.449851816610563
+F1,28,Etapa reproductiva y salud ginecológica,4.209841830311025
+F1,28,Medicamentos y digestión,3.910769306438806
+F1,28,Alimentación,61.302207216156
+F1,28,Sustancias,8.047936300217113
+F1,28,Cuidado de otras personas,6.90930146756221
+F1,29,Identificación,9.777757862987226
+F1,29,Medidas autodeclaradas,0.01127200405704962
+F1,29,Actividad física,11.197712277157562
+F1,29,Etapa reproductiva y salud ginecológica,11.94424357318412
+F1,29,Medicamentos y digestión,13.877636709081862
+F1,29,Alimentación,41.916954195873956
+F1,29,Sustancias,0.08978981699813895
+F1,29,Cuidado de otras personas,11.184633560660039
+F1,30,Identificación,6.957933611804422
+F1,30,Medidas autodeclaradas,0.5115935748405074
+F1,30,Actividad física,20.35621903329313
+F1,30,Etapa reproductiva y salud ginecológica,11.983042647423769
+F1,30,Medicamentos y digestión,1.5308264682847
+F1,30,Alimentación,34.558481303289774
+F1,30,Sustancias,18.468645602830215
+F1,30,Cuidado de otras personas,5.6332577582334515
+F1,31,Identificación,0.2227331249725818
+F1,31,Medidas autodeclaradas,0.9056773669148966
+F1,31,Actividad física,22.91093023259915
+F1,31,Etapa reproductiva y salud ginecológica,5.851727711666486
+F1,31,Medicamentos y digestión,3.6285051066152887
+F1,31,Alimentación,48.09339825571098
+F1,31,Sustancias,12.106885863024363
+F1,31,Cuidado de otras personas,6.280142338496237
+F1,32,Identificación,3.290920615670086
+F1,32,Medidas autodeclaradas,2.7857158342314055
+F1,32,Actividad física,31.236135730291682
+F1,32,Etapa reproductiva y salud ginecológica,0.6351187991302479
+F1,32,Medicamentos y digestión,14.024378026030252
+F1,32,Alimentación,37.515616038134034
+F1,32,Sustancias,6.485774729303326
+F1,32,Cuidado de otras personas,4.026340227208957
+F1,33,Identificación,7.414857657749508
+F1,33,Medidas autodeclaradas,6.559445345822926
+F1,33,Actividad física,10.05404207956871
+F1,33,Etapa reproductiva y salud ginecológica,1.3058464872095223
+F1,33,Medicamentos y digestión,1.128121143505068
+F1,33,Alimentación,58.68142422484659
+F1,33,Sustancias,2.6248706972284026
+F1,33,Cuidado de otras personas,12.23139236406939
+F1,34,Identificación,6.244295356176775
+F1,34,Medidas autodeclaradas,2.474860230482836
+F1,34,Actividad física,54.05025674498305
+F1,34,Etapa reproductiva y salud ginecológica,0.7084830041791962
+F1,34,Medicamentos y digestión,6.521658520027991
+F1,34,Alimentación,19.78817258703634
+F1,34,Sustancias,2.5810067266535235
+F1,34,Cuidado de otras personas,7.6312668304602855
+F1,35,Identificación,9.835121404844287
+F1,35,Medidas autodeclaradas,0.09023268265670992
+F1,35,Actividad física,37.771056550825776
+F1,35,Etapa reproductiva y salud ginecológica,0.5782830749050782
+F1,35,Medicamentos y digestión,7.612939105435065
+F1,35,Alimentación,26.363029356058174
+F1,35,Sustancias,1.9616098922142635
+F1,35,Cuidado de otras personas,15.787727933060586
+F1,36,Identificación,21.03975330239357
+F1,36,Medidas autodeclaradas,14.7738194660894
+F1,36,Actividad física,28.114348057910973
+F1,36,Etapa reproductiva y salud ginecológica,1.7995798725328904
+F1,36,Medicamentos y digestión,0.6802123636965588
+F1,36,Alimentación,25.798812348119302
+F1,36,Sustancias,0.9042426999497876
+F1,36,Cuidado de otras personas,6.889231889307486
+F1,37,Identificación,3.7268057956957166
+F1,37,Medidas autodeclaradas,14.757046140000874
+F1,37,Actividad física,7.713734170707221
+F1,37,Etapa reproductiva y salud ginecológica,59.080324563723856
+F1,37,Medicamentos y digestión,0.9219749879413053
+F1,37,Alimentación,5.628048427765616
+F1,37,Sustancias,3.249720961389593
+F1,37,Cuidado de otras personas,4.9223449527757905
+F1,38,Identificación,5.173229886139247
+F1,38,Medidas autodeclaradas,48.3282135172064
+F1,38,Actividad física,9.275671802071907
+F1,38,Etapa reproductiva y salud ginecológica,22.202762544131378
+F1,38,Medicamentos y digestión,1.4572131243299693
+F1,38,Alimentación,10.10440062537808
+F1,38,Sustancias,1.5536470691219166
+F1,38,Cuidado de otras personas,1.9048614316209402
+F1,39,Identificación,0.6183083204801563
+F1,39,Medidas autodeclaradas,0.036353736029482116
+F1,39,Actividad física,94.21812579583954
+F1,39,Etapa reproductiva y salud ginecológica,1.3981357447548597
+F1,39,Medicamentos y digestión,0.19531336674156424
+F1,39,Alimentación,2.2906850404594503
+F1,39,Sustancias,1.162091510549928
+F1,39,Cuidado de otras personas,0.08098648514494781
+F2,1,Identificación,0.0421982611182838
+F2,1,Actividad física,90.71616065170096
+F2,1,Etapa reproductiva y salud ginecológica,0.2720324552289515
+F2,1,Medicamentos y digestión,0.866954474255158
+F2,1,Alimentación,5.981855818819134
+F2,1,Sustancias,0.38091760554323073
+F2,1,Cuidado de otras personas,1.7398807333343045
+F2,2,Identificación,11.620418952159326
+F2,2,Actividad física,0.823488882479773
+F2,2,Etapa reproductiva y salud ginecológica,39.963269531555255
+F2,2,Medicamentos y digestión,3.2859724636848426
+F2,2,Alimentación,27.957524579297772
+F2,2,Sustancias,4.151750782515678
+F2,2,Cuidado de otras personas,12.197574808307522
+F2,3,Identificación,9.816115344138812
+F2,3,Actividad física,12.234860965718783
+F2,3,Etapa reproductiva y salud ginecológica,25.194349188745946
+F2,3,Medicamentos y digestión,0.15274209906891575
+F2,3,Alimentación,37.33014079590281
+F2,3,Sustancias,4.162901582111414
+F2,3,Cuidado de otras personas,11.108890024313517
+F2,4,Identificación,16.285825891985354
+F2,4,Actividad física,13.751550827628153
+F2,4,Etapa reproductiva y salud ginecológica,16.523524064764846
+F2,4,Medicamentos y digestión,5.658338829068163
+F2,4,Alimentación,37.215854548658314
+F2,4,Sustancias,0.7828417547009632
+F2,4,Cuidado de otras personas,9.782064083194259
+F2,5,Identificación,2.612499381955981
+F2,5,Actividad física,30.911747457643525
+F2,5,Etapa reproductiva y salud ginecológica,6.784890379140521
+F2,5,Medicamentos y digestión,5.892106246614988
+F2,5,Alimentación,31.654654696563405
+F2,5,Sustancias,9.868602254908527
+F2,5,Cuidado de otras personas,12.275499583173167
+F2,6,Identificación,4.601709027254367
+F2,6,Actividad física,26.446240848023827
+F2,6,Etapa reproductiva y salud ginecológica,0.7793985962184198
+F2,6,Medicamentos y digestión,14.295441443998309
+F2,6,Alimentación,37.1397310058916
+F2,6,Sustancias,2.4045156630443465
+F2,6,Cuidado de otras personas,14.33296341556909
+F2,7,Identificación,13.102819346063733
+F2,7,Actividad física,5.473956887864226
+F2,7,Etapa reproductiva y salud ginecológica,0.6292654941308637
+F2,7,Medicamentos y digestión,2.9143660077047953
+F2,7,Alimentación,63.70430830873299
+F2,7,Sustancias,6.950808569579737
+F2,7,Cuidado de otras personas,7.224475385923569
+F2,8,Identificación,0.4247814840371164
+F2,8,Actividad física,5.857480363819886
+F2,8,Etapa reproductiva y salud ginecológica,18.813416200988414
+F2,8,Medicamentos y digestión,4.737962635707543
+F2,8,Alimentación,55.19560662751841
+F2,8,Sustancias,11.772886246564214
+F2,8,Cuidado de otras personas,3.1978664413645044
+F2,9,Identificación,3.3468382259062857
+F2,9,Actividad física,21.21382581719486
+F2,9,Etapa reproductiva y salud ginecológica,1.008112654876418
+F2,9,Medicamentos y digestión,13.003959371289085
+F2,9,Alimentación,34.95085712291782
+F2,9,Sustancias,21.328938317593806
+F2,9,Cuidado de otras personas,5.147468490221876
+F2,10,Identificación,5.135447614168391
+F2,10,Actividad física,16.753383125460115
+F2,10,Etapa reproductiva y salud ginecológica,6.13628170485824
+F2,10,Medicamentos y digestión,4.496764337662494
+F2,10,Alimentación,46.48312805503648
+F2,10,Sustancias,4.146050261897721
+F2,10,Cuidado de otras personas,16.848944900916646
+F2,11,Identificación,10.396416970766193
+F2,11,Actividad física,6.52370007222493
+F2,11,Etapa reproductiva y salud ginecológica,1.8616076014799314
+F2,11,Medicamentos y digestión,23.426181467931258
+F2,11,Alimentación,39.7761907698333
+F2,11,Sustancias,16.372706900728552
+F2,11,Cuidado de otras personas,1.6431962170359944
+F2,12,Identificación,0.5768909413519776
+F2,12,Actividad física,20.85242846043253
+F2,12,Etapa reproductiva y salud ginecológica,7.106440879316825
+F2,12,Medicamentos y digestión,7.502019810460041
+F2,12,Alimentación,47.651567046040995
+F2,12,Sustancias,13.37465974778199
+F2,12,Cuidado de otras personas,2.935993114615595
+F2,13,Identificación,6.8895192741435025
+F2,13,Actividad física,9.971225690537912
+F2,13,Etapa reproductiva y salud ginecológica,0.5952234909798798
+F2,13,Medicamentos y digestión,12.530215887105257
+F2,13,Alimentación,67.35776420661239
+F2,13,Sustancias,2.393498121493925
+F2,13,Cuidado de otras personas,0.26255332912723267
+F2,14,Identificación,5.9017353333757505
+F2,14,Actividad física,9.639852366540426
+F2,14,Etapa reproductiva y salud ginecológica,1.069873982619678
+F2,14,Medicamentos y digestión,1.6317572406662022
+F2,14,Alimentación,49.79585270670136
+F2,14,Sustancias,23.44951261911792
+F2,14,Cuidado de otras personas,8.511415750978731
+F2,15,Identificación,0.9921147052442016
+F2,15,Actividad física,17.204726572292532
+F2,15,Etapa reproductiva y salud ginecológica,3.6200116156583286
+F2,15,Medicamentos y digestión,18.074197175634755
+F2,15,Alimentación,46.188859861076324
+F2,15,Sustancias,4.140842458790485
+F2,15,Cuidado de otras personas,9.779247611303246
+F2,16,Identificación,0.6078508396364116
+F2,16,Actividad física,8.098885099009307
+F2,16,Etapa reproductiva y salud ginecológica,6.421093494929215
+F2,16,Medicamentos y digestión,23.01689923351713
+F2,16,Alimentación,40.35659093057444
+F2,16,Sustancias,20.089876278232836
+F2,16,Cuidado de otras personas,1.408804124100617
+F2,17,Identificación,1.8157255040485432
+F2,17,Actividad física,48.66077839766918
+F2,17,Etapa reproductiva y salud ginecológica,1.2252916048678935
+F2,17,Medicamentos y digestión,8.625628064003829
+F2,17,Alimentación,34.80686429623428
+F2,17,Sustancias,2.3993590685284505
+F2,17,Cuidado de otras personas,2.4663530646477856
+F2,18,Identificación,8.258916978643821
+F2,18,Actividad física,15.684208384266917
+F2,18,Etapa reproductiva y salud ginecológica,5.912690014354901
+F2,18,Medicamentos y digestión,3.3798437693899426
+F2,18,Alimentación,48.467716151534816
+F2,18,Sustancias,6.469908505626542
+F2,18,Cuidado de otras personas,11.826716196183046
+F2,19,Identificación,3.980996486860348
+F2,19,Actividad física,39.99855821511278
+F2,19,Etapa reproductiva y salud ginecológica,5.675476705821458
+F2,19,Medicamentos y digestión,0.6477711256262563
+F2,19,Alimentación,34.31605123402964
+F2,19,Sustancias,8.213519897058095
+F2,19,Cuidado de otras personas,7.1676263354913745
+F2,20,Identificación,1.1760710156360246
+F2,20,Actividad física,11.815653357924784
+F2,20,Etapa reproductiva y salud ginecológica,6.996242337683445
+F2,20,Medicamentos y digestión,13.809069330663696
+F2,20,Alimentación,38.638990794275294
+F2,20,Sustancias,2.243437048985604
+F2,20,Cuidado de otras personas,25.32053611483115
+F2,21,Identificación,10.051337475522436
+F2,21,Actividad física,3.5254496396085826
+F2,21,Etapa reproductiva y salud ginecológica,2.8156192771754975
+F2,21,Medicamentos y digestión,24.087431272743295
+F2,21,Alimentación,43.05088054921725
+F2,21,Sustancias,16.11175778792937
+F2,21,Cuidado de otras personas,0.35752399780352656
+F2,22,Identificación,0.7196613698425343
+F2,22,Actividad física,14.891217493273365
+F2,22,Etapa reproductiva y salud ginecológica,2.066169569156515
+F2,22,Medicamentos y digestión,6.760328165292986
+F2,22,Alimentación,60.447229149504544
+F2,22,Sustancias,3.645679029489022
+F2,22,Cuidado de otras personas,11.469715223441003
+F2,23,Identificación,3.47535957380437
+F2,23,Actividad física,36.782441987308694
+F2,23,Etapa reproductiva y salud ginecológica,3.626650351080693
+F2,23,Medicamentos y digestión,3.6100963698937436
+F2,23,Alimentación,27.26831687699459
+F2,23,Sustancias,19.581076044499508
+F2,23,Cuidado de otras personas,5.656058796418367
+F2,24,Identificación,0.6461171899929695
+F2,24,Actividad física,28.67960323555115
+F2,24,Etapa reproductiva y salud ginecológica,2.2776956164230935
+F2,24,Medicamentos y digestión,31.12325125736885
+F2,24,Alimentación,27.559946326247186
+F2,24,Sustancias,6.01946890331544
+F2,24,Cuidado de otras personas,3.6939174711012543
+F2,25,Identificación,0.21564083461131886
+F2,25,Actividad física,23.63100774574217
+F2,25,Etapa reproductiva y salud ginecológica,1.863822336920593
+F2,25,Medicamentos y digestión,6.876253778866099
+F2,25,Alimentación,46.05093710620241
+F2,25,Sustancias,18.67613575289562
+F2,25,Cuidado de otras personas,2.6862024447617436
+F2,26,Identificación,0.2475442353161544
+F2,26,Actividad física,12.366863353427313
+F2,26,Etapa reproductiva y salud ginecológica,4.466787904522501
+F2,26,Medicamentos y digestión,1.620488348067495
+F2,26,Alimentación,57.136943447118476
+F2,26,Sustancias,6.897086309442825
+F2,26,Cuidado de otras personas,17.264286402105192
+F2,27,Identificación,0.6780350609016148
+F2,27,Actividad física,28.534445579508716
+F2,27,Etapa reproductiva y salud ginecológica,5.078590467220501
+F2,27,Medicamentos y digestión,2.668409169733088
+F2,27,Alimentación,46.58124872499236
+F2,27,Sustancias,5.180004156609239
+F2,27,Cuidado de otras personas,11.279266841034467
+F2,28,Identificación,3.2705350652656615
+F2,28,Actividad física,12.175568032087613
+F2,28,Etapa reproductiva y salud ginecológica,4.6626044487643235
+F2,28,Medicamentos y digestión,3.95437691345313
+F2,28,Alimentación,60.728858376799494
+F2,28,Sustancias,7.812489382240795
+F2,28,Cuidado de otras personas,7.3955677813889364
+F2,29,Identificación,9.62704865919201
+F2,29,Actividad física,11.475823852787487
+F2,29,Etapa reproductiva y salud ginecológica,12.295372157333876
+F2,29,Medicamentos y digestión,13.923121152277076
+F2,29,Alimentación,41.252732352181596
+F2,29,Sustancias,0.09650733721465363
+F2,29,Cuidado de otras personas,11.329394489013243
+F2,30,Identificación,6.447948458005666
+F2,30,Actividad física,20.672951108216186
+F2,30,Etapa reproductiva y salud ginecológica,10.6294601223283
+F2,30,Medicamentos y digestión,1.6479885037421833
+F2,30,Alimentación,36.22207355152959
+F2,30,Sustancias,18.531113637247515
+F2,30,Cuidado de otras personas,5.848464618930518
+F2,31,Identificación,0.6944760432608114
+F2,31,Actividad física,24.76250912417489
+F2,31,Etapa reproductiva y salud ginecológica,4.698862446963997
+F2,31,Medicamentos y digestión,3.9371703877044566
+F2,31,Alimentación,48.760148614672104
+F2,31,Sustancias,12.47344365616312
+F2,31,Cuidado de otras personas,4.673389727060509
+F2,32,Identificación,3.347642814456437
+F2,32,Actividad física,24.08033155249138
+F2,32,Etapa reproductiva y salud ginecológica,0.6555445986784463
+F2,32,Medicamentos y digestión,14.098133007766965
+F2,32,Alimentación,46.98974069384561
+F2,32,Sustancias,8.396793934274546
+F2,32,Cuidado de otras personas,2.431813398486608
+F2,33,Identificación,6.798925870035761
+F2,33,Actividad física,19.286750211111393
+F2,33,Etapa reproductiva y salud ginecológica,2.3480882132842384
+F2,33,Medicamentos y digestión,3.2237072673458753
+F2,33,Alimentación,53.048354146209846
+F2,33,Sustancias,1.286754304994855
+F2,33,Cuidado de otras personas,14.00741998701805
+F2,34,Identificación,4.718245367161748
+F2,34,Actividad física,55.40014060897248
+F2,34,Etapa reproductiva y salud ginecológica,1.2372066244895759
+F2,34,Medicamentos y digestión,4.0657676437461685
+F2,34,Alimentación,19.021845678313632
+F2,34,Sustancias,3.976862512858236
+F2,34,Cuidado de otras personas,11.579931564458196
+F2,35,Identificación,9.270224308159609
+F2,35,Actividad física,40.068360844414336
+F2,35,Etapa reproductiva y salud ginecológica,0.5290630320640564
+F2,35,Medicamentos y digestión,7.879159917272563
+F2,35,Alimentación,24.941335792786717
+F2,35,Sustancias,1.786021057580634
+F2,35,Cuidado de otras personas,15.52583504772208
+F2,36,Identificación,29.165987932142563
+F2,36,Actividad física,28.77616170408374
+F2,36,Etapa reproductiva y salud ginecológica,8.724012811100373
+F2,36,Medicamentos y digestión,1.5492279196022993
+F2,36,Alimentación,25.919086067964308
+F2,36,Sustancias,2.7584600379702113
+F2,36,Cuidado de otras personas,3.1070635271365177
+F2,37,Identificación,2.451627404153751
+F2,37,Actividad física,7.835923097046676
+F2,37,Etapa reproductiva y salud ginecológica,74.11089828906923
+F2,37,Medicamentos y digestión,0.8461641603320291
+F2,37,Alimentación,7.815463174875268
+F2,37,Sustancias,0.5064385360297861
+F2,37,Cuidado de otras personas,6.433485338493191
+F2,38,Identificación,0.5887507596802192
+F2,38,Actividad física,94.42173838664851
+F2,38,Etapa reproductiva y salud ginecológica,1.325059735204781
+F2,38,Medicamentos y digestión,0.18073375073906492
+F2,38,Alimentación,2.2347498142935933
+F2,38,Sustancias,1.1663739344405646
+F2,38,Cuidado de otras personas,0.08259361899334547

@@ -1,0 +1,136 @@
+variable,etiqueta,categoria,significado,n,pct,n_validos
+trabaja_actualmente,Trabaja actualmente,0,No,220,41.587901701323254,529
+trabaja_actualmente,Trabaja actualmente,1,Sí,309,58.412098298676746,529
+tiene_pareja,Tiene pareja,0,No,173,32.70321361058601,529
+tiene_pareja,Tiene pareja,1,Sí,356,67.296786389414,529
+dias_ejercicio_semana,Días de ejercicio a la semana,1,0 días,302,57.088846880907376,529
+dias_ejercicio_semana,Días de ejercicio a la semana,2,1-2 días,148,27.977315689981097,529
+dias_ejercicio_semana,Días de ejercicio a la semana,3,3-4 días,52,9.829867674858223,529
+dias_ejercicio_semana,Días de ejercicio a la semana,4,5-6 días,15,2.835538752362949,529
+dias_ejercicio_semana,Días de ejercicio a la semana,5,Todos los días,12,2.268431001890359,529
+frecuencia_aerobico,Frecuencia de ejercicio aeróbico,0,No realiza o nunca (incluye 0 estructural),424,80.15122873345936,529
+frecuencia_aerobico,Frecuencia de ejercicio aeróbico,1,Rara vez,19,3.5916824196597354,529
+frecuencia_aerobico,Frecuencia de ejercicio aeróbico,2,A veces,40,7.561436672967864,529
+frecuencia_aerobico,Frecuencia de ejercicio aeróbico,3,Frecuentemente,26,4.914933837429111,529
+frecuencia_aerobico,Frecuencia de ejercicio aeróbico,4,Siempre,20,3.780718336483932,529
+frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,0,No realiza o nunca (incluye 0 estructural),305,57.65595463137996,529
+frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,1,Rara vez,79,14.93383742911153,529
+frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,2,A veces,89,16.8241965973535,529
+frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,3,Frecuentemente,40,7.561436672967864,529
+frecuencia_bajo_impacto,Frecuencia de ejercicio de bajo impacto,4,Siempre,16,3.0245746691871456,529
+frecuencia_fuerza,Frecuencia de ejercicio de fuerza,0,No realiza o nunca (incluye 0 estructural),448,84.68809073724007,529
+frecuencia_fuerza,Frecuencia de ejercicio de fuerza,1,Rara vez,13,2.4574669187145557,529
+frecuencia_fuerza,Frecuencia de ejercicio de fuerza,2,A veces,30,5.671077504725898,529
+frecuencia_fuerza,Frecuencia de ejercicio de fuerza,3,Frecuentemente,26,4.914933837429111,529
+frecuencia_fuerza,Frecuencia de ejercicio de fuerza,4,Siempre,12,2.268431001890359,529
+cantidad_personas_cuida,Personas a su cuidado,0,No cuida (0 estructural),278,52.55198487712666,529
+cantidad_personas_cuida,Personas a su cuidado,1,1 persona,136,25.708884688090738,529
+cantidad_personas_cuida,Personas a su cuidado,2,2 personas,67,12.665406427221171,529
+cantidad_personas_cuida,Personas a su cuidado,3,3 o más personas,48,9.073724007561436,529
+quien_prepara_comidas,Quién prepara las comidas,COMPARTIDO,Yo preparo algunas y otras personas otras,86,16.257088846880908,529
+quien_prepara_comidas,Quién prepara las comidas,COMPRO,Generalmente compro comida preparada,22,4.158790170132325,529
+quien_prepara_comidas,Quién prepara las comidas,OTRA_HOGAR,Otra persona de mi hogar prepara la mayoría,49,9.262759924385634,529
+quien_prepara_comidas,Quién prepara las comidas,OTRO,Otro,7,1.3232514177693762,529
+quien_prepara_comidas,Quién prepara las comidas,YO_MAYORIA,Yo preparo la mayoría,365,68.99810964083176,529
+carnes_semana,Carnes a la semana,1,Nunca,22,4.158790170132325,529
+carnes_semana,Carnes a la semana,2,1-2 veces por semana,165,31.19092627599244,529
+carnes_semana,Carnes a la semana,3,3-4 veces por semana,234,44.234404536862,529
+carnes_semana,Carnes a la semana,4,5-6 veces por semana,86,16.257088846880908,529
+carnes_semana,Carnes a la semana,5,Diariamente,22,4.158790170132325,529
+falta_tiempo_influye,La falta de tiempo influye en su alimentación,1,Nunca o casi nunca,59,11.1531190926276,529
+falta_tiempo_influye,La falta de tiempo influye en su alimentación,2,Rara vez,144,27.22117202268431,529
+falta_tiempo_influye,La falta de tiempo influye en su alimentación,3,A veces,224,42.34404536862004,529
+falta_tiempo_influye,La falta de tiempo influye en su alimentación,4,Frecuentemente,86,16.257088846880908,529
+falta_tiempo_influye,La falta de tiempo influye en su alimentación,5,Siempre,16,3.0245746691871456,529
+frecuencia_comida_fuera,Comidas fuera de casa,1,Nunca,157,29.678638941398866,529
+frecuencia_comida_fuera,Comidas fuera de casa,2,1-2 veces por semana,247,46.69187145557656,529
+frecuencia_comida_fuera,Comidas fuera de casa,3,3-4 veces por semana,106,20.03780718336484,529
+frecuencia_comida_fuera,Comidas fuera de casa,4,5-6 veces por semana,19,3.5916824196597354,529
+frutas_dia,Frutas al día,1,No consumo,48,9.073724007561436,529
+frutas_dia,Frutas al día,2,1-2 porciones,380,71.83364839319471,529
+frutas_dia,Frutas al día,3,3-4 porciones,78,14.744801512287335,529
+frutas_dia,Frutas al día,4,5-6 porciones,23,4.3478260869565215,529
+golosinas_semana,Golosinas a la semana,1,Nunca,78,14.744801512287335,529
+golosinas_semana,Golosinas a la semana,2,1-2 veces por semana,222,41.965973534971646,529
+golosinas_semana,Golosinas a la semana,3,3-4 veces por semana,165,31.19092627599244,529
+golosinas_semana,Golosinas a la semana,4,5-6 veces por semana,40,7.561436672967864,529
+golosinas_semana,Golosinas a la semana,5,Diariamente,24,4.536862003780718,529
+jugos_gaseosas_dia,Jugos o gaseosas al día,1,No consumo,146,27.599243856332702,529
+jugos_gaseosas_dia,Jugos o gaseosas al día,2,1-2 porciones,258,48.77126654064272,529
+jugos_gaseosas_dia,Jugos o gaseosas al día,3,3-4 porciones,86,16.257088846880908,529
+jugos_gaseosas_dia,Jugos o gaseosas al día,4,5-6 porciones,39,7.3724007561436675,529
+lacteos_dia,Lácteos al día,1,No consumo,78,14.744801512287335,529
+lacteos_dia,Lácteos al día,2,1-2 porciones,351,66.351606805293,529
+lacteos_dia,Lácteos al día,3,3-4 porciones,91,17.20226843100189,529
+lacteos_dia,Lácteos al día,4,5-6 porciones,9,1.7013232514177694,529
+legumbres_semana,Legumbres a la semana,1,Nunca,43,8.128544423440454,529
+legumbres_semana,Legumbres a la semana,2,1-2 veces por semana,352,66.5406427221172,529
+legumbres_semana,Legumbres a la semana,3,3-4 veces por semana,134,25.330812854442343,529
+panes_dia,Panes al día,1,No consumo,59,11.1531190926276,529
+panes_dia,Panes al día,2,1-2 porciones,356,67.296786389414,529
+panes_dia,Panes al día,3,3-4 porciones,104,19.659735349716446,529
+panes_dia,Panes al día,4,5-6 porciones,10,1.890359168241966,529
+pescado_semana,Pescado a la semana,1,Nunca,164,31.001890359168243,529
+pescado_semana,Pescado a la semana,2,1-2 veces por semana,299,56.52173913043478,529
+pescado_semana,Pescado a la semana,3,3-4 veces por semana,66,12.476370510396976,529
+platos_verduras_dia,Platos de verduras al día,1,No consumo,19,3.5916824196597354,529
+platos_verduras_dia,Platos de verduras al día,2,1-2 porciones,427,80.71833648393195,529
+platos_verduras_dia,Platos de verduras al día,3,3-4 porciones,63,11.909262759924385,529
+platos_verduras_dia,Platos de verduras al día,4,5-6 porciones,20,3.780718336483932,529
+vasos_agua_dia,Vasos de agua al día,1,No consumo,24,4.536862003780718,529
+vasos_agua_dia,Vasos de agua al día,2,1-2 porciones,110,20.793950850661627,529
+vasos_agua_dia,Vasos de agua al día,3,3-4 porciones,205,38.752362948960304,529
+vasos_agua_dia,Vasos de agua al día,4,5-6 porciones,124,23.440453686200378,529
+vasos_agua_dia,Vasos de agua al día,5,7 o más porciones,66,12.476370510396976,529
+tabaco_frecuencia,Frecuencia de tabaco,1,Nunca,399,75.42533081285444,529
+tabaco_frecuencia,Frecuencia de tabaco,2,1-2 veces por semana,21,3.9697542533081287,529
+tabaco_frecuencia,Frecuencia de tabaco,3,3-4 veces por semana,9,1.7013232514177694,529
+tabaco_frecuencia,Frecuencia de tabaco,4,5-6 veces por semana,18,3.402646502835539,529
+tabaco_frecuencia,Frecuencia de tabaco,5,Diariamente,82,15.500945179584122,529
+alcohol_frecuencia,Frecuencia de alcohol,1,Nunca,190,35.916824196597354,529
+alcohol_frecuencia,Frecuencia de alcohol,2,1-2 veces por semana,268,50.661625708884685,529
+alcohol_frecuencia,Frecuencia de alcohol,3,3-4 veces por semana,46,8.695652173913043,529
+alcohol_frecuencia,Frecuencia de alcohol,4,5-6 veces por semana,14,2.6465028355387523,529
+alcohol_frecuencia,Frecuencia de alcohol,5,Diariamente,11,2.0793950850661624,529
+operada_no_mas_hijos,Operada para no tener más hijos,0,No,425,80.34026465028356,529
+operada_no_mas_hijos,Operada para no tener más hijos,1,Sí,104,19.659735349716446,529
+usa_medicamentos_presion,Usa medicamentos para la presión,0,No,440,83.17580340264651,529
+usa_medicamentos_presion,Usa medicamentos para la presión,1,Sí,89,16.8241965973535,529
+tiene_actividad_sexual,Tiene actividad sexual,0,No,278,52.55198487712666,529
+tiene_actividad_sexual,Tiene actividad sexual,1,Sí,251,47.44801512287334,529
+distension_abdominal,Distensión abdominal,1,Nunca o casi nunca,184,34.78260869565217,529
+distension_abdominal,Distensión abdominal,2,A veces,226,42.72211720226843,529
+distension_abdominal,Distensión abdominal,3,Frecuentemente,92,17.391304347826086,529
+distension_abdominal,Distensión abdominal,4,Siempre,27,5.103969754253308,529
+evacuacion_intestinal,Evacuación intestinal,1,Más de una vez al día,41,7.750472589792061,529
+evacuacion_intestinal,Evacuación intestinal,2,1 vez al día,300,56.71077504725898,529
+evacuacion_intestinal,Evacuación intestinal,3,Cada 2 días,128,24.196597353497165,529
+evacuacion_intestinal,Evacuación intestinal,4,3 o más días entre evacuaciones,60,11.342155009451796,529
+etapa_menopausica,Etapa menopáusica,indeterminada,indeterminada,20,3.780718336483932,529
+etapa_menopausica,Etapa menopáusica,indeterminada (histerectomía),indeterminada (histerectomía),2,0.3780718336483932,529
+etapa_menopausica,Etapa menopáusica,perimenopausia,perimenopausia,79,14.93383742911153,529
+etapa_menopausica,Etapa menopáusica,posmenopausia,posmenopausia,313,59.168241965973536,529
+etapa_menopausica,Etapa menopáusica,premenopausia,premenopausia,96,18.147448015122873,529
+etapa_menopausica,Etapa menopáusica,quirurgica,quirurgica,19,3.5916824196597354,529
+usa_medicamentos_diabetes,Usa medicamentos para la diabetes,0,No,463,87.52362948960302,529
+usa_medicamentos_diabetes,Usa medicamentos para la diabetes,1,Sí,66,12.476370510396976,529
+prevision,Previsión de salud,FFAA,FFAA,7,1.3232514177693762,529
+prevision,Previsión de salud,FONASA,FONASA,435,82.23062381852552,529
+prevision,Previsión de salud,ISAPRE,ISAPRE,70,13.232514177693762,529
+prevision,Previsión de salud,NINGUNA,NINGUNA,15,2.835538752362949,529
+prevision,Previsión de salud,NS,NS,2,0.3780718336483932,529
+lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,1,1,19,6.620209059233449,287
+lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,2,2,53,18.466898954703833,287
+lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,3,3,108,37.63066202090592,287
+lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,4,4,71,24.738675958188153,287
+lugar_trabajo_comprensivo,Lugar de trabajo comprensivo,5,5,36,12.543554006968641,287
+estres_entorno_laboral,Estrés en el entorno laboral,1,1,24,8.362369337979095,287
+estres_entorno_laboral,Estrés en el entorno laboral,2,2,67,23.34494773519164,287
+estres_entorno_laboral,Estrés en el entorno laboral,3,3,107,37.282229965156795,287
+estres_entorno_laboral,Estrés en el entorno laboral,4,4,57,19.860627177700348,287
+estres_entorno_laboral,Estrés en el entorno laboral,5,5,32,11.149825783972126,287
+sobrecarga_fisica_emocional,Sobrecarga física o emocional por cuidar,1,1,10,3.9840637450199203,251
+sobrecarga_fisica_emocional,Sobrecarga física o emocional por cuidar,2,2,34,13.54581673306773,251
+sobrecarga_fisica_emocional,Sobrecarga física o emocional por cuidar,3,3,106,42.23107569721115,251
+sobrecarga_fisica_emocional,Sobrecarga física o emocional por cuidar,4,4,69,27.49003984063745,251
+sobrecarga_fisica_emocional,Sobrecarga física o emocional por cuidar,5,5,32,12.749003984063744,251

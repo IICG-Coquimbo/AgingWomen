@@ -1,0 +1,11 @@
+momento,etapa,evento,libre_gb
+2026-11-08T10:30:52,etapa_A,inicio,1.75
+2026-11-08T10:30:57,etapa_A,"fin, código 0, mínimo libre",1.75
+2026-11-08T10:30:57,etapa_B,inicio,1.78
+2026-11-08T10:31:37,etapa_B,"fin, código 0, mínimo libre",1.56
+2026-11-08T10:31:49,etapa_C,inicio,1.75
+2026-11-08T10:33:54,etapa_C,lectura,1.38
+2026-11-08T10:34:09,etapa_C,"fin, código 0, mínimo libre",1.34
+2026-11-08T10:34:30,pruebas,inicio,1.60
+2026-11-08T10:36:35,pruebas,lectura,1.53
+2026-11-08T10:37:05,pruebas,"fin, código 0, mínimo libre",1.35

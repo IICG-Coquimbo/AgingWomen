@@ -1,0 +1,625 @@
+﻿bloque,variable,respuesta,grupo,n,pct
+Variables de control,edad,<40,Trabaja,11,3.43750
+Variables de control,edad,<40,No trabaja,11,4.86726
+Variables de control,edad,40-44,Trabaja,70,21.87500
+Variables de control,edad,40-44,No trabaja,35,15.48673
+Variables de control,edad,45-49,Trabaja,71,22.18750
+Variables de control,edad,45-49,No trabaja,53,23.45133
+Variables de control,edad,50-54,Trabaja,80,25.00000
+Variables de control,edad,50-54,No trabaja,36,15.92920
+Variables de control,edad,55-59,Trabaja,40,12.50000
+Variables de control,edad,55-59,No trabaja,43,19.02655
+Variables de control,edad,60-65,Trabaja,48,15.00000
+Variables de control,edad,60-65,No trabaja,48,21.23894
+descriptiva,etapa_menopausica,premenopausia,Trabaja,65,20.31250
+descriptiva,etapa_menopausica,premenopausia,No trabaja,35,15.48673
+descriptiva,etapa_menopausica,perimenopausia,Trabaja,50,15.62500
+descriptiva,etapa_menopausica,perimenopausia,No trabaja,32,14.15929
+descriptiva,etapa_menopausica,posmenopausia,Trabaja,178,55.62500
+descriptiva,etapa_menopausica,posmenopausia,No trabaja,145,64.15929
+descriptiva,etapa_menopausica,quirurgica,Trabaja,9,2.81250
+descriptiva,etapa_menopausica,quirurgica,No trabaja,10,4.42478
+descriptiva,etapa_menopausica,indeterminada,Trabaja,17,5.31250
+descriptiva,etapa_menopausica,indeterminada,No trabaja,3,1.32743
+descriptiva,etapa_menopausica,indeterminada (histerectomía),Trabaja,1,0.31250
+descriptiva,etapa_menopausica,indeterminada (histerectomía),No trabaja,1,0.44248
+Variables de control,imc_categoria,bajo peso,Trabaja,2,0.62500
+Variables de control,imc_categoria,bajo peso,No trabaja,0,0.00000
+Variables de control,imc_categoria,normal,Trabaja,36,11.25000
+Variables de control,imc_categoria,normal,No trabaja,28,12.38938
+Variables de control,imc_categoria,sobrepeso,Trabaja,57,17.81250
+Variables de control,imc_categoria,sobrepeso,No trabaja,48,21.23894
+Variables de control,imc_categoria,obesidad,Trabaja,58,18.12500
+Variables de control,imc_categoria,obesidad,No trabaja,48,21.23894
+Variables de control,imc_categoria,no informado,Trabaja,167,52.18750
+Variables de control,imc_categoria,no informado,No trabaja,102,45.13274
+Variables de control,imc,15-20 kg/m²,Trabaja,10,6.53595
+Variables de control,imc,15-20 kg/m²,No trabaja,8,6.45161
+Variables de control,imc,20-25 kg/m²,Trabaja,28,18.30065
+Variables de control,imc,20-25 kg/m²,No trabaja,20,16.12903
+Variables de control,imc,25-30 kg/m²,Trabaja,57,37.25490
+Variables de control,imc,25-30 kg/m²,No trabaja,48,38.70968
+Variables de control,imc,30-35 kg/m²,Trabaja,29,18.95425
+Variables de control,imc,30-35 kg/m²,No trabaja,20,16.12903
+Variables de control,imc,35-40 kg/m²,Trabaja,24,15.68627
+Variables de control,imc,35-40 kg/m²,No trabaja,21,16.93548
+Variables de control,imc,40-45 kg/m²,Trabaja,4,2.61438
+Variables de control,imc,40-45 kg/m²,No trabaja,7,5.64516
+Variables de control,imc,45-50 kg/m²,Trabaja,1,0.65359
+Variables de control,imc,45-50 kg/m²,No trabaja,0,0.00000
+Variables de control,peso_kg,40-50 kg,Trabaja,13,8.17610
+Variables de control,peso_kg,40-50 kg,No trabaja,13,9.92366
+Variables de control,peso_kg,50-60 kg,Trabaja,30,18.86792
+Variables de control,peso_kg,50-60 kg,No trabaja,16,12.21374
+Variables de control,peso_kg,60-70 kg,Trabaja,40,25.15723
+Variables de control,peso_kg,60-70 kg,No trabaja,36,27.48092
+Variables de control,peso_kg,70-80 kg,Trabaja,34,21.38365
+Variables de control,peso_kg,70-80 kg,No trabaja,27,20.61069
+Variables de control,peso_kg,80-90 kg,Trabaja,20,12.57862
+Variables de control,peso_kg,80-90 kg,No trabaja,24,18.32061
+Variables de control,peso_kg,90-100 kg,Trabaja,14,8.80503
+Variables de control,peso_kg,90-100 kg,No trabaja,9,6.87023
+Variables de control,peso_kg,100-110 kg,Trabaja,7,4.40252
+Variables de control,peso_kg,100-110 kg,No trabaja,5,3.81679
+Variables de control,peso_kg,110-120 kg,Trabaja,0,0.00000
+Variables de control,peso_kg,110-120 kg,No trabaja,1,0.76336
+Variables de control,peso_kg,120-130 kg,Trabaja,1,0.62893
+Variables de control,peso_kg,120-130 kg,No trabaja,0,0.00000
+Variables de control,talla_actual_cm,140-145 cm,Trabaja,3,1.62162
+Variables de control,talla_actual_cm,140-145 cm,No trabaja,5,3.42466
+Variables de control,talla_actual_cm,145-150 cm,Trabaja,25,13.51351
+Variables de control,talla_actual_cm,145-150 cm,No trabaja,15,10.27397
+Variables de control,talla_actual_cm,150-155 cm,Trabaja,45,24.32432
+Variables de control,talla_actual_cm,150-155 cm,No trabaja,49,33.56164
+Variables de control,talla_actual_cm,155-160 cm,Trabaja,61,32.97297
+Variables de control,talla_actual_cm,155-160 cm,No trabaja,48,32.87671
+Variables de control,talla_actual_cm,160-165 cm,Trabaja,39,21.08108
+Variables de control,talla_actual_cm,160-165 cm,No trabaja,18,12.32877
+Variables de control,talla_actual_cm,165-170 cm,Trabaja,11,5.94595
+Variables de control,talla_actual_cm,165-170 cm,No trabaja,9,6.16438
+Variables de control,talla_actual_cm,170-175 cm,Trabaja,1,0.54054
+Variables de control,talla_actual_cm,170-175 cm,No trabaja,1,0.68493
+Variables de control,talla_actual_cm,175-180 cm,Trabaja,0,0.00000
+Variables de control,talla_actual_cm,175-180 cm,No trabaja,1,0.68493
+Variables de control,usa_terapia_hormonal,Sí,Trabaja,22,6.87500
+Variables de control,usa_terapia_hormonal,Sí,No trabaja,12,5.30973
+Variables de control,usa_terapia_hormonal,No,Trabaja,298,93.12500
+Variables de control,usa_terapia_hormonal,No,No trabaja,214,94.69027
+Variables de control,prevision,Fonasa,Trabaja,252,78.75000
+Variables de control,prevision,Fonasa,No trabaja,195,86.28319
+Variables de control,prevision,Isapre,Trabaja,55,17.18750
+Variables de control,prevision,Isapre,No trabaja,20,8.84956
+Variables de control,prevision,FF.AA. y de Orden,Trabaja,2,0.62500
+Variables de control,prevision,FF.AA. y de Orden,No trabaja,5,2.21239
+Variables de control,prevision,Ninguna (particular),Trabaja,10,3.12500
+Variables de control,prevision,Ninguna (particular),No trabaja,5,2.21239
+Variables de control,prevision,No sé,Trabaja,1,0.31250
+Variables de control,prevision,No sé,No trabaja,1,0.44248
+Variables de control,usa_medicamentos_diabetes,Sí,Trabaja,36,11.25000
+Variables de control,usa_medicamentos_diabetes,Sí,No trabaja,31,13.71681
+Variables de control,usa_medicamentos_diabetes,No,Trabaja,284,88.75000
+Variables de control,usa_medicamentos_diabetes,No,No trabaja,195,86.28319
+Actividad física,dias_ejercicio_semana,0 días,Trabaja,179,55.93750
+Actividad física,dias_ejercicio_semana,0 días,No trabaja,133,58.84956
+Actividad física,dias_ejercicio_semana,1-2 días,Trabaja,93,29.06250
+Actividad física,dias_ejercicio_semana,1-2 días,No trabaja,59,26.10619
+Actividad física,dias_ejercicio_semana,3-4 días,Trabaja,33,10.31250
+Actividad física,dias_ejercicio_semana,3-4 días,No trabaja,22,9.73451
+Actividad física,dias_ejercicio_semana,5-6 días,Trabaja,7,2.18750
+Actividad física,dias_ejercicio_semana,5-6 días,No trabaja,8,3.53982
+Actividad física,dias_ejercicio_semana,Todos los días,Trabaja,8,2.50000
+Actividad física,dias_ejercicio_semana,Todos los días,No trabaja,4,1.76991
+Actividad física,realiza_aerobico,Sí,Trabaja,57,17.81250
+Actividad física,realiza_aerobico,Sí,No trabaja,49,21.68142
+Actividad física,realiza_aerobico,No,Trabaja,263,82.18750
+Actividad física,realiza_aerobico,No,No trabaja,177,78.31858
+Actividad física,frecuencia_aerobico,No lo realiza,Trabaja,263,82.18750
+Actividad física,frecuencia_aerobico,No lo realiza,No trabaja,177,78.31858
+Actividad física,frecuencia_aerobico,Rara vez,Trabaja,7,2.18750
+Actividad física,frecuencia_aerobico,Rara vez,No trabaja,12,5.30973
+Actividad física,frecuencia_aerobico,A veces,Trabaja,23,7.18750
+Actividad física,frecuencia_aerobico,A veces,No trabaja,18,7.96460
+Actividad física,frecuencia_aerobico,Frecuentemente,Trabaja,15,4.68750
+Actividad física,frecuencia_aerobico,Frecuentemente,No trabaja,11,4.86726
+Actividad física,frecuencia_aerobico,Siempre,Trabaja,12,3.75000
+Actividad física,frecuencia_aerobico,Siempre,No trabaja,8,3.53982
+Actividad física,realiza_bajo_impacto,Sí,Trabaja,138,43.12500
+Actividad física,realiza_bajo_impacto,Sí,No trabaja,93,41.15044
+Actividad física,realiza_bajo_impacto,No,Trabaja,182,56.87500
+Actividad física,realiza_bajo_impacto,No,No trabaja,133,58.84956
+Actividad física,frecuencia_bajo_impacto,No lo realiza,Trabaja,182,56.87500
+Actividad física,frecuencia_bajo_impacto,No lo realiza,No trabaja,133,58.84956
+Actividad física,frecuencia_bajo_impacto,Rara vez,Trabaja,49,15.31250
+Actividad física,frecuencia_bajo_impacto,Rara vez,No trabaja,35,15.48673
+Actividad física,frecuencia_bajo_impacto,A veces,Trabaja,54,16.87500
+Actividad física,frecuencia_bajo_impacto,A veces,No trabaja,37,16.37168
+Actividad física,frecuencia_bajo_impacto,Frecuentemente,Trabaja,24,7.50000
+Actividad física,frecuencia_bajo_impacto,Frecuentemente,No trabaja,16,7.07965
+Actividad física,frecuencia_bajo_impacto,Siempre,Trabaja,11,3.43750
+Actividad física,frecuencia_bajo_impacto,Siempre,No trabaja,5,2.21239
+Actividad física,realiza_fuerza,Sí,Trabaja,52,16.25000
+Actividad física,realiza_fuerza,Sí,No trabaja,31,13.71681
+Actividad física,realiza_fuerza,No,Trabaja,268,83.75000
+Actividad física,realiza_fuerza,No,No trabaja,195,86.28319
+Actividad física,frecuencia_fuerza,No lo realiza,Trabaja,268,83.75000
+Actividad física,frecuencia_fuerza,No lo realiza,No trabaja,195,86.28319
+Actividad física,frecuencia_fuerza,Rara vez,Trabaja,12,3.75000
+Actividad física,frecuencia_fuerza,Rara vez,No trabaja,2,0.88496
+Actividad física,frecuencia_fuerza,A veces,Trabaja,19,5.93750
+Actividad física,frecuencia_fuerza,A veces,No trabaja,11,4.86726
+Actividad física,frecuencia_fuerza,Frecuentemente,Trabaja,17,5.31250
+Actividad física,frecuencia_fuerza,Frecuentemente,No trabaja,10,4.42478
+Actividad física,frecuencia_fuerza,Siempre,Trabaja,4,1.25000
+Actividad física,frecuencia_fuerza,Siempre,No trabaja,8,3.53982
+Actividad física,horas_sedentarismo,0-3 h,Trabaja,42,13.12500
+Actividad física,horas_sedentarismo,0-3 h,No trabaja,19,8.40708
+Actividad física,horas_sedentarismo,4-6 h,Trabaja,139,43.43750
+Actividad física,horas_sedentarismo,4-6 h,No trabaja,111,49.11504
+Actividad física,horas_sedentarismo,7-9 h,Trabaja,112,35.00000
+Actividad física,horas_sedentarismo,7-9 h,No trabaja,80,35.39823
+Actividad física,horas_sedentarismo,10 h o más,Trabaja,27,8.43750
+Actividad física,horas_sedentarismo,10 h o más,No trabaja,16,7.07965
+Alimentación (contexto),quien_prepara_comidas,Yo preparo la mayoría,Trabaja,216,67.50000
+Alimentación (contexto),quien_prepara_comidas,Yo preparo la mayoría,No trabaja,155,68.58407
+Alimentación (contexto),quien_prepara_comidas,Compartido,Trabaja,55,17.18750
+Alimentación (contexto),quien_prepara_comidas,Compartido,No trabaja,38,16.81416
+Alimentación (contexto),quien_prepara_comidas,Otra persona del hogar,Trabaja,29,9.06250
+Alimentación (contexto),quien_prepara_comidas,Otra persona del hogar,No trabaja,21,9.29204
+Alimentación (contexto),quien_prepara_comidas,Compra comida preparada,Trabaja,16,5.00000
+Alimentación (contexto),quien_prepara_comidas,Compra comida preparada,No trabaja,9,3.98230
+Alimentación (contexto),quien_prepara_comidas,Otro,Trabaja,4,1.25000
+Alimentación (contexto),quien_prepara_comidas,Otro,No trabaja,3,1.32743
+Alimentación (contexto),frecuencia_comida_fuera,Nunca,Trabaja,63,19.68750
+Alimentación (contexto),frecuencia_comida_fuera,Nunca,No trabaja,100,44.24779
+Alimentación (contexto),frecuencia_comida_fuera,1-2 veces por semana,Trabaja,154,48.12500
+Alimentación (contexto),frecuencia_comida_fuera,1-2 veces por semana,No trabaja,100,44.24779
+Alimentación (contexto),frecuencia_comida_fuera,3-4 veces por semana,Trabaja,85,26.56250
+Alimentación (contexto),frecuencia_comida_fuera,3-4 veces por semana,No trabaja,25,11.06195
+Alimentación (contexto),frecuencia_comida_fuera,5-6 veces por semana,Trabaja,18,5.62500
+Alimentación (contexto),frecuencia_comida_fuera,5-6 veces por semana,No trabaja,1,0.44248
+Alimentación (contexto),falta_tiempo_influye,Nunca o casi nunca,Trabaja,19,5.93750
+Alimentación (contexto),falta_tiempo_influye,Nunca o casi nunca,No trabaja,42,18.58407
+Alimentación (contexto),falta_tiempo_influye,Rara vez,Trabaja,77,24.06250
+Alimentación (contexto),falta_tiempo_influye,Rara vez,No trabaja,70,30.97345
+Alimentación (contexto),falta_tiempo_influye,A veces,Trabaja,145,45.31250
+Alimentación (contexto),falta_tiempo_influye,A veces,No trabaja,86,38.05310
+Alimentación (contexto),falta_tiempo_influye,Frecuentemente,Trabaja,68,21.25000
+Alimentación (contexto),falta_tiempo_influye,Frecuentemente,No trabaja,23,10.17699
+Alimentación (contexto),falta_tiempo_influye,Siempre,Trabaja,11,3.43750
+Alimentación (contexto),falta_tiempo_influye,Siempre,No trabaja,5,2.21239
+Alimentación (consumo),vasos_agua_dia,No consumo,Trabaja,14,4.37500
+Alimentación (consumo),vasos_agua_dia,No consumo,No trabaja,11,4.86726
+Alimentación (consumo),vasos_agua_dia,1-2 porciones,Trabaja,56,17.50000
+Alimentación (consumo),vasos_agua_dia,1-2 porciones,No trabaja,57,25.22124
+Alimentación (consumo),vasos_agua_dia,3-4 porciones,Trabaja,132,41.25000
+Alimentación (consumo),vasos_agua_dia,3-4 porciones,No trabaja,81,35.84071
+Alimentación (consumo),vasos_agua_dia,5-6 porciones,Trabaja,74,23.12500
+Alimentación (consumo),vasos_agua_dia,5-6 porciones,No trabaja,53,23.45133
+Alimentación (consumo),vasos_agua_dia,7 o más porciones,Trabaja,44,13.75000
+Alimentación (consumo),vasos_agua_dia,7 o más porciones,No trabaja,24,10.61947
+Alimentación (consumo),platos_verduras_dia,No consumo,Trabaja,10,3.12500
+Alimentación (consumo),platos_verduras_dia,No consumo,No trabaja,10,4.42478
+Alimentación (consumo),platos_verduras_dia,1-2 porciones,Trabaja,255,79.68750
+Alimentación (consumo),platos_verduras_dia,1-2 porciones,No trabaja,183,80.97345
+Alimentación (consumo),platos_verduras_dia,3-4 porciones,Trabaja,44,13.75000
+Alimentación (consumo),platos_verduras_dia,3-4 porciones,No trabaja,22,9.73451
+Alimentación (consumo),platos_verduras_dia,5-6 porciones,Trabaja,11,3.43750
+Alimentación (consumo),platos_verduras_dia,5-6 porciones,No trabaja,11,4.86726
+Alimentación (consumo),frutas_dia,No consumo,Trabaja,29,9.06250
+Alimentación (consumo),frutas_dia,No consumo,No trabaja,20,8.84956
+Alimentación (consumo),frutas_dia,1-2 porciones,Trabaja,230,71.87500
+Alimentación (consumo),frutas_dia,1-2 porciones,No trabaja,162,71.68142
+Alimentación (consumo),frutas_dia,3-4 porciones,Trabaja,49,15.31250
+Alimentación (consumo),frutas_dia,3-4 porciones,No trabaja,33,14.60177
+Alimentación (consumo),frutas_dia,5-6 porciones,Trabaja,12,3.75000
+Alimentación (consumo),frutas_dia,5-6 porciones,No trabaja,11,4.86726
+Alimentación (consumo),panes_dia,No consumo,Trabaja,40,12.50000
+Alimentación (consumo),panes_dia,No consumo,No trabaja,21,9.29204
+Alimentación (consumo),panes_dia,1-2 porciones,Trabaja,202,63.12500
+Alimentación (consumo),panes_dia,1-2 porciones,No trabaja,165,73.00885
+Alimentación (consumo),panes_dia,3-4 porciones,Trabaja,70,21.87500
+Alimentación (consumo),panes_dia,3-4 porciones,No trabaja,38,16.81416
+Alimentación (consumo),panes_dia,5-6 porciones,Trabaja,8,2.50000
+Alimentación (consumo),panes_dia,5-6 porciones,No trabaja,2,0.88496
+Alimentación (consumo),lacteos_dia,No consumo,Trabaja,48,15.00000
+Alimentación (consumo),lacteos_dia,No consumo,No trabaja,34,15.04425
+Alimentación (consumo),lacteos_dia,1-2 porciones,Trabaja,215,67.18750
+Alimentación (consumo),lacteos_dia,1-2 porciones,No trabaja,147,65.04425
+Alimentación (consumo),lacteos_dia,3-4 porciones,Trabaja,54,16.87500
+Alimentación (consumo),lacteos_dia,3-4 porciones,No trabaja,39,17.25664
+Alimentación (consumo),lacteos_dia,5-6 porciones,Trabaja,3,0.93750
+Alimentación (consumo),lacteos_dia,5-6 porciones,No trabaja,6,2.65487
+Alimentación (consumo),jugos_gaseosas_dia,No consumo,Trabaja,81,25.31250
+Alimentación (consumo),jugos_gaseosas_dia,No consumo,No trabaja,70,30.97345
+Alimentación (consumo),jugos_gaseosas_dia,1-2 porciones,Trabaja,168,52.50000
+Alimentación (consumo),jugos_gaseosas_dia,1-2 porciones,No trabaja,99,43.80531
+Alimentación (consumo),jugos_gaseosas_dia,3-4 porciones,Trabaja,53,16.56250
+Alimentación (consumo),jugos_gaseosas_dia,3-4 porciones,No trabaja,34,15.04425
+Alimentación (consumo),jugos_gaseosas_dia,5-6 porciones,Trabaja,18,5.62500
+Alimentación (consumo),jugos_gaseosas_dia,5-6 porciones,No trabaja,23,10.17699
+Alimentación (consumo),bebidas_energeticas_dia,No consumo,Trabaja,301,94.06250
+Alimentación (consumo),bebidas_energeticas_dia,No consumo,No trabaja,208,92.03540
+Alimentación (consumo),bebidas_energeticas_dia,1-2 porciones,Trabaja,19,5.93750
+Alimentación (consumo),bebidas_energeticas_dia,1-2 porciones,No trabaja,18,7.96460
+Alimentación (consumo),pescado_semana,Nunca,Trabaja,97,30.31250
+Alimentación (consumo),pescado_semana,Nunca,No trabaja,70,30.97345
+Alimentación (consumo),pescado_semana,1-2 veces por semana,Trabaja,182,56.87500
+Alimentación (consumo),pescado_semana,1-2 veces por semana,No trabaja,128,56.63717
+Alimentación (consumo),pescado_semana,3-4 veces por semana,Trabaja,41,12.81250
+Alimentación (consumo),pescado_semana,3-4 veces por semana,No trabaja,28,12.38938
+Alimentación (consumo),legumbres_semana,Nunca,Trabaja,27,8.43750
+Alimentación (consumo),legumbres_semana,Nunca,No trabaja,19,8.40708
+Alimentación (consumo),legumbres_semana,1-2 veces por semana,Trabaja,209,65.31250
+Alimentación (consumo),legumbres_semana,1-2 veces por semana,No trabaja,153,67.69912
+Alimentación (consumo),legumbres_semana,3-4 veces por semana,Trabaja,84,26.25000
+Alimentación (consumo),legumbres_semana,3-4 veces por semana,No trabaja,54,23.89381
+Alimentación (consumo),carnes_semana,Nunca,Trabaja,15,4.68750
+Alimentación (consumo),carnes_semana,Nunca,No trabaja,7,3.09735
+Alimentación (consumo),carnes_semana,1-2 veces por semana,Trabaja,101,31.56250
+Alimentación (consumo),carnes_semana,1-2 veces por semana,No trabaja,66,29.20354
+Alimentación (consumo),carnes_semana,3-4 veces por semana,Trabaja,131,40.93750
+Alimentación (consumo),carnes_semana,3-4 veces por semana,No trabaja,113,50.00000
+Alimentación (consumo),carnes_semana,5-6 veces por semana,Trabaja,57,17.81250
+Alimentación (consumo),carnes_semana,5-6 veces por semana,No trabaja,34,15.04425
+Alimentación (consumo),carnes_semana,Diariamente,Trabaja,16,5.00000
+Alimentación (consumo),carnes_semana,Diariamente,No trabaja,6,2.65487
+Alimentación (consumo),golosinas_semana,Nunca,Trabaja,47,14.68750
+Alimentación (consumo),golosinas_semana,Nunca,No trabaja,33,14.60177
+Alimentación (consumo),golosinas_semana,1-2 veces por semana,Trabaja,140,43.75000
+Alimentación (consumo),golosinas_semana,1-2 veces por semana,No trabaja,91,40.26549
+Alimentación (consumo),golosinas_semana,3-4 veces por semana,Trabaja,98,30.62500
+Alimentación (consumo),golosinas_semana,3-4 veces por semana,No trabaja,72,31.85841
+Alimentación (consumo),golosinas_semana,5-6 veces por semana,Trabaja,25,7.81250
+Alimentación (consumo),golosinas_semana,5-6 veces por semana,No trabaja,16,7.07965
+Alimentación (consumo),golosinas_semana,Diariamente,Trabaja,10,3.12500
+Alimentación (consumo),golosinas_semana,Diariamente,No trabaja,14,6.19469
+Sustancias,tabaco_frecuencia,Nunca,Trabaja,252,78.75000
+Sustancias,tabaco_frecuencia,Nunca,No trabaja,161,71.23894
+Sustancias,tabaco_frecuencia,1-2 veces por semana,Trabaja,10,3.12500
+Sustancias,tabaco_frecuencia,1-2 veces por semana,No trabaja,12,5.30973
+Sustancias,tabaco_frecuencia,3-4 veces por semana,Trabaja,4,1.25000
+Sustancias,tabaco_frecuencia,3-4 veces por semana,No trabaja,5,2.21239
+Sustancias,tabaco_frecuencia,5-6 veces por semana,Trabaja,9,2.81250
+Sustancias,tabaco_frecuencia,5-6 veces por semana,No trabaja,9,3.98230
+Sustancias,tabaco_frecuencia,Diariamente,Trabaja,45,14.06250
+Sustancias,tabaco_frecuencia,Diariamente,No trabaja,39,17.25664
+Sustancias,alcohol_frecuencia,Nunca,Trabaja,126,39.37500
+Sustancias,alcohol_frecuencia,Nunca,No trabaja,73,32.30088
+Sustancias,alcohol_frecuencia,1-2 veces por semana,Trabaja,154,48.12500
+Sustancias,alcohol_frecuencia,1-2 veces por semana,No trabaja,120,53.09735
+Sustancias,alcohol_frecuencia,3-4 veces por semana,Trabaja,28,8.75000
+Sustancias,alcohol_frecuencia,3-4 veces por semana,No trabaja,20,8.84956
+Sustancias,alcohol_frecuencia,5-6 veces por semana,Trabaja,6,1.87500
+Sustancias,alcohol_frecuencia,5-6 veces por semana,No trabaja,8,3.53982
+Sustancias,alcohol_frecuencia,Diariamente,Trabaja,6,1.87500
+Sustancias,alcohol_frecuencia,Diariamente,No trabaja,5,2.21239
+Sustancias,marihuana_frecuencia,Nunca,Trabaja,286,89.37500
+Sustancias,marihuana_frecuencia,Nunca,No trabaja,209,92.47788
+Sustancias,marihuana_frecuencia,1-2 veces por semana,Trabaja,25,7.81250
+Sustancias,marihuana_frecuencia,1-2 veces por semana,No trabaja,10,4.42478
+Sustancias,marihuana_frecuencia,3-4 veces por semana,Trabaja,3,0.93750
+Sustancias,marihuana_frecuencia,3-4 veces por semana,No trabaja,2,0.88496
+Sustancias,marihuana_frecuencia,5-6 veces por semana,Trabaja,2,0.62500
+Sustancias,marihuana_frecuencia,5-6 veces por semana,No trabaja,3,1.32743
+Sustancias,marihuana_frecuencia,Diariamente,Trabaja,4,1.25000
+Sustancias,marihuana_frecuencia,Diariamente,No trabaja,2,0.88496
+Cuidado de otras personas,cuida_otras_personas,Sí,Trabaja,150,46.87500
+Cuidado de otras personas,cuida_otras_personas,Sí,No trabaja,107,47.34513
+Cuidado de otras personas,cuida_otras_personas,No,Trabaja,170,53.12500
+Cuidado de otras personas,cuida_otras_personas,No,No trabaja,119,52.65487
+Cuidado de otras personas,cantidad_personas_cuida,No cuida,Trabaja,170,53.12500
+Cuidado de otras personas,cantidad_personas_cuida,No cuida,No trabaja,119,52.65487
+Cuidado de otras personas,cantidad_personas_cuida,1 persona,Trabaja,77,24.06250
+Cuidado de otras personas,cantidad_personas_cuida,1 persona,No trabaja,62,27.43363
+Cuidado de otras personas,cantidad_personas_cuida,2 personas,Trabaja,48,15.00000
+Cuidado de otras personas,cantidad_personas_cuida,2 personas,No trabaja,22,9.73451
+Cuidado de otras personas,cantidad_personas_cuida,3 o más personas,Trabaja,25,7.81250
+Cuidado de otras personas,cantidad_personas_cuida,3 o más personas,No trabaja,23,10.17699
+Cuidado de otras personas,a_quien_cuida,Hijos/as menores de edad,Trabaja,82,58.99281
+Cuidado de otras personas,a_quien_cuida,Hijos/as menores de edad,No trabaja,51,50.00000
+Cuidado de otras personas,a_quien_cuida,Padres o suegros,Trabaja,59,42.44604
+Cuidado de otras personas,a_quien_cuida,Padres o suegros,No trabaja,53,51.96078
+Cuidado de otras personas,a_quien_cuida,Hijos/as adultos que dependen de usted,Trabaja,19,13.66906
+Cuidado de otras personas,a_quien_cuida,Hijos/as adultos que dependen de usted,No trabaja,21,20.58824
+Cuidado de otras personas,a_quien_cuida,Cónyuge/pareja con dependencia,Trabaja,13,9.35252
+Cuidado de otras personas,a_quien_cuida,Cónyuge/pareja con dependencia,No trabaja,7,6.86275
+Cuidado de otras personas,a_quien_cuida,Abuelos u otros adultos mayores,Trabaja,9,6.47482
+Cuidado de otras personas,a_quien_cuida,Abuelos u otros adultos mayores,No trabaja,6,5.88235
+Cuidado de otras personas,a_quien_cuida,Otro familiar o persona dependiente,Trabaja,3,2.15827
+Cuidado de otras personas,a_quien_cuida,Otro familiar o persona dependiente,No trabaja,4,3.92157
+Cuidado de otras personas,a_quien_cuida,Otro,Trabaja,3,2.15827
+Cuidado de otras personas,a_quien_cuida,Otro,No trabaja,3,2.94118
+Cuidado de otras personas,sobrecarga_fisica_emocional,No cuida,Trabaja,170,53.12500
+Cuidado de otras personas,sobrecarga_fisica_emocional,No cuida,No trabaja,119,52.65487
+Cuidado de otras personas,sobrecarga_fisica_emocional,Nunca o casi nunca,Trabaja,2,0.62500
+Cuidado de otras personas,sobrecarga_fisica_emocional,Nunca o casi nunca,No trabaja,8,3.53982
+Cuidado de otras personas,sobrecarga_fisica_emocional,Rara vez,Trabaja,18,5.62500
+Cuidado de otras personas,sobrecarga_fisica_emocional,Rara vez,No trabaja,17,7.52212
+Cuidado de otras personas,sobrecarga_fisica_emocional,A veces,Trabaja,53,16.56250
+Cuidado de otras personas,sobrecarga_fisica_emocional,A veces,No trabaja,55,24.33628
+Cuidado de otras personas,sobrecarga_fisica_emocional,Frecuentemente,Trabaja,49,15.31250
+Cuidado de otras personas,sobrecarga_fisica_emocional,Frecuentemente,No trabaja,23,10.17699
+Cuidado de otras personas,sobrecarga_fisica_emocional,Siempre,Trabaja,28,8.75000
+Cuidado de otras personas,sobrecarga_fisica_emocional,Siempre,No trabaja,4,1.76991
+Trabajo (solo quienes trabajan),estres_entorno_laboral,Nada de estrés,Trabaja,25,8.38926
+Trabajo (solo quienes trabajan),estres_entorno_laboral,Estrés leve,Trabaja,71,23.82550
+Trabajo (solo quienes trabajan),estres_entorno_laboral,Estrés moderado,Trabaja,109,36.57718
+Trabajo (solo quienes trabajan),estres_entorno_laboral,Estrés alto,Trabaja,61,20.46980
+Trabajo (solo quienes trabajan),estres_entorno_laboral,Estrés extremo,Trabaja,32,10.73826
+Trabajo (solo quienes trabajan),lugar_trabajo_comprensivo,Muy en desacuerdo,Trabaja,22,7.38255
+Trabajo (solo quienes trabajan),lugar_trabajo_comprensivo,En desacuerdo,Trabaja,55,18.45638
+Trabajo (solo quienes trabajan),lugar_trabajo_comprensivo,Neutral,Trabaja,109,36.57718
+Trabajo (solo quienes trabajan),lugar_trabajo_comprensivo,De acuerdo,Trabaja,74,24.83221
+Trabajo (solo quienes trabajan),lugar_trabajo_comprensivo,Muy de acuerdo,Trabaja,38,12.75168
+Salud ginecológica,menstruacion_llega,Regular (cada 21-35 días),Trabaja,65,56.52174
+Salud ginecológica,menstruacion_llega,Regular (cada 21-35 días),No trabaja,35,52.23881
+Salud ginecológica,menstruacion_llega,Irregular (<21 o >35 días),Trabaja,47,40.86957
+Salud ginecológica,menstruacion_llega,Irregular (<21 o >35 días),No trabaja,26,38.80597
+Salud ginecológica,menstruacion_llega,No estoy segura / No sé,Trabaja,3,2.60870
+Salud ginecológica,menstruacion_llega,No estoy segura / No sé,No trabaja,6,8.95522
+Salud ginecológica,tipo_sangrado,Muy leve,Trabaja,11,9.56522
+Salud ginecológica,tipo_sangrado,Muy leve,No trabaja,8,11.94030
+Salud ginecológica,tipo_sangrado,Leve,Trabaja,25,21.73913
+Salud ginecológica,tipo_sangrado,Leve,No trabaja,12,17.91045
+Salud ginecológica,tipo_sangrado,Moderado,Trabaja,51,44.34783
+Salud ginecológica,tipo_sangrado,Moderado,No trabaja,30,44.77612
+Salud ginecológica,tipo_sangrado,Abundante,Trabaja,14,12.17391
+Salud ginecológica,tipo_sangrado,Abundante,No trabaja,13,19.40299
+Salud ginecológica,tipo_sangrado,Muy abundante,Trabaja,14,12.17391
+Salud ginecológica,tipo_sangrado,Muy abundante,No trabaja,4,5.97015
+Salud ginecológica,usa_metodo_anticonceptivo,Sí,Trabaja,45,39.13043
+Salud ginecológica,usa_metodo_anticonceptivo,Sí,No trabaja,28,41.79104
+Salud ginecológica,usa_metodo_anticonceptivo,No,Trabaja,70,60.86957
+Salud ginecológica,usa_metodo_anticonceptivo,No,No trabaja,39,58.20896
+Salud ginecológica,tipo_metodo_anticonceptivo,Oral,Trabaja,5,11.11111
+Salud ginecológica,tipo_metodo_anticonceptivo,Oral,No trabaja,7,25.00000
+Salud ginecológica,tipo_metodo_anticonceptivo,Inyectable,Trabaja,3,6.66667
+Salud ginecológica,tipo_metodo_anticonceptivo,Inyectable,No trabaja,6,21.42857
+Salud ginecológica,tipo_metodo_anticonceptivo,DIU,Trabaja,22,48.88889
+Salud ginecológica,tipo_metodo_anticonceptivo,DIU,No trabaja,7,25.00000
+Salud ginecológica,tipo_metodo_anticonceptivo,Implante,Trabaja,4,8.88889
+Salud ginecológica,tipo_metodo_anticonceptivo,Implante,No trabaja,4,14.28571
+Salud ginecológica,tipo_metodo_anticonceptivo,Preservativo,Trabaja,9,20.00000
+Salud ginecológica,tipo_metodo_anticonceptivo,Preservativo,No trabaja,2,7.14286
+Salud ginecológica,tipo_metodo_anticonceptivo,No sé,Trabaja,1,2.22222
+Salud ginecológica,tipo_metodo_anticonceptivo,No sé,No trabaja,1,3.57143
+Salud ginecológica,tipo_metodo_anticonceptivo,Otro,Trabaja,1,2.22222
+Salud ginecológica,tipo_metodo_anticonceptivo,Otro,No trabaja,1,3.57143
+Salud ginecológica,operada_no_mas_hijos,Sí,Trabaja,59,18.43750
+Salud ginecológica,operada_no_mas_hijos,Sí,No trabaja,50,22.12389
+Salud ginecológica,operada_no_mas_hijos,No,Trabaja,261,81.56250
+Salud ginecológica,operada_no_mas_hijos,No,No trabaja,176,77.87611
+Salud ginecológica,tiene_utero,Sí,Trabaja,287,89.68750
+Salud ginecológica,tiene_utero,Sí,No trabaja,204,90.26549
+Salud ginecológica,tiene_utero,No,Trabaja,33,10.31250
+Salud ginecológica,tiene_utero,No,No trabaja,22,9.73451
+Salud ginecológica,tiene_ovario,Sí,Trabaja,311,97.18750
+Salud ginecológica,tiene_ovario,Sí,No trabaja,216,95.57522
+Salud ginecológica,tiene_ovario,No,Trabaja,9,2.81250
+Salud ginecológica,tiene_ovario,No,No trabaja,10,4.42478
+Medicamentos y digestión,usa_medicamentos_presion,Sí,Trabaja,57,17.81250
+Medicamentos y digestión,usa_medicamentos_presion,Sí,No trabaja,38,16.81416
+Medicamentos y digestión,usa_medicamentos_presion,No,Trabaja,263,82.18750
+Medicamentos y digestión,usa_medicamentos_presion,No,No trabaja,188,83.18584
+Medicamentos y digestión,evacuacion_intestinal,Más de una vez al día,Trabaja,26,8.12500
+Medicamentos y digestión,evacuacion_intestinal,Más de una vez al día,No trabaja,15,6.63717
+Medicamentos y digestión,evacuacion_intestinal,1 vez al día,Trabaja,167,52.18750
+Medicamentos y digestión,evacuacion_intestinal,1 vez al día,No trabaja,146,64.60177
+Medicamentos y digestión,evacuacion_intestinal,Cada 2 días,Trabaja,87,27.18750
+Medicamentos y digestión,evacuacion_intestinal,Cada 2 días,No trabaja,44,19.46903
+Medicamentos y digestión,evacuacion_intestinal,3 o más días entre evacuaciones,Trabaja,40,12.50000
+Medicamentos y digestión,evacuacion_intestinal,3 o más días entre evacuaciones,No trabaja,21,9.29204
+Medicamentos y digestión,distension_abdominal,Nunca o casi nunca,Trabaja,111,34.68750
+Medicamentos y digestión,distension_abdominal,Nunca o casi nunca,No trabaja,75,33.18584
+Medicamentos y digestión,distension_abdominal,A veces,Trabaja,142,44.37500
+Medicamentos y digestión,distension_abdominal,A veces,No trabaja,94,41.59292
+Medicamentos y digestión,distension_abdominal,Frecuentemente,Trabaja,55,17.18750
+Medicamentos y digestión,distension_abdominal,Frecuentemente,No trabaja,42,18.58407
+Medicamentos y digestión,distension_abdominal,Siempre,Trabaja,12,3.75000
+Medicamentos y digestión,distension_abdominal,Siempre,No trabaja,15,6.63717
+Otras características,genero,Femenino,Trabaja,317,99.06250
+Otras características,genero,Femenino,No trabaja,221,97.78761
+Otras características,genero,Prefiero no decirlo,Trabaja,3,0.93750
+Otras características,genero,Prefiero no decirlo,No trabaja,5,2.21239
+Otras características,origen_procedencia,Chileno/a,Trabaja,312,97.50000
+Otras características,origen_procedencia,Chileno/a,No trabaja,214,94.69027
+Otras características,origen_procedencia,Venezolano/a,Trabaja,5,1.56250
+Otras características,origen_procedencia,Venezolano/a,No trabaja,3,1.32743
+Otras características,origen_procedencia,Colombiano/a,Trabaja,1,0.31250
+Otras características,origen_procedencia,Colombiano/a,No trabaja,0,0.00000
+Otras características,origen_procedencia,Peruano/a,Trabaja,2,0.62500
+Otras características,origen_procedencia,Peruano/a,No trabaja,4,1.76991
+Otras características,origen_procedencia,Haitiano/a,Trabaja,0,0.00000
+Otras características,origen_procedencia,Haitiano/a,No trabaja,1,0.44248
+Otras características,origen_procedencia,Argentino/a,Trabaja,0,0.00000
+Otras características,origen_procedencia,Argentino/a,No trabaja,1,0.44248
+Otras características,origen_procedencia,Otra nacionalidad u origen,Trabaja,0,0.00000
+Otras características,origen_procedencia,Otra nacionalidad u origen,No trabaja,3,1.32743
+Otras características,pueblo_originario_afro,Ninguno,Trabaja,296,92.50000
+Otras características,pueblo_originario_afro,Ninguno,No trabaja,208,92.03540
+Otras características,pueblo_originario_afro,Mapuche,Trabaja,7,2.18750
+Otras características,pueblo_originario_afro,Mapuche,No trabaja,6,2.65487
+Otras características,pueblo_originario_afro,Diaguita,Trabaja,11,3.43750
+Otras características,pueblo_originario_afro,Diaguita,No trabaja,9,3.98230
+Otras características,pueblo_originario_afro,Aymara,Trabaja,1,0.31250
+Otras características,pueblo_originario_afro,Aymara,No trabaja,2,0.88496
+Otras características,pueblo_originario_afro,Chango,Trabaja,3,0.93750
+Otras características,pueblo_originario_afro,Chango,No trabaja,1,0.44248
+Otras características,pueblo_originario_afro,Otro pueblo originario,Trabaja,2,0.62500
+Otras características,pueblo_originario_afro,Otro pueblo originario,No trabaja,0,0.00000
+Otras características,comuna,La Serena,Trabaja,97,30.31250
+Otras características,comuna,La Serena,No trabaja,79,34.95575
+Otras características,comuna,Coquimbo,Trabaja,98,30.62500
+Otras características,comuna,Coquimbo,No trabaja,72,31.85841
+Otras características,comuna,Ovalle,Trabaja,49,15.31250
+Otras características,comuna,Ovalle,No trabaja,30,13.27434
+Otras características,comuna,Illapel,Trabaja,12,3.75000
+Otras características,comuna,Illapel,No trabaja,7,3.09735
+Otras características,comuna,Monte Patria,Trabaja,13,4.06250
+Otras características,comuna,Monte Patria,No trabaja,5,2.21239
+Otras características,comuna,Vicuña,Trabaja,12,3.75000
+Otras características,comuna,Vicuña,No trabaja,6,2.65487
+Otras características,comuna,Salamanca,Trabaja,9,2.81250
+Otras características,comuna,Salamanca,No trabaja,8,3.53982
+Otras características,comuna,Los Vilos,Trabaja,7,2.18750
+Otras características,comuna,Los Vilos,No trabaja,6,2.65487
+Otras características,comuna,Canela,Trabaja,5,1.56250
+Otras características,comuna,Canela,No trabaja,3,1.32743
+Otras características,comuna,Paihuano,Trabaja,4,1.25000
+Otras características,comuna,Paihuano,No trabaja,3,1.32743
+Otras características,comuna,Punitaqui,Trabaja,5,1.56250
+Otras características,comuna,Punitaqui,No trabaja,2,0.88496
+Otras características,comuna,Andacollo,Trabaja,3,0.93750
+Otras características,comuna,Andacollo,No trabaja,3,1.32743
+Otras características,comuna,Río Hurtado,Trabaja,3,0.93750
+Otras características,comuna,Río Hurtado,No trabaja,1,0.44248
+Otras características,comuna,La Higuera,Trabaja,1,0.31250
+Otras características,comuna,La Higuera,No trabaja,1,0.44248
+Otras características,comuna,Combarbalá,Trabaja,2,0.62500
+Otras características,comuna,Combarbalá,No trabaja,0,0.00000
+Otras características,tiene_pareja,Sí,Trabaja,213,66.56250
+Otras características,tiene_pareja,Sí,No trabaja,154,68.14159
+Otras características,tiene_pareja,No,Trabaja,107,33.43750
+Otras características,tiene_pareja,No,No trabaja,72,31.85841
+Otras características,tiene_actividad_sexual,Sí,Trabaja,153,47.81250
+Otras características,tiene_actividad_sexual,Sí,No trabaja,105,46.46018
+Otras características,tiene_actividad_sexual,No,Trabaja,167,52.18750
+Otras características,tiene_actividad_sexual,No,No trabaja,121,53.53982
+Síntomas del MRS,pregunta_1,Ninguna,Trabaja,95,29.68750
+Síntomas del MRS,pregunta_1,Ninguna,No trabaja,75,33.33333
+Síntomas del MRS,pregunta_1,Leve,Trabaja,85,26.56250
+Síntomas del MRS,pregunta_1,Leve,No trabaja,67,29.77778
+Síntomas del MRS,pregunta_1,Moderada,Trabaja,83,25.93750
+Síntomas del MRS,pregunta_1,Moderada,No trabaja,56,24.88889
+Síntomas del MRS,pregunta_1,Intensa,Trabaja,44,13.75000
+Síntomas del MRS,pregunta_1,Intensa,No trabaja,18,8.00000
+Síntomas del MRS,pregunta_1,Muy intensa,Trabaja,13,4.06250
+Síntomas del MRS,pregunta_1,Muy intensa,No trabaja,9,4.00000
+Síntomas del MRS,pregunta_2,Ninguna,Trabaja,110,34.48276
+Síntomas del MRS,pregunta_2,Ninguna,No trabaja,82,36.28319
+Síntomas del MRS,pregunta_2,Leve,Trabaja,99,31.03448
+Síntomas del MRS,pregunta_2,Leve,No trabaja,82,36.28319
+Síntomas del MRS,pregunta_2,Moderada,Trabaja,67,21.00313
+Síntomas del MRS,pregunta_2,Moderada,No trabaja,43,19.02655
+Síntomas del MRS,pregunta_2,Intensa,Trabaja,32,10.03135
+Síntomas del MRS,pregunta_2,Intensa,No trabaja,18,7.96460
+Síntomas del MRS,pregunta_2,Muy intensa,Trabaja,11,3.44828
+Síntomas del MRS,pregunta_2,Muy intensa,No trabaja,1,0.44248
+Síntomas del MRS,pregunta_3,Ninguna,Trabaja,29,9.06250
+Síntomas del MRS,pregunta_3,Ninguna,No trabaja,37,16.37168
+Síntomas del MRS,pregunta_3,Leve,Trabaja,75,23.43750
+Síntomas del MRS,pregunta_3,Leve,No trabaja,46,20.35398
+Síntomas del MRS,pregunta_3,Moderada,Trabaja,101,31.56250
+Síntomas del MRS,pregunta_3,Moderada,No trabaja,72,31.85841
+Síntomas del MRS,pregunta_3,Intensa,Trabaja,75,23.43750
+Síntomas del MRS,pregunta_3,Intensa,No trabaja,56,24.77876
+Síntomas del MRS,pregunta_3,Muy intensa,Trabaja,40,12.50000
+Síntomas del MRS,pregunta_3,Muy intensa,No trabaja,15,6.63717
+Síntomas del MRS,pregunta_4,Ninguna,Trabaja,64,20.18927
+Síntomas del MRS,pregunta_4,Ninguna,No trabaja,56,24.77876
+Síntomas del MRS,pregunta_4,Leve,Trabaja,81,25.55205
+Síntomas del MRS,pregunta_4,Leve,No trabaja,70,30.97345
+Síntomas del MRS,pregunta_4,Moderada,Trabaja,94,29.65300
+Síntomas del MRS,pregunta_4,Moderada,No trabaja,66,29.20354
+Síntomas del MRS,pregunta_4,Intensa,Trabaja,53,16.71924
+Síntomas del MRS,pregunta_4,Intensa,No trabaja,26,11.50442
+Síntomas del MRS,pregunta_4,Muy intensa,Trabaja,25,7.88644
+Síntomas del MRS,pregunta_4,Muy intensa,No trabaja,8,3.53982
+Síntomas del MRS,pregunta_5,Ninguna,Trabaja,46,14.37500
+Síntomas del MRS,pregunta_5,Ninguna,No trabaja,36,16.14350
+Síntomas del MRS,pregunta_5,Leve,Trabaja,84,26.25000
+Síntomas del MRS,pregunta_5,Leve,No trabaja,69,30.94170
+Síntomas del MRS,pregunta_5,Moderada,Trabaja,91,28.43750
+Síntomas del MRS,pregunta_5,Moderada,No trabaja,65,29.14798
+Síntomas del MRS,pregunta_5,Intensa,Trabaja,65,20.31250
+Síntomas del MRS,pregunta_5,Intensa,No trabaja,42,18.83408
+Síntomas del MRS,pregunta_5,Muy intensa,Trabaja,34,10.62500
+Síntomas del MRS,pregunta_5,Muy intensa,No trabaja,11,4.93274
+Síntomas del MRS,pregunta_6,Ninguna,Trabaja,43,13.47962
+Síntomas del MRS,pregunta_6,Ninguna,No trabaja,32,14.22222
+Síntomas del MRS,pregunta_6,Leve,Trabaja,74,23.19749
+Síntomas del MRS,pregunta_6,Leve,No trabaja,61,27.11111
+Síntomas del MRS,pregunta_6,Moderada,Trabaja,83,26.01881
+Síntomas del MRS,pregunta_6,Moderada,No trabaja,74,32.88889
+Síntomas del MRS,pregunta_6,Intensa,Trabaja,79,24.76489
+Síntomas del MRS,pregunta_6,Intensa,No trabaja,40,17.77778
+Síntomas del MRS,pregunta_6,Muy intensa,Trabaja,40,12.53918
+Síntomas del MRS,pregunta_6,Muy intensa,No trabaja,18,8.00000
+Síntomas del MRS,pregunta_7,Ninguna,Trabaja,42,13.16614
+Síntomas del MRS,pregunta_7,Ninguna,No trabaja,41,18.14159
+Síntomas del MRS,pregunta_7,Leve,Trabaja,79,24.76489
+Síntomas del MRS,pregunta_7,Leve,No trabaja,59,26.10619
+Síntomas del MRS,pregunta_7,Moderada,Trabaja,103,32.28840
+Síntomas del MRS,pregunta_7,Moderada,No trabaja,68,30.08850
+Síntomas del MRS,pregunta_7,Intensa,Trabaja,65,20.37618
+Síntomas del MRS,pregunta_7,Intensa,No trabaja,48,21.23894
+Síntomas del MRS,pregunta_7,Muy intensa,Trabaja,30,9.40439
+Síntomas del MRS,pregunta_7,Muy intensa,No trabaja,10,4.42478
+Síntomas del MRS,pregunta_8,Ninguna,Trabaja,25,7.83699
+Síntomas del MRS,pregunta_8,Ninguna,No trabaja,23,10.17699
+Síntomas del MRS,pregunta_8,Leve,Trabaja,52,16.30094
+Síntomas del MRS,pregunta_8,Leve,No trabaja,48,21.23894
+Síntomas del MRS,pregunta_8,Moderada,Trabaja,88,27.58621
+Síntomas del MRS,pregunta_8,Moderada,No trabaja,77,34.07080
+Síntomas del MRS,pregunta_8,Intensa,Trabaja,90,28.21317
+Síntomas del MRS,pregunta_8,Intensa,No trabaja,51,22.56637
+Síntomas del MRS,pregunta_8,Muy intensa,Trabaja,64,20.06270
+Síntomas del MRS,pregunta_8,Muy intensa,No trabaja,27,11.94690
+Síntomas del MRS,pregunta_9,Ninguna,Trabaja,103,32.28840
+Síntomas del MRS,pregunta_9,Ninguna,No trabaja,82,36.28319
+Síntomas del MRS,pregunta_9,Leve,Trabaja,117,36.67712
+Síntomas del MRS,pregunta_9,Leve,No trabaja,79,34.95575
+Síntomas del MRS,pregunta_9,Moderada,Trabaja,67,21.00313
+Síntomas del MRS,pregunta_9,Moderada,No trabaja,53,23.45133
+Síntomas del MRS,pregunta_9,Intensa,Trabaja,28,8.77743
+Síntomas del MRS,pregunta_9,Intensa,No trabaja,11,4.86726
+Síntomas del MRS,pregunta_9,Muy intensa,Trabaja,4,1.25392
+Síntomas del MRS,pregunta_9,Muy intensa,No trabaja,1,0.44248
+Síntomas del MRS,pregunta_10,Ninguna,Trabaja,152,47.50000
+Síntomas del MRS,pregunta_10,Ninguna,No trabaja,122,53.98230
+Síntomas del MRS,pregunta_10,Leve,Trabaja,107,33.43750
+Síntomas del MRS,pregunta_10,Leve,No trabaja,68,30.08850
+Síntomas del MRS,pregunta_10,Moderada,Trabaja,46,14.37500
+Síntomas del MRS,pregunta_10,Moderada,No trabaja,33,14.60177
+Síntomas del MRS,pregunta_10,Intensa,Trabaja,13,4.06250
+Síntomas del MRS,pregunta_10,Intensa,No trabaja,3,1.32743
+Síntomas del MRS,pregunta_10,Muy intensa,Trabaja,2,0.62500
+Síntomas del MRS,pregunta_10,Muy intensa,No trabaja,0,0.00000
+Síntomas del MRS,pregunta_11,Ninguna,Trabaja,125,39.43218
+Síntomas del MRS,pregunta_11,Ninguna,No trabaja,93,41.33333
+Síntomas del MRS,pregunta_11,Leve,Trabaja,102,32.17666
+Síntomas del MRS,pregunta_11,Leve,No trabaja,80,35.55556
+Síntomas del MRS,pregunta_11,Moderada,Trabaja,63,19.87382
+Síntomas del MRS,pregunta_11,Moderada,No trabaja,38,16.88889
+Síntomas del MRS,pregunta_11,Intensa,Trabaja,23,7.25552
+Síntomas del MRS,pregunta_11,Intensa,No trabaja,12,5.33333
+Síntomas del MRS,pregunta_11,Muy intensa,Trabaja,4,1.26183
+Síntomas del MRS,pregunta_11,Muy intensa,No trabaja,2,0.88889
+Consecuencias de los síntomas,rendimiento_afectado,Nada,Trabaja,65,21.81208
+Consecuencias de los síntomas,rendimiento_afectado,Poco,Trabaja,113,37.91946
+Consecuencias de los síntomas,rendimiento_afectado,Moderadamente,Trabaja,82,27.51678
+Consecuencias de los síntomas,rendimiento_afectado,Bastante,Trabaja,32,10.73826
+Consecuencias de los síntomas,rendimiento_afectado,Mucho,Trabaja,6,2.01342
+Consecuencias de los síntomas,bienestar_trabajo_afectado,Nada,Trabaja,59,19.79866
+Consecuencias de los síntomas,bienestar_trabajo_afectado,Poco,Trabaja,106,35.57047
+Consecuencias de los síntomas,bienestar_trabajo_afectado,Moderadamente,Trabaja,88,29.53020
+Consecuencias de los síntomas,bienestar_trabajo_afectado,Bastante,Trabaja,33,11.07383
+Consecuencias de los síntomas,bienestar_trabajo_afectado,Mucho,Trabaja,12,4.02685
+Consecuencias de los síntomas,frecuencia_ausencias,Nunca,Trabaja,119,39.93289
+Consecuencias de los síntomas,frecuencia_ausencias,Rara vez,Trabaja,136,45.63758
+Consecuencias de los síntomas,frecuencia_ausencias,A veces,Trabaja,35,11.74497
+Consecuencias de los síntomas,frecuencia_ausencias,Frecuentemente,Trabaja,8,2.68456
+Consecuencias de los síntomas,cambio_relacion_pareja_menopausia,Nada,Trabaja,76,38.77551
+Consecuencias de los síntomas,cambio_relacion_pareja_menopausia,Nada,No trabaja,60,41.95804
+Consecuencias de los síntomas,cambio_relacion_pareja_menopausia,Poco,Trabaja,59,30.10204
+Consecuencias de los síntomas,cambio_relacion_pareja_menopausia,Poco,No trabaja,49,34.26573
+Consecuencias de los síntomas,cambio_relacion_pareja_menopausia,Moderadamente,Trabaja,37,18.87755
+Consecuencias de los síntomas,cambio_relacion_pareja_menopausia,Moderadamente,No trabaja,22,15.38462
+Consecuencias de los síntomas,cambio_relacion_pareja_menopausia,Bastante,Trabaja,19,9.69388
+Consecuencias de los síntomas,cambio_relacion_pareja_menopausia,Bastante,No trabaja,12,8.39161
+Consecuencias de los síntomas,cambio_relacion_pareja_menopausia,Mucho,Trabaja,5,2.55102
+Consecuencias de los síntomas,cambio_relacion_pareja_menopausia,Mucho,No trabaja,0,0.00000
+Consecuencias de los síntomas,usa_antidepresivos,Sí,Trabaja,48,15.00000
+Consecuencias de los síntomas,usa_antidepresivos,Sí,No trabaja,30,13.27434
+Consecuencias de los síntomas,usa_antidepresivos,No,Trabaja,272,85.00000
+Consecuencias de los síntomas,usa_antidepresivos,No,No trabaja,196,86.72566

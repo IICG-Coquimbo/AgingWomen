@@ -1,0 +1,20 @@
+﻿tipo,prueba,ruta,estado,casos,detalle
+Prueba unitaria,H11 y H13: recuento en la población analítica y ausencia de cambios estadísticos,cierre_fases_34_35/scripts/test_h11_h13.py,Correcta,21,Sin fallos
+Prueba unitaria,"Corrección controlada: rótulos y figuras revisadas, en carpeta temporal",revision_correctiva_fase34/test_correccion_fase34.py,Correcta,8,Sin fallos
+Prueba unitaria,"Entropía, SU y FCBF: funciones con datos de prueba",preprocesamiento/test_entropia.py,Correcta,79,Sin fallos
+Prueba unitaria,"Revisión de 33 variables: lista, poblaciones y resultados guardados",preprocesamiento/test_revision_33_variables.py,Correcta,29,Sin fallos
+Prueba unitaria,"Documentales: 33 variables, 35A revisada y estructura de los Word",cierre_fases_34_35/scripts/test_documental_cierre.py,Correcta,13,Sin fallos
+Verificación,Cifras de la Fase 35 contra los archivos,cierre_fases_34_35/scripts/verificar_fase35.py,Correcta,110,110 de 110 comprobaciones OK
+Verificación,"Integridad de archivos protegidos, comparando manifiestos",cierre_fases_34_35/scripts/verificar_integridad_cierre.py,Correcta,15,15 de 15 comprobaciones OK
+No ejecutada,eda_univariado.py completo,,No ejecutada,0,Borra figuras históricas al iniciarse. Se probó describir() en memoria.
+No ejecutada,eda_usuaria.py completo,,No ejecutada,0,Regenera informes y figuras históricos. Se probaron en memoria las familias FDR y el rótulo.
+No ejecutada,Análisis multivariado completo (34E),,No ejecutada,0,Prohibido en este cierre.
+No ejecutada,Generación sintética y limpieza completa,,No ejecutada,0,Prohibidas en este cierre.
+No ejecutada,preprocesar_fase35.py,,No ejecutada,0,Regeneraría conjuntos e informes de la Fase 35.
+No ejecutada,"seleccionar_fase35b.py, revision_33_variables.py y análisis complementarios",,No ejecutada,0,"Repetirían Shannon, permutaciones y FCBF."
+No ejecutada,rf_33_variables.py y random_forest_fase35b.py,,No ejecutada,0,Reentrenarían Random Forest.
+No ejecutada,random_forest_revision_35b_33_variables/test_rf_33_variables.py y preprocesamiento/test_random_forest_35b.py,,No ejecutada,0,Pueden entrenar modelos de control; quedan fuera por precaución.
+No ejecutada,"test_complementario_35b, test_complementario_cuidados, test_revision_35b, test_revision_35b_50000",,No ejecutada,0,Corresponden a etapas previas ya cerradas y este cierre no cambió su código; no se revisó si son seguros de ejecutar.
+No ejecutada,"test_informe_integrado_35b, test_informe_word_33, test_informe_word_rf_33",,No ejecutada,0,Corresponden a generadores de informes históricos que no cambiaron.
+No ejecutada,Ejecución real del rótulo H13 y del recuento H11 en el flujo completo,,No ejecutada,0,Queda sin probar de extremo a extremo; requiere copia aislada del repositorio y autorización.
+No ejecutada,Suite de Django de la plataforma,,No ejecutada,0,No se relaciona con estos cambios.

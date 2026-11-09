@@ -1,0 +1,99 @@
+{
+ "configuracion": "P2_c12_km_k4",
+ "estado": "PROVISIONAL: sujeto a la Fase 37D y a fases posteriores. No es un modelo clínico.",
+ "reduccion": "PCA",
+ "con_imc": false,
+ "componentes": 12,
+ "algoritmo": "K-means",
+ "k": 4,
+ "parametros": {
+  "n_init": 50,
+  "random_state": 42,
+  "algorithm": "lloyd"
+ },
+ "centroides": [
+  [
+   -0.6551236127830292,
+   -1.2345728418549302,
+   0.821669074935719,
+   0.2515334204674675,
+   0.13847386659779093,
+   -0.10184681734112144,
+   0.05983175273925285,
+   -0.2035414737953316,
+   0.19981706667334795,
+   0.09864801726058292,
+   0.056771969877181354,
+   0.024397708039283744
+  ],
+  [
+   3.162659226648657,
+   -0.09647020970271643,
+   -0.1866114869086494,
+   0.0736119292584249,
+   0.0955191349403467,
+   -0.06386371025648038,
+   0.05537437596712798,
+   -0.3682773127151287,
+   -0.14165070376212954,
+   0.09945645383679907,
+   0.079336613453319,
+   -0.09041189281709631
+  ],
+  [
+   -0.6019559674682095,
+   -0.024760651857821066,
+   -1.2126801786011183,
+   -0.6570064574445338,
+   0.10356155100839613,
+   -0.29232950102707705,
+   0.09511727728437969,
+   0.4198915351508698,
+   -0.24823757701973026,
+   -0.06621699838873502,
+   0.08718554065555076,
+   0.04803080561539452
+  ],
+  [
+   -0.3662887228189461,
+   1.1449477676074766,
+   0.2982800897078772,
+   0.2538031151398719,
+   -0.24386350279674437,
+   0.3433810451241805,
+   -0.15051869056098088,
+   0.018097159039384247,
+   0.07929972895628114,
+   -0.07962134089690762,
+   -0.1523618097693694,
+   -0.018294846158042753
+  ]
+ ],
+ "inercia": 6834.206480192049,
+ "tamanos": [
+  150,
+  76,
+  132,
+  171
+ ],
+ "transformador": {
+  "carpeta": "analisis/fase36/artefactos/P2",
+  "codificadores.json": "4568d7e30a4d3c24b2fb3350d9a061c51e9692ebc8916d7fe46119c7c0b8fd49",
+  "entorno.json": "894d8a9c9d0d1eafca278a186aa1242eff2b689bfac35fb2746ac652a9d71cf2",
+  "escaladores.json": "c29d9fa9fc2a6779095581d350c3ee5f68ebbb6bf4f8384cc6a09659c1ba4003",
+  "esquema_variables.json": "cb414a0ca59694770e7eab2d31e0ebf0b81330a50ab498251a29f2845f2aa2f4",
+  "orden_columnas.json": "1ac84d5969001204c917d73d0f45ca3bb3ae99f6ea84e71c5e92ec4dc7aa1f57",
+  "procedencia.json": "ee112c1a1c05e801dca8361b6b3707dcb71c071534eaf1d11b1a171a52fcc893",
+  "valores_desconocidos.json": "446eaa95f17e2ca81d2824be88d566cae2a7516189c29dceffcb1a1c951eb9e3"
+ },
+ "reduccion_modelo": {
+  "archivo": "analisis/fase37/37A_reduccion/artefactos/P2/modelo.json",
+  "sha256": "83106488199eaf7336ca0626efc349efd52c0a30cc222c7e87672f5b8c1b4381"
+ },
+ "flujo": [
+  "Transformador congelado de la Fase 36",
+  "proyectar de la Fase 37A",
+  "centroide más cercano",
+  "señal de incertidumbre (provisional)"
+ ]
+}

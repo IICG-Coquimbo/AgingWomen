@@ -1,0 +1,4 @@
+variable,n_imputadas,valor_imputado,n_deducidas
+trabaja_actualmente,22,True,1
+tiene_pareja,28,SI,0
+dias_ejercicio_semana,36,1,0

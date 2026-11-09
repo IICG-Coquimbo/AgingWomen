@@ -1,0 +1,56 @@
+item,etiqueta,nivel,n,pct
+pregunta_1,"Bochornos, sudoración",0,165,31.190926275992435
+pregunta_1,"Bochornos, sudoración",1,148,27.977315689981097
+pregunta_1,"Bochornos, sudoración",2,134,25.330812854442343
+pregunta_1,"Bochornos, sudoración",3,60,11.342155009451796
+pregunta_1,"Bochornos, sudoración",4,22,4.158790170132325
+pregunta_2,Molestias al corazón,0,185,34.97164461247637
+pregunta_2,Molestias al corazón,1,175,33.0812854442344
+pregunta_2,Molestias al corazón,2,110,20.793950850661624
+pregunta_2,Molestias al corazón,3,47,8.88468809073724
+pregunta_2,Molestias al corazón,4,12,2.2684310018903595
+pregunta_3,Molestias musculares y articulares,0,62,11.720226843100189
+pregunta_3,Molestias musculares y articulares,1,119,22.495274102079396
+pregunta_3,Molestias musculares y articulares,2,165,31.190926275992435
+pregunta_3,Molestias musculares y articulares,3,128,24.196597353497165
+pregunta_3,Molestias musculares y articulares,4,55,10.396975425330812
+pregunta_4,Dificultades en el sueño,0,114,21.550094517958414
+pregunta_4,Dificultades en el sueño,1,149,28.166351606805296
+pregunta_4,Dificultades en el sueño,2,156,29.489603024574667
+pregunta_4,Dificultades en el sueño,3,77,14.555765595463138
+pregunta_4,Dificultades en el sueño,4,33,6.238185255198488
+pregunta_5,Ánimo depresivo,0,80,15.122873345935728
+pregunta_5,Ánimo depresivo,1,149,28.166351606805296
+pregunta_5,Ánimo depresivo,2,153,28.92249527410208
+pregunta_5,Ánimo depresivo,3,103,19.47069943289225
+pregunta_5,Ánimo depresivo,4,44,8.31758034026465
+pregunta_6,Irritabilidad,0,72,13.610586011342155
+pregunta_6,Irritabilidad,1,132,24.95274102079395
+pregunta_6,Irritabilidad,2,152,28.733459357277884
+pregunta_6,Irritabilidad,3,117,22.117202268431
+pregunta_6,Irritabilidad,4,56,10.58601134215501
+pregunta_7,Ansiedad,0,79,14.933837429111533
+pregunta_7,Ansiedad,1,136,25.708884688090738
+pregunta_7,Ansiedad,2,163,30.812854442344044
+pregunta_7,Ansiedad,3,112,21.17202268431002
+pregunta_7,Ansiedad,4,39,7.372400756143667
+pregunta_8,Cansancio físico y mental,0,45,8.506616257088846
+pregunta_8,Cansancio físico y mental,1,97,18.336483931947072
+pregunta_8,Cansancio físico y mental,2,160,30.245746691871457
+pregunta_8,Cansancio físico y mental,3,137,25.89792060491493
+pregunta_8,Cansancio físico y mental,4,90,17.01323251417769
+pregunta_9,Problemas sexuales,0,179,33.83742911153119
+pregunta_9,Problemas sexuales,1,190,35.916824196597354
+pregunta_9,Problemas sexuales,2,117,22.117202268431
+pregunta_9,Problemas sexuales,3,38,7.183364839319471
+pregunta_9,Problemas sexuales,4,5,0.945179584120983
+pregunta_10,Problemas con la orina,0,266,50.2835538752363
+pregunta_10,Problemas con la orina,1,170,32.136105860113425
+pregunta_10,Problemas con la orina,2,76,14.366729678638942
+pregunta_10,Problemas con la orina,3,15,2.835538752362949
+pregunta_10,Problemas con la orina,4,2,0.3780718336483932
+pregunta_11,Sequedad vaginal,0,213,40.26465028355388
+pregunta_11,Sequedad vaginal,1,177,33.459357277882795
+pregunta_11,Sequedad vaginal,2,98,18.525519848771268
+pregunta_11,Sequedad vaginal,3,35,6.61625708884688
+pregunta_11,Sequedad vaginal,4,6,1.1342155009451798

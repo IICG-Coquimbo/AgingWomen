@@ -1,0 +1,27 @@
+n,prueba,resultado,detalle
+1,"Integridad de resultados históricos: manifiestos de las Fases 34-35, 36, 37A y 37B",superada,2217 archivos iguales a sus manifiestos
+2,"Identificadores: 529 únicos y en el mismo orden en etiquetas, coordenadas y Cadena",superada,529 identificadores
+3,Listas A y B coinciden con los archivos originales,superada,"108 (57 y 52) y 15, leídas de sus originales"
+4,Ausencia de variables MRS en entradas y salidas,superada,"Sin columnas MRS; 93 archivos leídos, ninguno de datos/"
+5,Reproducibilidad: repetir la cadena en otra carpeta da las mismas etiquetas,superada,18 particiones recalculadas son idénticas a las guardadas
+6,"Sin contaminación: cambiar a las participantes no usadas no altera parámetros, reducción ni etiquetas de la submuestra",superada,"Parámetros, reducción, etiquetas e imputaciones idénticos"
+7,Reajuste correcto de PCA y FAMD: con las 529 reproduce la Fase 37A; con la submuestra usa solo sus filas,superada,Reproducción con 1e-8; ajuste en submuestra comprobado con SVD independiente
+8,"Recalibración solo dentro de la muestra: con las 529 da la matriz histórica, y con la submuestra usa sus medias y proporciones",superada,Reproducción histórica con 1e-10; medias e IMC de la submuestra
+9,Proyección sin información futura: una fila a la vez da lo mismo que el lote,superada,"Cuatro participantes: transformar, proyectar y asignar no dependen de las demás"
+10,"ARI correcto: implementación propia, invariante al nombre de los grupos",superada,Coincide con implementación propia y con el valor guardado
+11,Comparaciones sobre participantes compartidas,superada,"435 pares, intersección de al menos 317, recalculados de forma independiente"
+12,Referencia nula reproducible y bien definida,superada,"Semillas, réplica guardada e hipótesis comprobadas; 100 réplicas"
+13,La referencia correlacionada conserva lo que declara,superada,"Marginales exactas, salto íntegro, Spearman 0.041, controles sintéticos correctos"
+14,Separación entre lo confirmatorio y lo exploratorio,superada,"Lista B, enmienda y contraste rotulados; etiquetas de origen en el protocolo"
+15,Trazabilidad de los cambios de codificación,superada,Ridit reproduce la Fase 36 con 1e-10; puntuaciones normales con media 0 y DE 1; sin artefactos que la reemplacen
+16,Tamaños y métricas consistentes,superada,Tamaños suman 529 y 423; siluetas recalculadas
+17,Ausencia de selección por MRS: el código de decisión no lee nada relacionado,superada,"Sin MRS, Random Forest, GMM ni Shannon en el código de decisión"
+18,Asignación de nuevas participantes: la regla reproduce K-means y el margen está bien calculado,superada,K-means 100 %; Ward por prototipos reproducido y rotulado como aproximación
+19,Conservación de parámetros y versiones,superada,Versiones iguales a la Fase 37B; protocolo y enmienda coinciden con sus sellos
+20,Correspondencia entre tablas y figuras,superada,12 figuras; 451 valores dibujados coinciden con las tablas
+21,Ausencia de cambios en la plataforma,superada,git status fuera de analisis/ vacío
+22,Ausencia de commit y de push,superada,HEAD 745d689; la rama no existe en el remoto
+23,La decisión se deriva de las tablas y una debilidad crítica no se compensa,superada,Conclusión por reglas: B; 5 particiones finalistas
+24,"La imputación reestimada con las 529 reproduce la histórica, salvo la excepción documentada",superada,Solo difieren las 30 celdas de tiene_actividad_sexual
+25,"Niveles distintos no se tratan como equivalentes: E1 sin reducción coincide con E0, y las tablas guardan cada nivel",superada,E1 = E0 en las referencias sin reducción; tres niveles por configuración
+26,"Sin archivos ajenos: todo queda en la carpeta 37C, y sin carpetas __pycache__ en fases protegidas",superada,Sin escrituras fuera de 37C ni __pycache__ en fases protegidas

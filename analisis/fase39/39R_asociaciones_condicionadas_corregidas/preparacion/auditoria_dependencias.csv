@@ -1,0 +1,18 @@
+archivo,linea,patron,codigo,destino_en_39R
+ab1_39.py,20,base_items(,"T529, _ = N.base_items(d)",Sustituida en todas las etapas por nucleo_39r.base_items.
+estratos_39.py,21,base_items(,"T529, _ = N.base_items(d)",Sustituida en todas las etapas por nucleo_39r.base_items.
+integridad_39.py,30,matriz_transaccional_principal,"N.D38 / 'scripts' / 'evaluacion_38.py', N.D38 / 'preparacion' / 'matriz_transaccional_principal.csv', N.RAIZ / 'src' / 'apps' / 'encuestas' ",Sustituida: la verificación se hace contra la matriz de 90 ítems de la 38R. En integridad_39.py es solo una huella de archivo; ese control lo reemplaza integridad_39r.py.
+nucleo_39.py,169,N38.cargar(,d = N38.cargar(),"Se conserva, vía R38.cargar: solo carga datos; no fija variables de modelado."
+nucleo_39.py,200,base_items(,"def base_items(d, sens='principal'):",Sustituida en todas las etapas por nucleo_39r.base_items.
+nucleo_39.py,206,N38.PRINCIPAL,"variables = list(N38.PRINCIPAL) + (['lugar_trabajo_comprensivo', 'estres_entorno_laboral'] if nombre == 'S7a' else ['sobrecarga_fisica_emoci","Sustituida: base_items usa la lista de 29 de la 38R (R38.PRINCIPAL), verificada contra las Fases 35 y 36."
+nucleo_39.py,207,N38.esquema(,"esq = N38.esquema(X[variables], d.defs, 'principal')","Se conserva la función, llamada con las 29 más el módulo (S7a y S7b)."
+nucleo_39.py,208,N38.matriz_items(,"T, traza = N38.matriz_items(esq, len(X))",Se conserva la función; recibe el esquema corregido.
+nucleo_39.py,211,N38.construir(,"c = N38.construir(d, nombre)","Sustituida: base_items llama a R38.construir, que construye desde las 29."
+nucleo_39.py,223,base_items(,"T529, _ = base_items(d, sens)",Sustituida en todas las etapas por nucleo_39r.base_items.
+preparacion_39.py,20,base_items(,"T529, traza = N.base_items(d)",Sustituida en todas las etapas por nucleo_39r.base_items.
+preparacion_39.py,22,matriz_transaccional_principal,"M38 = pd.read_csv(N.D38 / 'preparacion' / 'matriz_transaccional_principal.csv', dtype={'participante_id': str})",Sustituida: la verificación se hace contra la matriz de 90 ítems de la 38R. En integridad_39.py es solo una huella de archivo; ese control lo reemplaza integridad_39r.py.
+pruebas_39.py,33,base_items(,"T529, _ = N.base_items(d)",Sustituida en todas las etapas por nucleo_39r.base_items.
+pruebas_39.py,92,matriz_transaccional_principal,"M38 = pd.read_csv(N.D38 / 'preparacion' / 'matriz_transaccional_principal.csv', dtype={'participante_id': str})",Sustituida: la verificación se hace contra la matriz de 90 ítems de la 38R. En integridad_39.py es solo una huella de archivo; ese control lo reemplaza integridad_39r.py.
+pruebas_39.py,104,N38.PRINCIPAL,validas = set(N38.PRINCIPAL),"Sustituida: base_items usa la lista de 29 de la 38R (R38.PRINCIPAL), verificada contra las Fases 35 y 36."
+pruebas_39.py,275,base_items(,"T1, _ = N.base_items(c['d'], 'S1')",Sustituida en todas las etapas por nucleo_39r.base_items.
+sensibilidades_39.py,25,base_items(,"T, _ = N.base_items(d, sens)",Sustituida en todas las etapas por nucleo_39r.base_items.

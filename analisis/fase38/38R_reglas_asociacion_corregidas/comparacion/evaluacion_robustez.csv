@@ -1,0 +1,2 @@
+antecedente,sensibilidades,evaluables,se_mantiene,se_debilita,desaparece,cambia,supera_nula_en,detalle,robusta
+bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,15,8,4,0,4,0,1,S1: desaparece por falta de casos; S2a: se mantiene; S2b: no evaluable; S3-bajo: se mantiene; S3-alto: desaparece por falta de casos; S4-1: no evaluable; S4-2: no evaluable; S5: no evaluable; S6: no evaluable; S7a: no evaluable; S7a-309: no evaluable; S7b: se mantiene; S7b-251: se mantiene; S8a: desaparece por falta de casos; S8b: desaparece por falta de casos,False

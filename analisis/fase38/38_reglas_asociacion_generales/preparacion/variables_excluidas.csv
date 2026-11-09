@@ -1,0 +1,7 @@
+variable,motivo
+"mrs_total, mrs_somatico, mrs_psicologico, mrs_urogenital, pregunta_1 a pregunta_11, mrs_severidad",Resultado: solo el consecuente severo_mrs
+"Segmentos A, B1 y demás etiquetas",Restricción de la fase; solo nota para la Fase 39
+imc,Solo 267 observados; sensibilidad S8
+"lugar_trabajo_comprensivo, estres_entorno_laboral",Solo quienes trabajan y la pregunta menciona los síntomas; sensibilidad S7a
+sobrecarga_fisica_emocional,Solo quienes cuidan; sensibilidad S7b
+etapa_menopausica,Decisión del 01-11: solo descriptiva; depende de preguntas menstruales excluidas

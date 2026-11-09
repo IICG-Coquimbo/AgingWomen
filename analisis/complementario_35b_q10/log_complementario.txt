@@ -1,0 +1,15 @@
+LOG Fase 35B — análisis complementario EXPLORATORIO (no sustituye el resultado oficial)
+Fecha de ejecución: 2026-11-02 22:13
+Commit original: 745d689937a18c35b62fd25eccc401b169b20e11
+HEAD: 745d689937a18c35b62fd25eccc401b169b20e11
+Semilla: 42; tolerancia: 1e-12; un solo proceso
+Versiones: Python 3.12.5, numpy 2.2.4, pandas 2.2.3
+SHA-256 complementario_fase35b.py: 830aaa55b3a73a488487bce1d7c06e80fa5fa0b506cb76ef0b7d563edc1e89af
+SHA-256 protocolo_complementario_35b.md: 3e2e7c3e97d1f58f153da05db4533903200213302e79267447c72c715e15f87f
+SHA-256 test_complementario_35b.py: 6e0c5c1bd45e68e73c6c9c2c8a073851099a930b45d64195b758ff21bb12fc37
+E1 (5000 permutaciones, q < 0.05): relevantes 0, pares 0, adaptado [], estandar []
+E2 (5000 permutaciones, q < 0.1): relevantes 5, pares 10, adaptado [doble_carga;frecuencia_fuerza;lugar_trabajo_comprensivo], estandar [doble_carga;frecuencia_fuerza;lugar_trabajo_comprensivo]
+E3 (50000 permutaciones, q < 0.05): relevantes 2, pares 1, adaptado [dias_ejercicio_semana], estandar [dias_ejercicio_semana]
+E4 (50000 permutaciones, q < 0.1): relevantes 5, pares 10, adaptado [doble_carga;frecuencia_fuerza;lugar_trabajo_comprensivo], estandar [doble_carga;frecuencia_fuerza;lugar_trabajo_comprensivo]
+Comprobaciones: E1 reproduce los archivos oficiales; dos corridas del último escenario coinciden exactamente.
+Tiempo real (s): E1 2.8, E2 3.4, E3 28.0, E4 37.4, repeticion_ultimo_escenario 35.6, total 107.3

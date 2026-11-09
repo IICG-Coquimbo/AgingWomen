@@ -1,0 +1,11 @@
+dimension,estrato,antecedente,consecuente,n_antecedente,confianza,z,p_ajustado_estrato,p_ajustado_conjunto,clase,fase
+cuidado,cuida,dias_ejercicio=0_dias & frutas=1-2_porciones & horas_sentada=6-7,severo_mrs=SI,36,0.8888888888888888,3.9559179969032936,0.0549450549450549,0.2527472527472527,3 compatible con la nula del estrato,39R
+pareja,con_pareja,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,38,0.8157894736842105,3.7899578056561114,0.1068931068931069,0.5044955044955045,3 compatible con la nula del estrato,39R
+trabajo,trabaja,alcohol=nunca & med_presion=NO & tabaco=nunca,severo_mrs=NO,87,0.6206896551724138,3.713370575138087,0.1868131868131868,0.6213786213786214,2 redundante,39R
+cuidado,cuida,comida_fuera=1-2_veces_por_semana & dias_ejercicio=0_dias & trabaja=SI,severo_mrs=SI,40,0.85,3.6741986411211514,0.2097902097902098,0.7002997002997003,3 compatible con la nula del estrato,39R
+trabajo,trabaja,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca & operada=NO,severo_mrs=SI,45,0.8444444444444444,3.643256338909987,0.2427572427572427,0.7282717282717283,2 redundante,39R
+ejercicio,0_dias,agua=no_consumo_o_1-2_porciones & bajo_impacto=no_lo_realiza_o_nunca & falta_tiempo=a_veces,severo_mrs=SI,35,0.8857142857142857,3.59892172893168,0.2727272727272727,0.7772227772227772,2 redundante,39R
+pareja,con_pareja,dias_ejercicio=0_dias & distension=nunca_o_casi_nunca & trabaja=SI,severo_mrs=SI,42,0.7857142857142857,3.594564995680916,0.2347652347652347,0.7852147852147852,3 compatible con la nula del estrato,39R
+pareja,con_pareja,distension=nunca_o_casi_nunca & fuerza=no_lo_realiza_o_nunca & trabaja=SI,severo_mrs=SI,66,0.7272727272727273,3.5563278661035747,0.2887112887112887,0.8451548451548452,2 redundante,39R
+trabajo,trabaja,agua=no_consumo_o_1-2_porciones & bajo_impacto=no_lo_realiza_o_nunca & med_presion=NO,severo_mrs=SI,37,0.8648648648648649,3.5549259435664418,0.3306693306693307,0.8561438561438561,3 compatible con la nula del estrato,39R
+trabajo,trabaja,bajo_impacto=no_lo_realiza_o_nunca & distension=nunca_o_casi_nunca,severo_mrs=SI,57,0.8070175438596491,3.528562931520328,0.3466533466533466,0.8831168831168831,3 compatible con la nula del estrato,39R

@@ -1,0 +1,15 @@
+{
+ "momento": "inicial",
+ "fecha": "2026-11-05T17:52:33",
+ "protocolo_sha256": "9f9614115801805f9cde6c1586a8d7571ee44116c18ac7638025a645ee7f5a82",
+ "protocolo_sellado": "2026-11-05T17:52:08",
+ "archivos_protegidos": 3646,
+ "comparados_por_huella": 3642,
+ "archivos_distintos": 0,
+ "pycache_en_fases_protegidas": [],
+ "head": "745d689",
+ "rama": "datos-simulados",
+ "cambios_fuera_de_analisis": [],
+ "cambios_en_src": [],
+ "datos_versionados_modificados": []
+}

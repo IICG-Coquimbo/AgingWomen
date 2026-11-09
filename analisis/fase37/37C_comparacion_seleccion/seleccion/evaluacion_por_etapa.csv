@@ -1,0 +1,1070 @@
+config,etapa,criterio,valor,estado,en_el_limite
+F1_c03_km_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F1_c03_km_k3,2. Asignación,E3 ari_fuera media,0.5872269432680712,CRIT,False
+F1_c03_km_k3,2. Asignación,E3 ari_fuera p05,0.3231883257587957,CRIT,False
+F1_c03_km_k3,3. Estabilidad,E3 ari_entre media,0.4881881747817081,CRIT,False
+F1_c03_km_k3,3. Estabilidad,E3 ari_entre p05,0.2303277637753684,CRIT,False
+F1_c03_km_k3,4. Codificación,S-ORD,0.8028434120222508,OK,False
+F1_c03_km_k3,4. Codificación,S-FAMD,0.8146973896438594,OK,False
+F1_c03_km_k3,4. Codificación,S-RARA,0.78915093372413,OK,False
+F1_c03_km_k3,4. Población e imputación,S-TRA,0.96947960104004,OK,False
+F1_c03_km_k3,4. Población e imputación,S-CUI,0.910181784734291,OK,False
+F1_c03_km_k3,4. Población e imputación,S-EJE,0.8011952682023699,OK,False
+F1_c03_km_k3,4. Población e imputación,S-IMPMODA,0.758586649432254,ADV,False
+F1_c03_km_k3,4. Variables,S-EDAD,0.940577164084778,OK,False
+F1_c03_km_k3,4. Variables,S-SOLAPE,0.2411395408174731,CRIT,False
+F1_c03_km_k3,5. Nula correlacionada,Silueta supera a todas,0.0099009900990099,OK,False
+F1_c03_km_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.4285714285714285,ADV,False
+F1_c03_km_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,0.1434628818785973,ADV,False
+F1_c03_km_k3,6. Tamaños,Grupo menor,84.0,OK,False
+F1_c03_km_k3,7. Separación,Silueta negativa (proporción),0.0245746691871455,OK,False
+F1_c03_km_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.5580619785087554,OK,False
+F1_c03_km_k3,9. Complejidad,Componentes,3.0,OK,False
+F1_c05_km_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F1_c05_km_k3,2. Asignación,E3 ari_fuera media,0.7053185061684359,ADV,False
+F1_c05_km_k3,2. Asignación,E3 ari_fuera p05,0.4951895192434602,CRIT,True
+F1_c05_km_k3,3. Estabilidad,E3 ari_entre media,0.6461788978793064,CRIT,True
+F1_c05_km_k3,3. Estabilidad,E3 ari_entre p05,0.4173608833033096,CRIT,False
+F1_c05_km_k3,4. Codificación,S-ORD,0.1999341155678922,CRIT,False
+F1_c05_km_k3,4. Codificación,S-FAMD,0.8171125515193907,OK,False
+F1_c05_km_k3,4. Codificación,S-RARA,0.8506231280489724,OK,False
+F1_c05_km_k3,4. Población e imputación,S-TRA,0.9436363485455168,OK,False
+F1_c05_km_k3,4. Población e imputación,S-CUI,0.9406384508285835,OK,False
+F1_c05_km_k3,4. Población e imputación,S-EJE,0.865108397947601,OK,False
+F1_c05_km_k3,4. Población e imputación,S-IMPMODA,0.8371513347480417,OK,False
+F1_c05_km_k3,4. Variables,S-EDAD,0.9749468957157726,OK,False
+F1_c05_km_k3,4. Variables,S-SOLAPE,0.2396465032980548,CRIT,False
+F1_c05_km_k3,5. Nula correlacionada,Silueta supera a todas,0.0198019801980198,ADV,False
+F1_c05_km_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.238095238095238,ADV,False
+F1_c05_km_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,1.1544718395744085,ADV,False
+F1_c05_km_k3,6. Tamaños,Grupo menor,84.0,OK,False
+F1_c05_km_k3,7. Separación,Silueta negativa (proporción),0.0434782608695652,OK,False
+F1_c05_km_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.5811033548851351,OK,False
+F1_c05_km_k3,9. Complejidad,Componentes,5.0,OK,False
+F1_c08_km_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F1_c08_km_k3,2. Asignación,E3 ari_fuera media,0.7552729612341675,ADV,False
+F1_c08_km_k3,2. Asignación,E3 ari_fuera p05,0.6550236952896789,OK,False
+F1_c08_km_k3,3. Estabilidad,E3 ari_entre media,0.7077884081569872,ADV,False
+F1_c08_km_k3,3. Estabilidad,E3 ari_entre p05,0.5895505639928565,ADV,False
+F1_c08_km_k3,4. Codificación,S-ORD,0.1920065756272091,CRIT,False
+F1_c08_km_k3,4. Codificación,S-FAMD,0.7947135640973714,OK,False
+F1_c08_km_k3,4. Codificación,S-RARA,0.8366998796010279,OK,False
+F1_c08_km_k3,4. Población e imputación,S-TRA,0.9120098488822602,OK,False
+F1_c08_km_k3,4. Población e imputación,S-CUI,0.90254492052209,OK,False
+F1_c08_km_k3,4. Población e imputación,S-EJE,0.8803207722115488,OK,False
+F1_c08_km_k3,4. Población e imputación,S-IMPMODA,0.8844926260660021,OK,False
+F1_c08_km_k3,4. Variables,S-EDAD,0.9045888422522964,OK,False
+F1_c08_km_k3,4. Variables,S-SOLAPE,0.2255772227908632,CRIT,False
+F1_c08_km_k3,5. Nula correlacionada,Silueta supera a todas,0.0495049504950495,ADV,False
+F1_c08_km_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.1428571428571428,ADV,False
+F1_c08_km_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,1.131972400536994,ADV,False
+F1_c08_km_k3,6. Tamaños,Grupo menor,80.0,OK,False
+F1_c08_km_k3,7. Separación,Silueta negativa (proporción),0.0321361058601134,OK,False
+F1_c08_km_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.5436878507067928,OK,False
+F1_c08_km_k3,9. Complejidad,Componentes,8.0,OK,False
+F2_c03_km_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F2_c03_km_k3,2. Asignación,E3 ari_fuera media,0.5810902864412764,CRIT,False
+F2_c03_km_k3,2. Asignación,E3 ari_fuera p05,0.2955540101721873,CRIT,False
+F2_c03_km_k3,3. Estabilidad,E3 ari_entre media,0.4850967178761862,CRIT,False
+F2_c03_km_k3,3. Estabilidad,E3 ari_entre p05,0.2257750028063956,CRIT,False
+F2_c03_km_k3,4. Codificación,S-ORD,0.8238618238822828,OK,False
+F2_c03_km_k3,4. Codificación,S-FAMD,0.8368858228978884,OK,False
+F2_c03_km_k3,4. Codificación,S-RARA,0.7620377175729233,OK,False
+F2_c03_km_k3,4. Población e imputación,S-TRA,0.9573497282376656,OK,False
+F2_c03_km_k3,4. Población e imputación,S-CUI,0.919459994078371,OK,False
+F2_c03_km_k3,4. Población e imputación,S-EJE,0.7747061727517234,ADV,False
+F2_c03_km_k3,4. Población e imputación,S-IMPMODA,0.7186633467145692,ADV,False
+F2_c03_km_k3,4. Variables,S-EDAD,0.948635436529358,OK,False
+F2_c03_km_k3,4. Variables,S-SOLAPE,0.2368891199846774,CRIT,False
+F2_c03_km_k3,5. Nula correlacionada,Silueta supera a todas,0.0099009900990099,OK,False
+F2_c03_km_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.4761904761904761,ADV,False
+F2_c03_km_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,0.0249350874262326,ADV,False
+F2_c03_km_k3,6. Tamaños,Grupo menor,85.0,OK,False
+F2_c03_km_k3,7. Separación,Silueta negativa (proporción),0.0226843100189035,OK,False
+F2_c03_km_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.5664619066843019,OK,False
+F2_c03_km_k3,9. Complejidad,Componentes,3.0,OK,False
+F2_c05_km_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F2_c05_km_k3,2. Asignación,E3 ari_fuera media,0.7092679066091991,ADV,False
+F2_c05_km_k3,2. Asignación,E3 ari_fuera p05,0.500623050357729,ADV,True
+F2_c05_km_k3,3. Estabilidad,E3 ari_entre media,0.6510581129221799,ADV,True
+F2_c05_km_k3,3. Estabilidad,E3 ari_entre p05,0.4256109541471201,CRIT,False
+F2_c05_km_k3,4. Codificación,S-ORD,0.1963088071743237,CRIT,False
+F2_c05_km_k3,4. Codificación,S-FAMD,0.8064952027101089,OK,False
+F2_c05_km_k3,4. Codificación,S-RARA,0.8335858945106905,OK,False
+F2_c05_km_k3,4. Población e imputación,S-TRA,0.9472793312139844,OK,False
+F2_c05_km_k3,4. Población e imputación,S-CUI,0.9403436329682536,OK,False
+F2_c05_km_k3,4. Población e imputación,S-EJE,0.8523457246962307,OK,False
+F2_c05_km_k3,4. Población e imputación,S-IMPMODA,0.8431575663398944,OK,False
+F2_c05_km_k3,4. Variables,S-EDAD,0.9765827171538504,OK,False
+F2_c05_km_k3,4. Variables,S-SOLAPE,0.2511828044293812,CRIT,False
+F2_c05_km_k3,5. Nula correlacionada,Silueta supera a todas,0.0198019801980198,ADV,False
+F2_c05_km_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.238095238095238,ADV,False
+F2_c05_km_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,1.2036660877483365,ADV,False
+F2_c05_km_k3,6. Tamaños,Grupo menor,83.0,OK,False
+F2_c05_km_k3,7. Separación,Silueta negativa (proporción),0.0321361058601134,OK,False
+F2_c05_km_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.5624085921498154,OK,False
+F2_c05_km_k3,9. Complejidad,Componentes,5.0,OK,False
+F2_c08_km_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F2_c08_km_k3,2. Asignación,E3 ari_fuera media,0.7532583818484639,ADV,False
+F2_c08_km_k3,2. Asignación,E3 ari_fuera p05,0.6143484528356509,ADV,False
+F2_c08_km_k3,3. Estabilidad,E3 ari_entre media,0.7087038668690476,ADV,False
+F2_c08_km_k3,3. Estabilidad,E3 ari_entre p05,0.5845083906549097,ADV,False
+F2_c08_km_k3,4. Codificación,S-ORD,0.1881517597179405,CRIT,False
+F2_c08_km_k3,4. Codificación,S-FAMD,0.7939287146655153,OK,False
+F2_c08_km_k3,4. Codificación,S-RARA,0.8361004030649544,OK,False
+F2_c08_km_k3,4. Población e imputación,S-TRA,0.887739731838441,OK,False
+F2_c08_km_k3,4. Población e imputación,S-CUI,0.8778900912199461,OK,False
+F2_c08_km_k3,4. Población e imputación,S-EJE,0.8676283215269877,OK,False
+F2_c08_km_k3,4. Población e imputación,S-IMPMODA,0.8792646948262672,OK,False
+F2_c08_km_k3,4. Variables,S-EDAD,0.8957989999072348,OK,False
+F2_c08_km_k3,4. Variables,S-SOLAPE,0.2377985476400937,CRIT,False
+F2_c08_km_k3,5. Nula correlacionada,Silueta supera a todas,0.0693069306930693,ADV,False
+F2_c08_km_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.1904761904761904,ADV,False
+F2_c08_km_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,1.163356926124047,ADV,False
+F2_c08_km_k3,6. Tamaños,Grupo menor,82.0,OK,False
+F2_c08_km_k3,7. Separación,Silueta negativa (proporción),0.0359168241965973,OK,False
+F2_c08_km_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.5393432235332898,OK,False
+F2_c08_km_k3,9. Complejidad,Componentes,8.0,OK,False
+P1_c03_km_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P1_c03_km_k3,2. Asignación,E3 ari_fuera media,0.7110876143929816,ADV,False
+P1_c03_km_k3,2. Asignación,E3 ari_fuera p05,0.5282443286873214,ADV,True
+P1_c03_km_k3,3. Estabilidad,E3 ari_entre media,0.6903903173664848,ADV,False
+P1_c03_km_k3,3. Estabilidad,E3 ari_entre p05,0.4888238416914061,CRIT,True
+P1_c03_km_k3,4. Codificación,S-ORD,0.5053343400262967,ADV,False
+P1_c03_km_k3,4. Codificación,S-FAMD,,NE,False
+P1_c03_km_k3,4. Codificación,S-RARA,,NE,False
+P1_c03_km_k3,4. Población e imputación,S-TRA,0.951507312687632,OK,False
+P1_c03_km_k3,4. Población e imputación,S-CUI,0.9626720946994304,OK,False
+P1_c03_km_k3,4. Población e imputación,S-EJE,0.8529473405144279,OK,False
+P1_c03_km_k3,4. Población e imputación,S-IMPMODA,0.8433616510004033,OK,False
+P1_c03_km_k3,4. Variables,S-EDAD,0.9932646262210308,OK,False
+P1_c03_km_k3,4. Variables,S-SOLAPE,0.239913073607566,CRIT,False
+P1_c03_km_k3,5. Nula correlacionada,Silueta supera a todas,0.0099009900990099,OK,False
+P1_c03_km_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.1904761904761904,ADV,False
+P1_c03_km_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,0.8947206595838796,ADV,False
+P1_c03_km_k3,6. Tamaños,Grupo menor,82.0,OK,False
+P1_c03_km_k3,7. Separación,Silueta negativa (proporción),0.0113421550094517,OK,False
+P1_c03_km_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.5548289869989966,OK,False
+P1_c03_km_k3,9. Complejidad,Componentes,3.0,OK,False
+P1_c05_km_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P1_c05_km_k3,2. Asignación,E3 ari_fuera media,0.7462943686739436,ADV,False
+P1_c05_km_k3,2. Asignación,E3 ari_fuera p05,0.6102792568772039,ADV,False
+P1_c05_km_k3,3. Estabilidad,E3 ari_entre media,0.7257279654062874,ADV,False
+P1_c05_km_k3,3. Estabilidad,E3 ari_entre p05,0.5954952138055932,ADV,False
+P1_c05_km_k3,4. Codificación,S-ORD,0.5454026141775242,ADV,False
+P1_c05_km_k3,4. Codificación,S-FAMD,,NE,False
+P1_c05_km_k3,4. Codificación,S-RARA,,NE,False
+P1_c05_km_k3,4. Población e imputación,S-TRA,0.9058994281331488,OK,False
+P1_c05_km_k3,4. Población e imputación,S-CUI,0.9607692256571098,OK,False
+P1_c05_km_k3,4. Población e imputación,S-EJE,0.7819738545448143,ADV,False
+P1_c05_km_k3,4. Población e imputación,S-IMPMODA,0.7971113691767121,ADV,False
+P1_c05_km_k3,4. Variables,S-EDAD,0.9370646510177028,OK,False
+P1_c05_km_k3,4. Variables,S-SOLAPE,0.2259367752839509,CRIT,False
+P1_c05_km_k3,5. Nula correlacionada,Silueta supera a todas,0.0099009900990099,OK,False
+P1_c05_km_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.1428571428571428,ADV,False
+P1_c05_km_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,1.0877107930798326,ADV,False
+P1_c05_km_k3,6. Tamaños,Grupo menor,84.0,OK,False
+P1_c05_km_k3,7. Separación,Silueta negativa (proporción),0.0491493383742911,OK,False
+P1_c05_km_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.6100430555762951,OK,False
+P1_c05_km_k3,9. Complejidad,Componentes,5.0,OK,False
+P2_c03_km_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P2_c03_km_k3,2. Asignación,E3 ari_fuera media,0.7087570882518528,ADV,False
+P2_c03_km_k3,2. Asignación,E3 ari_fuera p05,0.5285634750858581,ADV,True
+P2_c03_km_k3,3. Estabilidad,E3 ari_entre media,0.7014707950888822,ADV,False
+P2_c03_km_k3,3. Estabilidad,E3 ari_entre p05,0.5059807245303245,ADV,True
+P2_c03_km_k3,4. Codificación,S-ORD,0.5070124693856697,ADV,False
+P2_c03_km_k3,4. Codificación,S-FAMD,,NE,False
+P2_c03_km_k3,4. Codificación,S-RARA,,NE,False
+P2_c03_km_k3,4. Población e imputación,S-TRA,0.944703067824586,OK,False
+P2_c03_km_k3,4. Población e imputación,S-CUI,0.9626548068726072,OK,False
+P2_c03_km_k3,4. Población e imputación,S-EJE,0.8668316870793822,OK,False
+P2_c03_km_k3,4. Población e imputación,S-IMPMODA,0.8432714311819434,OK,False
+P2_c03_km_k3,4. Variables,S-EDAD,0.8552199446429026,OK,False
+P2_c03_km_k3,4. Variables,S-SOLAPE,0.2391531971009001,CRIT,False
+P2_c03_km_k3,5. Nula correlacionada,Silueta supera a todas,0.0099009900990099,OK,False
+P2_c03_km_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.1904761904761904,ADV,False
+P2_c03_km_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,1.0951086377740995,ADV,False
+P2_c03_km_k3,6. Tamaños,Grupo menor,82.0,OK,False
+P2_c03_km_k3,7. Separación,Silueta negativa (proporción),0.0151228733459357,OK,False
+P2_c03_km_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.5534747223209007,OK,False
+P2_c03_km_k3,9. Complejidad,Componentes,3.0,OK,False
+P2_c05_km_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P2_c05_km_k3,2. Asignación,E3 ari_fuera media,0.7489478250390552,ADV,False
+P2_c05_km_k3,2. Asignación,E3 ari_fuera p05,0.6244816925521859,ADV,False
+P2_c05_km_k3,3. Estabilidad,E3 ari_entre media,0.7308724606769996,ADV,False
+P2_c05_km_k3,3. Estabilidad,E3 ari_entre p05,0.5923649059891903,ADV,False
+P2_c05_km_k3,4. Codificación,S-ORD,0.5538294296086563,ADV,False
+P2_c05_km_k3,4. Codificación,S-FAMD,,NE,False
+P2_c05_km_k3,4. Codificación,S-RARA,,NE,False
+P2_c05_km_k3,4. Población e imputación,S-TRA,0.8993032529377891,OK,False
+P2_c05_km_k3,4. Población e imputación,S-CUI,0.9676610254003364,OK,False
+P2_c05_km_k3,4. Población e imputación,S-EJE,0.8198291495862325,OK,False
+P2_c05_km_k3,4. Población e imputación,S-IMPMODA,0.8029266367438957,OK,False
+P2_c05_km_k3,4. Variables,S-EDAD,0.9305786940407612,OK,False
+P2_c05_km_k3,4. Variables,S-SOLAPE,0.2256678308922435,CRIT,False
+P2_c05_km_k3,5. Nula correlacionada,Silueta supera a todas,0.0099009900990099,OK,False
+P2_c05_km_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.1428571428571428,ADV,False
+P2_c05_km_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,1.0133621006097582,ADV,False
+P2_c05_km_k3,6. Tamaños,Grupo menor,84.0,OK,False
+P2_c05_km_k3,7. Separación,Silueta negativa (proporción),0.0491493383742911,OK,False
+P2_c05_km_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.6050826870860054,OK,False
+P2_c05_km_k3,9. Complejidad,Componentes,5.0,OK,False
+F1_c03_km_k4,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F1_c03_km_k4,2. Asignación,E3 ari_fuera media,0.5430853341448042,CRIT,False
+F1_c03_km_k4,2. Asignación,E3 ari_fuera p05,0.262396340886512,CRIT,False
+F1_c03_km_k4,3. Estabilidad,E3 ari_entre media,0.4533886586235165,CRIT,False
+F1_c03_km_k4,3. Estabilidad,E3 ari_entre p05,0.2786712131545796,CRIT,False
+F1_c03_km_k4,4. Codificación,S-ORD,0.8046274869104584,OK,False
+F1_c03_km_k4,4. Codificación,S-FAMD,0.6344152701072667,ADV,False
+F1_c03_km_k4,4. Codificación,S-RARA,0.4666689200767767,ADV,False
+F1_c03_km_k4,4. Población e imputación,S-TRA,0.889374616393178,OK,False
+F1_c03_km_k4,4. Población e imputación,S-CUI,0.8932981538059315,OK,False
+F1_c03_km_k4,4. Población e imputación,S-EJE,0.7535648146578886,ADV,False
+F1_c03_km_k4,4. Población e imputación,S-IMPMODA,0.7104927530753935,ADV,False
+F1_c03_km_k4,4. Variables,S-EDAD,0.9041901439589728,OK,False
+F1_c03_km_k4,4. Variables,S-SOLAPE,0.4132893595686394,ADV,True
+F1_c03_km_k4,5. Nula correlacionada,Silueta supera a todas,0.0099009900990099,OK,False
+F1_c03_km_k4,5. Nula correlacionada,E1 ari_entre supera a todas,0.2857142857142857,ADV,False
+F1_c03_km_k4,5. Nula correlacionada,Supera control de búsqueda múltiple,0.6748090604455325,ADV,False
+F1_c03_km_k4,6. Tamaños,Grupo menor,76.0,OK,False
+F1_c03_km_k4,7. Separación,Silueta negativa (proporción),0.0245746691871455,OK,False
+F1_c03_km_k4,8. Interpretabilidad,Segmentación multivariable,0.3220626810485014,OK,False
+F1_c03_km_k4,9. Complejidad,Componentes,3.0,OK,False
+F2_c03_km_k4,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F2_c03_km_k4,2. Asignación,E3 ari_fuera media,0.5446590620086914,CRIT,False
+F2_c03_km_k4,2. Asignación,E3 ari_fuera p05,0.341640915279268,CRIT,False
+F2_c03_km_k4,3. Estabilidad,E3 ari_entre media,0.4553212463307599,CRIT,False
+F2_c03_km_k4,3. Estabilidad,E3 ari_entre p05,0.295756470341136,CRIT,False
+F2_c03_km_k4,4. Codificación,S-ORD,0.7972957313913546,OK,False
+F2_c03_km_k4,4. Codificación,S-FAMD,0.639294467675074,ADV,False
+F2_c03_km_k4,4. Codificación,S-RARA,0.467149762229652,ADV,False
+F2_c03_km_k4,4. Población e imputación,S-TRA,0.8856691922065112,OK,False
+F2_c03_km_k4,4. Población e imputación,S-CUI,0.8822784503708453,OK,False
+F2_c03_km_k4,4. Población e imputación,S-EJE,0.5573141142571595,CRIT,False
+F2_c03_km_k4,4. Población e imputación,S-IMPMODA,0.6867825705098977,ADV,False
+F2_c03_km_k4,4. Variables,S-EDAD,0.8942090227612047,OK,False
+F2_c03_km_k4,4. Variables,S-SOLAPE,0.4106649450234483,ADV,True
+F2_c03_km_k4,5. Nula correlacionada,Silueta supera a todas,0.0099009900990099,OK,False
+F2_c03_km_k4,5. Nula correlacionada,E1 ari_entre supera a todas,0.3333333333333333,ADV,False
+F2_c03_km_k4,5. Nula correlacionada,Supera control de búsqueda múltiple,0.5820489161583482,ADV,False
+F2_c03_km_k4,6. Tamaños,Grupo menor,76.0,OK,False
+F2_c03_km_k4,7. Separación,Silueta negativa (proporción),0.0264650283553875,OK,False
+F2_c03_km_k4,8. Interpretabilidad,Segmentación multivariable,0.3557446558603132,OK,False
+F2_c03_km_k4,9. Complejidad,Componentes,3.0,OK,False
+P1_c12_km_k4,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P1_c12_km_k4,2. Asignación,E3 ari_fuera media,0.8121877824824874,OK,False
+P1_c12_km_k4,2. Asignación,E3 ari_fuera p05,0.7223198556070058,OK,False
+P1_c12_km_k4,3. Estabilidad,E3 ari_entre media,0.7707041273940448,ADV,False
+P1_c12_km_k4,3. Estabilidad,E3 ari_entre p05,0.6657657358153116,OK,False
+P1_c12_km_k4,4. Codificación,S-ORD,0.6662082502403756,OK,False
+P1_c12_km_k4,4. Codificación,S-FAMD,,NE,False
+P1_c12_km_k4,4. Codificación,S-RARA,,NE,False
+P1_c12_km_k4,4. Población e imputación,S-TRA,0.9906549153120596,OK,False
+P1_c12_km_k4,4. Población e imputación,S-CUI,0.9376749983119032,OK,False
+P1_c12_km_k4,4. Población e imputación,S-EJE,0.884313780537257,OK,False
+P1_c12_km_k4,4. Población e imputación,S-IMPMODA,0.903853825319393,OK,False
+P1_c12_km_k4,4. Variables,S-EDAD,0.9962609147447072,OK,False
+P1_c12_km_k4,4. Variables,S-SOLAPE,0.3474187532976246,CRIT,False
+P1_c12_km_k4,5. Nula correlacionada,Silueta supera a todas,0.3465346534653465,ADV,False
+P1_c12_km_k4,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+P1_c12_km_k4,5. Nula correlacionada,Supera control de búsqueda múltiple,0.3941656506836852,ADV,False
+P1_c12_km_k4,6. Tamaños,Grupo menor,78.0,OK,False
+P1_c12_km_k4,7. Separación,Silueta negativa (proporción),0.0850661625708884,OK,False
+P1_c12_km_k4,8. Interpretabilidad,Segmentación multivariable,0.5435477603794313,OK,False
+P1_c12_km_k4,9. Complejidad,Componentes,12.0,ADV,False
+P2_c08_km_k4,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P2_c08_km_k4,2. Asignación,E3 ari_fuera media,0.7659455512192079,ADV,False
+P2_c08_km_k4,2. Asignación,E3 ari_fuera p05,0.6397876063720416,ADV,False
+P2_c08_km_k4,3. Estabilidad,E3 ari_entre media,0.7114454970671722,ADV,False
+P2_c08_km_k4,3. Estabilidad,E3 ari_entre p05,0.6065672115340259,ADV,False
+P2_c08_km_k4,4. Codificación,S-ORD,0.6200064930420824,ADV,False
+P2_c08_km_k4,4. Codificación,S-FAMD,,NE,False
+P2_c08_km_k4,4. Codificación,S-RARA,,NE,False
+P2_c08_km_k4,4. Población e imputación,S-TRA,0.8668842558978987,OK,False
+P2_c08_km_k4,4. Población e imputación,S-CUI,0.914455703830342,OK,False
+P2_c08_km_k4,4. Población e imputación,S-EJE,0.8417761136386147,OK,False
+P2_c08_km_k4,4. Población e imputación,S-IMPMODA,0.9474637609704496,OK,False
+P2_c08_km_k4,4. Variables,S-EDAD,0.9135545144136392,OK,False
+P2_c08_km_k4,4. Variables,S-SOLAPE,0.3648555367772886,CRIT,False
+P2_c08_km_k4,5. Nula correlacionada,Silueta supera a todas,0.0693069306930693,ADV,False
+P2_c08_km_k4,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+P2_c08_km_k4,5. Nula correlacionada,Supera control de búsqueda múltiple,1.3926630360895065,ADV,False
+P2_c08_km_k4,6. Tamaños,Grupo menor,78.0,OK,False
+P2_c08_km_k4,7. Separación,Silueta negativa (proporción),0.0661625708884688,OK,False
+P2_c08_km_k4,8. Interpretabilidad,Segmentación multivariable,0.5334724163843185,OK,False
+P2_c08_km_k4,9. Complejidad,Componentes,8.0,OK,False
+P2_c12_km_k4,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P2_c12_km_k4,2. Asignación,E3 ari_fuera media,0.8277879195213144,OK,False
+P2_c12_km_k4,2. Asignación,E3 ari_fuera p05,0.7251977413831041,OK,False
+P2_c12_km_k4,3. Estabilidad,E3 ari_entre media,0.770920795474335,ADV,False
+P2_c12_km_k4,3. Estabilidad,E3 ari_entre p05,0.6791699115042775,OK,False
+P2_c12_km_k4,4. Codificación,S-ORD,0.6918312949961586,OK,False
+P2_c12_km_k4,4. Codificación,S-FAMD,,NE,False
+P2_c12_km_k4,4. Codificación,S-RARA,,NE,False
+P2_c12_km_k4,4. Población e imputación,S-TRA,0.9592572396489332,OK,False
+P2_c12_km_k4,4. Población e imputación,S-CUI,0.9513450185526726,OK,False
+P2_c12_km_k4,4. Población e imputación,S-EJE,0.8790328097638251,OK,False
+P2_c12_km_k4,4. Población e imputación,S-IMPMODA,0.9105453203170204,OK,False
+P2_c12_km_k4,4. Variables,S-EDAD,0.9663135726288018,OK,False
+P2_c12_km_k4,4. Variables,S-SOLAPE,0.3627552492447231,CRIT,False
+P2_c12_km_k4,5. Nula correlacionada,Silueta supera a todas,0.2376237623762376,ADV,False
+P2_c12_km_k4,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+P2_c12_km_k4,5. Nula correlacionada,Supera control de búsqueda múltiple,0.599648492410671,ADV,False
+P2_c12_km_k4,6. Tamaños,Grupo menor,76.0,OK,False
+P2_c12_km_k4,7. Separación,Silueta negativa (proporción),0.0623818525519848,OK,False
+P2_c12_km_k4,8. Interpretabilidad,Segmentación multivariable,0.551692761407513,OK,False
+P2_c12_km_k4,9. Complejidad,Componentes,12.0,ADV,False
+P1_c02_km_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P1_c02_km_k3,2. Asignación,E3 ari_fuera media,0.4768595847844009,CRIT,False
+P1_c02_km_k3,2. Asignación,E3 ari_fuera p05,0.1770195454809901,CRIT,False
+P1_c02_km_k3,3. Estabilidad,E3 ari_entre media,0.4423084165213025,CRIT,False
+P1_c02_km_k3,3. Estabilidad,E3 ari_entre p05,0.2241393598868101,CRIT,False
+P1_c02_km_k3,4. Codificación,S-ORD,0.369201045882169,CRIT,False
+P1_c02_km_k3,4. Codificación,S-FAMD,,NE,False
+P1_c02_km_k3,4. Codificación,S-RARA,,NE,False
+P1_c02_km_k3,4. Población e imputación,S-TRA,0.8556497743625925,OK,False
+P1_c02_km_k3,4. Población e imputación,S-CUI,0.7916806342228522,ADV,False
+P1_c02_km_k3,4. Población e imputación,S-EJE,0.7871064028539946,ADV,False
+P1_c02_km_k3,4. Población e imputación,S-IMPMODA,0.7553493394962353,ADV,False
+P1_c02_km_k3,4. Variables,S-EDAD,0.9338954962466444,OK,False
+P1_c02_km_k3,4. Variables,S-SOLAPE,0.2459067594689862,CRIT,False
+P1_c02_km_k3,5. Nula correlacionada,Silueta supera a todas,0.0099009900990099,OK,False
+P1_c02_km_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.8095238095238095,ADV,False
+P1_c02_km_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,-0.9721517665427432,ADV,False
+P1_c02_km_k3,6. Tamaños,Grupo menor,82.0,OK,False
+P1_c02_km_k3,7. Separación,Silueta negativa (proporción),0.0113421550094517,OK,False
+P1_c02_km_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.4992221505721414,OK,False
+P1_c02_km_k3,9. Complejidad,Componentes,2.0,OK,False
+P1_c02_km_k5,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P1_c02_km_k5,2. Asignación,E3 ari_fuera media,0.4948715603169006,CRIT,False
+P1_c02_km_k5,2. Asignación,E3 ari_fuera p05,0.2729116074446808,CRIT,False
+P1_c02_km_k5,3. Estabilidad,E3 ari_entre media,0.4447152806440738,CRIT,False
+P1_c02_km_k5,3. Estabilidad,E3 ari_entre p05,0.2532774190743304,CRIT,False
+P1_c02_km_k5,4. Codificación,S-ORD,0.6539037871157013,OK,False
+P1_c02_km_k5,4. Codificación,S-FAMD,,NE,False
+P1_c02_km_k5,4. Codificación,S-RARA,,NE,False
+P1_c02_km_k5,4. Población e imputación,S-TRA,0.8407983320769248,OK,False
+P1_c02_km_k5,4. Población e imputación,S-CUI,0.8488526256189372,OK,False
+P1_c02_km_k5,4. Población e imputación,S-EJE,0.8264178204700324,OK,False
+P1_c02_km_k5,4. Población e imputación,S-IMPMODA,0.814833708930794,OK,False
+P1_c02_km_k5,4. Variables,S-EDAD,0.9346503230665636,OK,False
+P1_c02_km_k5,4. Variables,S-SOLAPE,0.2708882670511667,CRIT,False
+P1_c02_km_k5,5. Nula correlacionada,Silueta supera a todas,0.0198019801980198,ADV,False
+P1_c02_km_k5,5. Nula correlacionada,E1 ari_entre supera a todas,0.4761904761904761,ADV,False
+P1_c02_km_k5,5. Nula correlacionada,Supera control de búsqueda múltiple,0.1252910291740601,ADV,False
+P1_c02_km_k5,6. Tamaños,Grupo menor,51.0,OK,False
+P1_c02_km_k5,7. Separación,Silueta negativa (proporción),0.0113421550094517,OK,False
+P1_c02_km_k5,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.4851237046773559,OK,False
+P1_c02_km_k5,9. Complejidad,Componentes,2.0,OK,False
+P1_c02_km_k6,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P1_c02_km_k6,2. Asignación,E3 ari_fuera media,0.4425086507336508,CRIT,False
+P1_c02_km_k6,2. Asignación,E3 ari_fuera p05,0.2180369756073121,CRIT,False
+P1_c02_km_k6,3. Estabilidad,E3 ari_entre media,0.3887580349280286,CRIT,False
+P1_c02_km_k6,3. Estabilidad,E3 ari_entre p05,0.2226736860162653,CRIT,False
+P1_c02_km_k6,4. Codificación,S-ORD,0.5567474972480603,ADV,False
+P1_c02_km_k6,4. Codificación,S-FAMD,,NE,False
+P1_c02_km_k6,4. Codificación,S-RARA,,NE,False
+P1_c02_km_k6,4. Población e imputación,S-TRA,0.82794877204525,OK,False
+P1_c02_km_k6,4. Población e imputación,S-CUI,0.759546068763637,ADV,False
+P1_c02_km_k6,4. Población e imputación,S-EJE,0.710252920522383,ADV,False
+P1_c02_km_k6,4. Población e imputación,S-IMPMODA,0.6236668166330974,CRIT,True
+P1_c02_km_k6,4. Variables,S-EDAD,0.8778492623831251,OK,False
+P1_c02_km_k6,4. Variables,S-SOLAPE,0.2335270929684504,CRIT,False
+P1_c02_km_k6,5. Nula correlacionada,Silueta supera a todas,0.0198019801980198,ADV,False
+P1_c02_km_k6,5. Nula correlacionada,E1 ari_entre supera a todas,0.6666666666666666,ADV,False
+P1_c02_km_k6,5. Nula correlacionada,Supera control de búsqueda múltiple,-0.4190035549779382,ADV,False
+P1_c02_km_k6,6. Tamaños,Grupo menor,51.0,OK,False
+P1_c02_km_k6,7. Separación,Silueta negativa (proporción),0.0170132325141776,OK,False
+P1_c02_km_k6,8. Interpretabilidad,Segmentación multivariable,0.3697166403762681,OK,False
+P1_c02_km_k6,9. Complejidad,Componentes,2.0,OK,False
+P1_c02_ward_k5,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P1_c02_ward_k5,2. Asignación,Ward: prototipos,0.8457933269358933,OK,False
+P1_c02_ward_k5,2. Asignación,E3 ari_fuera media,0.441036655548969,CRIT,False
+P1_c02_ward_k5,2. Asignación,E3 ari_fuera p05,0.2227380714408223,CRIT,False
+P1_c02_ward_k5,3. Estabilidad,E3 ari_entre media,0.3607662465494985,CRIT,False
+P1_c02_ward_k5,3. Estabilidad,E3 ari_entre p05,0.1893123955793434,CRIT,False
+P1_c02_ward_k5,4. Codificación,S-ORD,0.5138769133627287,ADV,False
+P1_c02_ward_k5,4. Codificación,S-FAMD,,NE,False
+P1_c02_ward_k5,4. Codificación,S-RARA,,NE,False
+P1_c02_ward_k5,4. Población e imputación,S-TRA,0.5299152270244283,CRIT,False
+P1_c02_ward_k5,4. Población e imputación,S-CUI,0.6224132188344994,CRIT,True
+P1_c02_ward_k5,4. Población e imputación,S-EJE,0.6446742050631623,CRIT,True
+P1_c02_ward_k5,4. Población e imputación,S-IMPMODA,0.4134781792199916,CRIT,False
+P1_c02_ward_k5,4. Variables,S-EDAD,0.7184038016606891,OK,False
+P1_c02_ward_k5,4. Variables,S-SOLAPE,0.2663434153604845,CRIT,False
+P1_c02_ward_k5,5. Nula correlacionada,Silueta supera a todas,0.0594059405940594,ADV,False
+P1_c02_ward_k5,5. Nula correlacionada,E1 ari_entre supera a todas,0.3333333333333333,ADV,False
+P1_c02_ward_k5,5. Nula correlacionada,Supera control de búsqueda múltiple,0.6405575455234784,ADV,False
+P1_c02_ward_k5,6. Tamaños,Grupo menor,58.0,OK,False
+P1_c02_ward_k5,7. Separación,Silueta negativa (proporción),0.0812854442344045,OK,False
+P1_c02_ward_k5,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.4671988473478601,OK,False
+P1_c02_ward_k5,9. Complejidad,Componentes,2.0,OK,False
+P1_c08_km_k2,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P1_c08_km_k2,2. Asignación,E3 ari_fuera media,0.9568459634229384,OK,False
+P1_c08_km_k2,2. Asignación,E3 ari_fuera p05,0.8719056614803358,OK,False
+P1_c08_km_k2,3. Estabilidad,E3 ari_entre media,0.9397070665982812,OK,False
+P1_c08_km_k2,3. Estabilidad,E3 ari_entre p05,0.8857763634779525,OK,False
+P1_c08_km_k2,4. Codificación,S-ORD,0.2532412782124627,CRIT,False
+P1_c08_km_k2,4. Codificación,S-FAMD,,NE,False
+P1_c08_km_k2,4. Codificación,S-RARA,,NE,False
+P1_c08_km_k2,4. Población e imputación,S-TRA,1.0,OK,False
+P1_c08_km_k2,4. Población e imputación,S-CUI,0.9714823535914524,OK,False
+P1_c08_km_k2,4. Población e imputación,S-EJE,0.979468951553258,OK,False
+P1_c08_km_k2,4. Población e imputación,S-IMPMODA,1.0,OK,False
+P1_c08_km_k2,4. Variables,S-EDAD,1.0,OK,False
+P1_c08_km_k2,4. Variables,S-SOLAPE,0.9816858958967812,OK,False
+P1_c08_km_k2,5. Nula correlacionada,Silueta supera a todas,0.0198019801980198,ADV,False
+P1_c08_km_k2,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+P1_c08_km_k2,5. Nula correlacionada,Supera control de búsqueda múltiple,2.637584866282961,ADV,False
+P1_c08_km_k2,6. Tamaños,Grupo menor,94.0,OK,False
+P1_c08_km_k2,7. Separación,Silueta negativa (proporción),0.0189035916824196,OK,False
+P1_c08_km_k2,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.8276749299054796,OK,False
+P1_c08_km_k2,9. Complejidad,Componentes,8.0,OK,False
+P2_c02_km_k7,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P2_c02_km_k7,2. Asignación,E3 ari_fuera media,0.4193018819705595,CRIT,False
+P2_c02_km_k7,2. Asignación,E3 ari_fuera p05,0.2218318356503896,CRIT,False
+P2_c02_km_k7,3. Estabilidad,E3 ari_entre media,0.3755647832236612,CRIT,False
+P2_c02_km_k7,3. Estabilidad,E3 ari_entre p05,0.2129102230351572,CRIT,False
+P2_c02_km_k7,4. Codificación,S-ORD,0.5661557379360341,ADV,False
+P2_c02_km_k7,4. Codificación,S-FAMD,,NE,False
+P2_c02_km_k7,4. Codificación,S-RARA,,NE,False
+P2_c02_km_k7,4. Población e imputación,S-TRA,0.8267095504383458,OK,False
+P2_c02_km_k7,4. Población e imputación,S-CUI,0.7357496632881357,ADV,False
+P2_c02_km_k7,4. Población e imputación,S-EJE,0.7270221071439464,ADV,False
+P2_c02_km_k7,4. Población e imputación,S-IMPMODA,0.6207434644289561,CRIT,True
+P2_c02_km_k7,4. Variables,S-EDAD,0.8409837016060594,OK,False
+P2_c02_km_k7,4. Variables,S-SOLAPE,0.2723255974609483,CRIT,False
+P2_c02_km_k7,5. Nula correlacionada,Silueta supera a todas,0.0198019801980198,ADV,False
+P2_c02_km_k7,5. Nula correlacionada,E1 ari_entre supera a todas,0.6190476190476191,ADV,False
+P2_c02_km_k7,5. Nula correlacionada,Supera control de búsqueda múltiple,-0.3106508138232993,ADV,False
+P2_c02_km_k7,6. Tamaños,Grupo menor,23.0,ADV,False
+P2_c02_km_k7,7. Separación,Silueta negativa (proporción),0.0189035916824196,OK,False
+P2_c02_km_k7,8. Interpretabilidad,Segmentación multivariable,0.3650998668477804,OK,False
+P2_c02_km_k7,9. Complejidad,Componentes,2.0,OK,False
+P2_c02_km_k8,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P2_c02_km_k8,2. Asignación,E3 ari_fuera media,0.3701650722988094,CRIT,False
+P2_c02_km_k8,2. Asignación,E3 ari_fuera p05,0.1797433675385435,CRIT,False
+P2_c02_km_k8,3. Estabilidad,E3 ari_entre media,0.337331229043097,CRIT,False
+P2_c02_km_k8,3. Estabilidad,E3 ari_entre p05,0.196571540764839,CRIT,False
+P2_c02_km_k8,4. Codificación,S-ORD,0.549219726858222,ADV,False
+P2_c02_km_k8,4. Codificación,S-FAMD,,NE,False
+P2_c02_km_k8,4. Codificación,S-RARA,,NE,False
+P2_c02_km_k8,4. Población e imputación,S-TRA,0.8470688095178056,OK,False
+P2_c02_km_k8,4. Población e imputación,S-CUI,0.7422647191728343,ADV,False
+P2_c02_km_k8,4. Población e imputación,S-EJE,0.6847128465396773,ADV,False
+P2_c02_km_k8,4. Población e imputación,S-IMPMODA,0.6858994498691773,ADV,False
+P2_c02_km_k8,4. Variables,S-EDAD,0.7988022149160398,OK,False
+P2_c02_km_k8,4. Variables,S-SOLAPE,0.2542830091089256,CRIT,False
+P2_c02_km_k8,5. Nula correlacionada,Silueta supera a todas,0.0198019801980198,ADV,False
+P2_c02_km_k8,5. Nula correlacionada,E1 ari_entre supera a todas,0.7142857142857143,ADV,False
+P2_c02_km_k8,5. Nula correlacionada,Supera control de búsqueda múltiple,-0.4952946246939267,ADV,False
+P2_c02_km_k8,6. Tamaños,Grupo menor,22.0,ADV,False
+P2_c02_km_k8,7. Separación,Silueta negativa (proporción),0.0075614366729678,OK,False
+P2_c02_km_k8,8. Interpretabilidad,Segmentación multivariable,0.3706696158733005,OK,False
+P2_c02_km_k8,9. Complejidad,Componentes,2.0,OK,False
+P2_c02_ward_k2,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P2_c02_ward_k2,2. Asignación,Ward: prototipos,0.8068799538118413,OK,False
+P2_c02_ward_k2,2. Asignación,E3 ari_fuera media,0.7507546744731228,ADV,False
+P2_c02_ward_k2,2. Asignación,E3 ari_fuera p05,0.2753807742028398,CRIT,False
+P2_c02_ward_k2,3. Estabilidad,E3 ari_entre media,0.6890652321820209,ADV,False
+P2_c02_ward_k2,3. Estabilidad,E3 ari_entre p05,0.1189265640660631,CRIT,False
+P2_c02_ward_k2,4. Codificación,S-ORD,0.1288954877013438,CRIT,False
+P2_c02_ward_k2,4. Codificación,S-FAMD,,NE,False
+P2_c02_ward_k2,4. Codificación,S-RARA,,NE,False
+P2_c02_ward_k2,4. Población e imputación,S-TRA,0.8861613176803302,OK,False
+P2_c02_ward_k2,4. Población e imputación,S-CUI,0.7936831956426442,ADV,False
+P2_c02_ward_k2,4. Población e imputación,S-EJE,0.8216245494908614,OK,False
+P2_c02_ward_k2,4. Población e imputación,S-IMPMODA,0.7343081742145103,ADV,False
+P2_c02_ward_k2,4. Variables,S-EDAD,0.7575091638429008,OK,False
+P2_c02_ward_k2,4. Variables,S-SOLAPE,0.8256598488342375,OK,False
+P2_c02_ward_k2,5. Nula correlacionada,Silueta supera a todas,0.0495049504950495,ADV,False
+P2_c02_ward_k2,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+P2_c02_ward_k2,5. Nula correlacionada,Supera control de búsqueda múltiple,1.7024747057444116,ADV,False
+P2_c02_ward_k2,6. Tamaños,Grupo menor,63.0,OK,False
+P2_c02_ward_k2,7. Separación,Silueta negativa (proporción),0.0340264650283553,OK,False
+P2_c02_ward_k2,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.8173998249372624,OK,False
+P2_c02_ward_k2,9. Complejidad,Componentes,2.0,OK,False
+F1_c02_km_k2,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F1_c02_km_k2,2. Asignación,E3 ari_fuera media,0.9645084841738848,OK,False
+F1_c02_km_k2,2. Asignación,E3 ari_fuera p05,0.8720022849375848,OK,False
+F1_c02_km_k2,3. Estabilidad,E3 ari_entre media,0.9305651482125792,OK,False
+F1_c02_km_k2,3. Estabilidad,E3 ari_entre p05,0.8705217289318774,OK,False
+F1_c02_km_k2,4. Codificación,S-ORD,0.4336394741581127,ADV,False
+F1_c02_km_k2,4. Codificación,S-FAMD,0.8231142506918732,OK,False
+F1_c02_km_k2,4. Codificación,S-RARA,0.899713702391289,OK,False
+F1_c02_km_k2,4. Población e imputación,S-TRA,0.9806743020424592,OK,False
+F1_c02_km_k2,4. Población e imputación,S-CUI,0.990406004362667,OK,False
+F1_c02_km_k2,4. Población e imputación,S-EJE,0.9687244595916056,OK,False
+F1_c02_km_k2,4. Población e imputación,S-IMPMODA,0.9908023842855062,OK,False
+F1_c02_km_k2,4. Variables,S-EDAD,0.9908023842855062,OK,False
+F1_c02_km_k2,4. Variables,S-SOLAPE,1.0,OK,False
+F1_c02_km_k2,5. Nula correlacionada,Silueta supera a todas,0.0099009900990099,OK,False
+F1_c02_km_k2,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+F1_c02_km_k2,5. Nula correlacionada,Supera control de búsqueda múltiple,2.438128249513857,ADV,False
+F1_c02_km_k2,6. Tamaños,Grupo menor,92.0,OK,False
+F1_c02_km_k2,7. Separación,Silueta negativa (proporción),0.0037807183364839,OK,False
+F1_c02_km_k2,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.7746321919322877,OK,False
+F1_c02_km_k2,9. Complejidad,Componentes,2.0,OK,False
+F1_c03_km_k6,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F1_c03_km_k6,2. Asignación,E3 ari_fuera media,0.4118798380792758,CRIT,False
+F1_c03_km_k6,2. Asignación,E3 ari_fuera p05,0.2092975373552921,CRIT,False
+F1_c03_km_k6,3. Estabilidad,E3 ari_entre media,0.3588664220178277,CRIT,False
+F1_c03_km_k6,3. Estabilidad,E3 ari_entre p05,0.2230463382253541,CRIT,False
+F1_c03_km_k6,4. Codificación,S-ORD,0.5025077213159599,ADV,False
+F1_c03_km_k6,4. Codificación,S-FAMD,0.417177853775086,ADV,True
+F1_c03_km_k6,4. Codificación,S-RARA,0.3685592018651297,CRIT,False
+F1_c03_km_k6,4. Población e imputación,S-TRA,0.8193509245452621,OK,False
+F1_c03_km_k6,4. Población e imputación,S-CUI,0.9039088902264054,OK,False
+F1_c03_km_k6,4. Población e imputación,S-EJE,0.6450317665135299,CRIT,True
+F1_c03_km_k6,4. Población e imputación,S-IMPMODA,0.7519331439442353,ADV,False
+F1_c03_km_k6,4. Variables,S-EDAD,0.8365497665608375,OK,False
+F1_c03_km_k6,4. Variables,S-SOLAPE,0.3303494714342083,CRIT,False
+F1_c03_km_k6,5. Nula correlacionada,Silueta supera a todas,0.1386138613861386,ADV,False
+F1_c03_km_k6,5. Nula correlacionada,E1 ari_entre supera a todas,0.6190476190476191,ADV,False
+F1_c03_km_k6,5. Nula correlacionada,Supera control de búsqueda múltiple,-0.0727652690202868,ADV,False
+F1_c03_km_k6,6. Tamaños,Grupo menor,30.0,OK,False
+F1_c03_km_k6,7. Separación,Silueta negativa (proporción),0.0151228733459357,OK,False
+F1_c03_km_k6,8. Interpretabilidad,Segmentación multivariable,0.2529554266622128,OK,False
+F1_c03_km_k6,9. Complejidad,Componentes,3.0,OK,False
+F2_c02_km_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F2_c02_km_k3,2. Asignación,E3 ari_fuera media,0.5342008385695534,CRIT,False
+F2_c02_km_k3,2. Asignación,E3 ari_fuera p05,0.1785247755810033,CRIT,False
+F2_c02_km_k3,3. Estabilidad,E3 ari_entre media,0.4311805053687123,CRIT,False
+F2_c02_km_k3,3. Estabilidad,E3 ari_entre p05,0.2145066129861295,CRIT,False
+F2_c02_km_k3,4. Codificación,S-ORD,0.7532821831423676,OK,False
+F2_c02_km_k3,4. Codificación,S-FAMD,0.6094985500701178,ADV,False
+F2_c02_km_k3,4. Codificación,S-RARA,0.3998177045703542,CRIT,True
+F2_c02_km_k3,4. Población e imputación,S-TRA,0.8995469533431973,OK,False
+F2_c02_km_k3,4. Población e imputación,S-CUI,0.8166036411976527,OK,False
+F2_c02_km_k3,4. Población e imputación,S-EJE,0.8426196778292475,OK,False
+F2_c02_km_k3,4. Población e imputación,S-IMPMODA,0.6902017426170146,ADV,False
+F2_c02_km_k3,4. Variables,S-EDAD,0.9264552955957526,OK,False
+F2_c02_km_k3,4. Variables,S-SOLAPE,0.391770210818369,CRIT,True
+F2_c02_km_k3,5. Nula correlacionada,Silueta supera a todas,0.0495049504950495,ADV,False
+F2_c02_km_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.7142857142857143,ADV,False
+F2_c02_km_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,-0.7265307100599874,ADV,False
+F2_c02_km_k3,6. Tamaños,Grupo menor,83.0,OK,False
+F2_c02_km_k3,7. Separación,Silueta negativa (proporción),0.0113421550094517,OK,False
+F2_c02_km_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.3778049369589867,OK,False
+F2_c02_km_k3,9. Complejidad,Componentes,2.0,OK,False
+F2_c03_ward_k2,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F2_c03_ward_k2,2. Asignación,Ward: prototipos,0.8491918240190869,OK,False
+F2_c03_ward_k2,2. Asignación,E3 ari_fuera media,0.7808213844264872,ADV,False
+F2_c03_ward_k2,2. Asignación,E3 ari_fuera p05,0.5738212505933955,ADV,False
+F2_c03_ward_k2,3. Estabilidad,E3 ari_entre media,0.6506027056244582,ADV,True
+F2_c03_ward_k2,3. Estabilidad,E3 ari_entre p05,0.3538539080265609,CRIT,False
+F2_c03_ward_k2,4. Codificación,S-ORD,0.1793490313986112,CRIT,False
+F2_c03_ward_k2,4. Codificación,S-FAMD,0.670844890121613,OK,False
+F2_c03_ward_k2,4. Codificación,S-RARA,0.6235572849655514,ADV,False
+F2_c03_ward_k2,4. Población e imputación,S-TRA,0.7773217063677621,ADV,False
+F2_c03_ward_k2,4. Población e imputación,S-CUI,0.8916267126470445,OK,False
+F2_c03_ward_k2,4. Población e imputación,S-EJE,0.681352497147972,ADV,False
+F2_c03_ward_k2,4. Población e imputación,S-IMPMODA,0.7581563541409254,ADV,False
+F2_c03_ward_k2,4. Variables,S-EDAD,0.7327287464806682,OK,False
+F2_c03_ward_k2,4. Variables,S-SOLAPE,0.6991954204324907,OK,False
+F2_c03_ward_k2,5. Nula correlacionada,Silueta supera a todas,0.099009900990099,ADV,False
+F2_c03_ward_k2,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+F2_c03_ward_k2,5. Nula correlacionada,Supera control de búsqueda múltiple,1.3216114078967085,ADV,False
+F2_c03_ward_k2,6. Tamaños,Grupo menor,79.0,OK,False
+F2_c03_ward_k2,7. Separación,Silueta negativa (proporción),0.0302457466918714,OK,False
+F2_c03_ward_k2,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.6991954204324907,OK,False
+F2_c03_ward_k2,9. Complejidad,Componentes,3.0,OK,False
+R0P1_cTodas_km_k2,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+R0P1_cTodas_km_k2,2. Asignación,E3 ari_fuera media,0.9439697969752604,OK,False
+R0P1_cTodas_km_k2,2. Asignación,E3 ari_fuera p05,0.8736115710546576,OK,False
+R0P1_cTodas_km_k2,3. Estabilidad,E3 ari_entre media,0.9375896127115808,OK,False
+R0P1_cTodas_km_k2,3. Estabilidad,E3 ari_entre p05,0.8846724117852737,OK,False
+R0P1_cTodas_km_k2,4. Codificación,S-ORD,,NE,False
+R0P1_cTodas_km_k2,4. Codificación,S-FAMD,,NE,False
+R0P1_cTodas_km_k2,4. Codificación,S-RARA,,NE,False
+R0P1_cTodas_km_k2,4. Población e imputación,S-TRA,,NE,False
+R0P1_cTodas_km_k2,4. Población e imputación,S-CUI,,NE,False
+R0P1_cTodas_km_k2,4. Población e imputación,S-EJE,,NE,False
+R0P1_cTodas_km_k2,4. Población e imputación,S-IMPMODA,1.0,OK,False
+R0P1_cTodas_km_k2,4. Variables,S-EDAD,,NE,False
+R0P1_cTodas_km_k2,4. Variables,S-SOLAPE,,NE,False
+R0P1_cTodas_km_k2,5. Nula correlacionada,Silueta supera a todas,0.0099009900990099,OK,False
+R0P1_cTodas_km_k2,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+R0P1_cTodas_km_k2,5. Nula correlacionada,Supera control de búsqueda múltiple,2.012338743603597,ADV,False
+R0P1_cTodas_km_k2,6. Tamaños,Grupo menor,90.0,OK,False
+R0P1_cTodas_km_k2,7. Separación,Silueta negativa (proporción),0.0604914933837429,OK,False
+R0P1_cTodas_km_k2,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.8300722234518576,OK,False
+R0P1_cTodas_km_k2,9. Complejidad,Componentes,0.0,ADV,False
+R0P1_cTodas_ward_k2,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+R0P1_cTodas_ward_k2,2. Asignación,Ward: prototipos,0.8153178228774884,OK,False
+R0P1_cTodas_ward_k2,2. Asignación,E3 ari_fuera media,0.7339550845641339,ADV,False
+R0P1_cTodas_ward_k2,2. Asignación,E3 ari_fuera p05,0.6070443452416641,ADV,False
+R0P1_cTodas_ward_k2,3. Estabilidad,E3 ari_entre media,0.6622087849656156,ADV,True
+R0P1_cTodas_ward_k2,3. Estabilidad,E3 ari_entre p05,0.4619482974203504,CRIT,False
+R0P1_cTodas_ward_k2,4. Codificación,S-ORD,,NE,False
+R0P1_cTodas_ward_k2,4. Codificación,S-FAMD,,NE,False
+R0P1_cTodas_ward_k2,4. Codificación,S-RARA,,NE,False
+R0P1_cTodas_ward_k2,4. Población e imputación,S-TRA,,NE,False
+R0P1_cTodas_ward_k2,4. Población e imputación,S-CUI,,NE,False
+R0P1_cTodas_ward_k2,4. Población e imputación,S-EJE,,NE,False
+R0P1_cTodas_ward_k2,4. Población e imputación,S-IMPMODA,0.7781907969709195,ADV,False
+R0P1_cTodas_ward_k2,4. Variables,S-EDAD,,NE,False
+R0P1_cTodas_ward_k2,4. Variables,S-SOLAPE,,NE,False
+R0P1_cTodas_ward_k2,5. Nula correlacionada,Silueta supera a todas,0.1386138613861386,ADV,False
+R0P1_cTodas_ward_k2,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+R0P1_cTodas_ward_k2,5. Nula correlacionada,Supera control de búsqueda múltiple,1.2220456244588596,ADV,False
+R0P1_cTodas_ward_k2,6. Tamaños,Grupo menor,73.0,OK,False
+R0P1_cTodas_ward_k2,7. Separación,Silueta negativa (proporción),0.0472589792060491,OK,False
+R0P1_cTodas_ward_k2,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.7677100265260819,OK,False
+R0P1_cTodas_ward_k2,9. Complejidad,Componentes,0.0,ADV,False
+F1_c05_km_k2,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F1_c05_km_k2,2. Asignación,E3 ari_fuera media,0.948172163805554,OK,False
+F1_c05_km_k2,2. Asignación,E3 ari_fuera p05,0.8200008463229469,OK,False
+F1_c05_km_k2,3. Estabilidad,E3 ari_entre media,0.9268374475951808,OK,False
+F1_c05_km_k2,3. Estabilidad,E3 ari_entre p05,0.8684895122914964,OK,False
+F1_c05_km_k2,4. Codificación,S-ORD,0.2656257774437471,CRIT,False
+F1_c05_km_k2,4. Codificación,S-FAMD,0.8559201642989124,OK,False
+F1_c05_km_k2,4. Codificación,S-RARA,0.9079114781694032,OK,False
+F1_c05_km_k2,4. Población e imputación,S-TRA,0.9421660328435216,OK,False
+F1_c05_km_k2,4. Población e imputación,S-CUI,1.0,OK,False
+F1_c05_km_k2,4. Población e imputación,S-EJE,0.9380298813556484,OK,False
+F1_c05_km_k2,4. Población e imputación,S-IMPMODA,0.9906569397758096,OK,False
+F1_c05_km_k2,4. Variables,S-EDAD,1.0,OK,False
+F1_c05_km_k2,4. Variables,S-SOLAPE,0.9631374689361252,OK,False
+F1_c05_km_k2,5. Nula correlacionada,Silueta supera a todas,0.0099009900990099,OK,False
+F1_c05_km_k2,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+F1_c05_km_k2,5. Nula correlacionada,Supera control de búsqueda múltiple,2.4274334806884315,ADV,False
+F1_c05_km_k2,6. Tamaños,Grupo menor,89.0,OK,False
+F1_c05_km_k2,7. Separación,Silueta negativa (proporción),0.0151228733459357,OK,False
+F1_c05_km_k2,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.8163053804713319,OK,False
+F1_c05_km_k2,9. Complejidad,Componentes,5.0,OK,False
+P1_c05_km_k2,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P1_c05_km_k2,2. Asignación,E3 ari_fuera media,0.9504651776078904,OK,False
+P1_c05_km_k2,2. Asignación,E3 ari_fuera p05,0.8632334309967264,OK,False
+P1_c05_km_k2,3. Estabilidad,E3 ari_entre media,0.9291321703703028,OK,False
+P1_c05_km_k2,3. Estabilidad,E3 ari_entre p05,0.8586307698812379,OK,False
+P1_c05_km_k2,4. Codificación,S-ORD,0.2430363581298895,CRIT,False
+P1_c05_km_k2,4. Codificación,S-FAMD,,NE,False
+P1_c05_km_k2,4. Codificación,S-RARA,,NE,False
+P1_c05_km_k2,4. Población e imputación,S-TRA,1.0,OK,False
+P1_c05_km_k2,4. Población e imputación,S-CUI,0.990504913304702,OK,False
+P1_c05_km_k2,4. Población e imputación,S-EJE,0.9792647216409917,OK,False
+P1_c05_km_k2,4. Población e imputación,S-IMPMODA,0.990848241899572,OK,False
+P1_c05_km_k2,4. Variables,S-EDAD,0.9816856266150948,OK,False
+P1_c05_km_k2,4. Variables,S-SOLAPE,0.9817761824949808,OK,False
+P1_c05_km_k2,5. Nula correlacionada,Silueta supera a todas,0.0198019801980198,ADV,False
+P1_c05_km_k2,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+P1_c05_km_k2,5. Nula correlacionada,Supera control de búsqueda múltiple,2.3824429178033,ADV,False
+P1_c05_km_k2,6. Tamaños,Grupo menor,93.0,OK,False
+P1_c05_km_k2,7. Separación,Silueta negativa (proporción),0.0113421550094517,OK,False
+P1_c05_km_k2,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.827647642312011,OK,False
+P1_c05_km_k2,9. Complejidad,Componentes,5.0,OK,False
+F1_c03_ward_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F1_c03_ward_k3,2. Asignación,Ward: prototipos,0.7076254738924308,ADV,False
+F1_c03_ward_k3,2. Asignación,E3 ari_fuera media,0.3097511410181608,CRIT,False
+F1_c03_ward_k3,2. Asignación,E3 ari_fuera p05,0.1235037849290241,CRIT,False
+F1_c03_ward_k3,3. Estabilidad,E3 ari_entre media,0.2955175414906751,CRIT,False
+F1_c03_ward_k3,3. Estabilidad,E3 ari_entre p05,0.1485404087737442,CRIT,False
+F1_c03_ward_k3,4. Codificación,S-ORD,0.1068435005264442,CRIT,False
+F1_c03_ward_k3,4. Codificación,S-FAMD,0.2528810273310745,CRIT,False
+F1_c03_ward_k3,4. Codificación,S-RARA,0.2996638730467906,CRIT,False
+F1_c03_ward_k3,4. Población e imputación,S-TRA,0.4588643094199331,CRIT,False
+F1_c03_ward_k3,4. Población e imputación,S-CUI,0.1623974995132186,CRIT,False
+F1_c03_ward_k3,4. Población e imputación,S-EJE,0.4647997483141228,CRIT,False
+F1_c03_ward_k3,4. Población e imputación,S-IMPMODA,0.1900811927576305,CRIT,False
+F1_c03_ward_k3,4. Variables,S-EDAD,0.2453156216246359,CRIT,False
+F1_c03_ward_k3,4. Variables,S-SOLAPE,0.1673094055734042,CRIT,False
+F1_c03_ward_k3,5. Nula correlacionada,Silueta supera a todas,0.1089108910891089,ADV,False
+F1_c03_ward_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.1428571428571428,ADV,False
+F1_c03_ward_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,0.8632234246738898,ADV,False
+F1_c03_ward_k3,6. Tamaños,Grupo menor,60.0,OK,False
+F1_c03_ward_k3,7. Separación,Silueta negativa (proporción),0.0982986767485822,OK,False
+F1_c03_ward_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.4596674408250574,OK,False
+F1_c03_ward_k3,9. Complejidad,Componentes,3.0,OK,False
+F1_c05_ward_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F1_c05_ward_k3,2. Asignación,Ward: prototipos,0.5977580762452239,CRIT,False
+F1_c05_ward_k3,2. Asignación,E3 ari_fuera media,0.3134535952894046,CRIT,False
+F1_c05_ward_k3,2. Asignación,E3 ari_fuera p05,0.1469417487216774,CRIT,False
+F1_c05_ward_k3,3. Estabilidad,E3 ari_entre media,0.2321299157156671,CRIT,False
+F1_c05_ward_k3,3. Estabilidad,E3 ari_entre p05,0.1143144086323349,CRIT,False
+F1_c05_ward_k3,4. Codificación,S-ORD,0.1417406907345211,CRIT,False
+F1_c05_ward_k3,4. Codificación,S-FAMD,0.3401409065634853,CRIT,False
+F1_c05_ward_k3,4. Codificación,S-RARA,0.1794955723593368,CRIT,False
+F1_c05_ward_k3,4. Población e imputación,S-TRA,0.434114174700636,CRIT,False
+F1_c05_ward_k3,4. Población e imputación,S-CUI,0.2330908730043145,CRIT,False
+F1_c05_ward_k3,4. Población e imputación,S-EJE,0.3558230025747504,CRIT,False
+F1_c05_ward_k3,4. Población e imputación,S-IMPMODA,0.1662205145496363,CRIT,False
+F1_c05_ward_k3,4. Variables,S-EDAD,0.615152881846076,ADV,False
+F1_c05_ward_k3,4. Variables,S-SOLAPE,0.172447846453468,CRIT,False
+F1_c05_ward_k3,5. Nula correlacionada,Silueta supera a todas,0.0396039603960396,ADV,False
+F1_c05_ward_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+F1_c05_ward_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,2.005471667188313,ADV,False
+F1_c05_ward_k3,6. Tamaños,Grupo menor,76.0,OK,False
+F1_c05_ward_k3,7. Separación,Silueta negativa (proporción),0.1342155009451796,ADV,False
+F1_c05_ward_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.5160837984856302,OK,False
+F1_c05_ward_k3,9. Complejidad,Componentes,5.0,OK,False
+F1_c08_ward_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F1_c08_ward_k3,2. Asignación,Ward: prototipos,0.6112996865935718,CRIT,False
+F1_c08_ward_k3,2. Asignación,E3 ari_fuera media,0.2500267526599819,CRIT,False
+F1_c08_ward_k3,2. Asignación,E3 ari_fuera p05,0.162446820013197,CRIT,False
+F1_c08_ward_k3,3. Estabilidad,E3 ari_entre media,0.1953614517853509,CRIT,False
+F1_c08_ward_k3,3. Estabilidad,E3 ari_entre p05,0.1019946145324801,CRIT,False
+F1_c08_ward_k3,4. Codificación,S-ORD,0.1721060908510022,CRIT,False
+F1_c08_ward_k3,4. Codificación,S-FAMD,0.3123162113536578,CRIT,False
+F1_c08_ward_k3,4. Codificación,S-RARA,0.3657759770350135,CRIT,False
+F1_c08_ward_k3,4. Población e imputación,S-TRA,0.4182350159935304,CRIT,False
+F1_c08_ward_k3,4. Población e imputación,S-CUI,0.2037907061262564,CRIT,False
+F1_c08_ward_k3,4. Población e imputación,S-EJE,0.2211977973648454,CRIT,False
+F1_c08_ward_k3,4. Población e imputación,S-IMPMODA,0.4599077082573748,CRIT,False
+F1_c08_ward_k3,4. Variables,S-EDAD,0.2014171336954546,CRIT,False
+F1_c08_ward_k3,4. Variables,S-SOLAPE,0.3199817787094299,CRIT,False
+F1_c08_ward_k3,5. Nula correlacionada,Silueta supera a todas,0.396039603960396,ADV,False
+F1_c08_ward_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+F1_c08_ward_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,-0.0021342245833186,ADV,False
+F1_c08_ward_k3,6. Tamaños,Grupo menor,67.0,OK,False
+F1_c08_ward_k3,7. Separación,Silueta negativa (proporción),0.1852551984877126,ADV,False
+F1_c08_ward_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.4990114215826324,OK,False
+F1_c08_ward_k3,9. Complejidad,Componentes,8.0,OK,False
+F2_c03_ward_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F2_c03_ward_k3,2. Asignación,Ward: prototipos,0.7201770932272235,ADV,False
+F2_c03_ward_k3,2. Asignación,E3 ari_fuera media,0.3402156145217722,CRIT,False
+F2_c03_ward_k3,2. Asignación,E3 ari_fuera p05,0.1567344588934364,CRIT,False
+F2_c03_ward_k3,3. Estabilidad,E3 ari_entre media,0.2598391905181206,CRIT,False
+F2_c03_ward_k3,3. Estabilidad,E3 ari_entre p05,0.1187957455947491,CRIT,False
+F2_c03_ward_k3,4. Codificación,S-ORD,0.2310391356941889,CRIT,False
+F2_c03_ward_k3,4. Codificación,S-FAMD,0.25250170549093,CRIT,False
+F2_c03_ward_k3,4. Codificación,S-RARA,0.3856233269994838,CRIT,True
+F2_c03_ward_k3,4. Población e imputación,S-TRA,0.4384356098692633,CRIT,False
+F2_c03_ward_k3,4. Población e imputación,S-CUI,0.413158004899028,CRIT,False
+F2_c03_ward_k3,4. Población e imputación,S-EJE,0.4727166963910225,CRIT,False
+F2_c03_ward_k3,4. Población e imputación,S-IMPMODA,0.5124361861517747,CRIT,False
+F2_c03_ward_k3,4. Variables,S-EDAD,0.1891249476364992,CRIT,False
+F2_c03_ward_k3,4. Variables,S-SOLAPE,0.2501039725993322,CRIT,False
+F2_c03_ward_k3,5. Nula correlacionada,Silueta supera a todas,0.0198019801980198,ADV,False
+F2_c03_ward_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.2857142857142857,ADV,False
+F2_c03_ward_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,0.7752598279871646,ADV,False
+F2_c03_ward_k3,6. Tamaños,Grupo menor,79.0,OK,False
+F2_c03_ward_k3,7. Separación,Silueta negativa (proporción),0.1190926275992438,ADV,False
+F2_c03_ward_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.2482316668448113,OK,False
+F2_c03_ward_k3,9. Complejidad,Componentes,3.0,OK,False
+F2_c05_ward_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F2_c05_ward_k3,2. Asignación,Ward: prototipos,0.5886007838509341,CRIT,False
+F2_c05_ward_k3,2. Asignación,E3 ari_fuera media,0.3205397211322275,CRIT,False
+F2_c05_ward_k3,2. Asignación,E3 ari_fuera p05,0.1243464259462203,CRIT,False
+F2_c05_ward_k3,3. Estabilidad,E3 ari_entre media,0.220554902262018,CRIT,False
+F2_c05_ward_k3,3. Estabilidad,E3 ari_entre p05,0.0906608760076899,CRIT,False
+F2_c05_ward_k3,4. Codificación,S-ORD,0.4521624040823104,ADV,False
+F2_c05_ward_k3,4. Codificación,S-FAMD,0.4088597950852172,ADV,True
+F2_c05_ward_k3,4. Codificación,S-RARA,0.1870559967318792,CRIT,False
+F2_c05_ward_k3,4. Población e imputación,S-TRA,0.4235832227788936,CRIT,False
+F2_c05_ward_k3,4. Población e imputación,S-CUI,0.2069587812587476,CRIT,False
+F2_c05_ward_k3,4. Población e imputación,S-EJE,0.27297543392028,CRIT,False
+F2_c05_ward_k3,4. Población e imputación,S-IMPMODA,0.2289884617222258,CRIT,False
+F2_c05_ward_k3,4. Variables,S-EDAD,0.5165635737658597,ADV,False
+F2_c05_ward_k3,4. Variables,S-SOLAPE,0.1757078271097479,CRIT,False
+F2_c05_ward_k3,5. Nula correlacionada,Silueta supera a todas,0.0495049504950495,ADV,False
+F2_c05_ward_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.0952380952380952,ADV,False
+F2_c05_ward_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,1.51625579388636,ADV,False
+F2_c05_ward_k3,6. Tamaños,Grupo menor,54.0,OK,False
+F2_c05_ward_k3,7. Separación,Silueta negativa (proporción),0.1285444234404537,ADV,False
+F2_c05_ward_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.4486643554943895,OK,False
+F2_c05_ward_k3,9. Complejidad,Componentes,5.0,OK,False
+F2_c08_ward_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F2_c08_ward_k3,2. Asignación,Ward: prototipos,0.5743169758587737,CRIT,False
+F2_c08_ward_k3,2. Asignación,E3 ari_fuera media,0.1829487760573436,CRIT,False
+F2_c08_ward_k3,2. Asignación,E3 ari_fuera p05,0.0926192608136999,CRIT,False
+F2_c08_ward_k3,3. Estabilidad,E3 ari_entre media,0.2209326955962361,CRIT,False
+F2_c08_ward_k3,3. Estabilidad,E3 ari_entre p05,0.1100016042588686,CRIT,False
+F2_c08_ward_k3,4. Codificación,S-ORD,0.1164875702014897,CRIT,False
+F2_c08_ward_k3,4. Codificación,S-FAMD,0.1620416440008822,CRIT,False
+F2_c08_ward_k3,4. Codificación,S-RARA,0.1455009119492703,CRIT,False
+F2_c08_ward_k3,4. Población e imputación,S-TRA,0.2710034847352309,CRIT,False
+F2_c08_ward_k3,4. Población e imputación,S-CUI,0.1550500967173266,CRIT,False
+F2_c08_ward_k3,4. Población e imputación,S-EJE,0.1770928584973813,CRIT,False
+F2_c08_ward_k3,4. Población e imputación,S-IMPMODA,0.1785400314152162,CRIT,False
+F2_c08_ward_k3,4. Variables,S-EDAD,0.1673163893528256,CRIT,False
+F2_c08_ward_k3,4. Variables,S-SOLAPE,0.2928749720702825,CRIT,False
+F2_c08_ward_k3,5. Nula correlacionada,Silueta supera a todas,0.2475247524752475,ADV,False
+F2_c08_ward_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.0952380952380952,ADV,False
+F2_c08_ward_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,0.2514519331830642,ADV,False
+F2_c08_ward_k3,6. Tamaños,Grupo menor,61.0,OK,False
+F2_c08_ward_k3,7. Separación,Silueta negativa (proporción),0.1436672967863894,ADV,False
+F2_c08_ward_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.32073180589961,OK,False
+F2_c08_ward_k3,9. Complejidad,Componentes,8.0,OK,False
+P1_c03_ward_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P1_c03_ward_k3,2. Asignación,Ward: prototipos,0.6979306984894659,ADV,False
+P1_c03_ward_k3,2. Asignación,E3 ari_fuera media,0.4085901877404537,CRIT,False
+P1_c03_ward_k3,2. Asignación,E3 ari_fuera p05,0.1386289114531402,CRIT,False
+P1_c03_ward_k3,3. Estabilidad,E3 ari_entre media,0.3291339130668169,CRIT,False
+P1_c03_ward_k3,3. Estabilidad,E3 ari_entre p05,0.0902538461060935,CRIT,False
+P1_c03_ward_k3,4. Codificación,S-ORD,0.2175302762641473,CRIT,False
+P1_c03_ward_k3,4. Codificación,S-FAMD,,NE,False
+P1_c03_ward_k3,4. Codificación,S-RARA,,NE,False
+P1_c03_ward_k3,4. Población e imputación,S-TRA,0.2394129109887977,CRIT,False
+P1_c03_ward_k3,4. Población e imputación,S-CUI,0.5547763629076717,CRIT,False
+P1_c03_ward_k3,4. Población e imputación,S-EJE,0.3368970663177369,CRIT,False
+P1_c03_ward_k3,4. Población e imputación,S-IMPMODA,0.261055022559772,CRIT,False
+P1_c03_ward_k3,4. Variables,S-EDAD,0.345187020762131,CRIT,False
+P1_c03_ward_k3,4. Variables,S-SOLAPE,0.183764661782406,CRIT,False
+P1_c03_ward_k3,5. Nula correlacionada,Silueta supera a todas,0.0099009900990099,OK,False
+P1_c03_ward_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.0952380952380952,ADV,False
+P1_c03_ward_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,2.05826360909083,ADV,False
+P1_c03_ward_k3,6. Tamaños,Grupo menor,60.0,OK,False
+P1_c03_ward_k3,7. Separación,Silueta negativa (proporción),0.0945179584120983,OK,False
+P1_c03_ward_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.5068038163880663,OK,False
+P1_c03_ward_k3,9. Complejidad,Componentes,3.0,OK,False
+P1_c05_ward_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P1_c05_ward_k3,2. Asignación,Ward: prototipos,0.6660729066578132,ADV,True
+P1_c05_ward_k3,2. Asignación,E3 ari_fuera media,0.4639185497156604,CRIT,False
+P1_c05_ward_k3,2. Asignación,E3 ari_fuera p05,0.1393845510570359,CRIT,False
+P1_c05_ward_k3,3. Estabilidad,E3 ari_entre media,0.3146992456869668,CRIT,False
+P1_c05_ward_k3,3. Estabilidad,E3 ari_entre p05,0.1140470051071916,CRIT,False
+P1_c05_ward_k3,4. Codificación,S-ORD,0.5395840668261556,ADV,False
+P1_c05_ward_k3,4. Codificación,S-FAMD,,NE,False
+P1_c05_ward_k3,4. Codificación,S-RARA,,NE,False
+P1_c05_ward_k3,4. Población e imputación,S-TRA,0.2412627810932376,CRIT,False
+P1_c05_ward_k3,4. Población e imputación,S-CUI,0.6668915540569755,ADV,True
+P1_c05_ward_k3,4. Población e imputación,S-EJE,0.715974673298068,ADV,False
+P1_c05_ward_k3,4. Población e imputación,S-IMPMODA,0.7494696046407948,ADV,False
+P1_c05_ward_k3,4. Variables,S-EDAD,0.5405738582537724,ADV,False
+P1_c05_ward_k3,4. Variables,S-SOLAPE,0.1338783732893266,CRIT,False
+P1_c05_ward_k3,5. Nula correlacionada,Silueta supera a todas,0.0099009900990099,OK,False
+P1_c05_ward_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+P1_c05_ward_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,1.7805041239803303,ADV,False
+P1_c05_ward_k3,6. Tamaños,Grupo menor,64.0,OK,False
+P1_c05_ward_k3,7. Separación,Silueta negativa (proporción),0.1228733459357277,ADV,False
+P1_c05_ward_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.5803878078936143,OK,False
+P1_c05_ward_k3,9. Complejidad,Componentes,5.0,OK,False
+P2_c03_ward_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P2_c03_ward_k3,2. Asignación,Ward: prototipos,0.631369884245077,CRIT,True
+P2_c03_ward_k3,2. Asignación,E3 ari_fuera media,0.4323146790064935,CRIT,False
+P2_c03_ward_k3,2. Asignación,E3 ari_fuera p05,0.2277042297809832,CRIT,False
+P2_c03_ward_k3,3. Estabilidad,E3 ari_entre media,0.3454561604138165,CRIT,False
+P2_c03_ward_k3,3. Estabilidad,E3 ari_entre p05,0.1499742492905192,CRIT,False
+P2_c03_ward_k3,4. Codificación,S-ORD,0.2118333941338259,CRIT,False
+P2_c03_ward_k3,4. Codificación,S-FAMD,,NE,False
+P2_c03_ward_k3,4. Codificación,S-RARA,,NE,False
+P2_c03_ward_k3,4. Población e imputación,S-TRA,0.3923620071033223,CRIT,False
+P2_c03_ward_k3,4. Población e imputación,S-CUI,0.5417907750536934,CRIT,False
+P2_c03_ward_k3,4. Población e imputación,S-EJE,0.4986001722649427,CRIT,False
+P2_c03_ward_k3,4. Población e imputación,S-IMPMODA,0.4191143149724889,CRIT,False
+P2_c03_ward_k3,4. Variables,S-EDAD,0.4206605053170637,ADV,True
+P2_c03_ward_k3,4. Variables,S-SOLAPE,0.1470525261228517,CRIT,False
+P2_c03_ward_k3,5. Nula correlacionada,Silueta supera a todas,0.099009900990099,ADV,False
+P2_c03_ward_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+P2_c03_ward_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,1.2945373151495356,ADV,False
+P2_c03_ward_k3,6. Tamaños,Grupo menor,57.0,OK,False
+P2_c03_ward_k3,7. Separación,Silueta negativa (proporción),0.1209829867674858,ADV,False
+P2_c03_ward_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.491152954646064,OK,False
+P2_c03_ward_k3,9. Complejidad,Componentes,3.0,OK,False
+P2_c05_ward_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P2_c05_ward_k3,2. Asignación,Ward: prototipos,0.6981163676183914,ADV,False
+P2_c05_ward_k3,2. Asignación,E3 ari_fuera media,0.4121013180253757,CRIT,False
+P2_c05_ward_k3,2. Asignación,E3 ari_fuera p05,0.1375939650062918,CRIT,False
+P2_c05_ward_k3,3. Estabilidad,E3 ari_entre media,0.2746516560025997,CRIT,False
+P2_c05_ward_k3,3. Estabilidad,E3 ari_entre p05,0.1213614122155531,CRIT,False
+P2_c05_ward_k3,4. Codificación,S-ORD,0.1457100869473848,CRIT,False
+P2_c05_ward_k3,4. Codificación,S-FAMD,,NE,False
+P2_c05_ward_k3,4. Codificación,S-RARA,,NE,False
+P2_c05_ward_k3,4. Población e imputación,S-TRA,0.4545935332134779,CRIT,False
+P2_c05_ward_k3,4. Población e imputación,S-CUI,0.5123071038275994,CRIT,False
+P2_c05_ward_k3,4. Población e imputación,S-EJE,0.2692593467853141,CRIT,False
+P2_c05_ward_k3,4. Población e imputación,S-IMPMODA,0.512885345048139,CRIT,False
+P2_c05_ward_k3,4. Variables,S-EDAD,0.5248259879607574,ADV,False
+P2_c05_ward_k3,4. Variables,S-SOLAPE,0.1528995526501931,CRIT,False
+P2_c05_ward_k3,5. Nula correlacionada,Silueta supera a todas,0.0198019801980198,ADV,False
+P2_c05_ward_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.1428571428571428,ADV,False
+P2_c05_ward_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,1.7951697895174556,ADV,False
+P2_c05_ward_k3,6. Tamaños,Grupo menor,61.0,OK,False
+P2_c05_ward_k3,7. Separación,Silueta negativa (proporción),0.109640831758034,ADV,False
+P2_c05_ward_k3,8. Interpretabilidad,Principalmente gradiente de ejercicio,0.5001023830110298,OK,False
+P2_c05_ward_k3,9. Complejidad,Componentes,5.0,OK,False
+F1_c03_ward_k4,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F1_c03_ward_k4,2. Asignación,Ward: prototipos,0.6238685060504525,CRIT,True
+F1_c03_ward_k4,2. Asignación,E3 ari_fuera media,0.3179786631396534,CRIT,False
+F1_c03_ward_k4,2. Asignación,E3 ari_fuera p05,0.2046569570756095,CRIT,False
+F1_c03_ward_k4,3. Estabilidad,E3 ari_entre media,0.3038180042229469,CRIT,False
+F1_c03_ward_k4,3. Estabilidad,E3 ari_entre p05,0.1766326236169808,CRIT,False
+F1_c03_ward_k4,4. Codificación,S-ORD,0.2935415832284038,CRIT,False
+F1_c03_ward_k4,4. Codificación,S-FAMD,0.2561952057425493,CRIT,False
+F1_c03_ward_k4,4. Codificación,S-RARA,0.2805851251543086,CRIT,False
+F1_c03_ward_k4,4. Población e imputación,S-TRA,0.4698273532799512,CRIT,False
+F1_c03_ward_k4,4. Población e imputación,S-CUI,0.2825482008117454,CRIT,False
+F1_c03_ward_k4,4. Población e imputación,S-EJE,0.3809820525880606,CRIT,False
+F1_c03_ward_k4,4. Población e imputación,S-IMPMODA,0.4198008428521794,CRIT,False
+F1_c03_ward_k4,4. Variables,S-EDAD,0.5088094688532999,ADV,False
+F1_c03_ward_k4,4. Variables,S-SOLAPE,0.2949428577001446,CRIT,False
+F1_c03_ward_k4,5. Nula correlacionada,Silueta supera a todas,0.3366336633663366,ADV,False
+F1_c03_ward_k4,5. Nula correlacionada,E1 ari_entre supera a todas,0.238095238095238,ADV,False
+F1_c03_ward_k4,5. Nula correlacionada,Supera control de búsqueda múltiple,0.4469584187094449,ADV,False
+F1_c03_ward_k4,6. Tamaños,Grupo menor,60.0,OK,False
+F1_c03_ward_k4,7. Separación,Silueta negativa (proporción),0.166351606805293,ADV,False
+F1_c03_ward_k4,8. Interpretabilidad,Segmentación multivariable,0.2996717932647754,OK,False
+F1_c03_ward_k4,9. Complejidad,Componentes,3.0,OK,False
+F2_c03_ward_k4,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+F2_c03_ward_k4,2. Asignación,Ward: prototipos,0.7767552199164199,ADV,False
+F2_c03_ward_k4,2. Asignación,E3 ari_fuera media,0.3854659465601371,CRIT,False
+F2_c03_ward_k4,2. Asignación,E3 ari_fuera p05,0.1739900490942058,CRIT,False
+F2_c03_ward_k4,3. Estabilidad,E3 ari_entre media,0.2843826467043468,CRIT,False
+F2_c03_ward_k4,3. Estabilidad,E3 ari_entre p05,0.1602920990678733,CRIT,False
+F2_c03_ward_k4,4. Codificación,S-ORD,0.2253963806087501,CRIT,False
+F2_c03_ward_k4,4. Codificación,S-FAMD,0.1916570184854238,CRIT,False
+F2_c03_ward_k4,4. Codificación,S-RARA,0.3762643035245888,CRIT,True
+F2_c03_ward_k4,4. Población e imputación,S-TRA,0.4603081931464787,CRIT,False
+F2_c03_ward_k4,4. Población e imputación,S-CUI,0.6953901543857041,ADV,False
+F2_c03_ward_k4,4. Población e imputación,S-EJE,0.3364977401455875,CRIT,False
+F2_c03_ward_k4,4. Población e imputación,S-IMPMODA,0.5610166554134474,CRIT,False
+F2_c03_ward_k4,4. Variables,S-EDAD,0.2988236860989605,CRIT,False
+F2_c03_ward_k4,4. Variables,S-SOLAPE,0.3009133108999659,CRIT,False
+F2_c03_ward_k4,5. Nula correlacionada,Silueta supera a todas,0.0099009900990099,OK,False
+F2_c03_ward_k4,5. Nula correlacionada,E1 ari_entre supera a todas,0.238095238095238,ADV,False
+F2_c03_ward_k4,5. Nula correlacionada,Supera control de búsqueda múltiple,0.8564707851601813,ADV,False
+F2_c03_ward_k4,6. Tamaños,Grupo menor,79.0,OK,False
+F2_c03_ward_k4,7. Separación,Silueta negativa (proporción),0.1228733459357277,ADV,False
+F2_c03_ward_k4,8. Interpretabilidad,Segmentación multivariable,0.2626087635219956,OK,False
+F2_c03_ward_k4,9. Complejidad,Componentes,3.0,OK,False
+P1_c12_ward_k4,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P1_c12_ward_k4,2. Asignación,Ward: prototipos,0.5530719312588672,CRIT,False
+P1_c12_ward_k4,2. Asignación,E3 ari_fuera media,0.2770994731095216,CRIT,False
+P1_c12_ward_k4,2. Asignación,E3 ari_fuera p05,0.1490103858558107,CRIT,False
+P1_c12_ward_k4,3. Estabilidad,E3 ari_entre media,0.2169649597000901,CRIT,False
+P1_c12_ward_k4,3. Estabilidad,E3 ari_entre p05,0.1310409299415092,CRIT,False
+P1_c12_ward_k4,4. Codificación,S-ORD,0.2175320564023271,CRIT,False
+P1_c12_ward_k4,4. Codificación,S-FAMD,,NE,False
+P1_c12_ward_k4,4. Codificación,S-RARA,,NE,False
+P1_c12_ward_k4,4. Población e imputación,S-TRA,0.4818743591403217,CRIT,False
+P1_c12_ward_k4,4. Población e imputación,S-CUI,0.309785694556625,CRIT,False
+P1_c12_ward_k4,4. Población e imputación,S-EJE,0.3645710765289698,CRIT,False
+P1_c12_ward_k4,4. Población e imputación,S-IMPMODA,0.2529002969480015,CRIT,False
+P1_c12_ward_k4,4. Variables,S-EDAD,0.2068658219227648,CRIT,False
+P1_c12_ward_k4,4. Variables,S-SOLAPE,0.2512391064106636,CRIT,False
+P1_c12_ward_k4,5. Nula correlacionada,Silueta supera a todas,0.4356435643564356,ADV,False
+P1_c12_ward_k4,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+P1_c12_ward_k4,5. Nula correlacionada,Supera control de búsqueda múltiple,0.1439245311750693,ADV,False
+P1_c12_ward_k4,6. Tamaños,Grupo menor,75.0,OK,False
+P1_c12_ward_k4,7. Separación,Silueta negativa (proporción),0.2892249527410208,ADV,False
+P1_c12_ward_k4,8. Interpretabilidad,Segmentación multivariable,0.3381969218465553,OK,False
+P1_c12_ward_k4,9. Complejidad,Componentes,12.0,ADV,False
+P2_c08_ward_k4,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P2_c08_ward_k4,2. Asignación,Ward: prototipos,0.5274174456312135,CRIT,False
+P2_c08_ward_k4,2. Asignación,E3 ari_fuera media,0.2534716726884186,CRIT,False
+P2_c08_ward_k4,2. Asignación,E3 ari_fuera p05,0.1333456759569226,CRIT,False
+P2_c08_ward_k4,3. Estabilidad,E3 ari_entre media,0.2342657006502209,CRIT,False
+P2_c08_ward_k4,3. Estabilidad,E3 ari_entre p05,0.11655712550033,CRIT,False
+P2_c08_ward_k4,4. Codificación,S-ORD,0.1322840343735866,CRIT,False
+P2_c08_ward_k4,4. Codificación,S-FAMD,,NE,False
+P2_c08_ward_k4,4. Codificación,S-RARA,,NE,False
+P2_c08_ward_k4,4. Población e imputación,S-TRA,0.3008541922532455,CRIT,False
+P2_c08_ward_k4,4. Población e imputación,S-CUI,0.2308658860613412,CRIT,False
+P2_c08_ward_k4,4. Población e imputación,S-EJE,0.2227441623835993,CRIT,False
+P2_c08_ward_k4,4. Población e imputación,S-IMPMODA,0.1939657003568322,CRIT,False
+P2_c08_ward_k4,4. Variables,S-EDAD,0.2730861177090974,CRIT,False
+P2_c08_ward_k4,4. Variables,S-SOLAPE,0.1031212646360612,CRIT,False
+P2_c08_ward_k4,5. Nula correlacionada,Silueta supera a todas,0.2475247524752475,ADV,False
+P2_c08_ward_k4,5. Nula correlacionada,E1 ari_entre supera a todas,0.0476190476190476,OK,False
+P2_c08_ward_k4,5. Nula correlacionada,Supera control de búsqueda múltiple,0.7449418282057741,ADV,False
+P2_c08_ward_k4,6. Tamaños,Grupo menor,57.0,OK,False
+P2_c08_ward_k4,7. Separación,Silueta negativa (proporción),0.219281663516068,ADV,False
+P2_c08_ward_k4,8. Interpretabilidad,Segmentación multivariable,0.23345956732945,OK,False
+P2_c08_ward_k4,9. Complejidad,Componentes,8.0,OK,False
+P2_c12_ward_k4,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+P2_c12_ward_k4,2. Asignación,Ward: prototipos,0.5335445624003171,CRIT,False
+P2_c12_ward_k4,2. Asignación,E3 ari_fuera media,0.2531318976057041,CRIT,False
+P2_c12_ward_k4,2. Asignación,E3 ari_fuera p05,0.136346847694799,CRIT,False
+P2_c12_ward_k4,3. Estabilidad,E3 ari_entre media,0.2313212145767093,CRIT,False
+P2_c12_ward_k4,3. Estabilidad,E3 ari_entre p05,0.1337951080612995,CRIT,False
+P2_c12_ward_k4,4. Codificación,S-ORD,0.0967237207297887,CRIT,False
+P2_c12_ward_k4,4. Codificación,S-FAMD,,NE,False
+P2_c12_ward_k4,4. Codificación,S-RARA,,NE,False
+P2_c12_ward_k4,4. Población e imputación,S-TRA,0.269776448553168,CRIT,False
+P2_c12_ward_k4,4. Población e imputación,S-CUI,0.2393672396574458,CRIT,False
+P2_c12_ward_k4,4. Población e imputación,S-EJE,0.2395107792442061,CRIT,False
+P2_c12_ward_k4,4. Población e imputación,S-IMPMODA,0.2409759875001887,CRIT,False
+P2_c12_ward_k4,4. Variables,S-EDAD,0.214698428195792,CRIT,False
+P2_c12_ward_k4,4. Variables,S-SOLAPE,0.2499350593825109,CRIT,False
+P2_c12_ward_k4,5. Nula correlacionada,Silueta supera a todas,0.2376237623762376,ADV,False
+P2_c12_ward_k4,5. Nula correlacionada,E1 ari_entre supera a todas,0.0952380952380952,ADV,False
+P2_c12_ward_k4,5. Nula correlacionada,Supera control de búsqueda múltiple,0.678197102277445,ADV,False
+P2_c12_ward_k4,6. Tamaños,Grupo menor,75.0,OK,False
+P2_c12_ward_k4,7. Separación,Silueta negativa (proporción),0.2362948960302457,ADV,False
+P2_c12_ward_k4,8. Interpretabilidad,Segmentación multivariable,0.2813315866914532,OK,False
+P2_c12_ward_k4,9. Complejidad,Componentes,12.0,ADV,False
+R0P1_cTodas_km_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+R0P1_cTodas_km_k3,2. Asignación,E3 ari_fuera media,0.7847263526516316,ADV,False
+R0P1_cTodas_km_k3,2. Asignación,E3 ari_fuera p05,0.3776055959409041,CRIT,False
+R0P1_cTodas_km_k3,3. Estabilidad,E3 ari_entre media,0.7225131113601087,ADV,False
+R0P1_cTodas_km_k3,3. Estabilidad,E3 ari_entre p05,0.4040665117808377,CRIT,False
+R0P1_cTodas_km_k3,4. Codificación,S-ORD,,NE,False
+R0P1_cTodas_km_k3,4. Codificación,S-FAMD,,NE,False
+R0P1_cTodas_km_k3,4. Codificación,S-RARA,,NE,False
+R0P1_cTodas_km_k3,4. Población e imputación,S-TRA,,NE,False
+R0P1_cTodas_km_k3,4. Población e imputación,S-CUI,,NE,False
+R0P1_cTodas_km_k3,4. Población e imputación,S-EJE,,NE,False
+R0P1_cTodas_km_k3,4. Población e imputación,S-IMPMODA,0.9944693895999928,OK,False
+R0P1_cTodas_km_k3,4. Variables,S-EDAD,,NE,False
+R0P1_cTodas_km_k3,4. Variables,S-SOLAPE,,NE,False
+R0P1_cTodas_km_k3,5. Nula correlacionada,Silueta supera a todas,0.2277227722772277,ADV,False
+R0P1_cTodas_km_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.5714285714285714,ADV,False
+R0P1_cTodas_km_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,0.0968765571596152,ADV,False
+R0P1_cTodas_km_k3,6. Tamaños,Grupo menor,81.0,OK,False
+R0P1_cTodas_km_k3,7. Separación,Silueta negativa (proporción),0.0586011342155009,OK,False
+R0P1_cTodas_km_k3,8. Interpretabilidad,Dominada por pocas variables,0.8766202937886866,OK,False
+R0P1_cTodas_km_k3,9. Complejidad,Componentes,0.0,ADV,False
+R0P1_cTodas_km_k4,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+R0P1_cTodas_km_k4,2. Asignación,E3 ari_fuera media,0.8517884589994391,OK,False
+R0P1_cTodas_km_k4,2. Asignación,E3 ari_fuera p05,0.550193710000643,ADV,False
+R0P1_cTodas_km_k4,3. Estabilidad,E3 ari_entre media,0.7901501429532153,ADV,False
+R0P1_cTodas_km_k4,3. Estabilidad,E3 ari_entre p05,0.4274667017587772,CRIT,False
+R0P1_cTodas_km_k4,4. Codificación,S-ORD,,NE,False
+R0P1_cTodas_km_k4,4. Codificación,S-FAMD,,NE,False
+R0P1_cTodas_km_k4,4. Codificación,S-RARA,,NE,False
+R0P1_cTodas_km_k4,4. Población e imputación,S-TRA,,NE,False
+R0P1_cTodas_km_k4,4. Población e imputación,S-CUI,,NE,False
+R0P1_cTodas_km_k4,4. Población e imputación,S-EJE,,NE,False
+R0P1_cTodas_km_k4,4. Población e imputación,S-IMPMODA,0.906643238044098,OK,False
+R0P1_cTodas_km_k4,4. Variables,S-EDAD,,NE,False
+R0P1_cTodas_km_k4,4. Variables,S-SOLAPE,,NE,False
+R0P1_cTodas_km_k4,5. Nula correlacionada,Silueta supera a todas,0.2574257425742574,ADV,False
+R0P1_cTodas_km_k4,5. Nula correlacionada,E1 ari_entre supera a todas,0.238095238095238,ADV,False
+R0P1_cTodas_km_k4,5. Nula correlacionada,Supera control de búsqueda múltiple,0.5827374852745525,ADV,False
+R0P1_cTodas_km_k4,6. Tamaños,Grupo menor,76.0,OK,False
+R0P1_cTodas_km_k4,7. Separación,Silueta negativa (proporción),0.0642722117202268,OK,False
+R0P1_cTodas_km_k4,8. Interpretabilidad,Segmentación multivariable,0.6416889960184644,OK,False
+R0P1_cTodas_km_k4,9. Complejidad,Componentes,0.0,ADV,False
+R0P2_cTodas_km_k3,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+R0P2_cTodas_km_k3,2. Asignación,E3 ari_fuera media,0.8115422087819955,OK,False
+R0P2_cTodas_km_k3,2. Asignación,E3 ari_fuera p05,0.3847121648278177,CRIT,False
+R0P2_cTodas_km_k3,3. Estabilidad,E3 ari_entre media,0.7363710068482234,ADV,False
+R0P2_cTodas_km_k3,3. Estabilidad,E3 ari_entre p05,0.4030118350099916,CRIT,False
+R0P2_cTodas_km_k3,4. Codificación,S-ORD,,NE,False
+R0P2_cTodas_km_k3,4. Codificación,S-FAMD,,NE,False
+R0P2_cTodas_km_k3,4. Codificación,S-RARA,,NE,False
+R0P2_cTodas_km_k3,4. Población e imputación,S-TRA,,NE,False
+R0P2_cTodas_km_k3,4. Población e imputación,S-CUI,,NE,False
+R0P2_cTodas_km_k3,4. Población e imputación,S-EJE,,NE,False
+R0P2_cTodas_km_k3,4. Población e imputación,S-IMPMODA,0.9856195951752,OK,False
+R0P2_cTodas_km_k3,4. Variables,S-EDAD,,NE,False
+R0P2_cTodas_km_k3,4. Variables,S-SOLAPE,,NE,False
+R0P2_cTodas_km_k3,5. Nula correlacionada,Silueta supera a todas,0.297029702970297,ADV,False
+R0P2_cTodas_km_k3,5. Nula correlacionada,E1 ari_entre supera a todas,0.5714285714285714,ADV,False
+R0P2_cTodas_km_k3,5. Nula correlacionada,Supera control de búsqueda múltiple,0.2032394727078451,ADV,False
+R0P2_cTodas_km_k3,6. Tamaños,Grupo menor,79.0,OK,False
+R0P2_cTodas_km_k3,7. Separación,Silueta negativa (proporción),0.054820415879017,OK,False
+R0P2_cTodas_km_k3,8. Interpretabilidad,Dominada por pocas variables,0.8787490639475503,OK,False
+R0P2_cTodas_km_k3,9. Complejidad,Componentes,0.0,ADV,False
+R0P2_cTodas_km_k4,1. Integridad,Etiquetas reproducidas,1.0,OK,False
+R0P2_cTodas_km_k4,2. Asignación,E3 ari_fuera media,0.8475957311123664,OK,False
+R0P2_cTodas_km_k4,2. Asignación,E3 ari_fuera p05,0.4771835173470671,CRIT,True
+R0P2_cTodas_km_k4,3. Estabilidad,E3 ari_entre media,0.7670623554284596,ADV,False
+R0P2_cTodas_km_k4,3. Estabilidad,E3 ari_entre p05,0.432964423989766,CRIT,False
+R0P2_cTodas_km_k4,4. Codificación,S-ORD,,NE,False
+R0P2_cTodas_km_k4,4. Codificación,S-FAMD,,NE,False
+R0P2_cTodas_km_k4,4. Codificación,S-RARA,,NE,False
+R0P2_cTodas_km_k4,4. Población e imputación,S-TRA,,NE,False
+R0P2_cTodas_km_k4,4. Población e imputación,S-CUI,,NE,False
+R0P2_cTodas_km_k4,4. Población e imputación,S-EJE,,NE,False
+R0P2_cTodas_km_k4,4. Población e imputación,S-IMPMODA,0.9079893571416034,OK,False
+R0P2_cTodas_km_k4,4. Variables,S-EDAD,,NE,False
+R0P2_cTodas_km_k4,4. Variables,S-SOLAPE,,NE,False
+R0P2_cTodas_km_k4,5. Nula correlacionada,Silueta supera a todas,0.1188118811881188,ADV,False
+R0P2_cTodas_km_k4,5. Nula correlacionada,E1 ari_entre supera a todas,0.2857142857142857,ADV,False
+R0P2_cTodas_km_k4,5. Nula correlacionada,Supera control de búsqueda múltiple,0.8770824284219721,ADV,False
+R0P2_cTodas_km_k4,6. Tamaños,Grupo menor,70.0,OK,False
+R0P2_cTodas_km_k4,7. Separación,Silueta negativa (proporción),0.0453686200378071,OK,False
+R0P2_cTodas_km_k4,8. Interpretabilidad,Dominada por pocas variables,0.7086543153018173,OK,False
+R0P2_cTodas_km_k4,9. Complejidad,Componentes,0.0,ADV,False

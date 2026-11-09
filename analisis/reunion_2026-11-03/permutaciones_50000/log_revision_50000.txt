@@ -1,0 +1,15 @@
+LOG revisión Fase 35B, versión B: entropía de Shannon, 50000 permutaciones, COMPLEMENTARIO
+Fecha de ejecución: 2026-11-03 12:25
+HEAD: 745d689937a18c35b62fd25eccc401b169b20e11
+Semilla: SeedSequence(42, spawn_key=(1103, 0, tipo, indice)); tolerancia: 1e-12; un solo proceso
+Versiones: Python 3.12.5, numpy 2.2.4, pandas 2.2.3
+Variables: 34; relevantes q<0,10: 6; pares: 15
+Relevantes: dias_ejercicio_semana;frecuencia_bajo_impacto;frecuencia_fuerza;imc;lugar_trabajo_comprensivo;trabaja_actualmente
+FCBF adaptado: frecuencia_fuerza;imc;lugar_trabajo_comprensivo;trabaja_actualmente
+FCBF estandar: frecuencia_fuerza;lugar_trabajo_comprensivo
+Cercanas a 0,10: ninguna
+Comprobaciones: la versión A se reproduce byte a byte; primeros sorteos iguales a A; k primeros + k siguientes = k total; SU igual; dos corridas idénticas.
+Tiempo real (s): reproduccion_version_a 9.5, permutaciones 33.6, repeticion 34.1, comprobacion_anidamiento 33.3, total 114.7
+SHA-256 revision_35b_50000.py: 73dedebdc0547e876c25cbfb39a3d2d33b7f88351981df194dff65f4ab681fc8
+SHA-256 adenda_50000_permutaciones.md: b27932b3dedd82923f3bd7a9a7fd66f1a7bf6451f553b46d6059635b4e08c68e
+SHA-256 test_revision_35b_50000.py: 0316af4df34e87b286f6f8e7cfd767f0c52243efacc9277f5e21471922d2f930

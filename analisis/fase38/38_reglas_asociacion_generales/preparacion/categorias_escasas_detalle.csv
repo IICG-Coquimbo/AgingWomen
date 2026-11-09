@@ -1,0 +1,41 @@
+variable,categoria_original,participantes,pct,destino
+dias_ejercicio_semana,5-6 días,15,2.835538752362949,dias_ejercicio=5-6_dias_o_todos_los_dias
+dias_ejercicio_semana,Todos los días,12,2.268431001890359,dias_ejercicio=5-6_dias_o_todos_los_dias
+frecuencia_aerobico,Rara vez,19,3.5916824196597354,aerobico=rara_vez_o_a_veces
+frecuencia_aerobico,Frecuentemente,26,4.914933837429111,aerobico=frecuentemente_o_siempre
+frecuencia_aerobico,Siempre,20,3.780718336483932,aerobico=frecuentemente_o_siempre
+frecuencia_bajo_impacto,Siempre,16,3.0245746691871456,bajo_impacto=frecuentemente_o_siempre
+frecuencia_fuerza,Rara vez,13,2.4574669187145557,fuerza=rara_vez_o_a_veces
+frecuencia_fuerza,Frecuentemente,26,4.914933837429111,fuerza=frecuentemente_o_siempre
+frecuencia_fuerza,Siempre,12,2.268431001890359,fuerza=frecuentemente_o_siempre
+quien_prepara_comidas,COMPRO,22,4.158790170132325,"(sin ítem, R3)"
+quien_prepara_comidas,OTRO,7,1.3232514177693762,"(sin ítem, R3)"
+carnes_semana,Nunca,22,4.158790170132325,carnes=nunca_o_1-2_veces_por_semana
+carnes_semana,Diariamente,22,4.158790170132325,carnes=5-6_veces_por_semana_o_diariamente
+falta_tiempo_influye,Siempre,16,3.0245746691871456,falta_tiempo=frecuentemente_o_siempre
+frecuencia_comida_fuera,5-6 veces por semana,19,3.5916824196597354,comida_fuera=3-4_veces_por_semana_o_5-6_veces_por_semana
+frecuencia_comida_fuera,Diariamente,0,0.0,comida_fuera=3-4_veces_por_semana_o_5-6_veces_por_semana
+frutas_dia,5-6 porciones,23,4.3478260869565215,frutas=3-4_porciones_o_5-6_porciones
+frutas_dia,7 o más porciones,0,0.0,frutas=3-4_porciones_o_5-6_porciones
+golosinas_semana,Diariamente,24,4.536862003780718,golosinas=5-6_veces_por_semana_o_diariamente
+jugos_gaseosas_dia,7 o más porciones,0,0.0,jugos=5-6_porciones
+lacteos_dia,5-6 porciones,9,1.7013232514177694,lacteos=3-4_porciones_o_5-6_porciones
+lacteos_dia,7 o más porciones,0,0.0,lacteos=3-4_porciones_o_5-6_porciones
+legumbres_semana,5-6 veces por semana,0,0.0,legumbres=3-4_veces_por_semana
+legumbres_semana,Diariamente,0,0.0,legumbres=3-4_veces_por_semana
+panes_dia,5-6 porciones,10,1.890359168241966,panes=3-4_porciones_o_5-6_porciones
+panes_dia,7 o más porciones,0,0.0,panes=3-4_porciones_o_5-6_porciones
+pescado_semana,5-6 veces por semana,0,0.0,pescado=3-4_veces_por_semana
+pescado_semana,Diariamente,0,0.0,pescado=3-4_veces_por_semana
+platos_verduras_dia,No consumo,19,3.5916824196597354,verduras=no_consumo_o_1-2_porciones
+platos_verduras_dia,5-6 porciones,20,3.780718336483932,verduras=3-4_porciones_o_5-6_porciones
+platos_verduras_dia,7 o más porciones,0,0.0,verduras=3-4_porciones_o_5-6_porciones
+vasos_agua_dia,No consumo,24,4.536862003780718,agua=no_consumo_o_1-2_porciones
+tabaco_frecuencia,1-2 veces por semana,21,3.9697542533081287,tabaco=1-2_veces_por_semana_a_5-6_veces_por_semana
+tabaco_frecuencia,3-4 veces por semana,9,1.7013232514177694,tabaco=1-2_veces_por_semana_a_5-6_veces_por_semana
+tabaco_frecuencia,5-6 veces por semana,18,3.402646502835539,tabaco=1-2_veces_por_semana_a_5-6_veces_por_semana
+alcohol_frecuencia,5-6 veces por semana,14,2.6465028355387523,alcohol=3-4_veces_por_semana_a_diariamente
+alcohol_frecuencia,Diariamente,11,2.0793950850661624,alcohol=3-4_veces_por_semana_a_diariamente
+prevision,NINGUNA,15,2.835538752362949,"(sin ítem, R3)"
+prevision,FFAA,7,1.3232514177693762,"(sin ítem, R3)"
+prevision,NS,2,0.3780718336483932,"(sin ítem, R3)"

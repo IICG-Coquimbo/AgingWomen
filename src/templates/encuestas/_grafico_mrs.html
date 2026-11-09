@@ -1,0 +1,29 @@
+{% comment %}
+Fase 40C: un gráfico de evolución MRS en SVG generado en el servidor (sin
+bibliotecas ni CDN). La geometría viene calculada de apps.encuestas.evolucion:
+solo puntos de rondas verificables; las rondas excluidas son huecos punteados y
+las líneas nunca las cruzan. `g` es un gráfico; `prefijo` hace únicos los id.
+{% endcomment %}<figure class="grafico-mrs" data-grafico-mrs="{{ g.clave }}">
+    <svg class="grafico-mrs__svg" viewBox="0 0 {{ g.ancho }} {{ g.alto }}" role="img"
+         aria-labelledby="{{ prefijo }}-{{ g.clave }}-t {{ prefijo }}-{{ g.clave }}-d" focusable="false">
+        <title id="{{ prefijo }}-{{ g.clave }}-t">{{ g.titulo }} (de 0 a {{ g.maximo }})</title>
+        <desc id="{{ prefijo }}-{{ g.clave }}-d">{{ g.descripcion }}</desc>
+        {% for l in g.lineas_y %}
+        <line class="grafico-mrs__guia" x1="{{ g.x_inicio }}" x2="{{ g.x_fin }}" y1="{{ l.y }}" y2="{{ l.y }}"/>
+        <text class="grafico-mrs__eje" x="{{ g.x_inicio|add:'-6' }}" y="{{ l.y }}" dy="4" text-anchor="end">{{ l.valor }}</text>
+        {% endfor %}
+        {% for e in g.excluidas %}
+        <line class="grafico-mrs__hueco" data-ronda-excluida="{{ e.numero }}" x1="{{ e.x }}" x2="{{ e.x }}" y1="{{ g.y_arriba }}" y2="{{ g.y_base }}"/>
+        {% endfor %}
+        {% for t in g.tramos %}
+        <polyline class="grafico-mrs__linea" data-tramo points="{{ t }}"/>
+        {% endfor %}
+        {% for p in g.puntos %}
+        <circle class="grafico-mrs__punto" data-ronda="{{ p.numero }}" data-valor="{{ p.valor }}" cx="{{ p.x }}" cy="{{ p.y }}" r="4"/>
+        {% endfor %}
+        {% for e in g.etiquetas_x %}
+        <text class="grafico-mrs__eje" x="{{ e.x }}" y="{{ g.y_etiqueta }}" text-anchor="middle">{{ e.numero }}</text>
+        {% endfor %}
+    </svg>
+    <figcaption class="ayuda">Eje horizontal: número de ronda. {{ g.explicacion }}</figcaption>
+</figure>

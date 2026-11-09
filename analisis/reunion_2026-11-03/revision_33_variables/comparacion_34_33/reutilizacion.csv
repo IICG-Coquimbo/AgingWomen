@@ -1,0 +1,13 @@
+﻿permutaciones,elemento,n_comparados,iguales,tratamiento
+10000,SU de variables,33,33,recalculada desde los datos y comparada
+10000,tamaño de población,33,33,recalculado y comparado
+10000,k de variables,33,33,reutilizado
+10000,p de variables,33,33,reutilizado
+10000,pares entre relevantes,15,15,"p reutilizado, q recalculado"
+10000,permutaciones nuevas,0,0,ninguna
+50000,SU de variables,33,33,recalculada desde los datos y comparada
+50000,tamaño de población,33,33,recalculado y comparado
+50000,k de variables,33,33,reutilizado
+50000,p de variables,33,33,reutilizado
+50000,pares entre relevantes,15,15,"p reutilizado, q recalculado"
+50000,permutaciones nuevas,0,0,ninguna

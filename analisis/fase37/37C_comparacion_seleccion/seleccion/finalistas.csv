@@ -1,0 +1,6 @@
+config,representa_a,clase,n_adv,crit,regla_v,supera_nula,elegible_para,motivo_no_elegible
+F1_c02_km_k2,F1_c02_km_k2,Principalmente gradiente de ejercicio,2,,,False,No elegible,Clase «Principalmente gradiente de ejercicio»: preguntar directamente esas variables es más simple
+P2_c12_km_k4,P2_c12_km_k4 | P1_c12_km_k4,Segmentación multivariable,4,S-SOLAPE,S-SOLAPE,False,B,
+P2_c03_km_k3,P2_c03_km_k3,Principalmente gradiente de ejercicio,7,S-SOLAPE,S-SOLAPE,False,No elegible,Clase «Principalmente gradiente de ejercicio»: preguntar directamente esas variables es más simple
+P2_c05_km_k3,P2_c05_km_k3 | P1_c05_km_k3,Principalmente gradiente de ejercicio,7,S-SOLAPE,S-SOLAPE,False,No elegible,Clase «Principalmente gradiente de ejercicio»: preguntar directamente esas variables es más simple
+P2_c08_km_k4,P2_c08_km_k4,Segmentación multivariable,7,S-SOLAPE,S-SOLAPE,False,B,

@@ -1,0 +1,870 @@
+{
+ "ruta": "famd",
+ "modo_ordinal": "consecutivo",
+ "filas_referencia": 507,
+ "reescalar_prohibido": "Las columnas ya llevan su peso. No aplicar otra estandarización antes de PCA.",
+ "variables": [
+  {
+   "variable": "edad",
+   "tipo": "cuantitativa",
+   "seccion": "Identificación",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": [
+    18,
+    110
+   ],
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": null
+  },
+  {
+   "variable": "imc",
+   "tipo": "cuantitativa",
+   "seccion": "Medidas autodeclaradas",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": [
+    10,
+    80
+   ],
+   "nunca_unificado": false,
+   "ausente_es_media": true,
+   "niveles": null
+  },
+  {
+   "variable": "horas_sedentarismo",
+   "tipo": "cuantitativa",
+   "seccion": "Actividad física",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": [
+    0,
+    24
+   ],
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": null
+  },
+  {
+   "variable": "trabaja_actualmente",
+   "tipo": "binaria",
+   "seccion": "Identificación",
+   "rol": "categorica",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "False": {
+     "codigo": 0,
+     "significado": "No"
+    },
+    "True": {
+     "codigo": 1,
+     "significado": "Sí"
+    }
+   }
+  },
+  {
+   "variable": "tiene_pareja",
+   "tipo": "binaria",
+   "seccion": "Etapa reproductiva y salud ginecológica",
+   "rol": "categorica",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "NO": {
+     "codigo": 0,
+     "significado": "No"
+    },
+    "SI": {
+     "codigo": 1,
+     "significado": "Sí"
+    }
+   }
+  },
+  {
+   "variable": "tiene_actividad_sexual",
+   "tipo": "binaria",
+   "seccion": "Etapa reproductiva y salud ginecológica",
+   "rol": "categorica",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "NO": {
+     "codigo": 0,
+     "significado": "No"
+    },
+    "SI": {
+     "codigo": 1,
+     "significado": "Sí"
+    }
+   }
+  },
+  {
+   "variable": "operada_no_mas_hijos",
+   "tipo": "binaria",
+   "seccion": "Etapa reproductiva y salud ginecológica",
+   "rol": "categorica",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "NO": {
+     "codigo": 0,
+     "significado": "No"
+    },
+    "SI": {
+     "codigo": 1,
+     "significado": "Sí"
+    }
+   }
+  },
+  {
+   "variable": "usa_medicamentos_presion",
+   "tipo": "binaria",
+   "seccion": "Medicamentos y digestión",
+   "rol": "categorica",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "NO": {
+     "codigo": 0,
+     "significado": "No"
+    },
+    "SI": {
+     "codigo": 1,
+     "significado": "Sí"
+    }
+   }
+  },
+  {
+   "variable": "quien_prepara_comidas",
+   "tipo": "nominal",
+   "seccion": "Alimentación",
+   "rol": "categorica",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "YO_MAYORIA": {
+     "codigo": null,
+     "significado": "Yo preparo la mayoría"
+    },
+    "COMPARTIDO": {
+     "codigo": null,
+     "significado": "Yo preparo algunas y otras personas otras"
+    },
+    "OTRA_HOGAR": {
+     "codigo": null,
+     "significado": "Otra persona de mi hogar prepara la mayoría"
+    },
+    "COMPRO": {
+     "codigo": null,
+     "significado": "Generalmente compro comida preparada"
+    },
+    "OTRO": {
+     "codigo": null,
+     "significado": "Otro"
+    }
+   }
+  },
+  {
+   "variable": "alcohol_frecuencia",
+   "tipo": "ordinal",
+   "seccion": "Sustancias",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "Nunca"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "1-2 veces por semana"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "3-4 veces por semana"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "5-6 veces por semana"
+    },
+    "5": {
+     "codigo": 5,
+     "significado": "Diariamente"
+    }
+   }
+  },
+  {
+   "variable": "cantidad_personas_cuida",
+   "tipo": "ordinal",
+   "seccion": "Cuidado de otras personas",
+   "rol": "categorica",
+   "madre": {
+    "variable": "cuida_otras_personas",
+    "no": "NO",
+    "estructural": "0"
+   },
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "0": {
+     "codigo": 0,
+     "significado": "No cuida"
+    },
+    "1": {
+     "codigo": 1,
+     "significado": "1 persona"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "2 personas"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "3 o más personas"
+    }
+   }
+  },
+  {
+   "variable": "carnes_semana",
+   "tipo": "ordinal",
+   "seccion": "Alimentación",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "Nunca"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "1-2 veces por semana"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "3-4 veces por semana"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "5-6 veces por semana"
+    },
+    "5": {
+     "codigo": 5,
+     "significado": "Diariamente"
+    }
+   }
+  },
+  {
+   "variable": "dias_ejercicio_semana",
+   "tipo": "ordinal",
+   "seccion": "Actividad física",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "0 días"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "1-2 días"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "3-4 días"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "5-6 días"
+    },
+    "5": {
+     "codigo": 5,
+     "significado": "Todos los días"
+    }
+   }
+  },
+  {
+   "variable": "distension_abdominal",
+   "tipo": "ordinal",
+   "seccion": "Medicamentos y digestión",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "Nunca o casi nunca"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "A veces"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "Frecuentemente"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "Siempre"
+    }
+   }
+  },
+  {
+   "variable": "evacuacion_intestinal",
+   "tipo": "ordinal",
+   "seccion": "Medicamentos y digestión",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "Más de una vez al día"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "1 vez al día"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "Cada 2 días"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "3 o más días entre evacuaciones"
+    }
+   }
+  },
+  {
+   "variable": "falta_tiempo_influye",
+   "tipo": "ordinal",
+   "seccion": "Alimentación",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "Nunca o casi nunca"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "Rara vez"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "A veces"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "Frecuentemente"
+    },
+    "5": {
+     "codigo": 5,
+     "significado": "Siempre"
+    }
+   }
+  },
+  {
+   "variable": "frecuencia_aerobico",
+   "tipo": "ordinal",
+   "seccion": "Actividad física",
+   "rol": "categorica",
+   "madre": {
+    "variable": "realiza_aerobico",
+    "no": "NO",
+    "estructural": "0"
+   },
+   "limites": null,
+   "nunca_unificado": true,
+   "ausente_es_media": false,
+   "niveles": {
+    "0": {
+     "codigo": 0,
+     "significado": "No lo realiza"
+    },
+    "1": {
+     "codigo": 0,
+     "significado": "Nunca"
+    },
+    "2": {
+     "codigo": 1,
+     "significado": "Rara vez"
+    },
+    "3": {
+     "codigo": 2,
+     "significado": "A veces"
+    },
+    "4": {
+     "codigo": 3,
+     "significado": "Frecuentemente"
+    },
+    "5": {
+     "codigo": 4,
+     "significado": "Siempre"
+    }
+   }
+  },
+  {
+   "variable": "frecuencia_bajo_impacto",
+   "tipo": "ordinal",
+   "seccion": "Actividad física",
+   "rol": "categorica",
+   "madre": {
+    "variable": "realiza_bajo_impacto",
+    "no": "NO",
+    "estructural": "0"
+   },
+   "limites": null,
+   "nunca_unificado": true,
+   "ausente_es_media": false,
+   "niveles": {
+    "0": {
+     "codigo": 0,
+     "significado": "No lo realiza"
+    },
+    "1": {
+     "codigo": 0,
+     "significado": "Nunca"
+    },
+    "2": {
+     "codigo": 1,
+     "significado": "Rara vez"
+    },
+    "3": {
+     "codigo": 2,
+     "significado": "A veces"
+    },
+    "4": {
+     "codigo": 3,
+     "significado": "Frecuentemente"
+    },
+    "5": {
+     "codigo": 4,
+     "significado": "Siempre"
+    }
+   }
+  },
+  {
+   "variable": "frecuencia_comida_fuera",
+   "tipo": "ordinal",
+   "seccion": "Alimentación",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "Nunca"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "1-2 veces por semana"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "3-4 veces por semana"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "5-6 veces por semana"
+    },
+    "5": {
+     "codigo": 5,
+     "significado": "Diariamente"
+    }
+   }
+  },
+  {
+   "variable": "frecuencia_fuerza",
+   "tipo": "ordinal",
+   "seccion": "Actividad física",
+   "rol": "categorica",
+   "madre": {
+    "variable": "realiza_fuerza",
+    "no": "NO",
+    "estructural": "0"
+   },
+   "limites": null,
+   "nunca_unificado": true,
+   "ausente_es_media": false,
+   "niveles": {
+    "0": {
+     "codigo": 0,
+     "significado": "No lo realiza"
+    },
+    "1": {
+     "codigo": 0,
+     "significado": "Nunca"
+    },
+    "2": {
+     "codigo": 1,
+     "significado": "Rara vez"
+    },
+    "3": {
+     "codigo": 2,
+     "significado": "A veces"
+    },
+    "4": {
+     "codigo": 3,
+     "significado": "Frecuentemente"
+    },
+    "5": {
+     "codigo": 4,
+     "significado": "Siempre"
+    }
+   }
+  },
+  {
+   "variable": "frutas_dia",
+   "tipo": "ordinal",
+   "seccion": "Alimentación",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "No consumo"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "1-2 porciones"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "3-4 porciones"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "5-6 porciones"
+    },
+    "5": {
+     "codigo": 5,
+     "significado": "7 o más porciones"
+    }
+   }
+  },
+  {
+   "variable": "golosinas_semana",
+   "tipo": "ordinal",
+   "seccion": "Alimentación",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "Nunca"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "1-2 veces por semana"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "3-4 veces por semana"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "5-6 veces por semana"
+    },
+    "5": {
+     "codigo": 5,
+     "significado": "Diariamente"
+    }
+   }
+  },
+  {
+   "variable": "jugos_gaseosas_dia",
+   "tipo": "ordinal",
+   "seccion": "Alimentación",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "No consumo"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "1-2 porciones"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "3-4 porciones"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "5-6 porciones"
+    },
+    "5": {
+     "codigo": 5,
+     "significado": "7 o más porciones"
+    }
+   }
+  },
+  {
+   "variable": "lacteos_dia",
+   "tipo": "ordinal",
+   "seccion": "Alimentación",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "No consumo"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "1-2 porciones"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "3-4 porciones"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "5-6 porciones"
+    },
+    "5": {
+     "codigo": 5,
+     "significado": "7 o más porciones"
+    }
+   }
+  },
+  {
+   "variable": "legumbres_semana",
+   "tipo": "ordinal",
+   "seccion": "Alimentación",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "Nunca"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "1-2 veces por semana"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "3-4 veces por semana"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "5-6 veces por semana"
+    },
+    "5": {
+     "codigo": 5,
+     "significado": "Diariamente"
+    }
+   }
+  },
+  {
+   "variable": "panes_dia",
+   "tipo": "ordinal",
+   "seccion": "Alimentación",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "No consumo"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "1-2 porciones"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "3-4 porciones"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "5-6 porciones"
+    },
+    "5": {
+     "codigo": 5,
+     "significado": "7 o más porciones"
+    }
+   }
+  },
+  {
+   "variable": "pescado_semana",
+   "tipo": "ordinal",
+   "seccion": "Alimentación",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "Nunca"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "1-2 veces por semana"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "3-4 veces por semana"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "5-6 veces por semana"
+    },
+    "5": {
+     "codigo": 5,
+     "significado": "Diariamente"
+    }
+   }
+  },
+  {
+   "variable": "platos_verduras_dia",
+   "tipo": "ordinal",
+   "seccion": "Alimentación",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "No consumo"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "1-2 porciones"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "3-4 porciones"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "5-6 porciones"
+    },
+    "5": {
+     "codigo": 5,
+     "significado": "7 o más porciones"
+    }
+   }
+  },
+  {
+   "variable": "tabaco_frecuencia",
+   "tipo": "ordinal",
+   "seccion": "Sustancias",
+   "rol": "categorica",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "Nunca"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "1-2 veces por semana"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "3-4 veces por semana"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "5-6 veces por semana"
+    },
+    "5": {
+     "codigo": 5,
+     "significado": "Diariamente"
+    }
+   }
+  },
+  {
+   "variable": "vasos_agua_dia",
+   "tipo": "ordinal",
+   "seccion": "Alimentación",
+   "rol": "cuantitativa",
+   "madre": null,
+   "limites": null,
+   "nunca_unificado": false,
+   "ausente_es_media": false,
+   "niveles": {
+    "1": {
+     "codigo": 1,
+     "significado": "No consumo"
+    },
+    "2": {
+     "codigo": 2,
+     "significado": "1-2 porciones"
+    },
+    "3": {
+     "codigo": 3,
+     "significado": "3-4 porciones"
+    },
+    "4": {
+     "codigo": 4,
+     "significado": "5-6 porciones"
+    },
+    "5": {
+     "codigo": 5,
+     "significado": "7 o más porciones"
+    }
+   }
+  }
+ ]
+}

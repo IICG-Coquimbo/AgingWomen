@@ -1,0 +1,30 @@
+{
+ "marginales_exactas": true,
+ "logica_madre_hija": true,
+ "error_max_spearman_media_replicas": 0.05771810115077802,
+ "error_medio_spearman_media_replicas": 0.008979278242172603,
+ "error_max_spearman_por_replica_mediana": 0.1416405598781964,
+ "error_calibracion_final": 0.0012671330858169752,
+ "error_relativo_vp_P1_1a3": [
+  0.02746315762465046,
+  0.08944353139126071,
+  0.05115162425114872
+ ],
+ "error_relativo_vp_F1_1a3": [
+  0.022875612212476693,
+  0.07225261627826396,
+  0.06031896021614447
+ ],
+ "v_cramer_media_observado": 0.08882108060553517,
+ "v_cramer_media_replicas": 0.09229003190864937,
+ "v_cramer_pares_observado_mayor_que_0_2": 12,
+ "v_cramer_pares_replicas_mayor_que_0_2": 8.35,
+ "dias_1_con_frecuencia_observado": 69,
+ "nota_incoherencia": "Código 1 de dias_ejercicio_semana y alguna frecuencia con respuesta. Se mide, no se impone.",
+ "criterios": {
+  "spearman_max_0_05": false,
+  "valores_propios_10pct": true
+ },
+ "dias_1_con_frecuencia_replicas_media": 88.2,
+ "contraccion": 0.075
+}

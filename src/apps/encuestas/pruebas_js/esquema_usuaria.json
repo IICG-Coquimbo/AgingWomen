@@ -1,0 +1,3701 @@
+{
+ "comunas_por_region": {
+  "01": [
+   "Alto Hospicio",
+   "Camiña",
+   "Colchane",
+   "Huara",
+   "Iquique",
+   "Pica",
+   "Pozo Almonte"
+  ],
+  "02": [
+   "Antofagasta",
+   "Calama",
+   "María Elena",
+   "Mejillones",
+   "Ollagüe",
+   "San Pedro de Atacama",
+   "Sierra Gorda",
+   "Taltal",
+   "Tocopilla"
+  ],
+  "03": [
+   "Alto del Carmen",
+   "Caldera",
+   "Chañaral",
+   "Copiapó",
+   "Diego de Almagro",
+   "Freirina",
+   "Huasco",
+   "Tierra Amarilla",
+   "Vallenar"
+  ],
+  "04": [
+   "Andacollo",
+   "Canela",
+   "Combarbalá",
+   "Coquimbo",
+   "Illapel",
+   "La Higuera",
+   "La Serena",
+   "Los Vilos",
+   "Monte Patria",
+   "Ovalle",
+   "Paihuano",
+   "Punitaqui",
+   "Río Hurtado",
+   "Salamanca",
+   "Vicuña"
+  ],
+  "05": [
+   "Algarrobo",
+   "Cabildo",
+   "Calera",
+   "Calle Larga",
+   "Cartagena",
+   "Casablanca",
+   "Catemu",
+   "Concón",
+   "El Quisco",
+   "El Tabo",
+   "Hijuelas",
+   "Isla de Pascua",
+   "Juan Fernández",
+   "La Cruz",
+   "La Ligua",
+   "Limache",
+   "Llaillay",
+   "Los Andes",
+   "Nogales",
+   "Olmué",
+   "Panquehue",
+   "Papudo",
+   "Petorca",
+   "Puchuncaví",
+   "Putaendo",
+   "Quillota",
+   "Quilpué",
+   "Quintero",
+   "Rinconada",
+   "San Antonio",
+   "San Esteban",
+   "San Felipe",
+   "Santa María",
+   "Santo Domingo",
+   "Valparaíso",
+   "Villa Alemana",
+   "Viña del Mar",
+   "Zapallar"
+  ],
+  "06": [
+   "Chépica",
+   "Chimbarongo",
+   "Codegua",
+   "Coinco",
+   "Coltauco",
+   "Doñihue",
+   "Graneros",
+   "La Estrella",
+   "Las Cabras",
+   "Litueche",
+   "Lolol",
+   "Machalí",
+   "Malloa",
+   "Marchigüe",
+   "Mostazal",
+   "Nancagua",
+   "Navidad",
+   "Olivar",
+   "Palmilla",
+   "Paredones",
+   "Peralillo",
+   "Peumo",
+   "Pichidegua",
+   "Pichilemu",
+   "Placilla",
+   "Pumanque",
+   "Quinta de Tilcoco",
+   "Rancagua",
+   "Rengo",
+   "Requínoa",
+   "San Fernando",
+   "San Vicente",
+   "Santa Cruz"
+  ],
+  "07": [
+   "Cauquenes",
+   "Chanco",
+   "Colbún",
+   "Constitución",
+   "Curepto",
+   "Curicó",
+   "Empedrado",
+   "Hualañé",
+   "Licantén",
+   "Linares",
+   "Longaví",
+   "Maule",
+   "Molina",
+   "Parral",
+   "Pelarco",
+   "Pelluhue",
+   "Pencahue",
+   "Rauco",
+   "Retiro",
+   "Río Claro",
+   "Romeral",
+   "Sagrada Familia",
+   "San Clemente",
+   "San Javier",
+   "San Rafael",
+   "Talca",
+   "Teno",
+   "Vichuquén",
+   "Villa Alegre",
+   "Yerbas Buenas"
+  ],
+  "08": [
+   "Alto Biobío",
+   "Antuco",
+   "Arauco",
+   "Cabrero",
+   "Cañete",
+   "Chiguayante",
+   "Concepción",
+   "Contulmo",
+   "Coronel",
+   "Curanilahue",
+   "Florida",
+   "Hualpén",
+   "Hualqui",
+   "Laja",
+   "Lebu",
+   "Los Álamos",
+   "Los Ángeles",
+   "Lota",
+   "Mulchén",
+   "Nacimiento",
+   "Negrete",
+   "Penco",
+   "Quilaco",
+   "Quilleco",
+   "San Pedro de la Paz",
+   "San Rosendo",
+   "Santa Bárbara",
+   "Santa Juana",
+   "Talcahuano",
+   "Tirúa",
+   "Tomé",
+   "Tucapel",
+   "Yumbel"
+  ],
+  "09": [
+   "Angol",
+   "Carahue",
+   "Cholchol",
+   "Collipulli",
+   "Cunco",
+   "Curacautín",
+   "Curarrehue",
+   "Ercilla",
+   "Freire",
+   "Galvarino",
+   "Gorbea",
+   "Lautaro",
+   "Loncoche",
+   "Lonquimay",
+   "Los Sauces",
+   "Lumaco",
+   "Melipeuco",
+   "Nueva Imperial",
+   "Padre Las Casas",
+   "Perquenco",
+   "Pitrufquén",
+   "Pucón",
+   "Purén",
+   "Renaico",
+   "Saavedra",
+   "Temuco",
+   "Teodoro Schmidt",
+   "Toltén",
+   "Traiguén",
+   "Victoria",
+   "Vilcún",
+   "Villarrica"
+  ],
+  "10": [
+   "Ancud",
+   "Calbuco",
+   "Castro",
+   "Chaitén",
+   "Chonchi",
+   "Cochamó",
+   "Curaco de Vélez",
+   "Dalcahue",
+   "Fresia",
+   "Frutillar",
+   "Futaleufú",
+   "Hualaihué",
+   "Llanquihue",
+   "Los Muermos",
+   "Maullín",
+   "Osorno",
+   "Palena",
+   "Puerto Montt",
+   "Puerto Octay",
+   "Puerto Varas",
+   "Purranque",
+   "Puqueldón",
+   "Puyehue",
+   "Queilén",
+   "Quellón",
+   "Quemchi",
+   "Quinchao",
+   "Río Negro",
+   "San Juan de la Costa",
+   "San Pablo"
+  ],
+  "11": [
+   "Aysén",
+   "Chile Chico",
+   "Cisnes",
+   "Cochrane",
+   "Coihaique",
+   "Guaitecas",
+   "Lago Verde",
+   "O'Higgins",
+   "Río Ibáñez",
+   "Tortel"
+  ],
+  "12": [
+   "Antártica",
+   "Cabo de Hornos",
+   "Laguna Blanca",
+   "Natales",
+   "Porvenir",
+   "Primavera",
+   "Punta Arenas",
+   "Río Verde",
+   "San Gregorio",
+   "Timaukel",
+   "Torres del Paine"
+  ],
+  "13": [
+   "Alhué",
+   "Buin",
+   "Calera de Tango",
+   "Cerrillos",
+   "Cerro Navia",
+   "Colina",
+   "Conchalí",
+   "Curacaví",
+   "El Bosque",
+   "El Monte",
+   "Estación Central",
+   "Huechuraba",
+   "Independencia",
+   "Isla de Maipo",
+   "La Cisterna",
+   "La Florida",
+   "La Granja",
+   "La Pintana",
+   "La Reina",
+   "Lampa",
+   "Las Condes",
+   "Lo Barnechea",
+   "Lo Espejo",
+   "Lo Prado",
+   "Macul",
+   "Maipú",
+   "María Pinto",
+   "Melipilla",
+   "Ñuñoa",
+   "Padre Hurtado",
+   "Paine",
+   "Pedro Aguirre Cerda",
+   "Peñaflor",
+   "Peñalolén",
+   "Pirque",
+   "Providencia",
+   "Pudahuel",
+   "Puente Alto",
+   "Quilicura",
+   "Quinta Normal",
+   "Recoleta",
+   "Renca",
+   "San Bernardo",
+   "San Joaquín",
+   "San José de Maipo",
+   "San Miguel",
+   "San Pedro",
+   "San Ramón",
+   "Santiago",
+   "Talagante",
+   "Tiltil",
+   "Vitacura"
+  ],
+  "14": [
+   "Corral",
+   "Futrono",
+   "Lago Ranco",
+   "Lanco",
+   "La Unión",
+   "Los Lagos",
+   "Máfil",
+   "Mariquina",
+   "Paillaco",
+   "Panguipulli",
+   "Río Bueno",
+   "Valdivia"
+  ],
+  "15": [
+   "Arica",
+   "Camarones",
+   "General Lagos",
+   "Putre"
+  ],
+  "16": [
+   "Bulnes",
+   "Chillán",
+   "Chillán Viejo",
+   "Cobquecura",
+   "Coelemu",
+   "Coihueco",
+   "El Carmen",
+   "Ninhue",
+   "Ñiquén",
+   "Pemuco",
+   "Pinto",
+   "Portezuelo",
+   "Quillón",
+   "Quirihue",
+   "Ránquil",
+   "San Carlos",
+   "San Fabián",
+   "San Ignacio",
+   "San Nicolás",
+   "Treguaco",
+   "Yungay"
+  ],
+  "99": []
+ },
+ "definiciones": [
+  {
+   "termino": "Perimenopausia",
+   "texto": "Etapa de transición previa a la menopausia. Las hormonas empiezan a fluctuar, la menstruación se vuelve irregular y pueden aparecer síntomas como bochornos o cambios de ánimo. Suele durar varios años."
+  },
+  {
+   "termino": "Menopausia",
+   "texto": "Momento en que la menstruación se detiene de forma definitiva. Se confirma cuando han pasado 12 meses seguidos sin regla."
+  }
+ ],
+ "edad_maxima": 65,
+ "edad_minima": 40,
+ "excepciones_edad": [
+  {
+   "texto": "Menopausia quirúrgica (histerectomía y/o extracción de ovarios)",
+   "valor": "QUIRURGICA"
+  },
+  {
+   "texto": "Ausencia prolongada de menstruación (12 meses o más) sin causa quirúrgica",
+   "valor": "AUSENCIA"
+  }
+ ],
+ "mensaje_omitir": "Si no sabes una respuesta, puedes dejarla en blanco y continuar. Tu progreso se guarda automáticamente en este dispositivo.",
+ "mrs_niveles": {
+  "0": "No tienes ese síntoma.",
+  "1": "Lo sientes, pero es poco molesto y casi no afecta tus actividades.",
+  "2": "Es evidente y te molesta, pero puedes realizar tus actividades normalmente.",
+  "3": "Te molesta bastante y afecta algunas actividades o tu bienestar.",
+  "4": "Es muy molesto y afecta considerablemente tu vida cotidiana."
+ },
+ "secciones": [
+  {
+   "aviso": null,
+   "descripcion": "Primero, algunos datos generales sobre ti. Nos ayudan a analizar los resultados del estudio.",
+   "mostrar_si": null,
+   "preguntas": [
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Fecha nacimiento",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "fecha_nacimiento",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": null,
+     "polaridad": null,
+     "texto": "Fecha de nacimiento",
+     "tipo_campo": "date"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Genero",
+     "inicial": "F",
+     "mostrar_si": null,
+     "nombre": "genero",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "Masculino",
+       "valor": "M"
+      },
+      {
+       "texto": "Femenino",
+       "valor": "F"
+      },
+      {
+       "texto": "No binario",
+       "valor": "NB"
+      },
+      {
+       "texto": "Otro",
+       "valor": "O"
+      },
+      {
+       "texto": "Prefiero no decirlo",
+       "valor": "PND"
+      }
+     ],
+     "polaridad": null,
+     "texto": "Género con el que se identifica",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Nivel educacion",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "nivel_educacion",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "Sin estudios",
+       "valor": "SIN"
+      },
+      {
+       "texto": "Educación Básica Incompleta",
+       "valor": "B_INC"
+      },
+      {
+       "texto": "Educación Básica Completa",
+       "valor": "B_COM"
+      },
+      {
+       "texto": "Educación Media Incompleta",
+       "valor": "M_INC"
+      },
+      {
+       "texto": "Educación Media Completa",
+       "valor": "M_COM"
+      },
+      {
+       "texto": "Educación Superior No Universitaria Incompleta",
+       "valor": "S_N_INC"
+      },
+      {
+       "texto": "Educación Superior No Universitaria Completa",
+       "valor": "S_N_COM"
+      },
+      {
+       "texto": "Educación Universitaria Incompleta",
+       "valor": "U_INC"
+      },
+      {
+       "texto": "Educación Universitaria Completa",
+       "valor": "U_COM"
+      },
+      {
+       "texto": "Postgrado (Magíster/Doctorado)",
+       "valor": "POST"
+      }
+     ],
+     "polaridad": null,
+     "texto": "Nivel educacional",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Origen procedencia",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "origen_procedencia",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "Chileno/a",
+       "valor": "CL"
+      },
+      {
+       "texto": "Venezolano/a o de origen venezolano",
+       "valor": "VE"
+      },
+      {
+       "texto": "Colombiano/a o de origen colombiano",
+       "valor": "CO"
+      },
+      {
+       "texto": "Peruano/a o de origen peruano",
+       "valor": "PE"
+      },
+      {
+       "texto": "Haitiano/a o de origen haitiano",
+       "valor": "HT"
+      },
+      {
+       "texto": "Boliviano/a o de origen boliviano",
+       "valor": "BO"
+      },
+      {
+       "texto": "Ecuatoriano/a o de origen ecuatoriano",
+       "valor": "EC"
+      },
+      {
+       "texto": "Argentino/a o de origen argentino",
+       "valor": "AR"
+      },
+      {
+       "texto": "Otra nacionalidad u origen",
+       "valor": "OTRA"
+      }
+     ],
+     "polaridad": null,
+     "texto": "Lugar de nacimiento (origen/procedencia)",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Pueblo originario afro",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "pueblo_originario_afro",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "No se identifica con ningún pueblo originario/afro",
+       "valor": "NINGUNO"
+      },
+      {
+       "texto": "Mapuche",
+       "valor": "MAPUCHE"
+      },
+      {
+       "texto": "Diaguita",
+       "valor": "DIAGUITA"
+      },
+      {
+       "texto": "Aymara",
+       "valor": "AYMARA"
+      },
+      {
+       "texto": "Rapa Nui",
+       "valor": "RAPANUI"
+      },
+      {
+       "texto": "Lickanantay / Atacameño",
+       "valor": "LICKANANTAY"
+      },
+      {
+       "texto": "Quechua",
+       "valor": "QUECHUA"
+      },
+      {
+       "texto": "Colla",
+       "valor": "COLLA"
+      },
+      {
+       "texto": "Kawésqar",
+       "valor": "KAWESQAR"
+      },
+      {
+       "texto": "Yagán",
+       "valor": "YAGAN"
+      },
+      {
+       "texto": "Chango",
+       "valor": "CHANGO"
+      },
+      {
+       "texto": "Afrodescendiente chileno/latinoamericano",
+       "valor": "AFRO"
+      },
+      {
+       "texto": "Asiático",
+       "valor": "ASIATICO"
+      },
+      {
+       "texto": "Otro pueblo originario",
+       "valor": "OTRO"
+      }
+     ],
+     "polaridad": null,
+     "texto": "Se identifica con un pueblo indígena u originario / afrodescendiente",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Region residencia",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "region_residencia",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "Arica y Parinacota",
+       "valor": "15"
+      },
+      {
+       "texto": "Tarapacá",
+       "valor": "01"
+      },
+      {
+       "texto": "Antofagasta",
+       "valor": "02"
+      },
+      {
+       "texto": "Atacama",
+       "valor": "03"
+      },
+      {
+       "texto": "Coquimbo",
+       "valor": "04"
+      },
+      {
+       "texto": "Valparaíso",
+       "valor": "05"
+      },
+      {
+       "texto": "Metropolitana de Santiago",
+       "valor": "13"
+      },
+      {
+       "texto": "Del Libertador Gral. Bernardo O'Higgins",
+       "valor": "06"
+      },
+      {
+       "texto": "Maule",
+       "valor": "07"
+      },
+      {
+       "texto": "Ñuble",
+       "valor": "16"
+      },
+      {
+       "texto": "BíoBío",
+       "valor": "08"
+      },
+      {
+       "texto": "La Araucanía",
+       "valor": "09"
+      },
+      {
+       "texto": "Los Ríos",
+       "valor": "14"
+      },
+      {
+       "texto": "Los Lagos",
+       "valor": "10"
+      },
+      {
+       "texto": "Aysén del Gral. Carlos Ibáñez del Campo",
+       "valor": "11"
+      },
+      {
+       "texto": "Magallanes y de la Antártica Chilena",
+       "valor": "12"
+      },
+      {
+       "texto": "Reside fuera de Chile / No aplica",
+       "valor": "99"
+      }
+     ],
+     "polaridad": null,
+     "texto": "Región de residencia",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": "region_residencia",
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Comuna",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "comuna",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": null,
+     "polaridad": null,
+     "texto": "Comuna donde reside",
+     "tipo_campo": "texto"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Trabaja actualmente",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "trabaja_actualmente",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": true
+      },
+      {
+       "texto": "No",
+       "valor": false
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Trabaja actualmente?",
+     "tipo_campo": "booleano"
+    }
+   ],
+   "tipo": "identificacion",
+   "titulo": "Identificación"
+  },
+  {
+   "aviso": null,
+   "descripcion": "Estas preguntas exploran cómo tu trabajo remunerado se relaciona con los síntomas del climaterio.",
+   "mostrar_si": {
+    "campo": "trabaja_actualmente",
+    "seccion": "identificacion",
+    "valor": true
+   },
+   "preguntas": [
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Rendimiento afectado",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "rendimiento_afectado",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nada",
+       "valor": 1
+      },
+      {
+       "texto": "Poco",
+       "valor": 2
+      },
+      {
+       "texto": "Moderadamente",
+       "valor": 3
+      },
+      {
+       "texto": "Bastante",
+       "valor": 4
+      },
+      {
+       "texto": "Mucho",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Su rendimiento o desempeño laboral se ha visto afectado por síntomas asociados a la menopausia?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Bienestar trabajo afectado",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "bienestar_trabajo_afectado",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nada",
+       "valor": 1
+      },
+      {
+       "texto": "Poco",
+       "valor": 2
+      },
+      {
+       "texto": "Moderadamente",
+       "valor": 3
+      },
+      {
+       "texto": "Bastante",
+       "valor": 4
+      },
+      {
+       "texto": "Mucho",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Su bienestar general en el trabajo se ha visto afectado por estos síntomas?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Frecuencia ausencias",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "frecuencia_ausencias",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nunca",
+       "valor": 1
+      },
+      {
+       "texto": "Rara vez",
+       "valor": 2
+      },
+      {
+       "texto": "A veces",
+       "valor": 3
+      },
+      {
+       "texto": "Frecuentemente",
+       "valor": 4
+      },
+      {
+       "texto": "Siempre",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Con qué frecuencia ha debido ausentarse o llegar tarde al trabajo por síntomas relacionados con la menopausia?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Lugar trabajo comprensivo",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "lugar_trabajo_comprensivo",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Muy en desacuerdo",
+       "valor": 1
+      },
+      {
+       "texto": "En desacuerdo",
+       "valor": 2
+      },
+      {
+       "texto": "Neutral",
+       "valor": 3
+      },
+      {
+       "texto": "De acuerdo",
+       "valor": 4
+      },
+      {
+       "texto": "Muy de acuerdo",
+       "valor": 5
+      }
+     ],
+     "polaridad": "inversa",
+     "texto": "¿Considera que su lugar de trabajo es comprensivo o flexible frente a estos síntomas?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Estres entorno laboral",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "estres_entorno_laboral",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nada de estrés",
+       "valor": 1
+      },
+      {
+       "texto": "Estrés leve",
+       "valor": 2
+      },
+      {
+       "texto": "Estrés moderado",
+       "valor": 3
+      },
+      {
+       "texto": "Estrés alto",
+       "valor": 4
+      },
+      {
+       "texto": "Estrés extremo",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Su entorno laboral le genera niveles de estrés que intensifiquen sus síntomas?",
+     "tipo_campo": "opciones"
+    }
+   ],
+   "tipo": "trabajo",
+   "titulo": "Trabajo"
+  },
+  {
+   "aviso": null,
+   "descripcion": "Aquí preguntamos por las tareas de cuidado no remuneradas (hijos, personas mayores u otras personas dependientes) y la carga que implican junto con el trabajo.",
+   "mostrar_si": null,
+   "preguntas": [
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Cuida otras personas",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "cuida_otras_personas",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Tiene a su cargo el cuidado directo de otras personas (hijos, adultos mayores, familiares dependientes)?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Cantidad personas cuida",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "cuida_otras_personas",
+      "valor": "SI"
+     },
+     "nombre": "cantidad_personas_cuida",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "1 persona",
+       "valor": 1
+      },
+      {
+       "texto": "2 personas",
+       "valor": 2
+      },
+      {
+       "texto": "3 o más personas",
+       "valor": 3
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "Si respondió \"Sí\", ¿a cuántas personas cuida de forma directa?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "A quien cuida",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "cuida_otras_personas",
+      "valor": "SI"
+     },
+     "nombre": "a_quien_cuida",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Hijos/as menores de edad",
+       "valor": "Hijos/as menores de edad"
+      },
+      {
+       "texto": "Hijos/as adultos que dependen de usted",
+       "valor": "Hijos/as adultos que dependen de usted"
+      },
+      {
+       "texto": "Padres o suegros",
+       "valor": "Padres o suegros"
+      },
+      {
+       "texto": "Abuelos u otros adultos mayores",
+       "valor": "Abuelos u otros adultos mayores"
+      },
+      {
+       "texto": "Cónyuge/pareja con dependencia",
+       "valor": "Cónyuge/pareja con dependencia"
+      },
+      {
+       "texto": "Otro familiar o persona dependiente",
+       "valor": "Otro familiar o persona dependiente"
+      },
+      {
+       "texto": "Otro",
+       "valor": "Otro"
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿A quién cuida? (marque todas las opciones que apliquen)",
+     "tipo_campo": "multiseleccion"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "A quien cuida otro",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "a_quien_cuida",
+      "operador": "contiene",
+      "valor": "Otro"
+     },
+     "nombre": "a_quien_cuida_otro",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": null,
+     "polaridad": null,
+     "texto": "Si marcó \"Otro\", especifique a quién cuida",
+     "tipo_campo": "texto"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Sobrecarga fisica emocional",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "cuida_otras_personas",
+      "valor": "SI"
+     },
+     "nombre": "sobrecarga_fisica_emocional",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nunca o casi nunca",
+       "valor": 1
+      },
+      {
+       "texto": "Rara vez",
+       "valor": 2
+      },
+      {
+       "texto": "A veces",
+       "valor": 3
+      },
+      {
+       "texto": "Frecuentemente",
+       "valor": 4
+      },
+      {
+       "texto": "Siempre",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Siente que la combinación entre su trabajo y las tareas de cuidado le genera una sobrecarga física o emocional?",
+     "tipo_campo": "opciones"
+    }
+   ],
+   "tipo": "tareas_cuidado",
+   "titulo": "Tareas de cuidado"
+  },
+  {
+   "aviso": null,
+   "descripcion": "La escala MRS mide la intensidad de 11 síntomas frecuentes durante el climaterio. Responde según cuánto te molesta cada uno actualmente.",
+   "grupo": "mrs",
+   "mostrar_si": null,
+   "preguntas": [
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": "mrs",
+     "escala_horizontal": false,
+     "etiqueta": "Pregunta 1",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "pregunta_1",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "Ninguna",
+       "valor": 0
+      },
+      {
+       "texto": "Leve",
+       "valor": 1
+      },
+      {
+       "texto": "Moderada",
+       "valor": 2
+      },
+      {
+       "texto": "Intensa",
+       "valor": 3
+      },
+      {
+       "texto": "Muy intensa",
+       "valor": 4
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿Con cuánta intensidad sientes: Bochornos, sudoración, calores?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": "mrs",
+     "escala_horizontal": false,
+     "etiqueta": "Pregunta 2",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "pregunta_2",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "Ninguna",
+       "valor": 0
+      },
+      {
+       "texto": "Leve",
+       "valor": 1
+      },
+      {
+       "texto": "Moderada",
+       "valor": 2
+      },
+      {
+       "texto": "Intensa",
+       "valor": 3
+      },
+      {
+       "texto": "Muy intensa",
+       "valor": 4
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿Con cuánta intensidad sientes: Molestias al corazón (sentir latidos del corazón, palpitaciones, o presión al pecho)?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": "mrs",
+     "escala_horizontal": false,
+     "etiqueta": "Pregunta 3",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "pregunta_3",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "Ninguna",
+       "valor": 0
+      },
+      {
+       "texto": "Leve",
+       "valor": 1
+      },
+      {
+       "texto": "Moderada",
+       "valor": 2
+      },
+      {
+       "texto": "Intensa",
+       "valor": 3
+      },
+      {
+       "texto": "Muy intensa",
+       "valor": 4
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿Con cuánta intensidad sientes: Molestias musculares y articulares (dolores de huesos y articulaciones, dolores reumáticos)",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": "mrs",
+     "escala_horizontal": false,
+     "etiqueta": "Pregunta 4",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "pregunta_4",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "Ninguna",
+       "valor": 0
+      },
+      {
+       "texto": "Leve",
+       "valor": 1
+      },
+      {
+       "texto": "Moderada",
+       "valor": 2
+      },
+      {
+       "texto": "Intensa",
+       "valor": 3
+      },
+      {
+       "texto": "Muy intensa",
+       "valor": 4
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿Con cuánta intensidad sientes: Dificultades en el sueño (insomnio, duermes poco y/o mal)",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": "mrs",
+     "escala_horizontal": false,
+     "etiqueta": "Pregunta 5",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "pregunta_5",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "Ninguna",
+       "valor": 0
+      },
+      {
+       "texto": "Leve",
+       "valor": 1
+      },
+      {
+       "texto": "Moderada",
+       "valor": 2
+      },
+      {
+       "texto": "Intensa",
+       "valor": 3
+      },
+      {
+       "texto": "Muy intensa",
+       "valor": 4
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿Con cuánta intensidad sientes: Estado de ánimo depresivo (sentirse deprimida, decaída, triste a punto de llorar, sin ganas de vivir)",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": "mrs",
+     "escala_horizontal": false,
+     "etiqueta": "Pregunta 6",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "pregunta_6",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "Ninguna",
+       "valor": 0
+      },
+      {
+       "texto": "Leve",
+       "valor": 1
+      },
+      {
+       "texto": "Moderada",
+       "valor": 2
+      },
+      {
+       "texto": "Intensa",
+       "valor": 3
+      },
+      {
+       "texto": "Muy intensa",
+       "valor": 4
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿Con cuánta intensidad sientes: Irritabilidad (sentirse tensa, explotas fácil, sentirse rabiosa, sentirse intolerante)?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": "mrs",
+     "escala_horizontal": false,
+     "etiqueta": "Pregunta 7",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "pregunta_7",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "Ninguna",
+       "valor": 0
+      },
+      {
+       "texto": "Leve",
+       "valor": 1
+      },
+      {
+       "texto": "Moderada",
+       "valor": 2
+      },
+      {
+       "texto": "Intensa",
+       "valor": 3
+      },
+      {
+       "texto": "Muy intensa",
+       "valor": 4
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿Con cuánta intensidad sientes: Ansiedad (sentirse angustiada, temerosa, inquieta, tendencia al pánico)?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": "mrs",
+     "escala_horizontal": false,
+     "etiqueta": "Pregunta 8",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "pregunta_8",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "Ninguna",
+       "valor": 0
+      },
+      {
+       "texto": "Leve",
+       "valor": 1
+      },
+      {
+       "texto": "Moderada",
+       "valor": 2
+      },
+      {
+       "texto": "Intensa",
+       "valor": 3
+      },
+      {
+       "texto": "Muy intensa",
+       "valor": 4
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿Con cuánta intensidad sientes: Cansancio físico y mental (rinde menos, se cansa fácil, olvidos frecuentes, mala memoria, le cuesta concentrarse)?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": "mrs",
+     "escala_horizontal": false,
+     "etiqueta": "Pregunta 9",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "pregunta_9",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "Ninguna",
+       "valor": 0
+      },
+      {
+       "texto": "Leve",
+       "valor": 1
+      },
+      {
+       "texto": "Moderada",
+       "valor": 2
+      },
+      {
+       "texto": "Intensa",
+       "valor": 3
+      },
+      {
+       "texto": "Muy intensa",
+       "valor": 4
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿Con cuánta intensidad sientes: Problemas sexuales (menos ganas de tener relaciones sexuales, menor frecuencia de relaciones sexuales, menor satisfacción sexual)?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": "mrs",
+     "escala_horizontal": false,
+     "etiqueta": "Pregunta 10",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "pregunta_10",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "Ninguna",
+       "valor": 0
+      },
+      {
+       "texto": "Leve",
+       "valor": 1
+      },
+      {
+       "texto": "Moderada",
+       "valor": 2
+      },
+      {
+       "texto": "Intensa",
+       "valor": 3
+      },
+      {
+       "texto": "Muy intensa",
+       "valor": 4
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿Con cuánta intensidad sientes: Problemas con la orina (problemas al orinar, orinas más veces, urgencia al orinar, se te escapa la orina)?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": "mrs",
+     "escala_horizontal": false,
+     "etiqueta": "Pregunta 11",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "pregunta_11",
+     "nota": null,
+     "obligatoria": true,
+     "opciones": [
+      {
+       "texto": "Ninguna",
+       "valor": 0
+      },
+      {
+       "texto": "Leve",
+       "valor": 1
+      },
+      {
+       "texto": "Moderada",
+       "valor": 2
+      },
+      {
+       "texto": "Intensa",
+       "valor": 3
+      },
+      {
+       "texto": "Muy intensa",
+       "valor": 4
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿Con cuánta intensidad sientes: Sequedad vaginal (sensación de genitales secos, malestar o ardor en los genitales, malestar o dolor con las relaciones sexuales)?",
+     "tipo_campo": "opciones"
+    }
+   ],
+   "tipo": "mrs",
+   "titulo": "Escala de Evaluación de la Menopausia (MRS)"
+  },
+  {
+   "aviso": null,
+   "descripcion": "Preguntas complementarias sobre tu ciclo menstrual, métodos anticonceptivos, tratamientos y antecedentes de salud.",
+   "grupo": "mrs",
+   "mostrar_si": null,
+   "preguntas": [
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Fecha ultima menstruacion",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "fecha_ultima_menstruacion",
+     "nota": "Si recuerdas la fecha completa, escríbela como día/mes/año (por ejemplo 15/03/2024). Si no, puedes escribir solo el mes y el año (03/2024) o solo el año (2024).",
+     "obligatoria": false,
+     "opciones": null,
+     "polaridad": null,
+     "texto": "Fecha de la última menstruación (regla) - puede ser solo el año",
+     "tipo_campo": "texto"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Menstruacion llega",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "fecha_ultima_menstruacion",
+      "operador": "meses_desde_lt",
+      "valor": 12
+     },
+     "nombre": "menstruacion_llega",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Regular (cada 21-35 días)",
+       "valor": "REGULAR"
+      },
+      {
+       "texto": "Irregular (<21 o >35 días)",
+       "valor": "IRREGULAR"
+      },
+      {
+       "texto": "No estoy segura / No sé",
+       "valor": "NO_SEGURA"
+      }
+     ],
+     "polaridad": null,
+     "texto": "Durante el último año, mi menstruación llega",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Tipo sangrado",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "fecha_ultima_menstruacion",
+      "operador": "meses_desde_lt",
+      "valor": 12
+     },
+     "nombre": "tipo_sangrado",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Muy leve",
+       "valor": "MUY_LEVE"
+      },
+      {
+       "texto": "Leve",
+       "valor": "LEVE"
+      },
+      {
+       "texto": "Moderado",
+       "valor": "MODERADO"
+      },
+      {
+       "texto": "Abundante",
+       "valor": "ABUNDANTE"
+      },
+      {
+       "texto": "Muy abundante",
+       "valor": "MUY_ABUND"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "El sangrado de mi menstruación es",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Usa metodo anticonceptivo",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "fecha_ultima_menstruacion",
+      "operador": "meses_desde_lt",
+      "valor": 12
+     },
+     "nombre": "usa_metodo_anticonceptivo",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Usa método anticonceptivo?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Tipo metodo anticonceptivo",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "usa_metodo_anticonceptivo",
+      "valor": "SI"
+     },
+     "nombre": "tipo_metodo_anticonceptivo",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Oral",
+       "valor": "ORAL"
+      },
+      {
+       "texto": "Inyectable",
+       "valor": "INYECTABLE"
+      },
+      {
+       "texto": "DIU",
+       "valor": "DIU"
+      },
+      {
+       "texto": "Implante",
+       "valor": "IMPLANTE"
+      },
+      {
+       "texto": "Preservativo",
+       "valor": "PRESERVATIVO"
+      },
+      {
+       "texto": "No sé",
+       "valor": "NO_SE"
+      },
+      {
+       "texto": "Otro",
+       "valor": "OTRO"
+      }
+     ],
+     "polaridad": null,
+     "texto": "Si la respuesta es sí, ¿qué tipo utiliza?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Tipo metodo anticonceptivo otro",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "tipo_metodo_anticonceptivo",
+      "valor": "OTRO"
+     },
+     "nombre": "tipo_metodo_anticonceptivo_otro",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": null,
+     "polaridad": null,
+     "texto": "Si seleccionó \"Otro\", ¿cuál método anticonceptivo?",
+     "tipo_campo": "texto"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Usa terapia hormonal",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "usa_terapia_hormonal",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Usa tratamiento de terapia hormonal?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Operada no mas hijos",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "operada_no_mas_hijos",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Está operada para no tener más hijos?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Tiene utero",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "tiene_utero",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Tiene útero?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Tiene ovario",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "tiene_ovario",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Tiene al menos un ovario?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Tiene pareja",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "tiene_pareja",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Actualmente tiene pareja?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Cambio relacion pareja menopausia",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "cambio_relacion_pareja_menopausia",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nada",
+       "valor": 1
+      },
+      {
+       "texto": "Poco",
+       "valor": 2
+      },
+      {
+       "texto": "Moderadamente",
+       "valor": 3
+      },
+      {
+       "texto": "Bastante",
+       "valor": 4
+      },
+      {
+       "texto": "Mucho",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Ha cambiado su relación de pareja y considera que los cambios se asocian a la menopausia?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Tiene actividad sexual",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "tiene_actividad_sexual",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Tiene actividad sexual?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Usa antidepresivos",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "usa_antidepresivos",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Usa antidepresivos o medicamentos para dormir?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Usa medicamentos diabetes",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "usa_medicamentos_diabetes",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Usa medicamentos para la diabetes?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Usa medicamentos presion",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "usa_medicamentos_presion",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Usa medicamentos para la presión arterial?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Evacuacion intestinal",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "evacuacion_intestinal",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Más de una vez al día",
+       "valor": 1
+      },
+      {
+       "texto": "1 vez al día",
+       "valor": 2
+      },
+      {
+       "texto": "Cada 2 días",
+       "valor": 3
+      },
+      {
+       "texto": "3 o más días entre evacuaciones",
+       "valor": 4
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Con qué frecuencia tiene evacuación intestinal?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Distension abdominal",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "distension_abdominal",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nunca o casi nunca",
+       "valor": 1
+      },
+      {
+       "texto": "A veces",
+       "valor": 2
+      },
+      {
+       "texto": "Frecuentemente",
+       "valor": 3
+      },
+      {
+       "texto": "Siempre",
+       "valor": 4
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Con qué frecuencia siente distensión o hinchazón abdominal?",
+     "tipo_campo": "opciones"
+    }
+   ],
+   "tipo": "mrs_complementario",
+   "titulo": "Cuestionario complementario"
+  },
+  {
+   "aviso": null,
+   "descripcion": "Datos del Examen de Medicina Preventiva del Adulto (EMPA). Esta sección puede quedar incompleta si no manejas esos datos clínicos: la completa principalmente el personal de salud.",
+   "mostrar_si": null,
+   "preguntas": [
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Fecha ultimo empa",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "fecha_ultimo_empa",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": null,
+     "polaridad": null,
+     "texto": "Fecha último EMPA",
+     "tipo_campo": "date"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Talla actual cm",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "talla_actual_cm",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": null,
+     "polaridad": null,
+     "texto": "Talla actual en centímetros (ej: 165)",
+     "tipo_campo": "numero"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Peso kg",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "peso_kg",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": null,
+     "polaridad": null,
+     "texto": "Peso en kilogramos (ej: 70.5)",
+     "tipo_campo": "numero"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Circunferencia cintura cm",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "circunferencia_cintura_cm",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": null,
+     "polaridad": null,
+     "texto": "Circunferencia de cintura en cm",
+     "tipo_campo": "numero"
+    }
+   ],
+   "tipo": "empa",
+   "titulo": "Examen de Medicina Preventiva del Adulto (EMPA)"
+  },
+  {
+   "aviso": "Para responder, considera cómo han sido tus hábitos durante el último mes.",
+   "descripcion": "Preguntas sobre tu alimentación habitual y el consumo de tabaco, marihuana y alcohol.",
+   "mostrar_si": null,
+   "preguntas": [
+    {
+     "chips": true,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Quien prepara comidas",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "quien_prepara_comidas",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Yo preparo la mayoría",
+       "valor": "YO_MAYORIA"
+      },
+      {
+       "texto": "Yo preparo algunas y otras personas otras",
+       "valor": "COMPARTIDO"
+      },
+      {
+       "texto": "Otra persona de mi hogar prepara la mayoría",
+       "valor": "OTRA_HOGAR"
+      },
+      {
+       "texto": "Generalmente compro comida preparada",
+       "valor": "COMPRO"
+      },
+      {
+       "texto": "Otro",
+       "valor": "OTRO"
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿Quién prepara habitualmente sus comidas principales?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Quien prepara comidas otro",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "quien_prepara_comidas",
+      "valor": "OTRO"
+     },
+     "nombre": "quien_prepara_comidas_otro",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": null,
+     "polaridad": null,
+     "texto": "Si seleccionó \"Otro\", ¿quién prepara sus comidas?",
+     "tipo_campo": "texto"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Frecuencia comida fuera",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "frecuencia_comida_fuera",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nunca",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 veces por semana",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 veces por semana",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 veces por semana",
+       "valor": 4
+      },
+      {
+       "texto": "Diariamente",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Con qué frecuencia consume comidas compradas/preparadas fuera del hogar?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Falta tiempo influye",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "falta_tiempo_influye",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nunca o casi nunca",
+       "valor": 1
+      },
+      {
+       "texto": "Rara vez",
+       "valor": 2
+      },
+      {
+       "texto": "A veces",
+       "valor": 3
+      },
+      {
+       "texto": "Frecuentemente",
+       "valor": 4
+      },
+      {
+       "texto": "Siempre",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿La falta de tiempo influye en su elección de alimentos?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Vasos agua dia",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "vasos_agua_dia",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "No consumo",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 porciones",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 porciones",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 porciones",
+       "valor": 4
+      },
+      {
+       "texto": "7 o más porciones",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Cuántos vasos de agua toma al día?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Platos verduras dia",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "platos_verduras_dia",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "No consumo",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 porciones",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 porciones",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 porciones",
+       "valor": 4
+      },
+      {
+       "texto": "7 o más porciones",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Cuántos platos de verduras o ensaladas come al día?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Frutas dia",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "frutas_dia",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "No consumo",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 porciones",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 porciones",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 porciones",
+       "valor": 4
+      },
+      {
+       "texto": "7 o más porciones",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Cuántas frutas come cada día?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Panes dia",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "panes_dia",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "No consumo",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 porciones",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 porciones",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 porciones",
+       "valor": 4
+      },
+      {
+       "texto": "7 o más porciones",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Cuántos panes (marraqueta, hallulla) come al día?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Lacteos dia",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "lacteos_dia",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "No consumo",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 porciones",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 porciones",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 porciones",
+       "valor": 4
+      },
+      {
+       "texto": "7 o más porciones",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Cuántos productos lácteos come al día?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Jugos gaseosas dia",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "jugos_gaseosas_dia",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "No consumo",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 porciones",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 porciones",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 porciones",
+       "valor": 4
+      },
+      {
+       "texto": "7 o más porciones",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Cuántos vasos al día toma de jugos y/o bebidas gaseosas?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Bebidas energeticas dia",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "bebidas_energeticas_dia",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "No consumo",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 porciones",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 porciones",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 porciones",
+       "valor": 4
+      },
+      {
+       "texto": "7 o más porciones",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Cuántos vasos al día toma de bebidas energéticas?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Pescado semana",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "pescado_semana",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nunca",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 veces por semana",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 veces por semana",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 veces por semana",
+       "valor": 4
+      },
+      {
+       "texto": "Diariamente",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Cuántas veces a la semana come pescado?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Legumbres semana",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "legumbres_semana",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nunca",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 veces por semana",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 veces por semana",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 veces por semana",
+       "valor": 4
+      },
+      {
+       "texto": "Diariamente",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Cuántas veces a la semana come legumbres?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Carnes semana",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "carnes_semana",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nunca",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 veces por semana",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 veces por semana",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 veces por semana",
+       "valor": 4
+      },
+      {
+       "texto": "Diariamente",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Cuántas veces a la semana come carnes (pollo, carne, cerdo)?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Golosinas semana",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "golosinas_semana",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nunca",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 veces por semana",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 veces por semana",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 veces por semana",
+       "valor": 4
+      },
+      {
+       "texto": "Diariamente",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Cuántas veces a la semana come pasteles, dulces, chocolates, golosinas, helados o snacks salados?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Tabaco frecuencia",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "tabaco_frecuencia",
+     "nota": "El consumo de tabaco influye significativamente en la efectividad y contraindicaciones de los tratamientos de terapia hormonal.",
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nunca",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 veces por semana",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 veces por semana",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 veces por semana",
+       "valor": 4
+      },
+      {
+       "texto": "Diariamente",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Fuma tabaco o cigarrillo?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Marihuana frecuencia",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "marihuana_frecuencia",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nunca",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 veces por semana",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 veces por semana",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 veces por semana",
+       "valor": 4
+      },
+      {
+       "texto": "Diariamente",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Fuma marihuana?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Alcohol frecuencia",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "alcohol_frecuencia",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nunca",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 veces por semana",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 veces por semana",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 veces por semana",
+       "valor": 4
+      },
+      {
+       "texto": "Diariamente",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Consume bebidas alcohólicas?",
+     "tipo_campo": "opciones"
+    }
+   ],
+   "tipo": "habitos_de_vida",
+   "titulo": "Hábitos de vida"
+  },
+  {
+   "aviso": null,
+   "descripcion": "Estas preguntas describen tu actividad física habitual y el tiempo que pasas sentada o en reposo.",
+   "mostrar_si": null,
+   "preguntas": [
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Dias ejercicio semana",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "dias_ejercicio_semana",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "0 días",
+       "valor": 1
+      },
+      {
+       "texto": "1-2 días",
+       "valor": 2
+      },
+      {
+       "texto": "3-4 días",
+       "valor": 3
+      },
+      {
+       "texto": "5-6 días",
+       "valor": 4
+      },
+      {
+       "texto": "Todos los días",
+       "valor": 5
+      }
+     ],
+     "polaridad": "inversa",
+     "texto": "Durante una semana habitual, ¿cuántos días realiza ejercicio?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Realiza aerobico",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "realiza_aerobico",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Realiza ejercicio aeróbico? (trote, bicicleta, natación, baile, spinning)",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Frecuencia aerobico",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "realiza_aerobico",
+      "valor": "SI"
+     },
+     "nombre": "frecuencia_aerobico",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nunca",
+       "valor": 1
+      },
+      {
+       "texto": "Rara vez",
+       "valor": 2
+      },
+      {
+       "texto": "A veces",
+       "valor": 3
+      },
+      {
+       "texto": "Frecuentemente",
+       "valor": 4
+      },
+      {
+       "texto": "Siempre",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "Frecuencia del ejercicio aeróbico",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Realiza bajo impacto",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "realiza_bajo_impacto",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Realiza actividades físicas de bajo impacto? (yoga, pilates, estiramientos, caminata suave, tai chi)",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Frecuencia bajo impacto",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "realiza_bajo_impacto",
+      "valor": "SI"
+     },
+     "nombre": "frecuencia_bajo_impacto",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nunca",
+       "valor": 1
+      },
+      {
+       "texto": "Rara vez",
+       "valor": 2
+      },
+      {
+       "texto": "A veces",
+       "valor": 3
+      },
+      {
+       "texto": "Frecuentemente",
+       "valor": 4
+      },
+      {
+       "texto": "Siempre",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "Frecuencia de actividades de bajo impacto",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Realiza fuerza",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "realiza_fuerza",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Realiza ejercicios de fuerza o resistencia muscular? (pesas, bandas elásticas, máquinas, peso corporal)",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Frecuencia fuerza",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "realiza_fuerza",
+      "valor": "SI"
+     },
+     "nombre": "frecuencia_fuerza",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nunca",
+       "valor": 1
+      },
+      {
+       "texto": "Rara vez",
+       "valor": 2
+      },
+      {
+       "texto": "A veces",
+       "valor": 3
+      },
+      {
+       "texto": "Frecuentemente",
+       "valor": 4
+      },
+      {
+       "texto": "Siempre",
+       "valor": 5
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "Frecuencia de ejercicios de fuerza",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Horas sedentarismo",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "horas_sedentarismo",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": null,
+     "polaridad": null,
+     "texto": "En promedio, ¿cuántas horas al día permanece sentada o sedentaria?",
+     "tipo_campo": "numero"
+    }
+   ],
+   "tipo": "actividad_fisica",
+   "titulo": "Actividad física"
+  },
+  {
+   "aviso": null,
+   "descripcion": "Por último, queremos saber qué conoces sobre la atención de climaterio y menopausia en el sistema público de salud y cuál ha sido tu experiencia.",
+   "mostrar_si": null,
+   "preguntas": [
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Prevision",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "prevision",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Fonasa",
+       "valor": "FONASA"
+      },
+      {
+       "texto": "Isapre",
+       "valor": "ISAPRE"
+      },
+      {
+       "texto": "FF.AA. y de Orden (Capredena, Dipreca)",
+       "valor": "FFAA"
+      },
+      {
+       "texto": "Ninguna (particular)",
+       "valor": "NINGUNA"
+      },
+      {
+       "texto": "No sé",
+       "valor": "NS"
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿Qué previsión de salud tiene?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Conoce sistema publico climaterio",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "prevision",
+      "valor": "FONASA"
+     },
+     "nombre": "conoce_sistema_publico_climaterio",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      },
+      {
+       "texto": "No sabe",
+       "valor": "NS"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Conoce si el sistema público de salud en Chile ofrece atención para mujeres en etapa de climaterio o menopausia?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Ha escuchado programa climaterio",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "prevision",
+      "valor": "FONASA"
+     },
+     "nombre": "ha_escuchado_programa_climaterio",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      },
+      {
+       "texto": "No sabe",
+       "valor": "NS"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Ha escuchado hablar del Programa de Climaterio o atención relacionada con menopausia en centros de salud públicos?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Sabe donde acudir",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "prevision",
+      "valor": "FONASA"
+     },
+     "nombre": "sabe_donde_acudir",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      },
+      {
+       "texto": "No sabe",
+       "valor": "NS"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Sabe dónde acudir para recibir orientación o atención relacionada con síntomas del climaterio o menopausia?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Ha consultado por sintomas",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "prevision",
+      "valor": "FONASA"
+     },
+     "nombre": "ha_consultado_por_sintomas",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      },
+      {
+       "texto": "No sabe",
+       "valor": "NS"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Ha consultado alguna vez en un centro de salud por síntomas relacionados con climaterio o menopausia?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Evaluacion atencion recibida",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "ha_consultado_por_sintomas",
+      "valor": "SI"
+     },
+     "nombre": "evaluacion_atencion_recibida",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Muy mala",
+       "valor": 1
+      },
+      {
+       "texto": "Mala",
+       "valor": 2
+      },
+      {
+       "texto": "Ni buena ni mala",
+       "valor": 3
+      },
+      {
+       "texto": "Buena",
+       "valor": 4
+      },
+      {
+       "texto": "Muy buena",
+       "valor": 5
+      }
+     ],
+     "polaridad": "inversa",
+     "texto": "Si respondió 'Sí', ¿cómo evaluaría la atención recibida?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "En control programa consultorio",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "prevision",
+      "valor": "FONASA"
+     },
+     "nombre": "en_control_programa_consultorio",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Está en control en algún programa de su consultorio?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "En control programa cual",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "en_control_programa_consultorio",
+      "valor": "SI"
+     },
+     "nombre": "en_control_programa_cual",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": null,
+     "polaridad": null,
+     "texto": "Si es sí, ¿en cuál programa?",
+     "tipo_campo": "texto"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Considera informacion suficiente",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "prevision",
+      "valor": "FONASA"
+     },
+     "nombre": "considera_informacion_suficiente",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nada",
+       "valor": 1
+      },
+      {
+       "texto": "Poco",
+       "valor": 2
+      },
+      {
+       "texto": "Moderadamente",
+       "valor": 3
+      },
+      {
+       "texto": "Bastante",
+       "valor": 4
+      },
+      {
+       "texto": "Mucho",
+       "valor": 5
+      }
+     ],
+     "polaridad": "inversa",
+     "texto": "¿Considera que el sistema de salud entrega suficiente información sobre climaterio o menopausia?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Nivel informacion servicios",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "prevision",
+      "valor": "FONASA"
+     },
+     "nombre": "nivel_informacion_servicios",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nada informada",
+       "valor": 1
+      },
+      {
+       "texto": "Poco informada",
+       "valor": 2
+      },
+      {
+       "texto": "Moderadamente informada",
+       "valor": 3
+      },
+      {
+       "texto": "Bastante informada",
+       "valor": 4
+      },
+      {
+       "texto": "Muy informada",
+       "valor": 5
+      }
+     ],
+     "polaridad": "inversa",
+     "texto": "¿Qué tan informada se considera respecto a los servicios disponibles para mujeres en climaterio o menopausia?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Conoce recursos disponibles",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "prevision",
+      "valor": "FONASA"
+     },
+     "nombre": "conoce_recursos_disponibles",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      },
+      {
+       "texto": "No sabe",
+       "valor": "NS"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Conoce alguno de los siguientes recursos o prestaciones? (Atención médica en APS/CESFAM, Controles ginecológicos, Terapia hormonal, Atención psicológica, Consejería en salud mental, Orientación nutricional, Programas de actividad física, No conozco prestaciones relacionadas).",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Ha tenido dificultades acceso",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "prevision",
+      "valor": "FONASA"
+     },
+     "nombre": "ha_tenido_dificultades_acceso",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      },
+      {
+       "texto": "No sabe",
+       "valor": "NS"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Ha sentido dificultades para acceder a atención relacionada con esta etapa?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Principales dificultades",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "ha_tenido_dificultades_acceso",
+      "valor": "SI"
+     },
+     "nombre": "principales_dificultades",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Falta de información",
+       "valor": "Falta de información"
+      },
+      {
+       "texto": "Dificultad para obtener horas",
+       "valor": "Dificultad para obtener horas"
+      },
+      {
+       "texto": "Costos",
+       "valor": "Costos"
+      },
+      {
+       "texto": "Falta de especialistas",
+       "valor": "Falta de especialistas"
+      },
+      {
+       "texto": "No saber dónde consultar",
+       "valor": "No saber dónde consultar"
+      },
+      {
+       "texto": "Minimización de síntomas",
+       "valor": "Minimización de síntomas"
+      },
+      {
+       "texto": "Horarios incompatibles",
+       "valor": "Horarios incompatibles"
+      },
+      {
+       "texto": "Otra",
+       "valor": "Otra"
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿Cuáles han sido las principales dificultades? (marque todas las opciones que apliquen)",
+     "tipo_campo": "multiseleccion"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Principales dificultades otra",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "principales_dificultades",
+      "operador": "contiene",
+      "valor": "Otra"
+     },
+     "nombre": "principales_dificultades_otra",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": null,
+     "polaridad": null,
+     "texto": "Si marcó \"Otra\", ¿cuál?",
+     "tipo_campo": "texto"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Sintomas tomados en serio",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "sintomas_tomados_en_serio",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Nada",
+       "valor": 1
+      },
+      {
+       "texto": "Poco",
+       "valor": 2
+      },
+      {
+       "texto": "Moderadamente",
+       "valor": 3
+      },
+      {
+       "texto": "Bastante",
+       "valor": 4
+      },
+      {
+       "texto": "Mucho",
+       "valor": 5
+      }
+     ],
+     "polaridad": "inversa",
+     "texto": "¿Considera que los síntomas asociados al climaterio o menopausia son tomados en serio por los profesionales de salud?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": true,
+     "etiqueta": "Desea mas informacion apoyo",
+     "inicial": null,
+     "mostrar_si": null,
+     "nombre": "desea_mas_informacion_apoyo",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Sí",
+       "valor": "SI"
+      },
+      {
+       "texto": "No",
+       "valor": "NO"
+      }
+     ],
+     "polaridad": "directa",
+     "texto": "¿Le gustaría recibir más información o apoyo relacionado con esta etapa?",
+     "tipo_campo": "opciones"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Tipo informacion apoyo deseado",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "desea_mas_informacion_apoyo",
+      "valor": "SI"
+     },
+     "nombre": "tipo_informacion_apoyo_deseado",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": [
+      {
+       "texto": "Información general",
+       "valor": "Información general"
+      },
+      {
+       "texto": "Salud mental",
+       "valor": "Salud mental"
+      },
+      {
+       "texto": "Nutrición",
+       "valor": "Nutrición"
+      },
+      {
+       "texto": "Actividad física",
+       "valor": "Actividad física"
+      },
+      {
+       "texto": "Manejo de síntomas",
+       "valor": "Manejo de síntomas"
+      },
+      {
+       "texto": "Atención ginecológica",
+       "valor": "Atención ginecológica"
+      },
+      {
+       "texto": "Terapia hormonal",
+       "valor": "Terapia hormonal"
+      },
+      {
+       "texto": "Apoyo laboral",
+       "valor": "Apoyo laboral"
+      },
+      {
+       "texto": "Otro",
+       "valor": "Otro"
+      }
+     ],
+     "polaridad": null,
+     "texto": "¿Qué tipo de información o apoyo considera más necesario? (marque todas las opciones que apliquen)",
+     "tipo_campo": "multiseleccion"
+    },
+    {
+     "chips": false,
+     "depende_de": null,
+     "escala": null,
+     "escala_horizontal": false,
+     "etiqueta": "Tipo informacion apoyo otro",
+     "inicial": null,
+     "mostrar_si": {
+      "campo": "tipo_informacion_apoyo_deseado",
+      "operador": "contiene",
+      "valor": "Otro"
+     },
+     "nombre": "tipo_informacion_apoyo_otro",
+     "nota": null,
+     "obligatoria": false,
+     "opciones": null,
+     "polaridad": null,
+     "texto": "Si marcó \"Otro\", especifique qué tipo de información o apoyo",
+     "tipo_campo": "texto"
+    }
+   ],
+   "tipo": "conocimiento_sistema",
+   "titulo": "Conocimiento del sistema de salud"
+  }
+ ]
+}

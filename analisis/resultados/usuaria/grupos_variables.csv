@@ -1,0 +1,7 @@
+﻿grupo,n_variables,variables,etiquetas,asociacion_promedio,asociacion_minima,asociacion_maxima,max_asociacion_con_severidad
+1,4,"frecuencia_fuerza, frecuencia_aerobico, dias_ejercicio_semana, frecuencia_bajo_impacto","Frecuencia de ejercicio de fuerza, Frecuencia de ejercicio aeróbico, Días de ejercicio a la semana, Frecuencia de ejercicio de bajo impacto",0.3938,0.2090,0.6353,0.1720
+2,2,"trabaja_actualmente, frecuencia_comida_fuera","Trabaja actualmente, Comidas fuera del hogar",0.3189,0.3189,0.3189,0.1019
+3,3,"falta_tiempo_influye, cantidad_personas_cuida, doble_carga","Falta de tiempo influye en lo que come, Cantidad de personas que cuida, Doble carga (trabaja y cuida)",0.4196,0.3056,0.6267,0.0920
+4,2,"edad, etapa_menopausica","Edad, Etapa menopáusica",0.6422,0.6422,0.6422,0.1285
+5,2,"lugar_trabajo_comprensivo, estres_entorno_laboral","Lugar de trabajo comprensivo, Estrés del entorno laboral",0.3778,0.3778,0.3778,0.2294
+6,2,"tiene_pareja, tiene_actividad_sexual","Tiene pareja, Tiene actividad sexual",0.4929,0.4929,0.4929,0.0626

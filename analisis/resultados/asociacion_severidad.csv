@@ -1,0 +1,62 @@
+﻿variable,rol,n,prueba,efecto,medida,p,p_ajustado,etiqueta
+rendimiento_afectado,impacto,305,Spearman,0.48062,rho,0.00000,0.00000,Rendimiento laboral afectado
+cambio_relacion_pareja_menopausia,impacto,322,Spearman,0.38801,rho,0.00000,0.00000,Cambio en la relación de pareja
+usa_antidepresivos,impacto,492,Spearman,0.31612,rho,0.00000,0.00000,Usa antidepresivos o medicamentos para dormir
+bienestar_trabajo_afectado,impacto,305,Spearman,0.37921,rho,0.00000,0.00000,Bienestar en el trabajo afectado
+frecuencia_ausencias,impacto,305,Spearman,0.35840,rho,0.00000,0.00000,Ausencias o atrasos por síntomas
+ha_consultado_por_sintomas,otra,357,Kruskal-Wallis,0.08289,ε²,0.00000,0.00000,Ha consultado por síntomas
+sintomas_tomados_en_serio,otra,492,Spearman,-0.19585,rho,0.00001,0.00011,Siente que toman en serio sus síntomas
+distension_abdominal,otra,492,Spearman,0.18830,rho,0.00003,0.00020,Distensión abdominal
+sobrecarga_fisica_emocional,predictor,492,Spearman,0.17768,rho,0.00007,0.00045,Sobrecarga por trabajo y cuidado
+circunferencia_cintura_cm,otra,492,Spearman,0.17808,rho,0.00007,0.00045,Cintura (cm)
+imc,control,492,Spearman,0.16128,rho,0.00033,0.00182,IMC
+cantidad_personas_cuida,predictor,492,Spearman,0.15858,rho,0.00041,0.00211,Cantidad de personas que cuida
+edad,control,492,Spearman,0.15661,rho,0.00049,0.00230,Edad
+cuida_otras_personas,predictor,492,Spearman,0.14870,rho,0.00094,0.00409,Cuida a otras personas
+estres_entorno_laboral,predictor (trabajo),305,Spearman,0.18643,rho,0.00107,0.00435,Estrés del entorno laboral
+dias_ejercicio_semana,predictor,492,Spearman,-0.13825,rho,0.00212,0.00807,Días de ejercicio a la semana
+etapa_menopausica,control,492,Kruskal-Wallis,0.02203,ε²,0.00529,0.01900,Etapa menopáusica
+doble_carga,predictor,492,Spearman,0.11972,rho,0.00785,0.02660,Doble carga (trabaja y cuida)
+nivel_informacion_servicios,otra,357,Spearman,0.13722,rho,0.00944,0.03029,Qué tan informada se siente
+usa_terapia_hormonal,control,492,Spearman,0.11047,rho,0.01422,0.04337,Usa terapia hormonal
+lugar_trabajo_comprensivo,predictor (trabajo),305,Spearman,-0.13882,rho,0.01526,0.04433,Lugar de trabajo comprensivo
+considera_informacion_suficiente,otra,357,Spearman,0.12499,rho,0.01815,0.05032,Información del sistema suficiente
+pueblo_originario_afro,otra,477,Kruskal-Wallis,0.01417,ε²,0.02128,0.05644,Pueblo originario / afro
+glicemia_mg_dl,subgrupo profesional,259,Spearman,0.13718,rho,0.02729,0.06935,Glicemia
+riesgo_cv_atp3,subgrupo profesional,259,Kruskal-Wallis,0.01741,ε²,0.03962,0.09667,Riesgo cardiovascular
+presion_diastolica,subgrupo profesional,259,Spearman,0.12515,rho,0.04419,0.09983,Presión diastólica
+colesterol_total_mg_dl,subgrupo profesional,259,Spearman,0.12582,rho,0.04306,0.09983,Colesterol total
+frutas_dia,predictor,492,Spearman,0.08975,rho,0.04663,0.10158,Frutas al día
+usa_medicamentos_diabetes,otra,492,Spearman,0.08120,rho,0.07195,0.15135,Medicamentos para la diabetes
+trigliceridos_mg_dl,subgrupo profesional,259,Spearman,0.10862,rho,0.08101,0.16473,Triglicéridos
+tiene_pareja,otra,492,Spearman,-0.07702,rho,0.08789,0.17294,Tiene pareja
+alcohol_frecuencia,predictor,492,Spearman,-0.06856,rho,0.12886,0.24563,Alcohol
+usa_medicamentos_presion,otra,492,Spearman,0.06175,rho,0.17147,0.31696,Medicamentos para la presión
+falta_tiempo_influye,predictor,492,Spearman,0.05976,rho,0.18572,0.32369,Falta de tiempo influye en lo que come
+quien_prepara_comidas,predictor,492,Kruskal-Wallis,0.00449,ε²,0.18559,0.32369,Quién prepara las comidas
+frecuencia_bajo_impacto,predictor,492,Spearman,-0.05373,rho,0.23421,0.37627,Frecuencia de ejercicio de bajo impacto
+golosinas_semana,predictor,492,Spearman,-0.05371,rho,0.23440,0.37627,Dulces y snacks a la semana
+frecuencia_aerobico,predictor,492,Spearman,-0.05469,rho,0.22590,0.37627,Frecuencia de ejercicio aeróbico
+colesterol_hdl_mg_dl,subgrupo profesional,259,Spearman,0.07141,rho,0.25216,0.39441,Colesterol HDL
+frecuencia_fuerza,predictor,492,Spearman,-0.04792,rho,0.28874,0.43086,Frecuencia de ejercicio de fuerza
+lacteos_dia,predictor,492,Spearman,0.04784,rho,0.28960,0.43086,Lácteos al día
+evacuacion_intestinal,otra,492,Spearman,0.04638,rho,0.30457,0.44208,Frecuencia de evacuación intestinal
+marihuana_frecuencia,predictor,492,Spearman,0.04571,rho,0.31163,0.44208,Marihuana
+vasos_agua_dia,predictor,492,Spearman,-0.04269,rho,0.34468,0.47785,Vasos de agua al día
+panes_dia,predictor,492,Spearman,-0.04066,rho,0.36814,0.49903,Panes al día
+bebidas_energeticas_dia,predictor,492,Spearman,-0.03940,rho,0.38317,0.50812,Bebidas energéticas al día
+perdida_talla_cm,subgrupo profesional,254,Spearman,0.05331,rho,0.39751,0.51592,Pérdida de talla (cm)
+horas_sedentarismo,predictor,492,Spearman,0.03388,rho,0.45337,0.56439,Horas sentada al día
+trabaja_actualmente,control,492,Spearman,0.03435,rho,0.44714,0.56439,Trabaja actualmente
+tiene_actividad_sexual,otra,492,Spearman,-0.03275,rho,0.46854,0.57162,Tiene actividad sexual
+pescado_semana,predictor,492,Spearman,0.02437,rho,0.58967,0.69173,Pescado a la semana
+jugos_gaseosas_dia,predictor,492,Spearman,0.02511,rho,0.57843,0.69173,Jugos y gaseosas al día
+frecuencia_comida_fuera,predictor,492,Spearman,-0.01721,rho,0.70329,0.76834,Comidas fuera del hogar
+prevision,control,492,Kruskal-Wallis,-0.00354,ε²,0.68492,0.76834,Previsión de salud
+presion_sistolica,subgrupo profesional,259,Spearman,0.02360,rho,0.70536,0.76834,Presión sistólica
+platos_verduras_dia,predictor,492,Spearman,0.01756,rho,0.69755,0.76834,Platos de verduras al día
+origen_procedencia,otra,483,Kruskal-Wallis,-0.00352,ε²,0.72582,0.77676,Origen
+carnes_semana,predictor,492,Spearman,-0.01420,rho,0.75330,0.79226,Carnes a la semana
+tabaco_frecuencia,predictor,492,Spearman,0.01241,rho,0.78359,0.81015,Tabaco
+legumbres_semana,predictor,492,Spearman,0.00698,rho,0.87728,0.89191,Legumbres a la semana
+nivel_educacion,control,492,Spearman,0.00024,rho,0.99570,0.99570,Nivel educacional

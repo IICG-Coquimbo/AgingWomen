@@ -1,0 +1,37 @@
+{
+ "archivos_antes": 998,
+ "archivos_despues": 998,
+ "cambiados": [],
+ "faltan": [],
+ "nuevos": [],
+ "head_antes": "745d689937a18c35b62fd25eccc401b169b20e11",
+ "head_despues": "745d689937a18c35b62fd25eccc401b169b20e11",
+ "versionados_modificados": [],
+ "claves": [
+  {
+   "ruta": "datos/analitico/dataset_fase35_33_variables.csv",
+   "sha256": "b611e8fd0424970ce2df1943985dfdf5fb2f662caf9e27c217d59a26ca3270f6",
+   "igual": true
+  },
+  {
+   "ruta": "datos/limpio_usuaria/dataset_usuaria_limpio.csv",
+   "sha256": "4ecfd5169997bab0082264fe87499b7f29a67dc34141b8a491c60025f4065fd1",
+   "igual": true
+  },
+  {
+   "ruta": "analisis/reunion_2026-11-03/revision_33_variables/permutaciones_50000/relevancia_33.csv",
+   "sha256": "667ae1f58cb4d8094b9a18a6255e418a6077304354a42c073cdff5ede3260680",
+   "igual": true
+  },
+  {
+   "ruta": "analisis/reunion_2026-11-03/revision_33_variables/permutaciones_10000/relevancia_33.csv",
+   "sha256": "3bfecadd1b8755f7b9a1560f3671147b824f086f7173d9447405b7a349841812",
+   "igual": true
+  },
+  {
+   "ruta": "analisis/random_forest_revision_35b_33_variables/resultados/rendimiento_modelos.csv",
+   "sha256": "99c6d8033769e2d32939014cfda8eb6aea6803c66eed246c2b661b59a1fc053c",
+   "igual": true
+  }
+ ]
+}

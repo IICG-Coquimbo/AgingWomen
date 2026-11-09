@@ -1,0 +1,11 @@
+{
+ "lista_A": 108,
+ "lista_A_eje1": 57,
+ "lista_A_inestables": 52,
+ "lista_B": 15,
+ "lista_B_en_A": 15,
+ "vista_A": 16,
+ "priorizadas": 50,
+ "evaluadas_en_estabilidad": 127,
+ "fuera_de_A_en_priorizadas": 19
+}

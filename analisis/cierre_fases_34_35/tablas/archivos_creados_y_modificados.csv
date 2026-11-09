@@ -1,0 +1,43 @@
+﻿origen,ruta,descripcion
+Creado en este cierre,analisis/cierre_fases_34_35/informes/informe_cierre_fase34_v2.docx,Cierre actualizado de la Fase 34
+Creado en este cierre,analisis/cierre_fases_34_35/informes/informe_cierre_fase35.docx,Cierre formal de la Fase 35
+Creado en este cierre,analisis/cierre_fases_34_35/informes/informe_preprocesamiento_fase35_revisado.md,Versión documental revisada de 35A
+Creado en este cierre,analisis/cierre_fases_34_35/informes/protocolo_trabajo_fase36.docx,Protocolo de trabajo para la Fase 36
+Creado en este cierre,analisis/cierre_fases_34_35/informes/resumen_ejecutivo_cierre.docx,Resumen ejecutivo del cierre conjunto
+Creado en este cierre,analisis/cierre_fases_34_35/tablas/estado_h11_h13.csv,Estado de H11 y H13
+Creado en este cierre,analisis/cierre_fases_34_35/tablas/h11_nueve_variables.csv,Cota histórica y valor exacto en las 9 variables
+Creado en este cierre,analisis/cierre_fases_34_35/tablas/hallazgos_estado_definitivo.csv,Estado definitivo de los 18 hallazgos
+Creado en este cierre,analisis/cierre_fases_34_35/tablas/registro_limitaciones.csv,Limitaciones que permanecen
+Creado en este cierre,analisis/cierre_fases_34_35/tablas/archivos_creados_y_modificados.csv,Esta tabla
+Creado en este cierre,analisis/cierre_fases_34_35/tablas/verificacion_integridad_posterior.csv,Comprobaciones finales de integridad
+Creado en este cierre,analisis/cierre_fases_34_35/tablas/cambios_detectados.csv,Cambios frente a cada manifiesto
+Creado en este cierre,analisis/cierre_fases_34_35/tablas/verificacion_fase35.csv,Cifras de la Fase 35 contra los archivos
+Creado en este cierre,analisis/cierre_fases_34_35/tablas/registro_pruebas.csv,Pruebas ejecutadas y no ejecutadas
+Creado en este cierre,analisis/cierre_fases_34_35/tablas/datos_fase35.json,Cifras leídas para los informes
+Creado en este cierre,analisis/cierre_fases_34_35/tablas/integridad.json,Resumen de integridad para los informes
+Creado en este cierre,analisis/cierre_fases_34_35/tablas/pruebas.json,Resumen de pruebas para los informes
+Creado en este cierre,analisis/cierre_fases_34_35/tablas/tablas_cierre.json,Tablas para los informes
+Creado en este cierre,analisis/cierre_fases_34_35/integridad/manifiesto_antes.csv,Huella SHA-256 antes del cierre
+Creado en este cierre,analisis/cierre_fases_34_35/integridad/manifiesto_despues.csv,Huella SHA-256 después del cierre
+Creado en este cierre,analisis/cierre_fases_34_35/integridad/git_antes.txt,Estado de git antes del cierre
+Creado en este cierre,analisis/cierre_fases_34_35/integridad/git_despues.txt,Estado de git después del cierre
+Creado en este cierre,analisis/cierre_fases_34_35/scripts/manifiesto_cierre.py,Genera los manifiestos
+Creado en este cierre,analisis/cierre_fases_34_35/scripts/verificar_integridad_cierre.py,Compara los manifiestos
+Creado en este cierre,analisis/cierre_fases_34_35/scripts/verificar_fase35.py,Verifica las cifras de la Fase 35
+Creado en este cierre,analisis/cierre_fases_34_35/scripts/generar_35A_revisado.py,Genera la versión revisada de 35A
+Creado en este cierre,analisis/cierre_fases_34_35/scripts/generar_tablas_cierre.py,Genera estas tablas
+Creado en este cierre,analisis/cierre_fases_34_35/scripts/ejecutar_pruebas.py,Ejecuta y registra las pruebas
+Creado en este cierre,analisis/cierre_fases_34_35/scripts/test_h11_h13.py,Pruebas de H11 y H13
+Creado en este cierre,analisis/cierre_fases_34_35/scripts/test_documental_cierre.py,Pruebas documentales y de las 33 variables
+Creado en este cierre,analisis/cierre_fases_34_35/scripts/word_comun.js,Funciones comunes de Word
+Creado en este cierre,analisis/cierre_fases_34_35/scripts/generar_informes_cierre.js,Genera los cuatro documentos Word
+Modificado en este cierre,analisis/eda/univariado.py,"H11: nueva función recuento_imputados(), usada por describir()"
+Modificado en este cierre,analisis/eda_usuaria.py,"H13: ROLES_DESCRIPTIVOS, TITULOS_INFORME y rotular_roles(); comentario actualizado"
+Modificado en la corrección controlada (no atribuible a este cierre),analisis/eda/univariado.py,"Textos, rótulos y comentarios, incluidas las funciones auxiliares que los construyen"
+Modificado en la corrección controlada (no atribuible a este cierre),analisis/eda_univariado.py,"Textos, rótulos y comentarios, incluidas las funciones auxiliares que los construyen"
+Modificado en la corrección controlada (no atribuible a este cierre),analisis/eda/informe_multivariado.py,"Textos, rótulos y comentarios, incluidas las funciones auxiliares que los construyen"
+Modificado en la corrección controlada (no atribuible a este cierre),analisis/eda/multivariado.py,"Textos, rótulos y comentarios, incluidas las funciones auxiliares que los construyen"
+Modificado en la corrección controlada (no atribuible a este cierre),analisis/eda/informe_usuaria.py,"Textos, rótulos y comentarios, incluidas las funciones auxiliares que los construyen"
+Modificado en la corrección controlada (no atribuible a este cierre),analisis/eda_usuaria.py,"Textos, rótulos y comentarios, incluidas las funciones auxiliares que los construyen"
+Modificado en la corrección controlada (no atribuible a este cierre),analisis/eda/variables.py,"Textos, rótulos y comentarios, incluidas las funciones auxiliares que los construyen"
+Modificado en la corrección controlada (no atribuible a este cierre),analisis/limpieza/informe.py,"Textos, rótulos y comentarios, incluidas las funciones auxiliares que los construyen"

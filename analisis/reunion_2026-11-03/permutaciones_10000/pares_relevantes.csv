@@ -1,0 +1,16 @@
+﻿escenario,variable_1,variable_2,n,su,p,q,supera_azar
+R10,dias_ejercicio_semana,frecuencia_bajo_impacto,529,0.273281,0.000100,0.000500,True
+R10,dias_ejercicio_semana,frecuencia_fuerza,529,0.165501,0.000100,0.000500,True
+R10,dias_ejercicio_semana,imc,529,0.020539,0.268573,0.805719,False
+R10,dias_ejercicio_semana,lugar_trabajo_comprensivo,287,0.012927,0.952305,1.000000,False
+R10,dias_ejercicio_semana,trabaja_actualmente,529,0.002197,0.736226,1.000000,False
+R10,frecuencia_bajo_impacto,frecuencia_fuerza,529,0.055459,0.000100,0.000500,True
+R10,frecuencia_bajo_impacto,imc,529,0.011014,0.906609,1.000000,False
+R10,frecuencia_bajo_impacto,lugar_trabajo_comprensivo,287,0.019854,0.576342,1.000000,False
+R10,frecuencia_bajo_impacto,trabaja_actualmente,529,0.001187,0.880412,1.000000,False
+R10,frecuencia_fuerza,imc,529,0.019290,0.630037,1.000000,False
+R10,frecuencia_fuerza,lugar_trabajo_comprensivo,287,0.019483,0.875112,1.000000,False
+R10,frecuencia_fuerza,trabaja_actualmente,529,0.011850,0.094891,0.355839,False
+R10,imc,lugar_trabajo_comprensivo,287,0.025756,0.609539,1.000000,False
+R10,imc,trabaja_actualmente,529,0.004332,0.645235,1.000000,False
+R10,lugar_trabajo_comprensivo,trabaja_actualmente,287,0.000000,1.000000,1.000000,False

@@ -1,0 +1,6 @@
+{
+ "archivo": "01_protocolo_complemento.md",
+ "sha256": "6e00dec20c9e3336ec6a8160b3f5f1beba1165163bf2e0a1d293f9e5af392f9a",
+ "commit": "745d689",
+ "nota": "Sellado antes de calcular B1 fuera de muestra, B2 y la información por bloques, conociendo los resultados de 37A, 37B y 37C. La ejecución se detiene si la huella no coincide."
+}

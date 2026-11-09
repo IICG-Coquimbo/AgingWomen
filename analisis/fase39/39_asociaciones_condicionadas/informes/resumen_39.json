@@ -1,0 +1,25 @@
+{
+ "fase": "39",
+ "participantes": 529,
+ "estratos": {
+  "trabajo:trabaja": 309,
+  "trabajo:no_trabaja": 220,
+  "pareja:con_pareja": 356,
+  "pareja:sin_pareja": 173,
+  "ejercicio:0_dias": 302,
+  "ejercicio:1-2_dias": 148,
+  "ejercicio:3_o_mas_dias": 79,
+  "cuidado:cuida": 251,
+  "cuidado:no_cuida": 278
+ },
+ "reglas_en_estratos": 59672,
+ "marcadas": 10739,
+ "superan_nula_estrato": 0,
+ "comparaciones": 4873,
+ "comparaciones_superan_nula": 0,
+ "resultado": "C",
+ "conclusion": "Las asociaciones son débiles o compatibles con el azar y no se identifican diferencias suficientemente consistentes.",
+ "pruebas": "22/22",
+ "controles_negativos": "20/20",
+ "protocolo_sha256": "18f15f821635f8c3d55a31f539d84d95ef8e5a32591e465073fb181a424c9042"
+}

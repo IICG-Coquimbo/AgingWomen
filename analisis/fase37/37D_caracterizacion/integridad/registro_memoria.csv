@@ -1,0 +1,19 @@
+momento,etapa,evento,libre_gb
+2026-11-05T16:47:57,descripcion,inicio,2.13
+2026-11-05T16:48:02,descripcion,"fin, código 0, mínimo libre",2.12
+2026-11-05T16:48:25,individual,inicio,2.08
+2026-11-05T16:48:45,individual,"fin, código 0, mínimo libre",2.06
+2026-11-05T16:50:09,segmentos,inicio,2.11
+2026-11-05T16:50:14,segmentos,"fin, código 1, mínimo libre",2.11
+2026-11-05T16:50:27,segmentos,inicio,2.20
+2026-11-05T16:50:57,segmentos,"fin, código 1, mínimo libre",2.05
+2026-11-05T16:51:05,segmentos,inicio,2.11
+2026-11-05T16:51:35,segmentos,"fin, código 0, mínimo libre",2.03
+2026-11-05T16:52:53,segmentos,inicio,2.04
+2026-11-05T16:53:23,segmentos,"fin, código 0, mínimo libre",1.86
+2026-11-05T16:55:22,figuras,inicio,1.92
+2026-11-05T16:55:32,figuras,"fin, código 0, mínimo libre",1.78
+2026-11-05T16:56:49,segmentos,inicio,1.93
+2026-11-05T16:57:19,segmentos,"fin, código 0, mínimo libre",1.79
+2026-11-05T17:00:07,pruebas,inicio,1.84
+2026-11-05T17:01:12,pruebas,"fin, código 0, mínimo libre",1.57

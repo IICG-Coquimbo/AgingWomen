@@ -23,6 +23,15 @@ from .models import (
 )
 from .esquema import construir_esquema
 from .sync import ErrorSincronizacion, sincronizar_payload
+from apps.rondas.pruebas_comunes import consentimiento_presencial, protocolo2
+
+
+def _sync(usuario, payload):
+    """
+    Fase 40B-2: desde la 40B-2 una ronda solo se cierra completa y con el protocolo 2.
+    Las pruebas que usan el cierre como paso previo pasan por aquí (ver pruebas_comunes).
+    """
+    return sincronizar_payload(usuario, protocolo2(usuario, payload))
 
 
 def _pasar_plazo():
@@ -60,19 +69,23 @@ class SegmentoEMPAFormRolTest(TestCase):
             self.assertIn(campo, form.fields, campo)
             self.assertFalse(form.fields[campo].required, campo)
 
-    def test_profesional_campos_requeridos(self):
+    def test_profesional_empa_no_obligatorio(self):
+        # Fase 40B-2 (revisión correctiva): el EMPA es complementario también
+        # para la profesional; ningún campo del formulario es obligatorio.
         form = SegmentoEMPAForm(rol=Usuario.Rol.PROFESIONAL_SALUD)
-        self.assertTrue(form.fields['peso_kg'].required)
-        self.assertTrue(form.fields['presion_sistolica'].required)
+        for campo in ('peso_kg', 'talla_actual_cm', 'presion_sistolica', 'presion_diastolica'):
+            self.assertFalse(form.fields[campo].required, campo)
+        self.assertEqual([c for c, f in form.fields.items() if f.required], [])
 
     def test_usuaria_puede_enviar_empa_vacio(self):
         form = SegmentoEMPAForm(data={}, rol=Usuario.Rol.USUARIA_COMUN)
         self.assertTrue(form.is_valid(), form.errors)
 
-    def test_profesional_no_puede_enviar_empa_vacio(self):
+    def test_profesional_puede_enviar_empa_vacio(self):
         form = SegmentoEMPAForm(data={}, rol=Usuario.Rol.PROFESIONAL_SALUD)
-        self.assertFalse(form.is_valid())
-        self.assertIn('peso_kg', form.errors)
+        self.assertTrue(form.is_valid(), form.errors)
+        for campo in ('peso_kg', 'talla_actual_cm', 'presion_sistolica', 'presion_diastolica'):
+            self.assertIsNone(form.cleaned_data.get(campo), campo)
 
     def test_empa_de_usuaria_se_guarda(self):
         ident = Identificacion.objects.create(
@@ -200,7 +213,8 @@ class SincronizacionTest(TestCase):
         self.assertEqual(MRS.objects.count(), 1)
         mrs = MRS.objects.get()
         self.assertEqual(mrs.pregunta_1, 3)
-        self.assertEqual(mrs.pregunta_5, 0)  # no enviada: conserva el default
+        # Fase 40B-2: un ítem no enviado queda sin respuesta (nulo), no en 0.
+        self.assertIsNone(mrs.pregunta_5)
         self.assertEqual(mrs.tiene_pareja, 'SI')
         self.assertEqual(mrs.fecha_ultima_menstruacion, '2020')
 
@@ -221,6 +235,7 @@ class SincronizacionTest(TestCase):
             sincronizar_payload(self.prof, payload)
 
     def test_profesional_crea_identificacion_por_rut(self):
+        consentimiento_presencial('9.876.543-3', self.prof)   # Fase 40, Etapa 2
         payload = {
             'identificacion': self._payload_ident(rut='9.876.543-3'),
             'secciones': [{'tipo': 'empa', 'uuid_local': str(uuid4()), 'parcial': False,
@@ -303,7 +318,7 @@ class HistoricoRondaTest(TestCase):
     def test_finalizar_avanza_ronda_actual(self):
         payload = {'identificacion': self._payload_ident(),
                    'secciones': [self._payload_mrs()], 'finalizar': True}
-        res = sincronizar_payload(self.usuaria, payload)
+        res = _sync(self.usuaria, payload)
         self.assertTrue(res['ok'], res)
         self.assertEqual(res['ronda_actual'], 2)
         self.assertEqual(Identificacion.objects.get().ronda_actual, 2)
@@ -311,7 +326,7 @@ class HistoricoRondaTest(TestCase):
 
     def test_reaplicar_encuesta_crea_fila_nueva_sin_borrar_la_anterior(self):
         # Ronda 1: se responde y se finaliza.
-        sincronizar_payload(self.usuaria, {
+        _sync(self.usuaria, {
             'identificacion': self._payload_ident(),
             'secciones': [self._payload_mrs(pregunta_1=1)],
             'finalizar': True,
@@ -335,7 +350,7 @@ class HistoricoRondaTest(TestCase):
 
     def test_reutilizar_uuid_de_ronda_cerrada_da_error(self):
         uuid_mrs = str(uuid4())
-        sincronizar_payload(self.usuaria, {
+        _sync(self.usuaria, {
             'identificacion': self._payload_ident(),
             'secciones': [self._payload_mrs(uuid_mrs, pregunta_1=1)],
             'finalizar': True,
@@ -356,6 +371,9 @@ class SincronizarEndpointTest(TestCase):
 
     def setUp(self):
         self.usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
+        # Fase 40S-1: la API de escritura exige el consentimiento vigente.
+        self.usuaria.consentimiento_aceptado_en = timezone.now()
+        self.usuaria.save(update_fields=['consentimiento_aceptado_en'])
         self.client.force_login(self.usuaria)
         self.ident = {
             'uuid_local': str(uuid4()),
@@ -367,7 +385,9 @@ class SincronizarEndpointTest(TestCase):
         }
 
     def _post(self, obj):
-        return self.client.post(self.URL, data=json.dumps(obj), content_type='application/json')
+        from apps.rondas.pruebas_comunes import con_participacion
+        return self.client.post(self.URL, data=json.dumps(con_participacion(self.usuaria, obj)),
+                                content_type='application/json')
 
     def test_requiere_login(self):
         self.client.logout()
@@ -416,12 +436,12 @@ class SincronizarEndpointTest(TestCase):
         self.assertEqual(datos['secciones']['mrs'], 1)
 
     def test_estado_tras_finalizar_muestra_ronda_nueva_en_cero(self):
-        self._post({
+        self._post(protocolo2(self.usuaria, {
             'identificacion': self.ident,
             'secciones': [{'tipo': 'mrs', 'uuid_local': str(uuid4()), 'parcial': True,
                            'datos': {'pregunta_1': 2}}],
             'finalizar': True,
-        })
+        }))
         datos = self.client.get('/api/estado/').json()
         self.assertEqual(datos['ronda_actual'], 2)
         self.assertEqual(datos['secciones']['mrs'], 0)
@@ -736,10 +756,11 @@ class EsquemaTest(TestCase):
         self.assertEqual(len(esquema['mrs_niveles']), 5)
         self.assertEqual(esquema['mrs_niveles']['0'], 'No tienes ese síntoma.')
 
-    def test_incluye_cortes_de_severidad_mrs(self):
-        severidad = self._esquema(self.usuaria)['mrs_severidad']
-        self.assertEqual([s['hasta'] for s in severidad], [4, 8, 15, 44])
-        self.assertEqual(severidad[-1]['texto'], 'Severa')
+    def test_no_publica_cortes_de_severidad_mrs(self):
+        # Fase 40B-3: las categorías de severidad no se muestran mientras no se valide el corte.
+        # Los cortes históricos siguen intactos en el modelo (los usa el análisis congelado).
+        self.assertNotIn('mrs_severidad', self._esquema(self.usuaria))
+        self.assertEqual([h for h, _ in MRS.SEVERIDAD_TOTAL], [4, 8, 15, 44])
 
     def test_texto_de_pregunta_usa_el_help_text(self):
         mrs = self._seccion(self._esquema(self.usuaria), 'mrs')
@@ -945,8 +966,12 @@ class PropiedadesModeloTest(TestCase):
         self.assertEqual(ident.edad, 45)
 
     def test_puntaje_total_mrs(self):
+        # Fase 40B-2: con ítems sin responder no hay puntaje (antes se sumaban como 0).
         mrs = MRS.objects.create(participante=self._ident(),
                                  pregunta_1=4, pregunta_2=3, pregunta_5=2)
+        self.assertIsNone(mrs.puntaje_total)
+        for i in (3, 4, 6, 7, 8, 9, 10, 11):
+            setattr(mrs, f'pregunta_{i}', 0)
         self.assertEqual(mrs.puntaje_total, 9)
 
     def test_perdida_talla(self):
@@ -954,7 +979,8 @@ class PropiedadesModeloTest(TestCase):
         empa = SegmentoEMPA.objects.create(participante=ident,
                                            talla_maxima_cm=162, talla_actual_cm=158)
         self.assertEqual(empa.perdida_talla_cm, 4)
-        sin_max = SegmentoEMPA.objects.create(participante=ident, talla_actual_cm=160)
+        # Fase 40B-1: ficha propia (una sola fila de EMPA por participante y ronda).
+        sin_max = SegmentoEMPA.objects.create(participante=self._ident(), talla_actual_cm=160)
         self.assertIsNone(sin_max.perdida_talla_cm)
 
     def test_doble_carga(self):
@@ -1036,6 +1062,7 @@ class PanelProfesionalTest(TestCase):
         self.prof = Usuario.objects.create_user(
             rut='22.222.222-2', email='p@e.cl', rol=Usuario.Rol.PROFESIONAL_SALUD,
         )
+        consentimiento_presencial('9.876.543-3', self.prof)   # Fase 40, Etapa 2
         payload = {
             'identificacion': {
                 'uuid_local': str(uuid4()), 'rut': '9.876.543-3',
@@ -1049,7 +1076,7 @@ class PanelProfesionalTest(TestCase):
                            'datos': {'pregunta_1': 2}}],
             'finalizar': True,
         }
-        res = sincronizar_payload(self.prof, payload)
+        res = _sync(self.prof, payload)
         assert res['ok'], res  # si esto falla, revisa el payload de arriba, no el resto del test
         self.paciente = Identificacion.objects.get(rut_hash=hash_rut('9.876.543-3'))
 
@@ -1069,19 +1096,19 @@ class PanelProfesionalTest(TestCase):
 
     def test_profesional_encuentra_paciente_existente(self):
         self.client.force_login(self.prof)
-        resp = self.client.get('/profesional/buscar/', {'rut': '9.876.543-3'})
+        resp = self.client.post('/profesional/buscar/', {'rut': '9.876.543-3'})
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(resp.context['resultado'], self.paciente)
 
     def test_profesional_no_encuentra_rut_inexistente(self):
         self.client.force_login(self.prof)
-        resp = self.client.get('/profesional/buscar/', {'rut': '11.111.111-1'})
+        resp = self.client.post('/profesional/buscar/', {'rut': '11.111.111-1'})
         self.assertIsNone(resp.context['resultado'])
         self.assertIn('No hay ninguna paciente', resp.context['error'])
 
     def test_profesional_rut_invalido(self):
         self.client.force_login(self.prof)
-        resp = self.client.get('/profesional/buscar/', {'rut': '11.111.111-2'})
+        resp = self.client.post('/profesional/buscar/', {'rut': '11.111.111-2'})
         self.assertIn('no es válido', resp.context['error'])
 
     def test_ficha_muestra_historial_por_ronda(self):
@@ -1134,7 +1161,7 @@ class MiTableroTest(TestCase):
         self.assertRedirects(resp, '/profesional/buscar/')
 
     def test_muestra_su_propio_historial(self):
-        res = sincronizar_payload(self.usuaria, {
+        res = _sync(self.usuaria, {
             'identificacion': {'uuid_local': str(uuid4()), 'datos': {
                 'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
                 'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
@@ -1174,7 +1201,7 @@ class EvaluacionSatisfaccionTest(TestCase):
         self.client.force_login(self.usuaria)
 
     def _participante(self, finalizar):
-        res = sincronizar_payload(self.usuaria, {
+        res = _sync(self.usuaria, {
             'identificacion': {'uuid_local': str(uuid4()), 'datos': {
                 'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
                 'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
@@ -1253,74 +1280,20 @@ class EvaluacionSatisfaccionTest(TestCase):
 
 
 class EstadisticasProfesionalTest(TestCase):
-    """Estadísticas agrupadas básicas del panel profesional (Fase 17)."""
+    """Acceso a las estadísticas del panel profesional (Fase 17; contenido en la Fase 40C-P)."""
 
     def setUp(self):
         self.prof = Usuario.objects.create_user(
             rut='22.222.222-2', email='p@e.cl', rol=Usuario.Rol.PROFESIONAL_SALUD,
         )
 
-    def _paciente(self, rut, fecha_nacimiento, presion=None, mrs=False, finalizar=False):
-        secciones = []
-        if presion:
-            secciones.append({'tipo': 'empa', 'uuid_local': str(uuid4()), 'parcial': True,
-                              'datos': {'presion_sistolica': presion[0],
-                                        'presion_diastolica': presion[1]}})
-        if mrs:
-            secciones.append({'tipo': 'mrs', 'uuid_local': str(uuid4()), 'parcial': True,
-                              'datos': {'pregunta_1': 2}})
-        res = sincronizar_payload(self.prof, {
-            'identificacion': {'uuid_local': str(uuid4()), 'rut': rut, 'datos': {
-                'fecha_nacimiento': fecha_nacimiento, 'genero': 'F', 'nivel_educacion': 'M_COM',
-                'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
-                'comuna': 'Santiago', 'region_residencia': '13',
-            }},
-            'secciones': secciones,
-            'finalizar': finalizar,
-        })
-        assert res['ok'], res
-
-    def _ver(self):
-        self.client.force_login(self.prof)
-        resp = self.client.get('/profesional/estadisticas/')
-        self.assertEqual(resp.status_code, 200)
-        return resp
-
     def test_usuaria_comun_no_puede_ver_estadisticas(self):
         usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
         self.client.force_login(usuaria)
         self.assertEqual(self.client.get('/profesional/estadisticas/').status_code, 403)
 
-    def test_sin_datos(self):
-        resp = self._ver()
-        self.assertEqual(resp.context['total_participantes'], 0)
-        self.assertIsNone(resp.context['edad_promedio'])
-        self.assertEqual(resp.context['presion_alta'], 0)
-        self.assertContains(resp, 'Sin datos')
-
-    def test_conteos(self):
-        hoy = date.today()
-        self._paciente('9.876.543-3', f'{hoy.year - 50}-01-01', presion=(150, 85), mrs=True)
-        self._paciente('12.345.678-5', f'{hoy.year - 44}-01-01', presion=(120, 95))
-        self._paciente('7.654.321-6', f'{hoy.year - 56}-01-01', presion=(118, 76), mrs=True)
-        resp = self._ver()
-        self.assertEqual(resp.context['total_participantes'], 3)
-        self.assertEqual(resp.context['edad_promedio'], 50.0)
-        # 150/85 (sistólica) y 120/95 (diastólica) cuentan; 118/76 no.
-        self.assertEqual(resp.context['presion_alta'], 2)
-        self.assertEqual(resp.context['total_mrs'], 2)
-
-    def test_presion_alta_cuenta_personas_segun_su_ultima_medicion(self):
-        hoy = date.today()
-        # Ronda 1 alta, ronda 2 normal: hoy no cuenta.
-        self._paciente('9.876.543-3', f'{hoy.year - 50}-01-01', presion=(160, 100), finalizar=True)
-        self._paciente('9.876.543-3', f'{hoy.year - 50}-01-01', presion=(120, 80))
-        # Dos rondas altas: cuenta una sola vez.
-        self._paciente('12.345.678-5', f'{hoy.year - 45}-01-01', presion=(150, 90), finalizar=True)
-        self._paciente('12.345.678-5', f'{hoy.year - 45}-01-01', presion=(145, 92))
-        resp = self._ver()
-        self.assertEqual(resp.context['total_participantes'], 2)
-        self.assertEqual(resp.context['presion_alta'], 1)
+    # Fase 40C-P: el contenido (población, cálculos y privacidad) se prueba en
+    # apps/encuestas/test_estadisticas.py; los indicadores de la Fase 17 se reemplazaron.
 
     def test_enlace_desde_el_buscador(self):
         self.client.force_login(self.prof)
@@ -1337,7 +1310,7 @@ class RetiroDelEstudioTest(TestCase):
         self.client.force_login(self.usuaria)
 
     def _ronda(self, usuario, finalizar):
-        res = sincronizar_payload(usuario, {
+        res = _sync(usuario, {
             'identificacion': {'uuid_local': str(uuid4()), 'datos': {
                 'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
                 'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
@@ -1417,6 +1390,9 @@ class EncuestaPorProfesionalTest(TestCase):
     def setUp(self):
         self.usuaria = Usuario.objects.create_user(
             rut='11.111.111-1', email='u@e.cl', password='clave-usuaria-123')
+        # Fase 40 (P7): la profesional escribe por una paciente con cuenta solo si tiene consentimiento.
+        self.usuaria.consentimiento_aceptado_en = timezone.now()
+        self.usuaria.save(update_fields=['consentimiento_aceptado_en'])
         self.prof = Usuario.objects.create_user(
             rut='22.222.222-2', email='p@e.cl', password='clave-prof-123',
             rol=Usuario.Rol.PROFESIONAL_SALUD,
@@ -1464,12 +1440,13 @@ class EncuestaPorProfesionalTest(TestCase):
         self.assertEqual(self.paciente.comuna, 'Santiago')
 
     def test_profesional_puede_finalizar_la_ronda(self):
-        res = sincronizar_payload(self.prof, self._payload_prof(self.trabajo, finalizar=True))
+        res = _sync(self.prof, self._payload_prof(self.trabajo, finalizar=True))
         self.assertTrue(res['ok'], res)
         self.paciente.refresh_from_db()
         self.assertEqual(self.paciente.ronda_actual, 2)
 
     def test_profesional_registra_paciente_nueva_y_luego_ella_la_continua(self):
+        consentimiento_presencial('7.654.321-6', self.prof)   # Fase 40, Etapa 2
         res = sincronizar_payload(self.prof, {
             'identificacion': {'rut': '7.654.321-6', 'datos': self.ident_datos},
             'secciones': [],
@@ -1521,7 +1498,8 @@ class EncuestaPorProfesionalTest(TestCase):
         self.assertContains(resp, f'data-paciente="{self.paciente.pk}"')
         # La encuesta "propia" no aplica al profesional.
         self.assertRedirects(self.client.get('/encuesta/'), '/profesional/buscar/')
-        # Paciente nueva: el RUT llega por POST y pasa a la encuesta.
+        # Paciente nueva: el RUT llega por POST y pasa a la encuesta (con su consentimiento presencial).
+        consentimiento_presencial('7.654.321-6', Usuario.objects.get(rut_hash=hash_rut('22.222.222-2')))
         resp = self.client.post('/profesional/paciente/nueva/', {'rut': '7.654.321-6'})
         self.assertContains(resp, 'data-modo="profesional"')
         self.assertContains(resp, 'data-rut="')
@@ -1547,7 +1525,7 @@ class PlazoEntreRondasTest(TestCase):
         }
 
     def _guardar(self, usuario, finalizar=False, **ident_extra):
-        return sincronizar_payload(usuario, {
+        return _sync(usuario, {
             'identificacion': dict({'uuid_local': str(uuid4()), 'datos': self.ident_datos}, **ident_extra),
             'secciones': [{'tipo': 'mrs', 'uuid_local': str(uuid4()), 'parcial': True,
                            'datos': {'pregunta_1': 2}}],
@@ -1592,9 +1570,9 @@ class PlazoEntreRondasTest(TestCase):
         paciente = Identificacion.objects.get()
         payload_prof = {'identificacion': {'paciente_id': paciente.pk, 'datos': {}},
                         'secciones': [], 'finalizar': True}
-        self.assertTrue(sincronizar_payload(self.prof, payload_prof)['ok'])
+        self.assertTrue(_sync(self.prof, payload_prof)['ok'])
         # El profesional puede seguir (incluso finalizar otra vez) sin esperar.
-        self.assertTrue(sincronizar_payload(self.prof, payload_prof)['ok'])
+        self.assertTrue(_sync(self.prof, payload_prof)['ok'])
         self.client.force_login(self.prof)
         datos = self.client.get(f'/api/ronda-actual/?paciente={paciente.pk}').json()
         self.assertFalse(datos['bloqueada'])
@@ -1612,7 +1590,7 @@ class MigracionUltimaFinalizacionTest(TestCase):
         migracion = importlib.import_module('apps.encuestas.migrations.0019_ultima_finalizacion')
 
         usuaria = Usuario.objects.create_user(rut='11.111.111-1', email='u@e.cl')
-        sincronizar_payload(usuaria, {
+        _sync(usuaria, {
             'identificacion': {'uuid_local': str(uuid4()), 'datos': {
                 'fecha_nacimiento': '1975-05-20', 'genero': 'F', 'nivel_educacion': 'M_COM',
                 'origen_procedencia': 'CL', 'pueblo_originario_afro': 'NINGUNO',
@@ -1628,3 +1606,7 @@ class MigracionUltimaFinalizacionTest(TestCase):
 
         migracion.rellenar_ultima_finalizacion(registro, None)
         self.assertEqual(Identificacion.objects.get().ultima_finalizacion_en, hace_20_dias)
+
+
+# Fase 40: el cliente real siempre envía la participación vigente de la usuaria.
+from apps.rondas.pruebas_comunes import sincronizar_como_cliente as sincronizar_payload  # noqa: E402,F811

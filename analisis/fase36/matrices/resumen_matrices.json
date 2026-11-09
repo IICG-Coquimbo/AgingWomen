@@ -1,0 +1,122 @@
+{
+ "P1": {
+  "filas": 529,
+  "columnas": 34,
+  "inercia": 29.504725897920608
+ },
+ "P2": {
+  "filas": 529,
+  "columnas": 33,
+  "inercia": 29.0
+ },
+ "F1": {
+  "filas": 529,
+  "columnas": 50,
+  "inercia": 38.50472589792061
+ },
+ "F2": {
+  "filas": 529,
+  "columnas": 49,
+  "inercia": 38.0
+ },
+ "S-ORD_P1": {
+  "filas": 529,
+  "columnas": 34,
+  "inercia": 29.504725897920604
+ },
+ "S-ORD_P2": {
+  "filas": 529,
+  "columnas": 33,
+  "inercia": 29.0
+ },
+ "S-ORD_F1": {
+  "filas": 529,
+  "columnas": 50,
+  "inercia": 38.5047258979206
+ },
+ "S-ORD_F2": {
+  "filas": 529,
+  "columnas": 49,
+  "inercia": 38.0
+ },
+ "S-FAMD_F1": {
+  "filas": 529,
+  "columnas": 38,
+  "inercia": 31.5047258979206
+ },
+ "S-RARA_F1": {
+  "filas": 529,
+  "columnas": 58,
+  "inercia": 46.5047258979206
+ },
+ "S-FAMD_F2": {
+  "filas": 529,
+  "columnas": 37,
+  "inercia": 31.0
+ },
+ "S-RARA_F2": {
+  "filas": 529,
+  "columnas": 57,
+  "inercia": 46.0
+ },
+ "S-TRA_P1": {
+  "filas": 529,
+  "columnas": 34,
+  "inercia": 29.591378143214985
+ },
+ "S-TRA_P2": {
+  "filas": 529,
+  "columnas": 33,
+  "inercia": 29.095430783588643
+ },
+ "S-TRA_F1": {
+  "filas": 529,
+  "columnas": 50,
+  "inercia": 38.6004109119968
+ },
+ "S-TRA_F2": {
+  "filas": 529,
+  "columnas": 49,
+  "inercia": 38.104463552370454
+ },
+ "S-CUI_P1": {
+  "filas": 529,
+  "columnas": 34,
+  "inercia": 29.48060209251129
+ },
+ "S-CUI_P2": {
+  "filas": 529,
+  "columnas": 33,
+  "inercia": 28.991122859880406
+ },
+ "S-CUI_F1": {
+  "filas": 529,
+  "columnas": 50,
+  "inercia": 38.38994086273974
+ },
+ "S-CUI_F2": {
+  "filas": 529,
+  "columnas": 49,
+  "inercia": 37.90046163010886
+ },
+ "S-EJE_P1": {
+  "filas": 529,
+  "columnas": 34,
+  "inercia": 29.216198512159202
+ },
+ "S-EJE_P2": {
+  "filas": 529,
+  "columnas": 33,
+  "inercia": 28.70632044775923
+ },
+ "S-EJE_F1": {
+  "filas": 529,
+  "columnas": 50,
+  "inercia": 37.98934757191022
+ },
+ "S-EJE_F2": {
+  "filas": 529,
+  "columnas": 49,
+  "inercia": 37.479469507510245
+ }
+}

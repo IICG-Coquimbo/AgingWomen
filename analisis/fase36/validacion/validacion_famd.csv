@@ -1,0 +1,33 @@
+seccion,comprobacion,obtenido,esperado,tolerancia,resultado
+Ponderación,Todas las columnas tienen media cero,1.7985612998927537e-16,0,1e-08,OK
+Ponderación,Cada cuantitativa tiene varianza 1,2.220446049250313e-16,0,1e-08,OK
+Ponderación,Varianza de cada indicadora = 1 − p,5.551115123125783e-17,0,1e-08,OK
+Inercia,Inercia total = cuantitativas + Σ(K − 1),10.0,10,1e-08,OK
+Inercia,La suma de valores propios iguala la inercia,10.0,10,1e-08,OK
+Inercia,Rango = columnas − una por categórica,10.0,10,1e-08,OK
+Equivalencia: métrica 1/p,Valores propios iguales a la métrica 1/p,1.3322676295501878e-15,0,1e-08,OK
+Equivalencia: métrica 1/p,Coordenadas iguales a la métrica 1/p (8 ejes),6.606173941214877e-14,0,1e-07,OK
+Equivalencia: criterio de Pagès,λ = Σ r² + Σ η² en los 10 primeros ejes,1.5543122344752192e-15,0,1e-08,OK
+Equivalencia: criterio de Pagès,Control negativo: con la ponderación equivocada el criterio se rompe,3.2395,"> 0,01",,OK
+Equivalencia: casos límite,Solo categóricas: λ = Q × λ(MCA),1.9984014443252818e-15,0,1e-08,OK
+Equivalencia: casos límite,Solo cuantitativas: λ = correlaciones,1.1102230246251565e-15,0,1e-08,OK
+Equivalencia: scikit-learn,scikit-learn: varianza × (n − 1)/n = λ,1.6653345369377348e-15,0,1e-08,OK
+Equivalencia: scikit-learn,scikit-learn: mismas coordenadas (8 ejes),4.729550084903167e-14,0,1e-07,OK
+Doble estandarización,Variable con media asignada: varianza = fracción observada,0.49999999999999983,0.49999999999999983,1e-08,OK
+Doble estandarización,Valores asignados con z = 0 exacto,0.0,0,0,OK
+Doble estandarización,Filas con marca de ausencia,200.0,200,0,OK
+Doble estandarización,"Con peso reducido, λ = v·r² + Σ r² + Σ η²",2.6645352591003757e-15,0,1e-08,OK
+Doble estandarización,Una segunda estandarización sí cambiaría el peso (se detecta),0.9999999999999997,1,1e-08,OK
+Doble estandarización,"La inercia lleva el peso reducido, no el reescalado",9.5,9.5,1e-08,OK
+Categorías vacías,Categoría propia con frecuencia cero: se rechaza (evita dividir por 0),1.0,1,,OK
+Categorías vacías,Nivel sin observaciones unido a un grupo: finito e igual a su grupo,0.0,0,0,OK
+Categorías vacías,La columna vacía no se crea,0.0,0,0,OK
+Categorías vacías,Nivel no admitido por el esquema: error,1.0,1,,OK
+Reproducibilidad,Calibrar dos veces da parámetros idénticos,1.0,1,0,OK
+Reproducibilidad,El orden de las filas no cambia los parámetros,3.552713678800501e-15,0,1e-12,OK
+Nueva participante,Fila de referencia como caso nuevo = misma fila,0.0,0,1e-12,OK
+Nueva participante,Transformar no altera los parámetros,1.0,1,0,OK
+Nueva participante,Proyección de un caso nuevo = coordenada original,3.289035710452026e-14,0,1e-09,OK
+Referencia externa,prince 0.23.1: 8 valores propios,2.886579864025407e-15,0,1e-06,OK
+Referencia externa,prince 0.23.1: coordenadas de filas (8 ejes),4.907185768843192e-14,0,1e-05,OK
+Referencia externa,prince no congela proporciones al proyectar una sola fila; el transformador propio sí,1.279563,> 0,,OK

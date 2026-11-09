@@ -1,0 +1,23 @@
+{
+ "archivo": "01_protocolo_38R.md",
+ "sha256": "32a64ec8d5cdd4ceec8a13f54e44abccfbda689517cf430299eaf6a4b601e867",
+ "bytes": 8439,
+ "sellado": "2026-11-08T10:30:52",
+ "protocolo_historico_sha256": "9f9614115801805f9cde6c1586a8d7571ee44116c18ac7638025a645ee7f5a82",
+ "fuentes_decisiones": {
+  "elegibles_33": "9a534d717c24f975ac7c02a87466189d48a48036baa47c5cbaca3ed75f187866",
+  "candidatas_y_exclusiones": "cf31127cf22e7f0c5c3d88f193d4874ee7e022f6b67572786c6210d913a3ba4d",
+  "protocolo_revision_33": "70c7779f981517d1f34d02438baea5e5ac61b8cee9bfb4a8ff070e27503c1dfd",
+  "preprocesamiento_35_revisado": "2195e78d1b78f8d624720c6d9fdfa37d22a864a0695f3054ddad801eb23e3294",
+  "configuracion_36": "be9aa8c5d67a23e3a992d7bf455bf293a7a34854f7cfbc3c8bf6f16151428d5f",
+  "protocolo_36_ajustado": "c5fda8bb03655aa1c4cf580d6770ac09921c88f217170ab9dadfbb10d3b9c6b4",
+  "esquema_P2": "cb414a0ca59694770e7eab2d31e0ebf0b81330a50ab498251a29f2845f2aa2f4"
+ },
+ "codigo": {
+  "barreras_38r.py": "89421acfd00cdc3e7c06c482452ca37029b53226dabf580c1e7c7fb2f8ed4439",
+  "nucleo_38r.py": "74f8594cd6c30ba47793aa8436e7d2eb2e34b6deea38387abca92c76a3bcca43",
+  "etapa_a_preparacion.py": "856f3a983fcf273982742a39a4ba9897950895ceceb189ea08fde6dddfe10a4f",
+  "etapa_b_reglas.py": "9a0a7fc37e304b7ef8c02318ac58784bca965565e282d0645cf2f61619651b99",
+  "etapa_c_robustez.py": "3bc8a11761ea409829b4b00c852ea6a2f0edb9076b3a3aeeb003be69ea3850c3"
+ }
+}

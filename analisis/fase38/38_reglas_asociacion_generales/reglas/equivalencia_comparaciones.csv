@@ -1,0 +1,4 @@
+comparacion,mismos_conjuntos_y_recuentos,diferencias,mismas_reglas
+apriori frente a fpgrowth,True,0,True
+apriori frente a exhaustiva,True,0,True
+fpgrowth frente a exhaustiva,True,0,True

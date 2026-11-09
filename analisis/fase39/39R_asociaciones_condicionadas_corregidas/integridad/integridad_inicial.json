@@ -1,0 +1,39 @@
+{
+ "momento": "inicial",
+ "fecha": "2026-11-08T11:04:39",
+ "archivos_con_huella": 6537,
+ "manifiestos_archivos": 6462,
+ "manifiestos_distintos": 4,
+ "manifiestos_diferencias_no_documentadas": [],
+ "prueba_40b1": {
+  "codigo": 0,
+  "cola": [
+   "Ran 5 tests in 7.526s",
+   "",
+   "OK"
+  ]
+ },
+ "rama": "datos-simulados",
+ "head": "573d3a31100c03519d47e220f4a065df3e9caf9a",
+ "head_igual_al_inicial": true,
+ "rama_igual_a_la_inicial": true,
+ "lineas_git_status_sin_39R": 87,
+ "git_status_igual_al_inicial": true,
+ "pycache_fases_36_a_39": [],
+ "sello_38R": {
+  "sha256": "32a64ec8d5cdd4ceec8a13f54e44abccfbda689517cf430299eaf6a4b601e867",
+  "distintos": [],
+  "integridad_final_38R": {
+   "fecha": "2026-11-08T10:40:38",
+   "huellas_cambiadas": [],
+   "pendientes_distintos": [],
+   "manifiestos_diferencias_no_documentadas": []
+  }
+ },
+ "respaldo_antes_38R": {
+  "archivos": 134,
+  "copias_distintas": [],
+  "pendientes_actuales_distintos": []
+ },
+ "correcto": true
+}
