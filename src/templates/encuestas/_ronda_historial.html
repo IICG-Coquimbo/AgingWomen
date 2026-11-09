@@ -1,0 +1,35 @@
+{% comment %}
+Fase 40C: una ronda del historial, igual en el tablero y en la ficha profesional.
+Estado: «En curso», «Finalizada y verificable» o «Histórica no verificable».
+La fecha de cierre solo aparece si quedó registrada al ocurrir. La columna de
+fecha de cada sección es la fecha en que se guardó ese registro, no la del cierre.
+{% endcomment %}<div class="tarjeta" data-ronda-historial="{{ ronda.numero }}" data-estado-ronda="{{ ronda.estado }}">
+    <h2>Ronda {{ ronda.numero }}</h2>
+    <p class="estado-ronda">
+        <span class="estado-ronda__etiqueta estado-ronda--{{ ronda.estado }}">{{ ronda.estado_texto }}</span>
+        {% if ronda.es_actual %}
+            <span class="ayuda">Todavía puede seguir respondiéndose.</span>
+        {% elif ronda.fecha_cierre %}
+            <span class="ayuda">Cierre: {{ ronda.fecha_cierre|date:"d-m-Y" }}</span>
+        {% else %}
+            <span class="ayuda">Cierre: Fecha no registrada</span>
+        {% endif %}
+    </p>
+    <table class="tabla-historial">
+        <thead>
+            <tr><th>Sección</th><th>Estado</th><th>Fecha de registro</th><th>Resumen</th></tr>
+        </thead>
+        <tbody>
+            {% for s in ronda.secciones %}
+            <tr>
+                <td>{{ s.titulo }}</td>
+                <td>{% if s.registro %}Con datos{% else %}Sin datos{% endif %}</td>
+                <td>{{ s.fecha|default:"—" }}</td>
+                <td>
+                    {% include 'encuestas/_resultado_mrs.html' with r=s.resultado_mrs %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

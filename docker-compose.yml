@@ -3,10 +3,13 @@ services:
     image: postgres:15-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+    # Secretos de desarrollo (Fase 40S-1): se leen del archivo privado
+    # .env.desarrollo, que NO se sube a GitHub. Créalo a partir de .env.example.
+    env_file:
+      - .env.desarrollo
     environment:
       - POSTGRES_DB=django_db
       - POSTGRES_USER=django_user
-      - POSTGRES_PASSWORD=mi_contrasena_secreta
     ports:
       - "5432:5432"
 
@@ -17,15 +20,16 @@ services:
       - ./src:/app
     ports:
       - "8000:8000"
+    # Secretos de desarrollo (Fase 40S-1): se leen del archivo privado
+    # .env.desarrollo, que NO se sube a GitHub. Créalo a partir de .env.example.
+    env_file:
+      - .env.desarrollo
     environment:
       - DEBUG=1
-      - SECRET_KEY=desarrollo_secret_key_123
       - DB_NAME=django_db
       - DB_USER=django_user
-      - DB_PASSWORD=mi_contrasena_secreta
       - DB_HOST=db
       - DB_PORT=5432
-      - RUT_HASH_PEPPER=dev-pepper-local
       # Envío real de correo: los valores se leen del archivo ".env" (no se
       # sube a GitHub). Copia ".env.example" como ".env" y complétalo. Si
       # quedan vacíos, los correos solo se imprimen en "docker compose logs web".

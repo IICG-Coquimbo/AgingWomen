@@ -352,7 +352,8 @@ def construir_esquema(rol):
     return {
         'secciones': secciones,
         'mrs_niveles': {str(k): v for k, v in MRS.DESCRIPCION_NIVELES.items()},
-        'mrs_severidad': [{'hasta': h, 'texto': t} for h, t in MRS.SEVERIDAD_TOTAL],
+        # Fase 40B-3: ya no se publican los cortes de severidad (MRS.SEVERIDAD_TOTAL): son los
+        # históricos de las Fases 34-39 y no están validados para mostrarse en la plataforma.
         'comunas_por_region': COMUNAS_POR_REGION,
         'edad_minima': EDAD_MINIMA,
         'edad_maxima': EDAD_MAXIMA,

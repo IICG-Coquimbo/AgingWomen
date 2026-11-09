@@ -1,0 +1,4 @@
+{% comment %}
+Fase 40B-3: único fragmento que muestra el resultado MRS de una ronda (tablero y ficha).
+Recibe `r`, un apps.rondas.resultado_mrs.ResultadoMRS. No lee el puntaje del modelo ni muestra categorías de severidad.
+{% endcomment %}{% if r and r.texto %}<span class="resultado-mrs resultado-mrs--{{ r.estado }}" data-resultado-mrs="{{ r.estado }}">{{ r.texto }}</span>{% endif %}

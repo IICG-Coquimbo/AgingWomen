@@ -1,0 +1,262 @@
+{
+ "A_ingresa": {
+  "ok": true,
+  "det": "/"
+ },
+ "A_total_solo_verificables": {
+  "ok": true,
+  "det": [
+   [
+    1,
+    17
+   ],
+   [
+    2,
+    22
+   ],
+   [
+    4,
+    11
+   ],
+   [
+    5,
+    33
+   ]
+  ]
+ },
+ "A_dimensiones": {
+  "ok": true,
+  "det": [
+   [
+    [
+     1,
+     8
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     12
+    ]
+   ],
+   [
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     12
+    ]
+   ],
+   [
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     9
+    ]
+   ]
+  ]
+ },
+ "A_dimensiones_suman_total": {
+  "ok": true
+ },
+ "A_dos_tramos_sin_cruzar_ronda_3": {
+  "ok": true,
+  "det": {
+   "tramos": 2,
+   "excluidas": [
+    3
+   ]
+  }
+ },
+ "A_en_curso_fuera_del_grafico": {
+  "ok": true
+ },
+ "A_estados_historial": {
+  "ok": true,
+  "det": [
+   [
+    6,
+    "en_curso"
+   ],
+   [
+    5,
+    "finalizada_verificable"
+   ],
+   [
+    4,
+    "finalizada_verificable"
+   ],
+   [
+    3,
+    "historica_no_verificable"
+   ],
+   [
+    2,
+    "finalizada_verificable"
+   ],
+   [
+    1,
+    "finalizada_verificable"
+   ]
+  ]
+ },
+ "A_provisional_y_no_verificable_distintos": {
+  "ok": true,
+  "det": [
+   [
+    "provisional",
+    "Suma provisional: 44 de 44 (la ronda no está cerrada)"
+   ],
+   [
+    "definitivo",
+    "Puntaje MRS: 33 de 44"
+   ],
+   [
+    "definitivo",
+    "Puntaje MRS: 11 de 44"
+   ],
+   [
+    "no_verificable",
+    "Resultado histórico no verificable"
+   ],
+   [
+    "definitivo",
+    "Puntaje MRS: 22 de 44"
+   ],
+   [
+    "definitivo",
+    "Puntaje MRS: 17 de 44"
+   ]
+  ]
+ },
+ "A_fecha_no_registrada_ronda_3": {
+  "ok": true
+ },
+ "A_datos_actuales": {
+  "ok": true
+ },
+ "A_sin_severidad_ni_conclusiones": {
+  "ok": true,
+  "det": []
+ },
+ "A_dimensiones_plegadas_al_inicio": {
+  "ok": true
+ },
+ "A_dimensiones_se_abren": {
+  "ok": true
+ },
+ "A_movil_sin_desborde_horizontal": {
+  "ok": true,
+  "det": {
+   "desborde": 0,
+   "svg": 300,
+   "ancho": 390
+  }
+ },
+ "A_no_ve_ficha_de_B": {
+  "ok": true,
+  "det": {
+   "estado": 403,
+   "tiene_11": false
+  }
+ },
+ "A_consola_sin_errores": {
+  "ok": true,
+  "det": []
+ },
+ "ficha_igual_que_tablero": {
+  "ok": true,
+  "det": {
+   "seccion_igual": true,
+   "estados": [
+    [
+     6,
+     "en_curso"
+    ],
+    [
+     5,
+     "finalizada_verificable"
+    ],
+    [
+     4,
+     "finalizada_verificable"
+    ],
+    [
+     3,
+     "historica_no_verificable"
+    ],
+    [
+     2,
+     "finalizada_verificable"
+    ],
+    [
+     1,
+     "finalizada_verificable"
+    ]
+   ]
+  }
+ },
+ "ficha_B_solo_datos_de_B": {
+  "ok": true,
+  "det": [
+   [
+    1,
+    11
+   ]
+  ]
+ },
+ "P_consola_sin_errores": {
+  "ok": true,
+  "det": []
+ },
+ "B_un_punto_sin_linea": {
+  "ok": true,
+  "det": {
+   "total": [
+    [
+     1,
+     11
+    ]
+   ],
+   "aviso": "Hay una sola ronda con resultado verificable: todavía no se puede mostrar una evolución."
+  }
+ },
+ "B_no_ve_datos_de_A": {
+  "ok": true
+ },
+ "B_movil_sin_desborde": {
+  "ok": true,
+  "det": 0
+ },
+ "C_sin_resultados_mensaje_claro": {
+  "ok": true,
+  "det": "Todavía no hay rondas finalizadas. Los resultados aparecerán aquí cuando se finalice la primera ronda."
+ }
+}

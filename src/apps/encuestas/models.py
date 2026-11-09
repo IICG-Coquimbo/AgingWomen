@@ -395,57 +395,57 @@ class MRS(SegmentoDeRonda):
     # --- PREGUNTAS MRS (0 a 4) - texto literal del Excel ---
     pregunta_1 = models.IntegerField(
         choices=IntensidadMolestia.choices,
-        default=IntensidadMolestia.NINGUNA,
+        null=True, default=None,  # Fase 40B-2: sin respuesta = nulo (antes 0 por defecto)
         help_text="¿Con cuánta intensidad sientes: Bochornos, sudoración, calores?"
     )
     pregunta_2 = models.IntegerField(
         choices=IntensidadMolestia.choices,
-        default=IntensidadMolestia.NINGUNA,
+        null=True, default=None,  # Fase 40B-2: sin respuesta = nulo (antes 0 por defecto)
         help_text="¿Con cuánta intensidad sientes: Molestias al corazón (sentir latidos del corazón, palpitaciones, o presión al pecho)?"
     )
     pregunta_3 = models.IntegerField(
         choices=IntensidadMolestia.choices,
-        default=IntensidadMolestia.NINGUNA,
+        null=True, default=None,  # Fase 40B-2: sin respuesta = nulo (antes 0 por defecto)
         help_text="¿Con cuánta intensidad sientes: Molestias musculares y articulares (dolores de huesos y articulaciones, dolores reumáticos)"
     )
     pregunta_4 = models.IntegerField(
         choices=IntensidadMolestia.choices,
-        default=IntensidadMolestia.NINGUNA,
+        null=True, default=None,  # Fase 40B-2: sin respuesta = nulo (antes 0 por defecto)
         help_text="¿Con cuánta intensidad sientes: Dificultades en el sueño (insomnio, duermes poco y/o mal)"
     )
     pregunta_5 = models.IntegerField(
         choices=IntensidadMolestia.choices,
-        default=IntensidadMolestia.NINGUNA,
+        null=True, default=None,  # Fase 40B-2: sin respuesta = nulo (antes 0 por defecto)
         help_text="¿Con cuánta intensidad sientes: Estado de ánimo depresivo (sentirse deprimida, decaída, triste a punto de llorar, sin ganas de vivir)"
     )
     pregunta_6 = models.IntegerField(
         choices=IntensidadMolestia.choices,
-        default=IntensidadMolestia.NINGUNA,
+        null=True, default=None,  # Fase 40B-2: sin respuesta = nulo (antes 0 por defecto)
         help_text="¿Con cuánta intensidad sientes: Irritabilidad (sentirse tensa, explotas fácil, sentirse rabiosa, sentirse intolerante)?"
     )
     pregunta_7 = models.IntegerField(
         choices=IntensidadMolestia.choices,
-        default=IntensidadMolestia.NINGUNA,
+        null=True, default=None,  # Fase 40B-2: sin respuesta = nulo (antes 0 por defecto)
         help_text="¿Con cuánta intensidad sientes: Ansiedad (sentirse angustiada, temerosa, inquieta, tendencia al pánico)?"
     )
     pregunta_8 = models.IntegerField(
         choices=IntensidadMolestia.choices,
-        default=IntensidadMolestia.NINGUNA,
+        null=True, default=None,  # Fase 40B-2: sin respuesta = nulo (antes 0 por defecto)
         help_text="¿Con cuánta intensidad sientes: Cansancio físico y mental (rinde menos, se cansa fácil, olvidos frecuentes, mala memoria, le cuesta concentrarse)?"
     )
     pregunta_9 = models.IntegerField(
         choices=IntensidadMolestia.choices,
-        default=IntensidadMolestia.NINGUNA,
+        null=True, default=None,  # Fase 40B-2: sin respuesta = nulo (antes 0 por defecto)
         help_text="¿Con cuánta intensidad sientes: Problemas sexuales (menos ganas de tener relaciones sexuales, menor frecuencia de relaciones sexuales, menor satisfacción sexual)?"
     )
     pregunta_10 = models.IntegerField(
         choices=IntensidadMolestia.choices,
-        default=IntensidadMolestia.NINGUNA,
+        null=True, default=None,  # Fase 40B-2: sin respuesta = nulo (antes 0 por defecto)
         help_text="¿Con cuánta intensidad sientes: Problemas con la orina (problemas al orinar, orinas más veces, urgencia al orinar, se te escapa la orina)?"
     )
     pregunta_11 = models.IntegerField(
         choices=IntensidadMolestia.choices,
-        default=IntensidadMolestia.NINGUNA,
+        null=True, default=None,  # Fase 40B-2: sin respuesta = nulo (antes 0 por defecto)
         help_text="¿Con cuánta intensidad sientes: Sequedad vaginal (sensación de genitales secos, malestar o ardor en los genitales, malestar o dolor con las relaciones sexuales)?"
     )
 
@@ -592,11 +592,22 @@ class MRS(SegmentoDeRonda):
 
     # --- PROPIEDADES ÚTILES PARA ML Y REPORTES ---
     @property
+    def items_sin_responder(self):
+        """Fase 40B-2: nombres de los ítems MRS sin respuesta (nulos). Un 0 es una respuesta."""
+        return [f'pregunta_{i}' for i in range(1, 12) if getattr(self, f'pregunta_{i}') is None]
+
+    @property
     def puntaje_total(self):
         """
         Suma automática de los 11 ítems MRS. Rango: 0 a 44 puntos.
         Útil para saber la severidad total del síntoma sin cálculos extra.
+
+        Fase 40B-2: es None mientras falte algún ítem (no se suman respuestas
+        ausentes como si fueran 0). Que el puntaje sea definitivo depende
+        además de que la ronda esté cerrada (apps.rondas.cierre.puntaje_mrs_definitivo).
         """
+        if self.items_sin_responder:
+            return None
         return (
             self.pregunta_1 + self.pregunta_2 + self.pregunta_3 + self.pregunta_4
             + self.pregunta_5 + self.pregunta_6 + self.pregunta_7 + self.pregunta_8

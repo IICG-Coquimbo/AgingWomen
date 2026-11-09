@@ -1,0 +1,91 @@
+{
+ "buscador_ofrece_consentimiento_presencial": {
+  "ok": true
+ },
+ "cuenta_existente_exige_su_contrasena": {
+  "ok": true
+ },
+ "contrasena_incorrecta_no_registra": {
+  "ok": true
+ },
+ "registro_presencial_con_constancia": {
+  "ok": true
+ },
+ "rut_nunca_en_la_url": {
+  "ok": true,
+  "det": "/profesional/consentimiento-presencial/"
+ },
+ "registro_guarda_modalidad_verificacion_responsable_version": {
+  "ok": true,
+  "det": "PRESENCIAL,CLAVE_CUENTA,p@ficticio.cl,True,sha256:"
+ },
+ "sin_cuenta_registra_y_continua_a_la_encuesta": {
+  "ok": true
+ },
+ "encuesta_carga": {
+  "ok": true
+ },
+ "pagina_informa_limites": {
+  "ok": true,
+  "det": [
+   "100",
+   "40"
+  ]
+ },
+ "aviso_antes_del_vencimiento": {
+  "ok": true,
+  "det": {
+   "segundos": 14
+  }
+ },
+ "seguir_conectada_cierra_el_aviso": {
+  "ok": true
+ },
+ "segundo_plano_no_impide_el_aviso": {
+  "ok": true
+ },
+ "vence_y_lleva_al_ingreso": {
+  "ok": true,
+  "det": {
+   "segundos": 59
+  }
+ },
+ "pestana_sin_conexion_deja_de_mostrar_datos": {
+  "ok": true
+ },
+ "clave_borrada_borradores_cifrados_conservados": {
+  "ok": true,
+  "det": {
+   "llaves": 0,
+   "registros": 9
+  }
+ },
+ "copia_offline_borrada": {
+  "ok": true
+ },
+ "servidor_rechaza_la_sesion": {
+  "ok": true
+ },
+ "servidor_cierra_sesion_abandonada": {
+  "ok": true
+ },
+ "otra_cuenta_no_ve_datos_ajenos": {
+  "ok": true
+ },
+ "borrador_recuperado_y_enviado_tras_ingresar": {
+  "ok": true,
+  "det": "4"
+ },
+ "retiro_borra_salud_y_entrega_comprobante": {
+  "ok": true,
+  "det": "0,0"
+ },
+ "comprobante_verificable": {
+  "ok": true,
+  "det": "VÁLIDO: retiro EEBA04CC3E98 del 2026-11-"
+ },
+ "consola_sin_errores": {
+  "ok": true,
+  "det": []
+ }
+}

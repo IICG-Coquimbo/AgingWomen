@@ -13,6 +13,8 @@
         </p>
         <p><a class="boton" href="{% url 'encuesta' %}">Responder la encuesta</a></p>
     {% else %}
+        <h2 class="subtitulo-datos">Datos actuales</h2>
+        <p class="ayuda">Son tus datos de hoy; no corresponden a una ronda en particular.</p>
         <ul>
             <li>Edad: {{ paciente.edad }} años</li>
             <li>Región: {{ paciente.get_region_residencia_display }}</li>
@@ -35,29 +37,14 @@
     {% endif %}
 </div>
 
+{% if paciente %}{% include 'encuestas/_evolucion_mrs.html' with evo=evolucion %}{% endif %}
+
+{% if mi_grupo %}{% include 'encuestas/_mi_grupo.html' with g=mi_grupo %}{% endif %}
+
+{% if orientaciones %}{% include 'encuestas/_orientaciones.html' with ori=orientaciones %}{% endif %}
+
 {% for ronda in rondas %}
-<div class="tarjeta">
-    <h2>Ronda {{ ronda.numero }}{% if ronda.es_actual %} (en curso, sin finalizar){% endif %}</h2>
-    <table class="tabla-historial">
-        <thead>
-            <tr><th>Sección</th><th>Estado</th><th>Fecha</th><th>Resumen</th></tr>
-        </thead>
-        <tbody>
-            {% for s in ronda.secciones %}
-            <tr>
-                <td>{{ s.titulo }}</td>
-                <td>{% if s.registro %}Con datos{% else %}Sin datos{% endif %}</td>
-                <td>{{ s.fecha|default:"—" }}</td>
-                <td>
-                    {% if s.registro.puntaje_total is not None %}
-                        Puntaje MRS: {{ s.registro.puntaje_total }}
-                    {% endif %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
+{% include 'encuestas/_ronda_historial.html' %}
 {% endfor %}
 
 {% if paciente %}

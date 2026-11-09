@@ -7,11 +7,12 @@
    - Esquema (/api/esquema/): red primero, caché de respaldo.
    - Nunca intercepta POST (login, salir y /api/sincronizar/ van siempre por red).
 */
-var CACHE = 'aging-women-v11';  // subir la versión cuando cambian encuesta.js o tema.css
+var CACHE = 'aging-women-v22';  // subir la versión cuando cambian encuesta.js o tema.css (v22: clic táctil tras la fecha)
 var SHELL = '/encuesta/';
 var ESTATICOS = [
     '/static/css/tema.css',
     '/static/js/encuesta.js',
+    '/static/js/sesion.js',
     '/static/manifest.webmanifest',
     '/static/icons/icono.svg'
 ];
@@ -59,7 +60,15 @@ self.addEventListener('fetch', function (e) {
                     if (url.pathname === SHELL) { guardar(SHELL, resp); }
                     return resp;
                 })
-                .catch(function () { return caches.match(SHELL); })
+                .catch(function () {
+                    // Fase 40: tras «Salir» la copia ya no existe; se responde un aviso sin datos.
+                    return caches.match(SHELL).then(function (copia) {
+                        return copia || new Response('<!DOCTYPE html><meta charset="utf-8"><meta name="viewport" ' +
+                            'content="width=device-width, initial-scale=1"><title>Sin conexión</title>' +
+                            '<p>Sin conexión a internet. Inicia sesión cuando vuelva la conexión.</p>',
+                            { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+                    });
+                })
         );
         return;
     }

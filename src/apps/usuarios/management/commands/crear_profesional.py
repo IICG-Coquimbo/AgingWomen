@@ -15,7 +15,7 @@ class Command(BaseCommand):
         parser.add_argument('email', help='Correo del profesional')
         parser.add_argument(
             '--password',
-            help='Contraseña. Si se omite, se genera una al azar y se muestra en pantalla.',
+            help='Contraseña. Si se omite, la persona define la suya con «Olvidé mi contraseña».',
         )
 
     def handle(self, *args, **options):
@@ -31,5 +31,5 @@ class Command(BaseCommand):
         )
 
         self.stdout.write(self.style.SUCCESS(f'Profesional creado: {usuario.email}'))
-        if usuario.password_generada:
-            self.stdout.write(f'Contraseña generada: {usuario.password_generada}')
+        if not options.get('password'):
+            self.stdout.write('Para definir su contraseña debe usar «Olvidé mi contraseña» con ese correo.')

@@ -713,3 +713,90 @@ button:hover, .boton:hover { background: var(--color-primario-oscuro); }
     font-size: .95rem;
 }
 .burbuja-mrs span { font-size: .85rem; opacity: .9; }
+
+/* ===== Fase 40C: resultados y evolución MRS (tablero y ficha) ===== */
+/* Definitivo y provisional se distinguen también sin color (peso, estilo y borde). */
+.resultado-mrs { display: inline-block; padding: .1rem .45rem; border-radius: 6px; font-size: .88rem; }
+.resultado-mrs--definitivo { font-weight: 700; color: var(--color-primario-oscuro);
+    background: var(--color-primario-suave); border: 1px solid var(--color-primario-claro); }
+.resultado-mrs--provisional, .resultado-mrs--parcial { font-style: italic; color: var(--color-texto-suave);
+    border: 1px dashed var(--color-texto-suave); }
+.resultado-mrs--no_verificable, .resultado-mrs--incompleto { color: var(--color-texto-suave);
+    border: 1px solid var(--color-borde); }
+
+.estado-ronda { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: -.25rem 0 .75rem; }
+.estado-ronda__etiqueta { font-size: .8rem; font-weight: 600; padding: .1rem .5rem; border-radius: 999px;
+    border: 1px solid var(--color-borde); }
+.estado-ronda--finalizada_verificable { background: var(--color-primario-suave); color: var(--color-primario-oscuro);
+    border-color: var(--color-primario-claro); }
+.estado-ronda--en_curso { border-style: dashed; color: var(--color-texto); }
+.estado-ronda--historica_no_verificable { color: var(--color-texto-suave); }
+
+.subtitulo-datos { margin-bottom: .25rem; }
+.aviso-evolucion { background: var(--color-primario-suave); border-left: 4px solid var(--color-primario-claro);
+    padding: .5rem .75rem; border-radius: 6px; font-size: .92rem; }
+.grafico-mrs { margin: 1rem 0; }
+.grafico-mrs__svg { display: block; width: 100%; max-width: 480px; height: auto; }
+.grafico-mrs__guia { stroke: var(--color-borde); stroke-width: 1; }
+.grafico-mrs__eje { fill: var(--color-texto-suave); font-size: 11px; font-family: var(--fuente); }
+.grafico-mrs__hueco { stroke: var(--color-texto-suave); stroke-width: 1; stroke-dasharray: 3 4; }
+.grafico-mrs__linea { fill: none; stroke: var(--color-primario); stroke-width: 2.5;
+    stroke-linejoin: round; stroke-linecap: round; }
+.grafico-mrs__punto { fill: var(--color-superficie); stroke: var(--color-primario); stroke-width: 2.5; }
+.tabla-evolucion caption { text-align: left; margin-bottom: .35rem; }
+.dimensiones-mrs { margin-top: 1rem; }
+.dimensiones-mrs summary { cursor: pointer; font-weight: 600; color: var(--color-primario-oscuro);
+    padding: .5rem 0; min-height: 44px; display: flex; align-items: center; }
+.dimensiones-mrs .grafico-mrs__svg { max-width: 400px; }
+.dimensiones-mrs .tabla-evolucion { display: block; overflow-x: auto; }
+@media (max-width: 480px) {
+    .tarjeta .tabla-historial th, .tarjeta .tabla-historial td { padding: .4rem .35rem; font-size: .85rem; }
+}
+
+/* ===== Fase 40D: orientaciones educativas ===== */
+.aviso-orientaciones { background: var(--color-primario-suave); border-left: 4px solid var(--color-primario);
+    padding: .6rem .85rem; border-radius: 6px; font-size: .92rem; }
+.aviso-orientaciones p { margin: .3rem 0; }
+.aviso-borrador { border: 1px dashed var(--color-error); color: var(--color-error); padding: .4rem .7rem;
+    border-radius: 6px; font-size: .88rem; }
+.orientacion { border-top: 1px solid var(--color-borde); padding-top: .75rem; margin-top: 1rem; }
+.orientacion h3 { font-size: 1.02rem; margin: 0 0 .35rem; color: var(--color-primario-oscuro); }
+.orientacion h4 { font-size: .93rem; margin: .7rem 0 .25rem; }
+.orientacion ul { padding-left: 1.2rem; margin: .25rem 0; }
+.orientacion li.sub { margin-left: 1rem; list-style: circle; }
+.orientacion li.destacada { font-weight: 600; border-left: 3px solid var(--color-primario-claro); padding-left: .4rem; }
+.alerta-orientacion { border-left: 4px solid var(--color-acento); background: #fdf2f8; padding: .35rem .7rem;
+    border-radius: 6px; margin-top: .6rem; }
+.apoyo-orientaciones { border: 2px solid var(--color-acento); border-radius: var(--radio); padding: 0 .75rem .5rem;
+    margin-top: 1rem; }
+.otras-orientaciones, .biblioteca-orientaciones { margin-top: 1rem; }
+.otras-orientaciones > summary, .biblioteca-orientaciones > summary, .orientacion details > summary {
+    cursor: pointer; font-weight: 600; color: var(--color-primario-oscuro); min-height: 44px;
+    display: flex; align-items: center; }
+.fuentes-orientacion li { font-size: .82rem; overflow-wrap: anywhere; }
+
+/* Fase 40: diálogo de «Salir» con respuestas sin enviar */
+.dialogo-salida { position: fixed; inset: 0; background: rgba(17, 24, 39, .55); display: flex; align-items: center;
+    justify-content: center; padding: 16px; z-index: 50; }
+.dialogo-salida .tarjeta { max-width: 32rem; width: 100%; max-height: 90vh; overflow-y: auto; margin: 0; }
+
+/* ===== Fase 40C-P: estadísticas generales (profesional) ===== */
+.estadisticas h2 { font-size: 1.15rem; margin-top: 1.5rem; color: var(--color-primario-oscuro); }
+.barras-est { margin: 1rem 0; }
+.barras-est h3 { font-size: 1rem; margin: 0 0 .25rem; }
+[data-tabla-grupos] caption { text-align: left; margin-bottom: .35rem; }
+.barras-est__tabla { table-layout: fixed; }
+.barras-est__tabla th[scope="row"] { width: 42%; font-weight: 500; overflow-wrap: anywhere; }
+.barras-est__col-barra { width: 36%; }
+.barras-est__barra { display: block; height: .85rem; min-width: 0; border-radius: 3px;
+    background: var(--color-primario); }
+.barras-est tr[data-oculta] th, .barras-est tr[data-oculta] td { color: var(--color-texto-suave); }
+.visualmente-oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap; }
+@media (max-width: 480px) {
+    .barras-est__tabla th[scope="row"] { width: 46%; }
+    .barras-est__col-barra { width: 26%; }
+}
+
+/* Fase 40, Etapa 2 */
+.comprobante-retiro { width: 100%; box-sizing: border-box; font-family: monospace; font-size: .8rem; overflow-wrap: anywhere; }

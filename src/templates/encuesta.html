@@ -18,12 +18,13 @@
         </p>
     {% endif %}
     <p id="estado-sync" class="estado-sync" hidden></p>
-    <div id="encuesta"
+    <div id="encuesta" data-cuenta="{{ cuenta_local }}"
          data-usuario="{% if modo_profesional %}{{ contexto }}{% else %}{{ request.user.rut_hash }}{% endif %}"
          {% if modo_profesional %}
          data-modo="profesional"
          {% if paciente %}data-paciente="{{ paciente.pk }}" data-url-ficha="{% url 'ficha_paciente' paciente.pk %}"{% endif %}
          {% if rut_nueva %}data-rut="{{ rut_nueva }}"{% endif %}
+         {% if participacion_paciente %}data-participacion-paciente="{{ participacion_paciente }}"{% endif %}
          {% endif %}><p class="ayuda">Cargando encuesta…</p></div>
 {% endblock %}
 

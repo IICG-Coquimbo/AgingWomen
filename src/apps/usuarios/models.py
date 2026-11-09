@@ -120,3 +120,43 @@ class RegistroOTP(models.Model):
 
     def codigo_correcto(self, codigo):
         return constant_time_compare(self._hash_codigo((codigo or '').strip()), self.codigo_hash)
+
+
+class ConsentimientoPresencial(models.Model):
+    """
+    Fase 40, Etapa 2: consentimiento otorgado presencialmente y registrado por una
+    profesional. Es la constancia de la aceptación; no guarda datos de salud,
+    documentos de identidad ni el documento firmado (solo su folio y dónde se custodia).
+
+    - Una sola fila por persona (por RUT pseudonimizado): no hay duplicados.
+    - Si la persona tiene cuenta, la aceptación además exige que ella misma ingrese
+      su contraseña ante la profesional (verificación CLAVE_CUENTA) y renueva su
+      participación (`Usuario.consentimiento_aceptado_en`). Así una profesional no
+      puede reactivar sola un consentimiento retirado.
+    - El retiro elimina esta fila junto con los datos (la conservación de constancias
+      queda pendiente de la decisión legal; ver el informe de la Etapa 2).
+    """
+
+    class Verificacion(models.TextChoices):
+        DOCUMENTO_FIRMADO = 'DOCUMENTO_FIRMADO', 'Documento firmado en custodia'
+        CLAVE_CUENTA = 'CLAVE_CUENTA', 'Documento firmado en custodia y contraseña de su cuenta ingresada por ella'
+
+    MODALIDAD = 'PRESENCIAL'
+
+    rut_hash = models.CharField(max_length=64, unique=True)
+    usuario = models.ForeignKey(Usuario, null=True, blank=True, on_delete=models.SET_NULL,
+                                related_name='consentimientos_presenciales')
+    version = models.CharField('versión del consentimiento', max_length=40)
+    modalidad = models.CharField(max_length=12, default=MODALIDAD, editable=False)
+    verificacion = models.CharField(max_length=20, choices=Verificacion.choices)
+    folio_documento = models.CharField('folio del documento firmado', max_length=40, unique=True)
+    custodia = models.CharField('custodia del documento firmado', max_length=120)
+    registrado_por = models.ForeignKey(Usuario, on_delete=models.PROTECT, related_name='consentimientos_registrados')
+    registrado_en = models.DateTimeField('fecha y hora de la aceptación', default=timezone.now)
+
+    class Meta:
+        verbose_name = 'consentimiento presencial'
+        verbose_name_plural = 'consentimientos presenciales'
+
+    def __str__(self):
+        return f'Consentimiento presencial {self.folio_documento} ({self.registrado_en:%Y-%m-%d})'

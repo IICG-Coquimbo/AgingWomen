@@ -1,7 +1,8 @@
 from django.contrib.auth import views as auth_views
 from django.urls import path
 
-from . import views
+from . import inactividad, views
+from . import vistas_clave
 from .forms import LoginRutForm
 
 urlpatterns = [
@@ -21,6 +22,7 @@ urlpatterns = [
         name='login',
     ),
     path('salir/', auth_views.LogoutView.as_view(), name='logout'),
+    path('actividad/', inactividad.actividad, name='actividad'),   # Fase 40 E2
 
     # --- Consentimiento informado (previo al ingreso a la encuesta) ---
     path('consentimiento/', views.consentimiento, name='consentimiento'),
@@ -28,7 +30,7 @@ urlpatterns = [
     # --- Recuperación de contraseña (por correo) ---
     path(
         'clave/recuperar/',
-        auth_views.PasswordResetView.as_view(
+        vistas_clave.RecuperarClaveView.as_view(
             template_name='registration/password_reset_form.html',
             email_template_name='registration/password_reset_email.html',
             subject_template_name='registration/password_reset_subject.txt',
@@ -44,7 +46,7 @@ urlpatterns = [
     ),
     path(
         'clave/recuperar/<uidb64>/<token>/',
-        auth_views.PasswordResetConfirmView.as_view(
+        vistas_clave.ConfirmarClaveView.as_view(
             template_name='registration/password_reset_confirm.html',
         ),
         name='password_reset_confirm',

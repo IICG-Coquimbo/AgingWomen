@@ -1,13 +1,18 @@
+from django.conf import settings
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password
+from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
 from django.db import transaction
 from django.shortcuts import redirect, render
+from django.urls import reverse
 from django.utils import timezone
-from django.utils.http import url_has_allowed_host_and_scheme
+from django.utils.encoding import force_bytes
+from django.utils.http import url_has_allowed_host_and_scheme, urlsafe_base64_encode
 from django.views.decorators.http import require_POST
 
+from . import limite_ingreso
 from .forms import RegistroConClaveForm, VerificarCodigoForm
 from .models import RegistroOTP, Usuario
 from .rut import hash_rut
@@ -15,16 +20,23 @@ from .rut import hash_rut
 SESION_REGISTRO = 'registro_otp_id'
 
 
-def enviar_password_email(usuario, password):
-    """Envía la contraseña autogenerada. En desarrollo sale por la consola."""
+def enviar_activacion_email(request, usuario):
+    """Enlace de un solo uso y con vencimiento para definir la contraseña; nunca envía una contraseña."""
+    enlace = request.build_absolute_uri(reverse('password_reset_confirm', kwargs={
+        'uidb64': urlsafe_base64_encode(force_bytes(usuario.pk)),
+        'token': default_token_generator.make_token(usuario),
+    }))
+    horas = settings.PASSWORD_RESET_TIMEOUT // 3600
     send_mail(
-        subject='Tu cuenta de profesional - Observatorio Integral de la Mujer',
+        subject='Activa tu cuenta de profesional - Observatorio Integral de la Mujer',
         message=(
             'Se ha creado tu cuenta en el Observatorio Integral de la Mujer '
             'en peri y menopausia.\n\n'
-            'Ingresa con tu RUT y esta contraseña temporal:\n\n'
-            f'    {password}\n\n'
-            'Por seguridad, te recomendamos cambiarla después de ingresar.'
+            'Abre este enlace para crear tu contraseña:\n\n'
+            f'    {enlace}\n\n'
+            f'El enlace sirve una sola vez y vence en {horas} horas. Si venció, solicita '
+            'otro con «Olvidé mi contraseña», usando este mismo correo.\n\n'
+            'Después podrás ingresar con tu RUT y la contraseña que elijas.'
         ),
         from_email=None,  # usa DEFAULT_FROM_EMAIL
         recipient_list=[usuario.email],
@@ -70,6 +82,8 @@ def registro(request):
 
     if request.method == 'POST':
         form = RegistroConClaveForm(request.POST)
+        if form.is_valid() and not limite_ingreso.permitir_registro(request):
+            form.add_error(None, limite_ingreso.MENSAJE_REGISTRO)
         if form.is_valid():
             datos = form.cleaned_data
             rut_hash = hash_rut(datos['rut'])

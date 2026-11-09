@@ -14,21 +14,60 @@ from pathlib import Path
 import os
 import sys
 
+from django.core.exceptions import ImproperlyConfigured
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
+# Configuración por entorno (Fase 40S-1)
+# ---------------------------------------------------------------------------
+# Este archivo no contiene secretos. SECRET_KEY, RUT_HASH_PEPPER y DB_PASSWORD
+# se leen SOLO del entorno y no tienen valor por defecto: si falta alguno,
+# Django no arranca. En desarrollo los entrega docker-compose desde el archivo
+# privado .env.desarrollo (fuera de Git; ver .env.example).
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-lppf^m%j=(65hy8b9-=cw%i+_)oa1rxwi+!b5*1qmeyotwgbwt'
+def _bool_entorno(nombre, por_defecto=False):
+    valor = os.environ.get(nombre, '').strip().lower()
+    if not valor:
+        return por_defecto
+    if valor in ('1', 'true', 'yes', 'on', 'si', 'sí'):
+        return True
+    if valor in ('0', 'false', 'no', 'off'):
+        return False
+    raise ImproperlyConfigured(f'La variable de entorno {nombre} debe ser 1 o 0.')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
+def _obligatoria(nombre):
+    valor = os.environ.get(nombre, '')
+    if not valor.strip():
+        raise ImproperlyConfigured(
+            f'Falta la variable de entorno {nombre}. En desarrollo, crea .env.desarrollo '
+            'a partir de .env.example; en producción, defínela en el servidor.'
+        )
+    return valor
+
+
+def _lista_entorno(nombre, por_defecto=''):
+    return [x.strip() for x in os.environ.get(nombre, por_defecto).split(',') if x.strip()]
+
+
+# DEBUG queda desactivado salvo que el entorno diga DEBUG=1 (docker-compose lo
+# hace en desarrollo). Sin DEBUG se aplica el perfil de producción (al final).
+DEBUG = _bool_entorno('DEBUG', False)
+
+# Fase 40D: orientaciones educativas. Apagadas por defecto. El catálogo actual es un
+# BORRADOR no validado clínicamente: solo se muestra si además se permite el borrador,
+# y eso es exclusivamente para pruebas con datos sintéticos (nunca con participantes reales).
+ORIENTACIONES_HABILITADAS = _bool_entorno('ORIENTACIONES_HABILITADAS', False)
+ORIENTACIONES_PERMITIR_BORRADOR = _bool_entorno('ORIENTACIONES_PERMITIR_BORRADOR', False)
+
+SECRET_KEY = _obligatoria('SECRET_KEY')
 
 # Recuerda añadir tu IP o dominio de DigitalOcean y localhost en ALLOWED_HOSTS para producción
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+ALLOWED_HOSTS = _lista_entorno('ALLOWED_HOSTS', 'localhost,127.0.0.1')
+CSRF_TRUSTED_ORIGINS = _lista_entorno('CSRF_TRUSTED_ORIGINS')
 
 
 # Application definition
@@ -45,6 +84,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Aplicaciones propias creadas
     'apps.encuestas',
+    # Fase 40B-1: registro de rondas (app aparte para no tocar encuestas/models.py)
+    'apps.rondas',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +94,8 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'apps.usuarios.sin_cache.SinCacheMiddleware',         # ninguna página con sesión queda en el navegador
+    'apps.usuarios.inactividad.InactividadMiddleware',   # Fase 40 E2: cierre por inactividad
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -69,6 +112,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'apps.usuarios.privacidad.contexto',   # Fase 40: espacio local cifrado de la cuenta
+                'apps.usuarios.inactividad.contexto',  # Fase 40 E2: límites de inactividad para sesion.js
             ],
         },
     },
@@ -85,7 +130,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get('DB_NAME', 'django_db'),
         'USER': os.environ.get('DB_USER', 'django_user'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'mi_contrasena_secreta'),
+        'PASSWORD': _obligatoria('DB_PASSWORD'),
         'HOST': os.environ.get('DB_HOST', 'localhost'),
         'PORT': os.environ.get('DB_PORT', '5432'),
     }
@@ -121,9 +166,9 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-# Pepper para el hash unidireccional del RUT (regla 1.2).
-# En producción debe entregarse por variable de entorno y mantenerse en secreto.
-RUT_HASH_PEPPER = os.environ.get('RUT_HASH_PEPPER', 'dev-pepper-cambiar-en-produccion')
+# Pepper para el hash unidireccional del RUT (regla 1.2). Solo desde el entorno:
+# cambiarlo sin una migración deja a todas las cuentas sin poder entrar con su RUT.
+RUT_HASH_PEPPER = _obligatoria('RUT_HASH_PEPPER')
 
 # Hashing de contraseñas: bcrypt primero (regla 5.2).
 PASSWORD_HASHERS = [
@@ -182,3 +227,64 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Cookies y cabeceras de seguridad (Fase 40S-1)
+# ---------------------------------------------------------------------------
+# Iguales en desarrollo y producción (la mayoría coincide con el valor por
+# defecto de Django; se dejan explícitos para que no cambien sin querer).
+SESSION_COOKIE_HTTPONLY = True
+# Enlaces de activación y de recuperación de contraseña: un solo uso y 24 horas de vigencia.
+PASSWORD_RESET_TIMEOUT = 24 * 60 * 60
+# Límite de intentos en el acceso público (apps.usuarios.limite_ingreso). Durante `manage.py test`
+# se apaga para que las pruebas no se bloqueen entre sí; las suyas lo activan expresamente.
+LIMITES_ACTIVOS = 'test' not in sys.argv
+# Detrás de un proxy, nombre de la cabecera con la IP real (por ejemplo X-Forwarded-For).
+LIMITE_IP_CABECERA = os.environ.get('LIMITE_IP_CABECERA', '')
+# Fase 40, Etapa 2: cierre por inactividad en el servidor (apps.usuarios.inactividad).
+# 30 minutos por defecto; el aviso previo en el navegador, 2 minutos antes.
+SESION_INACTIVIDAD_SEGUNDOS = int(os.environ.get('SESION_INACTIVIDAD_SEGUNDOS', '1800'))
+SESION_AVISO_SEGUNDOS = int(os.environ.get('SESION_AVISO_SEGUNDOS', '120'))
+CSRF_COOKIE_HTTPONLY = False   # encuesta.js lee la cookie csrftoken para el header X-CSRFToken
+SESSION_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_SAMESITE = 'Lax'
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_REFERRER_POLICY = 'same-origin'
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin'
+X_FRAME_OPTIONS = 'DENY'
+
+
+def _validar_produccion():
+    """Sin DEBUG, rechaza configuraciones incompletas o inseguras (nunca muestra los valores)."""
+    problemas = []
+    if (SECRET_KEY.startswith('django-insecure') or len(SECRET_KEY) < 50
+            or len(set(SECRET_KEY)) < 5):
+        problemas.append('SECRET_KEY es de desarrollo o demasiado corta (mínimo 50 caracteres variados)')
+    if len(RUT_HASH_PEPPER) < 32:
+        problemas.append('RUT_HASH_PEPPER es demasiado corto (mínimo 32 caracteres)')
+    if not ALLOWED_HOSTS or '*' in ALLOWED_HOSTS:
+        problemas.append('ALLOWED_HOSTS debe listar los dominios del servidor (sin "*")')
+    if not EMAIL_HOST_USER or not EMAIL_HOST_PASSWORD:
+        # Sin correo real, el backend de consola escribiría en los registros los
+        # códigos OTP, los enlaces de recuperación y las contraseñas temporales.
+        problemas.append('EMAIL_HOST_USER y EMAIL_HOST_PASSWORD son obligatorios en producción')
+    if problemas:
+        raise ImproperlyConfigured(
+            'Configuración de producción (DEBUG desactivado) incompleta o insegura: '
+            + '; '.join(problemas) + '. Para desarrollo, usa DEBUG=1.'
+        )
+
+
+if not DEBUG:
+    # Producción: cookies de sesión y CSRF solo por HTTPS.
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    # Redirección a HTTPS, proxy y HSTS dependen de cómo se despliegue (pendiente:
+    # Fase 18 / DR-2). Quedan desactivados salvo que el entorno los pida.
+    SECURE_SSL_REDIRECT = _bool_entorno('SECURE_SSL_REDIRECT', False)
+    if _bool_entorno('DETRAS_DE_PROXY_HTTPS', False):
+        SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_HSTS_SECONDS = int(os.environ.get('SECURE_HSTS_SECONDS', '0'))
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+    SECURE_HSTS_PRELOAD = False
+    _validar_produccion()

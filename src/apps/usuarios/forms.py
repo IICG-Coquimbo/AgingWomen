@@ -3,6 +3,7 @@ from django.contrib.auth import password_validation
 from django.contrib.auth.forms import AuthenticationForm
 
 from .models import Usuario
+from . import limite_ingreso
 from .rut import hash_rut, validar_rut
 
 
@@ -125,3 +126,18 @@ class LoginRutForm(AuthenticationForm):
             'maxlength': '12',
         }),
     )
+
+    def clean(self):
+        # El bloqueo se comprueba antes que la contraseña: mientras dure, no se puede seguir probando.
+        rut = self.cleaned_data.get('username')
+        if limite_ingreso.ingreso_bloqueado(self.request, rut):
+            raise forms.ValidationError(limite_ingreso.MENSAJE_BLOQUEO, code='bloqueado')
+        try:
+            datos = super().clean()
+        except forms.ValidationError:
+            if rut and self.cleaned_data.get('password'):
+                limite_ingreso.registrar_fallo_ingreso(self.request, rut)
+            raise
+        if rut:
+            limite_ingreso.reiniciar_rut(rut)
+        return datos

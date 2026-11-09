@@ -1,0 +1,52 @@
+{% comment %}
+Fase 40D: orientaciones educativas. `ori` viene de apps.encuestas.orientaciones.seleccionar.
+El aviso general es texto fijo, siempre visible y sin confirmaciones (C-1, C-8).
+Las señales de alerta y «¿Cuándo consultar…?» nunca van plegadas (R-5).
+{% endcomment %}<section class="tarjeta orientaciones" aria-labelledby="orientaciones-titulo" data-orientaciones data-version-catalogo="{{ ori.version }}">
+    <h2 id="orientaciones-titulo">Orientaciones para el autocuidado</h2>
+
+    {% if ori.borrador %}
+    <p class="aviso-borrador" role="note" data-aviso-borrador><strong>Versión de prueba, no validada clínicamente.</strong> Este contenido es un borrador en revisión.</p>
+    {% endif %}
+
+    <div class="aviso-orientaciones" role="note" data-aviso-orientaciones>
+        <p><strong>{{ ori.aviso.titulo }}</strong></p>
+        {% for p in ori.aviso.parrafos %}<p>{{ p }}</p>{% endfor %}
+    </div>
+
+    {% if ori.apoyo %}
+    <div class="apoyo-orientaciones" data-mensaje-apoyo>
+        {% include 'encuestas/_orientacion.html' with o=ori.apoyo.orientacion motivo=ori.apoyo.motivo nota_contexto=ori.apoyo.nota_contexto destacar=ori.apoyo.destacar abierta=True %}
+    </div>
+    {% endif %}
+
+    {% if ori.motivo == 'sin_rondas' %}
+        <p class="ayuda" data-motivo-orientaciones="sin_rondas">Cuando finalices tu primera ronda, aquí aparecerán los temas relacionados con tus respuestas.</p>
+    {% elif ori.motivo == 'sin_ronda_verificable' %}
+        <p class="ayuda" data-motivo-orientaciones="sin_ronda_verificable">Todavía no hay una ronda finalizada con resultado verificable para personalizar estas orientaciones.</p>
+    {% elif ori.motivo == 'sin_destacadas' %}
+        <p class="ayuda" data-motivo-orientaciones="sin_destacadas">En tu última ronda finalizada no marcaste molestias con intensidad 2 de 4 o mayor. Igual puedes revisar todos los temas.</p>
+    {% endif %}
+
+    {% for t in ori.principales %}
+        {% include 'encuestas/_orientacion.html' with o=t.orientacion motivo=t.motivo nota_contexto=t.nota_contexto destacar=t.destacar abierta=True %}
+    {% endfor %}
+
+    {% if ori.otras %}
+    <details class="otras-orientaciones" data-otras-orientaciones>
+        <summary>Otros temas que marcaste ({{ ori.otras|length }})</summary>
+        {% for t in ori.otras %}
+            {% include 'encuestas/_orientacion.html' with o=t.orientacion motivo=t.motivo nota_contexto=t.nota_contexto destacar=t.destacar abierta=True %}
+        {% endfor %}
+    </details>
+    {% endif %}
+
+    <details class="biblioteca-orientaciones" data-biblioteca-orientaciones>
+        <summary>Todos los temas</summary>
+        {% for o in ori.biblioteca %}
+            {% include 'encuestas/_orientacion.html' with o=o motivo='' abierta=False %}
+        {% endfor %}
+    </details>
+
+    <p class="ayuda">Catálogo {{ ori.version }}.</p>
+</section>

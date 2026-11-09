@@ -7,7 +7,8 @@
     <h1>Administración de cuentas</h1>
     <p><a class="boton" href="{% url 'admin_crear_profesional' %}">Crear cuenta de personal de salud</a></p>
 
-    <form method="get">
+    <form method="post" autocomplete="off">
+        {% csrf_token %}
         <label for="rut">Buscar cuenta por RUT</label>
         <input id="rut" name="rut" type="text" value="{{ rut }}"
                placeholder="12.345.678-9" data-rut="true" maxlength="12" autofocus>

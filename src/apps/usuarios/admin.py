@@ -4,7 +4,7 @@ from django.urls import path
 
 from .forms import RegistroUsuariaForm
 from .models import Usuario
-from .views import enviar_password_email
+from .views import enviar_activacion_email
 
 
 @admin.register(Usuario)
@@ -68,10 +68,10 @@ class UsuarioAdmin(admin.ModelAdmin):
                     email=form.cleaned_data['email'],
                     rol=Usuario.Rol.PROFESIONAL_SALUD,
                 )
-                enviar_password_email(usuario, usuario.password_generada)
+                enviar_activacion_email(request, usuario)
                 messages.success(
                     request,
-                    f'Cuenta de personal de salud creada. Credenciales enviadas a {usuario.email}.',
+                    f'Cuenta de personal de salud creada. Enlace de activación enviado a {usuario.email}.',
                 )
                 return redirect('admin:usuarios_usuario_changelist')
         else:

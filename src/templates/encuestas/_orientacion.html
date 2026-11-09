@@ -1,0 +1,40 @@
+{% comment %}
+Fase 40D: una orientación del catálogo. `o` = orientación; `motivo` = por qué aparece
+(vacío en la biblioteca); `abierta` = si el detalle se muestra sin plegar.
+Fase 40D-G: `nota_contexto` y `destacar` (índice del autocuidado) adaptan la tarjeta a una
+característica individual de la participante (contexto_participante.py); vacíos = sin cambios.
+«¿Cuándo consultar…?» y las señales de alerta van siempre visibles dentro de la tarjeta (R-5).
+{% endcomment %}<article class="orientacion" data-orientacion="{{ o.id }}">
+    <h3>{{ o.titulo }}</h3>
+    {% if motivo %}<p class="ayuda motivo-orientacion">{{ motivo }}</p>{% endif %}
+    {% for it in o.que_es %}<p>{{ it.texto }}</p>{% endfor %}
+    {% for it in o.relacion %}<p>{{ it.texto }}</p>{% endfor %}
+
+    {% if abierta %}<div>{% else %}<details><summary>Lo que puedes hacer</summary>{% endif %}
+        {% if abierta %}<h4>Lo que puedes hacer</h4>{% endif %}
+        {% if nota_contexto %}<p class="ayuda nota-contexto" data-nota-contexto>{{ nota_contexto }}</p>{% endif %}
+        <ul>{% for it in o.autocuidado %}<li{% if nota_contexto and forloop.counter0 == destacar %} class="destacada" data-autocuidado-destacado{% endif %}>{{ it.texto }}</li>{% endfor %}</ul>
+    {% if abierta %}</div>{% else %}</details>{% endif %}
+
+    <div class="consultar-orientacion" data-cuando-consultar>
+        <h4>{{ o.cuando_consultar.titulo }}</h4>
+        {% if o.cuando_consultar.nota %}<p class="ayuda">{{ o.cuando_consultar.nota|capfirst }}.</p>{% endif %}
+        <ul>{% for it in o.cuando_consultar.items %}<li>{{ it.texto }}</li>{% endfor %}</ul>
+    </div>
+
+    <div class="alerta-orientacion" data-senales-alerta>
+        <h4>{{ o.senales_alerta.titulo }}{% if o.senales_alerta.nota %}: {{ o.senales_alerta.nota }}{% endif %}</h4>
+        {% if o.senales_alerta.items %}
+        <ul>{% for it in o.senales_alerta.items %}<li{% if it.sub %} class="sub"{% endif %}>{{ it.texto }}</li>{% endfor %}</ul>
+        {% else %}
+        <p class="ayuda">{{ o.senales_alerta.sin_alertas_texto }}</p>
+        {% endif %}
+    </div>
+
+    <details class="fuentes-orientacion" data-fuentes>
+        <summary>Fuentes</summary>
+        <ul>{% for f in o.fuentes_usadas %}
+            <li>{{ f.referencia }}.{% if f.fecha_fuente %} {{ f.fecha_fuente }}.{% endif %} Consultada el {{ f.fecha_consulta }}.{% if f.url %} <a href="{{ f.url }}" rel="noopener noreferrer" target="_blank">{{ f.url }}</a>{% endif %}</li>
+        {% endfor %}</ul>
+    </details>
+</article>

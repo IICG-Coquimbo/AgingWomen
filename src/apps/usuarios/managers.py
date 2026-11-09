@@ -35,8 +35,9 @@ class UsuarioManager(BaseUserManager):
 
     def create_user(self, rut, email, password=None, rol=None, **extra):
         """
-        Crea una cuenta. Si no se entrega contraseña, se genera una al azar y
-        queda disponible en `usuario.password_generada` para enviarla por correo.
+        Crea una cuenta. Si no se entrega contraseña, se genera una al azar que no
+        se guarda ni se comunica a nadie: la persona define la suya con el enlace
+        de activación o con «Olvidé mi contraseña».
         """
         from .models import Usuario
 
@@ -45,14 +46,10 @@ class UsuarioManager(BaseUserManager):
         if rol is None:
             rol = Usuario.Rol.USUARIA_COMUN
 
-        password_generada = None
         if password is None:
             password = generar_password()
-            password_generada = password
 
-        usuario = self._crear(rut, email, password, rol, **extra)
-        usuario.password_generada = password_generada
-        return usuario
+        return self._crear(rut, email, password, rol, **extra)
 
     def create_superuser(self, rut_hash=None, email=None, password=None, **extra):
         """

@@ -38,7 +38,8 @@ CASOS = {
     'profesora': ('datos/dataset_menopausia_sucio.csv', 'datos/limpio', 'dataset_menopausia_limpio.csv'),
 }
 SALIDAS = ['excluidas.csv', 'diccionario_variables.csv']
-SHA_MODELS_ARBOL = 'aeb1fded818b836f111c514417b0c8e4cd3d27e5f608ca4c6334dcd1dd469f78'
+# Fase 40B-2: ya no se fija la huella de models.py del árbol (la 40B-2 lo cambia a propósito);
+# test_copia_modificada_de_la_plataforma_no_cambia_la_limpieza comprueba que la prueba no lo toque.
 
 
 def congeladas():
@@ -150,6 +151,7 @@ class CodigosYCortes(unittest.TestCase):
 
 class Independencia(unittest.TestCase):
     def test_copia_modificada_de_la_plataforma_no_cambia_la_limpieza(self):
+        models_antes = sha((ENCUESTAS / 'models.py').read_bytes())
         historico = {n: (RAIZ / CASOS['usuaria'][1] / n).read_bytes()
                      for n in [CASOS['usuaria'][2], *SALIDAS]}
         with tempfile.TemporaryDirectory() as tmp:
@@ -169,7 +171,7 @@ class Independencia(unittest.TestCase):
             with mock.patch.object(catalogo, 'ENCUESTAS', Path(tmp)):
                 self.assertEqual(catalogo.huella(*congeladas()), D.HUELLA_CONTENIDO)
                 self.assertEqual(salidas_csv('usuaria'), historico)
-        self.assertEqual(sha((ENCUESTAS / 'models.py').read_bytes()), SHA_MODELS_ARBOL)
+        self.assertEqual(sha((ENCUESTAS / 'models.py').read_bytes()), models_antes)  # la prueba no lo tocó
 
     def test_limpieza_no_toca_la_plataforma_ni_la_verdad(self):
         abiertos = []
@@ -202,9 +204,31 @@ class Reproduccion(unittest.TestCase):
                     self.assertEqual(sha(contenido), sha((RAIZ / carpeta / archivo).read_bytes()))
 
     def test_plataforma_sin_cambios(self):
-        r = subprocess.run(['git', 'status', '--porcelain', '--', 'src'], cwd=RAIZ,
-                           capture_output=True, text=True)
-        self.assertEqual(r.stdout, '')
+        # Acotada en el cierre de la 40S-1: antes exigía `src/` completo sin cambios, lo que
+        # rompía con cualquier cambio legítimo de Django ajeno a la limpieza (settings.py, api.py).
+        # Ahora verifica los cuatro archivos de los que se generaron las definiciones congeladas:
+        # árbol de trabajo y HEAD iguales al commit de origen (sin importar el fin de línea).
+        # Acotada de nuevo en la 40B-2, que cambia models.py a propósito (los 11 ítems MRS
+        # admiten nulo): para models.py se exige que lo que la limpieza lee de él siga idéntico
+        # a lo congelado; los otros tres archivos siguen sin cambios; y el origen congelado
+        # sigue verificable en git.
+        # Acotada otra vez en la revisión correctiva de la 40B-2: campos_por_rol.py vacía
+        # REQUERIDOS_PROFESIONAL (el EMPA deja de ser obligatorio). La limpieza solo lee de ese
+        # archivo SOLO_PROFESIONAL, que sigue cubierto por la comparación con lo congelado.
+        rutas = [f'src/apps/encuestas/{f}' for f in FUENTES if f not in ('models.py', 'campos_por_rol.py')]
+        for ref in (None, 'HEAD'):
+            with self.subTest(contra='árbol de trabajo' if ref is None else ref):
+                orden = ['git', 'diff', '--quiet', '--ignore-cr-at-eol', D.COMMIT_ORIGEN]
+                orden += [ref, '--', *rutas] if ref else ['--', *rutas]
+                r = subprocess.run(orden, cwd=RAIZ, capture_output=True)
+                self.assertEqual(r.returncode, 0, f'{rutas} cambiaron respecto de {D.COMMIT_ORIGEN[:7]}')
+        self.assertTrue(identicas(congeladas(), catalogo.leer_plataforma(ENCUESTAS)),
+                        'lo que la limpieza leería hoy de la plataforma ya no coincide con lo congelado')
+        # El contenido en git del commit de origen sigue teniendo las huellas registradas.
+        with tempfile.TemporaryDirectory() as tmp:
+            extraer(D.COMMIT_ORIGEN, tmp)
+            for f in FUENTES:
+                self.assertEqual(sha((Path(tmp) / f).read_bytes()), D.SHA256_ORIGEN[f], f)
 
 
 if __name__ == '__main__':

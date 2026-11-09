@@ -1,0 +1,27 @@
+{% comment %}
+Fase 40C-P: gráfico de barras horizontales en HTML/CSS, generado en el servidor
+(sin bibliotecas). `d` = una distribución de apps.encuestas.estadisticas. Las
+celdas ocultas por el umbral no tienen barra ni número.
+{% endcomment %}<figure class="barras-est" data-distribucion="{{ d.clave }}">
+    <figcaption>
+        <h3>{{ d.titulo }}</h3>
+        <p class="ayuda">{{ d.explicacion }} Denominador: {{ d.denominador }} participantes. Unidad: {{ d.unidad }}.</p>
+    </figcaption>
+    {% if d.oculta %}
+        <p class="aviso-evolucion" role="note" data-distribucion-oculta>No hay datos suficientes para mostrar esta distribución sin arriesgar la identificación de alguna participante (se requieren grupos de al menos {{ umbral }}).</p>
+    {% else %}
+        <table class="tabla-historial barras-est__tabla">
+            <thead><tr><th scope="col">Categoría</th><th scope="col">Participantes</th><th scope="col" class="barras-est__col-barra"><span class="visualmente-oculto">Proporción</span></th></tr></thead>
+            <tbody>
+            {% for f in d.filas %}
+                <tr data-celda="{{ f.clave }}"{% if f.oculta %} data-oculta{% endif %}>
+                    <th scope="row">{{ f.etiqueta }}</th>
+                    <td>{% if f.oculta %}Oculto (*){% else %}{{ f.n }} ({{ f.porcentaje }} %){% endif %}</td>
+                    <td class="barras-est__col-barra" aria-hidden="true"><span class="barras-est__barra" style="width: {{ f.ancho }}%"></span></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% if d.hay_ocultas %}<p class="ayuda">(*) Oculto para proteger la privacidad: celdas con menos de {{ umbral }} participantes, o necesarias para que no se puedan deducir restando del total.</p>{% endif %}
+    {% endif %}
+</figure>

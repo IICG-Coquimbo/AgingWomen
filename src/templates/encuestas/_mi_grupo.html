@@ -1,0 +1,25 @@
+{% comment %}
+Fase 40D-H: grupo de caracterización B1 de la participante (apps.encuestas.contexto_participante.grupo_para_tablero).
+El puntaje MRS de la misma ronda va en un bloque aparte: el grupo no lo explica ni lo predice.
+{% endcomment %}<section class="tarjeta mi-grupo" aria-labelledby="mi-grupo-titulo" data-mi-grupo>
+    <h2 id="mi-grupo-titulo">Mi grupo de caracterización</h2>
+    {% if g.grupo %}
+        <p class="mi-grupo-nombre" data-grupo-nombre><strong>{{ g.grupo.numero }} — {{ g.grupo.nombre }}</strong></p>
+        <p data-grupo-descripcion>{{ g.grupo.descripcion }}</p>
+        <p class="ayuda">Según tus respuestas de la ronda {{ g.ronda }}.</p>
+        <p class="aviso-grupo" role="note" data-aviso-grupo>Es una caracterización exploratoria, hecha solo a partir de tus respuestas sobre ejercicio, pareja y trabajo. No es un diagnóstico ni un indicador de salud.</p>
+        <div class="mi-grupo-mrs" data-grupo-mrs>
+            <h3>Tu resultado MRS de esa misma ronda</h3>
+            <p>{% include 'encuestas/_resultado_mrs.html' with r=g.resultado_mrs %}</p>
+            <p class="ayuda">Se muestra por separado: tu grupo no explica ni predice este resultado.</p>
+        </div>
+    {% else %}
+        <p data-grupo-no-disponible><strong>Grupo aún no disponible</strong></p>
+        <p data-grupo-motivo="{{ g.motivo }}">
+            {% if g.motivo == 'sin_ronda' %}Todavía no has finalizado ninguna ronda.
+            {% elif g.motivo == 'no_verificable' %}Tu ronda {{ g.numero_ronda }} no tiene un resultado MRS definitivo.
+            {% else %}En tu ronda {{ g.numero_ronda }} falta saber: {{ g.datos_faltantes|join:"; " }}.{% endif %}
+        </p>
+        <p class="ayuda">Aparecerá cuando finalices una ronda que tenga respondidas las preguntas sobre ejercicio, pareja y trabajo.</p>
+    {% endif %}
+</section>

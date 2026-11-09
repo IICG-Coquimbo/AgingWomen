@@ -1,5 +1,7 @@
 # Fase 40A: revisión correctiva del diseño
 
+> **Nota de actualización (2026-11-09):** B1 sí se muestra a la participante en su tablero, por decisión de la responsable para la revisión de la profesora guía (Fase 40D-H), con la advertencia de que es exploratorio y no es un diagnóstico. Sigue sin seleccionar ni modificar orientaciones (C-5) y no aparece en la ficha individual del profesional. La decisión provisional DT-7 quedó reemplazada, igual que «No mostrar grupos a las usuarias» en `informe_fase40A.md`, que no se edita porque este documento cita su huella.
+
 *06-11-2026. Complementa `informe_fase40A.md` (SHA-256 `185c83ae…a2aee017a`), que **no se modifica**. Si este documento contradice al informe original, prevalece este. Fase de solo lectura: no se modificó Django, datos, migraciones ni modelos analíticos. Sin commit ni push.*
 
 **Convenciones:**

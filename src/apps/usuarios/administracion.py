@@ -21,7 +21,7 @@ from django.views.decorators.http import require_POST
 from .forms import RegistroUsuariaForm
 from .models import Usuario
 from .rut import hash_rut, validar_rut
-from .views import enviar_password_email
+from .views import enviar_activacion_email
 
 CUENTAS_POR_PAGINA = 25
 
@@ -50,7 +50,8 @@ def _protegida(request, cuenta):
 @login_required
 @requiere_superusuario
 def panel(request):
-    rut = request.GET.get('rut', '').strip()
+    # Fase 40 (R-2): el RUT solo por POST con CSRF; la cuenta encontrada se abre por su id.
+    rut = request.POST.get('rut', '').strip() if request.method == 'POST' else ''
     rol = request.GET.get('rol', '')
     error = None
 
@@ -143,10 +144,10 @@ def crear_profesional(request):
                 email=form.cleaned_data['email'],
                 rol=Usuario.Rol.PROFESIONAL_SALUD,
             )
-            enviar_password_email(nueva, nueva.password_generada)
+            enviar_activacion_email(request, nueva)
             messages.success(
                 request,
-                f'Cuenta de personal de salud creada. Credenciales enviadas a {nueva.email}.',
+                f'Cuenta de personal de salud creada. Enlace de activación enviado a {nueva.email}.',
             )
             return redirect('admin_cuenta', cuenta_id=nueva.pk)
     else:

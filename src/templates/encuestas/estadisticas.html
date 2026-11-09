@@ -1,34 +1,109 @@
 {% extends "base.html" %}
 
-{% block titulo %}Estadísticas agrupadas{% endblock %}
+{% block titulo %}Estadísticas generales{% endblock %}
 
 {% block contenido %}
-<div class="tarjeta">
-    <h1>Estadísticas agrupadas</h1>
+<div class="tarjeta estadisticas" data-estadisticas>
+    <h1>Estadísticas generales</h1>
     <p class="ayuda">
-        Resumen anónimo de todas las participantes registradas. No muestra RUT
-        ni ningún dato que permita identificar a una persona.
+        Resultados agregados y anónimos. Solo incluye a participantes con consentimiento vigente (en línea o
+        presencial registrado), y de cada una su última ronda cerrada con resultado MRS verificable (una ronda por
+        mujer). No muestra RUT, nombres ni respuestas individuales.
     </p>
+    <p class="aviso-evolucion" role="note">{{ est.nota_descriptiva }}</p>
 
-    <div class="indicadores">
-        <div class="indicador">
-            <span class="indicador-valor">{{ total_participantes }}</span>
-            <span class="indicador-nombre">Participantes</span>
+    {% if not est.suficiente %}
+        <p class="aviso-evolucion" role="note" data-sin-datos>Todavía no hay datos suficientes: se necesitan al menos {{ est.umbral }} participantes incluidas para publicar estadísticas sin arriesgar la identificación de nadie.</p>
+    {% else %}
+    <section aria-labelledby="est-indicadores">
+        <h2 id="est-indicadores">Indicadores generales</h2>
+        <div class="indicadores">
+            <div class="indicador" data-indicador="participantes">
+                <span class="indicador-valor">{{ est.n }}</span>
+                <span class="indicador-nombre">Participantes incluidas</span>
+            </div>
+            <div class="indicador" data-indicador="rondas">
+                <span class="indicador-valor">{{ est.rondas_verificables }}</span>
+                <span class="indicador-nombre">Rondas cerradas y verificables
+                    <small>De las participantes incluidas (todas sus rondas)</small></span>
+            </div>
+            <div class="indicador" data-indicador="promedio">
+                <span class="indicador-valor">{{ est.promedio_total }}</span>
+                <span class="indicador-nombre">Promedio del MRS total <small>Puntos, de 0 a {{ est.maximo }}; n = {{ est.n }}</small></span>
+            </div>
+            <div class="indicador" data-indicador="mediana">
+                <span class="indicador-valor">{{ est.mediana_total }}</span>
+                <span class="indicador-nombre">Mediana del MRS total <small>Puntos, de 0 a {{ est.maximo }}; n = {{ est.n }}</small></span>
+            </div>
         </div>
-        <div class="indicador">
-            <span class="indicador-valor">{% if edad_promedio is not None %}{{ edad_promedio }}{% else %}Sin datos{% endif %}</span>
-            <span class="indicador-nombre">Edad promedio (años)</span>
-        </div>
-        <div class="indicador">
-            <span class="indicador-valor">{{ presion_alta }}</span>
-            <span class="indicador-nombre">Con presión alta
-                <small>(última medición ≥{{ sistolica_alta }}/{{ diastolica_alta }} mmHg)</small></span>
-        </div>
-        <div class="indicador">
-            <span class="indicador-valor">{{ total_mrs }}</span>
-            <span class="indicador-nombre">Evaluaciones MRS (todas las rondas)</span>
-        </div>
-    </div>
+    </section>
+
+    <section aria-labelledby="est-mrs">
+        <h2 id="est-mrs">Puntaje MRS</h2>
+        {% include 'encuestas/_barras_estadisticas.html' with d=est.dist_mrs umbral=est.umbral %}
+
+        <figure class="barras-est" data-distribucion="dimensiones">
+            <figcaption>
+                <h3>Promedio de las tres dimensiones MRS</h3>
+                <p class="ayuda">Promedio de puntos de cada dimensión en la ronda de referencia. Cada barra va de 0 al máximo de su dimensión. Denominador: {{ est.n }} participantes.</p>
+            </figcaption>
+            <table class="tabla-historial barras-est__tabla">
+                <thead><tr><th scope="col">Dimensión</th><th scope="col">Promedio (puntos)</th><th scope="col" class="barras-est__col-barra"><span class="visualmente-oculto">Proporción del máximo</span></th></tr></thead>
+                <tbody>
+                {% for d in est.dimensiones %}
+                    <tr data-dimension="{{ d.clave }}">
+                        <th scope="row">{{ d.nombre }}</th>
+                        <td>{{ d.promedio }} de {{ d.maximo }}</td>
+                        <td class="barras-est__col-barra" aria-hidden="true"><span class="barras-est__barra" style="width: {{ d.ancho }}%"></span></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </figure>
+    </section>
+
+    <section aria-labelledby="est-perfil">
+        <h2 id="est-perfil">Perfil de las participantes</h2>
+        {% include 'encuestas/_barras_estadisticas.html' with d=est.dist_edad umbral=est.umbral %}
+
+        <figure class="barras-est" data-distribucion="etapa">
+            <figcaption><h3>Participantes por etapa menopáusica</h3></figcaption>
+            <p class="aviso-evolucion" role="note" data-sin-etapa>No disponible: la plataforma no registra una etapa menopáusica verificable por ronda. La etapa se usa solo como variable descriptiva en los análisis del estudio y no se recalcula aquí.</p>
+        </figure>
+    </section>
+
+    <section aria-labelledby="est-grupos">
+        <h2 id="est-grupos">Caracterización por grupos</h2>
+        <p class="ayuda">Los grupos describen hábitos y contexto (actividad física, pareja y trabajo) de la ronda de referencia. No son categorías clínicas, no explican diferencias de síntomas y no generan recomendaciones.</p>
+        {% include 'encuestas/_barras_estadisticas.html' with d=est.dist_grupos umbral=est.umbral %}
+
+        <table class="tabla-historial" data-tabla-grupos>
+            <caption class="ayuda">Tamaño y MRS total promedio de cada grupo (puntos, de 0 a {{ est.maximo }}). El promedio se muestra solo para grupos de al menos {{ est.umbral }} participantes.</caption>
+            <thead><tr><th scope="col">Grupo</th><th scope="col">Participantes</th><th scope="col">MRS promedio</th></tr></thead>
+            <tbody>
+            {% for g in est.tabla_grupos %}
+                <tr data-grupo="{{ g.clave }}">
+                    <th scope="row">{{ g.etiqueta }}</th>
+                    <td>{% if g.oculta %}Oculto (*){% else %}{{ g.n }}{% endif %}</td>
+                    <td>{% if g.promedio_mrs %}{{ g.promedio_mrs }}{% else %}No se publica{% endif %}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <p class="ayuda" data-sin-grupo>Participantes sin grupo verificable (les falta pareja, actividad física o trabajo en esa ronda; no se imputa):
+            {% if est.sin_grupo.oculta %}oculto (*){% else %}{{ est.sin_grupo.n }}{% endif %}.</p>
+    </section>
+    {% endif %}
+
+    <section aria-labelledby="est-exclusiones">
+        <h2 id="est-exclusiones">Registros no incluidos</h2>
+        <ul class="ayuda" data-exclusiones>
+        {% for e in est.exclusiones %}
+            <li data-exclusion="{{ e.clave }}">{{ e.etiqueta }}: {% if e.n is None %}menos de {{ est.umbral }}{% else %}{{ e.n }}{% endif %}</li>
+        {% endfor %}
+        </ul>
+        <p class="ayuda">Las participantes que se retiraron no aparecen: el retiro borra todos sus datos.</p>
+    </section>
 
     <div class="enlaces">
         <a href="{% url 'buscar_paciente' %}">← Volver a buscar paciente</a>

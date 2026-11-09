@@ -9,6 +9,15 @@
         Eliminamos todas tus respuestas. Gracias por el tiempo que dedicaste
         a participar.
     </p>
+    {% if comprobante %}
+    <section class="aviso-evolucion" data-constancia-retiro>
+        <h2>Comprobante de tu retiro</h2>
+        <p>Retiro <strong>{{ constancia.codigo }}</strong>, registrado el {{ constancia.fecha|slice:":10" }} a las {{ constancia.fecha|slice:"11:16" }}.
+            No contiene respuestas ni datos de salud. Guárdalo (cópialo o imprime esta página) si quieres acreditar
+            más adelante que te retiraste: la plataforma no conserva una copia.</p>
+        <textarea readonly rows="3" class="comprobante-retiro" aria-label="Comprobante firmado del retiro" data-comprobante>{{ comprobante }}</textarea>
+    </section>
+    {% endif %}
     <p class="ayuda" id="estado-limpieza">Borrando también los datos guardados en este dispositivo…</p>
     <form method="post" action="{% url 'logout' %}" data-csrf-form>
         {% csrf_token %}
@@ -19,14 +28,14 @@
 
 {% block extra_scripts %}
 <script>
-// Las respuestas también quedan en el IndexedDB del navegador (modo offline):
-// se borran para que no vuelvan a sincronizarse ni queden en el dispositivo.
+// Fase 40: se borran solo los datos de esta cuenta en este dispositivo (los de otras cuentas
+// siguen cifrados y protegidos) y se avisa a las otras pestañas. Sin depender de que se cierren.
 (function () {
     var estado = document.getElementById('estado-limpieza');
     function listo() { estado.textContent = 'Este dispositivo tampoco guarda ya tus respuestas.'; }
-    if (!window.indexedDB) { listo(); return; }
-    var req = indexedDB.deleteDatabase('encuesta_agingwomen');
-    req.onsuccess = req.onerror = req.onblocked = listo;
+    function fallo() { estado.textContent = 'No se pudieron borrar los datos de este dispositivo. Igualmente ya no se pueden leer ni enviar.'; }
+    if (!window.awSesion) { fallo(); return; }
+    window.awSesion.borrarCuenta().then(listo, fallo);
 })();
 </script>
 {% endblock %}

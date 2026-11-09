@@ -1,0 +1,57 @@
+{% comment %}
+Fase 40C: resultados y evolución MRS. El mismo componente se usa en el tablero
+de la usuaria y en la ficha profesional (`evo` = apps.encuestas.evolucion).
+Primero el puntaje total; las dimensiones quedan en una sección plegable.
+Sin severidad, sin diagnósticos y sin conclusiones clínicas.
+{% endcomment %}<section class="tarjeta evolucion-mrs" aria-labelledby="evolucion-mrs-titulo" data-evolucion-mrs>
+    <h2 id="evolucion-mrs-titulo">Resultados MRS por ronda</h2>
+
+    {% if evo.aviso %}<p class="aviso-evolucion" role="note">{{ evo.aviso }}</p>{% endif %}
+    {% if evo.en_curso %}
+    <p class="ayuda">La ronda {{ evo.en_curso }} está en curso: su suma es provisional y no se incluye en los gráficos hasta que se finalice.</p>
+    {% endif %}
+
+    {% if evo.hay_grafico %}
+        {% include 'encuestas/_grafico_mrs.html' with g=evo.total prefijo='evo' %}
+
+        <table class="tabla-historial tabla-evolucion" data-tabla-evolucion="total">
+            <caption class="ayuda">Puntaje MRS total por ronda finalizada (de 0 a 44)</caption>
+            <thead><tr><th scope="col">Ronda</th><th scope="col">Cierre</th><th scope="col">Puntaje total</th></tr></thead>
+            <tbody>
+            {% for f in evo.filas %}
+                <tr data-fila-ronda="{{ f.numero }}">
+                    <th scope="row">{{ f.numero }}</th>
+                    <td>{% if f.fecha_cierre %}{{ f.fecha_cierre|date:"d-m-Y" }}{% else %}Fecha no registrada{% endif %}</td>
+                    <td>{% if f.total is not None %}{{ f.total }} de 44{% else %}{{ f.estado_texto }}: sin resultado verificable{% endif %}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <details class="dimensiones-mrs">
+            <summary>Ver las tres dimensiones (somática, psicológica y urogenital)</summary>
+            <p class="ayuda">La suma de las tres dimensiones es el puntaje total.</p>
+            {% for g in evo.dimensiones %}
+                {% include 'encuestas/_grafico_mrs.html' with g=g prefijo='evo' %}
+            {% endfor %}
+            <table class="tabla-historial tabla-evolucion" data-tabla-evolucion="dimensiones">
+                <caption class="ayuda">Puntaje por dimensión y ronda finalizada</caption>
+                <thead><tr><th scope="col">Ronda</th>{% for clave, nombre, maximo in evo.nombres_dimensiones %}<th scope="col">{{ nombre }} (0–{{ maximo }})</th>{% endfor %}<th scope="col">Total (0–44)</th></tr></thead>
+                <tbody>
+                {% for f in evo.filas %}
+                    <tr data-fila-ronda="{{ f.numero }}">
+                        <th scope="row">{{ f.numero }}</th>
+                        {% if f.total is not None %}
+                            {% for v in f.valores_dimensiones %}<td>{{ v }}</td>{% endfor %}<td>{{ f.total }}</td>
+                        {% else %}
+                            <td colspan="4">Sin resultado verificable</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </details>
+    {% endif %}
+
+    <p class="ayuda nota-evolucion">{{ evo.nota }}</p>
+</section>
